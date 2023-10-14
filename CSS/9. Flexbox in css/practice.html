@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice flex</title>
+    <style>
+        body{
+            background-color: bisque;
+            font-size: 20px;
+            padding: 10px;
+            font-weight: 700;
+        }
+
+        .flex_container{
+            display: flex;
+            
+        }
+
+
+        .flex_item{
+            height: 80px;
+            width: 80px;
+            background-color: yellow;
+            border: 6px solid red;
+            padding: 10px;
+            text-align: center;
+            margin: 10px;
+
+        }
+
+
+        .flex_item_1{
+            flex-shrink: 3;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex_container">
+        <p class="flex_item" id="flex_item_1">1</p>
+        <p class="flex_item" id="flex_item_2">2</p>
+        <p class="flex_item" id="flex_item_3">3</p>
+        <p class="flex_item" id="flex_item_4">4</p>
+        <p class="flex_item" id="flex_item_5">5</p>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form formating</title>
+    <!-- Create css style file  for formating payment form-->
+    <link rel="stylesheet" href="Payment_form.css">
+</head>
+<body>
+    <!-- create class for form selector -->
+    <div class="contenair">
+    
+    <!-- create basic contract imformation form-->
+    <form action=""> 
+        <h1 class="main_heading">Payment Form</h1>
+        <hr>
+        <h2>Contract information</h2>
+        <div>
+            <p> Name : * <input type="text" name="Name" id="Name" required placeholder="Shubham Meshram"></p>
+        </div>
+        <fieldset> <legend>Gender * </legend>
+        <p>
+            Male<input type="radio" name="Gender" id="Male" required> Female <input type="radio" name="Gender" id="Female" required>
+        </p>
+        </fieldset>
+        <p>
+            Address: <textarea name="Address" id="Address" cols="100" rows="7" placeholder="Enter you Address"></textarea>
+        </p>
+        <p>
+            Email: * <input type="email" name="Email" id="Email" required placeholder="shubhammeshram579@gmail.com">
+        </p>
+        <p>
+            Pincode: * <input type="number" name="Pincode" id="Pincode" required placeholder="441601">
+        </p>
+        <hr>
+        <!-- create bank card information form -->
+        <h3>Payment Information</h3>
+        <p>
+            Card Type: * <select name="Card_type" id="Card_type" required>
+                <option value="">--Select_card_type--</option>
+                <option value="Visa">Visa</option>
+                <option value="Rupay">Rupay</option>
+                <option value="Marter_card">Master_card</option>
+            </select>
+        </p>
+        <p>
+            Card number: * <input type="number" name="Card_number" id="card_number" required placeholder="1234-5678-9010">
+        </p>
+        <p>
+            Expiry Date: * <input type="date" name="Exp_Date" id="Exp_date" required>
+        </p>
+        <p>
+            Cvv: * <input type="password" name="Cvv" id="cvv" required placeholder="123">
+        </p>
+        <!-- create butter for sumbit form or pay butter and many more -->
+        <input type="submit" value="Pay Now">
+    </form>
+</div>
+    
+</body>
+</html>

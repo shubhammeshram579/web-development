@@ -1,0 +1,21 @@
+nav a {
+    text-decoration: none;
+    color: white;
+    /*background-color: black;*/
+    text-align: center;
+    padding: 18px;
+    float: left;
+}
+
+nav{
+    background-color:black;
+    overflow: hidden;
+}
+
+nav a:hover{
+    color: rebeccapurple;
+}
+
+nav a:visited{
+    color: yellowgreen;
+}

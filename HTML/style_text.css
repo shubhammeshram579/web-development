@@ -1,0 +1,26 @@
+.para{
+    height: 200px;
+    width: 95%;
+    color: green;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 400px;
+    text-align: justify;
+    text-transform: capitalize;
+    border: 2px solid black;
+    border-radius: 10px;
+    border-color:green;
+    background-color: rgb(231, 205, 216);
+    /* background-image: url(notes/1.jpg); */
+    /* background-repeat: re; */
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    padding: 20px;
+    margin-left: 10px;
+}
+
+
+#summary span{
+    color: red;
+}

@@ -1,0 +1,63 @@
+
+/* 1. Element select like <p> or <a> */
+
+/* p,a {
+    color: green;
+}
+
+/* 2. select list emelemt <li> and change the list item like squre and many more */
+
+/*li {
+    list-style-type: square;
+}
+*/
+
+
+/* 3. class element selector */
+/*.special{
+    color: orange;
+    font-weight: bold;
+}*/
+
+/* second way to selec class elememt*/
+/*span.special,li.special {
+    color: orange;
+}*/
+
+/* 4. em element seletor */
+/*li em {
+    color: green;
+}*/
+
+/* 6. select like h1 + p change the color or foud size */
+/*h1+h2 {
+    color: red;
+}*/
+
+/* 7 .Psoudo class selector using hover element*/
+/*a:hover{
+    color: yellow;
+}*/
+
+/* 8.  hight the particaluer element */
+/*
+body hr+p .special {
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+}
+*/
+
+/* this are it selector*/
+
+
+
+
+
+
+
+
+
+
+
+

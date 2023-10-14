@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="specificity.css">
+    <title>specificity lecture4</title>
+    <style>/* this properties are applying for specificity in css*/
+        /*.fevrte{
+            color: red;
+            font-weight: bold; /* example
+        }*/
+
+        /*ul#summer-drinks li.fevrte{ /*example 3 it is working becouse this selectore are highe number of specificity
+            color:red;
+            font-size: 25px;
+            font-weight: normal;
+        }*/
+
+
+        /* ul#summer-drinks li{ /*example 2 for selectore spcificty
+            color: blue;
+            font-size: 25px;
+            font-weight: normal;
+        }*/
+
+
+        /*simple example for color selecting in spficificy*/
+        .fevrte{
+            color: red;
+        }
+
+        .fevrte{
+            color:greenyellow;
+        }
+        /*style="color: blueviolet;" in line selector stly change is provity not working all extrnal seletores*/
+    </style>
+    <link rel="stylesheet" href="specificity.css">
+</head>
+<body> 
+    <ul id="summer-drinks">
+        <li>mouten dev</li> 
+        <li class="fevrte">appy fezz</li>
+        <li>jerra</li>
+    </ul>
+    
+</body>
+</html>

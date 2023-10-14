@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice grid</title>
+    <style>
+
+
+        .conten{
+            display:grid;
+            /* grid-template-rows: 100px 100px 100px; */
+            grid-template-columns: 1fr 1fr 1fr;
+            /* grid-template-columns: repeat(4 ,1fr); */
+            /* grid-template-columns: repeat(auto-fill,minmax(200px 1fr)); */
+            grid-gap: 20px;
+            grid-auto-columns: minmax(50px ,auto);
+            grid-auto-rows: minmax(100px ,auto);
+
+        }
+        
+        .item{
+            background-color: yellow;
+            border: 3px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="conten">
+        <p class="item">box1</p>
+        <p class="item">box2</p>
+        <p class="item">box3</p>
+        <p class="item">box4</p>
+        <p class="item">box5</p>
+        <p class="item">box6</p>
+    </div>
+</body>
+</html>

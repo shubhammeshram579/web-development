@@ -1,0 +1,92 @@
+.Main_heading{
+    color: #106872;
+    text-transform:uppercase;
+    font-size: 22px;
+    word-spacing: 1px;
+    text-size-adjust: 1px;
+    text-align: center;
+    letter-spacing: normal;
+}
+
+div p{
+    color:black;
+    text-align: justify;
+    padding: 20px;
+    word-spacing: 1px;
+    letter-spacing: normal;
+    text-transform: capitalize;
+    font-size: 20px;
+    border: 1px solid black;
+    background-image: url("images_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+    background-attachment: scroll;
+    font-family:'Dancing Script', cursive;
+    font-weight: 300;
+    /*text-decoration:underline;*/
+    line-height:normal;
+    text-indent: 100px;
+}
+
+ul{
+    color:black;
+    padding: 20px;
+    text-transform: capitalize;
+    font-size: 20px;
+    border: 1px solid black;
+    background-image: url("images_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+    font-family:'Dancing Script', cursive;
+    font-weight: 300;
+    
+}
+
+ol{
+    color:black;
+    padding: 20px;
+    text-transform: capitalize;
+    font-size: 20px;
+    border: 1px solid black;
+    background-image: url("images_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+    font-family:'Dancing Script', cursive;
+    font-weight: 300;
+    
+}
+
+table,th,td{
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    background-image: url("images_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+    font-family:'Dancing Script', cursive;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 5%;
+    
+}
+
+table th{
+    font-weight: bold;
+}
+
+img{
+    padding: 3px;
+    background-image: url("images_2.jpg");
+    background-repeat: no-repeat;  
+}
+
+iframe{
+    padding: 3px;
+    background-image: url("images_2.jpg");
+    background-repeat: no-repeat; 
+
+}

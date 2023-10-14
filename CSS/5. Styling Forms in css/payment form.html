@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment form</title>
+    <style>
+        *{
+            margin: 5px;
+            box-sizing: border-box;
+            /* width: 80%; */
+        }
+
+        body{
+            margin-left: 200px;
+            width: 70%;
+           border: 2px solid black;
+           padding: 20px;
+           border-radius: 10px;
+           /* background-color: azure; */
+            
+        }
+
+        h1{
+            color: blueviolet;
+            text-transform:capitalize;
+        }
+
+        #sum{
+            background-color: red;
+        }
+
+        #sum:hover{
+            background-color: blueviolet;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="">
+        <div>
+            <h1>payment form</h1>
+        </div>
+        <hr>
+        <div>
+            <p>
+                First Name: <input type="text" name="first_name" id="first_name">
+                Last Name: <input type="text" name="last_name" id="last_name">
+                Mobile number: <input type="number" name="number" id="number">
+                Email Address: <input type="Email" name="Email address" id="Email address">
+                City: <select name="" id="">
+                    <option value="">--select city--</option>
+                    <option value="Gondia">Gondia</option>
+                    <option value="nagpur">Nagpur</option>
+                </select>
+                State : <select name="" id="">
+                    <option value="">--Select State--</option>
+                    <option value="MH">MH</option>
+                    <option value="AP">AP</option>
+                </select>
+            </p>
+            <p>
+                Full Address: <textarea name="address" id="address" cols="100" rows="10"></textarea>
+            </p>
+        </div>
+        <hr>
+        <h1>payment details</h1>
+        <div>
+            <p>
+                Account number: <input type="number" name="number" id="number">
+                IFSC code: <input type="number" name="number" id="number">
+                CSS: <input type="password" name="css" id="css">
+            </p>
+        </div>
+        <input id="sum" type="submit">
+        <input id="sum" type="reset">
+    </form>
+    
+</body>
+</html>

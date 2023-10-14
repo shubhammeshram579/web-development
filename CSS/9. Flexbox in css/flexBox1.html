@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        /*set text font element*/
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            padding: 0 20px 30px 0;
+            line-height: 1.4;
+        }  
+        
+        /*flex usesed*/
+        .flex-container{
+            display: flex;
+            /*flex-direction: column-reverse;colomn,row,column-revers,row-revores*/
+            flex-wrap: wrap;/*Nowrop,wrop,wrop-revors*/
+        }
+
+
+        /*set box element */
+        .flex-item{
+            width: 75px;
+            height: 75px;
+            background-color: lightblue;
+            border: 2px solid blue;
+            text-align: center;
+            font-size: 2em;
+            color: white;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        /*set text backround colors element*/
+        #flex-item-1{
+            background-color: aqua;
+        }
+        #flex-item-2{
+            background-color:brown;
+        }
+        #flex-item-3{
+            background-color:green;
+        }
+        #flex-item-4{
+            background-color:yellow;
+        }
+        #flex-item-5{
+            background-color:black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox</h1>
+    <div class="flex-container">
+        <div class="flex-item" id="flex-item-1">1</div>
+        <div class="flex-item" id="flex-item-2">2</div>
+        <div class="flex-item" id="flex-item-3">3</div>
+        <div class="flex-item" id="flex-item-4">4</div>
+        <div class="flex-item" id="flex-item-5">5</div>
+    </div>
+    
+</body>
+</html>

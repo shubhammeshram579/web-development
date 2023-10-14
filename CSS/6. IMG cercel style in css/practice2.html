@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice2</title>
+    <style>
+        div{
+            height: 300px;
+            width: 200px;
+            background-color: yellow;
+            border: 5px solid red;
+
+        }
+
+
+        .box_1{
+            box-sizing: border-box;
+            height: 100px;
+            width: 200px;
+            background-color: yellow;
+            border: 5px solid red;
+            padding: 20px;
+        }
+
+        .box_2{
+            box-sizing: content-box;
+            height: 100px;
+            width: 200px;
+            background-color: yellow;
+            border: 5px solid red;
+            padding: 20px;
+        }
+
+         /* div{
+            height: 80px;
+            width: 160px;
+            border: 8px solid red;
+            background: yellow;
+        }
+
+
+        .box_1{
+            box-sizing: border-box;
+        }
+
+        .box_2{
+            box-sizing: content-box;
+        } */
+
+
+        .clip-path{ clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);;
+        }
+
+
+
+        #index_1{
+            z-index: 1;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            height: 330px;
+            width: 330px;
+            background: red;
+            padding: 5px;
+            margin: 700px;
+        }
+
+
+        #index_2{
+            z-index: 2;
+            position:absolute;
+            top: 100px;
+            left: 100px;
+            height: 330px;
+            width: 330px;
+            background: green;
+            padding: 5px;
+            margin: 700px;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="box_1">box 1</div>
+    <br>
+    <div class="box_2">box 2</div>
+    <hr>
+    <img class="clip-path" src="C:\Users\Dell\OneDrive\Desktop\css\practis\image_3.jpg" height="330" width="330" alt="">
+    <hr>
+    <div id="index_1">
+        <h1>z index 1</h1>
+    </div>
+    <div id="index_2">
+        <h2>z index 2</h2>
+    </div>
+</body>
+</html>

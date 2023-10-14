@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice_lecture_4</title>
+    <style>
+
+        /* box_overflow*/
+        /* p{
+            height: 260px;
+            width: 400px;
+            border: 4px solid black;
+            padding-top: 10px;
+            text-align: justify;
+            padding: 10px;
+            margin-left: 500px;
+        } */
+
+        .overglow{
+            height: 300px;
+            width: 300px;
+            border: 3px solid black;
+            padding: 10px;
+            overflow: auto;
+        }
+        
+        /* image formating like boder set*/
+        .image_set{
+            height: 200px;
+            width: 200px;
+            border: 6px solid red;
+            margin: 10px;
+        }
+
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        /*specificity in css*/
+        .special {
+            color: red;
+            font-weight: bold;
+
+        }
+
+        .special {
+            color: green;
+            font-size: 40px;
+        }
+
+        /* inherifited*/
+
+        body{
+            color: blueviolet;
+        }
+    
+        .class1 {
+            color:inherit;
+        }
+
+        .class2 {
+            color: initial;
+        }
+
+        .class3 {
+            color: unset;
+        }
+
+
+        /* impotance */
+
+        p{
+            color: green !important;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>box overflow</h1>
+    <hr>
+    <p class="overglow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quidem quo excepturi veniam quos iste, perferendis voluptas esse nobis quod earum, architecto ipsum a aspernatur non atque consectetur eos vero ad. Recusandae enim repellat excepturi totam maxime incidunt aperiam iure amet quae quidem soluta omnis, sunt, modi accusamus eligendi rerum sint quo libero! Corrupti temporibus soluta eligendi vitae esse officia magni eum debitis rem? Mollitia tenetur accusantium vitae saepe accusamus culpa sit minus, fuga officiis aperiam molestiae quasi nisi quas nobis exercitationem voluptatibus atque esse optio labore consequatur. Delectus explicabo velit ea. Blanditiis ad dolores voluptatem ullam ab porro corrupti.</p>
+    <hr>
+    <h2>img size set with boder</h2>
+    <div class="image_set">
+        <img src="2.jpg" alt="this my image">
+    </div>
+    <hr>
+    <h3>specificty in css</h3>
+    <!-- <p class="special" style="color: yellow;">my name is shubham </p> -->
+    <p class="special">my name is shubham </p>
+    <hr>
+    <h4>inherited</h4>
+    <ul>
+        <li>default <a href="">link</a>color</li>
+        <li class="class1">inherited <a href="">link</a>color</li>
+        <li class="class2">intail <a href="">link</a>color</li>
+        <li class="class3">uset <a href="">link</a>color</li>
+    </ul>
+    
+</body>
+</html>

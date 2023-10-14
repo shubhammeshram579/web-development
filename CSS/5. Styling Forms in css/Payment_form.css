@@ -1,0 +1,66 @@
+
+/*set box sizing payment form*/
+*{
+    box-sizing: border-box;
+}
+
+/*select body of from change font,margin,font size and padding*/
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 15px 38px;
+    font-size: 17px;
+    padding: 8px;
+}
+
+/* contenair class select change form backround color and pandding and boder and boder curve*/ 
+.contenair {
+    background-color: #f2f2f2;
+    padding: 5px 28px 15px 20px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+/* select form input type and set the width,padding,boder and margin*/
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 6px;
+}
+
+/*select gender fieldset set color and boder*/
+fieldset{
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+/*select form heading change center of heding*/
+.main_heading{
+    text-align: center;
+}
+
+/* select sumbit buttem and change backround color, boder ,margin and many more*/
+input[type="submit"] {
+    background-color: rgba(0, 0, 0, 0.403);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* change submit butter hover backround color*/
+input[type="submit"]:hover{
+    background-color: rebeccapurple;
+}
+
+*{
+    color: #166567e9;
+}

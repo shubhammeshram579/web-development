@@ -1,0 +1,19 @@
+li[class] {
+    color: red;
+    font-size: 300%;
+}
+
+/*li[class="a"] {
+    color: red;
+}
+*/
+/*
+li[class ~="a"] {
+    color: red;
+}
+*/
+
+/* averything select and change element*/
+/* * {
+    color: red;
+} */

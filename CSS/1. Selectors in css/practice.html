@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practic_lecture_1</title>
+    <style>
+        .header{
+            color: green;
+            text-align: center;
+        }
+
+        p a{
+            color: forestgreen;
+        }
+
+        span.s,li.s{
+            color: red;
+        }
+
+        .select_em {
+            font-weight: bold;
+        }
+
+        ul {
+            text-transform: uppercase;
+        }
+/* 
+        li,em{
+            font-size: 40px;
+            color: red;
+        } */
+
+        li[class="spicial"]{
+            background: yellow;
+        }
+
+        h2+h3{
+            color: green;
+            background-color: gray;
+        }
+
+        a:hover{
+            color: #25a4d6;
+        }
+
+        a:visited{
+            color: #97153a;
+        }
+
+        body hr+p .s{
+            background-color: aqua;
+        }
+
+        /* id element slectore */
+        #heading2{
+            background: red;
+        }
+
+
+        /* atribute */
+        ol {
+            font-size: large;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        li[class]{
+            color: red;
+        }
+
+        li[class="a"]{
+            background: #d62540;
+        }
+
+        
+        li[class ~="a"]{
+            background: #25d672;
+        }
+
+        li[class="abc"]{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header">basic of selectors</h1>
+    <h1>practice lecture 1</h1>
+    <h2 id="heading2">practice lecture 1</h2>
+    <h3>practice lecure 1</h3>
+    <hr>
+    <p class="most">Lorem ipsum dolor sit amet consectetur <span class="s">adipisicing elit.</span> Velit consequuntur neque magni vero numquam. Omnis soluta, distinctio fuga sunt ex eligendi laborum reprehenderit modi fugiat quae consequuntur <a href="www.google.com">google</a> pariatur cupiditate ipsam sint vero architecto. Velit a laborum repudiandae, officiis nulla architecto eum consectetur qui? Maiores dolores a optio? Deserunt recusandae eaque omnis enim amet ratione veniam soluta dolorum quae sint, nesciunt assumenda distinctio delectus ad quis commodi repudiandae, ut animi perspiciatis eos dolor itaque! Eveniet sed facilis quos error exercitationem corporis deleniti tempora enim voluptas minus doloribus asperiores inventore, libero iusto expedita voluptatem officia nisi voluptate voluptatibus quidem quasi eligendi laborum?</p>
+    <p>my name is shubham <em class="select_em">basicaly from gondia</em></p>
+    <hr>
+    <ul>
+        <li>milk</li>
+        <li class="s">cess</li>
+        <li class="spicial">mobile</li>
+    </ul>
+    <hr>
+    <h4>Atribute</h4>
+    <ol>
+        <li>python</li>
+        <li class="a">sql</li>
+        <li class="a b">excel</li>
+        <li class="abc">power bi</li>
+    </ol>
+</body>
+</html>

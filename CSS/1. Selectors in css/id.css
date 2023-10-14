@@ -1,0 +1,10 @@
+/* select the heador color simliler to class element
+#Heading {
+    color: blue;
+    background-color: black;
+}
+*/
+
+p#one {
+    color: yellowgreen;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Grid</title>
+    <style>
+        .contener{
+            display: grid;
+            /* grid-template-columns: 200px 100px 200px; option 1 to set column wise box*/
+            /* grid-template-rows: 200px 200px 200px; option 2 se box like raw wise */
+            /* grid-template-columns: 1fr 1fr 1fr; equally dived columns or row wise box */
+            /* grid-template-columns: repeat(4, 1fr); munualy set */
+            grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+            grid-gap:20px;
+            /* grid-auto-rows: 100px;
+            grid-auto-columns: 200px;  it is set mulualy hight and with*/
+            grid-auto-rows: minmax(100px ,auto);
+            grid-auto-columns: minmax(50px,auto);
+        }
+
+        .items {
+            background-color: lightcoral;
+            border: 3px solid green;
+            border-radius: 3px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contener">
+        <div class="items">box 1</div>
+        <!-- <div class="items">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem provident tempore autem veritatis rem fugit placeat tenetur consectetur dignissimos maiores enim, eligendi similique aliquid explicabo quisquam? Itaque maxime deleniti minus doloremque dolor magni laboriosam qui sunt modi hic magnam, fugiat, eveniet est nisi possimus incidunt vel eaque eos. Saepe nobis asperiores eligendi ipsum minus. Culpa natus debitis ipsum accusantium aliquam modi autem veniam, soluta sunt doloribus repellendus perspiciatis cumque aliquid, et nam cum voluptas aut tempora facilis suscipit. Ducimus eius nesciunt provident culpa illum dolorem placeat nemo saepe, reiciendis in magni hic temporibus rem sint beatae totam ipsam cupiditate eligendi non eaque dolores! Ex id expedita dignissimos culpa animi repellat voluptatum magni qui. Ullam expedita ut blanditiis aut unde impedit modi quasi architecto animi molestiae! Esse ab fugit minima perferendis quisquam! Sapiente tempora at dicta consequuntur harum! Dicta molestiae accusamus tempore, ea rerum labore quaerat similique aut velit tenetur exercitationem. Assumenda neque quas ipsum saepe odio obcaecati nobis mollitia officiis explicabo magnam, modi expedita. Ad eligendi dolores qui corporis cum dignissimos odit velit. Dicta reprehenderit dolorum provident saepe ea autem explicabo obcaecati consequuntur pariatur placeat. Explicabo molestiae necessitatibus possimus quod, ad quisquam ratione hic aperiam, repellat, quam libero minima! Minima nihil alias voluptatem expedita quisquam. Impedit quaerat, quasi nostrum, reprehenderit provident corrupti ipsum earum reiciendis ipsam officia modi doloribus, porro illo magnam harum nemo assumenda ullam. Totam possimus qui nostrum, quisquam laudantium, vero unde mollitia repellat nulla atque recusandae explicabo fuga delectus. Repellat fugiat eum earum tenetur sunt placeat similique dolorem error dolorum ea provident officiis, dolore facilis nam dicta, incidunt omnis tempore mollitia iste aspernatur! Sit, sapiente dolor saepe, maxime porro magnam recusandae ullam at soluta accusamus nihil fuga corporis enim pariatur ducimus expedita alias reiciendis doloribus, quibusdam maiores. Itaque fuga quo dignissimos. Dicta consectetur est sequi ipsum libero?</div> -->
+        <div class="items">box 2</div>
+        <div class="items">box 3</div>
+        <div class="items">box 4</div>
+        <div class="items">box 5</div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practics lecture 3</title>
+    <style>
+
+        /* box properties */
+        p{
+            height: 225px;
+            width: 500px;
+            padding: 20px;
+            border: 10px solid black;
+            margin-left: 500px;
+            text-align: justify;
+            color:black;
+        }
+
+
+        /* padding_vs_margin diffence between*/
+        .box_1,.box_2{
+            height: 100px;
+            width: 100px;
+        }
+
+        .box_1{
+            background: red;
+            padding: 10px;
+        }
+
+        
+        .box_2{
+            background:yellow;
+            margin: 20px;
+        }
+
+
+        .wrapep{
+            background:green;
+        }
+
+        /* table_formating */
+        table,tr,td,th{
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: center;
+            margin-left: 500px;
+        }
+
+        table tr td{
+            background-color: green;
+        }
+        table tr th{
+            background-color:blueviolet;
+        }
+
+        /* navgatire sting */
+        nav{
+            color: white;
+            /* background-color: black; */
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        nav{
+            background-color: black;
+            overflow: hidden;
+        }
+        nav:hover{
+            background-color: red;
+        }
+
+        nav:visited{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <hr>
+    <p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</strong> <small>Soluta dolorem, quam qui autem possimus modi dicta voluptate corporis fugit blanditiis eos voluptatibus a explicabo eveniet incidunt </small>veniam, voluptates quia minima reprehenderit aperiam eligendi, nostrum architecto ab! Saepe, atque, maiores repellendus nam officia qui possimus reiciendis ullam, dolore praesentium sequi laboriosam omnis earum commodi voluptatem? Earum illum, nostrum quam cumque suscipit architecto odio veritatis, 10 <sub>2</sub> sapiente, dolorem hic blanditiis soluta repellat ipsam mollitia ullam provident <b>officiis voluptatum</b> impedit! Dolorum asperiores sint maiores amet? Explicabo enim libero recusandae consequuntur hic officiis id, laudantium adipisci molestiae 120 <sup>2</sup>  reprehenderit, rerum cum laborum commodi suscipit eius minus.</p>
+    <hr>
+    <hr>
+    <div class="wrapep">
+        <div class="box_1">box 1</div>
+        <div class="box_2">box 2</div>
+    </div>
+    <hr>
+    <h1>table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>salary</th>
+                <th>tds</th>
+            </tr>
+        </thead>
+        <body>
+            <tr>
+                <td>shubham</td>
+                <td>12000</td>
+                <td>1200</td>
+            </tr>
+            <tr>
+                <td>labham</td>
+                <td>24000</td>
+                <td>2400</td>
+            </tr>
+            <tr>
+                <td>pallavi</td>
+                <td>50000</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td>Aachal</td>
+                <td>15000</td>
+                <td>1500</td>
+            </tr>
+        </body>
+        <tfoot>
+            <th colspan="3">total salary and tds:10100,1010</th>
+        </tfoot>
+    </table>
+    <hr>
+    <nav>
+        <a href="#">home</a>
+        <a href="#">page</a>
+    </nav>
+</body>
+</html>

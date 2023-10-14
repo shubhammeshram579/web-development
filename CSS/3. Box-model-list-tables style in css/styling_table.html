@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>styling table</title>
+    <style>
+        table,tr,th,td{
+            border: solid black; /* select the border colur */
+            border-collapse: collapse;/*collapse  is used the boder line marge and look like bold*/
+            padding: 18px; /* padding is fist to page example*/
+            border-spacing: 5px;
+
+        }
+
+        th{
+            background-color:yellowgreen;
+        }
+
+        td{
+            background-color: navajowhite;       
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <h1>Result</h1>
+                <th>Subject</th>
+                <th>Theory</th>
+                <th>Practicle</th>
+                <th>Total marks</th>
+                <th>Grades</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Eglish</td>
+                <td>77</td>
+                <td>-</td>
+                <td>77</td>
+                <td>B1</td>
+            </tr>
+            <tr>
+                <td>Maths</td>
+                <td>75</td>
+                <td>-</td>
+                <td>75</td>
+                <td>B1</td>
+            </tr>
+            <tr>
+                <td>Hindi</td>
+                <td>55</td>
+                <td>-</td>
+                <td>55</td>
+                <td>B1</td>
+            </tr>
+            <tr>
+                <td>Marati</td>
+                <td>45</td>
+                <td>-</td>
+                <td>45</td>
+                <td>C1</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <th colspan="4">Result: Pass</th>
+        </tfoot>
+    </table>
+
+</body>
+</html>

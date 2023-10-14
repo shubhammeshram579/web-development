@@ -1,0 +1,76 @@
+h1{
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+/*
+*{
+    color: green;
+}*/
+
+.box{
+    color: green;
+}
+
+/*
+div p{
+    color: brown;
+}*/
+
+div p{
+    color:green;
+}
+
+
+div p span{
+    color: brown;
+}
+
+#Address{
+    color: green;
+    font-size: 20px;
+}
+
+form fieldset{
+    color: red;
+}
+
+/*form p Email{
+    color: blue;
+}*/
+
+a[href="www.gmail.com"]{
+    color: green;
+}
+
+
+a[href="www.gmail.com"]:hover{
+    color:red;
+}
+
+div p::first-line{
+    color: royalblue;
+}
+
+form > p{
+    color: yellowgreen;
+}
+
+
+body > ul{
+    color: peru;
+}
+
+body > a{
+    color: red;
+}
+
+
+img{
+    border: 10px;
+}
+img{
+    height: 200px;
+    padding: 25px;
+    margin: 10px;
+}

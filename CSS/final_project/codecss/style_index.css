@@ -1,0 +1,252 @@
+* {
+    box-sizing: border-box;
+    list-style: none;
+    margin: none;
+}
+
+/* 
+header{
+    padding: 50px;
+    text-align: center;
+    background-color: #207176;
+    color: white;
+        
+} 
+
+header h1 {
+    font-size: 40px;
+} */
+
+
+header{
+    background-color: black;
+}
+
+
+/* nav {
+    background-color: rgb(76, 78, 78);
+    overflow: hidden;
+} */
+
+/* 
+nav a{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    float: left;
+} */
+
+
+footer, nav {
+    display: flex;
+    /* overflow: hidden; */
+    background-color: #333;
+}
+
+
+footer a,nav a{
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+}
+
+section {
+    text-align: center;
+    height: 100%;
+    padding: 50px;
+    min-height: 40vh;
+}
+
+section:nth-child(even){
+    background-color: #ececec;
+}
+
+/* iframe{
+    padding: opx 5px;
+} */
+
+
+/* img{
+    padding: 0px 20px;
+} */
+
+h2 {
+    padding-bottom: 40px;
+}
+
+
+/* footer {
+    background-color: black;
+    overflow: hidden;
+} */
+
+
+/* footer a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    float: left;
+} */
+
+section h5 {
+     margin: 0px 130px;
+}
+
+
+.banner{
+    background-image: url(../notes/loggojip.png);
+    height: 5vw;
+    min-height: 200px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    /* background-size: 200px; */
+    
+}
+
+
+.flex-alin-right {
+    margin-left: auto;
+}
+
+.menu-btn:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+section h2 span{
+    background:linear-gradient(to right,#f5d837,#bbb812);
+    padding: 10px 55px;
+    border-radius: 40px;
+    color: white;
+
+}
+
+
+/* .carousel-cell {
+    width: 66%;
+    height: 200px;
+    margin-right: 10px;
+    background: #8C8;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+  } */
+  
+  /* cell number */
+  /* .carousel-cell:before {
+    display: block;
+    text-align: center;
+    content: counter(carousel-cell);
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+  } */
+
+  .carousel-cell{
+    width: 66%;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+
+  .carousel-cell video {
+    max-width: 50%;
+  }
+
+
+
+  .iframe-container {
+    overflow: hidden;
+    padding-top: 25%;
+    position: relative;
+  }
+  
+  .iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+    width: 100%;
+    height: 100%; 
+  }
+  
+  /* .img-responsive {
+    max-width: 100vh;
+    height: 50vh;
+  } */
+
+
+  .img-container {
+    overflow: hidden;
+    padding-top:5%;
+    position: relative;
+  }
+  
+  .img-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+    width: 100%;
+    height: 100%; 
+  }
+
+
+  h3{
+    font-size: 2em;
+    font-weight: 900;
+    letter-spacing: 4px;
+    word-spacing: 10px;
+    text-transform: uppercase;
+    margin: 20px 0px 30px 0px;
+
+
+  }
+
+  .sm-hendel a{
+    background-color: #9d9191ad;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 15px;
+
+  }
+
+  .sm-hendel a:hover{
+    background-color: rgb(30 30 30 / 25%);
+  }
+
+
+  .sm-hendel a i{
+    margin: 5px;
+  }
+
+
+  .about_us{
+    margin: 50px;
+
+  }
+
+  .title_heading{
+    font-size: 1.35em;
+    padding: 0px 10px;
+    color: rgb(35, 35, 124);
+  }
+
+
+
+@media screen and (max-width: 700px) {
+    footer, nav {
+        flex-direction: column;
+        padding: 10px 25px;
+    }
+
+    .flex-alin-right {
+        margin-left: 0px;
+    }
+    
+}

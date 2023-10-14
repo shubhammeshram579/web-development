@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice payment form</title>
+    <style>
+        
+       * {
+        box-sizing: border-box;
+        margin: 25px;
+        
+       }
+
+       body {
+        /* padding: 10px 28px 15px 20px; */
+        border: 1px solid black;
+        border-radius: 10px;
+        /* background-color: #63b1b6; */
+        text-transform: capitalize;
+       }
+
+       .contener{
+        background-color:#d1dad99e;
+        padding: 20px
+       }
+
+       input[type="text"],
+       input[type="number"],
+       input[type="Email"],
+       select[name="banl name"],
+       input[type="file"],
+       textarea{
+        width:100%;
+        padding: 12px;
+        margin: 10px;
+
+       }
+
+
+       fieldset {
+        background-color: white;
+        border: 1px solid gray;
+       }
+
+       h1 span{
+        background: linear-gradient(black,black);
+        color:rgb(28, 207, 207);
+        padding: 10px 40px;
+        border-radius: 10px;
+       }
+
+       h1{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 20px;
+       }
+
+       input[type="submit"],
+       input[type="reset"]{
+        background:black;
+        width: 100%;
+        padding: 12px 30px;
+        color: rgb(28, 207, 207);
+        font-size: 20px;
+        text-transform: capitalize;
+        font-weight: 700;
+        border-radius: 10px;
+        margin: 10px;
+       }
+
+
+       input[type="submit"]:hover{
+        background-color: rgb(200, 41, 62);
+       }
+       input[type="reset"]:hover{
+        background-color: red;
+       }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="contener">
+    <form action="">
+        <h1><span>Customer Details</span></h1>
+        
+        <div>
+            <p>First Name: <input type="text" name="first name" id="First_name" placeholder="Shubham"></p>
+            <p>Last Name: <input type="text" name="last name" id="last name" placeholder="Meshram"></p>
+        </div>
+        <fieldset>
+            <legend>Gender</legend>
+            <p>Male <input type="radio" name="Gender" id="male"> Female <input type="radio" name="Gender" id="Female"></p>
+        </fieldset>
+        <div>
+            <p>Email id: <input type="Email" name="email" id="email" placeholder="Shubhammeshram579@gmail.com"></p>
+            <p>Contract number: <input type="number" name="number" id="number" placeholder="7038956822"></p>
+        </div>
+        <div>
+            <p>Address <textarea name="address" id="address" cols="50" rows="7" placeholder="Gondia Maharastra"></textarea></p>
+        </div>
+        
+        <h1><span>Bank details</span></h1>
+        <div>
+            <p>bank name <select name="banl name" id="bank name">
+                <option value="">--select bank--</option>
+                <option value="SBI">SBI</option>
+                <option value="ICICI">ICICI</option>
+                <option value="BOI">BOI</option>
+            </select></p>
+        </div>
+        <div>
+            <p>Account number: <input type="number" name="account number" id="account number" placeholder="123-4567-890"></p>
+            <p>IFSC code: <input type="number" name="IFSC code" id="IFSC code" placeholder="ICIC00059"></p>
+            <p>Branch name: <input type="text" name="branch name" id="branch name" placeholder="gondia branch"></p>
+            <p>State name: <input type="text" name="state name" id="state name" placeholder="Maharastra"></p>
+        </div>
+        <div>
+            <p>Document Attatchment: <input type="file"></p>
+        </div>
+        <input type="submit">
+        <br>
+        <input type="reset">
+        
+    </form>
+</div>
+    
+</body>
+</html>
