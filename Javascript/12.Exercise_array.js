@@ -49,10 +49,69 @@ console.log(carectors.map(ch => {
 
 
 // 3. Get all total heights of all cractors
-const carectors.reduce((prevHeight , Charactor)=>{
-    return prevHeight + Number(carector.height);
-},0))
+const totalHight =  carectors.reduce((prevHeight , Charactor)=>{
+    return prevHeight + Number(Charactor.height);
+},0);
+
+// console.log(totalHight);
+
+
+// get charactors with mass greter then 100
+const greterThenMass = carectors.filter((character)=>{
+    return character.mass > 55
+});
+
+// console.log(greterThenMass);
 
 
 
+// get all male charectors
+const maleCh = carectors.filter(character => character.gender == 'male');
+console.log(maleCh);
 
+
+// sort by name
+const sortByname = carectors.sort((character1,character2) => {
+    if (character1.name < character2.name){
+        return -1;
+    }
+    if (character1.name > character2.name){
+        return 1;
+    }
+    return 0
+})
+
+
+// console.log(sortByname);
+
+// sort by gender
+
+const sortByGender = carectors.sort((character1,character2) => {
+    if (character1.gender < character2.gender){
+        return -1;
+    }
+    if (character1.gender > character2.gender){
+        return 1;
+    }
+    return 0
+})
+
+// console.log(sortByGender);
+
+
+
+// does every characoter have mass more then 40
+
+console.log(carectors.every((character) => character.mass > 40));
+
+
+
+// does every character have blue eyes?
+console.log(carectors.every((character)=> character.eye_color == "brown"))
+
+
+// is there at least one male charactore?
+console.log(carectors.some((character)=> character.gender));
+
+// is there at least one greter then 200?
+console.log(carectors.some((character)=> character.height > 100));
