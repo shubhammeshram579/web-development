@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list and table</title>
+    <style>
+        /* *{
+            padding: 0;
+            margin: 0;
+            text-transform: capitalize;
+        } */
+
+
+        ul li {
+            color: green;
+            text-transform: uppercase;
+            font-style: italic;
+            font-weight: 700;
+            /* background-color:; */
+            border: 1px solid black;
+            padding: 10px;
+            overflow: hidden;
+            margin: 5px;
+        }
+
+
+        .importance {
+            color: red;
+        }
+
+
+        li[class~="a"] {
+            color: black;
+        }
+
+
+        ol li{
+            color:red;
+            text-transform: uppercase;
+            text-align: left;
+            border: 1px solid black;
+            padding: 10px;
+            margin: 5px;
+            font-style: italic;
+            font-weight: 700;
+        }
+
+
+        .nasted_list li:hover{
+            color: green;
+
+        }
+        .nasted_list li:checked{
+            color: blue;
+
+        }
+
+        .nasted_list #ord{
+            color: black;
+
+        }
+
+
+        table,tr,td,th{
+            border: 2px solid rgb(116, 139, 10);
+            border-collapse: collapse;
+            padding: 10px;
+            margin: 30px;
+        }
+
+
+        table tr td{
+            color: rebeccapurple;
+            background-color: yellow;
+        }
+
+        table tr th{
+            background-color: black;
+            color: white;
+        }
+
+
+        #mi{
+            color: red;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>List and table</h1>
+    </div>
+
+    <div>
+        <h2>unorder list</h2>
+        <ul>
+            <li>Python</li>
+            <li>SQL</li>
+            <li class="a">Power bi</li>
+            <li class="importance">Excel</li>
+            <li class="a">ML AND DL</li>
+            <li class="a cb">Mongodb</li>
+        </ul>
+        <h2>order list</h2>
+        <ol>
+            <li>AWS</li>
+            <li>pandas</li>
+            <li>numpy</li>
+            <li class="nasted_list">Machine learning : <list>
+                    <ol type="a">
+                        <li>Sklearn</li>
+                        <li id="ord">OpenCV</li>
+                        <li>Tensolflow</li>
+                        <li>Keras</li>
+                    </ol>
+                </list>
+            </li>
+            <li>seaborn</li>
+            <li>matplotlib</li>
+        </ol>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>First_Name</th>
+                    <th>Last_Name</th>
+                    <th>Address</th>
+                    <th>JOb_title</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Shubham</td>
+                    <td>Meshram</td>
+                    <td>Pune</td>
+                    <td>Data Analyst</td>
+                    <td>15000</td>
+                </tr>
+                <tr>
+                    <td>Shubham</td>
+                    <td>Meshram</td>
+                    <td>Pune</td>
+                    <td>Data Analyst</td>
+                    <td>15000</td>
+                </tr>
+                <tr>
+                    <td>Shubham</td>
+                    <td>Meshram</td>
+                    <td>Pune</td>
+                    <td>Data Analyst</td>
+                    <td id="mi">1500</td>
+                </tr>
+                <tr>
+                    <td>Shubham</td>
+                    <td>Meshram</td>
+                    <td>Pune</td>
+                    <td>Data Analyst</td>
+                    <td>150</td>
+                </tr>
+                <tr>
+                    <td>Shubham</td>
+                    <td>Meshram</td>
+                    <td>Pune</td>
+                    <td>Data Analyst</td>
+                    <td>1500</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
