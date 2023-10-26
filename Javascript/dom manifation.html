@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipultion</title>
+</head>
+
+<body>
+<!-- unoder list -->
+    <ul>
+        <li>First Name</li>
+        <li>Second Name</li>
+        <li>Thried Name</li>
+    </ul>
+<!-- table for record data -->
+    <table>
+        <tr>
+            <td>first element</td>
+            <td>Second element</td>
+        </tr>
+        <tr>
+            <td>three element</td>
+            <td>forth element</td>
+        </tr>
+    </table>
+
+
+
+    <script>
+        //1.root mode
+        // console.log(document.documentElement)
+        // console.log(document.body)
+        // console.log(document.head)
+
+        //2. childer mode
+        // console.log(document.body.childNodes);
+        // console.log(document.body.children);
+        // console.log(document.body.firstChild);
+        // console.log(document.body.lastChild);
+        // console.log(document.body.firstElementChild);
+        // console.log(document.body.lastElementChild);
+
+
+        // console.log(document.body.children);
+        // option 1 using for loops
+        for (node of document.body.children) {
+            console.log(document.body.children)
+        }
+
+        // option 2 
+        const childrenofBody = Array.from(document.body.children);
+
+        console.log(childrenofBody);
+
+
+        // 3. sibling
+        const utag = document.body.children[0];
+        const firstli = utag.children[0];
+        const scondeli = utag.children[1];
+
+        console.log(scondeli.previousElementSibling.textContent);
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
