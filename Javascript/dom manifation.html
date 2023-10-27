@@ -8,13 +8,13 @@
 </head>
 
 <body>
-<!-- unoder list -->
-    <ul>
-        <li>First Name</li>
-        <li>Second Name</li>
-        <li>Thried Name</li>
+    <!-- unoder list -->
+    <ul id="element">
+        <li class="list-item">First Name</li>
+        <li class="list-item">Second Name</li>
+        <li class="list-item">Thried Name</li>
     </ul>
-<!-- table for record data -->
+    <!-- table for record data -->
     <table>
         <tr>
             <td>first element</td>
@@ -61,6 +61,62 @@
         const scondeli = utag.children[1];
 
         console.log(scondeli.previousElementSibling.textContent);
+
+        // part 2 dom table 
+
+        const tableTag = document.body.children[1]
+        // console.log(tableTag.tbodies[0].rows[0].cells[0].textContent)
+
+        console.log(tableTag.rows)
+
+
+
+        // id search
+        // Element.style.backround = "red"
+        // option 1 serche id 
+        const ulTag = document.getElementById("element")
+
+        ulTag.style.backgroundColor = "Red"
+
+        // option 2  by class
+        listItem = document.getElementsByClassName("list-item")
+        console.log(listItem)
+
+        console.log(document.getElementsByTagName("table"))
+
+
+
+        // selectore by css similet apply in js
+        const listiems = document.querySelector("list-item")
+        console.log(listiems)
+
+        const listiems_ = document.querySelectorAll("list-item")
+        console.log(listiems_)
+
+
+        const listiemss = document.querySelectorAll("#element")
+        console.log(listiemss)
+
+        // last consted selector 
+        const listite1 = document.querySelectorAll('ul > li:last-child')
+        console.log(listite1)
+
+        console.log(listite1[0].textContent)
+
+
+        // first contense text selectore
+        const listite2 = document.querySelectorAll('ul > li:Nth-child(1)')
+        console.log(listite2)
+
+        console.log(listite2[0].textContent)
+
+
+
+
+
+
+
+
 
 
 
