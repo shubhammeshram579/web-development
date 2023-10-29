@@ -7,14 +7,24 @@
     <title>DOM Manipultion</title>
 </head>
 
-<body>
-    <!-- unoder list -->
-    <ul id="element">
+<body id="body">
+    <!--1. unoder list -->
+    <ul id="element" data="valid">
         <li class="list-item">First Name</li>
         <li class="list-item">Second Name</li>
         <li class="list-item">Thried Name</li>
     </ul>
-    <!-- table for record data -->
+
+    <!--3. clear new div -->
+    <div id="firstDiv" class="Alldivs">First Dives</div>
+    <script>
+        // const allDivs = document.getElementsByClassName("Alldivs")
+        // console.log(allDivs)
+    </script>
+    <div class="Alldivs">Second Dives</div>
+
+
+    <!--2. table for record data -->
     <table>
         <tr>
             <td>first element</td>
@@ -25,6 +35,10 @@
             <td>forth element</td>
         </tr>
     </table>
+
+    <!-- 3. creating buttom -->
+    <!-- <button id="clickBtn" onclick="alert('shubham meshram')">click me</button> -->
+    <button id="clickBtn">click me</button>
 
 
 
@@ -44,71 +58,167 @@
 
 
         // console.log(document.body.children);
-        // option 1 using for loops
-        for (node of document.body.children) {
-            console.log(document.body.children)
+        // // option 1 using for loops
+        // for (node of document.body.children) {
+        //     console.log(document.body.children)
+        // }
+
+        // // option 2 
+        // const childrenofBody = Array.from(document.body.children);
+
+        // console.log(childrenofBody);
+
+
+        // // 3. sibling
+        // const utag = document.body.children[0];
+        // const firstli = utag.children[0];
+        // const scondeli = utag.children[1];
+
+        // console.log(scondeli.previousElementSibling.textContent);
+
+
+
+        // ******************
+        // //4.  part 2 dom table 
+
+        // const tableTag = document.body.children[1]
+        // // console.log(tableTag.tbodies[0].rows[0].cells[0].textContent)
+
+        // console.log(tableTag.rows)
+
+
+
+        // // 5. id search
+        // // Element.style.backround = "red"
+        // // option 1 serche id 
+        // const ulTag = document.getElementById("element")
+
+        // ulTag.style.backgroundColor = "Red"
+
+        // // option 2  by class
+        // listItem = document.getElementsByClassName("list-item")
+        // console.log(listItem)
+
+        // console.log(document.getElementsByTagName("table"))
+
+
+
+        // // 6. selectore by css similet apply in js
+        // const listiems = document.querySelector("list-item")
+        // console.log(listiems)
+
+        // const listiems_ = document.querySelectorAll("list-item")
+        // console.log(listiems_)
+
+
+        // const listiemss = document.querySelectorAll("#element")
+        // console.log(listiemss)
+
+        // // 7. last consted selector 
+        // // const listite1 = document.querySelectorAll('ul > li:last-child')
+        // // console.log(listite1)
+
+        // // console.log(listite1[0].textContent)
+
+
+        // 8. first contense text selectore
+        // const listite2 = document.querySelectorAll('ul > li:nth-child(1)')
+        // console.log(listite2)
+
+        // console.log(listite2[0].textContent)
+
+
+
+        // 9. div element
+        // console.log(allDivs)
+
+
+        //10. atributes in js
+        // console.log(element.id); 
+        // console.log(element.data);//output is undefinded
+
+        // console.log(element.getAttribute('data')) //get comment is find to data element
+        // console.log(element.setAttribute('order-placed','pending')) // set commet is replace to old element to new element
+        // console.log(element.getAttribute('order-placed'))
+        // console.log(element.hasAttribute('order-placed')) //has commnet is help match the data
+        // console.log(element.removeAttribute('order-placed'))
+        // console.log(element.attributes)
+
+
+
+        // 11. creating and removing the node element
+        // const newDiv = document.createElement('div')
+
+        // 1 meathod create text
+        // const newText = document.createTextNode('Namaste world')
+
+        // 2 meathod create text
+        // newDiv.textContent= "shubham meshram"
+
+        //  // 3 meathod create text
+        // newDiv.innerHTML = `<ul id="element" data="valid">
+        //     <li class="list-item">First Name</li>
+        //     <li class="list-item">Second Name</li>
+        //     <li class="list-item">Thried Name</li>
+        // </ul>`
+
+
+        // newDiv.appendChild(newText)
+        // body.append(newDiv)
+        // body.prepend(newDiv)
+        // body.before(newDiv)
+        // body.after(newDiv)
+        // firstDiv.replaceWith(newDiv)
+        // firstDiv.remove()
+
+        // body.append(newDiv)
+
+
+        // 12. events
+
+        // function callMe(){
+        //     alert("shubham peramanad meshram")
+        // }
+        // // clickBtn.onclick = callMe
+        // // clickBtn.onclick = function(){
+        // //     alert("labham meshram")
+        // // }
+
+        // clickBtn.addEventListener('click', callMe)
+        // clickBtn.addEventListener('click', function(){
+        //     alert("Acchal Meshram")
+        // })
+
+
+        // // delete callMe fuction
+        // clickBtn.removeEventListener('click', callMe)
+        // clickBtn.removeEventListener('click', function(){
+        //     alert("Acchal Meshram")
+        // })
+
+
+        // check butten function type
+        function callMe(event) {
+            console.log(event.type)
+            console.log(event.currentTarget)
+            console.log(event.clientY)
+            console.log(event.clientX)
+            alert("Thank for watching")
         }
 
-        // option 2 
-        const childrenofBody = Array.from(document.body.children);
+        clickBtn.addEventListener('click', callMe)
 
-        console.log(childrenofBody);
-
-
-        // 3. sibling
-        const utag = document.body.children[0];
-        const firstli = utag.children[0];
-        const scondeli = utag.children[1];
-
-        console.log(scondeli.previousElementSibling.textContent);
-
-        // part 2 dom table 
-
-        const tableTag = document.body.children[1]
-        // console.log(tableTag.tbodies[0].rows[0].cells[0].textContent)
-
-        console.log(tableTag.rows)
+        
 
 
 
-        // id search
-        // Element.style.backround = "red"
-        // option 1 serche id 
-        const ulTag = document.getElementById("element")
-
-        ulTag.style.backgroundColor = "Red"
-
-        // option 2  by class
-        listItem = document.getElementsByClassName("list-item")
-        console.log(listItem)
-
-        console.log(document.getElementsByTagName("table"))
 
 
 
-        // selectore by css similet apply in js
-        const listiems = document.querySelector("list-item")
-        console.log(listiems)
-
-        const listiems_ = document.querySelectorAll("list-item")
-        console.log(listiems_)
 
 
-        const listiemss = document.querySelectorAll("#element")
-        console.log(listiemss)
-
-        // last consted selector 
-        const listite1 = document.querySelectorAll('ul > li:last-child')
-        console.log(listite1)
-
-        console.log(listite1[0].textContent)
 
 
-        // first contense text selectore
-        const listite2 = document.querySelectorAll('ul > li:Nth-child(1)')
-        console.log(listite2)
-
-        console.log(listite2[0].textContent)
 
 
 
