@@ -1,0 +1,23 @@
+*{
+    /* margin: 0; */
+    /* padding: 0; */
+}
+
+
+body{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    text-align: justify;
+    text-transform: capitalize;
+    background-color: antiquewhite;
+}
+
+.skills{
+    color: green;
+}
+
+#second_h{
+    color: black;
+}

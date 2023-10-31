@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>job form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            height: 900px;
+            width: 700px;
+            border: 2px solid black;
+            padding: 20px;
+            text-transform: capitalize;
+            margin: auto;
+        }
+
+        .main-heading {
+            text-transform: uppercase;
+            color: darkmagenta;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .importance {
+            color: red;
+        }
+
+        .first-last p {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .buttens input{
+            padding: 10px ;
+            width: 100%;
+            margin: 10px;
+
+            
+        }
+
+        .buttens input:hover{
+            /* color: green; */
+            background-color: darkmagenta;
+        }
+
+        .input{
+            padding: 20px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <h1 class="main-heading">Job application Form </h1>
+        <div class="first-last">
+            <p>Please Fill Out the Form Below to Submit Your Job Application! <span class="importance">*</span></p>
+        </div>
+        <div class="first-last">
+            <p>First Name: <span class="importance">* </span><input type="text" name="first_name" id="first_name"
+                    placeholder="shubham" required> Last
+                Name: <span class="importance">* </span> <input type="text" name="last_name" id="last_name"
+                    placeholder="Meshram" required></p>
+        </div>
+        <div class="first-last">
+            <p>E-mail: <span class="importance">* </span> <input type="email" name="email" id="email"
+                    placeholder="www.gmail.com" required> Phone Number:
+                <input type="number" name="number" id="number">
+            </p>
+        </div>
+        <div class="first-last">
+            <p>Applied Position: <input type="text" name="Applied_postion" id="Applied_postion"> Earliar Possible Start
+                Date: <input type="date" name="date" id="date"></p>
+        </div>
+        <div class="first-last">
+            <p>Prepared Interview Date <input type="date" name="Prepared_date" id="Prepared_date"> Monday,Octuber 23
+                <input type="time" name="time" id="time">
+            </p>
+        </div>
+        <div class="first-last">
+            <p>Cover Latter: <textarea name="Cover latter" id="Cover latter" cols="90" rows="10"></textarea></p>
+        </div>
+        <div class="first-last">
+            <p>Upload Resume: * <input type="file" name="Upload Resume" id="Upload Resume" required></p>
+            <p>Any Other Documents to Upload: <input type="file" name="id_document" id="id_document"></p>
+        </div>
+        <div class="first-last">
+            <p><small>You can share certificates, diplomas etc</small></p>
+        </div>
+        <br>
+        <div class="buttens">
+            <input type="submit" value="Apply">
+            <br>
+            <input type="reset" value="Reset Form">
+        </div>
+
+    </form>
+</body>
+
+</html>
