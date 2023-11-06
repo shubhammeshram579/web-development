@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+        /* text contatent or sumary set overflow propeties */
+        .textoverflow {
+            border: 10px solid rgb(175, 46, 46);
+            text-align: justify;
+            text-transform: capitalize;
+            color: green;
+            height: 200px;
+            width: 500px;
+            padding: 10px;
+            overflow:scroll;
+        }
+
+        /* image boder ststyle and using oject-fit prperties for set cover image fill image etc.. */
+        .image {
+            border: 4px solid red;
+            height: 220px;
+            width: 220px;
+            margin: 10px;
+
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+
+        }
+
+
+        /* speciticity it's help to firt code i run then i apllye second time code run not excute old code only execute last line code like this run time 1st */
+        .special_contaence {
+            color: red;
+            font-size: 30px;
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+
+        /* this is second time run code then it is woring */
+        .special_contaence {
+            color: green;
+        }
+
+        /* it is most importance in speciticity i am applying !importance then this final executed code and all css old executed code is not execute it is power of !importance  */
+        .special_dd p {
+            color: rgb(149, 0, 255) !important;
+        }
+
+
+        /* inherifited */
+
+        body{
+            color: green;
+        }
+
+
+        .inharited{
+            color: inherit;
+        }
+
+        .intail{
+            color: initial;
+        }
+
+        .uset{
+            color: unset;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>practics second time 2</h1>
+    <hr>
+    <h2>box overflow</h2>
+    <p class="textoverflow">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam voluptas laudantium itaque
+        iure dolorem officia ipsam quisquam, saepe aliquam repellat! Placeat, quaerat libero earum atque nostrum
+        doloremque temporibus in perspiciatis veniam sit, expedita voluptatibus. Modi facere, quis nobis recusandae unde
+        accusamus ipsa commodi eaque aspernatur minima nulla amet? Consequatur ad ipsam repellat cupiditate illo commodi
+        itaque pariatur ipsa! Nemo natus possimus harum officia aliquam hic dolores nobis, amet, voluptate aperiam atque
+        vel placeat fugiat praesentium beatae consectetur maiores eaque soluta numquam? Facere voluptate blanditiis
+        mollitia rem, rerum ipsum libero aut, quibusdam sequi totam adipisci iusto, eius quos nemo corporis velit!</p>
+    <hr>
+    <div>
+        <h2>image object fit properties use</h2>
+        <img class="image" src="/2.jpg" alt="this my image">
+    </div>
+    <hr>
+    <div class="special_dd">
+        <h2>specificity in css</h2>
+        <!-- i am styling on my code line then in execute and any css styling is not exetuted -->
+        <!-- <p class="special_contaence" style="color:rgb(42, 124, 165);">this is my first it couse</p> -->
+        <p class="special_contaence">this is my first it couse</p>
+    </div>
+    <hr>
+
+    <h2>inherited</h2>
+    <ul>
+        <li class="inharited">inharited<a href="">link</a>color1</li>
+        <li class="intail">intail<a href="">link</a>color1</li>
+        <li class="uset">uset<a href="">link</a>color1</li>
+    </ul>
+
+
+
+</body>
+
+</html>
