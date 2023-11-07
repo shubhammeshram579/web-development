@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            border: 5px solid rgb(129, 20, 127);
+            padding: 20px;
+            margin: auto;
+            height: 1000px;
+            width: 800px;
+        }
+
+        .mainheading {
+            color: black;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 1px 1px red;
+            padding-bottom: 10px;
+        }
+
+        div p {
+            text-transform: capitalize;
+            padding: 10px;
+            margin: 10px;
+            color: black;
+            text-shadow: 1px 0px red;
+            width: 100%;
+        }
+
+        /* input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="password"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 6px;
+        } */
+
+
+        /* span{
+            color: green;
+            background-color: yellow;
+        } */
+
+        .btnp {
+            background-color: rgb(165, 42, 155);
+            color: yellow;
+            width: 100%;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .btnp:hover {
+            background-color: green;
+            color: yellow;
+        }
+
+        .btnr {
+            background-color: rgb(165, 42, 155);
+            color: yellow;
+            width: 100%;
+            padding: 10px;
+            margin: 10px;
+
+        }
+
+        .btnr:hover {
+            background-color: red;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <head>
+        <h1 class="mainheading">Customers Details</h1>
+    </head>
+    <hr>
+    <form action="">
+        <div>
+            <p>First Name: <span>*</span> <input type="text" name="first_name" id="first_name" required
+                    placeholder="Shubham"></p>
+        </div>
+        <div>
+            <p>Last name : * <input type="text" name="Last_name" id="Last_name" required placeholder="Meshram"></p>
+        </div>
+
+        <div>
+            <fieldset>
+                <legend>Gender : *</legend>
+                <p class="setmarhin">Male<input type="radio" name="Gender" id="Male" required>Female<input type="radio"
+                        name="Gender" id="Female" required></p>
+            </fieldset>
+        </div>
+
+
+        <div>
+            <p>Email : <input type="email" name="email" id="email"></p>
+        </div>
+        <div>
+            <p>Contract Number : <input type="number" name="number" id="number"></p>
+        </div>
+        <div>
+            <p>Address Details : <textarea name="Address" id="Address_Details" cols="100" rows="5"></textarea></p>
+        </div>
+        <div>
+            <p>Pin Code : <input type="number" name="number" id="pin_code" placeholder="123456"></p>
+        </div>
+        <hr>
+        <h1 class="mainheading">Payment Details</h1>
+        <hr>
+        <div>
+            <p>Account type : <select name="card_type" id="card_type">
+                    <option value="">--Select_card_type--</option>
+                    <option value="Visa">Visa</option>
+                    <option value="Rupay">Rupay</option>
+                    <option value="Marter_card">Master_card</option>
+                </select></p>
+        </div>
+
+        <div>
+            <p>Card number : * <input type="number" name="card_number" id="card_number" required
+                    placeholder="1234566789"></p>
+        </div>
+        <div>
+            <p>IFSC code : * <input type="text" name="Ifsc_code" id="Ifsc_code" required placeholder="ICIC00059"></p>
+        </div>
+        <div>
+            <p>Cvv: <input type="password" name="css" id="css"></p>
+        </div>
+        <div>
+            <p>
+                Expiry Date : <input type="date" name="date" id="EPR_date">
+            </p>
+        </div>
+        <div>
+            <p>Aadhar documnent: * <input type="file" name="documnent" id="documnent" required></p>
+        </div>
+        <div>
+            <input class="btnp" type="submit" value="Pay Now">
+            <input class="btnr" type="reset">
+        </div>
+
+
+    </form>
+
+</body>
+
+</html>
