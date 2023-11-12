@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>respomsive layout</title>
+    <style>
+        /* set universh margin and padding */
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* change backround color  */
+
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #ccc;
+        }
+
+        
+        /* article,
+        aside,
+        figure,
+        header,
+        footer,
+        hgroup,
+        menu,
+        section{
+            display: block;
+        } */
+
+
+        /* set heading margin */
+
+        h2{
+            margin: 0 0 20px 0;
+        }
+
+
+        /* person name set width and float */
+        #sidebar{
+            width: 38%;
+            float: left;
+        }
+
+        #sidebar{
+            list-style: none;
+        }
+
+        /* chage style and list element */
+        #sidebar ul li a{
+            text-decoration: none;
+            color: red;
+            padding: 3px;
+            display: block;
+        }
+
+        /* media query for page marhin is 100px then showing email text */
+        @media all and (min-width:100px) {
+            #sidebar ul li a:after{
+                content: "("attr("data-email")")";
+                font-size: 11px;
+                font-style: italic;
+                color: #666;
+            }
+        }
+
+
+        /* meadia query for 1000px and 700px then only sowing email  */
+        @media all and (max-width:1000px) and (min-width:700px) {
+            #sidebar ul li a:before {
+                content: "Email:";
+                font-size: 11px;
+                font-style: italic;
+                color: #666;
+            }
+        }
+
+        /* meadia query for 699 to 524px range area then imag and all email and text element show */
+        @media all and (max-width:699px) and (min-width: 524px), (min-width:1114px) {
+            #sidebar ul li a{
+                padding: 21px;
+                background:url(email.png) left center no-repeat;
+            }
+            
+        }
+
+        /* summary element contan style text align  */
+        #maincontan{
+            width: 65%;
+            float: right;
+            text-align:  justify;
+        }
+
+        /* set page padding and margin */
+        html{
+            padding: 50px;
+            margin: 10px;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <!-- <h1>practice respomsive day 2</h1> -->
+    <div id="footerbar">
+        <div id="sidebar">
+            <h2>Sp pvl ltd</h2>
+            <ul id="nav">
+                <li> <a data-email="Shubhammeshram579@gmail.com" href="Shubhammeshram579@gmail.com">Shubham Meshram</a>
+                </li>
+                <li><a data-email="Pallavipm13112002@gmail.com" href="Shubhammeshram579@gmail.com">Pallavi Meshram</a>
+                </li>
+            </ul>
+        </div>
+        <div id="maincontan">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, non dolorem. Doloremque, quia voluptas.
+                Quasi quo consequuntur sequi similique perspiciatis eius suscipit commodi, rem laboriosam, molestias
+                quas, cumque sint? Nam suscipit assumenda ea, laborum quisquam provident totam illo tempore et alias
+                rerum praesentium ullam neque voluptatem corporis consequuntur, mollitia cumque soluta quam ipsam vel,
+                placeat eligendi. Est excepturi nisi voluptates earum officia neque ea eius, sint odio praesentium
+                voluptatibus error blanditiis, laboriosam laudantium soluta doloribus iste rem corporis, mollitia maxime
+                rerum molestias repellendus quis. Dolores, quisquam amet cum, laboriosam tempora quae deserunt facilis
+                sapiente impedit eaque, tempore debitis eligendi numquam?</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
 </head>
+
 <body>
     <h1>varibales in javascripts</h1>
 
@@ -64,7 +66,7 @@
 
         // // camelclass
         // let first_name = "shubham"
-        
+
         // // pascalcase
         // let last_name = "meshram"
 
@@ -106,37 +108,73 @@
 
 
         // day 2
-        // create varible let const and var
-        var tupple = (1,34,5,"shubham")
-        let list_of_arr = [1,2,3,4,5];
-        const object_of_arr = ["shubham","meshram","gondia"];
-        const object_of_object = {name: "shubham",salary: 15000,city:"gondia"}
+        // // create varible let const and var
+        // var tupple = (1, 34, 5, "shubham")
+        // let list_of_arr = [1, 2, 3, 4, 5];
+        // const object_of_arr = ["shubham", "meshram", "gondia"];
+        // const object_of_object = { name: "shubham", salary: 15000, city: "gondia" }
 
-        console.log(list_of_arr);
-        console.log(typeof list_of_arr);
-        console.log(object_of_arr);
-        console.log(typeof object_of_arr);
-        console.log(object_of_object);
-        console.log(typeof object_of_object);
-
-
-
-        var name = "shubham";
-        var name2 = "Meshram";
-        var age = 25;
-
-        // declearing varibles
-        var this_my_name;
-
-        // / taking input from user
-        this_my_name = prompt("check your name");
-
-        // output to user
-        alert(name+' '+ name2+ ' '+ age + ' '+ this_my_name)
+        // console.log(list_of_arr);
+        // console.log(typeof list_of_arr);
+        // console.log(object_of_arr);
+        // console.log(typeof object_of_arr);
+        // console.log(object_of_object);
+        // console.log(typeof object_of_object);
 
 
+
+        // var name = "shubham";
+        // var name2 = "Meshram";
+        // var age = 25;
+
+        // // declearing varibles
+        // var this_my_name;
+
+        // // / taking input from user
+        // this_my_name = prompt("check your name");
+
+        // // output to user
+        // alert(name + ' ' + name2 + ' ' + age + ' ' + this_my_name)
+
+
+        // day 3 
+        var tupples = (1, 23, 44, 6);
+        let list_and_arr = [1, 2, 3, 4, 5, 6, 4];
+        const object_o = {
+            brand: "dell",ram: 8,storage: 512,price: 70000
+        };
+        var object_oo = {
+            name:"shubham",propfil:"data abalyst",salary: 150000
+        };
+
+        console.log(list_and_arr);
+        console.log(typeof list_and_arr);
+
+        // slicing and indexig
+        console.log(list_and_arr[0]);
+        console.log(list_and_arr[list_and_arr.length-1]);
+        console.log(list_and_arr.slice(2,4));
+
+
+        console.log(object_o);
+        console.log(typeof object_o);
+
+        // change in object name like dell to lenovo
+        object_o.brand = "lenovo"
+        object_oo.name = "labham"
+
+
+        var laptop;
+
+        laptop = prompt("this is dell laptop brand")
+
+        alert(object_o + ' '+ "details"+ ' '+ laptop)
+
+
+        
 
 
     </script>
 </body>
+
 </html>
