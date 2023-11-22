@@ -216,4 +216,124 @@ span{
     margin-right: 1rem;
 }
 
+/* food pannal */
+
+footer{
+    margin-top: 15px;
+}
+
+
+.foot-pannal {
+    background-color: #37475a;
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.foot-pannal2{
+    background: #232f3e;
+    color: white; 
+    height: 450px;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul a{
+    display: block;
+    font-size: 15px;
+    padding-top: 9px;
+    
+}
+
+ul p{
+    font-weight: 700;
+    font-size: 18px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+ul a:hover{
+    text-decoration: underline;
+}
+
+
+/* foot-pannal3 */
+
+.foot-panall3{
+    background: #232f3e;
+    border-top: 1px solid white;
+    height: 80px;
+    display: flex;
+    justify-content:center;
+    align-items:center; 
+}
+
+.logo1 img{
+    height: 50px;
+    padding-right: 150px;
+    padding-top: 10px;
+}
+
+
+.pannal3 i{
+    color:#cccccc;
+    font-size: 14px;
+}
+
+#arrow{
+    font-size: 10px;
+    color: gray;
+}
+
+.pannal3 span{
+    color:#cccccc;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.pannal3{
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid white;
+    margin: 10px;
+}
+
+.paddings img{
+    margin-right: 7px;
+}
+
+/* pannal 4  */
+
+.pannal4{
+    background:#131A22;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    /* margin-right: 10px; */
+}
+
+.pa4{
+    margin-right: 10px;
+}
+
+.pa4:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
 
