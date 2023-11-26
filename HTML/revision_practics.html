@@ -6,32 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
-        *{
+        * {
             padding: 0px;
             margin: 0px;
         }
+        body{
+            background-color: rgba(188, 202, 205, 0.742);
+        }
 
         /* styling navbar */
-        nav{
+        nav {
             background-color: rgb(25, 24, 24);
             padding: 10px;
         }
 
-        nav a{
-            color:yellow;
+        nav a {
+            color: yellow;
             padding: 10px;
             text-transform: capitalize;
             text-decoration: none;
         }
 
-        nav a:hover{
+        nav a:hover {
             border: 1px solid yellow;
         }
 
 
         /* styling main heading */
-        h1{
+        h1 {
             text-align: left;
             text-transform: uppercase;
             font-size: 23px;
@@ -40,7 +42,7 @@
         }
 
         /* summary styling */
-        .summary{
+        .summary {
             text-align: justify;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             padding: 10px;
@@ -48,7 +50,7 @@
         }
 
         /* styling unorder  and order list header */
-        .list-heading{
+        .list-heading {
             text-align: left;
             text-transform: uppercase;
             text-shadow: 1px 1px yellow;
@@ -57,17 +59,121 @@
         }
 
         /* styling unorder list  */
-        .list{
+        .list {
             text-transform: capitalize;
             padding: 20px;
         }
 
-        .list li{
+        .list li {
             background-color: rgba(188, 202, 205, 0.844);
             margin: 10px;
             padding: 10px;
         }
 
+        /* all heading styling h5  */
+        h5 {
+            text-align: left;
+            text-transform: uppercase;
+            text-shadow: 1px 1px yellow;
+            background-color: rgba(205, 188, 188, 0.742);
+            padding: 10px;
+            margin: 10px;
+        }
+
+        /* styling hyperlike */
+        .hyperlink-notes a {
+            color: black;
+            text-decoration: none;
+            padding: 5px;
+            margin-left: 10px;
+            background-color: rgba(188, 202, 205, 0.844);
+        }
+
+        /* styling image */
+        .image img {
+            height: 220px;
+            padding: 5px;
+            margin: 5px;
+            border: 7px solid blueviolet;
+            border-radius: 30px 100px 2px;
+            object-fit: cover;
+
+        }
+
+        /* styling video */
+        .video-styling video {
+            height: 220px;
+            /* padding: 5px; */
+            margin: 5px;
+            border: 7px solid blueviolet;
+            border-radius: 10px;
+            object-fit: cover;
+
+        }
+
+
+        /* iframe styling  */
+        .iframe-styling iframe {
+            height: 220px;
+            padding: 5px;
+            margin: 5px;
+            border: 7px solid blueviolet;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+
+        /* styling table */
+        table,
+        tr,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: 10px;
+            margin: 10px;
+            text-transform: capitalize;
+        }
+
+        table tr th {
+            text-shadow: 1px 1px yellow;
+            font-weight: 700;
+        }
+
+        /* form styling */
+        form {
+            padding: 10px;
+            /* margin: 10px; */
+        }
+
+        form div p {
+            margin: 10px;
+        }
+
+        form div fieldset {
+            margin: 10px;
+        }
+
+        fieldset legend {
+            margin: 10px;
+        }
+
+        /* butten styling */
+        .butten input{
+            padding: 10px;
+            width: 100%;
+            margin: 10px;
+            text-shadow: 1px 1px yellow;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            
+        }
+
+        .butten input:hover{
+            background-color: rgba(137, 43, 226, 0.807);
+        }
     </style>
 </head>
 
@@ -89,14 +195,14 @@
     <h5>revision practise</h5> -->
     <hr>
     <!--paragrap summary -->
-    <p class="summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic inventore saepe repudiandae molestias quasi autem
+    <p class="summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic inventore saepe repudiandae
+        molestias quasi autem
         culpa explicabo? Laboriosam, repellendus. Dicta error nesciunt asperiores est suscipit quas corrupti quam, earum
         vel cupiditate labore. Deleniti ullam porro quibusdam accusantium accusamus ab earum autem, harum vero non
         labore nulla dolor ipsam neque sapiente suscipit dignissimos optio consequatur rerum. Numquam, assumenda autem
         alias quibusdam id quod laudantium cumque iusto est odit! Assumenda adipisci est cumque fugiat quae, officia nam
         quas blanditiis, suscipit error modi incidunt dolorum explicabo saepe ea quaerat repudiandae eaque totam
         deserunt voluptas. Aspernatur corrupti, dignissimos obcaecati molestias earum enim ut deleniti?</p>
-    <hr>
     <!-- unoder list -->
     <h5 class="list-heading">unorder list</h5>
     <ul class="list">
@@ -114,39 +220,41 @@
         <li>seaborn</li>
         <li>sklearn</li>
     </ol>
-    <hr>
     <!-- hyperlink -->
-    <h5>hyperlink like website link</h5>
-    <a href="www.google.com" target="_blank">Google</a>
-    <br>
-    <a href="www.google.com" target="_blank">Gmail</a>
-    <br>
-    <a href="www.google.com" target="_blank">Github</a>
-    <hr>
+    <div class="hyperlink-notes">
+        <h5>hyperlink like website link</h5>
+        <a href="www.google.com" target="_blank">Google</a>
+        <a href="www.google.com" target="_blank">Gmail</a>
+        <a href="www.google.com" target="_blank">Github</a>
+    </div>
     <!-- Document notes -->
-    <h5>Document notes</h5>
-    <a href="notes/1.jpg" target="_blank">Notes 1</a>
-    <a href="notes/2.jpg" target="_blank">Notes 1</a>
-    <a href="notes/3.jpg" target="_blank">Notes 1</a>
-    <hr>
+    <div class="hyperlink-notes">
+        <h5>Document notes</h5>
+        <a href="notes/1.jpg" target="_blank">Notes 1</a>
+        <a href="notes/2.jpg" target="_blank">Notes 2</a>
+        <a href="notes/3.jpg" target="_blank">Notes 3</a>
+    </div>
     <!-- image -->
-    <h5>Image section</h5>
-    <img src="notes/1.jpg" alt="this is image1" height="330">
-    <img src="notes/2.jpg" alt="this is image2" height="330">
-    <img src="notes/3.jpg" alt="this is image3" height="330">
-    <hr>
+    <div class="image">
+        <h5>Image section</h5>
+        <img src="notes/2.jpg" alt="this is image1">
+        <img src="notes/2.jpg" alt="this is image2">
+        <img src="notes/2.jpg" alt="this is image3">
+    </div>
     <!-- video -->
-    <h5>video section</h5>
-    <video src="video/video.mp4" controls muted loop height="250"></video>
-    <video src="video/video.mp4" controls muted loop height="250"></video>
-    <video src="video/video.mp4" controls muted loop height="250"></video>
-    <hr>
+    <div class="video-styling">
+        <h5>video section</h5>
+        <video src="video/video.mp4" controls muted loop height="250"></video>
+        <video src="video/video.mp4" controls muted loop height="250"></video>
+        <video src="video/video.mp4" controls muted loop height="250"></video>
+    </div>
     <!-- link video section like iframe -->
-    <h5>iframe</h5>
-    <iframe src="notes/2.jpg" frameborder="0" height="330" width="330"></iframe>
-    <iframe src="notes/2.jpg" frameborder="0" height="330" width="330"></iframe>
-    <iframe src="notes/2.jpg" frameborder="0" height="330" width="330"></iframe>
-    <hr>
+    <div class="iframe-styling">
+        <h5>iframe</h5>
+        <iframe src="notes/2.jpg" frameborder="0" height="330" width="330"></iframe>
+        <iframe src="notes/2.jpg" frameborder="0" height="330" width="330"></iframe>
+        <iframe src="notes/2.jpg" frameborder="0" height="330" width="330"></iframe>
+    </div>
     <!-- table create  -->
     <h5>table</h5>
     <table>
@@ -158,6 +266,7 @@
                 <th>Salary</th>
             </tr>
         </thead>
+
         <body>
             <tr>
                 <td>Pallavi</td>
@@ -188,22 +297,24 @@
             <td colspan="4">Total 4</td>
         </tfoot>
     </table>
-    <hr>
     <!-- payment form -->
     <h1>Importance form</h1>
     <h5>customer details</h5>
     <form action="">
         <!-- cuatomer name -->
         <div>
-            <p>First_name: <span>*</span> <input type="text" name="name" id="First_name" required placeholder="shubham"></p>
-            <p>Last_name: <span>*</span> <input type="text" name="name" id="Last_name" required placeholder="meshram"></p>
+            <p>First_name: <span>*</span> <input type="text" name="name" id="First_name" required placeholder="shubham">
+            </p>
+            <p>Last_name: <span>*</span> <input type="text" name="name" id="Last_name" required placeholder="meshram">
+            </p>
         </div>
         <!-- customer gender -->
         <div>
             <fieldset>
-            <legend>gender</legend>
-            <p>male: <input type="radio" name="gender" id="male">female: <input type="radio" name="gender" id="female"></p>
-        </fieldset>
+                <legend>gender</legend>
+                <p>male: <input type="radio" name="gender" id="male">female: <input type="radio" name="gender"
+                        id="female"></p>
+            </fieldset>
         </div>
         <!-- contract details -->
         <div>
@@ -215,30 +326,33 @@
         <div>
             <p>Address: <textarea name="address" id="address" cols="60" rows="5"></textarea></p>
             <p>City: <select name="city" id="city">
-                <option value="#">--select city--</option>
-                <option value="gondia">gondia</option>
-                <option value="nagpur">nagpur</option>
-            </select></p>
+                    <option value="#">--select city--</option>
+                    <option value="gondia">gondia</option>
+                    <option value="nagpur">nagpur</option>
+                </select></p>
         </div>
         <hr>
         <!-- payment form -->
         <h5>payment form</h5>
         <div>
             <p>Bank Name: <select name="" id="">
-                <option value="#">--select bank--</option>
-                <option value="BOI">BOI</option>
-                <option value="SBI">SBI</option>
-                <option value="ICICI">ICICI</option>
-            </select></p>
-            <p>Account number: <input type="number" name="account number" id="account number" placeholder="1234567890"></p>
+                    <option value="#">--select bank--</option>
+                    <option value="BOI">BOI</option>
+                    <option value="SBI">SBI</option>
+                    <option value="ICICI">ICICI</option>
+                </select></p>
+            <p>Account number: <input type="number" name="account number" id="account number" placeholder="1234567890">
+            </p>
             <p>IFSC code: <input type="password" name="ifsc code" id="ifsc code"></p>
         </div>
         <div>
             <p>Pan card: <input type="file" name="Document" id="Document"></p>
         </div>
         <!-- create button -->
-        <input type="submit" value="Submit form">
-        <input type="reset" value="Reset form">
+        <div class="butten">
+            <input type="submit" value="Submit form">
+            <input type="reset" value="Reset form">
+        </div>
     </form>
 
 </body>
