@@ -42,7 +42,7 @@ body::-webkit-scrollbar-thumb{
 #cursor-blur{
     height: 400px;
     width: 400px;
-    background-color:#96c11e3c;
+    background-color:#96c11e74;
     border-radius: 50%;
     position: fixed;
     filter: blur(50px);
@@ -66,6 +66,10 @@ body::-webkit-scrollbar-thumb{
 
 #nav img{
     height: 50px;
+}
+#nav h4:hover{
+  color: #95c11e;
+
 }
 
 #nav{
@@ -517,6 +521,19 @@ video{
     margin-bottom: 8px;
   }
 
+  #f2 h3:hover{
+    color: #fff;
+  }
+
+  
+  #f3 h3:hover{
+    color: #fff;
+  }
+
+  
+  #f4 h4:hover{
+    color: #fff;
+  }
 
 
 
