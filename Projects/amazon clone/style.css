@@ -167,16 +167,16 @@ span{
 
 
 
-
-  /* .carousel{
+/* 
+.carousel{
     background-image:image-set("1.jpg");
     background-size: cover;
     height: 350px;
     display: flex;
     justify-content:  center;
     align-items: flex-end;
-  } */
-/* 
+  } 
+
   .carousel-cell {
     width: 100%;
     margin-right: 10px;
@@ -184,8 +184,7 @@ span{
 
   .carousel img{
     width: 100%;
-  } */
-  
+  }  */
 
 
 

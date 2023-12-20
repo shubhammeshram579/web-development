@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revision 18 dec 2023</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        header h1 {
+            text-align: center;
+            text-transform: capitalize;
+            text-shadow: 1px 1px red;
+            padding:10px;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: capitalize;
+            text-shadow: 1px 1px red;
+            padding:10px;
+        }
+
+        nav{
+            background-color: black;
+            padding: 10px;
+        }
+        nav a{
+            color:yellow;
+            text-decoration: none;
+            padding: 5px;
+            font-weight: 800;
+            text-transform: capitalize;
+        }
+
+        nav a:hover{
+            border: 2px solid yellow;
+        }
+
+        .about-section{
+            background-color: rgb(80, 144, 158);
+        }
+
+        .about-section p{
+            text-align: justify;
+            padding:10px;
+            font-size: 18px;
+        }
+
+
+        .link{
+            display: flex;
+            flex-direction: row;
+            text-align: left;
+            justify-content: left;
+            padding: 5px;
+            /* background-color: black; */
+            border-bottom: 1px solid black;
+            background-color: black;
+            margin-bottom: 10px;
+        }
+
+        .link a{
+            padding: 2px;
+            text-transform: capitalize;
+            text-decoration: none;
+            color: yellow;
+            margin: 5px;
+            background-color: black;
+            /* border-radius: 5px; */
+        }
+
+        .link a:hover{
+            border: 2px solid yellow;
+        }
+
+
+        .documents {
+            display: flex;
+            flex-direction: row;
+            text-align: left;
+            justify-content: left;
+            padding: 5px;
+            /* background-color: black; */
+            border-bottom: 1px solid black;
+            background-color: black;
+
+        }
+
+        .documents a{
+            padding: 2px;
+            text-transform: capitalize;
+            text-decoration: none;
+            color: yellow;
+            margin: 5px;
+            background-color: black;
+            /* border-radius: 5px; */
+        }
+
+        .documents a:hover{
+            border: 2px solid yellow;
+        }
+
+        ul{
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            float: left;
+        }
+        ul li{
+            background-color: rgb(80, 144, 158);
+            margin: 10px;
+            text-transform: capitalize;
+            list-style: none;
+            padding-right: 700px;
+            
+        }
+        
+        ol{
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            /* float: left; */
+        }
+        ol li{
+            background-color: rgb(80, 144, 158);
+            margin: 10px;
+            text-transform: capitalize;
+            list-style: none;
+            /* padding-left: 250px; */   
+        }
+
+        .image{
+            align-items: center;
+            justify-content:space-evenly;
+            
+        }
+
+        .image img{
+            border: 5px solid rgb(97, 97, 74);
+            object-fit: cover;
+            margin: 10px;
+            border-radius: 50%;
+            margin-left: 100px;
+        }
+
+        .video-tag{
+            margin-left: 100px;
+            padding-top: 50px;
+            padding: 20px;
+        }
+
+
+        .video-tag video{
+            border: 3px solid rgb(97, 97, 74);
+        }
+
+        .youtube-video{
+            margin-left: 100px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .youtube-video iframe{
+            padding: 20px;
+            border: 3px solid rgb(97, 97, 74);
+        }
+
+
+        table,tr,th,td{
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            margin: auto;
+        }
+
+        table tr th{
+            background-color: black;
+            color: yellow;
+        }
+
+        table tr td{
+            background-color: rgb(80, 144, 158);
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- heading tag -->
+    <header>
+        <h1>Personal Information</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">content</a>
+        <a href="#">Address</a>
+    </nav>
+    <!-- <h2>heading 1</h2>
+    <h3>heading 1</h3>
+    <h4>heading 1</h4> -->
+
+
+
+    <!-- about tag -->
+    <div class="about-section">
+        <p>Lorem ipsum dolor sit amet, <small>consectetur adipisicing elit.</small> Cum maxime perspiciatis
+            <b>corrupti</b> aut iure voluptatibus dolorum illum, amet vero eum doloribus minima non enim dignissimos
+            dolorem impedit tempore deserunt sunt? Aliquam culpa voluptatem omnis possimus nihil consectetur in,
+            voluptates et hic voluptatibus sed dolor <sub>120</sub> tenetur. Ipsam, sit ex earum corporis et soluta
+            provident, consequuntur sapiente pariatur dolores nostrum <sup>10</sup> cumque ratione vel tenetur in
+            dignissimos ut eveniet beatae voluptatum? Architecto quis beatae animi dolores ipsum, sit sint iure labore
+            rerum dolorem omnis perspiciatis aut, <span><b>my name is shubham</b></span>obcaecati dolor reiciendis quasi
+            dignissimos provident. Maiores atque est, incidunt maxime et fugit libero distinctio at repellat?
+        </p>
+    </div>
+    <!-- link tag -->
+    <div class="link">
+        <a href="www.google.com" target="_blank">Google</a>
+        <a href="www.github.com" target="_blank">github</a>
+        <a href="www.gmail.com" target="_blank">gmail</a>
+    </div>
+
+    <!-- document tag -->
+    <div class="documents">
+        <a href="notes/1.jpg" target="_blank">notes 1</a>
+        <a href="notes/2.jpg" target="_blank">notes 2</a>
+        <a href="notes/3.jpg" target="_blank">notes 3</a>
+    </div>
+    <!-- unorder list -->
+    <ul>
+        <tr>
+            <li>python</li>
+            <li>sql</li>
+            <li>excel</li>
+            <li>power bi</li>
+        </tr>
+    </ul>
+    <!-- order list  -->
+    <ol>
+        <tr>
+            <li>pandas</li>
+            <li>numpy</li>
+            <li>sklearn</li>
+            <li>ML</li>
+        </tr>
+    </ol>
+    <!-- image tag -->
+    <div class="image">
+        <h1>Image Tag</h1>
+        <img src="notes/2.jpg" alt="this my image" height="220">
+        <img src="notes/2.jpg" alt="this my image" height="220">
+        <img src="notes/2.jpg" alt="this my image" height="220">
+        <img src="notes/2.jpg" alt="this my image" height="220">
+    </div>
+
+    <div class="video-tag">
+        <h1>Video Tag</h1>
+        <video src="video/video.mp4" controls loop muted height="230"></video>
+        <video src="video/video.mp4" controls loop muted height="230"></video>
+        <video src="video/video.mp4" controls loop muted height="230"></video>
+    </div>
+    <!-- iframe tag -->
+    <div class="youtube-video">
+        <h1>Iframe Tag</h1>
+        <iframe width="400" height="230" src="https://www.youtube.com/embed/wdwKfcf4TfU?si=cVJ_5ajHXKhbqAtv"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        <iframe width="400" height="230" src="https://www.youtube.com/embed/wdwKfcf4TfU?si=cVJ_5ajHXKhbqAtv"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        <iframe width="400" height="230" src="https://www.youtube.com/embed/wdwKfcf4TfU?si=cVJ_5ajHXKhbqAtv"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
+    <!-- table tag -->
+    <table>
+        <tr>
+            <th>First name</th>
+            <th>Last Name</th>
+            <th>contract</th>
+            <th>address</th>
+            <th>salary</th>
+        </tr>
+
+        <body>
+            <tr>
+                <td>shubham</td>
+                <td>Meshram</td>
+                <td>7038956822</td>
+                <td>gondia</td>
+                <td>700000</td>
+            </tr>
+            <tr>
+                <td>Pallavi</td>
+                <td>Meshram</td>
+                <td>7038956822</td>
+                <td>gondia</td>
+                <td>50000</td>
+            </tr>
+            <tr>
+                <td>Labham</td>
+                <td>Meshram</td>
+                <td>7038956822</td>
+                <td>gondia</td>
+                <td>90000</td>
+            </tr>
+            <tr>
+                <td>aachal</td>
+                <td>Meshram</td>
+                <td>7038956822</td>
+                <td>gondia</td>
+                <td>80000</td>
+            </tr>
+        </body>
+        <tfoot>
+            <th colspan="5">Total salary:</th>
+        </tfoot>
+    </table>
+
+
+
+
+
+</body>
+
+</html>
