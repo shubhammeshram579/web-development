@@ -72,6 +72,115 @@ list3.pop()
 console.log(list3);
 console.log(list2);
 
+// 5 cantional if else else if
+
+if (100 > 120){
+    console.log("true")
+}
+else if (1200 < 1000){
+    console.log("false")
+}
+else if (1200 == 1200){
+    console.log("equel")
+}
+else{
+    console.log("not match")
+}
+
+// 6 fuction in js
+
+function name(a){
+    console.log(a);
+};
+
+name("hello words");
+
+function abs(a,b,c){
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+abs(12,23,45);
+
+// for loops
+
+var lops1 = [1,2,3,4,5,6,7,8,9];
+
+for (var i in lops1){
+    console.log(i);
+};
+
+for (var key of lops1){
+    console.log(key)
+}
+
+for (var i=0; i<10; i++){
+    console.log(i)
+}
+
+for (var i=25; i<51; i++){
+    console.log(i)
+}
+
+
+// while loops
+
+var w = 0;
+
+while (w < 10) {
+    w++;
+}
+
+var a = 12;
+
+while (a > 20) {
+    a++;
+}
+
+
+
+// array in js
+
+
+var arr = [1,2,3,4,5,6,7,8];
+
+console.log(arr);
+console.log(arr[2]);
+
+arr.push(10);
+console.log(arr);
+
+arr.pop();
+console.log(arr);
+
+arr.shift(10);
+console.log(arr)
+
+arr.unshift(0);
+console.log(arr);
+
+arr.splice(2,2);
+console.log(arr);
+
+
+// object in js
+
+var abovdetails = {
+    name: "shubham",
+    age: 25,
+    address: "gondia"
+}
+
+console.log(abovdetails);
+
+console.log(abovdetails.name);
+console.log(abovdetails.age);
+
+
+
+
+
 
 
 
