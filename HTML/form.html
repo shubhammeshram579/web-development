@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form revision</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        body {
+            width: 850px;
+            background-color:rgb(190, 175, 157);
+            border: 2px solid black;
+            margin: auto;
+            padding: 20px;
+        }
+
+        body p{
+            padding: 15px;
+            text-transform: capitalize;
+
+        }
+
+        h1,h2{
+            text-shadow: 1px 1px white;
+            text-align: center;
+            border-bottom: 1px solid black;
+            padding-bottom: 20px;
+        }
+
+        .btn input{
+            width: 100%;
+            padding: 5px;
+            margin: 5px;
+            font-weight: 600;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .btn input:hover {
+            background-color: blueviolet;
+            font-size: 15px;
+        }
+
+        div span{
+            color: red;
+        }
+
+        div textarea{
+            width: 100%;
+        }
+
+        nav{
+            background-color: black;
+            padding: 10px;
+        }
+
+        nav a{
+            background-color:black;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            /* display: flex;
+            flex-direction: column; */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <nav>
+        <a href="#">Home</a>
+        <a href="#">Home</a>
+        <a href="#">Home</a>
+    </nav> -->
+    <form action="">
+        <h1>Candidet Details</h1>
+        <div>
+            <p>First Name: <span>*</span> <input type="name" name="first name" id="first name" placeholder="Shubham" required></p>
+            <p>Last Name: <span>*</span> <input type="name" name="last name" id="last name" placeholder="Meshram" required></p>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Gender</legend>
+                <p>Male:<input type="radio" name="Gender" id="Male">
+                    Female:<input type="radio" name="Gender" id="Male"></p>
+            </fieldset>
+        </div>
+        <div>
+            <p>Contract: <input type="number" name="number" id="content" placeholder="7038956822"></p>
+            <p>Email: <input type="email" name="email" id="email" placeholder="shubhammesram579@gmail.com"></p>
+        </div>
+        <div>
+            <p>Address: <textarea name="address" id="address" cols="100" rows="5"></textarea></p>
+            <p>City: <select name="City" id="City">
+                    <option value="#">--Select City--</option>
+                    <option value="Gondia">Gondia</option>
+                    <option value="Nagpur">Nagpur</option>
+                </select></p>
+        </div>
+        <div>
+            <h2>Job Details</h2>
+            <p>Job Role: <input type="text" name="job role" id="job role"></p>
+            <p>Exprience: <input type="number" name="Exprience" id="Exprience"></p>
+        </div>
+        <div>
+            <p>Skills: <textarea name="Skills" id="Skills" cols="100" rows="5"></textarea></p>
+        </div>
+        <div>
+            <p>CV: <input type="file" name="CV" id="CV"></p>
+            <p>Id proof: <input type="file" name="Documents" id="Id proof"></p>
+        </div>
+        <div class="btn">
+            <input type="submit">
+            <input type="reset">
+        </div>
+
+
+    </form>
+</body>
+
+</html>
