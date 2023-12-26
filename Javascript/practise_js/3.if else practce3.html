@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
 </head>
+
 <body>
     <h1>if else candition</h1>
 
@@ -42,10 +44,10 @@
         let a = 5;
         let b = 10;
 
-        if (a<b){
+        if (a < b) {
             console.log("true")
         }
-        else{
+        else {
             console.log("false")
         }
 
@@ -53,13 +55,13 @@
         let num_list = 10;
         let num_l = 50;
 
-        if(num_list < num_l){
+        if (num_list < num_l) {
             console.log("greter then 50");
         }
-        else if (num_list > num_l){
+        else if (num_list > num_l) {
             console.log("less then 50")
         }
-        
+
 
 
         // if(num_list > 50){
@@ -72,24 +74,24 @@
 
         // day 3
         // example 1
-        if (12 > 33){
+        if (12 > 33) {
             console.log("true")
         }
 
 
         // example 2
-        if (12 < 15){
+        if (12 < 15) {
             console.log("True")
         }
 
         // example 3
-        if (12 > 15){
+        if (12 > 15) {
             console.log("12 less then 15")
         }
-        else if( 12 > 15){
+        else if (12 > 15) {
             console.log(" 15 greter then 12")
         }
-        else{
+        else {
             console.log("equel")
         }
 
@@ -114,57 +116,104 @@
         // Q1 time set massage
 
 
-        let time = prompt("hey what time it is ?");
+        // let time = prompt("hey what time now?");
 
-        if (time > 6 && time < 12){
-            alert("Good Morning")
-        }
-        else if (time > 12 && time < 16) {
-            alert("Good afternoon");
-        }
-        else if (time > 16 && time < 22 ){
-            alert("good evening")
-        }
-        else{
-            alert("Good Night")
-        }
+        // if (time > 6 && time < 12){
+        //     alert("Good Morning")
+        // }
+        // else if (time > 12 && time < 16) {
+        //     alert("Good afternoon");
+        // }
+        // else if (time > 16 && time < 22 ){
+        //     alert("good evening")
+        // }
+        // else{
+        //     alert("Good Night")
+        // }
 
 
 
         // Q2 tempreture
 
-        let tempreture = 25;
+        // let tempreture = 25;
 
-        if (tempreture > 30 && tempreture < 35){
-            console.log("it is hot");
+        // if (tempreture > 30 && tempreture < 35){
+        //     console.log("it is hot");
+        // }
+        // else if (tempreture > 35 && tempreture < 50){
+        //     console.log("it is weather very hot");
+        // }
+        // else{
+        //     console.log("weather is cool");
+        // }
+
+
+        // Q3 box color condition
+
+        let box = "red";
+
+        if (box === "red") {
+            console.log("box color is red");
         }
-        else if (tempreture > 35 && tempreture < 50){
-            console.log("it is weather very hot");
+        else if (box === "blue") {
+            console.log("box color is blue");
         }
-        else{
-            console.log("weather is cool");
+        else {
+            console.log("box color is green")
+        };
+
+
+        // switch oprater
+
+        let day = "Monday"
+
+        switch (day) {
+            case "Monday":
+                console.log("it's a start of weekday");
+                break;
+            case "friday":
+                console.log("TGTF!");
+                break;
+            default:
+                console.log("it is ordanary day");
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        //    nested if statement 
         
+        let isWeekend = true;
+        let timeOfDay = "morning";
 
-        
+        if (isWeekend) {
+            if (timeOfDay === "morning") {
+                console.log("Good morning! Enjoy your weekend.");
+            } else {
+                console.log("Enjoy your weekend!");
+            }
+        } else {
+            console.log("It's a weekday.");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
     </script>
 </body>
+
 </html>
