@@ -12,7 +12,7 @@
 
     <script>
 
-        // day 1
+        // day basic of conditional statement
         // var a = 100;
         // var b = 120;
 
@@ -24,6 +24,7 @@
         // }
 
 
+        // 1. time
         // var time = prompt("hey what time is now: ")
 
         // if(time > 5 && time < 12){
@@ -112,10 +113,27 @@
         //     alert("this is branck time")
         // }
 
-        // practice day 25-12
+
+        
+        // switch oprater
+
+        let day = "Monday"
+
+        switch (day) {
+            case "Monday":
+                console.log("it's a start of weekday");
+                break;
+            case "friday":
+                console.log("TGTF!");
+                break;
+            default:
+                console.log("it is ordanary day");
+        }
+
+
+
+        // practice day 3
         // Q1 time set massage
-
-
         // let time = prompt("hey what time now?");
 
         // if (time > 6 && time < 12){
@@ -133,7 +151,7 @@
 
 
 
-        // Q2 tempreture
+        // Q2. tempreture
 
         // let tempreture = 25;
 
@@ -148,7 +166,7 @@
         // }
 
 
-        // Q3 box color condition
+        // Q3. box color condition
 
         let box = "red";
 
@@ -163,22 +181,8 @@
         };
 
 
-        // switch oprater
 
-        let day = "Monday"
-
-        switch (day) {
-            case "Monday":
-                console.log("it's a start of weekday");
-                break;
-            case "friday":
-                console.log("TGTF!");
-                break;
-            default:
-                console.log("it is ordanary day");
-        }
-
-        //    nested if statement 
+        // Q4. nested if statement 
 
         let isWeekend = true;
         let timeOfDay = "morning";
@@ -194,7 +198,7 @@
         }
 
 
-
+        // practice nested if statement
         let aa = 100;
         let bb = 120;
         
@@ -207,6 +211,54 @@
         } else{
             console.log("greter then 100");
         };
+
+
+        // Q5. checking string length
+
+        // i) check the string length is grether then 6 then true other wise false
+        let username = "user123";
+
+        if (username.length > 6 ){
+            console.log(true)
+        }else {
+            console.log(false)
+        }
+
+
+        let username2 = "user1";
+
+        if (username2.length > 6 ){
+            console.log(true);
+        }else {
+            console.log(false);
+        }
+
+
+
+        // Q6. checking array length
+
+        let arr = [1,2,3,4,6];
+        console.log(arr.length);
+
+        if (arr.length > 0){
+            console.log("the array is not empaty");
+        } else {
+            console.log("the array is empaty")
+        }
+
+
+        if (arr.length > 10){
+            console.log("the array is not empaty");
+        } else {
+            console.log("the array is empaty")
+        }
+
+
+        
+
+
+
+        
 
 
 
