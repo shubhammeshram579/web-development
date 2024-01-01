@@ -33,8 +33,8 @@ init();
 var crsr = document.querySelector(".cirsor");
 var main = document.querySelector(".main");
 main.addEventListener("mousemove",function(dets){
-  crsr.style.left = dets.x+"px"
-  crsr.style.top = dets.y+"px"
+  crsr.style.left = dets.x+20 + "px"
+  crsr.style.top = dets.y+20 + "px"
 
 });
 
@@ -109,5 +109,29 @@ tl3.to(".main",{
 
 
 })
+
+
+var boxes = document.querySelectorAll(".box");
+
+boxes.forEach(function(elem){
+  elem.addEventListener("mouseenter",function(){
+    var att = elem.getAttribute("data-image");
+    crsr.style.width = "410px"
+    crsr.style.height = "400px"
+    crsr.style.borderRadius = "0"
+    crsr.style.backgroundImage = `url(${att})`
+  })
+
+  elem.addEventListener("mouseleave",function(){
+    elem.style.backgroundColor = "transparent"
+    crsr.style.width = "10px"
+    crsr.style.height = "10px"
+    crsr.style.borderRadius = "50%"
+    crsr.style.backgroundImage = `none`
+  })
+})
+
+
+
 
 

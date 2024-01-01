@@ -99,7 +99,6 @@ for (let index in names){
 }
 
 
-
 // 6 for of loops
 
 for (let name of names){

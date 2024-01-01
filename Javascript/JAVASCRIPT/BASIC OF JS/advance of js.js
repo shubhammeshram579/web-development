@@ -87,9 +87,68 @@ console.log(stack); // [1, 2]
 //1+2+3+4+5 = 15
 
 // computer colculation
-// it is a calculation statpe by stape it call heap memmory
+// it is a calculation stape by stape and store the data  each of addition it call heap memmory
 // 1+ 2 = 3 
 // 3 + 3 = 6
 // 6 + 4 = 10 
 // 10 + 5 = 15
+
+// 4. executiion context 
+
+// it is building a new fuction then the funtion the under imaginery creating a conteners
+// Execuction context is a conteners where the fuction code is execut and it's created whenever a fuction is called it contains fuction and lexical enviroment
+
+// i) varibles
+// ii) function inside that prants function
+// iii) lexical environment thet fuction
+
+// this is tree imagenery conteners it's call execution context
+
+// for example
+
+function execution_context(){
+    var a = 15;
+    function def(){
+        var b = 25;
+    }
+}
+
+// access
+execution_context(a); //it is a varible selection used 
+execution_context(b); // it is not varible selection acces becouse it need selector def fucction then i access varible b
+
+
+
+// 5. how to copy reference value
+// Copy to array value like arr to arr2 but is face issue like i deleted arr2 values the my arr value is also deleted
+// this is solution for this problem
+
+
+// copy refrence array 
+let arr = [1,2,3,4,5];
+let arr2 = arr;
+
+console.log(arr);
+console.log(arr2);
+
+// deleted value arr2 
+arr2.pop()
+
+console.log(arr);
+console.log(arr2);
+
+
+// solution 
+
+let arr3 = [...arr]; //used apect propeties then copy real values
+
+console.log(arr3);
+
+arr3.pop();
+
+console.log(arr);
+console.log(arr3);
+
+
+
 
