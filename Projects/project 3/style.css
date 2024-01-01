@@ -10,6 +10,18 @@ html, body{
     width: 100%;
 }
 
+
+.cirsor{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    position: fixed;
+    background-color: #edbfff;
+    z-index: 8;
+    mix-blend-mode: difference;
+    /* transition: left linear 0.1s top linear 0.1s; */
+}
+
 .main{
     background-color: #0f0d0d;
 }
@@ -17,6 +29,8 @@ html, body{
 .page1{
     min-height: 100vh;
     width: 100%;
+    position: relative;
+    z-index: 9;
     /* background-color: red; */
 }
 
@@ -106,6 +120,8 @@ html, body{
     width: 100%;
     padding: 100px 5vw;
     border-bottom: 2px solid #111;
+    position: relative;
+    z-index: 9;
 
 }
 
@@ -166,10 +182,11 @@ html, body{
 
 
 .page3{
-    min-height: 115vw;
+    min-height: 107vw;
     width: 100%;
     position: relative;
     padding-top: 100px;
+    z-index: 9;
 
 }
 
@@ -237,4 +254,113 @@ html, body{
 .page3-part2 h4:hover{
     background-color: #111;
     color: #fff;
+}
+
+
+/* page4  */
+
+.page4{
+    min-height: 60vw;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+    /* background-color: red; */
+    padding: 100px 50px;
+    padding-top: 200px;
+    border-top: 2px solid black;
+}
+
+
+
+.elem{
+    /* background-color: salmon; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.elem img{
+    position: absolute;
+    opacity: 0;
+    transition: all ease-out 0.5s;
+    transform: translateY(10%) rotate(2deg);
+
+}
+
+.elem img:nth-child(1){
+    left: 0;
+}
+
+.elem img:nth-child(3){
+    right: 2%;
+}
+
+.elem:hover h1{
+    transform: translateY(-100%);
+    color: #edbfff;
+}
+
+.elem:hover img{
+    opacity: 1;
+    transform: translateY(0%) rotate(0);
+}
+
+
+
+.text-div{
+    /* background-color: lightblue; */
+    height: 120px;
+    overflow: hidden;
+}
+
+.elem h1{
+    font-size: 6vw;
+    transition: all ease-out 0.5s;
+    font-weight: 500;
+    
+    
+}
+
+
+/* page5 */
+.page5{
+    min-height: 100vw;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+    padding: 140px 100px;
+    /* background-color:blue; */
+}
+
+.page5 h2{
+    font-size: 4vw;
+    text-transform: uppercase;
+    font-weight: 400;
+    
+}
+
+.box{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    padding: 0 20px;
+    border-top: 1.5px solid #dadada;
+}
+
+.boxl{
+    border-bottom: 1px solid #dadada;
+}
+
+/* .box:hover{
+    background-color: red;
+} */
+
+
+footer{
+    height: 90vw;
+    width: 100%;
+    background-color: #edbfff;
 }

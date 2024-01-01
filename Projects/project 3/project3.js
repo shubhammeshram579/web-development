@@ -30,6 +30,20 @@ ScrollTrigger.refresh();
 init();
 
 
+var crsr = document.querySelector(".cirsor");
+var main = document.querySelector(".main");
+main.addEventListener("mousemove",function(dets){
+  crsr.style.left = dets.x+"px"
+  crsr.style.top = dets.y+"px"
+
+});
+
+// var vd = document.querySelector("video");
+// vd.addEventListener("mouseenter",function(dets){
+//   vd.style.left = 
+//   vd.style.top = dets.y+"px"
+// });
+
 
 var tl = gsap.timeline({
 
@@ -75,6 +89,25 @@ var tl2 = gsap.timeline({
 
 tl2.to(".main",{
   backgroundColor: "#fff"
+})
+
+
+var tl3 = gsap.timeline({
+
+  scrollTrigger:{
+      trigger:".page1 h1",
+      scroller:".main",
+      markers:true,
+      start:"top -460%",
+      end:"top -470%",
+      scrub:3
+  }
+});
+
+tl3.to(".main",{
+  backgroundColor:"#111"
+
+
 })
 
 
