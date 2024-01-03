@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 700px;
+            width: 100%;
+            border: 2px solid black;
+            border-radius: 5px;
+            /* padding: 10px; */
+            /* margin: auto; */
+
+        }
+
+        /* navbar styling */
+
+        .nav-tag{
+            background-color:black ;
+            /* padding: 10px; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        
+        .nav-tag a{
+            padding: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-family: 500;
+            text-transform: capitalize;
+        }
+
+        .nav-tag a:hover{
+            border: 2px solid yellow;
+            color: yellow;
+        }
+
+        #underline{
+            text-decoration: underline;
+            
+        }
+
+        /* summary styling */
+
+        .summmary{
+            padding: 10px;
+            border-bottom: 2px solid gray;
+        }
+
+        .summmary p{
+            text-align: justify;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 100;
+            word-spacing: 2px;
+            line-height: 25px;
+            /* text-indent: 10vw; */
+        }
+
+        span{
+            background-color:gray;
+            color: red;
+            border-radius: 10px;
+            padding: 2px;
+        }
+
+        /* order and unorder list styling */
+        .unoder-list{
+            display: flex;
+            padding: 20px;
+        }
+
+        .unoder-list,ol,ul{
+            margin-right: 100px;
+            list-style-type: none;
+            text-transform: capitalize;
+        }
+
+        .unoder-list ol ul,li{
+            background-color: rgba(102, 51, 153, 0.412);
+            margin: 5px;
+            border-radius: 2px;
+            padding-right: 10px;
+            text-align: center;
+        }
+
+        .a{
+            color: red;
+        }
+
+        li[class="a"]:hover{
+            background-color: green;
+        }
+
+
+        /* document link styling */
+        .notes-list{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 2px solid gray;
+        }
+
+        .notes-list a{
+            color: #111;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-transform: capitalize;
+            text-decoration: none;
+            padding: 2px;
+            margin-left: 10px;
+            background-color: rgba(102, 51, 153, 0.412);
+            margin: 2px;
+        }
+
+        .notes-list a:hover{
+            color: blue;
+        }
+
+
+        /* image styling */
+        img{
+            height: 250px;
+            border: 5px solid rebeccapurple;
+            /* opacity: 0; */
+            padding: 2px;
+            margin: 10px;
+            object-fit:cover;
+            border-radius: 50%;
+        }
+
+        /* video styling */
+        video{
+            height: 250px;
+            border: 5px solid rebeccapurple;
+            /* opacity: 0; */
+            padding: 2px;
+            margin: 10px;
+            object-fit:cover;
+            border-radius: 5px;
+        }
+
+
+        /* above section styling */
+        #about-section{
+            display: flex;
+            border-bottom: 2px solid gray;
+            padding: 10px;
+        }
+
+        #about-section p{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 500;
+            background-color: rgba(102, 51, 153, 0.412);
+            margin: 5px;
+            padding: 5px;
+        }
+
+
+        /* table styling */
+        .table-selection{
+            margin: 10px;
+
+        }
+        table,th,td{
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        table th{
+            background-color:rgba(102, 51, 153, 0.412);
+
+        }
+
+
+        /* footer section styling */
+        footer{
+            background-color: #111;
+            padding: 10px;
+        }
+
+        footer a{
+            padding: 10px;
+            text-decoration: navajowhite;
+            text-transform: capitalize;
+            color: #fff;
+        }
+        
+        .zindex{
+            margin: 20px;
+            display: flex;
+        }
+        .box1{
+            height: 150px;
+            width: 150px;
+            background-color: green;
+            margin: 20px;
+            /* position:sticky; */
+            z-index: 1;
+            /* text-align: center; */
+        }
+
+
+        .box2{
+            height: 160px;
+            width: 160px;
+            background-color:rebeccapurple;
+            margin-bottom: 2px;
+            margin: 30px;
+            /* position: absolute; */
+            z-index: 20;
+    
+        }
+        .box3{
+            height: 170px;
+            width: 170px;
+            background-color:red;
+            margin: 40px;
+            /* position: absolute; */
+            z-index: 99;
+        }
+
+        .zindex p{
+            text-align: center;
+            margin: 60px;
+        }
+
+
+
+
+        
+
+
+
+        
+    </style>
+</head>
+
+<body>
+    <nav class="nav-tag">
+        <a id="underline" href="#">Home</a>
+        <a href="#">Contact</a>
+        <a href="#">Address</a>
+        <a href="#">social</a>
+    </nav>
+    <div class="summmary">
+        <p>Lorem ipsum, <b>dolor</b> sit amet smacs <small>onsectetur adipisicing </small> elit. Consectetur vitae
+            facilis est omnis. Atque
+            perferendis cumque distinctio totam obcaecati cum nobis rerum accusantium aut necessitatibus animi ipsa
+            cupiditate quod maiores, <span>shubham meshram</span> ex sint quisquam ut neque. Ratione quo adipisci
+            voluptates consequuntur doloribus
+            quae iusto eaque minus inventore aliquid iste sapiente tempore non assumenda quis ex, similique libero
+            molestiae fugit ipsum 100 <sub>2</sub> nostrum 120 <sup>2</sup> vitae <i>my name is shubham </i> earum velit
+            possimus! Natus provident ad, repudiandae rerum, assumenda
+            animi aperiam nihil quas aliquam vitae, qui excepturi dicta magnam et porro impedit in minus voluptate?
+            Repellendus voluptatum reprehenderit eius provident unde consequuntur autem! Consequuntur deleniti illo
+            similique eos! Placeat.</p>
+    </div>
+
+    <div class="unoder-list">
+        <ul>
+            <li>python</li>
+            <li class="a">sql</li>
+            <li class="a">power bi</li>
+            <li>ml</li>
+            <li>dl</li>
+        </ul>
+        <ol type="A">
+            <li>python</li>
+            <li>sql</li>
+            <li>power bi</li>
+            <li>ml</li>
+            <li>dl</li>
+        </ol>
+        <ol type="A">
+            <li>python</li>
+            <li>sql</li>
+            <li>power bi</li>
+            <li>ml</li>
+            <li>dl</li>
+        </ol>
+    </div>
+    <hr>
+
+    <div class="notes-list">
+        <a href="www.shubhmmeshram578@gmail.com" target="_blank">gmail</a>
+        <a href="www.shubhmmeshram578@gmail.com" target="_blank">gmail</a>
+        <a href="www.shubhmmeshram578@gmail.com" target="_blank">gmail</a>
+    </div>
+    <img src="2.jpg" alt="this my image">
+    <hr>
+    <video autoplay muted loop controls src="production_id_4965877 (2160p).mp4"></video>
+    <div id="about-section">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, repudiandae.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, repudiandae.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, repudiandae.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, repudiandae.</p>
+    </div>
+
+    <div class="table-selection">
+        <table>
+            <tr>
+                <th>name</th>
+                <th>salary</th>
+            </tr>
+            <body>
+                <tr>
+                    <td>shubham</td>
+                    <td>159998</td>
+                </tr>
+                <tr>
+                    <td>shubham</td>
+                    <td>159998</td>
+                </tr>
+                <tr>
+                    <td>shubham</td>
+                    <td>159998</td>
+                </tr>
+                <tr>
+                    <td>shubham</td>
+                    <td>159998</td>
+                </tr>
+            </body>
+            <tfoot>
+                <th colspan="2">list of 2</th>
+            </tfoot>
+        </table>
+    </div>
+    <div class="zindex">
+        <div class="box box1"><p>box1</p></div>
+        <div class="box box2"><p>box2</p></div>
+        <div class="box box3"><p>box3</p></div>
+    </div>
+    <footer>
+        <a href="#">office add</a>
+        <a href="#">mobile</a>
+        <a href="#">city</a>
+    </footer>
+</body>
+
+</html>
