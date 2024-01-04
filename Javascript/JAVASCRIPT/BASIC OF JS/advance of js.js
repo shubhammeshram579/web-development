@@ -124,7 +124,7 @@ execution_context(b); // it is not varible selection acces becouse it need selec
 // this is solution for this problem
 
 
-// copy refrence array 
+// 5. copy refrence array value
 let arr = [1,2,3,4,5];
 let arr2 = arr;
 
@@ -148,6 +148,78 @@ arr3.pop();
 
 console.log(arr);
 console.log(arr3);
+
+
+// 6. Truethy and falsy
+
+// venover time i wright a paramater  it's mainly blog two truely and falsy parameted
+// falsy values are: null, NaN,undefind , 0 , false, document.all 
+// Truety value are: 1 ,-1 ,true,str,Boolean
+
+// for falsy:
+if (0){
+    console.log("hey");
+}
+else{
+    console.log("hello");
+}
+
+// for truethy
+if (3){
+    console.log("hey");
+}
+else{
+    console.log("hello");
+}
+
+
+// 7. forEach loops and forign loops
+
+// forEach loop it is used only arrays
+// foreach loop is tempraly base output store it not a origenal array value updated
+// for example
+var arrr = [1,2,3,4,5,6,7];
+
+arrr.forEach(function(val){
+    console.log(val + 5);
+})
+
+for (var k of arrr){
+    console.log(k)
+}
+
+// forign loops
+// it is used only for object varible 
+// for example
+
+var laptop = {
+    brand: "dell",
+    storage: 512,
+    ram: 8,
+    processer: "4 cores"
+}
+
+// laptop.forEach(function(b){
+//     console.log(b +5);
+// })
+
+for (var i in laptop){
+    console.log(i)
+}
+
+for (var i in laptop){
+    console.log(i,laptop[i])
+}
+
+for (var i in laptop){
+    console.log(laptop)
+}
+
+
+
+
+
+
 
 
 

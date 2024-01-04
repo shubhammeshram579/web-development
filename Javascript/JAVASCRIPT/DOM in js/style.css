@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body{
+    padding: 100px;
+}
+
+
+
+
+h4{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color:yellow;
+    border: 5px solid black;
+}
+
+button{
+    height: 20px;
+    width: 50px;
+    padding: 10px;
+    margin: 10px;
+    font-weight: 800;
+    color:black;
+}
+
