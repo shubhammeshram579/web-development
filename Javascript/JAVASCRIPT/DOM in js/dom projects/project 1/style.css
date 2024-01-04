@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+#card{
+    height: 440px;
+    width: 300px;
+    background-color: bisque;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 20px;
+    
+    border: 2px solid black;
+}
+
+/* image styling */
+img{
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+/* name styling */
+h4{
+    /* color: red; */
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+/* status tag styling */
+h5{
+    color: blue;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* remove button page 1 */
+#remove{
+    padding: 10px;
+    margin: 30px;
+    background-color: rgb(181, 78, 78);
+
+}
+
+/* add friend button styling */
+#add-friens{
+    padding: 10px;
+    margin: 30px;
+    background-color:rgb(147, 147, 212);
+
+}
+
+
+/* remove button page 2 */
+#remove2{
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 50px;
+    padding: 10px;
+    background-color: rgb(181, 78, 78);
+    
+}
