@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+    background-color: rgb(19, 17, 17);
+    color: #fff;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    padding-top: 50px;
+}
+
+/* page conteiner styling */
+.conteiner{
+    height: 500px;
+    width: 300px;
+    border-radius: 5px;
+    margin: auto;
+    border: 2px solid rgb(201, 201, 191);
+}
+
+
+.conteiner i{
+    color: #fff;
+    height: 25px;
+    width: 25px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* profile styling */
+.profile{
+    display: flex;
+}
+
+.profile h1{
+    color: white;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+/* icon styling */
+.fa-solid{
+    margin-left: 80px;
+}
+
+.fa-brands{
+    font-size: 20px;
+}
+
+
+.fa-regular{
+    margin-left: 130px;
+    border-radius: 10px;
+}
+
+
+/* post summery styling */
+#summary h5{
+    padding-top: 20px;
+    
+}
+
+.likes{
+    display: flex;
+    align-items: center;
+    padding: 2px;
+}
+
+.likes .image3{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+/* love hard hover feature styling */
+.ri-heart-3-fill:hover{
+    color: red;
+    font-size: 17px;
+}
+
+
+/* contener2 img and love icome styling */
+.contener2{
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+
+
+}
+
+
+.contener2 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 5px 5px;
+
+}
+
+.contener2 i{
+    position: absolute;
+    color: #fff;
+    font-size: 75px;
+    background-color: transparent;
+    top: 35%;
+    right: 40%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform ease 0.5s;
+}
+
+
+
+
+
+
+
+

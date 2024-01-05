@@ -213,7 +213,61 @@ for (var i in laptop){
 
 for (var i in laptop){
     console.log(laptop)
+};
+
+
+// do while
+// var dvail = 12;
+
+// do {
+//     console.log("hey");
+//     dvail ++;
+// }
+// while (dvail > 20)
+
+
+// 8. callback function
+// set the timer to execute code for after 5s it callback function
+// for exemaple using settimeout ,setInterval, fatch and more this is async fuction
+
+setTimeout(function(){
+    console.log("hello")
+},5000)
+
+// setInterval(function(){
+//     console.log("hey")
+// },2000)
+
+
+// 9. first class fucction
+// as a fuction uesd as a value it's call first class fuction
+
+var abd = function(){
+    console.log("what is first class fuction ?")
 }
+
+console.log(abd);
+
+
+
+// 10. how array mode behind the sence
+
+var ra = [12,33,4,55,66];
+
+// got to the broweger tab then got o the console Array.isArray({}) , Array.isArray([])
+
+
+
+// 11. how to delete object value
+var ob10 = {
+    name: "shubham",
+    age: 26
+}
+
+console.log(ob10.name);
+
+delete ob10.name;
+
 
 
 
