@@ -19,33 +19,67 @@
         body {
             height: 100%;
             width: 100%;
+            /* cursor:none; */
+
+
         }
 
         .main {
+            position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center
+            justify-content: center;
+
         }
 
         .cercil {
-            height: 20px;
-            width: 20px;
+            height: 15px;
+            width: 15px;
+            border-radius: 50px;
+            background-color: rgb(221, 231, 235);
+            position: fixed;
+            /* z-index: 99; */
+            transition: all ease 0.1s;
+
+        }
+
+
+
+
+        .cercil2 {
+            height: 400px;
+            width: 400px;
             border-radius: 50%;
-            background-color: brown;
+            background-color: rgba(18, 87, 121, 0.733);
+            position: fixed;
+            /* z-index: 10; */
+            filter: blur(120px);
+            transition: all ease 0.1s;
+
+
         }
 
         h3 {
-            font-size: 8vw;
+            padding: 50px;
+            font-size: 10vw;
             mix-blend-mode: difference;
+            /*text color chage then i used cursor*/
+        }
+
+
+        #textElement {
+            display: none;
         }
     </style>
 </head>
 
 <body>
-    <div class="cercil"></div>
-    <div class="main">
 
+
+    <div class="main">
+        <div class="cercil"></div>
+        <div class="cercil2"></div>
         <h3>javasctipt i learn</h3>
         <h3>javasctipt we learn</h3>
     </div>

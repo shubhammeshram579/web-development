@@ -1,0 +1,291 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    color: #fff;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    background-color: #111;
+}
+
+
+.page1{
+    padding-bottom: 200px;
+}
+
+.contaner1,nav,h4{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+nav h4{
+    padding: 10px;
+    margin-left: -5px;
+}
+
+.contenar2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 30vw; */
+    margin-top: 100px;
+    
+}
+
+.contenar2 img{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+
+
+.contenar2,.profile{
+    padding: 50px;
+    
+}
+
+.profile h5{
+    text-align: center;
+    font-weight: 300;
+    padding-bottom: 5px;
+}
+
+
+.profile h2{
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.profile h3{
+    text-align: center;
+    padding-bottom: 10px;
+}
+.profile button{
+    text-align: center;
+    margin-left: 10px;
+    border-radius: 20px;
+}
+
+button{
+    padding: 5px;
+}
+
+#contect{
+    background-color: #111;
+    color: #fff;
+
+}
+
+/* page 2 styling*/
+
+.about-me{
+    align-items: flex-start;
+    margin-left: 35vw;
+    padding-bottom: 50px;
+}
+
+.profile2 img{
+    height: 250px;
+    border-radius: 20px;
+    margin-left: 15vw;
+}
+
+.profile2{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.contener4{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+
+.contener4,.con1,.con2{
+    padding: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: 10px;
+    margin-top: -20px;
+
+}
+
+.con1,.con2{
+    border: 1px solid gray;
+    border-radius: 10px;
+    /* margin-right: -300px; */
+}
+
+.con1{
+    margin-left: -50px;
+}
+
+.con3{
+    padding-left: 55px;
+    margin-top: -50px;
+    margin-right: 190px;
+}
+
+
+
+/* page3 styling */
+
+.page3{
+    padding-bottom: 100px;
+}
+
+
+.Explore{
+    margin-left: 35vw;
+    font-weight: 100;
+    padding-top: 200px;
+    padding-bottom: 50px;
+}
+
+
+.Explore span{
+   display: flex;
+   font-size: 40px;
+   margin-left: -20px;
+}
+
+/* .Exprience{
+    margin-left: 35vw;
+    padding-bottom: 60px;
+    font-size: 30px;
+    align-items: center;
+} */
+.page3-skills{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page3-skills h3{
+    padding-bottom: 10px;
+    margin-left: -24px;
+}
+
+.page3-skills ul{
+    padding: 30px 150px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-left: 20px;
+    
+}
+
+.page3-skills ul li{
+    padding:10px;
+    font-weight: 600;
+
+}
+
+.page3-skills span{
+    display: flex;
+}
+
+span{
+    font-size: 12px;
+    font-weight: 100;
+}
+
+
+/* page4 */
+
+.contener4{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.page4 h3{
+    font-size: 13px;
+    margin-left: 35vw;
+    font-weight: 100;
+    padding-bottom: 50px;
+}
+
+.page4 span{
+    display: flex;
+    font-size: 50px;
+}
+
+
+.project{
+    border: 1px solid gray;
+    padding: 40px;
+    border-radius: 10px; 
+}
+
+.project img{
+    height: 250px;
+    width: 250px;
+    border-radius: 5px;
+    
+}
+
+.contener4 h2{
+    text-align: center;
+    padding: 20px;
+}
+
+.contener4 button{
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+/* page5  */
+
+
+
+.page5 h2{
+    padding-top: 200px;
+    text-align: center;
+    font-weight: 100;
+    font-size: 10px;
+
+
+}
+
+.page5 span{
+    display: flex;
+    font-size: 25px;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.contract{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+.contract h3{
+    margin: 10px;
+    font-weight: 100;
+    
+   
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 150px;
+}
+
+
