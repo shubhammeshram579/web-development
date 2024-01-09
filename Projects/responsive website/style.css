@@ -1,0 +1,185 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    color: #111;
+    font-weight: 500;
+
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+/* parant */
+.main{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+
+.nav{
+    padding: 1vw 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:rgb(15, 120, 120);
+}
+
+.nav h1{
+    font-size: 3vw;
+    font-weight: 500;
+    color: #fff;
+}
+
+.nav-page1{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.nav-page1 h4{
+    color: #fff;
+    font-size: 1.2vw;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.nav button{
+    text-transform: capitalize;
+    color:#111;
+    font-weight: 600;
+    padding: 0.5vw 1vw;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+
+}
+
+.nav i{
+    font-size: 1.2vw;
+    font-weight: 800;
+    display: none;
+}
+
+.nav-page2{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+
+/* page1 style */
+
+.page1{
+    height: calc(100% - 83px);
+    width: 100%;
+    /* background-color: burlywood; */
+    display: flex;
+    position: relative;
+
+}
+
+
+.tab1{
+    width: 50%;
+    height: 100%;
+    padding: 6vw 5vw;
+}
+
+
+.tab1 h2{
+    width: 80%;
+    font-size: 3vw;
+    padding-bottom: 3vw;
+}
+
+.tab1 span{
+    color: rgb(174, 17, 205);
+}
+
+.tab1 p{
+    width: 80%;
+    font-size: 1vw;
+    padding-bottom: 5vw;
+}
+
+
+.tab1 button{
+    padding: 1vw;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    background-color: rgb(15, 120, 120);
+}
+
+
+.tab2{
+    width: 50%;
+    height: 100%; 
+}
+
+.tab2 img{
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width:600px){
+    .nav{
+        background-color:rgb(15, 120, 120);
+        color:#fff;
+        padding: 4vw 5vw;
+    }
+
+    .nav h4{
+        font-size: 4vw;
+        display: none;
+    }
+    .nav i{
+        display: block;
+        font-size: 4vw;
+    }
+    .nav,h1,i{
+        color: #fff;
+    }
+
+    .nav h1{
+        font-size: 5vw;
+    }
+
+    .page1{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tab1 h2{
+        font-size:5vw;
+        font-weight: 700;
+        width: 70vh;
+        text-align: justify;
+        padding-bottom: 5vw;
+    }
+
+    .tab1 p{
+        font-size: 3vw;
+        width: 70vh;
+        text-align:justify;
+        padding-bottom: 10vw;
+    }
+    .tab1 button{
+        width: 50%;
+    }
+    .tab2{
+        height: 100%;
+        width: 100%
+    }
+    .tab2 img{
+        padding-top: 10vw;
+    }
+};
+
+
+
+
+
