@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        nav {
+            background-color: #111;
+            padding: 10px;
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            /* margin-top: 20px; */
+            text-transform: uppercase;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 15px;
+            font-weight: 100;
+        }
+
+        /* p{
+            text-align: justify;
+            border: 2px solid gray;
+            padding: 20px;
+            background-color: aqua;
+            line-height:20px;
+            text-indent: 20px;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            /* background-image: url(img/2.jpg); */
+        /* object-fit: cover; */
+        /* background-repeat: no-repeat; */
+        /* color: yellow; */
+        /* } */
+
+
+        img,video,iframe{
+            height: 49vw;
+            width: 49vh;
+            border: 10px solid yellow;
+            padding: 2vw;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#">home</a>
+        <a href="#">add</a>
+        <a href="#">add</a>
+        <a href="#">add</a>
+    </nav>
+    <div class="basic-tag-used">
+        <h1>heading tag</h1>
+        <p><b>summary print</b> tage <i>Lorem ipsum </i>dolor <small>sit amet, consectetur</small> adipisicing elit.
+            Laboriosam nulla quae esse
+            temporibus 103 <sub>2</sub> pariatur ab 120 <sup>2</sup>facere, non animi nisi unde.</p>
+        <a href="www.gmail.com">Link tag</a>
+        <a href="#">Notes tage</a>
+        <img src="img/2.jpg" alt="">
+        <video controls loop muted src="img/video.mp4"></video>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jnLqwigdRig?si=n848ZcambtBhELLr"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
+    <ul>
+        <li>python</li>
+        <li>python</li>
+        <li>python</li>
+        <li>python</li>
+    </ul>
+    <ol>
+        <li>sql</li>
+        <li>sql</li>
+        <li>sql</li>
+        <li>sql</li>
+        <li>sql</li>
+    </ol>
+
+    <table>
+        <tr>
+            <th>name</th>
+            <th>salary</th>
+        </tr>
+
+        <body>
+            <tr>
+                <td>shubham</td>
+                <td>1500000</td>
+            </tr>
+            <tr>
+                <td>shubham</td>
+                <td>1500000</td>
+            </tr>
+            <tr>
+                <td>shubham</td>
+                <td>1500000</td>
+            </tr>
+        </body>
+        <tfoot>
+            <td colspan="2">total 3 list</td>
+        </tfoot>
+    </table>
+    <hr>
+    <form action="">
+        <h3>Customer Details</h3>
+        <div class="naming">
+            <p>First_name: <span>*</span> <input type="text" name="first_name" id="First_name" required
+                    placeholder="shubham"></p>
+            <p>Last_name: <span>*</span> <input type="text" name="last_name" id="last_name" required
+                    placeholder="meshram"></p>
+            <p>Contact: <span>*</span> <input type="number" name="number" id="contract" required
+                    placeholder="7038956822"></p>
+            <p>email: <span>*</span> <input type="email" name="email" id="email" required placeholder="meshram"></p>
+            <p>address: <textarea name="address" id="address" cols="100" rows="7"></textarea></p>
+            <p>city: <select name="city" id="city">
+                    <option value="#">--select city--</option>
+                    <option value="nagpur">nagpur</option>
+                    <option value="gondia">gondia</option>
+                </select></p>
+        </div>
+        <fieldset>
+            <legend>gender</legend>
+            <p>Male:<input type="radio" name="Gender" id="Male">
+                Female:<input type="radio" name="Gender" id="female"></p>
+        </fieldset>
+        <div class="payment">
+            <h3>payment form</h3>
+            <p>bank account: <input type="number" name="number" id="bank-a/c"></p>
+            <p>ccs: <input type="number" name="number" id="css"></p>
+            <p>ifsc code: <input type="password" name="password" id="password"></p>
+        </div>
+        <div class="documents">
+            <p>aadhar: <input type="file"></p>
+        </div>
+        <div class="butten">
+            <input type="submit">
+            <input type="reset" name="" id="">
+        </div>
+
+
+
+
+    </form>
+    <footer>
+        <a href="#">home</a>
+        <a href="#">add</a>
+    </footer>
+
+
+    <script>
+        // data type
+
+        // let str = "shubham";
+        // let int = 250;
+        // let float = 35.44;
+        // let blooen = true;
+        // let nums = 1234556n;
+        // var nullvalue = null;
+        // let a; //undefind value
+
+
+        // tree type of varibals in js 
+
+        // var name_ = "shubham";
+        // let age = 25;
+        // const fixed_ = "shubham Mehram"
+
+        // opraters 
+
+        let a = 10;
+        let b = 20;
+        // console.log(a + b);
+        // console.log(a - b);
+        // console.log(a * b);
+        // console.log(a / b);
+        // console.log(a % b);
+
+
+        // condinal  if else in js
+
+        if (a < b) {
+            console.log("a greter then b")
+        } else {
+            console.log("b less the b")
+        };
+
+        if (a > b) {
+            console.log("a greter then b")
+        } else {
+            console.log("b less the b")
+        };
+
+
+        // example 2 time contion
+
+        let time = 12;
+
+        if (time > 12 && time < 16) {
+            console.log("good afternoon");
+        } else if (time > 16 && time < 22) {
+            console.log("good evening");
+        } else {
+            console.log("good morning");
+        }
+
+
+        // loops
+
+        // lets print 0 to 10 number
+
+        for (let i = 0; i < 10; i++) {
+            console.log(i)
+        }
+
+
+        // for (let i = 10 ; i < 0 ; i--){
+        //     console.log(i)
+        // }
+
+
+        // foreach loop
+        var arr = [1,2,34,5,3,55]
+
+        arr.forEach(function(a){
+            console.log(a+2);
+        });
+
+        // forign loops
+
+        var obj = {
+            name: "shubham",
+            age : 25,
+        }
+
+        console.log(obj.name);
+
+        for (var i in obj){
+            console.log(i,obj[i])
+        }
+    </script>
+</body>
+
+</html>
