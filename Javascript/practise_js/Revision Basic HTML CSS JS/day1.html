@@ -45,13 +45,56 @@
         /* } */
 
 
-        img,video,iframe{
+        img,
+        video,
+        iframe {
             height: 49vw;
             width: 49vh;
             border: 10px solid yellow;
             padding: 2vw;
             object-fit: cover;
             object-position: center;
+        }
+
+
+        .oderlist {
+            display: flex;
+            align-items: center;
+            margin-left: 5vw;
+            justify-content: flex-start;
+
+
+        }
+
+        .oderlist,
+        ol,
+        ul {
+            padding-right: 100px;
+        }
+
+        .oderlist ul li {
+            padding: 5px;
+            list-style-type: none;
+            text-transform: capitalize;
+            background-color: aqua;
+            margin: 3px;
+        }
+
+        .oderlist ol li {
+            padding: 5px;
+            list-style-type: none;
+            text-transform: capitalize;
+            background-color: blueviolet;
+            margin: 3px;
+        }
+
+        li[class="main"] {
+            color: red;
+        }
+
+
+        ol li.a {
+            background-color: brown;
         }
     </style>
 </head>
@@ -77,19 +120,22 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
     </div>
-    <ul>
-        <li>python</li>
-        <li>python</li>
-        <li>python</li>
-        <li>python</li>
-    </ul>
-    <ol>
-        <li>sql</li>
-        <li>sql</li>
-        <li>sql</li>
-        <li>sql</li>
-        <li>sql</li>
-    </ol>
+    <div class="oderlist">
+        <ul>
+            <li>python</li>
+            <li class="main">python</li>
+            <li>python</li>
+            <li>python</li>
+            <li>python</li>
+        </ul>
+        <ol>
+            <li>sql</li>
+            <li class="a b">sql</li>
+            <li class="a b">sql</li>
+            <li>sql</li>
+            <li>sql</li>
+        </ol>
+    </div>
 
     <table>
         <tr>
@@ -216,7 +262,7 @@
             console.log("good evening");
         } else {
             console.log("good morning");
-        }
+        };
 
 
         // loops
@@ -224,8 +270,8 @@
         // lets print 0 to 10 number
 
         for (let i = 0; i < 10; i++) {
-            console.log(i)
-        }
+            console.log(i);
+        };
 
 
         // for (let i = 10 ; i < 0 ; i--){
@@ -234,24 +280,30 @@
 
 
         // foreach loop
-        var arr = [1,2,34,5,3,55]
+        var arr = [1, 2, 34, 5, 3, 55]
 
-        arr.forEach(function(a){
-            console.log(a+2);
+        arr.forEach(function (a) {
+            console.log(a + 2);
         });
 
         // forign loops
 
         var obj = {
             name: "shubham",
-            age : 25,
-        }
+            age: 25,
+        };
 
         console.log(obj.name);
 
-        for (var i in obj){
-            console.log(i,obj[i])
-        }
+        for (var i in obj) {
+            console.log(i, obj[i]);
+        };
+
+
+
+        // function
+
+
     </script>
 </body>
 
