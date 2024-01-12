@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contener-page {
+            height: 320px;
+            width: 250px;
+            background-color: blue;
+            border: 2px solid #111;
+            border-radius: 10px;
+            position: relative;
+
+        }
+
+        .contener-page img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+            position: absolute;
+
+        }
+
+        .contener-page i {
+            background-color: transparent;
+            color:red;
+            position: absolute;
+            margin-top: 50%;
+            margin-left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contener-page">
+        <img src="/2.jpg" alt="">
+        <i class="fa-solid fa-heart"></i>
+
+
+    </div>
+
+
+
+    <script>
+        var image = document.querySelector(".contener-page img");
+        var love = document.querySelector(".contener-page i")
+
+        var e = 0
+        image.addEventListener("dblclick", function (){
+            love.style.opacity = 0.7
+            love.style.color = "red"
+            love.style.transform = "translate(-50%, -50%) scale(5)"
+
+            setTimeout(function(){
+            love.style.opacity = 0
+            love.style.transform = "translate(-50%, -50%) scale(0)"
+            },1000)
+            setTimeout(function(){
+            love.style.opacity = 0
+            love.style.transform = "translate(-50%, -50%) scale(0)"
+            },2000)
+        })
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,3 +1,5 @@
+
+// love hard icome feature add on img
 var imges = document.querySelector(".contener2");
 var love = document.querySelector(".contener2 i")
 
@@ -16,7 +18,7 @@ imges.addEventListener("dblclick",function(){
 
 })
 
-
+// hard buttun click then hard icon show on imge
 var hard = document.querySelector(".ri-heart-3-fill");
 
 hard.addEventListener("click",function(){
@@ -34,7 +36,7 @@ hard.addEventListener("click",function(){
 
 })
 
-
+// click likes then incresing likes
 var like = document.querySelector("h4");
 
 var likecount = 0;
@@ -44,10 +46,11 @@ like.addEventListener("click",function(){
         likecount = 1
     }else if(likecount == 1){
         like.innerHTML = "1,232 likes"
-        likecount = 0
+        likecount = 2
     }else{
         setTimeout(function(){
             like.innerHTML = "1,230 likes"
+            likecount = 0
         },2000)
         
     }
