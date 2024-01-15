@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops</title>
+</head>
+<body>
+    <h1>loops</h1>
+    <ul>
+        <li>for loop</li>
+        <li>while loops</li>
+        <li>forEach loop</li>
+        <li>forign loops</li>
+    </ul>
+
+    <script>
+        // for loops
+
+        // print the number of range 0 to 10
+        for (var i= 1; i < 11; i++){
+            console.log(i)
+        };
+
+
+        for (var i = 5; i < 55; i = i + 5){
+            console.log(i)
+        }
+
+
+        // reverse loops
+        for (var i =10; i > 1; i = i - 1){
+            console.log(i);
+        };
+
+        
+        var a = [1,2,3,4,5,6,7,8,9]
+
+        // find the index value
+        for (var i in a){
+            console.log(i);
+        }
+
+        // find the index and array value
+        for (var i in a){
+            console.log(i,a[i])
+        }
+
+        // another method for using of loop
+        for (var i of a){
+            console.log(i)
+        }
+
+    
+        // loops and contional formating
+
+        for (var i of a){
+            if (i > 5){
+                console.log("good")
+            }else{
+                console.log("bad")
+            }
+        };
+
+        // addition array value like matrix
+        var b = [2,3,4,4,5,6,7,7,4];
+        for (var i in a){
+            for (var k in b){
+                console.log(i + k)
+            }
+        }
+
+
+        // foreach loops
+        var d = 33;
+        var e = 2;
+
+        a.forEach(function(i){
+            console.log( d + i * e)
+        })
+
+
+        // forign loops
+        var obj = {
+            name: "shubham",
+            age: 26,
+            num: 7049
+        }
+
+        console.log(obj);
+
+        
+        for (var i in obj){
+            console.log(obj[i])
+        };
+
+       
+
+
+        
+
+
+    </script>
+</body>
+</html>

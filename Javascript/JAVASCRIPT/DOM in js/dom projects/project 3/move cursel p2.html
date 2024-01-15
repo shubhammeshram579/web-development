@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <style>
+        *{
+            height: 0px;
+            width: 0px;
+            box-sizing: content-box;
+            background-color: #111;
+            color: #fff;
+        }
+
+        body{
+            height: 100%;
+            width: 100%;
+        }
+
+        .main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+
+        }
+        .cursol{
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color:#fff;
+            /* filter: blur(10px); */
+            position: fixed;
+            transform: translate(-50%,-50%);
+            transition: all ease 0.1s;
+            
+        }
+
+
+        h1{
+            font-size: 15vw;
+            padding:20px;
+            mix-blend-mode: difference; /*text color tranfrend*/
+        }
+
+
+        
+
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="cursol"></div>
+    </div>
+    <h1>shubham meshram</h1>
+
+
+    <script>
+
+        // mousemove featurn add in js
+         var crs = document.querySelector(".cursol");
+         document.addEventListener("mousemove",function(details){
+           crs.style.left = details.x  + "px"
+           crs.style.top = details.y  + "px"
+           crs.style.transform = "translate(-50%,-50%)"
+            
+         })
+
+
+
+        //  mouseenter feature
+         var h1 = document.querySelector("h1");
+         document.addEventListener("mouseenter", function(){
+            h1.style.fontSize = "150px"
+            
+
+         })
+
+
+         //  mouseleave feature
+         document.addEventListener("mouseleave", function(){
+            h1.style.fontSize = "100px"
+            
+
+         })
+    </script>
+</body>
+</html>

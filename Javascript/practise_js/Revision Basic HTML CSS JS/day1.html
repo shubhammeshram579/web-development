@@ -120,6 +120,54 @@
         table td{
             background-color: aquamarine;
         }
+
+
+        /* forms styling */
+
+        .form-heading{
+            text-align: center;
+            text-shadow: 1px 1px red;
+            font-size: 25px;
+            padding: 20px;
+            border-bottom:2px solid gray ;
+        }
+
+        .main-form{
+            padding: 20px;
+        }
+
+        .main-form input, select, legend ,fieldset,address{
+            margin: 10px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .main-form .submit ,.reset{
+            padding: 10px;
+            width: 100%;
+        }
+
+        footer{
+            background-color: black;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        footer a{
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+
+
+
+
+        
+
+
     </style>
 </head>
 
@@ -187,7 +235,8 @@
     </table>
     <hr>
     <form action="">
-        <h3>Customer Details</h3>
+        <div class="main-form">
+        <h3 class="form-heading">Customer Details</h3>
         <div class="naming">
             <p>First_name: <span>*</span> <input type="text" name="first_name" id="First_name" required
                     placeholder="shubham"></p>
@@ -209,7 +258,7 @@
                 Female:<input type="radio" name="Gender" id="female"></p>
         </fieldset>
         <div class="payment">
-            <h3>payment form</h3>
+            <h3 class="form-heading" >payment form</h3>
             <p>bank account: <input type="number" name="number" id="bank-a/c"></p>
             <p>ccs: <input type="number" name="number" id="css"></p>
             <p>ifsc code: <input type="password" name="password" id="password"></p>
@@ -218,9 +267,10 @@
             <p>aadhar: <input type="file"></p>
         </div>
         <div class="butten">
-            <input type="submit">
-            <input type="reset" name="" id="">
+            <input class="submit" type="submit">
+            <input class="reset" type="reset" name="reset" id="reset">
         </div>
+    </div>
 
 
 
@@ -361,7 +411,7 @@
             return pra1 * pra2;
         }
 
-        console.log(multiplepra(2,10))
+        console.log(multiplepra(2,10));
 
     </script>
 </body>
