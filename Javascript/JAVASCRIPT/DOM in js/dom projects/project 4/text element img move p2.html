@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            color: #fff;
+
+        }
+
+        html,body{
+            height: 100%;
+            width: 100%;
+            background-color: #111;
+        }
+
+        .main{
+            position: relative;
+        }
+
+        .main .elem{
+            padding: 30px;
+            margin: 20px;
+            border-bottom: 2px solid #fff;
+            font-size: 40px;
+        }
+
+        .main img{
+            height: 250px;
+            width: 250px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10%;
+            opacity: 0;
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="elem">
+            <h1>Shubham Meshram</h1>
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Zmxvd2Vyc3xlbnwwfHwwfHx8MA%3D%3D" alt="">
+        </div>
+        <div class="elem">
+            <h1>labham Meshram</h1>
+            <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZsb3dlcnN8ZW58MHx8MHx8fDA%3D" alt="">
+        </div>
+        <div class="elem">
+            <h1>Aachal Meshram</h1>
+            <img src="https://images.unsplash.com/photo-1476994230281-1448088947db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGZsb3dlcnN8ZW58MHx8MHx8fDA%3D" alt="">
+        </div>
+        <div class="elem">
+            <h1>Pallavi Meshram</h1>
+            <img src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGZsb3dlcnN8ZW58MHx8MHx8fDA%3D" alt="">
+        </div>
+    </div>
+    
+
+    <script>
+
+        var textelemet = document.querySelector(".main .elem h1");
+        var imgawith = document.querySelector(".main img");
+
+
+        // document.addEventListener("mousemove",function(dent){
+        //     imgawith.style.left = dent.x + -30 + "px"
+        //     imgawith.style.top = dent.y + -30 +  "px"            
+            
+        // })
+
+        // textelemet.addEventListener("mouseenter",function(){
+        //     imgawith.style.opacity = 1
+        // })
+
+
+        // textelemet.addEventListener("mouseleave",function(){
+        //     imgawith.style.opacity = 0
+        
+        // });
+
+        var elems = document.querySelectorAll(".elem");
+        var imagess = document.querySelectorAll(".elem img");
+        
+
+        elems.forEach(function(val){
+            val.addEventListener("mouseenter",function(dets){
+                val.childNodes[3].style.opacity = 1
+                
+            })
+
+            val.addEventListener("mouseleave",function(dets){
+                val.childNodes[3].style.opacity = 0
+                
+            })
+
+            val.addEventListener("mousemove",function(dets){
+                val.childNodes[3].style.left = dets.x + "px"
+                val.childNodes[3].style.top = dets.y +"px"
+            })
+
+        })
+
+    </script>
+</body>
+</html>

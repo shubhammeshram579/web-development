@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+
+<body>
+    <h1>function in javascript</h1>
+
+
+    <script>
+        // create fuction addition
+        function addarr(a, b, c) {
+            var marge = (a + b) / c
+            return marge
+        };
+
+        console.log(addarr(100, 10, 10));
+
+
+
+        // string marge
+        var a = "shubham ";
+        var b = "meshram";
+        function strmarge() {
+            var merge = a + b;
+            return merge
+        };
+
+        console.log(strmarge());
+
+
+        // advatage for creating fuctions as store the condintion and loop in fuction
+        function arrcal() {
+            for (var i = 0; i < 10; i++) {
+                if (i < 5) {
+                    console.log("less then 5");
+                } else {
+                    console.log("grether then 5")
+                }
+            }
+        };
+
+        arrcal();
+
+
+        // first class fuction 
+
+        var fcf = function () {
+            var strs = "shubham meshram"
+            console.log(strs);
+        };
+
+        fcf();
+
+
+        // high order fuction
+
+        function multiplier(factor) {
+            return function (x) {
+                return x * factor;
+            };
+        };
+
+        var double = multiplier(10);
+        console.log(double(5)); // Output: 10
+
+
+
+        
+
+
+        // call back function 
+        setTimeout(function () {
+            console.log("shubham")
+        }, 3000)
+
+
+        //    setInterval(function(){
+        //     console.log("shubham meshram");
+        //    },3000)
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
