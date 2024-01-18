@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+
+<body>
+    <h1>interview quetions</h1>
+
+
+
+    <script>
+
+        // 1 high oreder function
+        // def: if you store a fuction as varibale and return of the bihind the return of function it's call highorder function
+
+        // for example
+
+        // normal addition function
+        function addition(a) {
+            return a + 10;
+        }
+
+        console.log(addition(10));
+
+
+        // maltiple paramater return it's high oreder function
+        function abcd(f) {
+            return function (x) {
+                return x * f;
+
+            };
+        };
+
+        var adds = abcd(10);
+        console.log(adds(5));
+
+
+        // 2 constraction function
+        // def: if you created a normal function then you used this keyword and run the function then used new keyword it call costraction function
+        // constration were i used if you created same sige of cercle mabey 5 time then i used construction function.
+
+        // for example
+        function books() {
+            this.hight = 10;
+            this.width = 5;
+            this.color = "green";
+            this.name = "note book"
+        }
+
+        var book1 = new books();
+        var book2 = new books();
+        var book3 = new books();
+
+        console.log(book1);
+        console.log(book2);
+
+
+        // 3. first class fucction
+        // as a fuction uesd as a value it's call first class fuction
+
+        var abd = function () {
+            console.log("what is first class fuction ?")
+        }
+
+        console.log(abd);
+
+
+        // what is new keywords
+        // def: i you used this then it cleating a black obj , and i used new keyword then stored the new obj it's used new keyword
+        
+        // for example
+
+        function nk(){
+            this.name = "shubham"
+        }
+
+        var new_key =  new nk();
+
+        console.log(nk());
+        console.log(new_key);
+        console.log(new_key.name);
+
+
+    </script>
+</body>
+
+</html>
