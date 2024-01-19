@@ -27,7 +27,7 @@
         console.log(addition(10));
 
 
-        // maltiple paramater return it's high oreder function
+        // maltiple function return it's high oreder function
         function abcd(f) {
             return function (x) {
                 return x * f;
@@ -62,14 +62,24 @@
         // 3. first class fucction
         // as a fuction uesd as a value it's call first class fuction
 
+        // example 1 
+        function abcdd(){
+        };
+
+        abcdd(function(){
+            console.log("first class function example 1")
+        });
+
+
+        // example 2
         var abd = function () {
-            console.log("what is first class fuction ?")
-        }
+            console.log("first class fuction example 2")
+        };
 
         console.log(abd);
 
 
-        // what is new keywords
+        // 4. what is new keywords
         // def: i you used this then it cleating a black obj , and i used new keyword then stored the new obj it's used new keyword
         
         // for example
@@ -83,6 +93,88 @@
         console.log(nk());
         console.log(new_key);
         console.log(new_key.name);
+
+
+        // 5. iife (immaliatly involed function expretion)
+        // def: iife is help to privetage code to store do not accces someone it used iife
+
+        // normal fuction
+        // (fuction (){
+        // })
+
+        // getter for acces to privet code 
+        var ans = (function(){
+            var privatel = 12;
+            return { getter: function(){
+                console.log(privatel);
+            }}
+        })();
+
+        ans.getter();
+
+
+        // setter for help to change privet code value
+        var ans2 = (function(){
+            var privatel = 120;
+            return {
+                getter: function(){
+                console.log(privatel);
+            },
+            setter: function(val){
+            console.log(privatel = val);
+            }
+        }
+        })();
+
+        // ans2.getter();
+        ans2.setter(130);
+        ans2.getter();
+        ans2.setter(150);
+        ans2.getter();
+
+
+
+        // 6. prototype
+        // def: if you created a object then automatacally created prototype.
+
+        var obje = {
+            name: "shubham",
+            age: 26
+        };
+
+        console.log(obje);
+
+        // 7. prototype inharence
+        // def: prototype inharence means inharance of the same type of data to prant and sun.
+
+        // for example
+
+        var prand = {
+            last_name: "meshram",
+            cantalk: true,
+            canfly: false,
+            age: 49,
+            hight: '5.4 in'
+        };
+
+
+        var sun = {
+            last_name: "meshram",
+            age: 25,
+            hight: '5.5 in',
+            wight: '65kg'
+        };
+
+        sun.__proto__ = prand;
+
+        console.log(sun.cantalk);
+        console.log(sun.canfly);
+        console.log(prand.cantalk);
+        console.log(prand.canfly);
+
+
+
+
 
 
     </script>

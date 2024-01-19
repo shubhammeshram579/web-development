@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: black;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .card {
+            height: 350px;
+            width: 250px;
+            background-color: #fff;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .card2 {
+            padding-top: 10px;
+            height: 110px;
+            width: 100%;
+            /* background-color: yellow; */
+            border-radius: 10px;
+            border-bottom: 2px solid gray;
+            white-space: nowrap;
+            overflow-x: auto;
+        }
+
+        .card2::-webkit-scrollbar {
+            display: none;
+        }
+
+        .story {
+            margin: 5px;
+            height: 70px;
+            width: 70px;
+            border: 2px solid red;
+            border-radius: 50%;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .story img {
+            height: 70px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+
+
+        }
+
+
+        .fullscreen {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            display: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="fullscreen"></div>
+        <div class="card2">
+
+        </div>
+    </div>
+
+
+    <script>
+
+        var ars = [
+            {
+                dp: "https://images.unsplash.com/photo-1681958758142-a671f311b596?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE5fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
+                image: "https://images.unsplash.com/photo-1681958758142-a671f311b596?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE5fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+            },
+            {
+                dp: "https://images.unsplash.com/photo-1596815070908-b542a256e9fe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDIxfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
+                image: "https://images.unsplash.com/photo-1596815070908-b542a256e9fe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDIxfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+            },
+            {
+                dp: "https://plus.unsplash.com/premium_photo-1689607809314-84dedc85d311?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI0fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
+                image: "https://plus.unsplash.com/premium_photo-1689607809314-84dedc85d311?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI0fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+            },
+            {
+                dp: "https://images.unsplash.com/photo-1669553640769-0e4019b67d46?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQyfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
+                image: "https://images.unsplash.com/photo-1669553640769-0e4019b67d46?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQyfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+            },
+            {
+                dp: "https://images.unsplash.com/photo-1702905986326-6279e6636fcf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDg3fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
+                image: "https://images.unsplash.com/photo-1702905986326-6279e6636fcf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDg3fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+            },
+        ];
+
+
+        var cardimg = document.querySelector(".card2");
+
+        var imagess = ""
+
+        ars.forEach(function (val, index) {
+            imagess += `<div class="story">
+                <img id="${index}" src="${val.dp}"alt="">
+            </div>`
+        });
+
+        // console.log(imagess);
+
+        cardimg.innerHTML = imagess;
+
+
+
+        var imgsddd = document.querySelectorAll(".story img")
+
+
+
+        cardimg.addEventListener("click", function (dets) {
+
+            document.querySelector(".fullscreen").style.display = "block"
+            document.querySelector(".fullscreen").style.backgroundImage = `url(${ars[dets.target.id].image})`
+
+            setTimeout(function () {
+                document.querySelector(".fullscreen").style.display = "none"
+
+            }, 2000)
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -162,6 +162,27 @@
         }
 
 
+        .basic-tag-used p{
+            background-color:yellow;
+            color: red;
+            border: 2px solid black;
+            padding: 10px;
+            height: 100px;
+            width: 200px;
+            overflow: hidden;
+            overflow:scroll;
+            text-transform: capitalize;
+            text-align: justify;
+            margin: auto;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+        }
+
+        .basic-tag-used p::-webkit-scrollbar{
+            display: none;
+        }
+
+
 
 
 
@@ -412,6 +433,24 @@
         }
 
         console.log(multiplepra(2,10));
+
+
+        function numsprint(){
+            for (var i = 0; i < 20; i = i + 2){
+                console.log(i);
+            };
+            console.log("hi");
+            // for (var k = 20;  k > 0; k= k-2){
+            //     console.log(i);
+            // };
+
+        };
+
+        numsprint();
+
+
+
+
 
     </script>
 </body>
