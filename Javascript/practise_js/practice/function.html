@@ -76,12 +76,66 @@
         // call back function 
         setTimeout(function () {
             console.log("shubham")
-        }, 3000)
+        }, 3000);
 
 
         //    setInterval(function(){
         //     console.log("shubham meshram");
         //    },3000)
+
+
+        // day 2
+
+        // normal function
+
+        function normalfns(a,b){
+            return a * b;
+        };
+
+        console.log(normalfns(12,10));
+
+
+        // high order fuction
+
+        function hof(a){
+            return function(b){
+                return a * b;
+            }
+        };
+
+        var multiply = hof(10);
+        console.log(multiply(12));
+
+
+        // first class fuction 
+        var fcf = function(){
+            var a = "shubham"
+            console.log( a , "first class fuction")
+        };
+
+        console.log(fcf());
+        
+
+
+        // arrow function for es6 version 
+        // let arrowf = () => {};
+
+        let arrowf = (a,b) => { return a * b};
+
+        console.log(arrowf(12,100));
+
+
+        // callback fuction
+
+        function callf(){
+            setTimeout(function(){
+                console.log("code execution after 3sec delay it callback fuction");
+            },3000)
+        };
+
+        callf();
+
+
 
 
 
