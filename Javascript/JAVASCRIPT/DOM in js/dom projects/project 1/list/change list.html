@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #111;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            padding: 10px;
+            height: 260px;
+            width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .card h1 {
+            text-transform: capitalize;
+            padding-left: 10px;
+        }
+
+        .card .list1 {
+            padding-left: 30px;
+            margin-top: 10px;
+            position: absolute;
+            text-transform: capitalize;
+
+        }
+
+        .card .list2 {
+            padding-left: 30px;
+            margin-top: 10px;
+            padding-bottom: 10px;
+            position: absolute;
+            text-transform: capitalize;
+            opacity: 0;
+
+        }
+
+
+        .card .list3 {
+            padding-left: 30px;
+            margin-top: 10px;
+            padding-bottom: 10px;
+            text-transform: capitalize;
+            opacity: 0;
+
+        }
+
+        .list2 .green {
+            color: rgb(14, 200, 14);
+        }
+
+        .list3 .red {
+            color: red;
+        }
+
+        button {
+            padding: 5px;
+            width: 90%;
+            margin: 2px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>unorder list</h1>
+        <div class="list1">
+            <ul>
+                <li>python</li>
+                <li>sql</li>
+                <li>power bi</li>
+                <li>advance excel</li>
+                <li>etl tools</li>
+            </ul>
+        </div>
+        <div class="list2">
+            <ul>
+                <li class="green">python done</li>
+                <li class="green">sql done</li>
+                <li>power bi</li>
+                <li class="green">advance excel done</li>
+                <li>etl tools</li>
+            </ul>
+        </div>
+        <div class="list3">
+            <ul>
+                <li>python</li>
+                <li>sql</li>
+                <li class="red">power bi pending</li>
+                <li>advance excel</li>
+                <li class="red">etl tools pending</li>
+            </ul>
+        </div>
+        <button class="btn1">Done</button>
+        <button class="btn2">Pending</button>
+    </div>
+
+
+
+    <script>
+        var list1 = document.querySelector(".list1");
+        var list2 = document.querySelector(".list2");
+        var list3 = document.querySelector(".list3");
+        var btn1 = document.querySelector(".btn1");
+        var btn2 = document.querySelector(".btn2");
+
+
+        var a = 0;
+        var b = 0;
+        btn1.addEventListener("click", function () {
+            list2.style.opacity = 1
+            setTimeout(function(){
+                    list2.style.opacity = 0  
+                },2000)
+
+                });
+
+            
+        btn2.addEventListener("click", function () {
+                list3.style.opacity = 1
+                setTimeout(function(){
+                    list3.style.opacity = 0  
+                },2000)
+            
+        })
+
+    </script>
+</body>
+
+</html>

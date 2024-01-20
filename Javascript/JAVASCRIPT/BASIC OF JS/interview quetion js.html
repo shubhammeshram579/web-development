@@ -172,6 +172,111 @@
         console.log(prand.cantalk);
         console.log(prand.canfly);
 
+         // 8. how to identify global scoped and local scoped
+
+        // i. if you created a original value mease single value it call global scoped
+        var a = "shubham"; 
+
+        // if you used [], { } () for stored the values it's call local scoped
+        function  locs(){
+            var a = "labham";
+        };
+
+
+
+
+        // 9. this, call , apply , bind 
+
+        // (i) this
+        // def:  this keyword is a special keyword in js whitch changes it's value in differance context
+
+       
+
+
+        // in global scoped
+        console.log(this); // it is given window
+
+        
+
+        // in function scoped
+        function fscoped(){
+            console.log(this);
+        };
+        fscoped(); // it is given window
+
+
+        // in method scoped
+
+        var mscoped = {
+            name: "shubham",
+            function(){
+                console.log(this)
+            }
+        };
+
+        console.log(mscoped); //it is giving object
+
+
+        // ii. call
+        // def: if you created as function then you used this keyword and for acces a object value this this used call fuction 
+
+        // for example
+        function callfnc(){
+            console.log(this);
+        };
+
+        var callobj = {
+            age:26
+        };
+
+        callfnc.call(callobj);
+
+        // example 2
+        function callfns2(val,val2,val3){
+            console.log(this,val,val2,val3);
+        };
+
+        callfns2.call(callobj,12,33,44);
+
+
+        // iii. apply
+        // it's updated and add new value in object it's apply
+
+        callfns2.apply(callobj,[12,33,45]);
+
+
+        // iv. bind it is save varible for future used
+
+        var bindfns = callfns2.bind(callobj,[12,33,45]);
+        
+        bindfns();
+
+
+        // 10. pure fuction and inpure function
+        // def:  if you create a fuction and run the fuction the output allwest out are diff it call inpure fuction
+
+        // for example
+
+        function inpure(val){
+            return Math.random() * val;
+        }
+
+        console.log(inpure(2));
+        console.log(inpure(2));
+
+
+        // pure fuction doest change output resut allwest giving the result currect it call pure fuction
+
+        function purefns(a,b){
+            return a + b;
+        };
+
+        console.log(purefns(12,12));
+        console.log(purefns(12,12));
+
+        
+
+
 
 
 
