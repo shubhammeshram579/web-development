@@ -17,6 +17,65 @@ html,body{
 }
 
 
+.nav-part1 svg{
+    display: block;
+    
+}
+
+
+.nav-part1{
+    /* background-color: red; */
+    height: 83px;
+    overflow: hidden;
+}
+
+
+
+.nav{
+    height: 100px;
+    width: 100%;
+    /* background-color: blanchedalmond; */
+    position:fixed;
+    z-index: 99;
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+.nav-part2{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.nav-part2 a{
+    margin: 30px;
+    text-decoration: none;
+    color: #3d3a3a;
+    font-size: 17px;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+.icon{
+    background-color: aliceblue;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.icon i {
+    padding: 25px;
+    font-size: 25px;
+    
+    
+}
+
+
+
+
+
+
 .curcer{
     height: 150px;
     width: 150px;
@@ -113,15 +172,14 @@ html,body{
 }
 
 .page2 .elem .dets ul{
-    position: absolute;
-    margin-left: 50px;
+    margin-left: 40px;
     padding-top: 12px;
-    font-size: 25px;
+    font-size: 20px;
 
 }
 
 .page2 span{
-    padding-left: 100px;
+    padding-left: 95px;
     text-transform: uppercase;
     font-weight: 800;
 }
@@ -129,20 +187,63 @@ html,body{
 /* page3 */
 
 .page3{
-    min-height: 130vh;
+    min-height: 13vh;
     width: 100%;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    border-bottom: 3px solid black;
+    padding-bottom: 100px;
 }
+
+
+    
+.page3 .product-details{
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+    padding: 28px;
+
+}
+
+.product-details h1{
+    width: 70%;
+    font-size: 7vh;
+}
+
+
+.summary{
+    width: 60%;
+    margin-left: 9vw;
+    padding: 0 100px;
+}
+
+.page3 .summary h3{
+    font-size: 25px;
+    margin-bottom: 80px;
+    text-align: start;
+    font-weight: 100;
+}
+
+
+.page3 .summary h4{
+    font-weight: 100;
+    margin-top: -30px;
+}
+
+.page3 .summary h4:hover{
+    text-decoration: underline;
+}
+
+
 
 .child{
     height: 79vh;
     width: 45vw;
     margin-bottom: 5vh;
-    /* background-color: red; */
+    opacity: 0;
 }
 
 .page3 img{
@@ -152,12 +253,134 @@ html,body{
     object-position: center;
 }
 
-.page3 h5,h6{
+.page3 .child h5,h6{
     text-align: center;
-    font-size: 16px;
+    text-transform: uppercase;
+    font-size: 17px;
     font-weight: 100;
 }
 
+/* page4 style */
+
+.page4{
+    min-height: 120vh;
+    width: 100%;
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.page4 h1{
+    font-weight: 900;
+    padding: 0px 40px;
+    margin-top: 10px;
+    word-spacing: 0.5px;
+} 
+
+.page4 h3{
+    width: 70%;
+    font-weight: 100;
+    font-size: 25px;
+    padding: 30px 40px;
+} 
+
+.page4 h4{
+    font-weight: 100;
+    padding: 0px 40px;
+    text-decoration: underline;
+}
+
+.page4 img{
+    height: 100%;
+    width: 100%;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+
+.endpage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px;
+    border-bottom: 1px solid gray;
+}
+
+.page5.endpage h1{
+    font-size: 5vh;
+}
+
+.page5 i{
+    font-size: 4vh;
+    font-weight: 100;
+}
+
+
+/* page6  */
+
+.page6{
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+    padding: 300px 40px;
+}
+
+.page6 .card1 li{
+    list-style-type: none;
+    padding: 2px;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.page6 .card1 li:hover{
+    color: #6c6868;
+}
+
+.page6 h3{
+    margin-bottom: 20px;
+    color: gray;
+}
+
+
+
+.page6 .card2 li{
+    list-style-type: none;
+    padding: 2px;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.page6 .card2 li:hover{
+    color: #6c6868;
+}
+
+
+.page6 svg{
+    height: 27vh;
+    width: 100%;
+    opacity: 0;
+    /* transition:all ease-in 3s; */
+}
+
+.page6-part2{
+    text-align: center;
+    margin-top: -200px;
+}
+
+.page6-part2 h3{
+    font-weight: 100;
+    color: gray;
+
+}
+
+.page6-part2 h4{
+    text-align: center;
+    /* margin-top: 100px; */
+    padding: 100px;
+    font-size: 20px;
+    font-weight: 100;
+}
 
 
 
@@ -183,10 +406,10 @@ html,body{
     }
 
     .video-contener{
-        height: 25vh;
+        height: 50vh;
         width: 100%;
         padding-top: 1vw;
-        border: 3px solid red;
+        /* border: 3px solid red; */
         margin-top: 3vw;
     
     }
@@ -194,8 +417,8 @@ html,body{
     .video-contener .play{
         padding: 6vw 5vw;
         font-size: 2vh;
-        position: absolute;
-        top: 83%;
+        position: fixed;
+        top: 50%;
         left:50%;
         border-radius: 50%;
         opacity: 1;
@@ -204,17 +427,19 @@ html,body{
     }
 
     .page2{
-        min-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        padding: 3vw 3vw;
+        position: relative;
+        /* padding: 3vw 2vw 3vw 2vw; */
+        
     }
     .page2 .elem{
         height: 100%;
         width: 100%;
-        margin-bottom: 3vw;
+        margin-bottom: 40px;
+        /* background-color: red; */
     }
     
     .page2 img{
@@ -223,6 +448,58 @@ html,body{
         object-fit: cover;
         object-position: center;
     
+    }
+    
+    .page2 .elem .dets{
+        height: 50px;
+        width: 80%;
+        border-radius: 30px;
+        z-index: 9;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color:blanchedalmond;
+    
+    }
+    
+    .page2 .elem .dets:hover{
+        height: 300px;
+    }
+    
+    .page2 .elem .dets ul{
+        margin-left: 40px;
+        padding-top: 12px;
+        font-size: 15px;
+    
+    }
+    
+    .page2 span{
+        padding-left: 95px;
+        text-transform: uppercase;
+        font-weight: 800;
+        
+    };
+
+    .page3{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        /* padding: 3vw 3vw; */
+    }
+    
+    .child{
+        height: 100%;
+        width: 100%;
+        /* background-color: red; */
+    }
+
+    .page3 img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
     }
     
     
