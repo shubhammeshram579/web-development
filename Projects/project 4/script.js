@@ -64,6 +64,8 @@ navscrollanimation();
 
 
 
+
+
 function videoconanimation(){
    var videocon = document.querySelector(".video-contener");
 var playbtn = document.querySelector(".play");
@@ -145,6 +147,64 @@ imgchild.forEach(function(val){
 
 circulanimation();
 
+function menubaranimation(){
+var menubar = document.querySelector(".menu");
+var menubtn = document.querySelector(".nav button  .ri-menu-line");
+var logoimg = document.querySelector(".nav-part1 #svg1");
+var logoimg2 = document.querySelector(".nav-part1 .svg2");
+
+
+var a = 0
+menubtn.addEventListener("click",function(){
+   if(a === 0){
+   menubar.style.opacity = 1;
+   menubar.style.zIndex = "10"
+   menubtn.style.fontSize = "25px"
+   logoimg.style.color = "#fff"
+   logoimg2.style.color = "#fff"
+
+   a = 1
+}else{
+   menubar.style.opacity = 0;
+   menubar.style.zIndex = "0"
+   menubtn.style.fontSize = "20px"
+   logoimg.style.color = "#111"
+   logoimg2.style.color = "#111"
+   a = 0
+}
+});
+
+
+
+var cardbtn = document.querySelector(".nav button  .ri-shopping-cart-2-line");
+var cardbar = document.querySelector(".card-details");
+
+
+
+var a = 0
+cardbtn.addEventListener("click",function(){
+   if(a === 0){
+      cardbar.style.opacity = 1;
+      cardbar.style.zIndex = "10"
+      cardbar.style.fontSize = "25px"
+      logoimg.style.color = "#fff"
+      logoimg2.style.color = "#fff"
+
+   a = 1
+}else{
+   cardbar.style.opacity = 0;
+   cardbar.style.zIndex = "0"
+   cardbar.style.fontSize = "20px"
+   logoimg.style.color = "#111"
+   logoimg2.style.color = "#111"
+   a = 0
+}
+});
+};
+
+menubaranimation();
+
+
 
 
 // document.querySelector("#child1").addEventListener("mouseenter",function(){
@@ -195,5 +255,9 @@ gsap.to(".page3 .child", {
 };
 
 imgscrollinganimation();
+
+
+
+
 
 
