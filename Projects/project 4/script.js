@@ -153,7 +153,6 @@ var menubtn = document.querySelector(".nav button  .ri-menu-line");
 var logoimg = document.querySelector(".nav-part1 #svg1");
 var logoimg2 = document.querySelector(".nav-part1 .svg2");
 
-
 var a = 0
 menubtn.addEventListener("click",function(){
    if(a === 0){
@@ -162,7 +161,6 @@ menubtn.addEventListener("click",function(){
    menubtn.style.fontSize = "25px"
    logoimg.style.color = "#fff"
    logoimg2.style.color = "#fff"
-
    a = 1
 }else{
    menubar.style.opacity = 0;
@@ -186,7 +184,7 @@ cardbtn.addEventListener("click",function(){
    if(a === 0){
       cardbar.style.opacity = 1;
       cardbar.style.zIndex = "10"
-      cardbar.style.fontSize = "25px"
+      cardbtn.style.fontSize = "25px"
       logoimg.style.color = "#fff"
       logoimg2.style.color = "#fff"
 
@@ -194,7 +192,7 @@ cardbtn.addEventListener("click",function(){
 }else{
    cardbar.style.opacity = 0;
    cardbar.style.zIndex = "0"
-   cardbar.style.fontSize = "20px"
+   cardbtn.style.fontSize = "20px"
    logoimg.style.color = "#111"
    logoimg2.style.color = "#111"
    a = 0
@@ -228,13 +226,13 @@ menubaranimation();
 
 function imgscrollinganimation(){
 gsap.to(".page3 .child", {
-   transition: "all ease-in 1s",
+   transition: "all ease-in 2s",
    opacity: 1,
    scrollTrigger: {
      trigger: ".page3",
      scroller: ".main",
-     start: "top 30%",
-     end: "top 40%",
+     start: "top 20%",
+     end: "top 30%",
      scrub: true,
    },
  });
@@ -242,7 +240,7 @@ gsap.to(".page3 .child", {
 
 
  gsap.to(".page6 .imagcon svg", {
-   transition: "all ease-in 1s",
+   transition: "all ease-in 2s",
    opacity: 1,
    scrollTrigger: {
      trigger: ".page6",
@@ -255,6 +253,103 @@ gsap.to(".page3 .child", {
 };
 
 imgscrollinganimation();
+
+function hovertopageanimation(){
+var boxcaon = document.querySelectorAll(".contener1 .dets");
+var boximg = document.querySelectorAll(".contener1 .box img");
+var boxtext = document.querySelectorAll(".contener1 .box2 h5");
+
+
+boxcaon.forEach(function(val){
+   val.addEventListener("mouseenter",function(){
+      boximg.forEach(function(box){
+         box.style.opacity = 1;
+      })
+      boxtext.forEach(function(box2){
+         box2.style.opacity = 1;
+      })
+   
+   })
+
+   val.addEventListener("mouseleave",function(){
+      boximg.forEach(function(box){
+         box.style.opacity = 0;
+      })
+      boxtext.forEach(function(box2){
+         box2.style.opacity = 0;
+      })
+   
+   })
+   
+   
+})
+
+
+
+var boxcaon2 = document.querySelectorAll(".cotener2 .dets");
+var boximg2 = document.querySelectorAll(".cotener2 .box img");
+var boxtext2 = document.querySelectorAll(".cotener2 .box2 h5");
+
+
+boxcaon2.forEach(function(val){
+   val.addEventListener("mouseenter",function(){
+      boximg2.forEach(function(box){
+         box.style.opacity = 1;
+      })
+      boxtext2.forEach(function(box2){
+         box2.style.opacity = 1;
+      })
+   
+   })
+
+   val.addEventListener("mouseleave",function(){
+      boximg2.forEach(function(box){
+         box.style.opacity = 0;
+      })
+      boxtext2.forEach(function(box2){
+         box2.style.opacity = 0;
+      })
+   
+   })
+   
+   
+});
+
+
+
+var boxcaon3 = document.querySelectorAll(".contener3 .dets");
+var boximg3 = document.querySelectorAll(".contener3 .box img");
+var boxtext3 = document.querySelectorAll(".contener3 .box2 h5");
+
+
+boxcaon3.forEach(function(val){
+   val.addEventListener("mouseenter",function(){
+      boximg3.forEach(function(box){
+         box.style.opacity = 1;
+      })
+      boxtext3.forEach(function(box2){
+         box2.style.opacity = 1;
+      })
+   
+   })
+
+   val.addEventListener("mouseleave",function(){
+      boximg3.forEach(function(box){
+         box.style.opacity = 0;
+      })
+      boxtext3.forEach(function(box2){
+         box2.style.opacity = 0;
+      })
+   
+   })
+   
+   
+})
+};
+
+hovertopageanimation();
+
+
 
 
 

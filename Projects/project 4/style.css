@@ -16,7 +16,7 @@ html,body{
     width: 100%;
 }
 
-
+/* logo img styly */
 .nav-part1 svg{
     display: block;
     
@@ -24,7 +24,6 @@ html,body{
 
 
 .nav-part1{
-    /* background-color: red; */
     height: 83px;
     overflow: hidden;
 }
@@ -89,6 +88,11 @@ html,body{
     padding: 10px 10px;
 }
 
+.menu .contenercardx{
+    display: flex;
+    margin-bottom: -10vh;
+}
+
 .menu li{
     list-style-type: none;
     font-size: 20px;
@@ -104,7 +108,13 @@ html,body{
 
 
 .menu .cardz{
+    margin-bottom: 10px;
+    margin-left:10vw ;
+}
+
+.menu .cardy{
     margin-bottom: 64px;
+    margin-left:10vw ;
 }
 
 
@@ -141,8 +151,13 @@ html,body{
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    padding-top: 350px;
+    padding-top: 230px;
 }
+
+
+
+
+
 
 .card-details h1{
     font-size: 35px;
@@ -150,6 +165,7 @@ html,body{
     padding-bottom: 40px;
     color: #fff;
     font-weight: 100;
+    margin-bottom: 50px;
 
 }
 
@@ -161,9 +177,9 @@ html,body{
     text-transform: uppercase;
     color: #fff;
     font-weight: 700;
-    margin-bottom: 100px;
 
 }
+
 
 
 #scroller{
@@ -174,6 +190,7 @@ html,body{
     position: relative;
     z-index: 10;
     border-top: 3px solid #fff;
+    margin-top: 25px;
 }
 
 
@@ -360,11 +377,24 @@ html,body{
 
 }
 
-/* .page2, .elem , img ,h5:hover{
+/* .page2 .elem .dets:hover{
     height: 300px;
-    opacity: 1;
-
 } */
+
+.contener1 .dets:hover{
+    height: 300px;
+
+}
+
+.cotener2 .dets:hover{
+    height: 300px;
+
+}
+
+.contener3 .dets:hover{
+    height: 300px;
+
+}
 
 .page2 .elem .dets ul{
     margin-left: 40px;
@@ -402,13 +432,18 @@ html,body{
     height: 120px;
     width: 100%;
     object-fit: cover;
+    object-position: center;
     opacity: 0;
 
 }
 
-/* .page2 .box img:hover{
-    opacity: 1;
-} */
+.page2 #botel{
+    margin-top: -4vh;
+    height: 170px;
+    width: 50%;
+}
+
+
 
 .page2 .box2{
     display: flex;
@@ -428,9 +463,12 @@ html,body{
     opacity: 0;
 }
 
-/* .page2 .box2 h5:hover{
-    opacity: 1;
-} */
+
+.cotener2 ul li #gifts{
+    padding-left: 80px;
+    
+}
+
 
 
 /* page3 */
@@ -493,6 +531,7 @@ html,body{
     width: 45vw;
     margin-bottom: 5vh;
     opacity: 0;
+    padding: 5vw;
 }
 
 .page3 img{
@@ -528,10 +567,11 @@ html,body{
 } 
 
 .page4 h3{
-    width: 70%;
+    width: 31vw;
     font-weight: 100;
-    font-size: 25px;
+    font-size: 20px;
     padding: 30px 40px;
+    text-align: justify;
 } 
 
 .page4 h4{
@@ -540,11 +580,14 @@ html,body{
     text-decoration: underline;
 }
 
+/* .page4 .storyimg{
+    display: flex;
+    flex-direction: row;
+} */
+
 .page4 img{
-    height: 100%;
-    width: 100%;
-    margin: 15px;
-    border-radius: 10px;
+    height: 100vh;
+    padding: 20px;
 }
 
 
@@ -564,6 +607,9 @@ html,body{
     font-size: 4vh;
     font-weight: 100;
 }
+
+
+
 
 
 /* page6  */
@@ -641,6 +687,276 @@ html,body{
 
 
 @media (max-width:600px) {
+
+    .nav-part1 svg{
+        display: block;
+        
+    }
+    
+    
+    .nav-part1{
+        height: 83px;
+        overflow: hidden;
+    }
+    
+    
+    
+    .nav{
+        height: 100px;
+        width: 96vh;
+        z-index: 99;
+        padding: 20px;
+        background-color: antiquewhite;
+
+    
+    }
+    .nav-part2{
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+    
+    .nav-part2 a{
+        margin: 30px;
+        text-decoration: none;
+        color: #3d3a3a;
+        font-size: 17px;
+        font-weight: 100;
+        text-transform: uppercase;
+        display: none;
+    }
+    
+    .icon{
+        background-color: aliceblue;
+        border-radius: 20px;
+        padding: 5px;
+        margin-right: 10vw;
+    }
+    
+    .icon button{
+        border: none;
+        margin: 2vw 4vh;
+        background-color: transparent;
+    }
+    
+    .icon button i{
+        font-size: 15px;
+    }
+    
+    /* menubar style */
+    .menu{
+        height: 100vh;
+        width: 96vh;
+        background-color:#3d3a3a;
+        color: #fff;
+        opacity: 0;
+        position: absolute;
+        z-index: 0;
+        display: flex;
+        align-items:center;
+        justify-content:space-between;
+        padding: 10px 10px;
+    }
+
+    .menu .contenercardx{
+        display: flex;
+        margin-top: 120%;
+        align-items:flex-start;
+        margin-left: 2vh;
+
+
+    }
+
+    .menu .contenercardx h3{
+        font-size: 3vw;
+        text-transform: uppercase;
+        margin-top: -23vh;
+    }
+
+    .menu .contenercardx ul li{
+        font-size: 2.5vw;
+        
+    }
+
+    .contenercardx .cardx{
+        margin-right: 5vw;
+    }
+
+    .contenercardx .cardy{
+        margin-right: 5vw;
+    }
+
+    
+    .menu .bar{
+        margin-left: -100vw;
+    }
+    .menu .bar li{
+        font-size: 5vh;
+        font-weight: 1000;
+        text-transform: uppercase;
+        
+    }
+    
+    .menu .cardx li{
+        color:rgb(174, 168, 168);
+        font-size: 20px;    
+    }
+    
+    .menu .cardy li{
+        color:rgb(174, 168, 168);
+        font-size: 20px;    
+    }
+    
+    .menu .cardz li{
+        color:rgb(174, 168, 168);
+        font-size: 20px;    
+    }
+    
+    .menu h3{
+        font-size: 27px;
+        margin-bottom: 16px;
+    }
+    
+    /* card style */
+    
+    .card-details{
+        min-height: 93vh;
+        width: 100%;
+        background-color: #111;
+        z-index: 0;
+        opacity: 0;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 35vh;
+    }
+    
+    .card-details h1{
+        font-size: 3vh;
+        text-transform: lowercase;
+        padding-bottom: 40px;
+        color: #fff;
+        font-weight: 100;
+    
+    }
+    
+    .card-details h2{
+        border: 2px solid #fff;
+        border-radius: 30px;
+        padding: 30px 100px;
+        font-size: 3vw;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 100px;
+    
+    }
+    
+    
+    #scroller{
+        /* background-color: red; */
+        white-space:nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        position: relative;
+        z-index: 10;
+        border-top: 3px solid #fff;
+    }
+    
+    
+    #scroller::-webkit-scrollbar{
+        display: none;
+    }
+    
+    
+    #scroller-in{
+        display: inline-block;
+        white-space: nowrap;
+        animation-name: scroll;
+        animation-duration: 25s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    
+    #scroller h4{
+        display:inline-block;
+        font-size: 10vh;
+        font-weight: 900;
+        font-family: gilroy;
+        margin-right: 20px;
+        transition: all linear 0.5s;
+        color:#fff;
+        text-transform: uppercase;
+    
+    }
+    
+    
+    @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+    
+    
+    
+      #scroller2{
+        /* background-color: red; */
+        white-space:nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        position: relative;
+        z-index: 10;
+        border-top: 3px solid #fff;
+    }
+    
+    
+    #scroller2::-webkit-scrollbar{
+        display: none;
+    }
+    
+    
+    #scroller-in2{
+        display: inline-block;
+        white-space: nowrap;
+        animation-name: scroll2;
+        animation-duration: 25s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    
+    #scroller2 h4{
+        display:inline-block;
+        font-size: 10vh;
+        font-weight: 900;
+        font-family: gilroy;
+        margin-right: 20px;
+        transition: all linear 0.5s;
+        color:#fff;
+        text-transform: uppercase;
+    
+    }
+    
+    @keyframes scroll2 {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(100%);
+        }
+        
+      }
+    
+
+
+
+
+
+/* page1 */
     .page1{
         min-height: 70vh;
         width: 100%;
@@ -660,7 +976,6 @@ html,body{
         padding-top: 1vw;
         /* border: 3px solid red; */
         margin-top: 3vw;
-    
     }
 
     .video-contener .play{
@@ -675,6 +990,9 @@ html,body{
         transform: translate(-50%,-50%);
     }
 
+
+    /* page2 */
+
     .page2{
         display: flex;
         flex-direction: column;
@@ -685,23 +1003,24 @@ html,body{
         
     }
     .page2 .elem{
-        height: 100%;
-        width: 100%;
-        margin-bottom: 40px;
+        height: 100vh;
+        width: 100vw;
+        margin-bottom: 2vh;
         /* background-color: red; */
     }
     
     .page2 img{
-        height: 100%;
-        width: 100%;
+        height: 100vh;
+        width: 100vw;
+        padding: 4vw;
         object-fit: cover;
         object-position: center;
     
     }
     
     .page2 .elem .dets{
-        height: 50px;
-        width: 80%;
+        height: 7vh;
+        width: 70%;
         border-radius: 30px;
         z-index: 9;
         top: 50%;
@@ -712,22 +1031,69 @@ html,body{
     }
     
     .page2 .elem .dets:hover{
-        height: 300px;
+        height: 250px;
     }
-    
+
     .page2 .elem .dets ul{
-        margin-left: 40px;
-        padding-top: 12px;
-        font-size: 15px;
-    
+        margin-top: -7px;
+        /* margin-left: -2px; */
     }
     
-    .page2 span{
-        padding-left: 95px;
-        text-transform: uppercase;
-        font-weight: 800;
+    .page2 .elem .dets li{
+        margin-left: 5vw;
+    }
+
+    .page2 .elem .dets span{
+        margin-left: 5vw;
+    }
+
+    .cotener2 ul li #gifts{
+        padding-left: 80px;
         
-    };
+    }
+
+    .page2 .box2{
+        margin-top: -3vh;
+    }
+
+
+    .page3 .product-details{
+        display: flex;
+        flex-direction: column;
+        margin-top: -6vh;
+    }
+
+    .page3 .product-details h1{
+        text-align: center;
+        height: 150px;
+        width: 95vw;
+        font-size: 4vh;
+        padding-right: 10vw;
+        
+    }
+
+    .page3 .summary{
+        margin-left: -115px;
+    }
+
+    .page3 .summary h3{
+        text-align: center;
+        height: 110px;
+        width: 90vw;
+        font-size: 20px;
+        margin-top: -40px;
+
+    }
+
+    .page3 .summary h4{
+        text-align: center;
+        height: 110px;
+        width: 90vw;
+        font-size: 20px;
+        margin-top: -40px;
+
+    }
+
 
     .page3{
         min-height: 100vh;
@@ -735,13 +1101,14 @@ html,body{
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        /* padding: 3vw 3vw; */
+       
     }
     
     .child{
         height: 100%;
         width: 100%;
-        /* background-color: red; */
+        margin-left: -10vw;
+        
     }
 
     .page3 img{
@@ -749,8 +1116,103 @@ html,body{
         width: 100%;
         object-fit: cover;
         object-position: center;
+        padding: 10vh;
     }
     
+
+
+    /* page4  */
+
+    .page4{
+        display: flex;
+        flex-direction:column-reverse;
+    }
+
+    .page4 .storyimg{
+        display: flex;
+        align-items: center;
+    }
     
+    .storyimg img{
+        height: 60vw;
+        width: 100%;
+        border-radius: none;
+        object-fit: cover;
+    }
+
+    .story{
+        
+    }
+
+    .story h3{
+        font-size: 2.8vw; 
+        width: 90%;
+        text-align:justify ;
+        
+    }
+
+    .story h4{
+        font-size: 2.8vw; 
+        width: 90%;
+        padding-bottom: 100px;
+        
+    }
+    
+    .page5 h1 ,i{
+        padding-bottom: 10vh;
+        font-size: 3vh;
+    }
+
+    .page6{
+        display: flex;
+        flex-wrap:wrap;
+        margin-top: -15vh;
+    }
+
+    .page6 .card1{
+        order: 2;
+    }
+    .page6 .card2{
+        order: 3;
+    } 
+
+    .page6 svg{
+        margin-top: -300px;
+        height: 70px;
+    }
+
+    .page6 .card1{
+        margin-top: 50px;
+        margin-left: -150px;
+    }
+
+    .page6 .card2{
+        margin-top: 50px;
+    }
+
+    .page6-part2{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .page6-part2 h3{
+        font-size: 15px;
+        margin-left: -10vw;
+
+    }
+
+    .page6-part2 h4{
+        font-size: 15px;
+        text-align: justify;
+        margin-top: -25vh;
+        margin-left: -10vw;
+
+    }
+
+    .page6-part2 .GRAYSCALE{
+        color: #8d8888;
+        font-size: 10px;
+    }
+
     
 }
