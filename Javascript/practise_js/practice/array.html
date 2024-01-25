@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: center;
+        }
+
+        h1{
+            text-transform: uppercase;
+            text-shadow: 1px 1px red;
+        }
+
+
+        /* #boder-box{
+            background-color: red;
+            padding: 50px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            padding: 100px;
+        } */
+
+        /* #content-box{
+            background-color: red;
+            padding: 50px;
+            box-sizing: content-box;
+            padding: 100px;
+        } */
+    </style>
+</head>
+<body>
+    <h1 id="boder-box">array</h1>
+    <!-- <h1 id="content-box">array</h1> -->
+    
+    
+
+    <script>
+        // basic of array it's used for store the data as group wise and it is givig the freedum to stored no limite
+
+        // create array 
+         var array1 = [1,2,3,4,5,6,7];
+         
+         console.log(array1);
+         console.log(typeof array1);
+
+
+
+        //  marge array using concat fuction
+         var array2 = [2,4,5,6,7,3,8];
+         console.log(array1.concat(array2));
+
+        //  add value
+         array1.push(100);
+
+         console.log(array1);
+
+
+        //  check array shape
+         console.log(array1.length);
+
+        //  array conver in to reverse Number
+         console.log(array1.reverse());
+         console.log(array1);
+
+        // sort value by arrays
+        array2.sort();
+        console.log(array2);
+
+
+        // delete array last values 
+        array1.pop();
+        console.log(array1);
+        array1.pop();
+        console.log(array1);
+
+
+        // fill value as per index
+        array1.fill(100,5);
+        console.log(array1);
+
+        // delete stating array values 
+        array1.shift(10);
+        console.log(array1);
+
+        // add multiple array values it used for unshift fuction
+        array1.unshift(3,5,300);
+        console.log(array1)
+
+
+        // slicing in array 
+        console.log(array1.slice(2,4));
+
+
+        // split array values
+        array1.splice(2);
+        console.log(array1);
+
+        // map fuction
+        console.log(array2.map(Math.sqrt))
+
+
+        
+
+
+
+
+
+
+    </script>
+</body>
+</html>

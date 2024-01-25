@@ -7,7 +7,7 @@
 body{
     height: 100%;
     width: 100%;
-    background-color: #111;
+    background-color: #061414;
 }
 
 
@@ -230,9 +230,12 @@ span{
     
 }
 
-.contener4 h2{
+.contener4 h2 a{
     text-align: center;
     padding: 20px;
+    margin-left: 50px;
+    text-decoration: none;
+    color: #111;
 }
 
 .contener4 button{
