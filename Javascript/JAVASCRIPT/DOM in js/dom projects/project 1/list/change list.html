@@ -27,10 +27,11 @@
 
         .card {
             padding: 10px;
-            height: 260px;
+            height: 220px;
             width: 300px;
             background-color: #fff;
             border-radius: 10px;
+            /* background-color: rgba(224, 237, 237, 0.562); */
             position: relative;
         }
 
@@ -80,6 +81,7 @@
             width: 90%;
             margin: 2px;
             margin-left: 10px;
+            background-color: rgb(147, 26, 123);
         }
     </style>
 </head>
@@ -115,7 +117,7 @@
             </ul>
         </div>
         <button class="btn1">Done</button>
-        <button class="btn2">Pending</button>
+        <!-- <button class="btn2">Pending</button> -->
     </div>
 
 
@@ -131,21 +133,33 @@
         var a = 0;
         var b = 0;
         btn1.addEventListener("click", function () {
-            list2.style.opacity = 1
-            setTimeout(function(){
-                    list2.style.opacity = 0  
-                },2000)
-
-                });
-
-            
-        btn2.addEventListener("click", function () {
+            if (a == 0) {
+                list2.style.opacity = 1
+                list3.style.opacity = 0
+                btn1.innerHTML = "Done"
+                btn1.style.backgroundColor = "green"
+                btn1.style.color = "yellow"
+                a = 1
+            } else {
                 list3.style.opacity = 1
-                setTimeout(function(){
-                    list3.style.opacity = 0  
-                },2000)
-            
-        })
+                list2.style.opacity = 0
+                btn1.innerHTML = "Pending"
+                btn1.style.backgroundColor = "red"
+                btn1.style.color = "yellow"
+                a = 0
+
+            }
+            setTimeout(function () {
+                list3.style.opacity = 0
+                list2.style.opacity = 0
+                btn1.innerHTML = "Current Status"
+                btn1.style.backgroundColor = "yellow"
+                btn1.style.color = "red"
+                
+            }, 10000)
+
+
+        });
 
     </script>
 </body>

@@ -140,7 +140,7 @@ console.log(arr2);
 
 // solution 
 
-let arr3 = [...arr]; //used apect propeties then copy real values
+let arr3 = [...arr]; //used sprect propeties then copy real values
 
 console.log(arr3);
 

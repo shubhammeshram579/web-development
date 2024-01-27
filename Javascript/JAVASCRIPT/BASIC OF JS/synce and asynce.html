@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <style>
+        h1{
+            color: red;
+            text-align: center;
+            text-transform: capitalize;
+            text-decoration:underline;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 25px;
+            font-weight: 100;
+            font-style: italic;
+            background-color:yellow;
+            padding: 10px;
+            text-shadow: 1px 1px #111;
+            border-radius: 10px;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Synce and Asynce diffrance beweens</h1>
+    
+
+    <script>
+
+        var heading = document.querySelector("h1");
+        heading.addEventListener("mouseenter",function(){
+            heading.style.backgroundColor = "red"
+            heading.style.color = "yellow"
+        })
+
+        heading.addEventListener("mouseleave",function(){
+            heading.style.backgroundColor = "yellow"
+            heading.style.color = "red"
+        })
+
+
+
+        // 1 what is sync and async
+
+        // sync
+        // def:- line by line code excution it call sync; 
+        // first line of task complited then next task stard for complition it is sync excution.
+
+        // for exmaple;
+
+        console.log("hi");
+        console.log("hello");
+        console.log("hi");
+
+        // async (mostly used async code for code excution is dlay and it used for send of request for server to fatch images or more datas )
+        // def:-  all task excution same time it call async;
+
+        // for example for code execution
+
+        console.log("hi");
+        console.log("hello");
+        setTimeout(function(){
+            console.log("hello2")
+        },3000);
+        console.log("hi");
+
+
+        // how to identified async code 
+        // it is callback fuction 
+
+        // setTimeout(function(){});
+        // setInterval(function(){});
+        // Promise;
+        // fetch;
+        // axios;
+        // XMLHttpRequest
+        // async await
+
+
+
+        // settimeout it's for excution code dlay
+
+        setTimeout(function(){
+            console.log("excution code dlay 2s")
+        },2000)
+
+
+        // setinterval is used to code excution repeaded print as set time 
+
+        // setInterval(function(){
+        //     console.log("hello setinterval")
+        // },3000)
+
+
+
+        // Promise it is used for send request and resold and reject used
+
+        
+
+        // if i condider request resold
+        // for example true
+
+        var ans = new Promise((res,rej)=> {
+            if (true){ //if apply false then request is reject
+                return res();
+            }else{
+                return rej();
+            }
+        });
+
+        ans.then(function(){
+            console.log("request is resolt")
+        }).catch(function(){
+            console.log("request is reject")
+        });
+
+
+
+        // example 2
+        var ans2 = new Promise((res,rej)=>{
+            var n = Math.floor(Math.random()* 10);
+
+            if (n > 5){
+                return res();
+            }else{
+                return rej();
+            }
+        });
+
+        ans2.then(function(){
+            console.log("blewo");
+        }).catch(function(){
+            console.log("above")
+        });
+
+
+        // eaxmple 3
+        // this cycle of promise resold recquest 
+
+
+        var asn = new Promise(function(res,rej){
+            return res("first you can come home")
+        });
+
+
+        var ans2 = asn.then(function(data){
+            console.log(data);
+            return new Promise(function(res,rej){
+                return res("gate opne and gate close")
+            })
+        })
+
+
+        var p2 = ans2.then(function(data1){
+            console.log(data1);
+            return new Promise(function(res,rej){
+                return res("mack recipe and eat")
+            })
+            
+        })
+
+
+        p2.then(function(data){
+            console.log(data)
+        })
+
+
+
+        // last is async await
+
+        // async function abcd(){
+        //     let raw = await fetch("https://www.youtube.com/")
+        //     let ans = await raw.json();
+        //     console.log(ans)
+        // }
+
+
+        // console.log(abcd());
+
+
+
+
+
+        
+
+
+
+
+
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

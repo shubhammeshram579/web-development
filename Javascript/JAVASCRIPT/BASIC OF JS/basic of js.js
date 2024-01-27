@@ -1,4 +1,4 @@
-// basic of js print hello wordss
+// basic of js print hello words
 console.log("hello worlds");
 console.log("shubham meshram");
 
@@ -56,7 +56,7 @@ var object_list = {"name":[12,22,4,55]};
 var tupples_list = (1,2,34);
 
 // (i) reprence data types 
-// means any copy of value is not copy it is reprence value one varible to another varible storage it's call as refrence values
+//  referance value means if you copy  a varible to b varible it not copy it refrence of copy value it call refence value
 // for example
 
 var list2 = [1,3,4,5,6];
