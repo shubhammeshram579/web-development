@@ -1,5 +1,5 @@
 
 
-var datad = require('./script1')
+var df = require('./script1')
 
-console.log(datad)
+console.log(df);
