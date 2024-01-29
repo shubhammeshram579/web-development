@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        html,body{
+            height: 100%;
+            width: 100%;
+            background-color: #111;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .card{
+            height: 330px;
+            width: 250px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            position: relative;
+        }
+
+        .card .image1{
+            height: 270px;
+            width: 92%;
+            border-radius: 10px;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            opacity: 0;
+
+        }
+
+
+    
+
+        .card .image2{
+            height: 270px;
+            width: 99%;
+            border-radius: 10px;
+            object-fit: cover;
+            object-position: center;
+            opacity: 1;
+            /* transform: translate(-50% , -50%),scale(5); */
+
+        }
+
+        .btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .btn button{
+            padding: 7px 20px;
+            background-color: rgb(229, 214, 194);
+            border: none;
+            border-radius: 10px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img class="image1" src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bmF0dXJlfGVufDB8fDB8fHww" alt="">
+        <img  class="image2" src="https://images.unsplash.com/photo-1455218873509-8097305ee378?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D" alt="">
+        <div class="btn">
+            <button>Next</button>
+        </div>
+    </div>
+
+    <script>
+        var btn = document.querySelector(".card button");
+        var image1 = document.querySelector(".card .image1");
+        var image2 = document.querySelector(".card .image2");
+
+
+        var a = 0
+        btn.addEventListener("click",function(){
+            if(a === 0){
+                image1.style.opacity = 1
+                btn.style.fontSize = "15px"
+                btn.innerHTML = "Back"
+                image1.style.transition= "all ease 2s"
+                a = 1
+
+            }else{
+                image1.style.opacity = 0
+                btn.style.fontSize = "14px"
+                btn.innerHTML = "Next"
+                image1.style.transition= "all ease 2s"
+                a = 0
+
+            }
+            
+            
+        })
+
+
+    </script>
+</body>
+</html>
