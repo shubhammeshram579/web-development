@@ -135,3 +135,37 @@ gsap.from("#page4 h1",{
 
 
 
+var menubtn = document.querySelector(".icon .ri-menu-line");
+var menubar = document.querySelector("#nav2");
+
+
+var a = 0
+menubtn.addEventListener("click",function(){
+  if (a=== 0){
+  menubar.style.opacity = 1
+  a = 1
+}else{
+  menubar.style.opacity = 0
+  a = 0
+
+}
+})
+
+
+var menubtn = document.querySelector(".icon2 .ri-menu-line");
+var menubar = document.querySelector("#nav2");
+
+
+var a = 0
+menubtn.addEventListener("click",function(){
+  if (a=== 0){
+  menubar.style.opacity = 1
+  a = 1
+}else{
+  menubar.style.opacity = 0
+  a = 0
+
+}
+})
+
+

@@ -16,6 +16,7 @@ html,body{
     width: 100%;
 }
 
+
 /* logo img styly */
 .nav-part1 svg{
     display: block;
@@ -28,60 +29,67 @@ html,body{
     overflow: hidden;
 }
 
-
+body{
+    position: absolute;
+    z-index: 99;
+    /* background-color: yellow; */
+}
 
 .nav{
     height: 100px;
     width: 100%;
-    /* background-color: blanchedalmond; */
-    position:fixed;
+    position: fixed;
     z-index: 99;
     display: flex;
     align-items:flex-start;
     justify-content: space-between;
-    padding: 20px;
+    /* background-color: red; */
+    padding: 1vh;
 
 }
-.nav-part2{
+.nav-part2 .link{
     display: flex;
     align-items: center;
+    /* justify-content: space-between; */
     gap: 50px;
 }
 
 .nav-part2 a{
-    margin: 30px;
+    margin: 1vw;
     text-decoration: none;
     color: #3d3a3a;
     font-size: 17px;
     font-weight: 100;
     text-transform: uppercase;
+
 }
 
 .icon{
     background-color: aliceblue;
-    border-radius: 20px;
-    padding: 5px;
+    border-radius: 10px;
+    margin-right: 2vw;
+    padding: 10px;
 }
 
-.icon button{
-    border: none;
-    margin: 10px 30px;
+.icon i{
+    margin: 10px 20px;
     background-color: transparent;
 }
 
-.icon button i{
+.icon i{
     font-size: 20px;
 }
+
 
 /* menubar style */
 .menu{
     height: 100vh;
     width: 100%;
-    background-color:#3d3a3a;
+    background-color:#111;
     color: #fff;
-    opacity: 0;
     position: absolute;
-    z-index: 0;
+    z-index: -20;
+    opacity: 0;
     display: flex;
     align-items:end;
     justify-content: space-between;
@@ -144,9 +152,9 @@ html,body{
     min-height: 92vh;
     width: 100%;
     background-color: #111;
-    z-index: 0;
-    opacity: 0;
     position: absolute;
+    z-index: -10;
+    opacity: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -339,10 +347,24 @@ html,body{
     scale: 0;
 }
 
+.hading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    margin-top: 5vh;
+}
+
+.hading h5{
+    font-weight: 100;
+}
+
 
 /* page2 */
 
 .page2{
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -363,7 +385,7 @@ html,body{
     object-position: center;
 
 }
-
+/* changes */
 .page2 .elem .dets{
     height: 60px;
     width: 70%;
@@ -474,9 +496,8 @@ html,body{
 /* page3 */
 
 .page3{
-    min-height: 13vh;
+    min-height: 100vh;
     width: 100%;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -551,7 +572,7 @@ html,body{
 /* page4 style */
 
 .page4{
-    min-height: 120vh;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     align-items:flex-start;
@@ -580,10 +601,6 @@ html,body{
     text-decoration: underline;
 }
 
-/* .page4 .storyimg{
-    display: flex;
-    flex-direction: row;
-} */
 
 .page4 img{
     height: 100vh;
@@ -688,70 +705,28 @@ html,body{
 
 @media (max-width:600px) {
 
-    .nav-part1 svg{
-        display: block;
-        
-    }
-    
-    
-    .nav-part1{
-        height: 83px;
-        overflow: hidden;
-    }
-    
-    
-    
     .nav{
-        height: 100px;
-        width: 96vh;
+        position: absolute;
         z-index: 99;
-        padding: 20px;
-        background-color: antiquewhite;
-
+        padding: 1vh;
     
-    }
-    .nav-part2{
-        display: flex;
-        align-items: center;
-        gap: 50px;
     }
     
     .nav-part2 a{
-        margin: 30px;
-        text-decoration: none;
-        color: #3d3a3a;
-        font-size: 17px;
-        font-weight: 100;
-        text-transform: uppercase;
         display: none;
     }
     
-    .icon{
-        background-color: aliceblue;
-        border-radius: 20px;
-        padding: 5px;
-        margin-right: 10vw;
-    }
     
-    .icon button{
-        border: none;
-        margin: 2vw 4vh;
-        background-color: transparent;
-    }
-    
-    .icon button i{
-        font-size: 15px;
-    }
     
     /* menubar style */
     .menu{
         height: 100vh;
-        width: 96vh;
+        width: 100%;
         background-color:#3d3a3a;
         color: #fff;
-        opacity: 0;
         position: absolute;
-        z-index: 0;
+        z-index: -10;
+        opacity: 0;
         display: flex;
         align-items:center;
         justify-content:space-between;
@@ -760,9 +735,9 @@ html,body{
 
     .menu .contenercardx{
         display: flex;
-        margin-top: 120%;
         align-items:flex-start;
-        margin-left: 2vh;
+        margin-top: 100vh;
+        /* background-color: red; */
 
 
     }
@@ -779,11 +754,11 @@ html,body{
     }
 
     .contenercardx .cardx{
-        margin-right: 5vw;
+        margin-right: 2vw;
     }
 
     .contenercardx .cardy{
-        margin-right: 5vw;
+        margin-right: 1vw;
     }
 
     
@@ -791,7 +766,7 @@ html,body{
         margin-left: -100vw;
     }
     .menu .bar li{
-        font-size: 5vh;
+        font-size: 4vh;
         font-weight: 1000;
         text-transform: uppercase;
         
@@ -820,17 +795,17 @@ html,body{
     /* card style */
     
     .card-details{
-        min-height: 93vh;
+        min-height: 50vh;
         width: 100%;
         background-color: #111;
-        z-index: 0;
-        opacity: 0;
         position: absolute;
+        z-index: -20;
+        opacity: 0;
         display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: center;
-        padding-top: 35vh;
+        padding-top: 25vh;
     }
     
     .card-details h1{
@@ -958,7 +933,7 @@ html,body{
 
 /* page1 */
     .page1{
-        min-height: 70vh;
+        min-height: 100vh;
         width: 100%;
         padding: 0 2vw;
         padding-top: 25vh;
@@ -990,10 +965,24 @@ html,body{
         transform: translate(-50%,-50%);
     }
 
+    .hading{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid black;
+        margin-top: 5vh;
+    }
+
+    .hading h5{
+        font-weight: 100;
+    }
+
 
     /* page2 */
 
     .page2{
+        min-height: 100vh;
+        width: 100vw;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1004,30 +993,52 @@ html,body{
     }
     .page2 .elem{
         height: 100vh;
-        width: 100vw;
+        width: 100%;
         margin-bottom: 2vh;
         /* background-color: red; */
     }
     
     .page2 img{
-        height: 100vh;
-        width: 100vw;
-        padding: 4vw;
+        height: 100%;
+        width: 100%;
+        padding:2vh;
         object-fit: cover;
         object-position: center;
     
     }
     
-    .page2 .elem .dets{
-        height: 7vh;
+    /* .dets{
+        height: 3vw;
         width: 70%;
         border-radius: 30px;
+        position: absolute;
         z-index: 9;
         top: 50%;
-        left: 50%;
+        left: 15%;
         transform: translate(-50%,-50%);
         background-color:blanchedalmond;
     
+    } */
+
+    .page2 .contener1 .dets{
+        left: 20%;
+        height: 7.5vw;
+        width: 60%;
+        
+    }
+
+
+    .page2 .cotener2 .dets{
+        left: 20%;
+        height: 7.5vw;
+        width: 60%;
+    }
+
+
+    .page2 .contener3 .dets{
+        left: 20%;
+        height: 7.5vw;
+        width: 60%;
     }
     
     .page2 .elem .dets:hover{
@@ -1040,7 +1051,8 @@ html,body{
     }
     
     .page2 .elem .dets li{
-        margin-left: 5vw;
+        margin-left: 2vw;
+        font-size: 12px;
     }
 
     .page2 .elem .dets span{
@@ -1056,7 +1068,17 @@ html,body{
         margin-top: -3vh;
     }
 
+    /* page3 */
 
+
+    .page3{
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
     .page3 .product-details{
         display: flex;
         flex-direction: column;
@@ -1065,10 +1087,13 @@ html,body{
 
     .page3 .product-details h1{
         text-align: center;
-        height: 150px;
+        height: 40vw;
         width: 95vw;
-        font-size: 4vh;
+        font-size: 8vw;
         padding-right: 10vw;
+        padding-top: 5vw;
+        padding-bottom: 30vh;
+        /* background-color: red; */
         
     }
 
@@ -1078,10 +1103,11 @@ html,body{
 
     .page3 .summary h3{
         text-align: center;
-        height: 110px;
+        height: 35vw;
         width: 90vw;
         font-size: 20px;
-        margin-top: -40px;
+        margin-top: 10vw;
+        margin-bottom: -5vw;
 
     }
 
@@ -1090,24 +1116,16 @@ html,body{
         height: 110px;
         width: 90vw;
         font-size: 20px;
-        margin-top: -40px;
+        margin-top: 10vh;
+        text-decoration: underline;
 
-    }
-
-
-    .page3{
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-       
     }
     
     .child{
         height: 100%;
-        width: 100%;
-        margin-left: -10vw;
+        width: 90%;
+        /* background-color: red; */
+        margin-left: -30vw;
         
     }
 
@@ -1117,6 +1135,7 @@ html,body{
         object-fit: cover;
         object-position: center;
         padding: 10vh;
+        
     }
     
 
@@ -1124,6 +1143,8 @@ html,body{
     /* page4  */
 
     .page4{
+        min-height: 100vh;
+        width: 100%;
         display: flex;
         flex-direction:column-reverse;
     }
@@ -1138,21 +1159,23 @@ html,body{
         width: 100%;
         border-radius: none;
         object-fit: cover;
+        /* background-color: red; */
     }
 
-    .story{
-        
+    .storyimg .image1{
+        margin-left: 10px;
     }
+
 
     .story h3{
-        font-size: 2.8vw; 
+        font-size: 4vw; 
         width: 90%;
         text-align:justify ;
         
     }
 
     .story h4{
-        font-size: 2.8vw; 
+        font-size: 3vw; 
         width: 90%;
         padding-bottom: 100px;
         
@@ -1183,11 +1206,31 @@ html,body{
 
     .page6 .card1{
         margin-top: 50px;
-        margin-left: -150px;
+        margin-left: -50vw;
+        /* background-color: red; */
     }
+
+    .page6 .card1 h3{
+        font-size: 2.5vw;
+        padding-left: 10vw;
+    }
+
+    .page6 .card1 ul li{
+        font-size: 4vw;
+        padding-left: 11vw;
+    }
+
 
     .page6 .card2{
         margin-top: 50px;
+    }
+
+    .page6 .card2 h3{
+        font-size: 2.5vw;
+    }
+
+    .page6 .card2 ul li{
+        font-size: 4vw;
     }
 
     .page6-part2{
@@ -1196,16 +1239,16 @@ html,body{
     }
 
     .page6-part2 h3{
-        font-size: 15px;
+        font-size: 3vw;
         margin-left: -10vw;
 
     }
 
     .page6-part2 h4{
         font-size: 15px;
-        text-align: justify;
+        text-align:start;
         margin-top: -25vh;
-        margin-left: -10vw;
+        margin-left: -18vw;
 
     }
 

@@ -1,37 +1,32 @@
 function locoscrollani(){
    gsap.registerPlugin(ScrollTrigger);
-
-// Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
-
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector(".main"),
   smooth: true
 });
-// each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
 locoScroll.on("scroll", ScrollTrigger.update);
 
-// tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
 ScrollTrigger.scrollerProxy(".main", {
   scrollTop(value) {
     return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-  }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+  }, 
   getBoundingClientRect() {
     return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
   },
-  // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+  
   pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
 });
 
-// each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
-// after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
 ScrollTrigger.refresh();
 
 
 }
 
 locoscrollani();
+
+
 
 function navscrollanimation(){
    gsap.to(".nav-part1 svg", {
@@ -45,7 +40,7 @@ function navscrollanimation(){
       },
     });
    
-   gsap.to(".nav-part2 .link", {
+   gsap.to(".nav-part2 .link a", {
       transform: "translateY(-100%)",
       opacity: 0,
       scrollTrigger: {
@@ -59,6 +54,28 @@ function navscrollanimation(){
 };
 
 navscrollanimation();
+
+
+function loadingani(){
+   gsap.from(".page1 h1",{
+      y:100,
+      opacity:0,
+      delay: 0.5,
+      duration:0.7,
+      stagger:0.3
+   })
+
+   gsap.from(".page1 .video-contener",{
+      scale: 0.9,
+      opacity:0,
+      delay: 1.5,
+      duration:0.5,
+   })
+
+} 
+
+
+loadingani();
 
 
 
@@ -97,28 +114,36 @@ videocon.addEventListener("mouseleave",function(){
 videoconanimation();
 
 
-
-function loadingani(){
-   gsap.from(".page1 h1",{
-      y:100,
-      opacity:0,
-      delay: 0.5,
-      duration:0.7,
-      stagger:0.3
-   })
-
-   gsap.from(".page1 .video-contener",{
-      scale: 0.9,
-      opacity:0,
-      delay: 1.5,
-      duration:0.5,
-   })
-
-} 
-
-
-loadingani();
-
+function imgscrollinganimation(){
+   gsap.to(".page3 .child", {
+      transition: "all ease-in 2s",
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".page3",
+        scroller: ".main",
+        start: "top 10%",
+        end: "top 30%",
+        scrub: true,
+      },
+    });
+   
+   
+   
+    gsap.to(".page6 .imagcon svg", {
+      transition: "all ease-in 2s",
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".page6",
+        scroller: ".main",
+        start: "top 65%",
+        end: "top 70%",
+        scrub: true,
+      },
+    });
+   };
+   
+   imgscrollinganimation();
+   
 
 function circulanimation(){
 document.addEventListener("mousemove", function(dets){
@@ -127,6 +152,10 @@ document.addEventListener("mousemove", function(dets){
       top: dets.y
    })
 })
+
+
+
+
 
 var imgchild = document.querySelectorAll(".child");
 
@@ -147,24 +176,29 @@ imgchild.forEach(function(val){
 
 circulanimation();
 
+
+
+
+
 function menubaranimation(){
 var menubar = document.querySelector(".menu");
-var menubtn = document.querySelector(".nav button  .ri-menu-line");
+var menubtn = document.querySelector(".ri-menu-line");
 var logoimg = document.querySelector(".nav-part1 #svg1");
 var logoimg2 = document.querySelector(".nav-part1 .svg2");
+
 
 var a = 0
 menubtn.addEventListener("click",function(){
    if(a === 0){
    menubar.style.opacity = 1;
-   menubar.style.zIndex = "10"
+   menubar.style.zIndex = "9"
    menubtn.style.fontSize = "25px"
    logoimg.style.color = "#fff"
    logoimg2.style.color = "#fff"
    a = 1
 }else{
    menubar.style.opacity = 0;
-   menubar.style.zIndex = "0"
+   menubar.style.zIndex = "-10"
    menubtn.style.fontSize = "20px"
    logoimg.style.color = "#111"
    logoimg2.style.color = "#111"
@@ -174,7 +208,10 @@ menubtn.addEventListener("click",function(){
 
 
 
-var cardbtn = document.querySelector(".nav button  .ri-shopping-cart-2-line");
+
+
+
+var cardbtn = document.querySelector(".ri-shopping-cart-2-line");
 var cardbar = document.querySelector(".card-details");
 
 
@@ -183,7 +220,7 @@ var a = 0
 cardbtn.addEventListener("click",function(){
    if(a === 0){
       cardbar.style.opacity = 1;
-      cardbar.style.zIndex = "10"
+      cardbar.style.zIndex = "9"
       cardbtn.style.fontSize = "25px"
       logoimg.style.color = "#fff"
       logoimg2.style.color = "#fff"
@@ -191,7 +228,7 @@ cardbtn.addEventListener("click",function(){
    a = 1
 }else{
    cardbar.style.opacity = 0;
-   cardbar.style.zIndex = "0"
+   cardbar.style.zIndex = "-10"
    cardbtn.style.fontSize = "20px"
    logoimg.style.color = "#111"
    logoimg2.style.color = "#111"
@@ -224,35 +261,6 @@ menubaranimation();
 
 
 
-function imgscrollinganimation(){
-gsap.to(".page3 .child", {
-   transition: "all ease-in 2s",
-   opacity: 1,
-   scrollTrigger: {
-     trigger: ".page3",
-     scroller: ".main",
-     start: "top 20%",
-     end: "top 30%",
-     scrub: true,
-   },
- });
-
-
-
- gsap.to(".page6 .imagcon svg", {
-   transition: "all ease-in 2s",
-   opacity: 1,
-   scrollTrigger: {
-     trigger: ".page6",
-     scroller: ".main",
-     start: "top 65%",
-     end: "top 70%",
-     scrub: true,
-   },
- });
-};
-
-imgscrollinganimation();
 
 function hovertopageanimation(){
 var boxcaon = document.querySelectorAll(".contener1 .dets");
@@ -283,6 +291,8 @@ boxcaon.forEach(function(val){
    
    
 })
+
+
 
 
 
