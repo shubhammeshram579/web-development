@@ -5,7 +5,7 @@ const app = express()
 app.set("view engine","ejs");
 
 // static file setup path
-app.use(express.static('public'));
+app.use(express.static('./public'));
 
 
 
@@ -22,7 +22,7 @@ app.get('/contact', function (req, res) {
 app.listen(3000)
 
 
-
+// file parth setup /stylesheets/style.css
 // run brower 
 // localhost:3000
 // localhost:3000/contact
