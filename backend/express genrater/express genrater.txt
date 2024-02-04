@@ -1,0 +1,52 @@
+Microsoft Windows [Version 10.0.19045.3930]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Dell\OneDrive\Desktop\web development\backend\project\newapp>express newapp --view=ejs
+
+   create : newapp\
+   create : newapp\public\
+   create : newapp\public\javascripts\
+   create : newapp\public\images\
+   create : newapp\public\stylesheets\
+   create : newapp\public\stylesheets\style.css
+   create : newapp\routes\
+   create : newapp\routes\index.js
+   create : newapp\routes\users.js
+   create : newapp\views\
+   create : newapp\views\error.ejs
+   create : newapp\views\index.ejs
+   create : newapp\app.js
+   create : newapp\package.json
+   create : newapp\bin\
+   create : newapp\bin\www
+
+   change directory:
+     > cd newapp
+
+   install dependencies:
+     > npm install
+
+   run the app:
+     > SET DEBUG=newapp:* & npm start
+
+
+C:\Users\Dell\OneDrive\Desktop\web development\backend\project\newapp>cd newapp
+
+C:\Users\Dell\OneDrive\Desktop\web development\backend\project\newapp\newapp>nom install
+'nom' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Dell\OneDrive\Desktop\web development\backend\project\newapp\newapp>npm i
+
+added 54 packages, and audited 55 packages in 3s
+
+4 vulnerabilities (3 high, 1 critical)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+C:\Users\Dell\OneDrive\Desktop\web development\backend\project\newapp\newapp>code .
+
+C:\Users\Dell\OneDrive\Desktop\web development\backend\project\newapp\newapp>
