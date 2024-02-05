@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 mongoose.connect("mongodb://127.0.0.1:27017/newdata")
 
+
+// user databases column type set
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -12,7 +14,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  posts: [
+  posts: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Post"
+  }
   ],
   dp: {
     type: String, // You may use String to store the file path or URL of the profile picture.

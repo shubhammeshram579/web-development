@@ -1,9 +1,16 @@
 const mongoose = require('mongoose');
 
+
+// post databases column type set
 const postSchema = new mongoose.Schema({
   postText: {
     type: String,
     required: true,
+  },
+  user:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User"
+
   },
   createdAt: {
     type: Date,
