@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+
+        .header {
+            /* background-color: red; */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 10px 100px;
+            border-bottom: 2px solid red;
+        }
+
+        .header h1 {
+            text-transform: uppercase;
+            text-shadow: 1px 1px red;
+            font-size: 30px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 600;
+        }
+
+        .summary {
+            background-color: rgb(170, 190, 190);
+            padding: 10px 20px;
+            border: 2px solid gray;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .summary p {
+            text-align: justify;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .summary span {
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+        }
+
+        .images {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px 20px;
+            background-color: rgb(170, 190, 190);
+            border-radius: 10px;
+            overflow-y: scroll;
+        }
+
+        .images::-webkit-scrollbar {
+            display: none;
+        }
+
+        .images a {
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            margin-left: -190px;
+        }
+
+        .images img {
+            height: 300px;
+            width: 300px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            margin-bottom: 50px;
+        }
+
+
+        .order-list {
+            background-color: rgb(168, 181, 182);
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: 50px 100px;
+            padding: 50px 100px;
+        }
+
+        .order-list ol li {
+            text-transform: capitalize;
+            font-size: 25px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 500;
+            list-style: none;
+        }
+
+        #a {
+            color: green;
+        }
+
+
+        li[id="b"] {
+            color: red;
+
+        }
+
+        /* li[id=~"b"]{
+            color: red;
+
+        } */
+
+
+        table{
+            margin: auto;
+        }
+        table,th,td{
+            background-color: rgb(179, 195, 201);
+            border: 2px solid black;
+            border-collapse:collapse ;
+            padding: 10px 100px;
+        }
+
+        table,th{
+            text-transform: capitalize;
+        }
+
+        table,th:hover{
+            background-color: green;
+        }
+
+        table,td:hover{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>shubham</h1>
+        <h1>meshram</h1>
+        <h1>gondia</h1>
+    </div>
+    <div class="summary">
+        <p>Lorem ipsum dolor sit, <span> shubham meshram</span> amet consectetur adipisicing elit. Optio possimus amet
+            est porro adipisci ullam dolor eius in minima unde ipsum officiis tempore facilis, libero nostrum.
+            Asperiores vero officiis tenetur at non laudantium ad cupiditate commodi dolore aut eos itaque enim
+            distinctio illo iusto ratione corporis laboriosam, quis sunt natus fugiat hic. Accusamus, beatae? Eum illo
+            cupiditate magnam at odio! Amet cumque quas voluptatem impedit vitae provident cupiditate possimus quae,
+            officia esse voluptas enim sint tempora quaerat officiis veritatis, accusantium dolorem? Omnis commodi vel
+            voluptatem repellendus similique sit, corporis aut ipsam? Nesciunt impedit praesentium omnis tenetur ex
+            distinctio facilis unde.</p>
+    </div>
+    <div class="images">
+        <div class="card">
+            <img src="download.jpg" alt="">
+            <a href="#">Image1</a>
+        </div>
+        <div class="card">
+            <img src="download.jpg" alt="">
+            <a href="#">Image2</a>
+        </div>
+        <div class="card">
+            <img src="download.jpg" alt="">
+            <a href="#">Image3</a>
+        </div>
+        <div class="card">
+            <img src="download.jpg" alt="">
+            <a href="#">Image4</a>
+        </div>
+        <div class="card">
+            <img src="download.jpg" alt="">
+            <a href="#">Image5</a>
+        </div>
+    </div>
+    <div class="order-list">
+        <ol>
+            <li id="b">python</li>
+            <li>sql</li>
+            <li id="a">power bi</li>
+        </ol>
+        <ol>
+            <li>python</li>
+            <li>sql</li>
+            <li id="a">power bi</li>
+        </ol>
+        <ol>
+            <li id="a">python</li>
+            <li id="b">sql</li>
+            <li>power bi</li>
+        </ol>
+    </div>
+
+    <table>
+        <tr>
+            <th>name</th>
+            <th>salary</th>
+        </tr>
+
+        <body>
+            <tr>
+                <td>labham</td>
+                <td>1000000</td>
+            </tr>
+            <tr>
+                <td>aachal</td>
+                <td>1000000</td>
+            </tr>
+            <tr>
+                <td>palavi</td>
+                <td>1000000</td>
+            </tr>
+        </body>
+        <tfoot>
+            <th colspan="2"> total salary</th>
+        </tfoot>
+    </table>
+</body>
+
+</html>

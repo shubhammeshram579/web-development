@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+
 <body>
   <div class="container">
     <div class="content">
       <!--pinterest logo-->
       <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="pin logo" class="img1" />
-      <p class="header">Login account to see more</p>
+      <div>
+        <p class="header">Login account to see more</p>
+      </div>
+
+      <!-- flash massage showing after the login error  -->
+      <% if(error.length > 0){ %>
+        <p class="error"><%= error %></p>
+      <% } %>
+
+    
 
       <form action="/login" method="post"> <!--this is imp for connect o roter-->
-      <input type="text" name="username" placeholder="username" class="detail" /><br />
-      <input type="password" name="password" placeholder="Password" class="detail" />
-      <input type="submit" class="btn int" value="Login account"></input>
-    </form>
+        <input type="text" name="username" placeholder="username" class="detail" /><br />
+        <input type="password" name="password" placeholder="Password" class="detail" />
+        <input type="submit" class="btn int" value="Login account"></input>
+      </form>
+
+
       <a href="/forget">Forgot your password?</a>
       <div>
-      <a href="/"> Pinterest logout</p>
+        <a href="/"> Pinterest logout</p>
       </div>
-      
-      
-
     </div>
+
+
+
   </div>
-  
+  </div>
+
 </body>
+
 </html>
