@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>basic of javascript</h1>
+
+
+    <script>
+        //1. what is diff b/w in whard and keywords 
+        // like shubham and name it's call whards and for if this and new it's call as keywords
+
+
+        //2 what is varible 
+        // varible mean store the data as memory storage it's call as varibles
+        // tree type of varible if ypu store in js like let const and var
+
+        var a = "shubham"; //var is old version varible if you store all type varible
+        let  b = 1997;  //let  and  const is new version varible es6
+        const c = "shubham meshram"  //const means it consted value store like fixed do not chage and update varible 
+
+        // for example var and const varibel
+        var aa = ["shubham", "meshram"];
+        const second = ["shubham", "meshram"];
+
+        console.log(aa);
+
+        aa[0] = "Labham";
+        console.log(aa);
+        second[0] = "Labham"
+        console.log(second);
+
+
+
+        //3 what is types
+        // primitive dtype: Number int str float Boolean and more 
+        // referance  [], {} ()
+
+        // 3. what is hoisting 
+        // hoisting means if you not created any varible but you used random varible it's call as hoisting
+
+        // console.log(d)
+
+
+
+        // what is rafrance value 
+        var ra = [19,334,444];
+        var rb = ra;
+
+        console.log(ra);
+        console.log(rb);
+
+        // if you want to change rb varibele value delte 
+        rb.pop();
+
+        // print output if you see both varible value deleted it call rafrance value copy
+        console.log(ra);
+        console.log(rb);
+
+        // then how to copy original value then using spred method
+        var rc = [...ra];
+
+        console.log(ra);
+        console.log(rc);
+
+        rc.pop();
+
+        // ra varible not deleted it's help to original value copy using spred methods
+        console.log(ra);
+        console.log(rc);
+
+        // what is conditional statment
+        // condition statment is set condtion paticalur proble 
+        // for example set the object color is red then is true other wise flase 
+
+        var book = "red"
+        if (book === "red"){
+            console.log(true)
+        }else{
+            console.log(false);
+        };
+
+        // onother example 
+
+        var a = 5;
+        if (a < 10){
+            console.log("a greter then 5")
+        }else{
+            console.log("a less then 5")
+        }
+
+        if (a > 10){
+            console.log("a greter then 5")
+        }else{
+            console.log("a less then 5")
+        }
+
+
+        // time set eample 
+        var time = 12;
+
+        if (time > 5 && time < 12){
+            console.log("good morning")
+        }else if( time > 12 && time < 16){
+            console.log("good afternoon")
+        }else{
+            console.log("good evening")
+        };
+
+
+        
+
+        
+
+
+
+
+
+
+
+        
+
+        
+    </script>
+</body>
+</html>
