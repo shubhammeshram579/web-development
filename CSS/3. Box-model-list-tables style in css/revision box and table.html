@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .heandeling-overflow {
+            height: 40vh;
+            width: 50vw;
+            border: 2px solid red;
+            text-transform: capitalize;
+            padding: 10px 10px;
+            overflow: auto;
+        }
+
+        .heandeling-overflow::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .card {
+            background-color: aquamarine;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .card .box1 {
+            background-color: red;
+            height: 100px;
+            width: 100px;
+            padding: 20px;
+
+        }
+
+        .card .box2 {
+            background-color: burlywood;
+            height: 100px;
+            width: 100px;
+            margin: 20px;
+
+        }
+
+        .card h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2vw;
+        }
+
+        .nodes{
+            height: 50px;
+            background-color: antiquewhite;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 100px;
+        }
+
+        .nodes a{
+            text-decoration: none;
+            color: red;
+            /* margin: 10px; */
+            text-transform: uppercase;
+            font-size: 15px;
+            /* float: right; */
+            padding-right: 10px;
+        }
+
+       
+        table,th,td{
+            border: 2px solid black;
+            padding: 10px 100px;
+            border-collapse: collapse;
+            margin:auto ;
+            text-transform: capitalize;
+        }
+
+        table th{
+            background-color: brown;
+        }
+
+
+        table td:hover{
+            color: chartreuse;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>how to heandel overflow</h1>
+    <p class="heandeling-overflow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex laboriosam, voluptas
+        pariatur perspiciatis adipisci nostrum recusandae totam. Doloremque, reiciendis recusandae! Doloremque sit
+        expedita tempore placeat alias voluptatem. Consequuntur ratione nisi nobis, fugit a voluptatibus cum voluptates
+        exercitationem iure et sequi esse soluta repellat eligendi optio, maxime adipisci aspernatur ullam recusandae
+        autem non expedita! Odit numquam, consectetur possimus nisi laudantium enim debitis ut maiores pariatur ipsum ab
+        voluptatum magnam placeat quia libero voluptatibus hic autem molestias a assumenda quaerat. Esse, maiores? Nulla
+        qui aliquid ea. Atque, quas cum minus nulla totam voluptates excepturi ut expedita molestiae porro consequatur
+        temporibus ratione commodi.</p>
+        
+    <div class="card">
+        <h1 class="box1">box1</h1>
+        <h1 class="box2">box2</h1>
+    </div>
+    <table>
+        <tr>
+            <th>first name</th>
+            <th>last name</th>
+            <th>amount</th>
+        </tr>
+        <body>
+            <tr>
+                <td>shubham</td>
+                <td>meshram</td>
+                <td>1500000</td>
+            </tr>
+            <tr>
+                <td>shubham</td>
+                <td>meshram</td>
+                <td>1500000</td>
+            </tr>
+            <tr>
+                <td>shubham</td>
+                <td>meshram</td>
+                <td>1500000</td>
+            </tr>
+            <tr>
+                <td>shubham</td>
+                <td>meshram</td>
+                <td>1500000</td>
+            </tr>
+            <tr>
+                <td>shubham</td>
+                <td>meshram</td>
+                <td>1500000</td>
+            </tr>
+
+        </body>
+        <tfoot>
+            <th colspan="3">list of itams</th>
+        </tfoot>
+    </table>
+    <div class="nodes">
+        <a href="#" target="_blank">notes1</a>
+        <a href="#">notes2</a>
+        <a href="#">notes3</a>
+    </div>
+
+
+</body>
+
+</html>
