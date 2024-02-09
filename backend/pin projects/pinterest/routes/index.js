@@ -4,6 +4,7 @@ var router = express.Router();
 const userModel = require("./users");
 const passport = require('passport');
 const localStrategy = require("passport-local");
+const upload = require("./multer");
 
 passport.use(new localStrategy(userModel.authenticate()));
 
@@ -20,11 +21,36 @@ router.get('/register', function(req, res, next) {
   res.render('register');
 });
 
+// router.get('/login', function(req, res, next) {
+//   res.render('login');
+// });
+
 
 // get create profile page router
-router.get('/profile' , function(req, res, next) {
-  res.render('profile');
+router.get('/profile' ,isLoggedIn,  async function(req, res, next) {
+  const user = await userModel.findOne({username:req.session.passport.user});
+  res.render('profile' , {user});
 });
+
+
+
+// get create fileupload router 
+router.post('/fileupload' ,isLoggedIn, upload.single("image"), async function(req, res, next) {
+  // find user data and set up image store 
+ const user = await userModel.findOne({username:req.session.passport.user});
+//  set colum image save
+ user.profileImage = req.file.filename;
+ await user.save();
+ res.redirect("profile");
+
+
+});
+
+// router.get('/fileupload' ,isLoggedIn, upload.single("image"), async function(req, res, next) {
+//  res.redirect("/fileupload");
+
+
+// });
 
 
 // second regiter router for databses post in mongodb databses 
@@ -56,13 +82,10 @@ router.post('/login' , passport.authenticate("local",{
 
 // get create logout router page and got the passport websit cory the lated code 
 router.get("/logout",function(req, res, next){
-  req.logout(function(err){
-    if (err){
-      return next(err);
-    }
-    res.redirect("/");
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.redirect('/');
   });
-
 });
 
 // set function for passport protected purpuse

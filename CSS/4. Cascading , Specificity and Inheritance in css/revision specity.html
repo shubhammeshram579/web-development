@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* borler plate */
+        *{
+            padding:0;
+            margin: 0;
+            background-color:black;
+            color:#bbadad;
+
+        }
+
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+
+        .summary{
+            height: 200px;
+            width: 20%;
+            padding: 20px 50px;
+            margin-bottom: 10vw;
+            border: 2px solid white;
+            overflow-y: scroll;
+        }
+
+        .summary p{
+            text-align: justify;
+            margin-top: 10px;
+            
+            
+        }
+
+        .images-style img{
+            height: 330px;
+            width: 330px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position:center;
+            /* display:flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around; */
+            margin-bottom: 100px;
+        }
+
+        .text-heading{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+         /*specificity in css*/
+         /* first time excution code */
+        .text-heading h1{
+            text-transform: capitalize;
+            color: green;
+        }
+
+
+        /* second time excution code */
+        .text-heading h1{
+            color:red;
+        }
+
+        /* forth time excution code */
+        .text-heading h1{
+            color: blueviolet !important;
+        }
+
+
+
+        .oredrlist{
+            margin-left: 100px;
+            padding-top: 50px;
+        }
+
+        
+        .inherited{
+            color: inherit;
+            
+        }
+
+        .intail{
+            color: initial;
+        }
+
+        .uset{
+            color: unset;
+        }
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="summary">
+    <h1>text summary</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, velit inventore, reprehenderit vitae ab ullam voluptatum nulla eaque officia ea totam dignissimos voluptates, eius tempore nam quae error amet iure fugiat tempora quibusdam et maiores! Molestias, expedita odit omnis recusandae officiis doloremque? Laudantium, reiciendis debitis. Repudiandae at, neque fugit quae veritatis reiciendis facilis error inventore temporibus? Exercitationem perferendis minus consectetur dicta voluptatem voluptas reprehenderit iure culpa aspernatur possimus quam, autem incidunt cumque illum labore officia corrupti, enim dolore aliquid. Officia dolorum necessitatibus suscipit error molestias aut dolores, dolore rem, aperiam a consequuntur magnam nam? Ipsa perferendis laboriosam reprehenderit officiis eaque?</p>
+</div>
+<div class="images-style">
+    <h1>image stype
+    </h1>
+    <img src="2.jpg" alt="">
+    <img src="2.jpg" alt="">
+    <img src="2.jpg" alt="">
+    <img src="2.jpg" alt="">
+</div>
+<div class="text-heading">
+    <h1 style="color:yellow">i become a web developer for this</h1> <!--third time execution code-->
+</div>
+<div class="oredrlist">
+    <ul>
+        <li class="inherited">inherited <a href="#">link1</a>color</li>
+        <li class="intail">intail <a href="#">link1</a>color</li>
+        <li class="uset">uset <a href="#">link1</a>color</li>
+    </ul>
+</div>
+
+    
+</body>
+</html>

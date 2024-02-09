@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .text-summary p{
+            color: red;
+            background-color: yellow;
+
+        }
+    </style>
+
+</head>
+<body>
+    <div class="text-summary">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem magni ullam aperiam assumenda animi incidunt a voluptates id quia facilis est atque facere molestiae quo, sed, rem, autem exercitationem quod. Quaerat distinctio doloribus a doloremque eum accusamus similique recusandae dolore magnam voluptatem quas velit incidunt placeat, quidem eligendi iste. Itaque qui ipsum recusandae. Nam commodi tenetur provident a pariatur officia, nihil voluptate ducimus saepe cum totam error adipisci distinctio unde quam excepturi! Illo error molestias excepturi provident est qui nesciunt accusamus architecto porro cupiditate sed, nulla nobis cum omnis, debitis rem quia asperiores laboriosam? Obcaecati excepturi iste dolorum dolore maiores.</p>
+        <button>change color </button>
+    </div>
+
+    <script>
+       var btn = document.querySelector("button");
+       var text = document.querySelector(".text-summary p");
+
+       btn.addEventListener("click",function(){
+        text.style.color = "green"
+        text.style.backgroundColor = "#fff"
+
+        setTimeout(function(){
+            text.style.color = "yellow"
+            text.style.backgroundColor = "red"
+        },3000)
+       })
+    </script>
+</body>
+</html>

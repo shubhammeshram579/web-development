@@ -1,3 +1,53 @@
 <% include ./partials/header.ejs %>
-<h1>profile page</h1>
+<!-- profile page set up -->
+<div class="profile w-full min-h-screen bg-zinc-800 text-white pt-1">
+    <div class="profdets flex flex-col items-center mt-24">
+        <!-- set up pensile icome for click pensil icon then open file page -->
+        <div id="uploadicon" class="relative">
+            <span class="w-10 h-10 absolute bottom-0 right-0 rounded-full flex items-center justify-center bg-red-300">
+                <i  class="text-zinc-600 ri-pencil-fill"></i>
+            </span>
+        <div class="w-32 h-32 bg-red-300 rounded-full">
+            <img style="object-fit: cover; height: 100%; width: 100%; border-radius: 50%;overflow: hidden;" src="https://images.unsplash.com/photo-1431794062232-2a99a5431c6c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D" alt="">
+        </div>
+    </div>
+        <h1 class="text-3xl font-semibold mt-2">shubham meshram</h1>
+        <h3 class="text-md">@shubham</h3>
+        <a class="px-6 py-3 bg-zinc-500 rounded-full text-xs font-semibold" href="/edit">Edit</a>
+        <button class="px-7 py-2 rounded-lg bg-red-900 mt-3">add new post</button>
+    </div>
+    <!-- this file set up form and it is importance -->
+    <form id="uploadform" hidden action="/fileupload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+    </form>
+
+    <!-- pins page -->
+    <div class="cards flex flex-wrap gap-10 pt-10 p-10">
+        <div>
+        <div class="w-53 h-30 bg-zinc-300 rounded-lg">
+            <img src="https://images.unsplash.com/photo-1626501419860-2924a77468b8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG51dHVyZXxlbnwwfHwwfHx8MA%3D%3D" alt="">
+        </div>
+        <h3 class="text-xl font-semibold mt-2">All Pins</h3>
+        <h5 class="text-sm font-medium opacity-70" >34 Pins</h5>
+    </div>
+    </div>
+
+
+    
+    <script>
+    // set up pensile icome for click pensil icon then open file page
+      var btn = document.querySelector("#uploadicon i");
+      var imageform = document.querySelector("#uploadform input");
+
+      btn.addEventListener("click",function(){
+        imageform.click();
+      })
+
+      imageform.addEventListener("change",function(){
+        document.querySelector("#uploadform").submit();
+      })
+
+    </script>
+
+</div>
 <% include ./partials/footer.ejs %>
