@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>pin</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="/stylesheets/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
+  <!-- nav creation and also set nav showing in only profile page -->
+  <% if(nav===true){ %>
+    <div
+      style="background-color: #111;color: #fff; display: flex; flex-direction: row;align-items: center; justify-content: space-between; height: 50px;">
+      <a class="pl-10" href="#">Printeres</a>
+      <div style="display: flex; align-items: center;gap: 50px; padding-right: 20px;"><a href="/profile">Profile</a><a
+          href="/feed">Feed</a><a class="bg-red-900 p-2 pr-5 pl-5 rounded-lg" href="/logout">Logout</a>
+        </div>
+    </div>
+    <% } %>

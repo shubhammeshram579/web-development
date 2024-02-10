@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: antiquewhite;
+        }
+
+        body {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 100px;
+        }
+
+        .customer {
+            height: 100%;
+            width: 400px;
+            border: 5px solid #111;
+            padding: 12px 20px;
+        }
+
+        .customer h1{
+            padding-bottom: 20px;
+        }
+
+        .customer h5,
+        span {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 10px;
+        }
+
+        .customer h5{
+            color:rgb(72, 81, 80);
+            font-size: 15px;
+        }
+        .customer span{
+            color: red;
+        }
+
+        .customer input{
+            margin-top: -10px;
+        }
+
+        .card{
+            display: flex;
+            align-items: center;
+        }
+
+        .padd{
+            gap: 4px;
+        }
+
+        
+
+        .card .dob{
+            margin-left: 50px;
+        }
+
+        .card input{
+            margin-top: 1px;
+        }
+
+        input,select{
+            background-color:yellow;
+            border-radius: 5px;
+            border: 1px solid green;
+            padding: 5px;
+        }
+
+        
+        .btn{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin-top: 10px;
+        }
+
+        .btn input{
+            margin: 5px;
+            height: 30px;
+            background-color: gray;
+            color:#fff;
+            text-transform: capitalize;
+            font-weight: 700;
+        }
+
+        .btn .submit:hover{
+            background-color: green;
+            color:yellow;
+        }
+
+        .btn .reset:hover{
+            background-color:rgb(149, 17, 17);
+            color:black;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <form action="">
+        
+        <div class="customer">
+            <h1>Customer Details</h1>
+            <h5>FirstName: <span>*</span> <input type="text" name="FirstName" id="firstname" placeholder="first-name"
+                    required></h5>
+            <h5>LastName: <span>*</span> <input type="text" name="LastName" id="lastname" placeholder="Last-name"
+                    required></h5>
+            <h5>Email: <span>*</span> <input type="email" name="email" id="email" placeholder="email address" required>
+            </h5>
+            <h5>Contact: <span>*</span> <input type="number" name="content" id="content" placeholder="content" required>
+            </h5>
+            <h5>password: <span>*</span> <input type="password" name="password" id="password" placeholder="password"
+                    required></h5>
+            <div class="card">
+                <h5 class="padd"> Gender: <select name="#" id="#">
+                        <option value="#">--Select Gender--</option>
+                        <option value="Male">Male</option>
+                        <option value="Male">Female</option>
+                    </select></h5>
+                <h5 class="dob padd"> Date-of-birth: <input type="date" name="Date-of-birth" id="Date-of-birth" required></h5>
+            </div>
+            <div class="btn">
+                <input class="submit" type="submit" value="submit form">
+                <input class="reset" type="reset" value="Reset Form">
+            </div>
+        </div>
+
+    </form>
+
+</body>
+
+</html>

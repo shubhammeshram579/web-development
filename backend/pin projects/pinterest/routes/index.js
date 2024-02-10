@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 // import libries and pages 
 const userModel = require("./users");
+const postModel = require("./posts");
 const passport = require('passport');
 const localStrategy = require("passport-local");
 const upload = require("./multer");
@@ -13,12 +14,12 @@ passport.use(new localStrategy(userModel.authenticate()));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  res.render('index',{nav: false});
 });
 
 // get register  router page
 router.get('/register', function(req, res, next) {
-  res.render('register');
+  res.render('register',{nav: false});
 });
 
 // router.get('/login', function(req, res, next) {
@@ -28,8 +29,31 @@ router.get('/register', function(req, res, next) {
 
 // get create profile page router
 router.get('/profile' ,isLoggedIn,  async function(req, res, next) {
+  const user = await userModel
+  .findOne({username:req.session.passport.user})
+  .populate("posts")
+  res.render('profile' , {user,nav: true});
+});
+
+// get create add for post form creation router
+router.get('/add', isLoggedIn, async function(req, res, next) {
   const user = await userModel.findOne({username:req.session.passport.user});
-  res.render('profile' , {user});
+  res.render("add" ,{user,nav: true});
+});
+
+// get create post router for posted file store in multer folder 
+router.post('/createpost', upload.single("postimage"), isLoggedIn, async function(req, res, next) {
+  const user = await userModel.findOne({username:req.session.passport.user});
+  const post = await postModel.create({
+    user: user._id,
+    title: req.body.title,
+    description: req.body.description,
+    image: req.file.filename
+  });
+
+  user.posts.push(post._id);
+  await user.save();
+  res.redirect("/profile")
 });
 
 
@@ -46,14 +70,7 @@ router.post('/fileupload' ,isLoggedIn, upload.single("image"), async function(re
 
 });
 
-// router.get('/fileupload' ,isLoggedIn, upload.single("image"), async function(req, res, next) {
-//  res.redirect("/fileupload");
-
-
-// });
-
-
-// second regiter router for databses post in mongodb databses 
+// second regiter router for databses post in mongodb databses set
 router.post('/register', function(req, res, next) {
   // create user data set up colums 
   const userdata = new userModel({

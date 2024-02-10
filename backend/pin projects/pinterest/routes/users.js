@@ -25,7 +25,14 @@ const userSchma = mongoose.Schema({
   boards: {
     type: Array,
     default: []
-  }
+  },
+  // create colume for connect post id
+  posts:[
+    {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "post"
+  }]
+
 
 });
 
