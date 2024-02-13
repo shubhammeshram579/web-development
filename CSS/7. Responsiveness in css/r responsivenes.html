@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            color:gray;
+        }
+
+        body{
+            height: 100%;
+            width: 100%;
+            /* background-color: aquamarine; */
+        }
+
+        .page1{
+            min-height: 100vh;
+            background-color:#111;
+        }
+
+        
+
+
+        .card h1{
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 3vw;
+            margin-bottom: 1vh;
+        }
+
+        .card p{
+            text-align: justify;
+            padding: 10px 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 2.3vw;
+        }
+
+        .next{
+            margin-top: 11vw;
+            padding: 0 50px;
+        }
+
+        .page2{
+            min-height: 100vh;
+            background-color:#111;
+        }
+
+        .card2{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 1vw 6vw;
+            margin-top: 10vw;
+            
+            
+        }
+
+        .card2 h1{
+            height: 25vw;
+            width: 50%;
+            margin: 5px 100px;
+            border: 2px solid black;
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1vw;
+        }
+
+        .page3{
+            min-height: 100vh;
+            background-color:#111;
+        }
+
+        .card3{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 50px;
+            margin-top: 10vw;
+            
+        }
+
+        .card3 h1{
+            height: 25vw;
+            width: 50%;
+            border: 2px solid black;
+            background-color: blue;
+            margin: 10px 10px;
+            border-radius: 1vw;
+        }
+
+
+        @media (max-width:600px) {
+
+            .card h1{
+                padding-top: 15px;
+            }
+
+            .card p{
+            text-align: justify;
+            padding: 10vw 25px;
+            font-size: 4.3vw;
+        }
+            
+        }
+
+        @media (max-width:600px) {
+
+            .card2{
+            display: flex;
+            flex-direction: column;
+            
+            
+        }
+
+        .card2 h1{
+            height: 40vw;
+            width: 100%;
+            margin: 10px 100px;
+        }
+            
+        }
+
+
+        @media (max-width:600px) {
+
+            .card3{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .card3 h1{
+            height: 60vw;
+            width: 100%;
+            border: 2px solid black;
+            background-color: blue;
+           
+        }
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="page1">
+    <div class="card">
+        <h1>heading</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti quia velit enim expedita iure sunt vel repellendus perspiciatis. Temporibus aliquid exercitationem inventore consequuntur, quae quos hic tempore veniam dolorem ad deserunt illum cumque recusandae porro eligendi fugiat dolores voluptatibus? Error, placeat eius earum consectetur vero facere dicta rerum debitis est aliquid eveniet? Dolore molestiae voluptatibus aliquid debitis, molestias nisi vitae distinctio, sit aut accusamus ex in maiores fugiat dolorem doloremque obcaecati quae rerum error consequuntur consequatur aspernatur ratione odit quis. Atque dolorum quod porro! Dicta deserunt voluptatem harum voluptate molestias modi numquam voluptas quibusdam mollitia consequuntur facere natus, veniam quae!</p>
+    </div>
+    <h1 class="next">next page</h1>
+</div>
+<div class="page2">
+    <div class="card">
+        <h1>boxs</h1>
+    <div class="card2">
+        <h1>box1</h1>
+        <h1>box2</h1>
+        <h1>box3</h1>
+    </div>
+</div>
+</div>
+<div class="page3">
+<div class="card">
+    <h1>products</h1>
+    <div class="card3">
+        <h1>box1</h1>
+        <h1>box2</h1>
+    </div>
+</div>
+</div>
+    
+</body>
+</html>

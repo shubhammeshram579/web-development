@@ -41,6 +41,7 @@ router.get('/add', isLoggedIn, async function(req, res, next) {
   res.render("add" ,{user,nav: true});
 });
 
+
 // get create post router for posted file store in multer folder 
 router.post('/createpost', upload.single("postimage"), isLoggedIn, async function(req, res, next) {
   const user = await userModel.findOne({username:req.session.passport.user});
@@ -54,6 +55,37 @@ router.post('/createpost', upload.single("postimage"), isLoggedIn, async functio
   user.posts.push(post._id);
   await user.save();
   res.redirect("/profile")
+});
+
+// get create rouster for show all posts in one page
+router.get('/showpost' ,isLoggedIn,  async function(req, res, next) {
+  const user = await userModel
+  .findOne({username:req.session.passport.user})
+  .populate("posts")
+  res.render('showpost' , {user,nav: true});
+});
+
+// get create postdetails router
+// router.get('/postdetails' ,isLoggedIn,  async function(req, res, next) {
+//   const user = await userModel
+//   .findOne({username:req.session.passport.user})
+//   .populate("posts")
+//   res.render('postdetails' , {user,nav: true});
+// });
+
+
+// get crete feed router page
+router.get('/feed' ,isLoggedIn,  async function(req, res, next) {
+  const user = await userModel.findOne({username:req.session.passport.user})
+  const posts = await postModel.find()
+  .populate("user")
+  res.render("feed" , {user,posts,nav:true});
+});
+
+
+router.get('/postdetails' ,isLoggedIn,  async function(req, res, next) {
+  const posts = await postModel.find()
+  res.render("postdetails" , {posts,nav:true});
 });
 
 

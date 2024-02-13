@@ -1,0 +1,17 @@
+<% include ./partials/header.ejs %>
+    <div class="w-full min-h-screen bg-zinc-800 px-10 py-10">
+        <div class="cards flex flex-wrap gap-10">
+            <!-- using foreach for populate all post in showpage -->
+            <% posts.forEach(function(elem){ %>
+                <div class="w-50">
+                    <div class="card w-full h-40 bg-sky-200 rounded-lg overflow-hidden">
+                        <img class="h-full w-full" src="/images/uploads/<%= elem.image %>" alt="">
+                    </div>
+                    <h5 class="mt-2 text-sm text-white"><%= elem.title %></h5>
+                    <h5 class="mt-2 text-sm text-white">@<%= elem.user.username %></h5>
+                </div>
+                <% }) %>
+                    
+        </div>
+    </div>
+    <% include ./partials/footer.ejs %>

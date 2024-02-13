@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            height: 100%;
+            width: 100%;
+        }
+
+        .boxs{
+            margin: 20px 40px;
+            /* background-color: aqua; */
+        }
+
+
+        .zindex .zbox1{
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+            margin: 10px 10px;
+            position:absolute;
+            z-index:1;
+        }
+
+        .zindex .zbox2{
+            height: 100px;
+            width: 100px;
+            background-color:blueviolet;
+            margin: 20px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* border-box */
+        .box1{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        /* content-box */
+        .box2{
+            height: 100px;
+            width: 100px;
+            background-color:green;
+            box-sizing: content-box;
+            padding: 20px;
+        }
+
+
+        /* clip path cerculs */
+        .clip-path .img1{
+            height: 230px;
+            width: 200px;
+            object-fit:contain;
+            background-color: red;
+
+        }
+        .clip-path .img2{
+            height: 230px;
+            width: 200px;
+            object-fit:cover;
+            background-color: red;
+
+        }
+        .clip-path .img3{
+            height: 230px;
+            width: 200px;
+            object-fit:fill;
+            background-color: red;
+
+        }
+
+        .clip-path .img4{
+            height: 230px;
+            width: 230px;
+            object-fit:cover;
+            background-color: red;
+            border-radius: 50% 20% ;
+
+        }
+        .clip-path .img5{
+            height: 230px;
+            width: 230px;
+            object-fit:cover;
+            background-color: red;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="zindex">
+        <h5>z-index</h5>
+        <h1 class="zbox1">box1</h1>
+        <h1 class="zbox2">box2</h1>
+    </div>
+    <div class="boxs">
+        <h5>boder vs content box diff b/w</h5>
+        <h1 class="box1">box1</h1>
+        <h1 class="box2">box2</h1>
+    </div>
+    <div class="clip-path">
+        <img class="img1" src="2.jpg" alt="">
+        <img class="img2" src="2.jpg" alt="">
+        <img class="img3" src="2.jpg" alt="">
+        <img class="img4" src="2.jpg" alt="">
+        <img class="img5" src="2.jpg" alt="">
+    </div>
+    
+</body>
+</html>

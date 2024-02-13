@@ -171,7 +171,135 @@
         while (a < 10){
             console.log("hello");
             a += 2 
+        };
+        console.log("hello");
+
+        // forEach loops
+        let arr = [1,2,3,4,5,67];
+        let arr2 = [12,4,5,6,44,4]
+        let arr3 = [33];
+
+        arr.forEach(function(i){
+            arr2.forEach(function(k){
+                arr3.forEach(function(c){
+                    console.log(i,k+c)
+                })
+
+            })
+        });
+
+
+        // forign loops
+        
+        let obj = {
+            name: "shubham",
+            age: 25
+        };
+
+        for (let i in obj){
+            console.log(i,obj[i])
         }
+
+        for (var i = 0; i< 10; i++){
+            for (var k in obj){
+                console.log(obj[k])
+            }
+        };
+
+
+        // most used this function in js 
+        // nornam function
+        // firstclass function
+        // highoreder function
+        // contruction function
+        // callback function
+        // arrow function
+
+
+        function abcd(){
+            console.log("hello shubham")
+        };
+
+        abcd();
+
+        // build add values 
+
+        function add(a,b){
+            console.log( a + b);
+        }
+        add(12,10);
+        
+
+
+        function seif(a1=10,a2=20){
+            if (a1< a2){
+                console.log("a grether then b")
+            }
+            else{
+                console.log("less then a2")
+            }
+        };
+
+        console.log(seif(100,2000));
+
+
+
+        // first class function
+
+        let firstfnc = function(){
+            var n = "hello bro!";
+            var b = 129;
+            console.log(n+" "+ b);
+        };
+
+        firstfnc();
+
+
+        // high order function
+
+        function highofnc(a){
+            return function(b){
+                console.log(a * b);
+            }
+        }
+
+        var avalue = highofnc(10);
+        console.log(avalue(2));
+
+
+        // contraction function
+
+        let costfnc = function(){
+            this.name =  "shubham",
+            this.age = 25;
+        };
+
+        let dstore = new costfnc();
+        console.log(dstore.name);
+
+
+        // callback function
+
+        setTimeout(function(){
+            console.log("callback is excute code delay")
+        },3000);
+
+
+        // arrow functio is advance version function like es6
+
+        let arrfnc = (a = 100 ,b = 120)=>{
+            let marge = a + b ;
+            console.log(marge);
+
+        }
+
+        arrfnc();
+
+
+
+
+
+        
        
         
 

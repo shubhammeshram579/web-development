@@ -1,5 +1,4 @@
 <% include ./partials/header.ejs %>
-<!-- <a href="/logout">logout</a> -->
 <!-- profile page set up -->
 <div class="profile w-full min-h-screen bg-zinc-800 text-white pt-1">
     <div class="profdets flex flex-col items-center mt-24">
@@ -12,8 +11,9 @@
             <img style="object-fit: cover; height: 100%; width: 100%; border-radius: 50%;overflow: hidden;" src="/images/uploads/<%= user.profileImage%>" alt=""> <!--select profile image chage -->
         </div>
     </div>
-        <h1 class="text-3xl font-semibold mt-2">shubham meshram</h1>
-        <h3 class="text-md">@shubham</h3>
+    <!-- set username and id showing profile page -->
+        <h1 class="text-3xl font-semibold mt-2"><%= user.fullname %></h1>
+        <h3 class="text-md">@<%= user.username %></h3>
         <a class="px-6 py-3 bg-zinc-500 rounded-full text-xs font-semibold" href="/edit">Edit</a>
         <a href="/add" class="px-7 py-2 rounded-lg bg-red-900 mt-3">add new post</a>
     </div>
@@ -25,10 +25,10 @@
     <!-- pins page -->
     <div class="cards flex flex-wrap gap-10 pt-10 p-10">
         <div>
-        <div class="w-53 h-30 bg-zinc-300 rounded-lg">
-            <img src="/images/uploads/<%= user.posts[0].image %>" alt="">
+        <div class="w-40 h-30 bg-zinc-300 rounded-lg overflow-hidden">
+            <img src="/images/uploads/<%= user?.posts[0]?.image %>" alt="">
         </div>
-        <h3 class="text-xl font-semibold mt-2">All Pins</h3>
+        <a href="/showpost" class="text-xl font-semibold mt-2">All Pins</a>
         <h5 class="text-sm font-medium opacity-70" ><%= user.posts.length %> Pins</h5>
     </div>
     </div>
