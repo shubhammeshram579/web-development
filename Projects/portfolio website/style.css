@@ -1,0 +1,170 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: #fff;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+/* navbar staly */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+}
+
+nav .navbarname {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background-color: none;
+    text-transform: capitalize;
+}
+
+.contaner {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contaner .card img {
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+    background-color: rgb(10, 11, 39);
+    /* border: 2px solid rgb(128, 128, 18); */
+    border-radius: 100px 300px;
+}
+
+.contaner .card2 {
+    font-size: 3vw;
+    margin-left: -500px;
+    line-height: 6vh;
+}
+
+.contaner .hello {
+    font-size: 1.5vw;
+}
+
+.contaner .name {
+    color: rgb(183, 183, 23);
+}
+
+
+.contaner button {
+    background-color: yellow;
+    color: #111;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+/* page2 */
+.page2 {
+    min-height: 100vh;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 100px;
+}
+
+.page2 .card img {
+    height: 400px;
+    width: 350px;
+    background-color: rgb(10, 11, 39);
+    border: 5px solid rgb(144, 144, 20);
+    border-radius: 10px;
+}
+
+.page2 .card2 {
+    /* margin-top: -200px; */
+    padding: 100px;
+}
+
+.page2 .card3 {
+    display: flex;
+    gap: 100px;
+    padding-top: 10px;
+}
+
+.page2 .card4 {
+    display: flex;
+    margin-top: 20px;
+    position: absolute;
+    line-height: 30px;
+    border: 1px solid yellow;
+    padding: 3px 100px 30px 10px;
+    border-radius: 10px;
+}
+
+.page2 .skill2 {
+    margin-left: 90px;
+    
+}
+
+.page2 .skill3{
+    margin-left: 130px;
+
+}
+
+
+.page2 .skill2 img{
+    height: 15px;
+}
+
+.page2 .card5{
+    display: flex;
+    position: absolute;
+    opacity: 0;
+    border: 1px solid yellow;
+    padding: 3px 100px 30px 10px;
+    border-radius: 10px;
+}
+
+.page2 .card5 h1,h2{
+    font-size: 20px;
+    /* color: yellow; */
+    line-height: 30px;
+}
+.page2 .card5 {
+    margin-top: 20px;
+}
+
+.page2 .exp2 {
+    margin-left: 100px;
+}
+
+.page2 .card6{
+    display: flex;
+    margin-top: 20px;
+    opacity: 0;
+    border: 1px solid yellow;
+    padding: 30px 10px;
+    border-radius: 10px;
+
+}
+
+.page2 .card6 h1,h2{
+    font-size: 20px;
+    /* color: yellow; */
+}
+
+.page2 i,img{
+    color:yellow;
+
+}
+
+
+
+.page2 .edu2 {
+    margin-left: 100px;
+}

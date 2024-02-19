@@ -12,7 +12,11 @@ body{
 
 
 .page1{
+    min-height: 100vh;
     padding-bottom: 200px;
+    /* background-image: url(image2.jpg);
+    background-position: center;
+    background-repeat: no-repeat; */
 }
 
 .contaner1,nav,h4{
