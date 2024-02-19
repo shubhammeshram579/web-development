@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        html body{
+            height: 100%;
+            width: 100%;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        body h1{
+            font-size: 50px;
+            font-weight: 900;
+            text-transform: capitalize;
+            position: relative;
+        }
+
+        /* h1::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            bottom: 0;
+            background-color: #111;
+            left: 0;
+            
+        } */
+
+
+/* 
+        h1::before{
+            content: "MR ";
+        } */
+
+
+
+        /* first effect  right side move line*/
+        /* h1:hover::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            bottom: 0;
+            background-color: #111;
+            left: 0;
+            animation-name: lineeffect;
+            animation-duration: 1s;
+        } */
+
+
+
+
+        /* @keyframes lineeffect {
+            0%{
+                left: 0;
+                width: 0;
+            }
+
+            100%{
+                width: 100%;
+                left: 0;
+            }           
+        } */
+
+
+
+
+         /* second effect  right side move line*/
+         h1:hover::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            bottom: 0;
+            background-color: #111;
+            left: 0;
+            animation-name: linesecondE;
+            animation-duration: 2s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+        }
+
+
+
+        @keyframes linesecondE {
+            0%{
+                left: 0;
+                width: 0;
+            }
+
+            50%{
+                width: 100%;
+                left: 0;
+            }
+
+            100%{
+                width: 0%;
+                left: 100%;
+            }
+            
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <h1>shubham meshram</h1>
+    
+</body>
+</html>

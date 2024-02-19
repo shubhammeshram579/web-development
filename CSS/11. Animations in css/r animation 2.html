@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            height: 250px;
+            width: 250px;
+            background-color: yellow;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            animation-name: cardscroll;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            
+        }
+
+
+        @keyframes cardscroll {
+
+          0%{
+            left: 0;
+            background-color: green;
+            top: 100px;
+            rotate: 0deg;
+
+          }
+
+          50%{
+            left: 74%;
+            background-color: yellow;
+            top: 100px;
+            rotate: 360deg;
+          }
+
+          100%{
+            left: 75%;
+            background-color: red;
+            top:50%;
+            rotate: 360deg;
+
+          }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <h1>normal animation using hover</h1>
+    <div class="card">
+        <h3>background color change</h3>
+    </div>
+    
+</body>
+</html>

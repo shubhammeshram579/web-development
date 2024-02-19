@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            transition: all ease-in 5s;
+            position: relative;
+            animation-name: textmove;
+            animation-duration: 10s;
+            animation-timing-function: ease-in;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+
+        }
+
+        @keyframes textmove {
+            0%{
+                left: 0;
+                color: green;
+
+            }
+
+            10%{
+                left: 10%;
+                color: red;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Web developer</h1>
+    
+</body>
+</html>
