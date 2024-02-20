@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable and dtype</title>
+</head>
+
+<body>
+    <h1>Variable</h1>
+
+    <script>
+        // tree type of varible in js
+        // var, let and const
+
+        // var is a old version variable es5
+        // it is a function scoped
+        // it is add on window object
+        var firstname = "shubham";
+
+        // const is new version varible es6
+        // it is a consted varible doens change, updated it is fixed varible
+        // const is brager scoped varible
+        // it is does't add on window object
+        const lastname = "Meshram";
+
+        // let is new version varible es6
+        // let is brager scoped varible
+        // it is does't add on window object
+        let age = 26;
+
+
+
+
+
+        //1. diff b/w var and let function scoped and brages scoped 
+
+        // var case
+        function varV() {
+            for (var i = 0; i < 12; i++) {
+                console.log(i)
+            }
+            console.log(i);
+
+        };
+
+        varV();
+
+        // let case
+        function letV() {
+            for (let i = 0; i < 12; i++) {
+                console.log(i)
+            }
+            console.log(i);
+        };
+
+        letV();
+
+
+        // diff b/w var and let for add on window object 
+        var varwindowobj = "add on window object"
+        console.log(varwindowobj);
+
+        let letnotadd = "not add on window oject "
+        console.log(letnotadd);
+
+
+        // diff b/w const and let
+
+        // let case
+        let letvar = ["shubham", "meshram"];
+
+        letvar[0] = "labham";
+        console.log(letvar);
+
+
+        //const case
+        const costVar = ["pallavi", "meshram"];
+
+        costVar[1] = "Pallavi";
+        console.log(costVar);
+
+
+    </script>
+</body>
+
+</html>

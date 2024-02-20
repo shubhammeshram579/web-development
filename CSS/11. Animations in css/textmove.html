@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            height: 200px;
+            width: 200px;
+            color:red;
+            background-color: yellow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            animation-name: textmove;
+            animation-duration: 2s;
+            animation-delay: 1ms;
+            animation-fill-mode:both;
+            animation-iteration-count: infinite;
+            animation-timing-function:all;
+            animation-direction: alternate;
+            
+        
+        }
+
+
+        @keyframes textmove {
+            0%{
+                left: 0;
+            }
+
+            50%{
+                left: 74%;
+                background-color: green;
+            }
+
+            100%{
+                left: 75%;
+                background-color:red;
+                top: 55%;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+    <h1>Shubham</h1>
+</div>
+    
+</body>
+</html>

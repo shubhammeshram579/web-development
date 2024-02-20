@@ -43,6 +43,15 @@ nav .navbarname {
     border-radius: 100px 300px;
 }
 
+.contaner .card img:hover{
+    border-radius: 100px 200px;
+    height: 500px;
+    width: 100%;
+
+}
+
+
+
 .contaner .card2 {
     font-size: 3vw;
     margin-left: -500px;
@@ -79,10 +88,9 @@ nav .navbarname {
 
 .page2 .card img {
     height: 400px;
-    width: 350px;
     background-color: rgb(10, 11, 39);
-    border: 5px solid rgb(144, 144, 20);
-    border-radius: 10px;
+    /* border-bottom: 5px solid rgb(144, 144, 20); */
+    border-radius: 50px 50px;
 }
 
 .page2 .card2 {
