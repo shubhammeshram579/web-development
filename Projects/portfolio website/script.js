@@ -38,3 +38,15 @@ edubtn.addEventListener("click",function(){
     expbtn.style.borderBottom =  "none"
     
 })
+
+
+
+// project page 
+
+
+const imgcard = document.querySelectorAll(".page3 .cards");
+// const imgbtn = document.querySelectorAll(".page3 .card img");
+// const textbtn = document.querySelectorAll(".page3 .card2");
+
+
+// val.childNodes[1].childNodes[3]
