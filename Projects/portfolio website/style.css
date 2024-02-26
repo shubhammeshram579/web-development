@@ -1,9 +1,13 @@
 * {
     padding: 0;
     margin: 0;
-    background-color: black;
+    /* background-color: black; */
     color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: #b3afafd9;
 }
+
 
 body {
     height: 100%;
@@ -16,7 +20,19 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 20px 100px;
+    background-color: #111;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    
+    
 }
+
+nav .logo span{
+    color: rgb(160, 128, 21);
+}
+
+
 
 nav .navbarname {
     display: flex;
@@ -25,6 +41,26 @@ nav .navbarname {
     gap: 50px;
     background-color: none;
     text-transform: capitalize;
+    
+   
+}
+
+nav .navbarname h1{
+    font-size: 20px;
+    
+}
+
+nav .navbarname h1:hover{
+    border-bottom: 2px solid rgb(160, 128, 21);
+
+}
+
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
 }
 
 .contaner {
@@ -32,13 +68,19 @@ nav .navbarname {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background-color: #111111bd;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    
+   
 }
 
 .contaner .card img {
     height: 600px;
     width: 100%;
     object-fit: cover;
-    background-color: rgb(10, 11, 39);
+    background-color: rgba(10, 34, 39, 0.451);
     /* border: 2px solid rgb(128, 128, 18); */
     border-radius: 100px 300px;
 }
@@ -63,12 +105,12 @@ nav .navbarname {
 }
 
 .contaner .name {
-    color: rgb(183, 183, 23);
+    color:rgb(160, 128, 21);
 }
 
 
 .contaner button {
-    background-color: yellow;
+    background-color: rgb(160, 128, 21);
     color: #111;
     padding: 10px 40px;
     border: none;
@@ -76,32 +118,57 @@ nav .navbarname {
 }
 
 
-/* page2 */
+/* about me page2 */
 .page2 {
     min-height: 120vh;
-    /* background-color: red; */
+    background-color:#111;
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0px 100px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    
+
+
+    
 }
 
 .page2 .card img {
     height: 400px;
-    background-color: rgb(10, 11, 39);
-    /* border-bottom: 5px solid rgb(144, 144, 20); */
+    background-color: rgba(10, 34, 39, 0.451);
     border-radius: 50px 50px;
 }
 
+.page2 .card2 .about-me{
+    margin-bottom: 10px;
+    font-size: 2.5vw;
+    font-weight: 700;
+    color: rgb(160, 128, 21);
+}
+
+.page2 .card2 p{
+    text-align: justify;
+    line-height: 25px;
+    font-size: 1vw;
+    font-weight: 400;
+
+}
+
 .page2 .card2 {
-    /* margin-top: -200px; */
     padding: 100px;
 }
 
+/* skills */
 .page2 .card3 {
     display: flex;
     gap: 100px;
-    padding-top: 10px;
+    padding-top: 30px;
+}
+
+.page2 .card3 h1{
+    font-size: 1.5vw;
 }
 
 .page2 .card4 {
@@ -109,9 +176,9 @@ nav .navbarname {
     margin-top: 20px;
     position: absolute;
     line-height: 30px;
-    border: 1px solid yellow;
-    padding: 3px 100px 30px 10px;
-    border-radius: 10px;
+    border: 1px solid rgb(160, 128, 21);
+    padding: 10px 20px 30px 10px;
+    border-radius: 5px;
 }
 
 .page2 .skill2 {
@@ -129,75 +196,111 @@ nav .navbarname {
     height: 15px;
 }
 
+
+/* Experience section */
 .page2 .card5{
     display: flex;
     position: absolute;
     opacity: 0;
-    border: 1px solid yellow;
     padding: 3px 100px 30px 10px;
-    border-radius: 10px;
 }
 
-.page2 .card5 h1,h2{
-    font-size: 20px;
-    /* color: yellow; */
-    line-height: 30px;
-}
-.page2 .card5 {
+.page2 .card5 .exp1{
+    border: 1px solid rgb(160, 128, 21);
+    padding: 20px 20px;
+    border-radius: 5px;
     margin-top: 20px;
 }
 
-.page2 .exp2 {
-    margin-left: 100px;
+.page2 .card5 .exp2{
+    border: 1px solid rgb(160, 128, 21);
+    padding: 20px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 20px;
+
 }
 
+
+.page2 .card5 h1{
+    font-size: 1.5vw;
+    font-weight: 900;
+    color: rgb(160, 128, 21);
+}
+
+.page2 .card5 h2{
+    font-size: 1vw;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+/* education section */
 .page2 .card6{
     display: flex;
     margin-top: 20px;
     opacity: 0;
-    border: 1px solid yellow;
-    padding: 30px 10px;
-    border-radius: 10px;
 
 }
 
-.page2 .card6 h1,h2{
-    font-size: 20px;
-    /* color: yellow; */
+.page2 .card6 .edu1{
+    border: 1px solid rgb(160, 128, 21);
+    padding: 20px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
 }
+
+.page2 .card6 .edu2{
+    border: 1px solid rgb(160, 128, 21);
+    padding: 20px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 20px;
+
+}
+
+.page2 .card6 h1{
+    font-size: 1.5vw;
+    font-weight: 900;
+    color: rgb(160, 128, 21);
+}
+
+.page2 .card6 h2{
+    font-size: 1vw;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
 
 .page2 i,img{
-    color:yellow;
+    color:rgb(160, 128, 21);
+    font-size: 20px;
 
 }
 
 
-
-.page2 .edu2 {
-    margin-left: 100px;
-}
-
-
-
-/* page3 */
+/* project */
 
 .page3{
     min-height: 100vh;
-    /* background-color: red; */
+    background-color: #111;
+    position: relative;
+    /* top: 0; */
+    z-index: 11;
 
     
 }
 .page3 h1{
-    margin-top: 100px;
-    padding: 0px 150px;
-    font-size: 3vw;
+    padding-top: 20px;
+    padding-left: 100px;
+    font-size: 2.5vw;
+    font-weight: 700;
+    color: rgb(160, 128, 21);
 }
 
 .page3 .card1{
     height: 450px;
     width: 400px;
-    /* background-color: red; */
-    border: 2px solid yellow;
+    border: 2px solid rgb(160, 128, 21);
     border-radius: 10px;
 }
 
@@ -225,10 +328,18 @@ nav .navbarname {
     align-items: center;
 }
 
-.page3 .card1 button{
+/* .page3 .card1 button{
     margin-left: 45%;
     margin-top: 10px;
     font-size: 25px;
+    background-color: transparent;
+    
+} */
+
+.page3 .card1 i{
+    font-size: 10px;
+    
+    
 }
 
 .page3 .contenar{
@@ -245,7 +356,7 @@ nav .navbarname {
 
 .page3 .card1 p{
     border-radius: 10px;
-    background-image: linear-gradient(red,yellow);
+    background-image: linear-gradient(rgba(255, 0, 0, 0.985),rgb(160, 128, 21));
     text-align: center;
     margin-bottom: 100px;
     padding: 177px 30px;
@@ -262,32 +373,63 @@ nav .navbarname {
 
 
 .page3 .more{
-    margin-top: 100px;
-    /* background-color: red; */
+    margin-top: 50px;
+    margin-left: 85%;
+    position: absolute;
+    animation-name: moreproject;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
 .page3 .more-p{
+    height: 100px;
+    width: 100px;
     text-decoration: none;
     font-size: 1.2vw;
-    background-color: yellow;
-    color: black;
-    border-radius: 10px;
+    background-color: rgb(160, 128, 21);
+    border-radius: 50%;
     padding: 10px;
-    margin-left: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.page3 .more-p:hover{
+    background-color: rgb(208, 164, 21);
+    color: #111;
+
+}
+
+@keyframes moreproject {
+    0%{
+        left: 0;
+    }
+    
+    100%{
+        left: 100px;
+    }
 }
 
 
 
-/* page 4  */
+/* contact page  */
 
 
 .page4{
     min-height: 100vh;
-    /* background-color: red; */
+    background-color:#111;
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0 170px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 
@@ -301,9 +443,10 @@ nav .navbarname {
 }
 
 .page4 .cot1 h1{
-    font-size: 4vw;
-    font-weight: 700;
     text-transform: capitalize;
+    font-size: 2.5vw;
+    font-weight: 700;
+    color: rgb(160, 128, 21);
 }
 
 .page4 .cot1 .contact{
@@ -337,7 +480,7 @@ nav .navbarname {
     border-radius: 10px;
     padding: 20px 50px;
     color: black;
-    background-color: yellow;
+    background-color: rgb(160, 128, 21);
 }
 
 
@@ -394,11 +537,13 @@ nav .navbarname {
     padding: 20px 100px;
     margin-left: -450px;
     border-radius: 10px;
-    background-color: rgb(205, 205, 16);
+    background-color: rgb(160, 128, 21);
     color: #111;
     font-size: 15px;
     font-weight: 800;
 }
+
+
 
 
 
