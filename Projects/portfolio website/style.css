@@ -27,6 +27,7 @@ nav {
     z-index: 99;
     
     
+    
 }
 
 nav .logo span{
@@ -53,7 +54,8 @@ nav .navbarname a{
     
 }
 
-nav .navbarname a:hover,nav a.active{
+nav .navbarname a:hover,
+nav a.active{
     border-bottom: 2px solid rgb(160, 128, 21);
 
 }
@@ -66,19 +68,12 @@ video{
     z-index: -1;
 }
 
-#home{
-    position: sticky;
-    top: 0;
-    z-index: 2;
-
-}
-
 .contaner {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #111111bd;
+    background-color: #111111b4;
     
     
    
@@ -95,9 +90,7 @@ video{
 
 .contaner .card img:hover{
     border-radius: 100px 200px;
-    height: 500px;
-    width: 100%;
-
+    scale: 1.04;
 }
 
 
@@ -117,22 +110,18 @@ video{
 }
 
 
-.contaner button {
+.contaner a {
     background-color: rgb(160, 128, 21);
     color: #111;
     padding: 10px 40px;
+    font-size: 15px;
     border: none;
     border-radius: 10px;
+    text-decoration: none;
 }
 
 
 /* about me page2 */
-#About{
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    
-}
 .page2 {
     min-height: 120vh;
     background-color:#111;
@@ -151,6 +140,11 @@ video{
     height: 400px;
     background-color: rgba(10, 34, 39, 0.451);
     border-radius: 50px 50px;
+    opacity: 0;
+}
+
+.page2 .card2{
+    opacity: 0;
 }
 
 .page2 .card2 .about-me{
@@ -298,8 +292,6 @@ video{
     position: relative;
     /* top: 0; */
     z-index: 11;
-
-    
 }
 .page3 h1{
     padding-top: 100px;

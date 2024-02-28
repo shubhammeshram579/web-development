@@ -124,6 +124,7 @@ function imgscrollinganimation(){
         start: "top 10%",
         end: "top 30%",
         scrub: true,
+      //   markers:true
       },
     });
    
@@ -138,6 +139,7 @@ function imgscrollinganimation(){
         start: "top 65%",
         end: "top 70%",
         scrub: true,
+      //   markers:true
       },
     });
    };
