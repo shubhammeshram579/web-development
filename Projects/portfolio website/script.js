@@ -1,3 +1,35 @@
+function locoscrollani(){
+    gsap.registerPlugin(ScrollTrigger);
+ const locoScroll = new LocomotiveScroll({
+   el: document.querySelector(".main"),
+   smooth: true
+ });
+ locoScroll.on("scroll", ScrollTrigger.update);
+ 
+ ScrollTrigger.scrollerProxy(".main", {
+   scrollTop(value) {
+     return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+   }, 
+   getBoundingClientRect() {
+     return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+   },
+   
+   pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
+ });
+ 
+ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+ 
+ ScrollTrigger.refresh();
+ 
+ 
+ }
+ 
+//  locoscrollani();
+
+
+
+
+// skills btn feature creation 
 const skillsbtn = document.querySelector(".page2 .card3 #skills");
 const expbtn = document.querySelector(".page2 .card3 #Experience");
 const edubtn = document.querySelector(".page2 .card3 #Education");
@@ -41,7 +73,7 @@ edubtn.addEventListener("click",function(){
 
 
 
-// project page 
+// navbar click then scroll pages effect 
 
 let section = document.querySelectorAll("section");
 let navlink = document.querySelectorAll("nav a");
@@ -50,7 +82,7 @@ let navlink = document.querySelectorAll("nav a");
 window.onscroll = () => {
     section.forEach(sec => {
         let top = window.scrollY;
-        let offset = sec.offsetTop -150;
+        let offset = sec.offsetTop;
         let height = sec.offsetHeight;
         let id = sec.getAttribute("id");
 
@@ -66,7 +98,7 @@ window.onscroll = () => {
 };
 
 
-// scroll using gsap
+// animation effect using gsap
 // home page animation 
 
 var tl = gsap.timeline();
@@ -80,7 +112,7 @@ tl.from("nav .logo, nav .navbarname a",{
 
 gsap.from(".contaner .card img",{
     x:-100,
-    duration:5,
+    duration:3,
     opacity:0,
     scale:0.1
     // stagger:1
@@ -114,43 +146,81 @@ tl.from(".contaner .card2 .job",{
 
 tl.from(".contaner .card2 a",{
     x:100,
-    duration:1,
+    duration:0.5,
     opacity:0,
     // stagger:3
 
 });
 
-// anout page animation
 
-gsap.to(".page2 img,.page2 .card2",{
-    stagger:1,
-    transition: "all ease 5s",
+
+// anout page animation
+tl.to(".page2,.page2 img,.page2 .card2",{
+    transition: "all ease 1s",
     opacity: 1,
+    trigger:1,
     scrollTrigger: {
         trigger: ".page2",
         scroller: "body",
-        start: "top 2%",
-        end: "top 10%",
-        scrub: true,
-        markers:true
+        start: "top 10%",
+        end: "top 35%",
+        scrub:true,
+        // markers:true
       },
     
 })
 
 
-// gsap.to(".page3",{
-//     stagger:1,
-//     transition: "all ease 5s",
-//     opacity: 1,
-//     scrollTrigger: {
-//         trigger: ".page3",
-//         scroller: "body",
-//         start: "top 20%",
-//         end: "top 50%",
-//         scrub: true,
-//         markers:true
-//       },
+// project page animation
+tl.to(".page3 .card1, .page3 h1, .page3 .more",{
+    transition: "all ease 1s",
+    opacity: 1,
+    stagger:2,
+    scrollTrigger: {
+        trigger: ".page3",
+        scroller: "body",
+        start: "top 25%",
+        end: "top 35%",
+        scrub: 4,
+        // markers:true
+      },
     
-// })
+})
+
+
+// navbar 
+gsap.to(".nav", {
+    backgroundColor: "#111",
+    duration: 0.5,
+    height: "35px",
+    scrollTrigger: {
+      trigger: ".nav",
+      scroller: "body",
+      // markers:true,
+      start: "top -10%",
+      end: "top -11%",
+      scrub: 1,
+    },
+  });
+
+
+
+//   mousemove feature
+  const cbtn = document.querySelector(".cursul");
+  const body = document.querySelector("body");
+
+  document.addEventListener("mousemove", function(dets){
+    gsap.to(".cursul",{
+       left: dets.x,
+       top: dets.y,
+       transform:"translate(-50%,-50%)"
+    })
+ })
+
+
+
+ 
+
+
 
 

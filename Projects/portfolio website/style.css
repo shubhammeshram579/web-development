@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
-    /* background-color: black; */
     color: #fff;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
@@ -10,22 +9,21 @@
 }
 
 
-body {
+html,body {
     height: 100%;
     width: 100%;
 }
 
-/* navbar staly */
+/* navbar styling*/
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 100px;
-    background-color: #111111f8;
-    position: sticky;
+    position:fixed;
+    width: 100%;
     top: 0;
-    z-index: 99;
-    
+    z-index: 999;
     
     
 }
@@ -43,7 +41,7 @@ nav .navbarname {
     gap: 50px;
     background-color: none;
     text-transform: capitalize;
-    margin-right: 50px;
+    margin-right: 250px;
     
    
 }
@@ -60,6 +58,7 @@ nav a.active{
 
 }
 
+/* home page background video  */
 video{
     height: 100%;
     width: 100%;
@@ -68,31 +67,45 @@ video{
     z-index: -1;
 }
 
+/* mouse culsul */
+.cursul{
+    height: 15px;
+    width: 15px;
+    background-color:  rgb(160, 128, 21);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%,-50%);
+    transition: all ease 0.1s;
+}
+
+
+
+/* home page styling */
 .contaner {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #111111b4;
-    
+    background-color: #111111d1;
+
     
    
 }
 
+/* home page img styling */
 .contaner .card img {
     height: 600px;
     width: 100%;
     object-fit: cover;
     background-color: rgba(10, 34, 39, 0.451);
-    /* border: 2px solid rgb(128, 128, 18); */
     border-radius: 100px 300px;
+    
 }
 
 .contaner .card img:hover{
-    border-radius: 100px 200px;
-    scale: 1.04;
-}
+    border-radius: 200px 100px;
 
+}
 
 
 .contaner .card2 {
@@ -103,10 +116,12 @@ video{
 
 .contaner .hello {
     font-size: 1.5vw;
+    
 }
 
 .contaner .name {
     color:rgb(160, 128, 21);
+    
 }
 
 
@@ -118,21 +133,26 @@ video{
     border: none;
     border-radius: 10px;
     text-decoration: none;
+    
 }
 
 
-/* about me page2 */
+/* about me page2 styling */
+
+#About{
+    opacity: 1;
+    background-color:  #111111d1;
+}
+
+
 .page2 {
-    min-height: 120vh;
+    min-height: 100vh;
     background-color:#111;
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0px 100px;
-    
-    
-
-
+    opacity: 1;
     
 }
 
@@ -140,18 +160,15 @@ video{
     height: 400px;
     background-color: rgba(10, 34, 39, 0.451);
     border-radius: 50px 50px;
-    opacity: 0;
 }
 
-.page2 .card2{
-    opacity: 0;
-}
 
 .page2 .card2 .about-me{
     margin-bottom: 10px;
     font-size: 2.5vw;
     font-weight: 700;
     color: rgb(160, 128, 21);
+    mix-blend-mode: difference;
 }
 
 .page2 .card2 p{
@@ -159,6 +176,8 @@ video{
     line-height: 25px;
     font-size: 1vw;
     font-weight: 400;
+    mix-blend-mode: difference;
+    
 
 }
 
@@ -171,10 +190,12 @@ video{
     display: flex;
     gap: 100px;
     padding-top: 30px;
+    mix-blend-mode: difference;
 }
 
 .page2 .card3 h1{
     font-size: 1.5vw;
+    mix-blend-mode: difference;
 }
 
 .page2 .card4 {
@@ -187,19 +208,27 @@ video{
     border-radius: 5px;
 }
 
+.page2 .skill1 {
+    mix-blend-mode: difference;
+    
+}
+
 .page2 .skill2 {
     margin-left: 90px;
+    mix-blend-mode: difference;
     
 }
 
 .page2 .skill3{
     margin-left: 130px;
+    mix-blend-mode: difference;
 
 }
 
 
 .page2 .skill2 img{
     height: 15px;
+    mix-blend-mode: difference;
 }
 
 
@@ -284,14 +313,11 @@ video{
 }
 
 
-/* project */
+/* project page styling*/
 
 .page3{
     min-height: 100vh;
     background-color:#111;
-    position: relative;
-    /* top: 0; */
-    z-index: 11;
 }
 .page3 h1{
     padding-top: 100px;
@@ -299,6 +325,8 @@ video{
     font-size: 2.5vw;
     font-weight: 700;
     color: rgb(160, 128, 21);
+    opacity: 0;
+    mix-blend-mode: difference;
 }
 
 .page3 .card1{
@@ -312,30 +340,33 @@ video{
     background-image: url("https://images.unsplash.com/photo-1667239711059-9e5d970eb007?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFtYXpvbmUlMjBwYWdlfGVufDB8fDB8fHwwD");
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0;
 }
 
 .page3 #card2{
     background-image: url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGFuaW1hdGVkJTIwd2Vic2l0ZXxlbnwwfHwwfHx8MA%3D%3D");
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0;
 }
 .page3 #card3{
     background-image: url("https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YW5pbWF0ZWQlMjB3ZWJzaXRlfGVufDB8fDB8fHww");
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0;
 }
 
 .page3 #card1:hover{
-    scale: 1.02;
+    scale: 1.03;
 
 }
 
 .page3 #card2:hover{
-    scale: 1.02;
+    scale: 1.03;
 
 }
 .page3 #card3:hover{
-    scale: 1.02;
+    scale: 1.03;
 
 }
 
@@ -349,8 +380,8 @@ video{
 
 .page3 .hovercard{
     background-image: linear-gradient(rgba(255, 0, 0, 0),rgb(160, 128, 21));
-    height: 450px;
-    width: 400px;
+    height: 100%;
+    width: 100%;
     border-radius: 10px;
     opacity: 0;
 }
@@ -400,6 +431,7 @@ video{
     animation-fill-mode: forwards;
     animation-direction: alternate;
     animation-iteration-count: infinite;
+    opacity: 0;
 }
 
 .page3 .more-p{
@@ -436,7 +468,7 @@ video{
 
 
 
-/* contact page  */
+/* contact page styling  */
 
 
 .page4{
@@ -446,9 +478,7 @@ video{
     align-items: center;
     justify-content: space-around;
     padding: 0 170px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+
 }
 
 
@@ -466,6 +496,7 @@ video{
     font-size: 2.5vw;
     font-weight: 700;
     color: rgb(160, 128, 21);
+    mix-blend-mode: difference;
 }
 
 .page4 .cot1 .contact{
@@ -477,6 +508,7 @@ video{
 
 .page4 .cot1 .contact i{
    margin: 20px;
+   mix-blend-mode: difference;
 }
 
 .page4 .cot1 .contact a{
@@ -484,12 +516,14 @@ video{
     text-decoration: none;
     text-transform: capitalize;
     font-size: 0.7vw;
+    mix-blend-mode: difference;
 }
 
 .page4 .cot1 .socialmedia i{
     padding: 10px 20px;
     margin-left: 20px;
     font-size: 2vw;
+    mix-blend-mode: difference;
 }
 
 .page4 .cot1 .downloadbtn{
@@ -500,24 +534,21 @@ video{
     padding: 20px 50px;
     color: black;
     background-color: rgb(160, 128, 21);
+    mix-blend-mode: difference;
 }
-
-
-
-
 
 
 
 .page4 .cot2{
     height: 500px;
     width: 50%;
-    /* background-color: blue; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     padding: 0 20px;
     padding-right: 100px;
+    mix-blend-mode: difference;
     
 }
 
@@ -560,6 +591,65 @@ video{
     color: #111;
     font-size: 15px;
     font-weight: 800;
+}
+
+
+
+
+/* responsive webtion for mobile users */
+
+@media (max-width:600px) {
+
+    .nav a{
+        display: none;
+
+    }
+
+    
+    .contaner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .contaner .card img {
+        height: 300px;
+        border-radius: 100px 100px;
+        /* margin-top: -100px;
+        margin-left: -35px; */
+    }
+
+    .contaner .card2 {
+        margin-top: 20px;
+        font-size: 5vw;
+        margin-left: 10%;
+        line-height: 6vh;
+    }
+
+
+    /* page2 */
+
+    .page2{
+        display: flex;
+        flex-direction: column;
+    }
+    .page2 .card img {
+        height: 100px;
+        background-color: rgba(10, 34, 39, 0.451);
+        border-radius: 50px 50px;
+    }
+    
+    
+    .page2 .card2 .about-me{
+        margin-bottom: 10px;
+        font-size: 2.5vw;
+        font-weight: 700;
+        color: rgb(160, 128, 21);
+        mix-blend-mode: difference;
+    }
+    
 }
 
 
