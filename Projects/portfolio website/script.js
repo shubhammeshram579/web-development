@@ -209,6 +209,8 @@ gsap.to(".nav", {
   const cbtn = document.querySelector(".cursul");
   const body = document.querySelector("body");
 
+  const cv = document.querySelectorAll(".contaner a");
+
   document.addEventListener("mousemove", function(dets){
     gsap.to(".cursul",{
        left: dets.x,
@@ -216,6 +218,53 @@ gsap.to(".nav", {
        transform:"translate(-50%,-50%)"
     })
  })
+
+
+ cv.forEach(function(val){
+  val.addEventListener("mouseenter",function(){
+    cbtn.style.zIndex = "-99"
+   }
+   )
+
+   val.addEventListener("mouseleave",function(){
+    cbtn.style.zIndex = "0"
+   }
+   )
+
+ })
+
+
+
+
+
+
+
+
+
+ const mbtn =document.querySelector("nav .fa-bars");
+ const xbtn =document.querySelector("nav .fa-xmark");
+
+const navmenu =  document.querySelector(".manubar2");
+
+
+mbtn.addEventListener("click",function(){
+  navmenu.style.opacity = 1;
+  navmenu.style.zIndex = 99;
+  navmenu.style.transition = "all ease 1s";
+  mbtn.style.opacity = 0;
+  xbtn.style.opacity = 1;
+
+})
+
+
+xbtn.addEventListener("click",function(){
+  navmenu.style.opacity = 0;
+  mbtn.style.opacity = 1;
+  xbtn.style.opacity = 0;
+
+})
+
+
 
 
 

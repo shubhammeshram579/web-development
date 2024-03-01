@@ -28,12 +28,6 @@ nav {
     
 }
 
-nav .logo span{
-    color: rgb(160, 128, 21);
-}
-
-
-
 nav .navbarname {
     display: flex;
     align-items: center;
@@ -54,9 +48,55 @@ nav .navbarname a{
 
 nav .navbarname a:hover,
 nav a.active{
-    border-bottom: 2px solid rgb(160, 128, 21);
+    border-bottom: 3px solid rgb(160, 128, 21);
 
 }
+
+
+.menu{
+    opacity: 0;
+    font-size: 25px;
+}
+
+.menu .fa-solid{
+    color: rgb(160, 128, 21);
+}
+
+nav .logo span{
+    color: rgb(160, 128, 21);
+}
+
+.manubar2{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content:end;
+    background-color: rgb(25, 25, 25);
+    opacity: 0;
+    position: absolute;
+    
+}
+
+.manubar2 a{
+    text-decoration: none;
+    font-size: 3vw;
+    margin-right: 20px;
+
+}
+
+nav .fa-xmark{
+    opacity: 0;
+    margin-left: -10px;
+}
+
+.manubar2 a:hover{
+    border-bottom: 4px solid rgb(160, 128, 21);
+}
+
+
+
 
 /* home page background video  */
 video{
@@ -76,6 +116,7 @@ video{
     position: fixed;
     transform: translate(-50%,-50%);
     transition: all ease 0.1s;
+    /* z-index: 10; */
 }
 
 
@@ -133,6 +174,8 @@ video{
     border: none;
     border-radius: 10px;
     text-decoration: none;
+    /* mix-blend-mode: difference; */
+   
     
 }
 
@@ -152,7 +195,7 @@ video{
     align-items: center;
     justify-content: space-around;
     padding: 0px 100px;
-    opacity: 1;
+    opacity: 0;
     
 }
 
@@ -379,7 +422,7 @@ video{
 }
 
 .page3 .hovercard{
-    background-image: linear-gradient(rgba(255, 0, 0, 0),rgb(160, 128, 21));
+    background-image: linear-gradient(rgba(25, 23, 23, 0.588),rgba(47, 46, 46, 0.807));
     height: 100%;
     width: 100%;
     border-radius: 10px;
@@ -594,6 +637,18 @@ video{
 }
 
 
+footer{
+    height: 40px;
+    width: 100%;
+    background-color: #111;
+    text-align: center;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+
 
 
 /* responsive webtion for mobile users */
@@ -602,7 +657,21 @@ video{
 
     .nav a{
         display: none;
+    }
 
+
+    nav .navbarname {
+        margin-right: 160px;
+    }
+
+    .menu{
+        opacity: 1;
+    }
+    
+    .manubar2 a{
+        font-size: 11vw;
+        line-height: 15vw;
+    
     }
 
     
@@ -615,7 +684,7 @@ video{
     }
 
     .contaner .card img {
-        height: 300px;
+        height: 250px;
         border-radius: 100px 100px;
         /* margin-top: -100px;
         margin-left: -35px; */
@@ -624,9 +693,37 @@ video{
     .contaner .card2 {
         margin-top: 20px;
         font-size: 5vw;
-        margin-left: 10%;
-        line-height: 6vh;
+        margin-left: 2%;
+        line-height: 5vh;
+        text-align: center;
     }
+
+    .contaner .card2 .hello{
+        font-size: 2.5vw;
+        
+    }
+
+    .contaner .card2 span{
+        font-size: 2.5vw;
+    }
+
+    .contaner .card2 .name{
+        font-size: 4vw;
+        font-weight: 700;
+
+    }
+
+    .contaner .card2 .job{
+        font-size: 5.5vw;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .contaner .card2 a{
+        font-size: 3vw;
+    }
+
+
 
 
     /* page2 */
@@ -640,17 +737,267 @@ video{
         background-color: rgba(10, 34, 39, 0.451);
         border-radius: 50px 50px;
     }
+
+    .page2 .card2{
+        text-align: center;
+        margin-top: -100px;
+    }
     
     
     .page2 .card2 .about-me{
-        margin-bottom: 10px;
+        font-size: 4vw;
+    }
+
+    .page2 .card2 p{
         font-size: 2.5vw;
-        font-weight: 700;
-        color: rgb(160, 128, 21);
-        mix-blend-mode: difference;
+        line-height: 3.5vw;
+        padding: 0 10px;
+
+    }
+
+
+    .page2 .card3 h1{
+        font-size: 3vw;
+
+    }
+
+    .page2 .card4{
+        width: 62%;
+        margin-left: 10px;
+
+    }
+
+    .page2 .skill1{
+        text-align:start;
+
     }
     
+    .page2 .skill2 {
+        margin-left: 55px;
+        text-align:start;
+        
+    }
+    
+    .page2 .skill3{
+        margin-left: 80px;
+        text-align:start;
+    
+    }
+
+    .page2 .card4 h3{
+        font-size: 2vw;
+    }
+
+    .page2 .card4 i{
+        font-size: 2.5vw;
+        
+    }
+
+    /* exprience section */
+    .page2 .card5{
+        width: 65vw;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+    
+    .page2 .card5 h1{
+        font-size: 4vw;
+    }
+
+    .page2 .card5 h2{
+        font-size: 3vw;
+    }
+
+    .page2 .card5 .exp2{
+        margin-left: -1.5px;
+    }
+
+    /* edgacation section */
+
+    .page2 .card6{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+    }
+    
+    .page2 .card6 h1{
+        font-size: 4vw;
+    }
+
+    .page2 .card6 h2{
+        font-size: 3vw;
+    }
+
+    .page2 .card6 .edu2{
+        margin-left: -1.5px;
+    }
+
+    /* project section */
+    .page3 h1{
+        font-size: 5vw;
+        padding-bottom: 50px;
+    }
+    
+    .page3 .contenar{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .page3 .card1{
+        height: 320px;
+        width: 300px;
+        margin-bottom: 35px;
+    }
+
+
+    .page3 .hovercard{
+        height: 320px;
+        width: 300px;
+        border-radius: 10px;
+    }
+    
+    .page3 .card1 p{
+        text-align: center;
+        padding:90px 20px;
+    }
+    
+    
+    
+    .page3 .hovercard .pbtn{
+        padding: 10px 25px;
+        
+    }
+    
+    .page3 .hovercard:hover{
+        opacity: 1;
+        scale: 1.03;
+    }
+
+    /* animation move */
+    .page3 .more{
+        margin-top: 50px;
+        margin-left: 60%;
+    }
+    
+    .page3 .more-p{
+        height: 50px;
+        width: 50px;
+    }
+
+
+    /* contact page */
+    .page4{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .page4 h1{
+        padding-top: 200px;
+    }
+
+    .page4 .cot1 h1{
+        width: 200px;
+        margin-left: -40px;
+        font-size: 5vw;
+    } 
+
+
+    .page4 .contact{
+        height: 100px;
+        width: 250px;
+        margin-left: -120px;
+    }
+
+    .page4 .cot1 .contact{
+        text-align: center;
+        /* background-color: red; */
+    }
+
+    .page4 .cot1 .contact i{
+        font-size: 2.5vw;
+    }
+
+    .page4 .cot1 .contact a{
+        font-size: 3vw;
+    }
+
+    .page4 .cot1 .contact #nus{
+        margin-left: 40px;
+    }
+
+    .page4 .cot1 .socialmedia{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-left: -15px;
+    }
+
+    .page4 .cot1 .socialmedia i{
+        font-size: 5vw;
+        
+    }
+
+
+    .page4 .cot1 .downloadbtn{
+        margin-left: -35px; 
+        font-size: 2vw;
+        padding: 15px 50px;
+    }
+
+
+    .page4 .cot2 {
+        text-align: center;
+    }
+
+
+    .page4 .cot2 .name-email{
+        width: 300px;
+        margin-left: 80px;
+    }
+
+    .page4 .cot2 #email{
+        width: 300px;
+        margin-left: 80px;
+    }
+
+    .page4 .cot2 .message{
+        width: 300px;
+        height: 160px;
+        margin-left: 80px;
+    }
+
+
+    .page4 .cot2 .btn{
+        margin-top: -40px;
+        padding: 15px 50px;
+        margin-right: -386px;
+        margin-bottom: 50px;
+    }
+
+
+    footer{
+        height: 40px;
+        width: 100%;
+        background-color: #111;
+        text-align: center;
+    }
+
+    footer a{
+        text-decoration: none;
+    }
+
+    nav .logo{
+        margin-left: -50px;
+    }
+
+
 }
+
+
 
 
 
