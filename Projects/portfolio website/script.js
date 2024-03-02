@@ -220,6 +220,8 @@ gsap.to(".nav", {
  })
 
 
+
+ 
  cv.forEach(function(val){
   val.addEventListener("mouseenter",function(){
     cbtn.style.zIndex = "-99"
@@ -264,6 +266,35 @@ xbtn.addEventListener("click",function(){
 
 })
 
+
+// email setup
+
+const cotform = document.querySelector(".page4 .cot2 .cotect-form");
+
+function sendMsg(e){
+  e.preventDefault();
+
+
+const yname = document.querySelector(".page4 .cot2 #yourname");
+const email = document.querySelector(".page4 .cot2 #email");
+const msg = document.querySelector(".page4 .cot2 .message");
+
+
+
+Email.send({
+  SecureToken : "5ec96ced-27f6-4f1a-a3f0-a83586b7e96b",
+  To : 'shubhcode97@gmail.com',
+  From : email.value,
+  Subject : "Contact Form",
+  Body : msg.value
+}).then(
+message => alert(message)
+);
+
+}
+
+
+cotform.addEventListener("submit",sendMsg);
 
 
 

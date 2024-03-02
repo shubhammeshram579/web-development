@@ -128,9 +128,12 @@ video{
     align-items: center;
     justify-content: space-around;
     background-color: #111111d1;
-
-    
    
+}
+
+.contaner .card{
+    /* background-color: red; */
+    margin-left: 150px;
 }
 
 /* home page img styling */
@@ -151,7 +154,6 @@ video{
 
 .contaner .card2 {
     font-size: 3vw;
-    margin-left: -500px;
     line-height: 6vh;
 }
 
@@ -163,6 +165,14 @@ video{
 .contaner .name {
     color:rgb(160, 128, 21);
     
+}
+
+.contaner .titletag{
+    margin-top: 17px;
+    font-size: 1.5vh;
+    width: 64%;
+    line-height: 17px;
+    margin-left: 5px;
 }
 
 
@@ -422,25 +432,32 @@ video{
 }
 
 .page3 .hovercard{
-    background-image: linear-gradient(rgba(25, 23, 23, 0.588),rgba(47, 46, 46, 0.807));
+    background-image: linear-gradient(rgba(25, 23, 23, 0.726),rgba(47, 46, 46, 0.807));
     height: 100%;
     width: 100%;
     border-radius: 10px;
     opacity: 0;
 }
 
+.page3 .card1 .psummary1{
+    border-radius: 10px;
+    text-align: center;
+    padding:140px 10px;
+    color: #fff;
+    font-weight: 400;
+}
 .page3 .card1 p{
     border-radius: 10px;
     text-align: center;
-    padding:160px 10px;
+    padding:125px 10px;
     color: #fff;
+    font-weight: 400;
 }
 
 
 .page3 .hovercard .pbtns{
     margin-left: 45px;
 }
-
 
 
 .page3 .hovercard .pbtn{
@@ -457,6 +474,11 @@ video{
 .page3 .hovercard:hover{
     opacity: 1;
     scale: 1.03;
+}
+
+.page3 .hovercard .pbtn:hover{
+    background-color:  rgb(222, 175, 22);
+
 }
 
 
@@ -515,12 +537,12 @@ video{
 
 
 .page4{
-    min-height: 100vh;
+    min-height: 85vh;
     background-color:#111;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 0 170px;
+    padding: 0 200px;
 
 }
 
@@ -528,9 +550,9 @@ video{
 .page4 .cot1{
     margin: 10px;
     height: 500px;
-    width: 50%;
-
+    width: 40%;
     /* background-color: blue; */
+    /* margin-left: 60px; */
 
 }
 
@@ -581,45 +603,50 @@ video{
 }
 
 
-
-.page4 .cot2{
+.page4 .cot2 {
+    margin: 10px;
     height: 500px;
-    width: 50%;
+    width: 40%;
+   
+}
+
+
+
+
+
+.page4 .cot2 .cotect-form{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: space-around;
-    padding: 0 20px;
-    padding-right: 100px;
-    mix-blend-mode: difference;
+    margin: 10px;
     
 }
 
 .page4 .cot2 .name-email{
-    width: 100%;
+    width: 90%;
     height: 50px;
     border: none;
+    margin-bottom: 15px;
     border-radius: 5px;
     background-color: #494747;
     
 }
 
 .page4 .cot2 #email{
-    width: 100%;
+    width: 90%;
     border: none;
     border-radius: 5px;
-    margin-top: -45px; 
     background-color: #494747;
 }
 
 
 
 .page4 .cot2 .message{
-    width: 100%;
+    width: 90%;
     height: 200px;
     border: none;
     border-radius: 5px;
-    margin-top: -45px;
     background-color: #494747;
 
     
@@ -628,13 +655,15 @@ video{
 .page4 .cot2 .btn{
     border: none;
     padding: 20px 100px;
-    margin-left: -450px;
     border-radius: 10px;
+    margin-top: 30px;
     background-color: rgb(160, 128, 21);
     color: #111;
     font-size: 15px;
     font-weight: 800;
 }
+
+
 
 
 footer{
@@ -683,6 +712,13 @@ footer a{
         
     }
 
+    .contaner .card{
+        /* background-color: red; */
+        margin-left: -10px;
+        margin-top: 100px;
+
+    } 
+
     .contaner .card img {
         height: 250px;
         border-radius: 100px 100px;
@@ -719,6 +755,17 @@ footer a{
         margin-bottom: 20px;
     }
 
+
+    .contaner .card2 .titletag{
+        margin-top: -10px;
+        font-size: 1.5vh;
+        width: 50%;
+        line-height: 14px;
+        margin-left: 145px;
+        margin-bottom: 20px;
+        
+    }
+
     .contaner .card2 a{
         font-size: 3vw;
     }
@@ -736,6 +783,7 @@ footer a{
         height: 100px;
         background-color: rgba(10, 34, 39, 0.451);
         border-radius: 50px 50px;
+        margin-top: 100px;
     }
 
     .page2 .card2{
@@ -746,12 +794,20 @@ footer a{
     
     .page2 .card2 .about-me{
         font-size: 4vw;
+        margin-top: 10px;
     }
 
     .page2 .card2 p{
         font-size: 2.5vw;
         line-height: 3.5vw;
         padding: 0 10px;
+        text-align: center;
+
+    }
+
+    .page2 .card3{
+        padding-left: 10px;
+        padding-right: 10px;
 
     }
 
@@ -859,11 +915,19 @@ footer a{
         border-radius: 10px;
     }
     
-    .page3 .card1 p{
+
+    .page3 .card1 .psummary1{
+        border-radius: 10px;
         text-align: center;
-        padding:90px 20px;
+        padding:80px 10px;
+        color: #fff;
+        font-weight: 400;
+        font-size: 14px;
     }
-    
+    .page3 .card1 p{
+        padding:70px 10px;
+        font-size: 14px;
+    }
     
     
     .page3 .hovercard .pbtn{
@@ -892,28 +956,21 @@ footer a{
     .page4{
         display: flex;
         flex-direction: column;
-    }
-
-    .page4 h1{
-        padding-top: 200px;
+        align-items: start;
+        justify-content: center;
     }
 
     .page4 .cot1 h1{
         width: 200px;
-        margin-left: -40px;
         font-size: 5vw;
+        padding-top: 200px;
     } 
 
 
     .page4 .contact{
-        height: 100px;
-        width: 250px;
-        margin-left: -120px;
-    }
-
-    .page4 .cot1 .contact{
-        text-align: center;
-        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
     }
 
     .page4 .cot1 .contact i{
@@ -924,16 +981,12 @@ footer a{
         font-size: 3vw;
     }
 
-    .page4 .cot1 .contact #nus{
-        margin-left: 40px;
-    }
-
     .page4 .cot1 .socialmedia{
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        margin-left: -15px;
+        margin-left: 30px;
     }
 
     .page4 .cot1 .socialmedia i{
@@ -943,39 +996,48 @@ footer a{
 
 
     .page4 .cot1 .downloadbtn{
-        margin-left: -35px; 
+        margin-left: -20px; 
         font-size: 2vw;
         padding: 15px 50px;
     }
 
 
     .page4 .cot2 {
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-top: 100px;
     }
 
-
+    
+    
     .page4 .cot2 .name-email{
-        width: 300px;
-        margin-left: 80px;
+        width: 55vw;
+        margin-left: -100px;
+        
     }
-
+    
     .page4 .cot2 #email{
-        width: 300px;
-        margin-left: 80px;
+        width: 55vw;
+        margin-left: -100px;
     }
-
+    
+    
+    
     .page4 .cot2 .message{
-        width: 300px;
-        height: 160px;
-        margin-left: 80px;
+        width: 55vw;
+        margin-left: -100px;
+    
+        
+    }
+    
+    .page4 .cot2 .btn{
+        padding: 15px 70px;
+        margin-left: -100px;
     }
 
-
-    .page4 .cot2 .btn{
-        margin-top: -40px;
-        padding: 15px 50px;
-        margin-right: -386px;
-        margin-bottom: 50px;
+    .page4 .cot2 .cotect-form{
+        padding-bottom: 100px;
     }
 
 
