@@ -1,3 +1,4 @@
+/* universul seleter  */
 * {
     padding: 0;
     margin: 0;
@@ -8,13 +9,31 @@
     color: #b3afafd9;
 }
 
+*::selection{
+    background-color: #fff;
+    color:rgb(154, 188, 32);
+}
+
 
 html,body {
     height: 100%;
     width: 100%;
 }
 
-/* navbar styling*/
+
+body::-webkit-scrollbar{
+    display: block;
+    width: 5px;
+    background-color:#111;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: rgb(160, 128, 21);
+    border-radius: 50px;
+
+}
+
+/* navbar 1 styling*/
 nav {
     display: flex;
     align-items: center;
@@ -24,8 +43,6 @@ nav {
     width: 100%;
     top: 0;
     z-index: 999;
-    
-    
 }
 
 nav .navbarname {
@@ -40,12 +57,17 @@ nav .navbarname {
    
 }
 
+nav .logo span{
+    color: rgb(160, 128, 21);
+}
+
 nav .navbarname a{
     font-size: 20px;
     text-decoration: none;
     
 }
 
+/* navbar hover effet styling */
 nav .navbarname a:hover,
 nav a.active{
     border-bottom: 3px solid rgb(160, 128, 21);
@@ -53,16 +75,13 @@ nav a.active{
 }
 
 
+/* menu btn styling  */
 .menu{
     opacity: 0;
     font-size: 25px;
 }
 
 .menu .fa-solid{
-    color: rgb(160, 128, 21);
-}
-
-nav .logo span{
     color: rgb(160, 128, 21);
 }
 
@@ -98,7 +117,7 @@ nav .fa-xmark{
 
 
 
-/* home page background video  */
+/* home page background video set */
 video{
     height: 100%;
     width: 100%;
@@ -107,7 +126,9 @@ video{
     z-index: -1;
 }
 
-/* mouse culsul */
+
+
+/* mouse cursuil styling */
 .cursul{
     height: 15px;
     width: 15px;
@@ -116,12 +137,11 @@ video{
     position: fixed;
     transform: translate(-50%,-50%);
     transition: all ease 0.1s;
-    /* z-index: 10; */
 }
 
 
 
-/* home page styling */
+/* home page 1 styling */
 .contaner {
     min-height: 100vh;
     display: flex;
@@ -131,8 +151,8 @@ video{
    
 }
 
+/* home page card 1 page style */
 .contaner .card{
-    /* background-color: red; */
     margin-left: 150px;
 }
 
@@ -146,12 +166,14 @@ video{
     
 }
 
+
 .contaner .card img:hover{
     border-radius: 200px 100px;
-
 }
 
 
+
+/* home page card 2 page style */
 .contaner .card2 {
     font-size: 3vw;
     line-height: 6vh;
@@ -166,6 +188,7 @@ video{
     color:rgb(160, 128, 21);
     
 }
+
 
 .contaner .titletag{
     margin-top: 17px;
@@ -184,13 +207,11 @@ video{
     border: none;
     border-radius: 10px;
     text-decoration: none;
-    /* mix-blend-mode: difference; */
-   
     
 }
 
 
-/* about me page2 styling */
+/* about me page 2 styling */
 
 #About{
     opacity: 1;
@@ -238,7 +259,7 @@ video{
     padding: 100px;
 }
 
-/* skills */
+/* skills section style*/
 .page2 .card3 {
     display: flex;
     gap: 100px;
@@ -366,7 +387,7 @@ video{
 }
 
 
-/* project page styling*/
+/* project page 3 styling*/
 
 .page3{
     min-height: 100vh;
@@ -385,27 +406,31 @@ video{
 .page3 .card1{
     height: 450px;
     width: 400px;
-    border: 2px solid rgb(160, 128, 21);
     border-radius: 10px;
 }
 
+
+/* project card background img set and style */
 .page3 #card1{
-    background-image: url("https://images.unsplash.com/photo-1667239711059-9e5d970eb007?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFtYXpvbmUlMjBwYWdlfGVufDB8fDB8fHwwD");
+    background-image: url("/img/amg2.png");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   opacity: 0;
 }
 
 .page3 #card2{
-    background-image: url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGFuaW1hdGVkJTIwd2Vic2l0ZXxlbnwwfHwwfHx8MA%3D%3D");
+    background-image: url("/img/animation.png");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   opacity: 0;
 }
 .page3 #card3{
-    background-image: url("https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YW5pbWF0ZWQlMjB3ZWJzaXRlfGVufDB8fDB8fHww");
+    background-image: url("/img/two\ good2.png");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   opacity: 0;
 }
 
@@ -432,7 +457,7 @@ video{
 }
 
 .page3 .hovercard{
-    background-image: linear-gradient(rgba(25, 23, 23, 0.726),rgba(47, 46, 46, 0.807));
+    background-image: linear-gradient(rgba(25, 23, 23, 0.852),rgba(47, 46, 46, 0.836));
     height: 100%;
     width: 100%;
     border-radius: 10px;
@@ -443,14 +468,14 @@ video{
     border-radius: 10px;
     text-align: center;
     padding:140px 10px;
-    color: #fff;
+    color:aliceblue;
     font-weight: 400;
 }
 .page3 .card1 p{
     border-radius: 10px;
     text-align: center;
     padding:125px 10px;
-    color: #fff;
+    color:  aliceblue;
     font-weight: 400;
 }
 
@@ -482,10 +507,7 @@ video{
 }
 
 
-
-
-
-/* animation part */
+/* more project creating animation effect part */
 .page3 .more{
     margin-top: 50px;
     margin-left: 85%;
@@ -533,7 +555,7 @@ video{
 
 
 
-/* contact page styling  */
+/* contact page 4 styling  */
 
 
 .page4{
@@ -551,9 +573,6 @@ video{
     margin: 10px;
     height: 500px;
     width: 40%;
-    /* background-color: blue; */
-    /* margin-left: 60px; */
-
 }
 
 .page4 .cot1 h1{
@@ -565,14 +584,15 @@ video{
 }
 
 .page4 .cot1 .contact{
+    height: 100px;
+    width: 300px;
     display: flex;
     flex-direction: column;
-    padding: 10px 20px;
-    /* margin-top: 30px; */
+    padding: 10px 30px;
 }
 
 .page4 .cot1 .contact i{
-   margin: 20px;
+   margin: 10px;
    mix-blend-mode: difference;
 }
 
@@ -589,6 +609,7 @@ video{
     margin-left: 20px;
     font-size: 2vw;
     mix-blend-mode: difference;
+    margin-top: 10px;
 }
 
 .page4 .cot1 .downloadbtn{
@@ -661,11 +682,18 @@ video{
     color: #111;
     font-size: 15px;
     font-weight: 800;
+    mix-blend-mode: difference;
+}
+
+
+.page4 .socialmedia i:hover{
+    color:rgb(160, 128, 21);
 }
 
 
 
 
+/* fotter style */
 footer{
     height: 40px;
     width: 100%;
@@ -680,10 +708,11 @@ footer a{
 
 
 
-/* responsive webtion for mobile users */
+/* responsive website for mobile users */
 
 @media (max-width:600px) {
 
+    /* navbar setup */
     .nav a{
         display: none;
     }
@@ -704,6 +733,7 @@ footer a{
     }
 
     
+    /* home page set up */
     .contaner{
         display: flex;
         flex-direction: column;
@@ -713,7 +743,6 @@ footer a{
     }
 
     .contaner .card{
-        /* background-color: red; */
         margin-left: -10px;
         margin-top: 100px;
 
@@ -722,8 +751,6 @@ footer a{
     .contaner .card img {
         height: 250px;
         border-radius: 100px 100px;
-        /* margin-top: -100px;
-        margin-left: -35px; */
     }
 
     .contaner .card2 {
@@ -773,7 +800,7 @@ footer a{
 
 
 
-    /* page2 */
+    /* about me page 2 setup*/
 
     .page2{
         display: flex;
@@ -915,18 +942,29 @@ footer a{
         border-radius: 10px;
     }
     
+    .page3 #card1{
+      background-size: 100% 100%;
+    }
+    
+    .page3 #card2{
+      background-size: 100% 100%;
+
+    }
+    .page3 #card3{
+      background-size: 100% 100%;
+    }
 
     .page3 .card1 .psummary1{
         border-radius: 10px;
         text-align: center;
-        padding:80px 10px;
+        padding:90px 10px;
         color: #fff;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 12px;
     }
     .page3 .card1 p{
-        padding:70px 10px;
-        font-size: 14px;
+        padding:80px 10px;
+        font-size: 12px;
     }
     
     
@@ -952,13 +990,20 @@ footer a{
     }
 
 
-    /* contact page */
+    /* contact page  4 setup*/
     .page4{
         display: flex;
         flex-direction: column;
         align-items: start;
         justify-content: center;
     }
+
+    .page4 .cot1 .contact{
+        margin-left: -100px;
+    }
+
+   
+
 
     .page4 .cot1 h1{
         width: 200px;
@@ -970,8 +1015,10 @@ footer a{
     .page4 .contact{
         display: flex;
         align-items: center;
-        margin-left: 50px;
+        margin-left: 35px;
     }
+
+
 
     .page4 .cot1 .contact i{
         font-size: 2.5vw;
@@ -986,7 +1033,7 @@ footer a{
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        margin-left: 30px;
+        margin-left: 60px;
     }
 
     .page4 .cot1 .socialmedia i{

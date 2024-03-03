@@ -1,35 +1,8 @@
-function locoscrollani(){
-    gsap.registerPlugin(ScrollTrigger);
- const locoScroll = new LocomotiveScroll({
-   el: document.querySelector(".main"),
-   smooth: true
- });
- locoScroll.on("scroll", ScrollTrigger.update);
- 
- ScrollTrigger.scrollerProxy(".main", {
-   scrollTop(value) {
-     return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-   }, 
-   getBoundingClientRect() {
-     return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-   },
-   
-   pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
- });
- 
- ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
- 
- ScrollTrigger.refresh();
- 
- 
- }
- 
-//  locoscrollani();
 
 
+// about me page skills education and experience btn effect creation
+function aboutmepage(){
 
-
-// skills btn feature creation 
 const skillsbtn = document.querySelector(".page2 .card3 #skills");
 const expbtn = document.querySelector(".page2 .card3 #Experience");
 const edubtn = document.querySelector(".page2 .card3 #Education");
@@ -71,9 +44,15 @@ edubtn.addEventListener("click",function(){
     
 })
 
+}
+
+aboutmepage();
 
 
-// navbar click then scroll pages effect 
+
+//  navbar heading click then scroll page effect creation 
+
+function navmenuclickscrollpage(){
 
 let section = document.querySelectorAll("section");
 let navlink = document.querySelectorAll("nav a");
@@ -97,10 +76,77 @@ window.onscroll = () => {
    
 };
 
+};
+
+navmenuclickscrollpage();
+
+
+// responsive menu btn click then open menu bar effect creation
+function menubtn(){
+  const mbtn =document.querySelector("nav .fa-bars");
+ const xbtn =document.querySelector("nav .fa-xmark");
+
+const navmenu =  document.querySelector(".manubar2");
+
+
+mbtn.addEventListener("click",function(){
+  navmenu.style.opacity = 1;
+  navmenu.style.zIndex = 99;
+  navmenu.style.transition = "all ease 1s";
+  mbtn.style.opacity = 0;
+  xbtn.style.opacity = 1;
+
+})
+
+
+xbtn.addEventListener("click",function(){
+  navmenu.style.opacity = 0;
+  mbtn.style.opacity = 1;
+  xbtn.style.opacity = 0;
+
+})
+};
+
+menubtn();
+
+
+//   mouse cursul move effect creation 
+function mousecursulmove(){
+  
+  const cbtn = document.querySelector(".cursul");
+  const body = document.querySelector("body");
+
+  const cv = document.querySelectorAll(".contaner a");
+
+  document.addEventListener("mousemove", function(dets){
+    gsap.to(".cursul",{
+       left: dets.x,
+       top: dets.y,
+       transform:"translate(-50%,-50%)"
+    })
+ })
+ 
+ cv.forEach(function(val){
+  val.addEventListener("mouseenter",function(){
+    cbtn.style.zIndex = "-99"
+   }
+   )
+
+   val.addEventListener("mouseleave",function(){
+    cbtn.style.zIndex = "0"
+   }
+   )
+
+ })
+};
+
+mousecursulmove();
+
 
 // animation effect using gsap
 // home page animation 
 
+function animationeffectcreation(){
 var tl = gsap.timeline();
 tl.from("nav .logo, nav .navbarname a",{
     y:-100,
@@ -137,6 +183,13 @@ tl.from(".contaner .card2 .name",{
 });
 
 tl.from(".contaner .card2 .job",{
+    x:-100,
+    duration:0.5,
+    opacity:0,
+    // stagger:3
+
+});
+tl.from(".contaner .card2 .titletag",{
     x:-100,
     duration:0.5,
     opacity:0,
@@ -188,7 +241,7 @@ tl.to(".page3 .card1, .page3 h1, .page3 .more",{
 })
 
 
-// navbar 
+// navbar animation 
 gsap.to(".nav", {
     backgroundColor: "#111",
     duration: 0.5,
@@ -203,71 +256,16 @@ gsap.to(".nav", {
     },
   });
 
+};
 
 
-//   mousemove feature
-  const cbtn = document.querySelector(".cursul");
-  const body = document.querySelector("body");
-
-  const cv = document.querySelectorAll(".contaner a");
-
-  document.addEventListener("mousemove", function(dets){
-    gsap.to(".cursul",{
-       left: dets.x,
-       top: dets.y,
-       transform:"translate(-50%,-50%)"
-    })
- })
-
+animationeffectcreation();
 
 
  
- cv.forEach(function(val){
-  val.addEventListener("mouseenter",function(){
-    cbtn.style.zIndex = "-99"
-   }
-   )
-
-   val.addEventListener("mouseleave",function(){
-    cbtn.style.zIndex = "0"
-   }
-   )
-
- })
 
 
-
-
-
-
-
-
-
- const mbtn =document.querySelector("nav .fa-bars");
- const xbtn =document.querySelector("nav .fa-xmark");
-
-const navmenu =  document.querySelector(".manubar2");
-
-
-mbtn.addEventListener("click",function(){
-  navmenu.style.opacity = 1;
-  navmenu.style.zIndex = 99;
-  navmenu.style.transition = "all ease 1s";
-  mbtn.style.opacity = 0;
-  xbtn.style.opacity = 1;
-
-})
-
-
-xbtn.addEventListener("click",function(){
-  navmenu.style.opacity = 0;
-  mbtn.style.opacity = 1;
-  xbtn.style.opacity = 0;
-
-})
-
-
-// email setup
+// email setup using api smtpjs
 
 const cotform = document.querySelector(".page4 .cot2 .cotect-form");
 
@@ -282,8 +280,8 @@ const msg = document.querySelector(".page4 .cot2 .message");
 
 
 Email.send({
-  SecureToken : "5ec96ced-27f6-4f1a-a3f0-a83586b7e96b",
-  To : 'shubhcode97@gmail.com',
+  SecureToken : "596dc900-e69d-4d31-9724-dd5a5714cbb2",
+  To : "shubhcode97@gmail.com",
   From : email.value,
   Subject : "Contact Form",
   Body : msg.value
@@ -291,7 +289,7 @@ Email.send({
 message => alert(message)
 );
 
-}
+};
 
 
 cotform.addEventListener("submit",sendMsg);
