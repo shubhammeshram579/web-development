@@ -7,6 +7,7 @@
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     color: #b3afafd9;
+    box-sizing:content-box;
 }
 
 *::selection{
@@ -25,45 +26,42 @@ body::-webkit-scrollbar{
     display: block;
     width: 5px;
     background-color:#111;
+    
 }
 
 body::-webkit-scrollbar-thumb{
     background-color: rgb(160, 128, 21);
     border-radius: 50px;
+}
 
+body{
+    overflow-x: hidden;
 }
 
 /* navbar 1 styling*/
-nav {
+
+
+nav{
+    height: 70px;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 100px;
-    position:fixed;
-    width: 100%;
-    top: 0;
+    justify-content: space-around;
+    position: fixed;
     z-index: 999;
 }
 
-nav .navbarname {
+nav .navbarname{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    background-color: none;
-    text-transform: capitalize;
-    margin-right: 250px;
-    
-   
-}
+    gap:3vw;
+    margin-left: 400px;
 
-nav .logo span{
-    color: rgb(160, 128, 21);
 }
 
 nav .navbarname a{
-    font-size: 20px;
     text-decoration: none;
+    font-size: 1vw;
     
 }
 
@@ -71,22 +69,31 @@ nav .navbarname a{
 nav .navbarname a:hover,
 nav a.active{
     border-bottom: 3px solid rgb(160, 128, 21);
-
 }
 
 
-/* menu btn styling  */
-.menu{
-    opacity: 0;
-    font-size: 25px;
-}
-
-.menu .fa-solid{
+nav .logo span{
     color: rgb(160, 128, 21);
 }
 
+
+.menu{
+    opacity: 0;
+}
+
+
+
+.menu i{
+    font-size: 1.5vw;
+    color: rgb(160, 128, 21);
+
+}
+
+
+
+
 .manubar2{
-    height: 500px;
+    height: 98vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -95,6 +102,7 @@ nav a.active{
     background-color: rgb(25, 25, 25);
     opacity: 0;
     position: absolute;
+    z-index: 555;
     
 }
 
@@ -105,10 +113,7 @@ nav a.active{
 
 }
 
-nav .fa-xmark{
-    opacity: 0;
-    margin-left: -10px;
-}
+
 
 .manubar2 a:hover{
     border-bottom: 4px solid rgb(160, 128, 21);
@@ -139,25 +144,23 @@ video{
     transition: all ease 0.1s;
 }
 
-
-
-/* home page 1 styling */
-.contaner {
+#home{
     min-height: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #111111d1;
-   
 }
 
-/* home page card 1 page style */
-.contaner .card{
+
+/* home page 1 styling */
+
+#home .card{
     margin-left: 150px;
 }
 
 /* home page img styling */
-.contaner .card img {
+#home  .card img {
     height: 600px;
     width: 100%;
     object-fit: cover;
@@ -167,30 +170,30 @@ video{
 }
 
 
-.contaner .card img:hover{
+#home  .card img:hover{
     border-radius: 200px 100px;
 }
 
 
 
 /* home page card 2 page style */
-.contaner .card2 {
+#home  .card2 {
     font-size: 3vw;
     line-height: 6vh;
 }
 
-.contaner .hello {
+#home  .hello {
     font-size: 1.5vw;
     
 }
 
-.contaner .name {
+#home  .name {
     color:rgb(160, 128, 21);
     
 }
 
 
-.contaner .titletag{
+#home  .titletag{
     margin-top: 17px;
     font-size: 1.5vh;
     width: 64%;
@@ -199,7 +202,7 @@ video{
 }
 
 
-.contaner a {
+#home  a {
     background-color: rgb(160, 128, 21);
     color: #111;
     padding: 10px 40px;
@@ -214,30 +217,44 @@ video{
 /* about me page 2 styling */
 
 #About{
-    opacity: 1;
-    background-color:  #111111d1;
-}
-
-
-.page2 {
     min-height: 100vh;
-    background-color:#111;
+    width:100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 0px 100px;
     opacity: 0;
-    
 }
 
-.page2 .card img {
+#About{
+    background-color: #111;
+}
+
+.main{
+    background-color: #111111d1;
+}
+
+
+
+#About .card2{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+}
+
+#About .card2 img {
     height: 400px;
     background-color: rgba(10, 34, 39, 0.451);
     border-radius: 50px 50px;
 }
 
 
-.page2 .card2 .about-me{
+#About .card2 .box{
+    width: 60%;
+
+}
+
+
+#About .card2 .about-me{
     margin-bottom: 10px;
     font-size: 2.5vw;
     font-weight: 700;
@@ -245,9 +262,10 @@ video{
     mix-blend-mode: difference;
 }
 
-.page2 .card2 p{
+#About .card2 p{
+    width: 80%;
     text-align: justify;
-    line-height: 25px;
+    line-height: 1.5vw;
     font-size: 1vw;
     font-weight: 400;
     mix-blend-mode: difference;
@@ -255,73 +273,75 @@ video{
 
 }
 
-.page2 .card2 {
-    padding: 100px;
-}
 
 /* skills section style*/
-.page2 .card3 {
+#About .card3 {
+    width: 100%;
     display: flex;
+    align-items: center;
     gap: 100px;
-    padding-top: 30px;
+    margin-top: 30px;
     mix-blend-mode: difference;
 }
 
-.page2 .card3 h1{
+#About .card3 h1{
     font-size: 1.5vw;
     mix-blend-mode: difference;
 }
 
-.page2 .card4 {
+#About .card4 {
+    height: 18vh;
+    width: 27%;
     display: flex;
-    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
     position: absolute;
-    line-height: 30px;
+    line-height: 2.5vw;
     border: 1px solid rgb(160, 128, 21);
-    padding: 10px 20px 30px 10px;
+    padding: 10px 20px;
     border-radius: 5px;
-}
-
-.page2 .skill1 {
     mix-blend-mode: difference;
-    
-}
-
-.page2 .skill2 {
-    margin-left: 90px;
-    mix-blend-mode: difference;
-    
-}
-
-.page2 .skill3{
-    margin-left: 130px;
-    mix-blend-mode: difference;
-
 }
 
 
-.page2 .skill2 img{
+#About .skill2 img{
     height: 15px;
     mix-blend-mode: difference;
 }
 
 
 /* Experience section */
-.page2 .card5{
+#About .card5{
+    height: 20vh;
+    width: 40%;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: absolute;
     opacity: 0;
     padding: 3px 100px 30px 10px;
+    margin-top: 20px;
+    
 }
 
-.page2 .card5 .exp1{
+#About .card5 .exp1{
+    height: 15vh;
+    width: 100%;
+    text-align: start;
     border: 1px solid rgb(160, 128, 21);
     padding: 20px 20px;
     border-radius: 5px;
     margin-top: 20px;
+    line-height: 3vh;
+    
 }
 
-.page2 .card5 .exp2{
+#About .card5 .exp2{
+    height: 15vh;
+    width: 100%;
+    text-align: start;
+    line-height: 3vh;
     border: 1px solid rgb(160, 128, 21);
     padding: 20px 20px;
     border-radius: 5px;
@@ -331,34 +351,35 @@ video{
 }
 
 
-.page2 .card5 h1{
+#About .card5 h1{
     font-size: 1.5vw;
     font-weight: 900;
     color: rgb(160, 128, 21);
 }
 
-.page2 .card5 h2{
+#About .card5 h2{
     font-size: 1vw;
     letter-spacing: 1px;
     font-weight: 400;
 }
 
 /* education section */
-.page2 .card6{
+#About .card6{
     display: flex;
     margin-top: 20px;
     opacity: 0;
+    margin-top: 20px;
 
 }
 
-.page2 .card6 .edu1{
+#About .card6 .edu1{
     border: 1px solid rgb(160, 128, 21);
     padding: 20px 20px;
     border-radius: 5px;
     margin-top: 10px;
 }
 
-.page2 .card6 .edu2{
+#About .card6 .edu2{
     border: 1px solid rgb(160, 128, 21);
     padding: 20px 20px;
     border-radius: 5px;
@@ -367,20 +388,20 @@ video{
 
 }
 
-.page2 .card6 h1{
+#About .card6 h1{
     font-size: 1.5vw;
     font-weight: 900;
     color: rgb(160, 128, 21);
 }
 
-.page2 .card6 h2{
+#About .card6 h2{
     font-size: 1vw;
     letter-spacing: 1px;
     font-weight: 400;
 }
 
 
-.page2 i,img{
+#About i,img{
     color:rgb(160, 128, 21);
     font-size: 20px;
 
@@ -412,7 +433,7 @@ video{
 
 /* project card background img set and style */
 .page3 #card1{
-    background-image: url("/img/amg2.png");
+    background-image: url("./img/amg2.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -420,7 +441,7 @@ video{
 }
 
 .page3 #card2{
-    background-image: url("/img/animation.png");
+    background-image: url("./img/animation.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -428,7 +449,7 @@ video{
 }
 
 .page3 #card3{
-    background-image: url("/img/twogood2.png");
+    background-image: url("./img/twogood2.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -561,32 +582,32 @@ video{
 /* contact page 4 styling  */
 
 
-.page4{
-    min-height: 85vh;
+#Contact{
+    min-height: 100vh;
+    width: 100%;
     background-color:#111;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 0 200px;
 
 }
 
 
-.page4 .cot1{
+#Contact .cot1{
     margin: 10px;
     height: 500px;
-    width: 40%;
 }
 
-.page4 .cot1 h1{
+#Contact .cot1 h1{
     text-transform: capitalize;
     font-size: 2.5vw;
     font-weight: 700;
     color: rgb(160, 128, 21);
     mix-blend-mode: difference;
+    /* background-color: red; */
 }
 
-.page4 .cot1 .contact{
+#Contact .cot1 .contact{
     height: 100px;
     width: 300px;
     display: flex;
@@ -594,12 +615,12 @@ video{
     padding: 10px 30px;
 }
 
-.page4 .cot1 .contact i{
+#Contact .cot1 .contact i{
    margin: 10px;
    mix-blend-mode: difference;
 }
 
-.page4 .cot1 .contact a{
+#Contact .cot1 .contact a{
     padding: 5px 20px;
     text-decoration: none;
     text-transform: capitalize;
@@ -607,7 +628,7 @@ video{
     mix-blend-mode: difference;
 }
 
-.page4 .cot1 .socialmedia i{
+#Contact .cot1 .socialmedia i{
     padding: 10px 20px;
     margin-left: 20px;
     font-size: 2vw;
@@ -615,7 +636,7 @@ video{
     margin-top: 10px;
 }
 
-.page4 .cot1 .downloadbtn{
+#Contact .cot1 .downloadbtn{
     margin-top: 50px;
     margin-left: 40px;
     border: none;
@@ -627,18 +648,17 @@ video{
 }
 
 
-.page4 .cot2 {
+#Contact .cot2 {
     margin: 10px;
     height: 500px;
     width: 40%;
-   
 }
 
 
 
 
 
-.page4 .cot2 .cotect-form{
+#Contact .cot2 .cotect-form{
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -647,7 +667,7 @@ video{
     
 }
 
-.page4 .cot2 .name-email{
+#Contact .cot2 .name-email{
     width: 90%;
     height: 50px;
     border: none;
@@ -657,7 +677,7 @@ video{
     
 }
 
-.page4 .cot2 #email{
+#Contact .cot2 #email{
     width: 90%;
     border: none;
     border-radius: 5px;
@@ -666,7 +686,7 @@ video{
 
 
 
-.page4 .cot2 .message{
+#Contact .cot2 .message{
     width: 90%;
     height: 200px;
     border: none;
@@ -676,7 +696,7 @@ video{
     
 }
 
-.page4 .cot2 .btn{
+#Contact .cot2 .btn{
     border: none;
     padding: 20px 100px;
     border-radius: 10px;
@@ -689,7 +709,7 @@ video{
 }
 
 
-.page4 .socialmedia i:hover{
+#Contact .socialmedia i:hover{
     color:rgb(160, 128, 21);
 }
 
@@ -716,28 +736,79 @@ footer a{
 @media (max-width:600px) {
 
     /* navbar setup */
-    .nav a{
+
+    nav{
+        height: 70px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: fixed;
+        z-index: 999;
+    }
+    
+    nav .navbarname{
+        display: flex;
+        align-items: center;
+        gap:3vw;
+        margin-left: -10px;
+    }
+    
+    nav .navbarname a{
         display: none;
+        
+    }
+    
+    /* navbar hover effet styling */
+    nav .navbarname a:hover,
+    nav a.active{
+        border-bottom: 3px solid rgb(160, 128, 21);
     }
 
 
-    nav .navbarname {
-        margin-right: 160px;
+    nav .logo{
+        font-size: 3vw;
+    }
+    
+    
+    nav .logo span{
+        color: rgb(160, 128, 21);
+    }
+    
+    
+    
+    .menu i{
+        font-size: 5vw;
+        color: rgb(160, 128, 21);
     }
 
-    .menu{
+    .nav .menu {
         opacity: 1;
+        margin-right: -200px
     }
+
     
+    .menu .fa-xmark{
+        opacity: 0;
+    }
+
+
+    /* menubar 2 */
+   
+    .manubar2 {
+        height: 88vh;
+    }
     .manubar2 a{
-        font-size: 11vw;
-        line-height: 15vw;
+        text-decoration: none;
+        font-size: 8vh;
+        margin-right: 20px;
     
     }
+
 
     
     /* home page set up */
-    .contaner{
+    #home{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -745,59 +816,59 @@ footer a{
         
     }
 
-    .contaner .card{
+    #home .card{
         margin-left: -10px;
-        margin-top: 100px;
+        margin-top: 6vh;
 
     } 
 
-    .contaner .card img {
+    #home .card img {
         height: 250px;
         border-radius: 100px 100px;
     }
 
-    .contaner .card2 {
-        margin-top: 20px;
-        font-size: 5vw;
-        margin-left: 2%;
-        line-height: 5vh;
-        text-align: center;
+    #home .card2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
-    .contaner .card2 .hello{
+    #home .card2 .hello{
         font-size: 2.5vw;
         
     }
 
-    .contaner .card2 span{
+    #home .card2 span{
         font-size: 2.5vw;
     }
 
-    .contaner .card2 .name{
+    #home .card2 .name{
         font-size: 4vw;
         font-weight: 700;
+        margin-top: -12px;
 
     }
 
-    .contaner .card2 .job{
+    #home .card2 .job{
         font-size: 5.5vw;
         font-weight: 700;
-        margin-bottom: 20px;
+        margin-top: -12px;
     }
 
 
-    .contaner .card2 .titletag{
-        margin-top: -10px;
+    #home .card2 .titletag{
         font-size: 1.5vh;
-        width: 50%;
         line-height: 14px;
-        margin-left: 145px;
         margin-bottom: 20px;
+        text-align: center;
+        margin-top: -1px;
         
     }
 
-    .contaner .card2 a{
+    #home .card2 a{
         font-size: 3vw;
+        margin: 5px;
     }
 
 
@@ -805,118 +876,146 @@ footer a{
 
     /* about me page 2 setup*/
 
-    .page2{
+    #About .card2{
+        width: 100%;
         display: flex;
         flex-direction: column;
+        text-align: center;
+        justify-content: space-evenly;
+        padding-top: 50px;
     }
-    .page2 .card img {
-        height: 100px;
+
+    #About .card2 img{
+        height: 30vw;
         background-color: rgba(10, 34, 39, 0.451);
         border-radius: 50px 50px;
-        margin-top: 100px;
+        /* margin-top: 100px; */
     }
 
-    .page2 .card2{
-        text-align: center;
-        margin-top: -100px;
+
+    #About .card2 .box{
+        width: 100%;
     }
+   
     
     
-    .page2 .card2 .about-me{
+    #About .card2 .about-me{
         font-size: 4vw;
-        margin-top: 10px;
+        margin-top: 20px;
     }
 
-    .page2 .card2 p{
-        font-size: 2.5vw;
-        line-height: 3.5vw;
-        padding: 0 10px;
-        text-align: center;
-
-    }
-
-    .page2 .card3{
-        padding-left: 10px;
-        padding-right: 10px;
-
-    }
-
-
-    .page2 .card3 h1{
+    #About .card2 .box p{
+        width: 90%;
         font-size: 3vw;
+        line-height: 3.5vw;
+        padding: 0 20px;
+        text-align: center;
+        font-weight: 400;
 
     }
 
-    .page2 .card4{
-        width: 62%;
-        margin-left: 10px;
 
-    }
-
-    .page2 .skill1{
-        text-align:start;
-
+    #About .card3 {
+        width: 100%;
+        gap: 18vw;
+        margin-top: 20px;
+        margin-bottom: -10px;
+        font-weight: 400;
+        mix-blend-mode: difference;
     }
     
-    .page2 .skill2 {
-        margin-left: 55px;
-        text-align:start;
+    #About .card3 h1{
+        font-size: 4vw;
+        mix-blend-mode: difference;
+        margin-left: 20px;
+        margin-right: -10px;
+    }
+
+
+
+    #About .card4 {
+        height: 15vh;
+        width: 78vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        line-height: 4vh;
+        text-align: start;
+        margin-left: 4vw;
         
     }
-    
-    .page2 .skill3{
-        margin-left: 80px;
-        text-align:start;
-    
+
+
+    #About .card4 h3{
+        font-size: 3vw;
+        font-weight: 400;
     }
 
-    .page2 .card4 h3{
-        font-size: 2vw;
-    }
-
-    .page2 .card4 i{
-        font-size: 2.5vw;
+    #About .card4 i{
+        font-size: 3.5vw;
         
     }
 
     /* exprience section */
-    .page2 .card5{
-        width: 65vw;
+    #About .card5{
+        height: 35vh;
+        width: 75%;
         display: flex;
         flex-direction: column;
-        margin-left: 10px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        
+        
     }
     
-    .page2 .card5 h1{
+    #About .card5 .exp1{
+        height: 10vh;
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 70px;
+        padding-top: 10px;
+    }
+    
+    #About .card5 .exp2{
+        height: 10vh;
+        text-align:center;
+        line-height: 3vh;
+        margin-left: 70px;
+        padding-top: 10px;
+    
+    }
+    
+    
+    #About .card5 h1{
         font-size: 4vw;
     }
-
-    .page2 .card5 h2{
+    
+    #About .card5 h2{
         font-size: 3vw;
+        letter-spacing: 1px;
+        font-weight: 400;
     }
 
-    .page2 .card5 .exp2{
-        margin-left: -1.5px;
-    }
 
     /* edgacation section */
 
-    .page2 .card6{
+    #About .card6{
         width: 90%;
         display: flex;
         flex-direction: column;
         margin-left: 20px;
     }
     
-    .page2 .card6 h1{
+    #About .card6 h1{
         font-size: 4vw;
     }
 
-    .page2 .card6 h2{
+    #About .card6 h2{
         font-size: 3vw;
     }
 
-    .page2 .card6 .edu2{
+    #About .card6 .edu2{
         margin-left: -1.5px;
     }
 
@@ -933,15 +1032,15 @@ footer a{
     }
 
     .page3 .card1{
-        height: 320px;
-        width: 300px;
+        height: 75vw;
+        width: 73vw;
         margin-bottom: 35px;
-    }
+    } 
 
 
     .page3 .hovercard{
-        height: 320px;
-        width: 300px;
+        height: 75vw;
+        width: 73vw;
         border-radius: 10px;
     }
     
@@ -960,21 +1059,27 @@ footer a{
     .page3 .card1 .psummary1{
         border-radius: 10px;
         text-align: center;
-        padding:90px 10px;
+        padding:22vw 4vw;
         color: #fff;
         font-weight: 400;
-        font-size: 12px;
+        font-size: 3vw;
     }
     .page3 .card1 p{
-        padding:80px 10px;
-        font-size: 12px;
+        font-size: 3vw;
+        padding:19vw 4vw;
+    }
+
+    .page3 .hovercard .pbtns{
+        margin-left: 15vw;
     }
     
     
     .page3 .hovercard .pbtn{
-        padding: 10px 25px;
+        padding: 3vw 5vw;
+        font-size: 3vw;
         
     }
+
     
     .page3 .hovercard:hover{
         opacity: 1;
@@ -984,7 +1089,7 @@ footer a{
     /* animation move */
     .page3 .more{
         margin-top: 50px;
-        margin-left: 60%;
+        margin-left: 45%;
     }
     
     .page3 .more-p{
@@ -994,102 +1099,87 @@ footer a{
 
 
     /* contact page  4 setup*/
-    .page4{
+    #Contact{
         display: flex;
         flex-direction: column;
-        align-items: start;
-        justify-content: center;
-    }
-
-    .page4 .cot1 .contact{
-        margin-left: -100px;
-    }
-
-   
-
-
-    .page4 .cot1 h1{
-        width: 200px;
-        font-size: 5vw;
-        padding-top: 200px;
-    } 
-
-
-    .page4 .contact{
-        display: flex;
         align-items: center;
-        margin-left: 35px;
+        justify-content: space-around;
+    
     }
-
-
-
-    .page4 .cot1 .contact i{
-        font-size: 2.5vw;
-    }
-
-    .page4 .cot1 .contact a{
-        font-size: 3vw;
-    }
-
-    .page4 .cot1 .socialmedia{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin-left: 60px;
-    }
-
-    .page4 .cot1 .socialmedia i{
-        font-size: 5vw;
-        
-    }
-
-
-    .page4 .cot1 .downloadbtn{
-        margin-left: -20px; 
-        font-size: 2vw;
-        padding: 15px 50px;
-    }
-
-
-    .page4 .cot2 {
+    
+    
+    #Contact .cot1{
         display: flex;
         flex-direction: column;
-        align-items: start;
+        align-items: center;
+        justify-content: center;
         margin-top: 100px;
+        margin-left: -5vw;
+        /* background-color: red; */
+       
     }
+    
+    #Contact .cot1 h1{
+        text-transform: capitalize;
+        font-size: 5vw;
+        font-weight: 700;
+    }
+    
+    #Contact .cot1 .contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #Contact .cot1 .contact a{
+        padding: 0px 10px;
+        font-size: 3vw;
+        font-weight: 400;
+    }
+    
+    #Contact .cot1 .socialmedia i{
+        font-size: 4.5vw;
+        margin-top: 10px;
+        margin-left: -1px;
+    }
+    
+    #Contact .cot1 .downloadbtn{
+        margin-top: 34px;
+        margin-left: 4px;
+        padding: 3vw 5vw;
+    }
+    
+    /* email section */
 
+
+    #Contact .cot2 {
+        height: 500px;
+        width: 70vw;
+       
+    }
     
-    
-    .page4 .cot2 .name-email{
-        width: 55vw;
-        margin-left: -100px;
+    #Contact .cot2 .name-email{
+        width: 65vw;
         
     }
     
-    .page4 .cot2 #email{
-        width: 55vw;
-        margin-left: -100px;
+    #Contact .cot2 #email{
+        width: 65vw;
     }
     
     
     
-    .page4 .cot2 .message{
-        width: 55vw;
-        margin-left: -100px;
-    
+    #Contact .cot2 .message{
+        width: 65vw;
+        height: 25vh;
         
     }
     
-    .page4 .cot2 .btn{
-        padding: 15px 70px;
-        margin-left: -100px;
+    #Contact .cot2 .btn{
+        padding: 3vw 10vw;
     }
-
-    .page4 .cot2 .cotect-form{
-        padding-bottom: 100px;
-    }
-
+    
 
     footer{
         height: 40px;
