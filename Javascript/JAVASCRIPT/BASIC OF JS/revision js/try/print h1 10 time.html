@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create h1 Tags</title>
+    <style>
+        #container {
+            margin: 100px;
+        }
+
+        h1 {
+            height: 100px;
+            width: 100px;
+            font-size: 20px;
+            background-color: red;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script>
+        // Get the container element where you want to append the h1 tags
+        let container = document.getElementById('container');
+
+        // Loop to create and append h1 tags
+        for (let i = 1; i <= 10; i++) {
+            let h1 = document.createElement('h1'); // Create h1 element
+            h1.textContent = `Heading ${i}`; // Set text content
+            container.appendChild(h1); // Append h1 to container
+        }
+
+    </script>
+</body>
+
+</html>

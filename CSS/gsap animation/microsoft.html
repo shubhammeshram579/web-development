@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* 
+        .image1{
+            min-width: 100vh;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+            
+        } */
+
+        .image1 img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: sticky;
+            top: 0;
+            z-index: 11;
+
+        }
+
+        .image2 {
+            height: 100vh;
+            width: 100%;
+            /* background-image: url(/imh/feature-01.jpg); */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+
+        }
+
+        .image2 .card {
+            height: 500px;
+            width: 500px;
+            text-align: center;
+            /* background-color: red; */
+            position: relative;
+            top: 0;
+            z-index: 12;
+        }
+
+        .image2 .card2 {
+            height: 500px;
+            width: 500px;
+            text-align: center;
+            /* background-color: blue; */
+            position: relative;
+            top: 0;
+            z-index: 12;
+        }
+
+        .image3 {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            background-image: url(/imh/feature-19.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            position: relative;
+            top: 0;
+            z-index: 20;
+
+
+        }
+
+        .image3 .card {
+            height: 500px;
+            width: 500px;
+            text-align: center;
+            /* background-color: red; */
+            position: sticky;
+            top: 0;
+            z-index: 21;
+        }
+
+        .image3 .card2 {
+            height: 500px;
+            width: 500px;
+            text-align: center;
+            /* background-color: blue; */
+            position: sticky;
+            top: 0;
+            z-index: 21;
+        }
+
+
+
+        .image4 {
+            min-height: 100vh;
+            width: 100%;
+            background-image: url(/imh/feature-20.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            position: sticky;
+            z-index: 99;
+            display: flex;
+
+        }
+
+        .image4 .card {
+            height: 500px;
+            width: 500px;
+            text-align: center;
+            /* background-color: red; */
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .image4 .card2 {
+            height: 500px;
+            width: 500px;
+            text-align: center;
+            /* background-color: blue; */
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+
+        img {
+            min-height: 100vh;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            /* z-index: -1; */
+
+        }
+    </style>
+</head>
+
+<body>
+    <img src="/imh/feature-19.jpg" alt="">
+
+    <div class="image1">
+        <img src="https://wallpapers.microsoft.design/images/wallpapers.jpg" alt="">
+    </div>
+    <div class="image2">
+        <div class="card">
+            <h1>shubham</h1>
+        </div>
+        <div class="card2">
+            <h1>meshram</h1>
+        </div>
+    </div>
+    <div class="image3">
+        <!-- <img src="/imh/feature-19.jpg" alt=""> -->
+        <div class="card">
+            <h1>labham</h1>
+        </div>
+        <div class="card2">
+            <h1>meshram</h1>
+        </div>
+    </div>
+    <div class="image4">
+        <div class="card">
+            <h1>pallavi</h1>
+        </div>
+        <div class="card2">
+            <h1>meshram</h1>
+        </div>
+    </div>
+    <!-- <div class="image1">
+        <img src="/imh/feature-19.jpg" alt="">
+    </div>
+    <div class="image1">
+        <img src="/imh/feature-20.jpg" alt="">
+    </div> -->
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        gsap.from(".image3", {
+            position: "fixed",
+            top: 0,
+            zIndex: 25,
+
+            ScrollTrigger: {
+                trigger: ".image3",
+                scroller: "body",
+                start: "top 0%",
+                end: "top 10%",
+                scrub: 2,
+                markers: true
+            }
+        })
+    </script>
+</body>
+
+</html>

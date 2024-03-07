@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .book {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+        }
+    </style>
 </head>
+
 <body>
     <h1>basic of javascript</h1>
+    <h1 class="book">book</h1>
 
 
     <script>
@@ -19,7 +29,7 @@
         // tree type of varible you are store in js like let const and var
 
         var a = "shubham"; //var is old version varible if you store all type varible
-        let  b = 1997;  //let  and  const is new version varible es6
+        let b = 1997;  //let  and  const is new version varible es6
         const c = "shubham meshram"  //const means it consted value store like fixed do not chage and update varible 
 
         // for example var and const varibel
@@ -35,9 +45,9 @@
 
 
 
-        //3 what is types
-        // primitive dtype: Number int str float Boolean and more 
-        // referance  [], {} ()
+        //3 what is dtypes
+        // primitive dtype: Number int str float Boolean null undifind bight and symbole more 
+        // referance  dtype [], {} () , map, set, obj, array, func 
 
         // 3. what is hoisting 
         // hoisting means if you not created any varible but you used random varible it's call as hoisting
@@ -50,20 +60,20 @@
 
 
         //4 what is rafrance value 
-        var ra = [19,334,444];
+        var ra = [19, 334, 444];
         var rb = ra;
 
         console.log(ra);
         console.log(rb);
 
-        // if you want to change rb varibele value delte 
+        // if you want to change rb varibele value delete 
         rb.pop();
 
         // print output if you see both varible value deleted it call rafrance value copy
         console.log(ra);
         console.log(rb);
 
-        // then how to copy original value then using spred method
+        // then how to copy original value then using spread properties
         var rc = [...ra];
 
         console.log(ra);
@@ -76,28 +86,79 @@
         console.log(rc);
 
         // 5 what is conditional statment
-        // condition statment is set condtion paticalur proble 
+        // condition statment is set condtion paticalur problem 
         // for example set the object color is red then is true other wise flase 
 
         var book = "red"
-        if (book === "red"){
+        if (book === "red") {
             console.log(true)
-        }else{
+        } else {
             console.log(false);
         };
+
+
+        var book2 = document.querySelector(".book");
+
+        book2.addEventListener("click",function(){
+                if (book === "red"){
+                book2.style.backgroundColor = "red"
+                book2.innerHTML = true
+                book = "green"
+            }else if(book === "green"){
+                book2.style.backgroundColor = "green"
+                book2.innerHTML = true
+                book = "yellow"
+
+            }
+            else{
+                book2.style.backgroundColor = "yellow"
+                book2.innerHTML = false
+                book = "red"
+
+            }
+
+        })
+
+        // let book = "red"; // Assuming book starts with red
+
+        // let book = "red"; // Assuming book starts with red
+
+        // book2.addEventListener("click", function () {
+        //     for (let i = 0; i < 10; i++) {
+        //         if (book === "red") {
+        //             console.log("Changing color to red");
+        //             book2.style.backgroundColor = "red";
+        //             book2.innerHTML = true;
+        //             book = "green";
+        //         } else if (book === "green") {
+        //             console.log("Changing color to green");
+        //             book2.style.backgroundColor = "green";
+        //             book2.innerHTML = true;
+        //             book = "yellow";
+        //         } else {
+        //             console.log("Changing color to yellow");
+        //             book2.style.backgroundColor = "yellow";
+        //             book2.innerHTML = false;
+        //             book = "red";
+        //         }
+        //     }
+        // });
+
+
+
 
         // onother example 
 
         var a = 5;
-        if (a < 10){
+        if (a < 10) {
             console.log("a greter then 5")
-        }else{
+        } else {
             console.log("a less then 5")
         }
 
-        if (a > 10){
+        if (a > 10) {
             console.log("a greter then 5")
-        }else{
+        } else {
             console.log("a less then 5")
         }
 
@@ -105,11 +166,11 @@
         // multiple condition set using &&, and | time set eample 
         var time = 12;
 
-        if (time > 5 && time < 12){
+        if (time > 5 && time < 12) {
             console.log("good morning")
-        }else if( time > 12 && time < 16){
+        } else if (time > 12 && time < 16) {
             console.log("good afternoon")
-        }else{
+        } else {
             console.log("good evening")
         };
 
@@ -117,10 +178,10 @@
         let na = "red";
         let nb = "green";
 
-        if(na ==="red"){
-            if(nb === "red"){
+        if (na === "red") {
+            if (nb === "red") {
                 console.log("color is match");
-            }else{
+            } else {
                 console.log("color is not match");
             }
         };
@@ -128,7 +189,7 @@
 
         // 6. what is loops 
         // loop means print of reaped values function code
-         // how many type of loops
+        // how many type of loops
         // for loops
         // while loops
         // do while loops
@@ -140,49 +201,49 @@
 
         // for loops
         // print 0 to 10 
-        for (var i = 0;i< 10; i++){
+        for (var i = 0; i < 10; i++) {
             console.log(i);
         };
 
         // reverse if
-        for (var i = 10; i>0; i--){
+        for (var i = 10; i > 0; i--) {
             console.log(i)
         };
 
-        // for (var i = 50 ;i > 0; i = i + 2 ){
-        //     console.log(i);
-        // };
+        for (var i = 50 ;i >= 0; i = i - 5){
+            console.log(i);
+        };
 
 
         // print str text
         var shubham = "shubham"
 
-        for (var i in shubham){
-            console.log(i,shubham[i])
+        for (var i in shubham) {
+            console.log(i, shubham[i])
         }
 
         // of loops for obj print only
-        for (var i of shubham){
+        for (var i of shubham) {
             console.log(i)
         }
 
         // while loops
         var a = 0;
-        while (a < 10){
+        while (a < 20) {
             console.log("hello");
-            a += 2 
+            a += 1
         };
         console.log("hello");
 
         // forEach loops
-        let arr = [1,2,3,4,5,67];
-        let arr2 = [12,4,5,6,44,4]
+        let arr = [1, 2, 3, 4, 5, 67];
+        let arr2 = [12, 4, 5, 6, 44, 4]
         let arr3 = [33];
 
-        arr.forEach(function(i){
-            arr2.forEach(function(k){
-                arr3.forEach(function(c){
-                    console.log(i,k+c)
+        arr.forEach(function (i) {
+            arr2.forEach(function (k) {
+                arr3.forEach(function (c) {
+                    console.log(i, k + c)
                 })
 
             })
@@ -190,25 +251,41 @@
 
 
         // forign loops
-        
+
         let obj = {
             name: "shubham",
             age: 25
         };
 
-        for (let i in obj){
-            console.log(i,obj[i])
+        for (let i in obj) {
+            console.log(i, obj[i])
         }
 
-        for (var i = 0; i< 10; i++){
-            for (var k in obj){
+        for (var i = 0; i < 10; i++) {
+            for (var k in obj) {
                 console.log(obj[k])
             }
         };
 
+        // try
+        function print10(){
+            var bookse = document.querySelector(".book");
+            return bookse
+            
+        }
+
+        print10()
+
+        var bookespes = []
+        for (var i = 0; i <10; i++){
+            var stod =bookespes.push(print10()); //store loops values in array form
+            console.log(bookespes)
+
+        }
+
 
         // most used this function in js 
-        // nornam function
+        // normal function
         // firstclass function
         // highoreder function
         // contruction function
@@ -216,7 +293,7 @@
         // arrow function
 
 
-        function abcd(){
+        function abcd() {
             console.log("hello shubham")
         };
 
@@ -224,32 +301,32 @@
 
         // build add values 
 
-        function add(a,b){
-            console.log( a + b);
+        function add(a, b) {
+            console.log(a + b);
         }
-        add(12,10);
-        
+        add(12, 10);
 
 
-        function seif(a1=10,a2=20){
-            if (a1< a2){
+
+        function seif(a1 = 10, a2 = 20) {
+            if (a1 < a2) {
                 console.log("a grether then b")
             }
-            else{
+            else {
                 console.log("less then a2")
             }
         };
 
-        console.log(seif(100,2000));
+        console.log(seif(100, 2000));
 
 
 
         // first class function
 
-        let firstfnc = function(){
+        let firstfnc = function () {
             var n = "hello bro!";
             var b = 129;
-            console.log(n+" "+ b);
+            console.log(n + " " + b);
         };
 
         firstfnc();
@@ -257,8 +334,8 @@
 
         // high order function
 
-        function highofnc(a){
-            return function(b){
+        function highofnc(a) {
+            return function (b) {
                 console.log(a * b);
             }
         }
@@ -269,9 +346,9 @@
 
         // contraction function
 
-        let costfnc = function(){
-            this.name =  "shubham",
-            this.age = 25;
+        let costfnc = function () {
+            this.name = "shubham",
+                this.age = 25;
         };
 
         let dstore = new costfnc();
@@ -280,15 +357,15 @@
 
         // callback function
 
-        setTimeout(function(){
+        setTimeout(function () {
             console.log("callback is excute code delay")
-        },3000);
+        }, 3000);
 
 
         // arrow functio is advance version function like es6
 
-        let arrfnc = (a = 100 ,b = 120)=>{
-            let marge = a + b ;
+        let arrfnc = (a = 100, b = 120) => {
+            let marge = a + b;
             console.log(marge);
 
         }
@@ -296,24 +373,108 @@
         arrfnc();
 
 
+        // array in js 
+        // whar is array 
+        // def: array means store of groups value array, it is giving the freedom to store load of values store
 
 
+        // for some example
+        let array1 = [1,3,5,6,7,8];
 
-        
+        console.log(array1)
+
+        // how to select array value 
+        console.log(array1[0])
+        console.log(array1.slice(2,4))
+        console.log(array1[array1.length -1])
+
+
+        // add array values
+
+        array1.push(55)
+        array1.push(53,44)
+
+        // midele index value add
+        array1.splice(1,4,500);
+
+         // add stating index values
+        array1.unshift(333)
+
+        // second method add values array
+
+        let array2 = [23,4,4,66]
+
+        mararr = array1.concat(array2)
+        console.log(array1)
+        console.log(mararr)
+
+
+        // update array values
+
+        // single array value update
+        mararr[0] = 100 
+
        
         
 
+        // multiple array value update
+        array1.splice(1,2,4555,6332);
+
+        console.log(mararr);
+        console.log(array1);
+
+
+        // delete array 
+
+        // delete last index value 
+        array1.pop()
+
+        // delete multile values
+        array1.splice(1,2);
+
+        // delete stating index value
+        array1.shift(1)
+
+        console.log(array1);
+
+
+        // foreach in array
+
+        array1.forEach(function(i){
+            console.log(i + 5)
+            console.log(i * 5)
+            console.log(i / 5)
+            console.log(i - 5)
+        })
+
+
+        // 2d array
+
+
+        let arr2d = [[12,5,67,44],[13,44,55,33]];
+
+        console.log(arr2d);
+        console.log(typeof arr2d);
+
+        console.log(arr2d[0]);
+        console.log(arr2d[1]);
+
+        console.log(arr2d[1][0]);
+        console.log(arr2d[0][0]);
+
+        console.log(arr2d[0].slice(2,5));
+        console.log(arr2d[1][1,3]);
+
+        
+        
+        
 
 
 
-
-
-
-
+       
 
         
 
-        
 
 
 
@@ -321,9 +482,29 @@
 
 
 
-        
 
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
+
 </html>
