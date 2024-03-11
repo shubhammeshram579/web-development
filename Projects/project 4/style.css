@@ -14,7 +14,18 @@
 html,body{
     height: 100%;
     width: 100%;
+    padding: 0;
+    margin: 0;
 }
+
+body{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
 
 
 /* logo img styly */
@@ -32,29 +43,31 @@ html,body{
 body{
     position: absolute;
     z-index: 99;
-    /* background-color: yellow; */
 }
 
-.nav{
+
+.header-nav{
     height: 100px;
     width: 100%;
-    position: fixed;
-    z-index: 99;
-    display: flex;
-    align-items:flex-start;
-    justify-content: space-between;
-    /* background-color: red; */
-    padding: 1vh;
-
-}
-.nav-part2 .link{
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    padding: 0px 10px;
+    max-width: inherit;
+    
+    
+}
+
+.header-nav .nav-part2 .link{
+    display: flex;
+    align-items: center;
     gap: 50px;
 }
 
-.nav-part2 a{
+.header-nav .nav-part2 a{
     margin: 1vw;
     text-decoration: none;
     color: #3d3a3a;
@@ -64,19 +77,16 @@ body{
 
 }
 
-.icon{
+.header-nav .icon{
     background-color: aliceblue;
     border-radius: 10px;
-    margin-right: 2vw;
+    margin-right: 30px;
     padding: 10px;
 }
 
-.icon i{
+.header-nav .icon i{
     margin: 10px 20px;
     background-color: transparent;
-}
-
-.icon i{
     font-size: 20px;
 }
 
@@ -85,15 +95,16 @@ body{
 .menu{
     height: 100vh;
     width: 100%;
-    /* background-color:#111; */
+    background-color:#111;
     color: #fff;
     position: absolute;
-    z-index: -20;
+    z-index: -40;
     opacity: 0;
     display: flex;
     align-items:end;
     justify-content: space-between;
     padding: 10px 10px;
+    /* display:none; */
     /* background-color: red; */
 }
 
@@ -151,18 +162,18 @@ body{
 
 .card-details{
     min-height: 92vh;
-    width: 100%;
+    width: 100vw;
     background-color: #111;
     position: absolute;
-    z-index: -10;
+    z-index: -41;
     opacity: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     padding-top: 230px;
+    /* display:none; */
 }
-
 
 
 
@@ -309,6 +320,7 @@ body{
     min-height: 100hv;
     width: 100%;
     position: relative;
+    z-index: 99;
     padding: 0 2vw;
     padding-top: 15vh;
     
@@ -369,14 +381,15 @@ body{
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0px 50px;
-    /* background-color: red; */
-    
+    justify-content: space-around;
+    /* padding: 0px 50px; */
+    position: relative;
+    z-index: 99;  
 }
 .page2 .elem{
     height: 90vh;
-    width: 30vw;
+    width: 100%;
+    padding: 0px 20px;
     position: relative;
 }
 
@@ -392,7 +405,7 @@ body{
     height: 3.5vw;
     width: 25vw;
     top:50%;
-    left: 7%;
+    left: 14%;
     right: 50%;
     border-radius: 20px;
     position: absolute;
@@ -408,7 +421,7 @@ body{
     height: 3.5vw;
     width: 25vw;
     top:50%;
-    left: 7%;
+    left: 14%;
     right: 50%;
     border-radius: 20px;
     position: absolute;
@@ -421,7 +434,7 @@ body{
     height: 3.5vw;
     width: 25vw;
     top:50%;
-    left: 7%;
+    left: 14%;
     right: 50%;
     border-radius: 20px;
     position: absolute;
@@ -461,12 +474,6 @@ body{
 }
 
 
-.page2 #gifts{
-    margin-left: -70px;
-    margin-right: -20px;
-
-}
-
 
 .cotener2 p{
     font-size: 1vw;
@@ -478,7 +485,7 @@ body{
 }
 
 .cotener2 p strong{
-    margin: 10px 40px;
+    margin: 10px 30px;
 }
 
 
@@ -528,9 +535,9 @@ body{
 }
 
 
-.cotener2 ul li #gifts{
+/* .cotener2 ul li #gifts{
     padding-left: 80px;
-}
+} */
 
 
 
@@ -545,6 +552,8 @@ body{
     flex-wrap: wrap;
     border-bottom: 3px solid black;
     padding-bottom: 100px;
+    position: relative;
+    z-index: 99;
 }
 
 
@@ -570,7 +579,7 @@ body{
 }
 
 .page3 .summary h3{
-    font-size: 25px;
+    font-size: 3vh;
     margin-bottom: 80px;
     text-align: start;
     font-weight: 100;
@@ -592,7 +601,15 @@ body{
     height: 79vh;
     width: 45vw;
     margin-bottom: 5vh;
-    opacity: 0;
+    opacity: 1;
+    padding: 5vw;
+}
+
+.child2{
+    height: 79vh;
+    width: 45vw;
+    margin-bottom: 5vh;
+    opacity: 1;
     padding: 5vw;
 }
 
@@ -610,6 +627,13 @@ body{
     font-weight: 100;
 }
 
+.page3 .child2 h5,h6{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 100;
+}
+
 /* page4 style */
 
 .page4{
@@ -618,7 +642,10 @@ body{
     display: flex;
     align-items:flex-start;
     justify-content: space-between;
-    margin-top: 100px;
+    padding-top: 50px;
+    position: relative;
+    z-index: 99;
+   
 }
 
 .page4 h1{
@@ -673,10 +700,16 @@ body{
 /* page6  */
 
 .page6{
+    min-height: 20vh;
+    width: 100%;
     display: flex;
     align-items:flex-start;
     justify-content: space-between;
-    padding: 300px 40px;
+    padding: 0px 40px;
+    padding-top: 30vh;
+    padding-bottom: 5vh;
+    position: relative;
+    z-index: 99;
 }
 
 .page6 .card1 li{
@@ -713,12 +746,16 @@ body{
     height: 27vh;
     width: 100%;
     opacity: 0;
-    /* transition:all ease-in 3s; */
 }
 
 .page6-part2{
     text-align: center;
-    margin-top: -200px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 99;
 }
 
 .page6-part2 h3{
@@ -729,12 +766,15 @@ body{
 
 .page6-part2 h4{
     text-align: center;
-    /* margin-top: 100px; */
-    padding: 100px;
+    padding: 70px;
     font-size: 20px;
     font-weight: 100;
 }
 
+.page6-part2 .GRAYSCALE{ 
+    color: #8d8888;
+    font-size: 15px;
+}
 
 
 
@@ -746,16 +786,37 @@ body{
 
 @media (max-width:600px) {
 
-    .nav{
-        position: absolute;
-        z-index: 99;
-        padding: 1vh;
-    
+    html,body{
+        height: 100%;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        overflow-x: hidden;
     }
     
-    .nav-part2 a{
+    
+    .header-nav{
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        top: 0;
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        max-width: inherit;
+    }
+    
+    .header-nav .nav-part2 a{
         display: none;
+    
     }
+    
+    .header-nav .icon{
+        margin-right: 10px;
+    }
+    
+    
     
     
     
@@ -766,7 +827,7 @@ body{
         background-color:#3d3a3a;
         color: #fff;
         position: absolute;
-        z-index: -10;
+        z-index: -40;
         opacity: 0;
         display: flex;
         align-items:center;
@@ -840,7 +901,7 @@ body{
         width: 100%;
         background-color: #111;
         position: absolute;
-        z-index: -20;
+        z-index: -41;
         opacity: 0;
         display: flex;
         align-items: center;
@@ -872,7 +933,6 @@ body{
     
     
     #scroller{
-        /* background-color: red; */
         white-space:nowrap;
         overflow-x: auto;
         overflow-y: hidden;
@@ -921,7 +981,6 @@ body{
     
     
       #scroller2{
-        /* background-color: red; */
         white-space:nowrap;
         overflow-x: auto;
         overflow-y: hidden;
@@ -990,7 +1049,6 @@ body{
         height: 50vh;
         width: 100%;
         padding-top: 1vw;
-        /* border: 3px solid red; */
         margin-top: 3vw;
     }
 
@@ -1027,14 +1085,15 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         position: relative;
         padding-top: 5vh;
         
     }
     .page2 .elem{
         height: 80vh;
-        width: 90vw;
+        width: 100%;
+        margin: 0px 100px;
         margin-bottom: 2vh;
     }
     
@@ -1049,7 +1108,7 @@ body{
         
     .contener1 .dets{
         height: 10vw;
-        width: 65vw;
+        width: 68vw;
         top:50%;
         left: 14%;
         border-radius: 20px;
@@ -1064,7 +1123,7 @@ body{
 
     .cotener2 .dets{
         height: 10vw;
-        width: 65vw;
+        width: 68vw;
         top:50%;
         left: 14%;
         border-radius: 20px;
@@ -1076,7 +1135,7 @@ body{
 
     .contener3 .dets{
         height: 10vw;
-        width: 65vw;
+        width: 68vw;
         top:50%;
         left: 14%;
         border-radius: 20px;
@@ -1171,37 +1230,39 @@ body{
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: nowrap;
     }
+
     .page3 .product-details{
         display: flex;
+        align-items:center;
         flex-direction: column;
-        margin-top: -6vh;
+        justify-content: space-between;
+    
     }
-
-    .page3 .product-details h1{
+    
+    .product-details h1{
         text-align: center;
-        height: 40vw;
-        width: 95vw;
-        font-size: 8vw;
-        padding-right: 10vw;
-        padding-top: 5vw;
-        padding-bottom: 30vh;
-        /* background-color: red; */
+        width: 70%;
+        font-size: 5vh;
+        padding-bottom: 50px;
+    }
+    
+    
+    .summary{
+        width: 100%;
+        margin-left: -9vw;
+        /* padding: 0 100px; */
         
     }
-
-    .page3 .summary{
-        margin-left: -115px;
-    }
-
+    
     .page3 .summary h3{
-        text-align: center;
-        height: 35vw;
+        height: 100%;
         width: 90vw;
-        font-size: 20px;
-        margin-top: 10vw;
-        margin-bottom: -5vw;
-
+        font-size: 3vh;
+        margin-bottom: 80px;
+        text-align: center;
+        font-weight: 100;
     }
 
     .page3 .summary h4{
@@ -1215,11 +1276,23 @@ body{
     }
     
     .child{
-        height: 100%;
+        height: 90%;
         width: 90%;
-        /* background-color: red; */
-        margin-left: -30vw;
-        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* margin-left: -30vw; */
+    }
+
+    .child2{
+        height: 90%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* margin-left: -30vw; */
     }
 
     .page3 img{
@@ -1273,16 +1346,19 @@ body{
         padding-bottom: 100px;
         
     }
+
+    .page4 .story h1{
+        padding-top: 50px;
+    }
     
     .page5 h1 ,i{
-        padding-bottom: 10vh;
+        /* padding-bottom: 10vh; */
         font-size: 3vh;
     }
 
     .page6{
         display: flex;
         flex-wrap:wrap;
-        margin-top: -15vh;
     }
 
     .page6 .card1{
@@ -1326,26 +1402,30 @@ body{
         font-size: 4vw;
     }
 
+
     .page6-part2{
+        text-align: center;
         display: flex;
         flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
     }
-
+    
     .page6-part2 h3{
+        font-weight: 100;
+        color: gray;
         font-size: 3vw;
-        margin-left: -10vw;
-
+        padding-bottom: 5vh;
+    
     }
-
+    
     .page6-part2 h4{
-        font-size: 15px;
-        text-align:start;
-        margin-top: -25vh;
-        margin-left: -18vw;
-
+        text-align: start;
+        font-size: 4vw;
+        font-weight: 100;
     }
 
-    .page6-part2 .GRAYSCALE{
+    .page6-part2 .GRAYSCALE{ 
         color: #8d8888;
         font-size: 10px;
     }

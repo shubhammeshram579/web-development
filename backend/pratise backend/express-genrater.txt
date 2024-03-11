@@ -1,0 +1,48 @@
+Microsoft Windows [Version 10.0.19045.4046]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Dell\OneDrive\Desktop\web development\backend\pratise backend\practice project pin>express pin --view=ejs
+
+   create : pin\
+   create : pin\public\
+   create : pin\public\javascripts\
+   create : pin\public\images\
+   create : pin\public\stylesheets\
+   create : pin\public\stylesheets\style.css
+   create : pin\routes\
+   create : pin\routes\index.js
+   create : pin\routes\users.js
+   create : pin\views\
+   create : pin\views\error.ejs
+   create : pin\views\index.ejs
+   create : pin\app.js
+   create : pin\package.json
+   create : pin\bin\
+   create : pin\bin\www
+
+   change directory:
+     > cd pin
+
+   install dependencies:
+     > npm install
+
+   run the app:
+     > SET DEBUG=pin:* & npm start
+
+
+C:\Users\Dell\OneDrive\Desktop\web development\backend\pratise backend\practice project pin>cd pin
+
+C:\Users\Dell\OneDrive\Desktop\web development\backend\pratise backend\practice project pin\pin>npm i
+
+added 54 packages, and audited 55 packages in 6s
+
+4 vulnerabilities (3 high, 1 critical)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+C:\Users\Dell\OneDrive\Desktop\web development\backend\pratise backend\practice project pin\pin>code .
+
+C:\Users\Dell\OneDrive\Desktop\web development\backend\pratise backend\practice project pin\pin>
