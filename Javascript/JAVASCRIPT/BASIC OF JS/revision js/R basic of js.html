@@ -284,7 +284,7 @@
         }
 
 
-        // most used this function in js 
+        // most used function in js 
         // normal function
         // firstclass function
         // highoreder function
@@ -540,6 +540,28 @@
 
 
 
+        // practice day 2 filter
+        let bookr = ["red", "yellow", "green", "black"];
+
+        bookr.filter(function (i) {
+            if (i === "red") {
+                console.log(true)
+            }
+        })
+
+
+        bookr.filter(function (i) {
+           let matcred =  i === "red";
+           console.log(matcred)
+        });
+        
+
+        let storegreen = bookr.filter((i)=> i === "green");
+        console.log(storegreen)
+
+
+
+
         // object filter fuction apply
         //     let sglobject = {
         //         name: "shubham",
@@ -617,16 +639,21 @@
         console.log(st);
 
 
-        // array of obkect using map function
+        // array of object using map function
         objarr.map(function (i) {
             console.log(i[0].name + " " + i[0].age)
         });
 
         let bt = objarr.map(function (i) {
-            return `name is ${i[0].name} he is  ${i[0].age} year of old`
+            return `name is ${i[0].name} he is  ${i[0].age} year old`
         });
 
         console.log(bt);
+
+
+        // one line of code
+        let nage = objarr.map((i)=> `my name is ${i[0].name} i am ${i[0].age} year old`);
+        console.log(nage);
 
 
 
@@ -694,15 +721,135 @@
         console.log(sttoatl);
 
 
+        // this method not giving proper result
+        // rearray.reduce(function(to ,d){
+        //     console.log(to + d)
+
+        // })
 
 
         // one line of code using arrow function
 
-        let rearray2 = [2, 5, 3, 6,55,33];
+        let rearray2 = [2, 5, 3, 6, 55, 33];
 
-        let total2 = rearray2.reduce((total,k)=> total + k);
+        let total2 = rearray2.reduce((total, k) => total + k);
         console.log(total2);
 
+
+
+        // sting in javascript
+
+        let name1 = "shubham";
+        console.log(name1);
+
+        let name2 = "meshram";
+        console.log(name2);
+
+
+        // marge str using concat function
+        let fullname = name1.concat(" " +name2);
+        console.log(fullname);
+
+
+        // another method is build same function
+        function margestr(a,b){
+            return a +" "+ b;
+        };
+
+        let stors = margestr(name1,name2);
+        console.log(stors)
+
+
+        // 3 way to marge str
+        function margesr(a,b){
+            console.log(a + b)
+        };
+
+        margesr(name1,name2);
+
+
+        // string most usedfull function
+        // string length check
+        console.log(name1.length);
+
+        // index Number check
+        console.log(name1.charAt(0));
+        console.log(name1.charCodeAt(0));
+        console.log(name1.at());
+        console.log(name1[1]);
+
+        // maltiple indexing select and text substri to select range 
+        console.log(name1.slice(0,5));
+        console.log(name1.substring(5));
+        console.log(name1.substr(0,3));
+        console.log(name1.substr(0,3));
+
+
+
+        // string template formating
+        console.log(`my first name is ${name1} last name is ${name2}`)
+
+
+        // text element change
+        console.log(name1.toUpperCase());
+        console.log(name1.toLowerCase());
+        console.log(name1.toLocaleUpperCase());
+        console.log(name1.toLocaleLowerCase());
+
+
+
+        // string tect spaceses remove
+        let name3 = "pallavi "
+        let name4 = " labham"
+        let name5 = "aa chal"
+
+        
+        console.log(name3.trimEnd())
+        console.log(name4.trimStart())
+        console.log(name5.replace(" ",""));
+
+
+
+        // number str add zeros
+        let nustr = "44";
+
+        console.log(nustr.padEnd(4,"0"));
+        console.log(nustr.padStart(4,"0"));
+
+
+        // string replace 
+        let replacall = "shubham meshram sujit meshram";
+
+        console.log(replacall.replace("s","S"))
+        console.log(replacall.replaceAll("s","S"))
+
+
+        // text split
+        let strsplit = "shubham";
+        let strsplit2 = "shubham , meshram";
+        console.log(strsplit.split(""))
+        console.log(strsplit2.split(","));
+
+
+
+         // JavaScript String Search
+        console.log(strsplit.indexOf());
+        console.log(strsplit.lastIndexOf())
+        console.log(strsplit.search("m"))
+
+        console.log(strsplit.match("m"))
+        console.log(strsplit.includes("shubham"))
+        console.log(strsplit.startsWith("shubham"))
+        console.log(strsplit2.endsWith("meshram"))
+
+
+
+
+
+
+
+
+        
 
 
 
