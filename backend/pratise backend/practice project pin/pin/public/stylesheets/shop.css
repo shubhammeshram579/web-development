@@ -8,6 +8,18 @@ body{
     width: 100%;
 }
 
+
+.curcer{
+  height: 150px;
+  width: 150px;
+  background-color:rgba(22, 213, 213, 0.211);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%,-50%) scale(0);
+  
+}
+
+
 .page1{
     min-height: 100vh;
     width: 100%;
@@ -15,6 +27,8 @@ body{
     align-items: start;
     justify-content:space-between;
     padding-top: 40vh;
+    position: relative;
+    z-index: 1;
 }
 
 .page1 .card1{
@@ -228,7 +242,7 @@ body{
   .page6 svg{
     height: 27vh;
     width: 100%;
-    opacity: 1;
+    opacity: 0;
   }
   
   .page6-part2{

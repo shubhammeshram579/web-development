@@ -24,4 +24,8 @@ router.get('/catering', function(req, res, next) {
   res.render('catering');
 });
 
+router.get('/donate', function(req, res, next) {
+  res.render('donate');
+});
+
 module.exports = router;
