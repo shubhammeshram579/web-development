@@ -240,6 +240,12 @@
         let arr2 = [12, 4, 5, 6, 44, 4]
         let arr3 = [33];
 
+
+        // one line code using arrow function
+        arr.forEach((i)=> console.log(i * 10));
+
+
+
         arr.forEach(function (i) {
             arr2.forEach(function (k) {
                 arr3.forEach(function (c) {
@@ -373,6 +379,9 @@
         arrfnc();
 
 
+        
+
+
         // array in js 
         // whar is array 
         // def: array means store of groups value array, it is giving the freedom to store load of values store
@@ -391,8 +400,8 @@
 
         // add array values
 
-        array1.push(55)
-        array1.push(53, 44)
+        array1.push(55);
+        array1.push(53, 44);
 
         // midele index value add
         array1.splice(1, 4, 500);
@@ -834,15 +843,149 @@
 
          // JavaScript String Search
         console.log(strsplit.indexOf());
-        console.log(strsplit.lastIndexOf())
-        console.log(strsplit.search("m"))
+        console.log(strsplit.lastIndexOf());
+        console.log(strsplit.search("m"));
 
-        console.log(strsplit.match("m"))
-        console.log(strsplit.includes("shubham"))
-        console.log(strsplit.startsWith("shubham"))
-        console.log(strsplit2.endsWith("meshram"))
+        console.log(strsplit.match("m"));
+        console.log(strsplit.includes("shubham"));
+        console.log(strsplit.startsWith("shubham"));
+        console.log(strsplit2.endsWith("meshram"));
 
 
+
+        // object in javascripts
+
+        let obj1 = {
+            name: "shubham",
+            age: 26,
+            job: "web dev",
+            loc: "pune",
+            int: "AI-ML"
+        };
+
+        console.log(obj1);
+
+        // select object key and values
+
+        console.log(obj1.name);
+        console.log(obj1.loc);
+        console.log(obj1["age"]);
+
+
+        // update in object
+        obj1.loc = "Nagpur";
+
+        console.log(obj1["loc"]);
+
+
+
+
+        // object freege do not change object values
+        // second example
+        let obj2 = {
+            email:"shubhcode97@gmail.com",
+            name: "shubham",
+            age: 26
+        };
+
+        obj2.name = "Labham"
+        console.log(obj2);
+
+        // Object.freeze(obj2);
+
+        obj2.name = "aachal";
+
+        console.log(obj2);
+
+
+        // function add on object
+
+        obj2.greeting =   function(){
+            console.log("hello everyon i am develop")
+        };
+
+
+        // function2
+
+        obj2.greetingtwo = function(){
+            console.log(`hello evryon i am ${this.name}`)
+        };
+
+        console.log(obj2.greeting());
+        console.log(obj2.greetingtwo());
+
+
+        // part 2 
+
+        // normal object creation second way
+
+
+        let obj3 = {};
+
+        obj3.username = "shubh123";
+        obj3.password = "shubh1433";
+
+
+        console.log(obj3);
+
+
+        // nasted object creation
+
+        const obje4 = {
+            username: "shubham123455",
+            fullname:{
+                userfullname:{
+                    firstname: "shubham",
+                    lastname: "meshram"
+                }
+            }
+        };
+
+
+        console.log(obje4.fullname.userfullname.firstname);
+
+
+        // marge obhect
+
+        const aobj1 = {
+            1:"s",
+            2:26
+        };
+
+        const bojt2 = {
+            3:"h",
+            4:23
+        };
+
+        const cojt3 = {
+            5:"c",
+            6:23
+        };
+
+
+        // The Object.assign() Method
+        let margeobj = Object.assign( {},aobj1 ,bojt2 ,cojt3);
+        console.log(margeobj);
+
+
+        // The Spread Operator ( ... )
+        const margobjdd = {...aobj1,...bojt2};
+        console.log(margobjdd);
+
+
+        // accese to user data
+        console.log(margobjdd[2]);
+        console.log(obj3.username);
+
+
+        console.log(Object.keys(margeobj));
+        console.log(Object.values(margeobj));
+        console.log(Object.entries(margeobj));
+
+
+
+
+        
 
 
 
