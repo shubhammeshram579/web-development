@@ -28,4 +28,21 @@ router.get('/donate', function(req, res, next) {
   res.render('donate');
 });
 
+
+router.get('/bespoke', function(req, res, next) {
+  res.render('bespoke');
+});
+
+router.get('/log-register', function(req, res, next) {
+  res.render('loregiter');
+});
+
+router.get('/register', function(req, res, next) {
+  res.render('register');
+});
+
+router.get('/group-order', function(req, res, next) {
+  res.render('groupOrder');
+});
+
 module.exports = router;

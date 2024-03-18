@@ -151,7 +151,7 @@ h4{
 }
 
 
-/* .hidden{
+.hidden{
     height: 120%;
     width: 100%;
     display: flex;
@@ -160,7 +160,7 @@ h4{
     background-color:#111111a8;
     position: absolute;
     padding-top: 200px;
-    opacity: 0;
+    opacity: 1;
 }
 
 .hidden .page{
@@ -182,7 +182,7 @@ h4{
 .hidden .page p{
     margin-top: 10px;
     font-size: 20px;
-} */
+}
 
 
 
