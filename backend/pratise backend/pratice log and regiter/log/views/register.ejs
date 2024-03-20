@@ -1,0 +1,32 @@
+<% include ./head/header.ejs %>
+<!-- <div class="page2">
+  <form action="/register" method="post">
+    <h1 style="padding: 30px 10px;text-align: center;">Regitration user</h1>
+    <h5>First_name: <input type="text" name="First_name" id="First_name"></h5>
+    <h5>last_name: <input type="text" name="last_name" id="last_name"></h5>
+    <h5>Email: <input type="email" name="email" id="email"></h5>
+    <h5>Username: <input type="text" name="username" id="username"></h5>
+    <h5>Password: <input type="password" name="password" id="password"></h5>
+    <input style="background-color: black; color: aliceblue; padding: 5px 30px;" type="submit" value="loging">
+  </form>
+  <a  style="text-align: center; color:#111; margin-left: 10px;" href="/">existing user</a>
+
+</div> -->
+<div class="w-full h-screen bg-zinc-300 flex items-center justify-center">
+  <div class="w-90 h-[30vw] bg-zinc-100 px-4 py-5 rounded-md" >
+    <h1 class="text-4xl leading-none text-center font-semibold text-zinc-600 capitalize">Create new account</h1>
+    <form action="/register" method="post">
+      <input class="border-3 rounded-md block mt-2 w-full px-3 py-2 " type="text" name="username" placeholder="username">
+      <input class="border-3 rounded-md block mt-2 w-full px-3 py-2 " type="text" name="fullname" placeholder="fullname">
+      <input class="border-3 rounded-md block mt-2 w-full px-3 py-2 " type="email" name="email" placeholder="email">
+      <input class="border-3 rounded-md block mt-2 w-full px-3 py-2 " type="number" name="contact" placeholder="contact">
+      <input class="border-3 rounded-md block mt-2 w-full px-3 py-2 " type="password" name="password" placeholder="password">
+      <input class="border-3 rounded-full block mt-2 w-full px-3 py-2 bg-red-600 text-white rounded-md" type="submit" value="Create new account">
+      <h5 class="mt-2 font-semibold text-zinc-600 mx-auto inline-block">Lorem ipsum dolor sit amet.</h5>
+    </form>
+    <a class="inline-block mt-6 text-sm font-semibold text-zinc-600 text-center " href="/">login exiting account</a>
+  
+  </div>
+  
+  </div>
+<% include ./head/footer.ejs %>

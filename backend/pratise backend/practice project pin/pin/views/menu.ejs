@@ -1,5 +1,5 @@
 <% include ./partial/header.ejs %>
-<link rel="stylesheet" href="/stylesheets/menu.css">
+    <link rel="stylesheet" href="/stylesheets/menu.css">
     <div class="menu">
         <div class="contenercardx">
             <div class="cardx">
@@ -32,17 +32,50 @@
             </div>
         </div>
         <div class="bar">
-            <ul>
-                <li>shop</li>
-                <li>catering<i class="ri-arrow-right-up-line"></i></li>
-                <li>impact</li>
-                <li>stories</li>
-                <li>about</li>
-                <li>Contact</li>
-                <li>Donate</li>
-                <li>Sign in</li>
-            </ul>
+            <div class="card">
+                    <a href="/shop">shop</a>
+                    <a href="/catering">catering<i class="ri-arrow-right-up-line"></i></a>
+                    <a href="#">impact</a>
+                    <a href="#">stories</a>
+                    <a href="#">about</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Donate</a>
+                    <a class="sigbtn" href="#">Sign in</a>
+            </div>
+
+            <div class="card2">
+                <h4>back to menu</h4>
+                <a class="signout" href="/logout">Sign out</a>
+                <h1>Sign in</h1>
+                <form action="/login" method="post">
+                    <input type="text" name="username" id="username" placeholder="   Email address">
+                    <input type="password" name="password" id="password" placeholder="    Password">
+                    <input type="submit" value="Sign in" id="btn">
+                    <h5>NEED AN ACCOUNT? <a href="/register">Sign up</a> OR <a href="#">FORGOTE PASSWORD?</a></h5>
+                </form>
+            </div>
         </div>
+
     </div>
+
+    <script>
+        let menubar = document.querySelector(".menu .bar .card");
+        let mebtn = document.querySelector(".menu .bar .card .sigbtn");
+        let signin = document.querySelector(".menu .bar .card2");
+        let mebtn2 = document.querySelector(" .menu .bar .card2 h4");
+
+
+        mebtn.addEventListener("click",function(){
+            menubar.style.opacity = 0;
+            signin.style.display = "block";
+
+        });
+
+        mebtn2.addEventListener("click",function(){
+            menubar.style.opacity = 1;
+            signin.style.display = "none"
+
+        })
+    </script>
+
     <% include ./partial/footer.ejs %>
-    

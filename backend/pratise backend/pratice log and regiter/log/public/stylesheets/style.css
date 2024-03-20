@@ -1,0 +1,46 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+html,body{
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111;
+}
+
+.page1{
+  height: 200px;
+  width: 200px;
+  background-color:aquamarine;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.page1 input{
+  margin: 13px;
+}
+
+
+
+.page2{
+  height: auto;
+  width: 400px;
+  background-color:aquamarine;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.page2 input{
+  height: 30px;
+  width: 90%;
+  margin: 12px;
+}

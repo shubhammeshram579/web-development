@@ -48,7 +48,7 @@
     <div class="part2">
         <a href="/" >Home</a>
         <a href="/bespoke">Bespoke Event</a>
-        <a id="group" href="#"><i class="fa-solid fa-users-line"></i>group Order</a>
+        <a id="group" href="group-order"><i class="fa-solid fa-users-line"></i>group Order</a>
         <a href="/"><i class="fa-solid fa-magnifying-glass"></i></a>
         <a href="/log-register"><i class="fa-solid fa-user-plus"></i></a>
 
@@ -59,8 +59,8 @@
     <div class="page">
     <h1>START A GROUP ORDER</h1>
     <h5>Guests can add to your cart with a shareable link. You checkout and pay for all guests.</h5>
-    <form action="">
-        <p>Name: <input type="text" name="Name" id="name"></p>
+    <form action="/group-order" method="post">
+        <p>Name: <input type="text" name="groupOrder" id="groupOrder"></p>
         <p>Email: <input type="email" name="email" id="email"></p>
         <input type="submit" value="Create Order">
     </form>
