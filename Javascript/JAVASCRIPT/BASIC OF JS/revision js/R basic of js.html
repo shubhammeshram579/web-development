@@ -242,7 +242,7 @@
 
 
         // one line code using arrow function
-        arr.forEach((i)=> console.log(i * 10));
+        arr.forEach((i) => console.log(i * 10));
 
 
 
@@ -378,8 +378,19 @@
 
         arrfnc();
 
+        function cb() {
+            let data = "shubham";
+            let data2 = 26;
 
-        
+            setTimeout(function () {
+                console.log(`my name is ${data} and i am ${data2} year old`)
+            }, 3000)
+        };
+
+        cb();
+
+
+
 
 
         // array in js 
@@ -560,13 +571,17 @@
 
 
         bookr.filter(function (i) {
-           let matcred =  i === "red";
-           console.log(matcred)
+            let matcred = i === "red";
+            console.log(matcred)
         });
-        
 
-        let storegreen = bookr.filter((i)=> i === "green");
+
+        let storegreen = bookr.filter((i) => i === "green");
         console.log(storegreen)
+
+
+        // let multiple = bookr.filter((i)=> i == [0,1]);
+        // console.log(multiple);
 
 
 
@@ -661,7 +676,7 @@
 
 
         // one line of code
-        let nage = objarr.map((i)=> `my name is ${i[0].name} i am ${i[0].age} year old`);
+        let nage = objarr.map((i) => `my name is ${i[0].name} i am ${i[0].age} year old`);
         console.log(nage);
 
 
@@ -756,25 +771,25 @@
 
 
         // marge str using concat function
-        let fullname = name1.concat(" " +name2);
+        let fullname = name1.concat(" " + name2);
         console.log(fullname);
 
 
         // another method is build same function
-        function margestr(a,b){
-            return a +" "+ b;
+        function margestr(a, b) {
+            return a + " " + b;
         };
 
-        let stors = margestr(name1,name2);
+        let stors = margestr(name1, name2);
         console.log(stors)
 
 
         // 3 way to marge str
-        function margesr(a,b){
+        function margesr(a, b) {
             console.log(a + b)
         };
 
-        margesr(name1,name2);
+        margesr(name1, name2);
 
 
         // string most usedfull function
@@ -788,10 +803,10 @@
         console.log(name1[1]);
 
         // maltiple indexing select and text substri to select range 
-        console.log(name1.slice(0,5));
+        console.log(name1.slice(0, 5));
         console.log(name1.substring(5));
-        console.log(name1.substr(0,3));
-        console.log(name1.substr(0,3));
+        console.log(name1.substr(0, 3));
+        console.log(name1.substr(0, 3));
 
 
 
@@ -812,25 +827,25 @@
         let name4 = " labham"
         let name5 = "aa chal"
 
-        
+
         console.log(name3.trimEnd())
         console.log(name4.trimStart())
-        console.log(name5.replace(" ",""));
+        console.log(name5.replace(" ", ""));
 
 
 
         // number str add zeros
         let nustr = "44";
 
-        console.log(nustr.padEnd(4,"0"));
-        console.log(nustr.padStart(4,"0"));
+        console.log(nustr.padEnd(4, "0"));
+        console.log(nustr.padStart(4, "0"));
 
 
         // string replace 
         let replacall = "shubham meshram sujit meshram";
 
-        console.log(replacall.replace("s","S"))
-        console.log(replacall.replaceAll("s","S"))
+        console.log(replacall.replace("s", "S"))
+        console.log(replacall.replaceAll("s", "S"))
 
 
         // text split
@@ -841,7 +856,7 @@
 
 
 
-         // JavaScript String Search
+        // JavaScript String Search
         console.log(strsplit.indexOf());
         console.log(strsplit.lastIndexOf());
         console.log(strsplit.search("m"));
@@ -883,7 +898,7 @@
         // object freege do not change object values
         // second example
         let obj2 = {
-            email:"shubhcode97@gmail.com",
+            email: "shubhcode97@gmail.com",
             name: "shubham",
             age: 26
         };
@@ -900,14 +915,14 @@
 
         // function add on object
 
-        obj2.greeting =   function(){
+        obj2.greeting = function () {
             console.log("hello everyon i am develop")
         };
 
 
         // function2
 
-        obj2.greetingtwo = function(){
+        obj2.greetingtwo = function () {
             console.log(`hello evryon i am ${this.name}`)
         };
 
@@ -933,8 +948,8 @@
 
         const obje4 = {
             username: "shubham123455",
-            fullname:{
-                userfullname:{
+            fullname: {
+                userfullname: {
                     firstname: "shubham",
                     lastname: "meshram"
                 }
@@ -948,28 +963,28 @@
         // marge obhect
 
         const aobj1 = {
-            1:"s",
-            2:26
+            1: "s",
+            2: 26
         };
 
         const bojt2 = {
-            3:"h",
-            4:23
+            3: "h",
+            4: 23
         };
 
         const cojt3 = {
-            5:"c",
-            6:23
+            5: "c",
+            6: 23
         };
 
 
         // The Object.assign() Method
-        let margeobj = Object.assign( {},aobj1 ,bojt2 ,cojt3);
+        let margeobj = Object.assign({}, aobj1, bojt2, cojt3);
         console.log(margeobj);
 
 
         // The Spread Operator ( ... )
-        const margobjdd = {...aobj1,...bojt2};
+        const margobjdd = { ...aobj1, ...bojt2 };
         console.log(margobjdd);
 
 
@@ -983,16 +998,66 @@
         console.log(Object.entries(margeobj));
 
 
+        // function margeobject(){
+        //     let obje1 = {
+        //         name:String,
+        //         age:Number,
+        //         hight: Number
+        //     }
+        //     let obje2 = {
+        //         name:String,
+        //         age:Number,
+        //         hight: Number
+        //     }
+        //     let margeojct = ({},obje1,obje2)
+        //     return margeojct
+        // };
+
+        // let margobjdddd = margeobject(cojt3,bojt2);
+        // console.log(margobjdddd());
 
 
-        
+        // execution context 
+
+        function greetings() {
+            console.log("Welcome to the JS world!");
+        }
+
+        greetings();
+
+        var number1 = 10;
+        var number2 = 5;
+
+        function add(number1, number2) {
+            return number1 + number2;
+        }
+
+        function addExtra(number1, number2) {
+            var extra = 15;
+            return number1 + number2 + extra;
+        }
+
+        var result1 = add(number1, number2);
+        var result2 = addExtra(number1, number2);
+
+        console.log(result1);
+        console.log(result2);
 
 
 
 
 
 
-        
+
+
+
+
+
+
+
+
+
+
 
 
 

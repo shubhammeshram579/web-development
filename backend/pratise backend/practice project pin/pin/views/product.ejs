@@ -94,14 +94,14 @@
             padding-top: 15px;
         }
     </style>
+  
     <div class="product">
         <div class="card">
             <h1>CHANGE THE COURSE COOK KIT</h1>
             <div class="part">
-                <a href="#"><span> - </span> <span> 1 </span> <span> + </span></a>
+                <%- include("shared.ejs") -%>
                 <a href="#">$96</a>
-                <a href="#">ADD TO CARD</a>
-
+                <a href="/add-to-card">ADD TO CARD</a>
             </div>
 
         </div>
@@ -124,4 +124,5 @@
         <h5>$95</h5>
         <h5>50% OF PROFITS REINVESTED INTO THE TWO GOOD FOUNDATIO</h5>
     </div>
+
     <% include ./partial/footer.ejs %>

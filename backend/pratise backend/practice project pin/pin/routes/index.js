@@ -23,6 +23,10 @@ router.get('/card', function(req, res, next) {
   res.render('card');
 });
 
+router.get('/add-to-card', function(req, res, next) {
+  res.render('addtocard');
+});
+
 router.get('/shop', function(req, res, next) {
   res.render('shop');
 });
@@ -177,5 +181,8 @@ function isLoggedIn(req, res, next){
   }
   res.redirect("/")
 };
+
+
+
 
 module.exports = router;

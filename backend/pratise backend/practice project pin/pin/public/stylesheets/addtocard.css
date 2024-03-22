@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+};
+
+
+html,body{
+    height: 100%;
+    width: 100%;
+};
+
+.header-nav{
+    color: #fff;
+   
+}
+.header-nav .nav-part1 #svg1{
+    color: #fff;
+    /* margin: 0px 10px; */
+}
+
+.header-nav .nav-part2 a{
+  z-index: 99;
+  color: #fff;
+}
+
+.header-nav .icon{
+    background-color:transparent;
+    border-radius: 10px;
+    margin-right: 30px;
+    padding: 10px;
+}
+
+.header-nav .icon .ri-shopping-cart-2-line{
+    display: none;
+}
+
+.header-nav .nav-part2 .ri-menu-line{
+    display: none;
+  }
+
+.header-nav .nav-part2 .icon #home{
+    display: none; 
+
+  }
+
+.main .card4:hover{
+    background-color: #fff;
+    color: #111;
+    
+}
+
+
+
