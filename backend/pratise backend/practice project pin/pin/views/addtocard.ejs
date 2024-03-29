@@ -1,22 +1,29 @@
 <% include ./partial/header.ejs %>
     <link rel="stylesheet" href="/stylesheets/addtocard.css">
-    <a style="text-decoration: none; color:#fff;left: 94%; padding-right: 100px; padding-top: 40px; font-size: 20px; position: fixed; z-index: 999;" href="/product"><i class="fa-solid fa-xmark"></i></a>
+    <a style="text-decoration: none; color:#fff;left: 94%; padding-right: 100px; padding-top: 40px; font-size: 20px; position: fixed; z-index: 999;"
+        href="/product"><i class="fa-solid fa-xmark"></i></a>
     <div class="main" style="background-color: #111; color: #fff; padding-top: 300px;">
-        <div class="card" style="display: flex; align-items: center; justify-content: space-between;padding-right: 650px;border-bottom: 1px solid gray; margin: 0px 20px;padding-bottom: 20px;">
+        <div class="card"
+            style="display: flex; align-items: center; justify-content: space-between;padding-right: 650px;border-bottom: 1px solid gray; margin: 0px 20px;padding-bottom: 20px;">
             <h1 style="font-size: 11px;padding-left: 20px; color: gray;">CARD</h1>
             <h1 style="font-size: 11px; color: gray;">QUENTITY</h1>
         </div>
-        <div  id="card2" style="display: flex; align-items: center; justify-content: space-between; padding: 50px 10px; border-bottom: 1px solid gray; margin: 0px 20px;" >
+        <div id="card2"
+            style="display: flex; align-items: center; justify-content: space-between; padding: 50px 10px; border-bottom: 1px solid gray; margin: 0px 20px;">
             <h1 style="font-size: 20px; font-weight: 500;">CHNAGE THE COUSER COOK KIT</h1>
             <div class="addcard" style="display: flex; gap: 25px; padding-left: 280px;">
-                <%- include("shared.ejs") -%>
+                <!-- <%- include("shared.ejs") -%> -->
+                <a class="minus" href="#" style="text-decoration: none; color: #fff;">-</a>
+                <a class="num" href="#" style="text-decoration: none; color: #fff;">1</a>
+                <a class="plus" href="#" style="text-decoration: none; color: #fff;">+</a>
             </div>
             <div class="amt" style="display: flex; align-items: center; gap: 50px;">
                 <h1 style="font-size: 20px; font-weight: 100;">$95</h1>
                 <a style="text-decoration: none; color: #fff;" href="/card"><i class="fa-solid fa-xmark"></i></a>
             </div>
         </div>
-        <div class="card3" style="display: flex; justify-content: space-between; align-items: start; padding: 20px 20px;">
+        <div class="card3"
+            style="display: flex; justify-content: space-between; align-items: start; padding: 20px 20px;">
             <h1 style="font-size: 15px; color: gray;">ADD A PERSONALISED CARD FOR THAT SOMEONE SPECIAL FOR JUST $5.</h1>
             <div class="delevery" style="padding-left: 260px;">
                 <h1 style="color: gray; font-size: 15px;padding-bottom: 10px;">DELIVERY</h1>
@@ -24,11 +31,12 @@
             </div>
             <div class="amt2" style="display: flex; justify-content: end;flex-direction: column; align-items: end;">
                 <h1 style="font-size: 15px; font-weight: 500;">SHIPPING CALCULATION AT CHECK-OUT.</h1>
-                <h1 style="font-size: 15px; font-weight: 500;padding-top: 10px;">$95</h1>
+                <h1  style="font-size: 15px; font-weight: 500;padding-top: 10px;">$<span class="price">95</span></h1>
             </div>
 
         </div>
-        <div class="card4" style="float: right; margin-right: 20px; border: 1px solid #fff; padding: 20px 300px;border-radius: 30px; margin-top: 50px;">
+        <div class="card4"
+            style="float: right; margin-right: 20px; border: 1px solid #fff; padding: 20px 300px;border-radius: 30px; margin-top: 50px;">
             <h1 style="font-size: 20px; font-weight: 500;">CHECKOUT</h1>
         </div>
         <div class="card5" style="margin-top: 200px; font-size: 3vw;width: 70%;padding-left:20px ;">
@@ -38,4 +46,42 @@
                 WAY HOME AGAIN.</h2>
         </div>
     </div>
+
+    <script>
+
+        let plusbtn = document.querySelector(".main .plus");
+        let numbtn = document.querySelector(".main .num");
+        let minusbtn = document.querySelector(".main .minus");
+        let pricebtn = document.querySelector(".main .price");
+
+
+
+
+
+        let a = 1;
+        let p = 1;
+        plusbtn.addEventListener("click", () => {
+            a++;
+            p++;
+            numbtn.innerHTML = a;
+            pricebtn.innerHTML = p * 95;
+            if (a < 0) {
+                numbtn.innerHTML = 0;
+                pricebtn.innerHTML = 0;
+            }
+        });
+
+        minusbtn.addEventListener("click", () => {
+            a--;
+            p--;
+            numbtn.innerHTML = a;
+            pricebtn.innerHTML = p * 95;
+            if (a < 0) {
+                numbtn.innerHTML = 0;
+                pricebtn.innerHTML = 0;
+            };
+        });
+
+
+    </script>
     <% include ./partial/footer.ejs %>

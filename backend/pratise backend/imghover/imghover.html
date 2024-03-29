@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        };
+
+        .main{
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: rgb(68, 65, 65);
+        }
+
+
+        .main{
+            height: 500px;
+            width: 400px;
+            background-color:azure;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* .main .card1{
+    
+
+        } ; */
+
+
+        .main .card1 .storyimg{
+            height: 500px;
+            width: 400px;
+            background-color: antiquewhite;
+            background-image: url(https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+           
+
+        }
+
+
+        .main .card1 .storycardtext{
+            color:#111;
+            padding-top: 300px;
+            padding-left: 40px;
+            padding-right: 30px;
+            font-size: 12px;
+            font-weight: 500;
+            background-color: blanchedalmond;
+            padding-bottom: 100px;
+            /* transition: all ease 1s; */
+            opacity: 0;
+            
+           
+            
+        };
+
+        /* .main .card1 .storycardtext h1{
+            font-size: 1vw;
+        };  */
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="card1">
+            <div class="storyimg">
+                <div class="storycardtext">
+                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus ex odio,
+                        provident
+                        obcaecati nobis nisi. Assumenda dicta doloribus natus.</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="card1">
+            <div class="storyimg">
+                <div class="storycardtext">
+                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus ex odio,
+                        provident
+                        obcaecati nobis nisi. Assumenda dicta doloribus natus.</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="card1">
+            <div class="storyimg">
+                <div class="storycardtext">
+                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus ex odio,
+                        provident
+                        obcaecati nobis nisi. Assumenda dicta doloribus natus.</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="card1">
+            <div class="storyimg">
+                <div class="storycardtext">
+                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores necessitatibus ex odio,
+                        provident
+                        obcaecati nobis nisi. Assumenda dicta doloribus natus.</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let storyimg = document.querySelectorAll(".main .card1 .storyimg");
+        let storytext = document.querySelectorAll(".main .card1 .storycardtext");
+
+
+        storyimg.forEach(function(val){
+            val.addEventListener("mouseenter",function(){
+                val.style.scale = 1.05;
+                val.childNodes[1].style.opacity = 1 ;
+                val.childNodes[1].style.transition = "all ease 1s";
+            });
+
+            val.addEventListener("mouseleave",function(){
+                val.style.scale = 1;
+                val.childNodes[1].style.opacity = 0;
+        });
+        });
+
+        // storyimg.forEach(function(val){
+        //     val.addEventListener("mouseleave",function(){
+        //         val.style.scale = 1;
+        //         val.childNodes[1].style.opacity = 0;
+        //     })
+        // });
+
+
+        // storyimg.addEventListener("mouseenter",function(){
+        //     storytext.style.opacity = 1;
+        //     storyimg.style.scale = 1.05;
+        //     storytext.style.transition = "all ease 0.8s"
+        
+        // })
+
+        // storyimg.addEventListener("mouseleave",function(){
+        //     storytext.style.opacity = 0;
+        //     storyimg.style.scale = 1;
+        //     storytext.style.scale = 1;
+        // })
+
+    </script>
+</body>
+
+</html>

@@ -362,6 +362,9 @@ function locoscrollani(){
     
  })
  };
+
+
+
  
  hovertopageanimation();
  

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html tags 28-03-24</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body{
+            height: 100%;
+            width: 100%;
+        }
+
+        .heading{
+            text-align: center;
+            font-size: 20px;
+            text-transform: capitalize;
+            text-shadow: 1px 1px red;
+        }
+
+
+        .productimg img{
+            height: 200px;
+            /* width: 330px; */
+            object-fit: cover;
+            object-position: center;
+            float: left;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .productsammary{
+            margin: 25px;
+            text-align: justify;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 20px;
+            letter-spacing: 1px;
+            word-spacing: 2px;
+        }
+
+
+        .likes{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .likes a{
+            text-decoration: none;
+            font-size: 25px;
+            text-transform: capitalize;
+            color: #111;
+            font-weight: 800;
+            border-bottom: 2px solid #111;
+            margin-bottom: 20px;
+        }
+
+
+        .produectlist{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding-top: 20px;
+
+        }
+
+        .produectlist ul li{
+            list-style-type:square;
+        }
+
+        .produectlist ol li{
+            list-style-type:square;
+
+        }
+
+
+        .table th,td{
+            border: 2px solid green;
+            border-collapse:collapse;
+            padding: 20px;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        .productvdo video{
+            height: 330px;
+
+        }
+
+
+
+
+        
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1>heading</h1>
+    </div>
+    <div class="productimg">
+        <img src="https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGV8ZW58MHx8MHx8fDA%3D" alt="">
+    </div>
+    <div class="productsammary">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <i>Nisi praesentium odio officiis obcaecati,</i> exercitationem, doloribus aliquam ipsam natus ad nemo dolore amet <strong>deleniti dicta quidem</strong> at magnam ab error ratione, vitae hic? Ipsam, architecto numquam ut enim veniam <b>deleniti temporibus</b> nesciunt, itaque libero quae voluptate maiores voluptatum fugiat rem ea adipisci 120 <sub>20</sub>officiis veritatis iste consectetur explicabo error omnis, dolorum velit obcaecati? Ullam accusantium 130 <sup>10</sup> laboriosam vitae aliquid molestiae optio ad maiores, sapiente velit porro labore alias facere libero, repellat incidunt cumque exercitationem! Optio accusamus <span><b>shubham</b></span> modi eum facere repellendus assumenda maiores quos ad quo odio possimus temporibus, praesentium sed ipsam at repudiandae.</p>
+    </div>
+    <div class="likes">
+        <a href="#" target="_blank">more details</a>
+        <a href="#">more details</a>
+        <a href="#">more details</a>
+    </div>
+    <h4>unorder and order list</h4>
+    <div class="produectlist">
+        
+        <ul>
+            <li>product1</li>
+            <li>product2</li>
+            <li>product3</li>
+            <li>product4</li>
+        </ul>
+
+        <ol type="I">
+            <li>list1</li>
+            <li>list2</li>
+            <li>list3</li>
+            <li>list4</li>
+        </ol>
+    </div>
+    <div class="productvdo">
+        <video controls loop muted src="video/video2.mp4"></video>
+        <video controls loop muted src="video/video2.mp4"></video>
+        <video controls loop muted src="video/video2.mp4"></video>
+    </div>
+
+    <div class="table">
+        <table>
+            <tr>
+                <th>name</th>
+                <th>price</th>
+                <th>discount</th>
+            </tr>
+            
+            <body>
+                <tr>
+                    <td>apple</td>
+                    <td>20</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>orange</td>
+                    <td>40</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>banana</td>
+                    <td>30</td>
+                    <td>3</td>
+                </tr>
+            </body>
+        </table>
+
+    </div>
+    <iframe src="#" frameborder="0"></iframe>
+</body>
+</html>

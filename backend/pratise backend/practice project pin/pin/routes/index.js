@@ -41,6 +41,14 @@ router.get('/product', function(req, res, next) {
   res.render('product');
 });
 
+router.get('/stories', function(req, res, next) {
+  res.render('stories');
+});
+
+router.get('/about', function(req, res, next) {
+  res.render('about');
+});
+
 
 
 
