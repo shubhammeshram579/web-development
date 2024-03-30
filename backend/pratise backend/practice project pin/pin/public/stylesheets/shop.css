@@ -8,7 +8,7 @@ body{
     width: 100%;
 }
 
-
+/* mouse cercuil */
 .curcer{
   height: 150px;
   width: 150px;
@@ -19,7 +19,7 @@ body{
   
 }
 
-
+/* lending page */
 .page1{
     min-height: 100vh;
     width: 100%;
@@ -57,12 +57,14 @@ body{
     padding-left: 50%;
 }
 
+/* shop products pages */
 .page2{
     min-height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content:space-around;
+    opacity: 0;
     
 }
 
@@ -99,6 +101,7 @@ body{
     flex-wrap: nowrap;
     justify-content:space-evenly;
     border-bottom: none;
+    opacity: 0;
     
 }
 
@@ -143,6 +146,7 @@ body{
     flex-wrap: nowrap;
     justify-content:space-evenly;
     border-top: none;
+    opacity: 0;
     
 }
 
@@ -178,7 +182,7 @@ body{
 
 
 
-
+/* footer pages */
 
 .page5.endpage h1{
     font-size: 5vh;
@@ -271,5 +275,163 @@ body{
   .page6-part2 .GRAYSCALE{ 
     color: #8d8888;
     font-size: 15px;
+  }
+
+@media (max-width:600px) {
+    
+  .page1{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    padding-top: 100px;
+  }
+
+  .page1 .card1{
+    height: 100%;
+    width: 100%;
+
+  }
+  .page1 .card2{
+    height: 100%;
+    width: 100%;
+
+  }
+
+
+
+  .page1 .card1 h1{
+    font-size: 14vw;
+    letter-spacing: 2px;
+    line-height: 10vh;
+    font-weight: 900;
+  }
+
+  .page1 .card2 p{
+    text-align: start;
+    font-size: 5vw;
+    padding-left: 1%;
+  }
+
+
+  /* product page2*/
+    .page2{
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content:space-around;
+      opacity: 1;
+      
+  }
+
+
+  .page2 .card1{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      padding-bottom: 100px;
+
+  }
+  .page2 .card2{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+  }
+
+  .page2 img{
+      height: 200px;
+      width: 100%;
+
+  }
+
+
+/* page3   */
+  .page3{
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    
+  }
+
+
+  .page3 img{
+    height: 300px;
+    width: 100%;
+
+  }
+
+
+  
+  .page4{
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    
+  }
+
+  .page4 .card3{
+    padding-bottom: 60px;
+
+  }
+
+
+  .page4 img{
+    height: 250px;
+    width: 100%;
+  }
+
+
+  /* page6 */
+  .page6{
+    min-height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+    padding: 0px 50px;
+    padding-top: 30vh;
+    padding-bottom: 5vh;
+    position: relative;
+    z-index: 99;
+  }
+  
+  .page6 .card1 li{
+    list-style-type: none;
+    padding: 2px;
+    font-size: 20px;
+    font-weight: 100;
+    margin-left: 0px;
+  }
+  
+  .page6 .card1 li:hover{
+    color: #6c6868;
+  }
+  
+  .page6 h3{
+    text-align: center;
+  }
+  
+  .page6 svg{
+    height: 10vh;
+    width: 100%;
+    opacity: 0;
+  }
+
+  
+  .page6-part2 h4{
+    font-size: 4vw;
+  }
+
+
+
+
+
+    
   }
   

@@ -44,7 +44,7 @@ h4{
 .navbar .part2 a{
     color: #111;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 
@@ -151,39 +151,6 @@ h4{
     background-color:#2d2c2c36;
 }
 
-
-/* .hidden{
-    height: 120%;
-    width: 100%;
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    background-color:#111111a8;
-    position: absolute;
-    padding-top: 200px;
-    opacity: 0;
-}
-
-.hidden .page{
-    height: 400px;
-    width: 450px;
-    background-color: #fff;
-    color: #111;
-    padding: 20px 40px;
-    border-radius: 20px;
-    
-}
-
-.hidden .page input{
-    height: 50px;
-    width: 100%;
-    margin: 15px;
-}
-
-.hidden .page p{
-    margin-top: 10px;
-    font-size: 20px;
-} */
 
 
 

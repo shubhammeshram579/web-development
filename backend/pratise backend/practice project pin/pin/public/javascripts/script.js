@@ -1,3 +1,5 @@
+// smooth scroling using LocomotiveScroll
+
 function locoscrollani(){
     gsap.registerPlugin(ScrollTrigger);
  const locoScroll = new LocomotiveScroll({
@@ -35,7 +37,7 @@ function locoscrollani(){
   
  
  
- 
+//  navbar scroll page then hide navbar feature
  function navscrollanimation(){
     gsap.to(".nav-part1 svg", {
        transform: "translateY(-100%)",
@@ -64,6 +66,8 @@ function locoscrollani(){
  navscrollanimation();
  
  
+
+//  animation effect using gsap for landing page and video
  function loadingani(){
     gsap.from(".page1 h1",{
        y:100,
@@ -90,7 +94,7 @@ function locoscrollani(){
  
  
  
- 
+//  mouse cirsul eefect mouse ennter video then play button show 
  function videoconanimation(){
     var videocon = document.querySelector(".video-contener");
  var playbtn = document.querySelector(".play");
@@ -121,11 +125,11 @@ function locoscrollani(){
  
  videoconanimation();
  
- 
+//  product page Animation effect scroll page then product product details showing effect
  function imgscrollinganimation(){
-    gsap.from(".page3 .child", {
+    gsap.to(".page3 .child", {
        transition: "all ease-in 0.5s",
-       opacity: 0,
+       opacity: 1,
        // duration:1,
        // delay:1,
        scrollTrigger: {
@@ -138,15 +142,15 @@ function locoscrollani(){
        },
      });
  
-    gsap.from(".page3 .child2", {
-       transition: "all ease-in 1s",
-       opacity: 0,
+    gsap.to(".page3 .child2", {
+       transition: "all ease-in 0.5s",
+       opacity: 1,
        // duration:1,
        // delay:1,
        scrollTrigger: {
          trigger: ".page3 .child2",
          scroller: ".main",
-         start: "top 20%",
+         start: "top 25%",
          end: "top 50%",
          scrub:1,
        //   markers:true
@@ -172,6 +176,7 @@ function locoscrollani(){
     imgscrollinganimation();
     
  
+   //  then enter product then mouse cirsul cercul change effect
  function circulanimation(){
  document.addEventListener("mousemove", function(dets){
     gsap.to(".curcer",{
@@ -207,66 +212,8 @@ function locoscrollani(){
  
  
  
-//  function menubaranimation(){
-//  var menubar = document.querySelector(".menu");
-//  var menubtn = document.querySelector("#menu .ri-menu-line");
-//  var logoimg = document.querySelector(".nav-part1 #svg1");
-//  var logoimg2 = document.querySelector(".nav-part1 .svg2");
  
- 
-//  var a = 0
-//  menubtn.addEventListener("click",function(){
-//     if(a === 0){
-//     menubar.style.opacity = 1;
-//     menubar.style.zIndex = "998"
-//     menubtn.style.fontSize = "25px"
-//     logoimg.style.color = "#fff"
-//     logoimg2.style.color = "#fff"
-//     a = 1
-//  }else{
-//     menubar.style.opacity = 0;
-//     menubar.style.zIndex = "-40"
-//     menubtn.style.fontSize = "20px"
-//     logoimg.style.color = "#111"
-//     logoimg2.style.color = "#111"
-//     a = 0
-//  }
-//  });
- 
- 
- 
- 
- 
- 
-//  var cardbtn = document.querySelector(".ri-shopping-cart-2-line");
-//  var cardbar = document.querySelector(".card-details");
- 
- 
- 
-//  var a = 0
-//  cardbtn.addEventListener("click",function(){
-//     if(a === 0){
-//        cardbar.style.opacity = 1;
-//        cardbar.style.zIndex = "998"
-//        cardbtn.style.fontSize = "25px"
-//        logoimg.style.color = "#fff"
-//        logoimg2.style.color = "#fff"
- 
-//     a = 1
-//  }else{
-//     cardbar.style.opacity = 0;
-//     cardbar.style.zIndex = "-41"
-//     cardbtn.style.fontSize = "20px"
-//     logoimg.style.color = "#111"
-//     logoimg2.style.color = "#111"
-//     a = 0
-//  }
-//  });
-//  };
- 
-//  menubaranimation();
- 
- 
+//  second page hover product tage hover then show full details
  
  function hovertopageanimation(){
  var boxcaon = document.querySelectorAll(".contener1 .dets");

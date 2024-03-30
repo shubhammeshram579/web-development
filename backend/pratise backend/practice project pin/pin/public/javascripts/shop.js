@@ -1,3 +1,4 @@
+// smothscroling
 function locoscrollani(){
     gsap.registerPlugin(ScrollTrigger);
  const locoScroll = new LocomotiveScroll({
@@ -32,7 +33,7 @@ function locoscrollani(){
  locoscrollani();
 
 
-
+// navbar animation effect
  function navscrollanimation(){
     gsap.to(".nav-part1 svg", {
        transform: "translateY(-100%)",
@@ -61,7 +62,7 @@ function locoscrollani(){
  navscrollanimation();
  
 
-
+// shop lending page effect
  function loadingani(){
     gsap.from(".page1 .card1 h1,.page1 .card2 p",{
        y:100,
@@ -77,10 +78,10 @@ function locoscrollani(){
  loadingani();
  
 
-
- gsap.from(".page2", {
-    transition: "all ease-in 0.5s",
-    opacity: 0,
+// product pages aniamtion effect
+ gsap.to(".page2", {
+    transition: "all ease-in 0.3s",
+    opacity: 1,
     scrollTrigger: {
       trigger: ".page2",
       scroller: ".main",
@@ -91,9 +92,9 @@ function locoscrollani(){
     },
   });
 
- gsap.from(".page3", {
-    transition: "all ease-in 0.5s",
-    opacity: 0,
+ gsap.to(".page3", {
+    transition: "all ease-in 0.3s",
+    opacity: 1,
     scrollTrigger: {
       trigger: ".page3",
       scroller: ".main",
@@ -104,9 +105,9 @@ function locoscrollani(){
     },
   });
 
- gsap.from(".page4", {
-    transition: "all ease-in 0.5s",
-    opacity: 0,
+ gsap.to(".page4", {
+    transition: "all ease-in 0.3s",
+    opacity: 1,
     scrollTrigger: {
       trigger: ".page4",
       scroller: ".main",
@@ -133,6 +134,7 @@ function locoscrollani(){
 
 
 
+// mouse cercul move effect
   document.addEventListener("mousemove", function(dets){
     gsap.to(".curcer",{
        left: dets.x,
