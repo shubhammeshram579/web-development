@@ -13,9 +13,11 @@
             <h1 style="font-size: 20px; font-weight: 500;">CHNAGE THE COUSER COOK KIT</h1>
             <div class="addcard" style="display: flex; gap: 25px; padding-left: 280px;">
                 <!-- <%- include("shared.ejs") -%> -->
+                <form action="/add-to-card" method="post">
                 <a class="minus" href="#" style="text-decoration: none; color: #fff;">-</a>
                 <a class="num" href="#" style="text-decoration: none; color: #fff;">1</a>
                 <a class="plus" href="#" style="text-decoration: none; color: #fff;">+</a>
+            </form>
             </div>
             <div class="amt" style="display: flex; align-items: center; gap: 50px;">
                 <h1 style="font-size: 20px; font-weight: 100;">$95</h1>
@@ -31,14 +33,16 @@
             </div>
             <div class="amt2" style="display: flex; justify-content: end;flex-direction: column; align-items: end;">
                 <h1 style="font-size: 15px; font-weight: 500;">SHIPPING CALCULATION AT CHECK-OUT.</h1>
-                <h1  style="font-size: 15px; font-weight: 500;padding-top: 10px;">$<span class="price">95</span></h1>
+                <h1  name="price" style="font-size: 15px; font-weight: 500;padding-top: 10px;">$<span class="price">95</span></h1>
             </div>
 
         </div>
         <div class="card4"
             style="float: right; margin-right: 20px; border: 1px solid #fff; padding: 20px 300px;border-radius: 30px; margin-top: 50px;">
-            <h1 style="font-size: 20px; font-weight: 500;">CHECKOUT</h1>
+            <!-- <h1 style="font-size: 20px; font-weight: 500;">CHECKOUT</h1> -->
+            <input type="submit" value="addtocard">
         </div>
+    </form>
         <div class="card5" style="margin-top: 200px; font-size: 3vw;width: 70%;padding-left:20px ;">
             <h2 style="font-family: 900; color: #f2eaea;">THANK YOU FOR WALKING
                 ALONGSIDE VULNERABLE

@@ -41,8 +41,8 @@
                     <h3><span class="s1">One-Time </span><span class="s2">Weekly </span><span class="s3">Monthly</span></h3>
                 </div>
                 <div class="card2">
-                    <a href="#">&#x20B9;264</a>
-                    <a href="#">&#x20B9;528</a>
+                    <a class="amt" href="#">&#x20B9;264</a>
+                    <a class="amt2" href="#">&#x20B9;528</a>
                     <a href="#">&#x20B9;1319</a>
                     <a href="#">&#x20B9;2639</a>
                 </div>
@@ -50,12 +50,30 @@
                     <a href="#">&#x20B9;5278</a>
                     <a href="#">&#x20B9;10,555</a>
                 </div>
+                <form action="/donate" method="post">
                 <div class="card3">
-                    <textarea name="&#x20B9;" id="" cols="1" rows="1"> &#x20B9;</textarea>
+                    <textarea name="donate" id="donate" cols="1" rows="1"> &#x20B9;</textarea>
                 </div>
+                <input type="submit" value="Next">
+            </form>
                 <h2>DONATION TOW GOOD FOUNDATION ARE TAX DEDUCTEBLE</h2>
             </div>
         </div>
     </div>
+
+    <script>
+       let amt =  document.querySelector(".amt");
+       let amt2 =  document.querySelector(".amt2");
+       let donate =  document.querySelector("#donate");
+
+       amt.addEventListener("click",()=>{
+        donate.innerHTML = " &#x20B9;264"
+       });
+
+       amt2.addEventListener("click",()=>{
+        donate.innerHTML = " &#x20B9;528"
+       });
+
+    </script>
     <% include ./partial/footer.ejs %>
     

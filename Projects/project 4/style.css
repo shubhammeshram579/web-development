@@ -603,6 +603,7 @@ body{
     margin-bottom: 5vh;
     opacity: 1;
     padding: 5vw;
+    opacity: 0;
 }
 
 .child2{
@@ -611,6 +612,7 @@ body{
     margin-bottom: 5vh;
     opacity: 1;
     padding: 5vw;
+    opacity: 0;
 }
 
 .page3 img{
@@ -1283,6 +1285,7 @@ body{
         align-items: center;
         justify-content: center;
         /* margin-left: -30vw; */
+        opacity: 1;
     }
 
     .child2{
@@ -1293,6 +1296,7 @@ body{
         align-items: center;
         justify-content: center;
         /* margin-left: -30vw; */
+        opacity: 1;
     }
 
     .page3 img{
@@ -1371,6 +1375,7 @@ body{
     .page6 svg{
         margin-top: -300px;
         height: 70px;
+        opacity: 1;
     }
 
     .page6 .card1{

@@ -42,6 +42,16 @@ const userSchma = mongoose.Schema({
     {
     type: mongoose.Schema.Types.ObjectId,
     ref: "order"
+  }],
+  donate:[
+    {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "donate"
+  }],
+  addcard:[
+    {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "addcord"
   }]
 
 

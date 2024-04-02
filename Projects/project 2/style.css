@@ -51,7 +51,7 @@ body::-webkit-scrollbar-thumb{
 
 /* navbar style */
 #nav{
-    height: 10vw;
+    height: 15vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -609,7 +609,7 @@ video{
   /* responsive website for mobile user styling using media query */
   @media (max-width:600px) {
     #nav{
-      height: 14vw;
+      height: 14vh;
       width: 100%;
       /* background-color: red; */
       display: flex;

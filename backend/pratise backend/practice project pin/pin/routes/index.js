@@ -3,6 +3,8 @@ var router = express.Router();
 const userModel = require("./users");
 const bespokeModel = require("./BespokeEvent");
 const groupOrderModel = require("./groupOrder");
+const donateModel = require("./donate");
+const addcardModel = require("./addcord");
 const passport = require('passport');
 const localStrategy = require("passport-local");
 
@@ -23,9 +25,34 @@ router.get('/card', function(req, res, next) {
   res.render('card');
 });
 
-router.get('/add-to-card', function(req, res, next) {
+// router.get('/add-to-card', function(req, res, next) {
+//   res.render('addtocard');
+// });
+
+
+router.get('/add-to-card' ,isLoggedIn,  async function(req, res, next) {
+  const user = await userModel
+  .findOne({username:req.session.passport.user})
+  .populate("addcard")
   res.render('addtocard');
 });
+
+
+router.post('/add-to-card', isLoggedIn, async function(req, res, next) {
+  const user = await userModel.findOne({username:req.session.passport.user});
+  const addcard = await addcardModel.create({
+    user: user._id,
+    addcards: req.body.addcards,
+    price:req.body.price,
+  });
+
+  user.addcard.push(addcard._id);
+  await user.save();
+  res.redirect("/add-to-card");
+});
+
+
+
 
 router.get('/shop', function(req, res, next) {
   res.render('shop');
@@ -52,8 +79,28 @@ router.get('/about', function(req, res, next) {
 
 
 
-router.get('/donate', function(req, res, next) {
+// router.get('/donate', function(req, res, next) {
+//   res.render('donate');
+// });
+
+router.get('/donate' ,isLoggedIn,  async function(req, res, next) {
+  const user = await userModel
+  .findOne({username:req.session.passport.user})
+  .populate("donate")
   res.render('donate');
+});
+
+
+router.post('/donate', isLoggedIn, async function(req, res, next) {
+  const user = await userModel.findOne({username:req.session.passport.user});
+  const donatem = await donateModel.create({
+    user: user._id,
+    donate: req.body.donate,
+  });
+
+  user.donate.push(donatem._id);
+  await user.save();
+  res.redirect("/donate");
 });
 
 
@@ -181,14 +228,22 @@ router.get("/logout",function(req, res, next){
 
 
 
-
+var altw = "please login in "
 // set function for passport protected purpuse
+// function isLoggedIn(req, res, next){
+//   if (req.isAuthenticated()){
+//     return next();
+//   }
+//   res.redirect("/");
+// };
+
 function isLoggedIn(req, res, next){
   if (req.isAuthenticated()){
     return next();
   }
-  res.redirect("/")
-};
+  req.flash("error", "Please login first.");
+  res.redirect("/");
+}
 
 
 

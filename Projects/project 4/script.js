@@ -123,9 +123,9 @@ videoconanimation();
 
 
 function imgscrollinganimation(){
-   gsap.from(".page3 .child", {
-      transition: "all ease-in 0.5s",
-      opacity: 0,
+   gsap.to(".page3 .child", {
+      transition: "all ease-in 0.3s",
+      opacity: 1,
       // duration:1,
       // delay:1,
       scrollTrigger: {
@@ -138,9 +138,9 @@ function imgscrollinganimation(){
       },
     });
 
-   gsap.from(".page3 .child2", {
-      transition: "all ease-in 1s",
-      opacity: 0,
+   gsap.to(".page3 .child2", {
+      transition: "all ease-in 0.3s",
+      opacity: 1,
       // duration:1,
       // delay:1,
       scrollTrigger: {
