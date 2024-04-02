@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        // closser function in js
+        //In JavaScript, a closure is a combination of a function and the lexical environment within which that function was declared.
+        // Here's what that means in simpler terms:
+        // Imagine you have a function inside another function.
+        //The inner function has access to the variables and parameters of the outer function, 
+        // even after the outer function has finished executing. This is possible because the 
+        // inner function maintains a reference to the environment in which it was created. 
+        // This combination of the function and the references to its surrounding state 
+        // (the variables, parameters, etc.) is what we call a closure.
+
+
+        function outerFunction() {
+        let outerVariable = 'I am from outer function';
+    
+        function innerFunction() {
+        console.log(outerVariable); // innerFunction has access to outerVariable
+        }
+
+        return innerFunction; // Return the inner function
+        }   
+
+        let closureFunction = outerFunction(); // outerFunction has finished executing, but closureFunction still remembers outerVariable
+
+        closureFunction(); // This will log 'I am from outer function'
+        // example 1
+
+
+
+        var sum = function(a){
+            console.log("my salary " + " $" + a);
+            var c = 10;
+            return function(b){
+                return a + b + c;
+            }
+        };
+
+        var store = sum(200);
+        console.log(store(10));
+
+
+        // example 2
+
+        var sum2 = function(a , b ,c ){
+            return {
+                getdata1: function(){
+                    return a + b
+                },
+                getdata2: function(){
+                    return a + b + c
+                }
+            }
+        };
+
+
+        var store2 = sum2(100,200,100);
+        console.log(store2.getdata1())
+        console.log(store2.getdata2())
+
+
+
+
+    </script>
+</body>
+</html>
