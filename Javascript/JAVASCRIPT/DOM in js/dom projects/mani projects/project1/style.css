@@ -32,6 +32,12 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
+    animation-name: circulmover;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+    animation-direction:alternate;
 }
 
 .card2{
@@ -39,9 +45,11 @@ h1{
     width: 300px;
     border-top: 10px solid  red;
     border-bottom: 10px solid blue;
-    border-left: 10px solid green;
+    border-left: 10px solid white;
     border-right:10px solid rgb(173, 173, 85);
     border-radius: 50%;
+    /* transition: ease 2s; */
+   
  
     
 }
@@ -50,6 +58,8 @@ h1{
 .card3{
     margin-top: 40%;
     margin-left: 10px;
+    
+   
 
 }
 
@@ -76,6 +86,29 @@ h1{
 .card3 h3{
     border-bottom: 10px solid ;
     width: 50%;
+}
+
+@keyframes circulmover {
+    0%{
+        lef:0
+    }
+
+    25%{
+        left: 100%;
+        color: red;
+        /* rotate: 360deg; */
+    }
+    50%{
+        left: 100%;
+        color: green;
+        /* rotate: 360deg; */
+    }
+    75%{
+        left: 100%;
+        color: red;
+        /* rotate: 360deg; */
+    }
+    
 }
 
 

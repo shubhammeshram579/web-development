@@ -10,7 +10,7 @@
 
 
     <script>
-        // closser function in js
+        //1. closser function in javascript
         //In JavaScript, a closure is a combination of a function and the lexical environment within which that function was declared.
         // Here's what that means in simpler terms:
         // Imagine you have a function inside another function.
@@ -67,6 +67,49 @@
         var store2 = sum2(100,200,100);
         console.log(store2.getdata1())
         console.log(store2.getdata2())
+
+
+
+        //2. curring function 
+
+        // normal function
+
+        function abcd(a,b,c){
+            return a + b + c;
+            
+        }
+        console.log(abcd(10,20,30));
+
+        // closor function
+
+        function abcdc(a){
+            return function(b){
+                return function(c){
+                    return a + b + c;
+                }
+            }
+        }
+
+
+        let asum = abcdc(10)
+        let bsum = asum(20);
+        let csum = bsum(30);
+        console.log(csum);
+
+
+        // curring function
+
+        function abcdd(a){
+            return function(b){
+                return function(c){
+                    return a + b + c;
+                }
+            }
+        }
+
+        let sume = abcd((20),(20),(30));
+        console.log(sume);
+
 
 
 

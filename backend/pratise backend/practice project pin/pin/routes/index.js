@@ -25,31 +25,31 @@ router.get('/card', function(req, res, next) {
   res.render('card');
 });
 
-// router.get('/add-to-card', function(req, res, next) {
-//   res.render('addtocard');
-// });
-
-
-router.get('/add-to-card' ,isLoggedIn,  async function(req, res, next) {
-  const user = await userModel
-  .findOne({username:req.session.passport.user})
-  .populate("addcard")
+router.get('/add-to-card', function(req, res, next) {
   res.render('addtocard');
 });
 
 
-router.post('/add-to-card', isLoggedIn, async function(req, res, next) {
-  const user = await userModel.findOne({username:req.session.passport.user});
-  const addcard = await addcardModel.create({
-    user: user._id,
-    addcards: req.body.addcards,
-    price:req.body.price,
-  });
+// router.get('/add-to-card' ,isLoggedIn,  async function(req, res, next) {
+//   const user = await userModel
+//   .findOne({username:req.session.passport.user})
+//   .populate("addcard")
+//   res.render('addtocard');
+// });
 
-  user.addcard.push(addcard._id);
-  await user.save();
-  res.redirect("/add-to-card");
-});
+
+// router.post('/add-to-card', isLoggedIn, async function(req, res, next) {
+//   const user = await userModel.findOne({username:req.session.passport.user});
+//   const addcard = await addcardModel.create({
+//     user: user._id,
+//     addcards: req.body.addcards,
+//     price:req.body.price,
+//   });
+
+//   user.addcard.push(addcard._id);
+//   await user.save();
+//   res.redirect("/add-to-card");
+// });
 
 
 
@@ -77,13 +77,18 @@ router.get('/about', function(req, res, next) {
 });
 
 
+router.get('/contact', function(req, res, next) {
+  res.render('contact');
+});
 
 
-// router.get('/donate', function(req, res, next) {
-//   res.render('donate');
-// });
 
-router.get('/donate' ,isLoggedIn,  async function(req, res, next) {
+
+router.get('/donate', function(req, res, next) {
+  res.render('donate');
+});
+
+router.get('/donate2' ,isLoggedIn,  async function(req, res, next) {
   const user = await userModel
   .findOne({username:req.session.passport.user})
   .populate("donate")
@@ -91,7 +96,7 @@ router.get('/donate' ,isLoggedIn,  async function(req, res, next) {
 });
 
 
-router.post('/donate', isLoggedIn, async function(req, res, next) {
+router.post('/donate2', isLoggedIn, async function(req, res, next) {
   const user = await userModel.findOne({username:req.session.passport.user});
   const donatem = await donateModel.create({
     user: user._id,

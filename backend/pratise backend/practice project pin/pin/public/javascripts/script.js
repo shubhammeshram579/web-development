@@ -138,7 +138,7 @@ function locoscrollani(){
          start: "top 20%",
          end: "top 50%",
          scrub:1,
-       //   markers:true
+         // markers:true
        },
      });
  

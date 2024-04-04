@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+
+        nav {
+            height: 100px;
+            position: fixed;
+            width: 100%;
+            z-index: 11;
+            background-color: rgb(179, 163, 142);
+        }
+
+
+        .page1 {
+            min-height: 100%;
+            width: 100%;
+            padding: 200px 5px;
+            position: absolute;
+        }
+
+        .page1 .cantener {
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+
+        }
+
+
+        .page1 .card {
+            height: 400px;
+            width: 300px;
+            background-color: red;
+            border-radius: 30px;
+
+        }
+        .page1 .card1 {
+            height: 300px;
+            width: 300px;
+            background-color: red;
+            border-radius: 30px;
+
+        }
+
+
+        .page1 .card img {
+            height: 400px;
+            width: 300px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px ;
+
+        }
+        .page1 .card1 img {
+            height: 300px;
+            width: 300px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px ;
+
+        }
+
+        .page1 .card h1{
+            color:#111;
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+
+        }
+        .page1 .card1 h1{
+            color:#111;
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+
+        }
+
+
+        .box{
+            height: 200vh;
+            width: 100%;
+            background-color: #1111119a;
+            position: absolute;
+            z-index: 9;
+            display: none;
+        }
+
+
+        .page2{
+            height: 100vh;
+            width: 100%;
+            
+        }
+
+        .page2 .card{
+            width: 50%;
+            background-color:rgb(223, 216, 206);
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+            padding-left: 20px;
+            margin-left: 25%;
+            margin-top: 100px;
+            position: relative;
+            z-index: 10;
+            display: none;
+        }
+
+
+        .page2 .card .sertext{
+            padding: 20px 0px;
+            display: flex;
+            gap: 10px;
+
+        }
+
+
+    </style>
+</head>
+
+<body style="background-color:rgb(179, 163, 142);">
+    <!-- navbar -->
+    <nav style="display: flex; align-items: center;justify-content: center;">
+        <input style="width: 50%; height: 50px; border-radius: 30px;border: none;background-color: antiquewhite;"
+            type="text" name="search" id="search" placeholder="  search">
+    </nav>
+    <!-- lightblack screen -->
+    <div class="box"></div>
+
+    <!-- images  -->
+    <div class="page1">
+        <div class="cantener">
+
+        </div>
+        
+    </div>
+
+    <!-- search page  -->
+    <div class="page2">
+        <div class="card">
+
+        </div>
+    </div>
+    
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- <div class="card">
+    <img src="https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z2lybHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+
+</div> -->
