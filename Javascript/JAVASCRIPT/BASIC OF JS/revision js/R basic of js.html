@@ -246,6 +246,7 @@
 
 
 
+        // nastest forEach loops
         arr.forEach(function (i) {
             arr2.forEach(function (k) {
                 arr3.forEach(function (c) {
@@ -354,7 +355,7 @@
 
         let costfnc = function () {
             this.name = "shubham",
-                this.age = 25;
+            this.age = 25;
         };
 
         let dstore = new costfnc();
@@ -378,6 +379,8 @@
 
         arrfnc();
 
+
+        // template literals javascript
         function cb() {
             let data = "shubham";
             let data2 = 26;
@@ -502,6 +505,7 @@
 
 
 
+        // store array value new varible
         let strorearray = [];
         arrfms.forEach(function (i) {
             var m = i * multi;
@@ -553,8 +557,7 @@
             }
         });
 
-        //    arrow fuction
-
+        // filter with arrow function
         let oarrowffitler = arrfms.filter((i) => i === 15);
         console.log(oarrowffitler);
 
@@ -567,7 +570,7 @@
             if (i === "red") {
                 console.log(true)
             }
-        })
+        });
 
 
         bookr.filter(function (i) {
@@ -683,8 +686,6 @@
 
 
         // sort function in js
-
-
         let sotar = [1, 2, 3, 4, 10, 6, 7, 8];
 
         console.log(sotar);
@@ -735,7 +736,6 @@
 
 
         // reduce function 
-
         let rearray = [2, 5, 3, 6];
 
         let sttoatl = rearray.reduce(function (total, i) {

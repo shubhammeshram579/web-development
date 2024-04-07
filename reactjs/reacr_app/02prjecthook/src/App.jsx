@@ -9,16 +9,22 @@ function App() {
   // let counter = 10
 
  const addValue = ()=>{
-  counter = counter  + 1
-  setCounter(counter)
-  console.log(counter)
+  if (counter < 20){
+    counter = counter  + 1
+    setCounter(counter)
+    console.log(counter)
+  } 
+  
  }
 
 
  const delValue = ()=>{
-  counter = counter  - 1
-  setCounter(counter)
-  console.log(counter)
+  if(counter > 0){
+    counter = counter  - 1
+    setCounter(counter)
+    console.log(counter)
+  }
+  
  }
 
 

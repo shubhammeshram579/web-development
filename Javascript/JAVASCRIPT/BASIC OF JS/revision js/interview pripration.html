@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // varibale
+        var a = "shubham";
+        let b = 78;
+        const cd = "labham";
+
+        // types
+        console.log(typeof a);
+        console.log(typeof b);
+        console.log(typeof cd);
+
+        // primative num , ints str null undifind bloon bigit 
+        // referance data type map set function object array
+
+        // hoisting
+        var h;
+        console.log(h);
+        h = 20;
+        console.log(h)
+
+
+        // contion statement 
+        if (true){
+            console.log("yes")
+        }else{
+            console.log("no")
+        }
+
+
+        if (false){
+            console.log("yes")
+        }else{
+            console.log("no")
+        }
+
+
+        // loops
+
+        for (var i = 0; i < 10; i++){
+            console.log(i)
+        }
+
+        for (var i = 10; i > 0; i--){
+            console.log(i)
+        }
+
+
+        // for (var i = 25; i < 50;i++){
+        //     console.log(i)
+        // }
+
+        var arr = [1,2,44,5,66,30,3];
+
+        arr.forEach(function(val){
+            console.log(val + 10)
+        })
+
+        for (var i in arr){
+            console.log(i,arr[i])
+        }
+
+        for (var i of arr){
+            console.log(i)
+        }
+
+        var a = 0;
+
+        while (a < 10){
+            console.log("shubham");
+            a++;
+        }
+
+
+        // do {
+        //     console.log("shubham");
+        //     a++
+        // }
+        // while (a < 10);
+
+
+
+        // function
+        
+        function abcd(){
+            console.log("normal fuction")
+        }
+
+        console.log(abcd());
+
+
+
+        var abcs = function(){
+            console.log("first calse function")
+        };
+
+
+        var hf = function(a){
+            return function(b){
+                return a + b
+            }
+        }
+
+        var hif = hf(10);
+        console.log(hif(2));
+
+
+        setTimeout(function(){
+            console.log("callback fuction")
+        },3000)
+
+        function con(){
+            this.name = "shubham"
+            this.age = 26
+        };
+
+        var scon = new con()
+        console.log(scon);
+
+
+        // var arf = (a,b)=>{ 
+        //     return a + b;
+
+        // }
+
+
+        var arf = (a,b)=>(a + b)
+        var starf = arf(15,10)
+        console.log(starf);
+
+
+        // closer
+
+        var csof  = function(a){
+            return function(b){
+                return function(c){
+                    return a + b + c;
+                }
+            }
+        }
+
+
+        var sta = csof(10);
+        var stb = sta(20);
+        var stc = stb(20);
+        console.log(stc)
+
+        // var cf = csof((10),(50),(200),(0))
+        // console.log(cf);
+
+
+
+        // profiset
+
+        var ans = new Promise((res,rej)=>{
+            if (false){
+                return res();
+            }else{
+                return rej();
+            }
+
+        });
+
+        ans.then(function(){
+            console.log("resold")
+        })
+        .catch(function(){
+            console.log("rejceted")
+        });
+
+
+
+
+
+        async function asu(){
+            var a = 10;
+            var storr = await a;
+            console.log(storr)
+
+        }
+
+        console.log(asu());
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
