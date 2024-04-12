@@ -3,8 +3,11 @@ import useTheme from '../contexts/theme';
 
 export default function ThemeBtn() {
     
+    // custome hook used 
     const {themeMode, lightTheme, darkTheme} = useTheme()
 
+
+    // btn creation
     const onChangeBtn = (e) => {
         const darkModeStatus = e.currentTarget.checked
         if (darkModeStatus) {
@@ -13,6 +16,7 @@ export default function ThemeBtn() {
             lightTheme()
         }
     }
+
     return (
         <label className="relative inline-flex items-center cursor-pointer">
             <input
