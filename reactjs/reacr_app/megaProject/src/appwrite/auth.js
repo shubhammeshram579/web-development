@@ -12,6 +12,8 @@ export class AuthService{
             .setProject(conf.appwriteProjectId);
         this.account = new Account(this.client);
     }
+
+    // registration accout
     async createAccount({email,password,name}){
         try{
             const userAccount = await this.account.create(ID.unique(),email ,password ,name);
@@ -30,6 +32,7 @@ export class AuthService{
 
 
 
+    // loging page
     async login({email,password}){
         try {
             return await this.account.createEmailPasswordSession(email,password);
@@ -41,6 +44,8 @@ export class AuthService{
 
     }
 
+
+    // user access
     async getCurrentUser(){
         try {
             return await this.account.get();
@@ -51,6 +56,8 @@ export class AuthService{
     }
 
 
+
+    // logout page
     async logout(){
         try {
             await this.account.deleteSession();
