@@ -1,0 +1,218 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    color: #dcd8d8;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+
+
+.page1{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.page1 .card{
+    text-align: center;
+}
+
+.page1 h1{
+    font-size: 9vw;
+    line-height: 160px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.page1 .fa-pen{
+    /* background-color:#0DA34E; */
+    font-size: 2.5vw;
+}
+
+.page1 h5{
+    font-size: 1.4vw;
+    font-weight: 300;
+}
+
+.page1 .card2{
+    margin-top: 80px;
+}
+
+.page1 span{
+    padding: 7px 10px;
+    border: 1px solid rgb(89, 88, 88);
+    border-radius: 20px;
+    margin: 5px;
+}
+
+.product{
+    margin-top: 10px;
+}
+
+
+
+.page1 .card4{
+    height: 400px;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    z-index: 1;
+  
+
+
+}
+
+.page1 .c-header__clients__inner{
+    display: flex;
+    gap: 70px;
+    animation-name: movelogo;
+    animation-duration: 25s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.page1 .cards{
+    height: 200px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+@keyframes movelogo {
+   from{
+    transform: translateX(0);
+   }
+
+   to{
+    transform: translateX(-100%);
+   }
+    
+}
+
+
+.page2{
+    min-height: 22vh;
+    width: 100%;
+    background-color: #111;
+    display: flex;
+    align-items: start;
+
+}
+
+.page2 .card{
+    height: 200px;
+    width: 30%;
+    background-color: #111;
+    position: relative;
+    z-index: 2;
+}
+
+.page2 .card1{
+    height: 100px;
+    width: 70%;
+    background-color: transparent;
+}
+
+.page2 .card2{
+    height: 200px;
+    width: 30%;
+    background-color:#111;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+/* page 3 */
+
+.page3{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #111;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    
+    
+}
+
+.page3 .card1{
+    height: 100%;
+    width: 50%;
+    font-size: 1.5vw;
+    font-weight: 300;
+
+
+}
+
+.page3 .card1 h4{
+    padding-top: 500px;
+    font-size: 1.2vw;
+    font-weight: 300;
+    width: 50%;
+}
+
+
+
+.page3 .card2 .card{
+    height: 150px;
+    border-top: 1px solid gray ;
+    padding-top: 20px;
+
+
+}
+
+.page3 .card2 .card h2{
+    font-size: 1.4vw;
+    font-weight: 300;
+    position: relative;
+    z-index: 999;
+}
+
+.page3 .card2 .card span{
+    padding-left:240px;
+    font-weight: 100;
+    color: gray;
+    
+    
+}
+
+/* .page3 .card2 .card .camtener{
+  
+} */
+
+
+.page3 .card2 .card img{
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: fixed;
+    z-index: 99;
+    transform: translate(-50% , -50%) scale(1);
+    opacity: 0;
+}
+
+
