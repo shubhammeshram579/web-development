@@ -2,14 +2,15 @@ import conf from "../conf/conf";
 import {Client,Account,ID} from "appwrite";
 
 
+
 export class AuthService{
     client = new Client();
     account;
 
     constructor(){
         this.client
-            .setEndpoint(conf.appwriteUrl)
-            .setProject(conf.appwriteProjectId);
+            .setEndpoint("https://cloud.appwrite.io/v1")
+            .setProject("661a9af6d1fba5cb1448");
         this.account = new Account(this.client);
     }
 
