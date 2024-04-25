@@ -37,6 +37,54 @@ cards.forEach(function(val){
 })
 
 
+// video effect
+let imgbtn = document.querySelector(".page4 .card");
+let playbtn = document.querySelector(".page4 .card2 .ri-play-fill");
+let videobtn = document.querySelector(".page4 .card3")
+
+
+
+
+
+
+
+ playbtn.addEventListener("click",function(){
+    playbtn.style.display ="none";
+    videobtn.style.display ="block";
+
+ })
+
+
+ videobtn.addEventListener("click",function(){
+    playbtn.style.display ="block";
+    videobtn.style.display ="none";
+    playbtn.style.display= "flex";
+    playbtn.style.transform = "translate(500%, 240%)";
+   
+
+ })
+
+ var tl = gsap.timeline();
+ tl.from(".page4 .card3 video",{
+    y:1000,
+    duration: 2,
+    delay:1,
+    scale: 0,
+    stagger:1,
+    // scrollTrigger: {
+    //     trigger: ".page4",
+    //     scroller: "body",
+    //     start: "top 10%",
+    //     end: "top 70%",
+    //     scrub:true,
+    //     markers:true
+    //   },
+ })
+
+ 
+
+
+
 
 
 

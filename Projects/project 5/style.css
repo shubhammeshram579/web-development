@@ -216,3 +216,75 @@ body{
 }
 
 
+
+.page4{
+    min-height: 100vh;
+    width: 100%;
+   
+}
+
+.page4 .card{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+}
+
+.page4 .card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    
+   
+}
+
+.page4 .card2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    position: relative;
+    z-index: 10;
+    
+
+}
+
+
+.page4 .ri-play-fill{
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    background-color:#0DA34E;
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    transform:translate(500%, 240%);
+
+}
+
+
+.page4 .card3{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    position: relative;
+    z-index: 99;
+    
+    
+}
+
+.page4 .card3 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+}

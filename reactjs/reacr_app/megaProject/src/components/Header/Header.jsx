@@ -1,12 +1,14 @@
 import React from 'react'
-import {Contenier,Logo,Logoutbtn} from "../index"
+import {Contenier,Logo,LogoutBtn} from "../index"
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
+
 function Header() {
   const authStatus = useSelector((state) => state.auth.status )
   const navigate = useNavigate()
+  
   const navItems = [
     {
       name: 'Home',
@@ -32,7 +34,8 @@ function Header() {
       name: "Add Post",
       slug: "/add-post",
       active: authStatus,
-  },
+  },  
+
   ]
 
 
@@ -55,9 +58,11 @@ function Header() {
               >{item.name}</button>
             </li>
           ) : null )}
-          {authStatus && (
+
+
+          {authStatus &&  (
             <li>
-              <Logoutbtn />
+              <LogoutBtn />
             </li>
           )}
 
