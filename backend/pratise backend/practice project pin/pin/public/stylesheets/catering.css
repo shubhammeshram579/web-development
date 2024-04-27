@@ -152,6 +152,81 @@ h4{
 }
 
 
+/* products details */
+.product-page{
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.product-page .card1{
+    height: 100%;
+    width: 20%;
+    padding-left: 200px;
+    border-right: 1px solid gray;
+    position: sticky;
+    top: 130px;
+    /* background-color: red; */
+}
+
+.product-page .card1 h1{
+    font-size: 20px; 
+    font-weight: 500; 
+    line-height: 40px;
+    padding-right: 10px;
+    
+    
+}
+
+.product-page .card2{
+    /* background-color:blue; */
+    width: 70%;
+    display: flex; 
+    align-items: start; 
+    justify-content: space-evenly; 
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.product-page .card2 .cards{
+    display: flex; 
+    align-items: start;
+    justify-content:space-between; 
+    border: 1px solid rgba(128, 128, 128, 0.182);
+    padding: 10px 10px 40px 10px;
+    border-radius: 5px;
+}
+
+.product-page .card2 .cards .card{
+    width: 60%;
+    /* background-color: red; */
+   
+}
+.product-page .card2 .cards .card2{
+    width: 50%;
+    /* background-color: blue; */
+}
+
+.product-page .card2 .cards h1{
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+.product-page .card2 .cards h3{
+    font-size: 20px; 
+    font-weight: 500;
+    padding-bottom: 30px;
+    width: 60%;
+}
+
+.product-page .card2 .cards img{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+
 
 
 

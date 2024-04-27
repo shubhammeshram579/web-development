@@ -30,6 +30,15 @@ router.get('/add-to-card', function(req, res, next) {
 });
 
 
+
+router.get('/products', function(req, res, next) {
+  res.render('products');
+});
+router.get('/lunch', function(req, res, next) {
+  res.render('lunch');
+});
+
+
 // router.get('/add-to-card' ,isLoggedIn,  async function(req, res, next) {
 //   const user = await userModel
 //   .findOne({username:req.session.passport.user})
