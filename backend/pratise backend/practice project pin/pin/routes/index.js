@@ -39,6 +39,11 @@ router.get('/lunch', function(req, res, next) {
 });
 
 
+router.get('/checkout', function(req, res, next) {
+  res.render('checkout');
+});
+
+
 // router.get('/add-to-card' ,isLoggedIn,  async function(req, res, next) {
 //   const user = await userModel
 //   .findOne({username:req.session.passport.user})

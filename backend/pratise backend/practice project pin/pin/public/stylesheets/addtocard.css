@@ -43,11 +43,17 @@ html,body{
 
   }
 
-.main .card4:hover{
-    background-color: #fff;
-    color: #111;
-    
+
+.main .card4 a{
+    text-decoration: none;
 }
 
+
+
+.main .card4:hover{
+    background-color: #fff;
+    color:#111;
+    
+}
 
 

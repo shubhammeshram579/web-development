@@ -51,12 +51,10 @@ var arr = [
     {name:"YOGHURT & CHIA POTS LARGE",qty:"24 pots x 150ml Spoons provided",price:"$168.00 per box (24 prices)",pimage:"https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/f71eadb95ea24aba82e1d33d5a5fa374_360w.jpg"},
     {name:"SEASONAL FRUIT PLATTER",qty:"A selection of cut, seasonal fruit",price:"From $60.00 per platter",pimage:"https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/0e12a03eb8c845048d70048ad85595bc_360w.jpg"},
     {name:"SEASONAL WHOLE FRUIT BOX",qty:"Whole pieces of local seasonal fruit",price:"From $30.00 per box",pimage:"https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/b4e67d8f41fc447cb84c273a1e33d58f_360w.jpg"},
-    {name:"MINI PASTRY BOX REGULAR",qty:"By The Bread & Butter Project 15 pieces of one variety",price:"$56.00 per box",pimage:"https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/f20629c8788b4c98984d1f81a6ef78d6_360w.jpg"},
-    {name:"SWEET TREATS",qty:"Enjoy the famous two Good dark chocolate..",price:"from $58.00",pimage:"https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/ff2588d77e6945d4803dc2aefb04861d_360w.jpg"},
-    {name:"WHOLESOME BAKED GOODS",qty:"Start the day right with delicious & nutritious baked goods from the Two Good...",price:"From $55.00",pimage:"https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/7654518427ef456aa4e2be536645f574_360w.jpg"},
+    {name:"MINI PASTRY BOX REGULAR",qty:"By The Bread & Butter Project",price:"$56.00 per box",pimage:"https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/f20629c8788b4c98984d1f81a6ef78d6_360w.jpg"},
+    {name:"SWEET TREATS",qty:"Enjoy the famous two Good dark",price:"from $58.00",pimage:"https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/ff2588d77e6945d4803dc2aefb04861d_360w.jpg"},
+    {name:"WHOLESOME BAKED GOODS",qty:"Start the day right with delicious",price:"From $55.00",pimage:"https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/7654518427ef456aa4e2be536645f574_360w.jpg"},
 ]
-
-
 
 
 
@@ -92,12 +90,6 @@ showproduct();
 
 
 
-
-
-
-
-
-
     
 var srbtn =  document.querySelector(".searbar input");  
 
@@ -126,9 +118,12 @@ function serchProduct(){
         document.querySelector(".product-page .card2").innerHTML = clutter;
     })
 
+    
 }
 
 serchProduct();
+
+
 
 
 
