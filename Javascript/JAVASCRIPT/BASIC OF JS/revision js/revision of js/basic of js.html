@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>basic of javascripts</h1>
+    
+
+
+    <script>
+        // 1. word and key words 
+        // whard like name laptop mobile botel
+        // key words like if for new this conslole 
+
+
+        // 2. what is varible 
+        // varible means asing a data as a varible it call varible 
+        // for example 
+        var a = "shubham"
+        var b = 1234
+        var array = [1,23,4,5,]
+        var object = {name:"shubham",age:26}
+        
+
+        function abcd(){
+            console.log(array),
+            console.log(object)
+        }
+
+        abcd();
+
+        // js is tree type varible you strore as varible like let, const ,var
+        var a2 = "old virsion es5 and it is function scoped and it is add on window object"
+        let b2 = "new virsion es6 and it is block scoped and doents add on window object"
+        const c2 = ["new virsion es6 and it is block scoped and doents add on window object","it is a store consted varible values like fixed data do not update values "]
+
+
+
+        // 3. datatype in js
+        // primitive dtype: str,num,blooen ,int,float,undifin,null , bigit,nums,simnole
+        let str = "shubham"
+        let num = 1233
+        let int = 122
+        let float = 122.44
+        let undifind = ''
+        let Treue = true
+        let nums = 1223344n
+
+        // refrence: map , set, [],{},();
+        let set = {12:[444,555]}
+        let arr = [1,3,4,5,5]
+        let tupple = (134,3334)
+
+
+
+        // 4. hoisting meas if you  declation a varibel then you used this varible any particalar obkect then after inslation values as valrible it call hoisting
+
+        let ha //asing black varible  it call declation varible
+        console.log(ha) // output undefiend
+
+        ha = "shubham" // inslation varible value 
+        console.log(ha)
+
+
+
+        // 5. refrence value 
+
+
+        // normal refrence value copy
+        let av = [12,23,455]
+        let bv = av
+        console.log(bv)
+
+        // delete bv value then both varible value are delete 
+        bv.pop()
+
+        console.log(bv);
+        console.log(av)
+
+        // sprede method copy refrance value 
+        let fv = [...av]
+
+        console.log(fv)
+
+        // delete fv value then not delete av varible value it is speard banifite
+        fv.pop()
+
+        console.log(fv)
+        console.log(av)
+
+
+
+
+        // if conditional statement
+        // basic contion 
+
+
+        // true statement
+        if (true){
+            console.log("hey")
+        }else{
+            console.log("hello")
+        }
+
+
+        // false statement
+        if (false){
+            console.log("hey")
+        }else{
+            console.log("hello")
+        }
+
+
+        let n = 10;
+        if (n > 12){
+            console.log("10 > 12")
+        }else{
+            console.log("10 < 12")
+        }
+
+
+        // match contion more option used >= <= == === > < % %% 
+        
+        if (n === 10){
+            console.log("true")
+        }else{
+            console.log("false")
+        }
+
+
+        // maltile caontion statement 
+        let time = 12;
+
+        if (time > 5 && time < 12){
+            console.log("good morning")
+        }else if(time > 12 && time < 16){
+            console.log("good afternoon")
+        }else{
+            console.log("good night")
+        }
+
+        // nated if 
+
+        if(n > 12){
+            if (n === 10){
+                console.log("True")
+            }
+        }else{
+            console.log("false")
+        }
+
+
+        // loops
+        // normal loops
+        // for loops 
+        // while loops
+        // do while loops
+        // foreach loops
+        // forieng loops 
+        // of loops
+
+        // for (var i = 0; i < 10; i++){
+        //     console.log(i)
+        // }
+
+        // for (var i = 10; i > 0; i--){
+        //     console.log(i)
+        // }
+
+        // for (var k = 2; k < 22; k = k + 2){
+        //     console.log(k)
+        // }
+
+
+        // while loops
+        let wl = 0;
+
+        while(wl < 10){
+            console.log("hello")
+            wl = wl + 1
+        }
+
+
+        let arrs = [1,2,3,4,5,6,7,8];
+
+        arrs.forEach(function(val){
+            console.log(val * 2)
+        })
+
+        let objs = {
+            name:"shubham",
+            age: 26,
+            add: "gondia"
+        }
+
+        for (var i in objs){
+            // console.log(i)
+            // console.log(i, objs[i])
+            console.log(objs[i])
+        }
+
+        for (var i of arrs){
+            console.log(i)
+        }
+
+
+
+        // function
+        // normal function
+        // first class function
+        // high oredr fun
+        // construction 
+        // callback 
+        // arrow 
+        // curring
+        // closor
+        // memotaion
+
+
+        function abc(){
+            var a = 10;
+            console.log(`normal function ${a}`)
+        }
+
+        abc()
+
+
+        // first class fnc
+        var fcfnn = function(){
+            var data1 = 10;
+            var data2 = 12;
+            console.log(data1 + data2)
+
+        }
+        fcfnn()
+
+
+        // highorder 
+        var hio = function(a){
+            return function(b){
+                return a + b
+            }
+
+        }
+
+        var ah = hio(100)
+        console.log(ah(10))
+
+
+        // contuctor func
+        function cost(){
+            this.name = "shubham",
+            this.lastname = "meshram",
+            this.age = 26
+        }
+
+        var obj2 = new cost()
+        var obj3 = new cost()
+
+        console.log(obj2)
+        console.log(obj3)
+
+
+        // callback async
+
+        function cb(){
+            var a = 200;
+            setTimeout(function(){
+                console.log(a)
+            },2000)
+        }
+
+        cb()
+
+
+        // arrrow func
+
+        var arf = (a, b) => {
+            return a * b
+        }
+
+        console.log(arf(100,10))
+
+
+        var arf2 = (a , b ) => (a + b)
+
+        console.log(arf2(10,20));
+
+
+        // closoer
+
+        var clsof = function(a){
+            return function(b){
+                return function(c){
+                    return a + b + c
+                }
+            }
+
+        }
+
+        var af = clsof(10)
+        var af2 = af(20)
+        var fad3 = af2(20)
+        console.log(fad3)
+
+        // curring function
+        var cf = clsof(10)(10)(10)
+        console.log(cf)
+
+        
+
+
+
+
+
+    </script>
+</body>
+</html>
