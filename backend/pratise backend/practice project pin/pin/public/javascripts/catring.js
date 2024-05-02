@@ -1,18 +1,19 @@
-let orderpage = document.querySelector(".hidden");
-let btn = document.querySelector(".navbar #group");
+// let orderpage = document.querySelector(".hidden");
+// let btn = document.querySelector(".navbar #group");
 
-let a = 0
-btn.addEventListener("click",function(){
-    if (a === 0){
-        orderpage.style.opacity = 1;
-        a = 1 
+// let a = 0
+// btn.addEventListener("click",function(){
+//     if (a === 0){
+//         orderpage.style.opacity = 1;
+//         orderpage.style.backgroundColor = "red";
+//         a = 1 
 
-    }else{
-        orderpage.style.opacity = 0;
-        a = 0
-    }
+//     }else{
+//         orderpage.style.opacity = 0;
+//         a = 0
+//     }
     
-});
+// });
 
 
 let sebtn1 = document.querySelector(".navbar .part2 .fa-magnifying-glass");

@@ -7,6 +7,8 @@ const donateModel = require("./donate");
 const addcardModel = require("./addcord");
 const passport = require('passport');
 const localStrategy = require("passport-local");
+const Afternoon = require("./Afternoon");
+
 
 
 passport.use(new localStrategy(userModel.authenticate()));
@@ -34,9 +36,19 @@ router.get('/add-to-card', function(req, res, next) {
 router.get('/products', function(req, res, next) {
   res.render('products');
 });
+
+
 router.get('/lunch', function(req, res, next) {
   res.render('lunch');
 });
+
+
+
+router.get("/Afternoon", async function(req, res, next){
+  let users = await Afternoon.find();
+  res.render("Afternoon",{users})
+});
+
 
 
 router.get('/checkout', function(req, res, next) {

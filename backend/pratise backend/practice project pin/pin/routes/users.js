@@ -52,7 +52,13 @@ const userSchma = mongoose.Schema({
     {
     type: mongoose.Schema.Types.ObjectId,
     ref: "addcord"
-  }]
+  }],
+  // Afternoon:[
+  //   {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: "Afternoon"
+  //   }
+  // ]
 
 
 });

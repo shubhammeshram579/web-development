@@ -80,8 +80,8 @@
 <div class="product-page lunch-product">
     <div class="card1">
         <a style="text-decoration: none;color: #111;" href="/products"><h1>Morning</h1></a>
-        <a style="text-decoration: none; font-weight:800;color: #111;" href="/lunch"><h1 style="font-weight: 800;">Lunch</h1></a>
-        <a  style="text-decoration: none; font-weight:800;color: #111;" href="/Afternoon"><h1>Afternoon</h1></a>
+        <a style="text-decoration: none; font-weight:800;color: #111;" href="/lunch"><h1>Lunch</h1></a>
+        <a  style="text-decoration: none; font-weight:800;color: #111;" href="/Afternoon"><h1 style="font-weight: 800;">Afternoon</h1></a>
         <h1>Evening</h1>
         <h1>Individually Packeaged
             Meals</h1>
@@ -89,7 +89,30 @@
 
     </div>
     <div class="card2">
-        
+        <% if(users.length > 0){ %>
+            <% users.forEach(function(user){ %>
+                <div class="cards">
+                    <div class="card">
+                        <h1><%=user.name %></h1>
+                        <h3><%=user.qty %></h3>
+                        <h1 style="font-size: 20px;"><%=user.price %></h1>
+                    </div>
+                    <div class="card2">
+                        <img src="<%=user.pimage %>"
+                            alt="">
+            
+                    </div>
+            
+                </div>
+
+           <% }) %>
+
+
+            <% }else{ %>
+                <h3>Not found</h3>
+
+            <%} %>
+           
         
        
 
@@ -121,4 +144,4 @@
         </h5>
     </div>
 </footer>
-<script src="/javascripts/lunch.js"></script>
+<script src="/javascripts/afternoon.js"></script>
