@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+
+        .card{
+            position: fixed;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            transform: translate(50%,50%);
+            top: 50%;
+            /* left: 20%; */
+            gap: 1000px;            
+       
+        }
+
+
+        .cards{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: nowrap;
+            gap: 100px;
+            position: relative;
+            z-index: 99;
+            
+
+        }
+
+        .cards img{
+            height: 500px;
+            width: 500px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        
+        <i class="fa-solid fa-chevron-left"></i>
+        
+        <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+
+    <div class="cards">
+
+        
+        <div class="card1">
+            <img src="https://images.pexels.com/photos/19090/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600" alt="">
+        </div>
+        <div class="card1">
+            <img src="https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+        </div>
+        <div class="card1">
+            <img src="https://images.pexels.com/photos/267320/pexels-photo-267320.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+        </div>
+        <div class="card1">
+            <img src="https://images.pexels.com/photos/1598508/pexels-photo-1598508.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+        </div>
+        <div class="card1">
+            <img src="https://images.pexels.com/photos/292999/pexels-photo-292999.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+        </div>
+    </div>
+    
+
+    <script>
+        let leftbtn = document.querySelector(".card .fa-chevron-left");
+        let rightbtn = document.querySelector(".card .fa-chevron-right");
+        let cards = document.querySelector(".cards");
+
+
+        rightbtn.addEventListener("click",function(){
+            cards.style.float = "right";
+
+        })
+
+        leftbtn.addEventListener("click",function(){
+            cards.style.float = "left";
+
+        })
+
+
+
+
+    </script>
+</body>
+</html>

@@ -6,24 +6,12 @@
         <div class="card"
             style="display: flex; align-items: center; justify-content: space-between;padding-right: 650px;border-bottom: 1px solid gray; margin: 0px 20px;padding-bottom: 20px;">
             <h1 style="font-size: 11px;padding-left: 20px; color: gray;">CARD</h1>
-            <h1 style="font-size: 11px; color: gray;">QUENTITY</h1>
+            <h1 style="font-size: 11px; color: gray;">Quentity</h1>
         </div>
-        <div id="card2"
-            style="display: flex; align-items: center; justify-content: space-between; padding: 50px 10px; border-bottom: 1px solid gray; margin: 0px 20px;">
-            <h1 style="font-size: 20px; font-weight: 500;">CHNAGE THE COUSER COOK KIT</h1>
-            <div class="addcard" style="display: flex; gap: 25px; padding-left: 280px;">
-                <!-- <%- include("shared.ejs") -%> -->
-                <form action="/add-to-card" method="post">
-                <a class="minus" href="#" style="text-decoration: none; color: #fff;">-</a>
-                <a class="num" href="#" style="text-decoration: none; color: #fff;padding-left: 20px;padding-right: 20px;">1</a>
-                <a class="plus" href="#" style="text-decoration: none; color: #fff;">+</a>
-            </form>
-            </div>
-            <div class="amt" style="display: flex; align-items: center; gap: 50px;">
-                <h1 style="font-size: 20px; font-weight: 100;">$95</h1>
-                <a style="text-decoration: none; color: #fff;" href="/card"><i class="fa-solid fa-xmark"></i></a>
-            </div>
+        <div class="cards">
+           
         </div>
+
         <div class="card3"
             style="display: flex; justify-content: space-between; align-items: start; padding: 20px 20px;">
             <h1 style="font-size: 15px; color: gray;">ADD A PERSONALISED CARD FOR THAT SOMEONE SPECIAL FOR JUST $5.</h1>
@@ -33,7 +21,8 @@
             </div>
             <div class="amt2" style="display: flex; justify-content: end;flex-direction: column; align-items: end;">
                 <h1 style="font-size: 15px; font-weight: 500;">SHIPPING CALCULATION AT CHECK-OUT.</h1>
-                <h1  name="price" style="font-size: 15px; font-weight: 500;padding-top: 10px;">$<span class="price">95</span></h1>
+                <h1 name="price" style="font-size: 15px; font-weight: 500;padding-top: 10px;">$<span
+                        class="price">95</span></h1>
             </div>
 
         </div>
@@ -42,7 +31,7 @@
             <a href="/checkout">CHECKOUT</a>
             <!-- <input type="submit" value="addtocard"> -->
         </div>
-    </form>
+        </form>
         <div class="card5" style="margin-top: 200px; font-size: 3vw;width: 70%;padding-left:20px ;">
             <h2 style="font-family: 900; color: #f2eaea;">THANK YOU FOR WALKING
                 ALONGSIDE VULNERABLE
@@ -52,6 +41,46 @@
     </div>
 
     <script>
+
+
+
+        let arr = [
+            { product: "CHNAGE THE COUSER COOK KIT", price: "$95" },
+            { product: "THE COUSER COOK KIT", price: "$50" },
+        ];
+
+
+        function cardproduct() {
+            let cultter = ""
+            arr.forEach(function (val, index) {
+                cultter += `<div id="card2"
+            style="display: flex; align-items: center; justify-content:space-between; padding: 50px 10px; border-bottom: 1px solid gray; margin: 0px 20px;">
+                <h1 style="font-size: 20px; font-weight: 500;">${val.product}</h1>
+                <div class="addcard" style="display: flex; gap: 25px; padding-left: 280px;">
+                    <!-- <%- include("shared.ejs") -%> -->
+                    <form action="/add-to-card" method="post">
+                        <a class="minus" href="#" style="text-decoration: none; color: #fff;">-</a>
+                        <a data-index="${index}" class="num" href="#"
+                            style="text-decoration: none; color: #fff;padding-left: 20px;padding-right: 20px;">1</a>
+                        <a class="plus" href="#" style="text-decoration: none; color: #fff;">+</a>
+                    </form>
+                </div>
+                <div class="amt" style="display: flex; align-items: center; gap: 50px;">
+                    <h1 style="font-size: 20px; font-weight: 100;">${val.price}</h1>
+                    <a style="text-decoration: none; color: #fff;" href="/card"><i class="fa-solid fa-xmark"></i></a>
+                </div>
+        </div>  `
+
+
+            })
+            document.querySelector(".main .cards").innerHTML = cultter;
+        }
+
+        cardproduct();
+
+
+
+
 
         let plusbtn = document.querySelector(".main .plus");
         let numbtn = document.querySelector(".main .num");
@@ -85,6 +114,8 @@
                 pricebtn.innerHTML = 0;
             };
         });
+
+
 
 
     </script>

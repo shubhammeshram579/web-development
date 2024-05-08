@@ -1,7 +1,7 @@
 
-<a class="minus" href="#" style="text-decoration: none; color: #fff;">-</a>
-<a class="num"  href="#" style="text-decoration: none; color: #fff;">1</a>
-<a class="plus" href="#" style="text-decoration: none; color: #fff;">+</a>
+<a  class="minus" href="#" style="text-decoration: none; color: #fff;">-</a>
+<a data-index="index"  class="num"  href="#" style="text-decoration: none; color: #fff;">1</a>
+<a  class="plus" href="#" style="text-decoration: none; color: #fff;">+</a>
 
 
 
@@ -16,6 +16,7 @@
     plusbtn.addEventListener("click",()=>{
      a++;
      numbtn.innerHTML = a;
+     
      if(a < 0){
          numbtn.innerHTML = 0;
      }
@@ -24,9 +25,11 @@
     minusbtn.addEventListener("click",()=>{
      a--;
      numbtn.innerHTML = a;
+     
      if(a < 0){
          numbtn.innerHTML = 0;
      };
     });
+
 
  </script>

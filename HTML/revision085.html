@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date 08-05-24</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+
+
+        nav{
+            height: 70px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        nav .logo h1{
+            color: yellowgreen;
+        }
+
+        nav .navitem{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 50px;
+        }
+
+        nav .navitem a{
+            text-decoration: none;
+            color: yellowgreen;
+            text-transform:capitalize;
+        }
+
+        nav .navitem a:hover{
+            border-bottom: 1px solid yellowgreen;
+        }
+
+        #home{
+            min-height: 100vh;
+            width: 100%;
+            padding: 10px 20px;
+        }
+
+        #home .heading h1{
+            padding-bottom: 20px;
+            text-transform: capitalize;
+            font-weight: 800;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-shadow: 2px 1px yellowgreen;
+        }
+
+        #home .heading p,summary{
+            text-align: justify;
+            padding-bottom: 20px;
+            /* line-height: 17px; */
+            word-spacing: 1px;
+            letter-spacing: 1px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 2vw;
+            font-weight: 300;
+            background-image: url(https://images.unsplash.com/photo-1519972064555-542444e71b54?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fHw%3D);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            border-radius: 10px;
+            padding: 20px;
+            color: #111;
+            margin: 20px 0px;
+        }
+
+        #list{
+            min-height: 50vh;
+            width: 100%;
+            padding: 10px 20px;
+        }
+
+        #list .links{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        #list a{
+            color: aquamarine;
+            text-decoration: none;
+            padding-bottom: 10px;
+        }
+
+        #list .listdata{
+            margin-top: 30px;
+            padding: 20px 0px;
+            border: 1px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        #list .listdata li{
+            list-style-type:lower-alpha;
+            padding: 2px 0px;
+        }
+
+        #video{
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        #table{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding-bottom: 100px;
+
+        }
+
+        #table table th,td{
+            border: 1px solid #fff;
+            border-collapse:collapse ;
+            padding: 10px;
+        }
+
+        #table table th{
+            color: yellowgreen;
+            text-transform: capitalize;
+        }
+
+        footer{
+            text-align: center;
+            
+            
+        }
+
+        footer a{
+            color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body style="background-color: #111;color: #cfcece;">
+    <nav>
+        <div class="logo">
+            <h1>logo</h1>
+        </div>
+        <div class="navitem">
+            <a href="#home">home</a>
+            <a href="#list">about</a>
+            <a href="#video">project</a>
+            <a href="#table">content</a>
+        </div>
+       
+    </nav>
+    <section id="home">
+    <div class="heading">
+        <h1>Heading tag</h1>
+        <div class="summary">
+            <p>Lorem ipsum dolor sit amet,<small> consectetur adipisicing elit. Quod reprehenderit odio facilis cum
+                    accusantium ab vel </small>repudiandae recusandae at, veniam omnis quos officia tempora magnam
+                <strong>
+
+                    dolor quo veritatis sit nesciunt animi. Nemo, aut. </strong>Hic nostrum excepturi deleniti. Maiores,
+                numquam voluptatem magni culpa quis ratione odit, quae error nesciunt asperiores facilis accusantium!
+                Nobis iusto nam doloremque aliquam distinctio cum consequuntur quas repudiandae, dolore, aut quos! Velit
+                consequatur totam temporibus laborum fuga ea quasi, saepe accusamus provident officiis aspernatur
+                voluptate soluta porro consequuntur debitis. Dolores quaerat, iusto itaque <sub>120</sub> ex tempora
+                voluptatibus. Culpa laudantium corporis eligendi quam aliquam ab laborum pariatur nostrum ut dolore!
+                Accusamus tempore assumenda <sup>120</sup>quaerat cumque possimus veniam voluptates fugiat doloremque
+                nostrum! Porro fuga voluptas voluptatem, delectus voluptatum aspernatur exercitationem, error adipisci
+                inventore, modi accusamus consequatur vel saepe dolores libero nulla eius! Modi quia molestiae est
+                repellendus voluptatem earum consequatur sint ea, voluptatibus dolorem fugit quidem distinctio libero
+                doloribus! Modi.</p>
+        </div>
+        <summary>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aut <i>Shubham</i> sint mollitia
+            libero, esse eos explicabo dolorem dolore recusandae vel ab delectus quibusdam ullam rerum ut, deleniti
+            doloribus magni ipsam quas eligendi repudiandae assumenda! Deserunt error quia sit dolorum quasi harum, quo
+            aliquid veniam pariatur qui iusto quidem id? Dolore, velit! Molestiae minima consectetur quia odit
+            consequatur officiis, esse ullam quis quaerat. Maiores, dicta. Rerum laboriosam dolorem velit. Officia, qui
+            sunt. Accusamus, fugiat veritatis eveniet itaque assumenda similique quaerat doloremque quia architecto
+            pariatur sapiente, iste, laudantium impedit deleniti id ullam amet blanditiis esse explicabo ipsa! Quas
+            optio aliquid quae tempora?</summary>
+    </div>
+</section>
+<section id="list">
+    <div class="links">
+        <a href="#">link1</a>
+        <a href="#">link2</a>
+        <a href="#">link3</a>
+    </div>
+    <div class="notes">
+        <a target="_blank" href="/new notes/Outlier deduction.pdf">ML Statustiec project</a>
+    </div>
+    <div class="listdata">
+        <ul>
+            <li>python javascript</li>
+            <li>python javascript</li>
+            <li>python javascript</li>
+            <li>python javascript</li>
+        </ul>
+        <ol type="i">
+            <li>powerbi</li>
+            <li>powerbi</li>
+            <li>powerbi</li>
+            <li>powerbi</li>
+        </ol>
+    </div>
+</section>
+<section id="video">
+    <div class="images">
+        <img src="/new notes/income.png" alt="income">
+        <img src="/new notes/income.png" alt="income">
+        <img src="/new notes/income.png" alt="income">
+    </div>
+    <div class="vid">
+        <video src="/video/video2.mp4" height="300" controls muted loop></video>
+        <video src="/video/video2.mp4" height="200" controls muted loop></video>
+    </div>
+    <!-- <div class="ifram">
+        <iframe src="/video/video.mp4" frameborder="0"></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/lWCUA3euBTc?si=Ii20GfHOYNVh3_bS"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div> -->
+</section>
+<section id="table">
+
+
+    <div class="table">
+        <table>
+            <tr>
+                <th>name</th>
+                <th>salary</th>
+            </tr>
+
+            <body>
+                <tr>
+                    <td>lubham</td>
+                    <td>15000</td>
+
+                </tr>
+                <tr>
+                    <td>shubham2</td>
+                    <td>15000</td>
+
+                </tr>
+                <tr>
+                    <td>shubham3</td>
+                    <td>150</td>
+
+                </tr>
+
+            </body>
+            <footer>
+                <th colspan="2">Total: 30150</th>
+            </footer>
+        </table>
+    </div>
+</section>
+    <footer>
+        <a href="#">@shubhammeshram</a>
+    </footer>
+</body>
+
+</html>

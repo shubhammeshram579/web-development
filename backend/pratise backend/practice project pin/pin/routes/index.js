@@ -8,6 +8,9 @@ const addcardModel = require("./addcord");
 const passport = require('passport');
 const localStrategy = require("passport-local");
 const Afternoon = require("./Afternoon");
+const AddtoProduct2 = require(".//../routes/product")
+
+
 
 
 
@@ -28,7 +31,10 @@ router.get('/card', function(req, res, next) {
 });
 
 router.get('/add-to-card', function(req, res, next) {
+  // let users2 = await AddtoProduct2.find({});
+  // var data1 = {producttitle:"CHANGE THE COURSE COOK KIT",qty:1,price:"$96",pimags:"https://cdn.sanity.io/images/w8f1ak3c/production/adb77436d60e62d2b5b0574016abcc864b8e65b0-4498x2999.png/DSC0078_Dexter%20Kim.png?rect=2,0,4495,2999&w=640&h=427&auto=format"};
   res.render('addtocard');
+  // res.send(users2)
 });
 
 
@@ -90,9 +96,7 @@ router.get('/catering', function(req, res, next) {
 });
 
 // product details 
-router.get('/product', function(req, res, next) {
-  res.render('product');
-});
+
 
 router.get('/stories', function(req, res, next) {
   res.render('stories');
@@ -209,6 +213,36 @@ router.post('/group-order', isLoggedIn, async function(req, res, next) {
   await user.save();
   res.redirect("/catering")
 });
+
+
+router.get('/product',async function(req, res, next) {
+  res.render('product');
+  // res.send(pdata)
+});
+
+// router.get('/product' ,isLoggedIn,  async function(req, res, next) {
+//   const user = await userModel
+//   .findOne({username:req.session.passport.user})
+//   .populate("Addtoproduct")
+//   res.render('product');
+// });
+
+
+
+// get create post router for posted file store in multer folder 
+// router.post('/product', isLoggedIn, async function(req, res, next) {
+//   const user = await userModel.findOne({username:req.session.passport.user});
+//   const orderp = await addtoproduct.create({
+//     user: user._id,
+//     productname: req.body,
+//     price: String,
+//     pimags:String,
+//   });
+
+//   user.gOrder.push(orderp._id);
+//   await user.save();
+//   res.redirect("/catering")
+// });
 
 
 

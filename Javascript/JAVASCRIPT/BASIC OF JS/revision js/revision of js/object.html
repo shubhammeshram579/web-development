@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        // object create
+        let obj = {
+            name:"Mi",
+            model:"A3",
+            madeby:"China",
+            screen:6.5
+        }
+
+
+        console.log(obj);
+
+        // select Object data
+
+        console.log(obj.name);
+        console.log(obj.model);
+        console.log(obj["madeby"]);
+        console.log(Object.keys(obj));
+        console.log(Object.values(obj));
+        obj.name = "realmy"
+        console.log(obj.name)
+
+        // freege object do not update object data
+        // console.log(Object.freeze(obj))
+
+        delete obj.name
+
+
+        console.log(obj)
+
+
+        // second way to create object 2
+
+        let obj2 = {}
+
+        obj2.name = "samsung"
+        obj2.model = 1990
+        obj2.madby = "uk"
+        obj2.screen = 6
+        obj2.year = 1998
+
+        console.log(obj2)
+
+
+        // marge object data
+        let storeobj = Object.assign({},obj,obj2)
+        console.log(storeobj);
+
+        // second methon add obj data
+        let spredstore = {...obj,...obj2}
+        console.log(spredstore);
+
+
+        // loops object
+        for (let i in storeobj){
+            console.log(`keys ${i} and values ${storeobj[i]}`)
+        }
+
+
+        // nasted Object
+        let nobj = {name:"shubham",
+            age:26,
+            object2:{name:"botel",
+                botelage:10
+            },
+            data2: "raw data"
+        };
+
+        console.log(nobj);
+
+
+
+        // protype inherense
+
+        let df1 = {
+            name:"shubham",
+            age:26,
+            canfly:false,
+            cantalk: true,
+            canrun:true
+        }
+
+
+        let df2 = {
+            name:"labham",
+            age:20,
+            canfly:false,
+            cantalk: true,
+            canrun:true
+        }
+
+
+        df1._proto_ = df2
+
+        console.log(df1);
+
+
+    </script>
+</body>
+</html>
