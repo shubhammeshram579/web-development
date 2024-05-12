@@ -1,0 +1,20 @@
+{
+  "name": "chai-aur-backendp",
+  "version": "1.0.0",
+  "description": "backend mega project",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon scr/index.js"
+  },
+  "keywords": [
+    "javascript",
+    "backend",
+    "project"
+  ],
+  "author": "shubham",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

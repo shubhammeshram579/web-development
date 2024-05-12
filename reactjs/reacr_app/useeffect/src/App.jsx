@@ -6,7 +6,7 @@ import './App.css'
 function App() {
 
   // varibles
-  const [length, setLenght] = useState(8)
+  const [length, setLenght] = useState(8);
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("")
@@ -53,7 +53,7 @@ function App() {
 <div className='w-full h-full max-w-md mx-auto shadow-md rounded-lg 
  my-8 text-orange-400 bg-gray-700 '>
 
-  <h1 className='text-center p-2 text-white' >password genrater</h1>
+  <h1 className='text-center p-2 text-white' >Password genrater</h1>
 
   <div className='flex shadow rounded-lg overflow-hidden mb-4'>
 
