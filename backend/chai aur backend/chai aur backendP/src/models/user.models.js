@@ -30,7 +30,7 @@ const userSchema = new Schema(
             type:String,// cloudrnary ulr
             required:true,
         },
-        coverimage:{
+        coverImage:{
             type:String,// cloudrnary ulr
         },
         watchHistory:[
@@ -54,7 +54,7 @@ const userSchema = new Schema(
 // midleware
 userSchema.pre("save", async function(next){
     if(!this.isModified("password")) return next();
-    this.password = bcrypt.hash(this.password, 10)
+    this.password = await bcrypt.hash(this.password, 10)
     next()
 
 })
