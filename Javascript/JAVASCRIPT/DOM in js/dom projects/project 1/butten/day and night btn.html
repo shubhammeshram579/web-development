@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .home{
+            height: 500px;
+            width: 500px;
+            background-color: aqua;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            border-radius: 10px;
+        }
+
+
+        .home .day img{
+            height: 400px;
+            width: 400px;
+            border-radius: 10px;
+            object-fit: cover;
+            position: absolute;
+            opacity: 1;
+            margin-left: 45px;
+            
+        }
+
+        .home .night img{
+            height: 400px;
+            width: 400px;
+            border-radius: 10px;
+            object-fit: cover;
+            position: relative;
+            opacity: 0;
+            margin-left: 45px;
+        }
+
+        button{
+            margin-left: 35%;
+            margin-top: 20px;
+            padding: 10px 50px;
+            border-radius: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="home">
+        <div class="day">
+            <img src="/images/moring.jpg" alt="">
+        </div>
+        <div class="night">
+            <img src="/images/night.jpg" alt="">
+        </div>
+        <button>day</button>
+    </div>
+    
+
+    <script>
+        let night = document.querySelector(".home .night img")
+        let day = document.querySelector(".home .day img")
+        let btn = document.querySelector(".home button")
+
+
+        let a = 0;
+        btn.addEventListener("click",function(){
+            if(a === 0){
+                night.style.opacity = 1;
+                a = 1
+                btn.innerHTML = "night"
+
+
+            }else{
+                night.style.opacity = 0;
+                a = 0
+                btn.innerHTML = "day"
+            }
+            
+
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        html, body{
+            height: 100%;
+            width: 100%;
+        }
+
+        body{
+            overflow: hidden;
+        }
+
+        button{
+            padding: 20px 50px;
+            position: absolute;
+            z-index: 111;
+            margin-top: 5%;
+            margin-left: 90%;
+           
+
+        }
+
+        .home .card img{
+            min-height: 50vh;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 1;
+        }
+
+        .home .card2 img{
+            min-height: 50vh;
+            width: 100%;
+            object-fit: cover;
+            position: relative;
+            opacity: 0;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="home">
+        <button>day</button>
+        <div class="card">
+            <img src="./images/dawid-zawila--G3rw6Y02D0-unsplash.jpg" alt="">
+
+        </div>
+        <div class="card2">
+            <img src="./images/pexels-tomfisk-1716158.jpg" alt="">
+
+        </div>
+        
+    </div>
+    
+
+
+    <script>
+      let day =     document.querySelector(".home .card img")
+      let night =   document.querySelector(".home .card2 img")
+      let btn =     document.querySelector("button")
+
+      let a = 0
+      btn.addEventListener("click",function(){
+        if(a === 0){
+            night.style.opacity = 1;
+            a = 1
+
+        }else{
+            night.style.opacity = 0;
+            a = 0
+        }
+        
+
+      })
+
+
+
+    </script>
+</body>
+</html>
