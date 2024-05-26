@@ -52,6 +52,7 @@ const registerUser = asyncHandler( async (req,res) => {
     const {fullname,email,username,password} = req.body
     // console.log("email: ",email)
 
+    // console.log(req.body)
 
     // begeneire level  error set code
     // if (fullname === ""){
@@ -79,8 +80,6 @@ const registerUser = asyncHandler( async (req,res) => {
     if (existedUser){
         throw new ApiError(409,"User with email or username allready exists")
     }
-
-    // console.log(req.files)
 
 
      //3.  check for image , check for avatar
@@ -246,7 +245,7 @@ const refreshAccessToken = asyncHandler(async (req, res) =>{
     }
 
     try {
-        const  decodedToken = jwt.verify(
+        const  decodedToken = jwt.verify( // jwt is accesse and refresh token for help of match cookie.refresh takon and body.refress tokon and 200 error healnling
             incomingRefreshToken, 
             process.env.REFRESH_TOKEN_SECRET
         )

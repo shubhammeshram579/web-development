@@ -23,9 +23,9 @@ router.route("/register").post(
     registerUser)
 
 
-
 // login user router
 router.route("/login").post(loginUser)
+
 
 
 // logout user roter
@@ -52,7 +52,7 @@ router.route("/avatar").patch(verifyJWT, upload.single("avatar"), updateUserAvat
 
 
 //updateUsercoverImage
-router.route("cover-image").patch(verifyJWT,upload.single("coverImage"),updateUsercoverImage)
+router.route("/cover-image").patch(verifyJWT,upload.single("coverImage"),updateUsercoverImage)
 
 // get routers 
 //getUserChannelProfile

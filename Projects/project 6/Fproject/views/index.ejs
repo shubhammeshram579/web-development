@@ -1,17 +1,17 @@
 <%- include('../views/header/header') %>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <!-- page1 home -->
-  <div class="page1">
-    <h1>DANE SURFACE </h1>
-    <h1>TECHNOLOGY PVT. LTD.</h1>
+  <div class="page1 min-h-[70vh] flex items-start justify-end flex-col px-20 leading-none">
+    <h1 class="font-bold text-[17vh]">DANE SURFACE</h1>
+    <h1 class="font-bold text-[17vh]">TECHNOLOGY PVT. LTD.</h1>
   </div>
-  <div class="page2">
+  <div class="page2 flex items-center justify-start flex-col px-20">
     <div class="card">
-      <img src="http://www.danesurface.com/images/Dane_Symbolic.jpeg" alt="">
+      <img class="h-full w-[89vw]" src="http://www.danesurface.com/images/Dane_Symbolic.jpeg" alt="">
     </div>
     <div class="card2">
-      <h1>Welcome to DANE SURFACE TECHNOLOGY PVT. LTD.</h1>
-      <p>Dane Surface Technology, established in 2012 at Aurangabad , Maharashtra ,India. Manufacturers GMF products to
+      <h1 class="text-lg font-bold  text-cyan-700 px-2 py-2">Welcome to DANE SURFACE TECHNOLOGY PVT. LTD.</h1>
+      <p class="font-normal text-[1.2vw] text-justify px-2">Dane Surface Technology, established in 2012 at Aurangabad , Maharashtra ,India. Manufacturers GMF products to
         support global Electroplating & Metal Finishing Activities. In a short Span of 10 Years , we have established
         our self as a Reliable , Competitive Supplier of GMF products across India through our inhouse developed
         Environment Friendly products. To meet diverse demands of decorative & functional performance of various
@@ -27,6 +27,10 @@
     <h1>About Us</h1>
     <div class="cards">
       <div class="card2">
+        <div class="card flex items-end justify-center flex-col px-20 py-20">
+          <img class="h-[500px] w-[500px] rounded float-right" src="http://www.danesurface.com/images/Mr%20Dane%20K.R.jpeg" alt="">
+          <h4>Mr Dane K.R (Director)</h4>
+        </div>
         <p>Dane Surface Technology Pvt.Ltd. was established in 2010 and we are manufacturing Electroplating and Surface
           finishig products.</p>
         <br>
@@ -47,10 +51,7 @@
           satisfaction of every customer. Also, company is always on the lookout for future environmental changes and
           changes suggested by OEM's.</p>
       </div>
-      <div class="card">
-        <img src="http://www.danesurface.com/images/Mr%20Dane%20K.R.jpeg" alt="">
-        <h4>Mr Dane K.R (Director)</h4>
-      </div>
+      
     </div>
     <div class="cards2">
       <div class="card">
@@ -170,19 +171,26 @@
     </div>
   </div>
   <div class="page6">
-    <div class="card">
-      <p>Company Address :
-        Gut No 248,Plot No 1,
-        Waluj Village, Tal Gangapur,
-        Dist- Aurangabad 431133.
-        MIDC Waluj Aurangabad,PIN Code-431136
-        Maharashtra State,India.
-        Head Office -Aurangabad : 09168619801
-        Branch Pune : 09168619802
-        Email ID : k.dane@danesurface.com
-        Website : www.danesurface.com</p>
+    <div class="contact">
+      <div class="card1">
+        <img src="http://www.danesurface.com/images/new%20logo.jpeg" height="75px" alt="">
+        <h1>Metallic Bonding</h1>
+    </div>
+      <div class="card">
+        <h1>Company Address :</h1>
+        <h4>Gut No 248,Plot No 1,
+          Waluj Village, Tal Gangapur,
+          Dist- Aurangabad 431133.</h4>
+          <h4>MIDC Waluj Aurangabad,PIN Code-431136 Maharashtra State,India.</h4>
+          <h2>Head Office : <span>Aurangabad</span></h2>
+          <h2>Branch Pune : <span>09168619802</span></h2>
+          <h2>Email ID : <span> k.dane@danesurface.com</span></h2>
+          <h2>Website : <span> www.danesurface.com</span></h2>
+  
+      </div>
 
     </div>
+    
     <div class="card2">
       <h1>Enquiry Form</h1>
       <form action="">
@@ -195,7 +203,7 @@
         </div>
 
         <p>Email ID : <input class="textdata" type="email" name="email" id="email"></p>
-        <p>Enquiry Details : <textarea name="enquiry" id="enquiry" cols="50" rows="10"></textarea></p>
+        <p>Enquiry Details : <textarea name="enquiry" id="enquiry" cols="20" rows="5"></textarea></p>
         <input type="submit" value="Send" class="send">
       </form>
 
