@@ -1,16 +1,16 @@
 import mongoose, {isValidObjectId} from "mongoose"
-import {Video} from "../models/video.model.js"
-import {User} from "../models/user.model.js"
-import {ApiError} from "../utils/ApiError.js"
+import {Video} from "../models/video.models.js"
+import {User} from "../models/user.models.js"
+import {ApiError} from "../utils/apiErrors.js"
 import {ApiResponse} from "../utils/apiResponse.js"
-import asyncHandler from "../utils/asyncHandler.js"
+import asyncHandler from "../utils/asynceHendler.js"
 import {uploadOnCloudinary} from "../utils/cloudinary.js"
 
 // https://github.com/silentkiller6092/chai-backend/blob/featured-branch/src/controllers/video.controller.js
 
 
 const getAllVideos = asyncHandler(async (req, res) => {
-    const { page = 1, limit = 10, query, sortBy, sortType, userId } = req.query
+    const { page = 1, limit = 3, query, sortBy, sortType, userId } = req.query
     //TODO: get all videos based on query, sort, pagination
     const sortOption = {};
 
@@ -22,12 +22,14 @@ const getAllVideos = asyncHandler(async (req, res) => {
 
     if(query){
         basequery.$or = [
-            {title: {$regex: query, $options: "i"}},
-            {description: {$regex: query, $options: "i"}},
+            { title: { $regex: query, $options: "i" } },
+            { description: { $regex: query, $options: "i" } },
         ]
     }
 
     try {
+
+
         const result = await Video.aggregate([
             {
                 $match: {
@@ -40,10 +42,10 @@ const getAllVideos = asyncHandler(async (req, res) => {
                 $sort: sortOption,
             },
             {
-                $skip: (page -1 ) * limit
+                $skip: (parseInt(page) -1 ) * parseInt(limit),
             },
             {
-                $limit: parseInt(limit)
+                $limit: parseInt(limit),
             }
             
 
@@ -56,7 +58,7 @@ const getAllVideos = asyncHandler(async (req, res) => {
         )
 
     } catch (error) {
-        throw new ApiError(500, error.massege)
+        throw new ApiError(500, error.message)
         
     }
 
@@ -71,6 +73,9 @@ const publishAVideo = asyncHandler(async (req, res) => {
         const userid = req.user?._id;
         const videoFileLocalPath = req.files?.videoFile?.[0]?.path;
         const thumbnaiFileLocalPath = req.files?.thumbnail?.[0]?.path;
+
+
+        console.log(req.body)
 
         if(!videoFileLocalPath){
             throw new ApiError(400, "vido file required");
@@ -115,7 +120,7 @@ const publishAVideo = asyncHandler(async (req, res) => {
 
         
     } catch (error) {
-        throw new ApiError(400, error.massege);
+        throw new ApiError(400, error.message);
         
     }
     
@@ -139,7 +144,7 @@ const getVideoById = asyncHandler(async (req, res) => {
         )
         
     } catch (error) {
-        throw new ApiError(400, error.massege)
+        throw new ApiError(400, error.message)
         
     }
    
@@ -151,7 +156,13 @@ const updateVideo = asyncHandler(async (req, res) => {
         const { videoId } = req.params
     //TODO: update video details like title, description, thumbnail
         const {title, description} = req.body;
-        const localFilePathThumbnail = req.file.path;
+        // const localFilePathThumbnail = req.file.path;
+
+
+        let localFilePathThumbnail;
+        if(req.files && Array.isArray(req.files.thumbnail) && req.files.thumbnail.length > 0){
+            localFilePathThumbnail = req.files.thumbnail[0].path
+        }
 
 
         if (!localFilePathThumbnail){
@@ -199,7 +210,7 @@ const updateVideo = asyncHandler(async (req, res) => {
 
         
     } catch (error) {
-        throw new ApiError(500, "error uploding file:" + error.massege)
+        throw new ApiError(500, "error uploding file:" + error.message)
         
     }
     
@@ -291,6 +302,8 @@ const togglePublishStatus = asyncHandler(async (req, res) => {
         throw new ApiError(500, error.massege || "unable to upload video")        
     }
 })
+
+
 
 export {
     getAllVideos,

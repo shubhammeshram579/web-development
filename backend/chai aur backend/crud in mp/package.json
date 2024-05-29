@@ -1,0 +1,23 @@
+{
+  "name": "crud-in-mp",
+  "version": "1.0.0",
+  "description": "simple manager for different tea",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "express",
+    "tea"
+  ],
+  "author": "shubham",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.1"
+  }
+}

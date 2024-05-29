@@ -52,7 +52,7 @@ const registerUser = asyncHandler( async (req,res) => {
     const {fullname,email,username,password} = req.body
     // console.log("email: ",email)
 
-    // console.log(req.body)
+    console.log(req.body)
 
     // begeneire level  error set code
     // if (fullname === ""){
@@ -110,7 +110,7 @@ const registerUser = asyncHandler( async (req,res) => {
     }
 
 
-    // 5. create user object - create entry in db
+    // 5. create user object - create entry in mongodb
     const user = await User.create({
         fullname,
         avatar: avatar.url,
@@ -202,6 +202,8 @@ const loginUser = asyncHandler(async (req, res)=>{
             "user logged in successfully"
         )
     )
+
+    console.log(loggedInUser)
 
 })
 
@@ -328,18 +330,19 @@ const getCurrentUser = asyncHandler(async (req, res) =>{
 // updateAccountDetails
 const updateAccountDetails = asyncHandler(async (req, res)=>{
     const {fullname, email} = req.body
+    console.log(req.body)
 
-    if (!(fullname || email)){
+    if (!fullname || !email) { 
         throw new ApiError(400, "all field are required")
 
     }
 
-    const user = User.findByIdAndUpdate(
+    const user = await User.findByIdAndUpdate(
         req.user?._id,
         {
             $set: {
                 fullname,
-                email: email
+                email,
             }
         },
         {new:true}
@@ -521,7 +524,7 @@ const getWatchHistory = asyncHandler(async (req, res) =>{
     const user = await User.aggregate([
         {
             $match: {
-                _id: mongoose.Types.ObjectId(req.user._id)
+                _id: new mongoose.Types.ObjectId(req.user._id)
             }
         },
         {

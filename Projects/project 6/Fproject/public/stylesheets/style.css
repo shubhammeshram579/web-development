@@ -249,17 +249,15 @@ html,body{
 .page6 .card2{
   width: 50%;
 }
-
+/* 
 .page6 .card2 form{
   display: flex;
   align-items: start;
-  /* justify-content: center; */
   flex-direction: column;
   gap: 20px;
 }
 
 .page6 .card2 input{
-  /* width: 200%; */
   height: 30px;
   margin: 10px 10px;
 
@@ -303,7 +301,7 @@ html,body{
   margin-left: 30px;
   margin-bottom: 20px;
   border-radius: 5px;
-}
+} */
 
 
 
