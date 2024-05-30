@@ -9,60 +9,7 @@ import {uploadOnCloudinary} from "../utils/cloudinary.js"
 // https://github.com/silentkiller6092/chai-backend/blob/featured-branch/src/controllers/video.controller.js
 
 
-const getAllVideos = asyncHandler(async (req, res) => {
-    const { page = 1, limit = 3, query, sortBy, sortType, userId } = req.query
-    //TODO: get all videos based on query, sort, pagination
-    const sortOption = {};
 
-    if(sortBy){
-        sortOption[sortBy] = sortType == "desc" ? -1 : 1;
-    }
-
-    let basequery = {};
-
-    if(query){
-        basequery.$or = [
-            { title: { $regex: query, $options: "i" } },
-            { description: { $regex: query, $options: "i" } },
-        ]
-    }
-
-    try {
-
-
-        const result = await Video.aggregate([
-            {
-                $match: {
-                    ...basequery,
-                    owner: new mongoose.Types.ObjectId(userId)
-                },
-
-            },
-            {
-                $sort: sortOption,
-            },
-            {
-                $skip: (parseInt(page) -1 ) * parseInt(limit),
-            },
-            {
-                $limit: parseInt(limit),
-            }
-            
-
-        ])
-
-        return res
-        .status(200)
-        .json(
-            new ApiResponse(200, {result}, "Success")
-        )
-
-    } catch (error) {
-        throw new ApiError(500, error.message)
-        
-    }
-
-})
 
 const publishAVideo = asyncHandler(async (req, res) => {
     
@@ -126,6 +73,81 @@ const publishAVideo = asyncHandler(async (req, res) => {
     
 })
 
+
+// const getAllVideos = asyncHandler(async (req, res) => {
+//     const { page = 1, limit = 3, query, sortBy, sortType, userId } = req.query
+//     //TODO: get all videos based on query, sort, pagination
+//     const sortOption = {};
+
+//     if(sortBy){
+//         sortOption[sortBy] = sortType == "desc" ? -1 : 1;
+//     }
+
+//     let basequery = {};
+
+//     if(query){
+//         basequery.$or = [
+//             { title: { $regex: query, $options: "i" } },
+//             { description: { $regex: query, $options: "i" } },
+//         ]
+//     }
+
+//     try {
+
+
+//         const result = await Video.aggregate([
+//             {
+//                 $match: {
+//                     ...basequery,
+//                     owner: new mongoose.Types.ObjectId(userId)
+//                 },
+
+//             },
+//             {
+//                 $sort: sortOption,
+//             },
+//             {
+//                 $skip: (parseInt(page) -1 ) * parseInt(limit),
+//             },
+//             {
+//                 $limit: parseInt(limit),
+//             }
+            
+
+//         ])
+
+//         return res
+//         .status(200)
+//         .json(
+//             new ApiResponse(200, {result}, "Success")
+//         )
+
+//     } catch (error) {
+//         throw new ApiError(500, error.message)
+        
+//     }
+
+// })
+
+const getAllVideos = asyncHandler( async (req, res) =>{
+    try {
+        const getvideos = await Video.find()
+    
+        if(!getvideos){
+            throw new ApiError(404, "videos not founded")
+        }
+    
+        return res
+        .status(200)
+        .json(
+            new ApiResponse(200, {getvideos} , "get all videos succesfully")
+        )
+    } catch (error) {
+        throw new ApiError(404, error.message, "videos not founded")
+        
+    }
+})
+
 const getVideoById = asyncHandler(async (req, res) => {
     try {
         const { videoId } = req.params
@@ -156,13 +178,9 @@ const updateVideo = asyncHandler(async (req, res) => {
         const { videoId } = req.params
     //TODO: update video details like title, description, thumbnail
         const {title, description} = req.body;
-        // const localFilePathThumbnail = req.file.path;
+        const localFilePathThumbnail = req.file?.path;
 
-
-        let localFilePathThumbnail;
-        if(req.files && Array.isArray(req.files.thumbnail) && req.files.thumbnail.length > 0){
-            localFilePathThumbnail = req.files.thumbnail[0].path
-        }
+        console.log(localFilePathThumbnail)
 
 
         if (!localFilePathThumbnail){
@@ -172,13 +190,14 @@ const updateVideo = asyncHandler(async (req, res) => {
 
 
         const uploadCloud = await uploadOnCloudinary(localFilePathThumbnail)
+
         if(!uploadCloud){
             throw new ApiError(500, "unable to upload to cloud");
         }
 
 
         const public_id_video = await Video.findById(videoId);
-        const deleteFileServer = await deleteFile(public_id_video.cloundinaryThumbnailId);
+        // const deleteFileServer = await deleteFile(public_id_video.cloundinaryThumbnailId);
 
 
         const uploadFileOnServer = await Video.findByIdAndUpdate(
@@ -186,9 +205,9 @@ const updateVideo = asyncHandler(async (req, res) => {
             {
                 $set: {
                     thumbnail: uploadCloud.url,
-                    cloundinaryThumbnailId: uploadCloud.public_id,
+                    // cloundinaryThumbnailId: uploadCloud.public_id,
                     title: title,
-                    description: description
+                    description: description,
                 }
             },
             {
@@ -217,48 +236,73 @@ const updateVideo = asyncHandler(async (req, res) => {
 
 })
 
-const deleteVideo = asyncHandler(async (req, res) => {
+// const deleteVideo = asyncHandler(async (req, res) => {
+//     try {
+//         const { videoId } = req.params
+//         //TODO: delete video
+//         const public_id_video = await Video.findById(
+//             new mongoose.Types.ObjectId(videoId)
+//         );
+
+
+//         if(!public_id_video){
+//             throw new ApiError(404, "Video not found");
+
+//         }
+
+
+//         const clouninaryVideoId = public_id_video.get("cloundinaryVideoId");
+
+//         const deleteFileServer = await deleteFile(clouninaryVideoId);
+
+//         if(!deleteFileServer.result || deleteFileServer.result !== "ok"){
+//             throw new ApiError(500, "unable to delete fine on Cloudinary")
+//         }
+
+
+//         const uploadFileOnSever = await Video.findByIdAndDelete(videoId);
+
+
+//         if(!uploadFileOnSever){
+//             throw new ApiError(500, "unable to delete video on server")
+//         }
+
+//         return  res
+//         .status(200)
+//         .json(
+//             new ApiResponse(200, {uploadFileOnSever}, "success")
+//         )
+
+
+//     } catch (error) {
+//         throw new ApiError(500, "unable to delete video on server")
+        
+//     }
+// })
+
+
+const deleteVideo = asyncHandler( async (req, res)=>{
     try {
+
         const { videoId } = req.params
         //TODO: delete video
-        const public_id_video = await Video.findById(
-            new mongoose.Types.ObjectId(videoId)
-        );
 
-
-        if(!public_id_video){
-            throw new ApiError(404, "Video not found");
-
-        }
-
-
-        const clouninaryVideoId = public_id_video.get("cloundinaryVideoId");
-
-        const deleteFileServer = await deleteFile(clouninaryVideoId);
-
-        if(!deleteFileServer.result || deleteFileServer.result !== "ok"){
-            throw new ApiError(500, "unable to delete fine on Cloudinary")
-        }
-
-
-        const uploadFileOnSever = await Video.findByIdAndDelete(videoId);
-
-
+        const uploadFileOnSever = await Video.findByIdAndDelete(videoId)
+    
         if(!uploadFileOnSever){
-            throw new ApiError(500, "unable to delete video on server")
+            throw new ApiError(404, "video file not found")
         }
-
+    
         return  res
         .status(200)
         .json(
-            new ApiResponse(200, {uploadFileOnSever}, "success")
+            new ApiResponse(200, "video file delete successfully")
         )
-
-
     } catch (error) {
-        throw new ApiError(500, "unable to delete video on server")
+        throw new ApiError(200, error.message)
         
     }
+
 })
 
 const togglePublishStatus = asyncHandler(async (req, res) => {
