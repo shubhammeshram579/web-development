@@ -4,40 +4,7 @@ import {ApiError} from "../utils/apiErrors.js"
 import {ApiResponse} from "../utils/apiResponse.js"
 import asyncHandler from "..//utils/asynceHendler.js"
 
-const getVideoComments = asyncHandler(async (req, res) => {
-    //TODO: get all comments for a video
-    const {videoId} = req.params
-    const {page = 1, limit = 10} = req.query
 
-
-    try {
-        const allComment = await Comment.aggregate([
-            {
-                $match: {
-                    video: new mongoose.Types.ObjectId(videoId)
-                }
-            },
-            {
-                $skip: (page - 1 ) * limit,
-            },
-            {
-                $limit: parseInt(limit, 10),
-            },
-        ]);
-
-        return res
-        .status(200)
-        .json(
-            new ApiResponse(200, {allComment}, "success")
-        )
-        
-
-    } catch (error) {
-        throw new ApiError(400, error.message)
-        
-    }
-
-})
 
 const addComment = asyncHandler(async (req, res) => {
     // TODO: add a comment to a video
@@ -74,29 +41,96 @@ const addComment = asyncHandler(async (req, res) => {
     }
 })
 
+
+const getVideoComments = asyncHandler(async (req, res) => {
+    //TODO: get all comments for a video
+    const {videoId} = req.params
+    const {page = 1, limit = 10} = req.query
+
+
+    try {
+        const allComment = await Comment.aggregate([
+            {
+                $match: {
+                    video: new mongoose.Types.ObjectId(videoId)
+                }
+            },
+            {
+                $skip: (parseInt(page) - 1 ) * parseInt(limit),
+            },
+            {
+                $limit: parseInt(limit, 10),
+            },
+        ]);
+
+        return res
+        .status(200)
+        .json(
+            new ApiResponse(200, {allComment}, "success")
+        )
+        
+
+    } catch (error) {
+        throw new ApiError(400, error.message)
+        
+    }
+
+})
+
+
+const getCommentId = asyncHandler( async (req, res) => {
+    try {
+
+        const {commentId} = req.params;
+
+        if(!commentId){
+            throw new ApiError(200, "commentid not found")
+        }
+
+
+        const getcomments = await Comment.findById(commentId)
+
+        if(!getcomments){
+            throw new ApiError(404, "comment is missing")
+        }
+        
+        return res
+        .status(200)
+        .json(
+            new ApiResponse(200, {getcomments}, "comment data get succesfuly")
+        )
+    } catch (error) {
+        throw new ApiError(200, error.message)
+        
+    }
+
+})
+
+
 const updateComment = asyncHandler(async (req, res) => {
     // TODO: update a comment
     try {
-        const {commnetId} = req.params;
+        const {commentId} = req.params;
 
-        if (!commnetId?.trim() || !isValidObjectId(commnetId)){
+        if (!commentId){
             throw new ApiError(400, "commentId is required or invalid")
         }
 
 
-        const content = req.body?.content?.trim();
+        const { content } = req.body;
+        const trimmedContent = content?.trim();
 
-        if(!content){
+        if(!trimmedContent){
             throw new ApiError(400, "Comment text is required to update comment");
         }
         
 
 
         const comment = await Comment.findByIdAndUpdate(
-            commnetId,
+            commentId,
             {
                 $set:{
-                    content
+                    content: trimmedContent,
                 }
             },
             {
@@ -112,12 +146,12 @@ const updateComment = asyncHandler(async (req, res) => {
         return res
         .status(200)
         .json(
-            new ApiResponse(200, comment, "Comment update success")
+            new ApiResponse(200, {comment}, "Comment update success")
         );
 
 
     } catch (error) {
-        throw new ApiError(401, error.message);
+        throw new ApiError(500, error.message);
       }
    
 });
@@ -125,16 +159,14 @@ const updateComment = asyncHandler(async (req, res) => {
 const deleteComment = asyncHandler(async (req, res) => {
     // TODO: delete a comment
     try {
-        const {commnetId} = req.params;
+        const {commentId} = req.params;
 
-        const updateComment = await Comment.deleteOne({
-            _id: commnetId,
-        });
+        const deleteComment = await Comment.findByIdAndDelete(commentId);
 
         return res
         .status(200)
         .json(
-            new ApiResponse(200, {updateComment}, "file delete succsfully")
+            new ApiResponse(200, {deleteComment}, "file delete succsfully")
         );
         
     } catch (error) {
@@ -146,6 +178,7 @@ const deleteComment = asyncHandler(async (req, res) => {
 export {
     getVideoComments, 
     addComment, 
+    getCommentId,
     updateComment,
     deleteComment
     }
