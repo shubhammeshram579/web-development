@@ -4,11 +4,13 @@ import {regitsterUser,
     getCurrentUser,
     logoutUser
 } from "../controllers/User.controller.js"
-
+import cors from "cors"
 import {verifyJWT} from "../middlewheres/Auth.middlewere.js"
 
 const router = Router()
 
+router.use(cors());
+// router.use(express.json());
 
 // regirter router
 router.route("/register").post(regitsterUser)

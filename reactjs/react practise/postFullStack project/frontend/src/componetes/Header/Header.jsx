@@ -4,6 +4,7 @@ import Logo from "../Logo.jsx"
 import {Link} from "react-router-dom"
 import {useSelector} from "react-redux"
 import {useNavigate} from "react-router-dom"
+import LogoutBtn from './LogoutBtn.jsx'
 
 function Header() {
     const authStatus = useSelector((state) => state.auth.status)
@@ -40,21 +41,21 @@ function Header() {
 
 
   return (
-    <header>
+    <header className={'bg-gray-500 p-5 w-full'}>
         <Contenier>
-            <nav>
+            <nav className={'flex items-center justify-between'}>
                 <div>
                     <Link to="/">
                     <Logo />
                     </Link>
                 </div>
-                <ul>
+                <ul className={'flex items-center justify-between gap-5'}>
                     {
                         navItems.map((item)=>
                             item.active ? (
                                 <li key={item.name}>
                                     <button onClick={() => navigate(item.slug)}
-                                        className='inline-bock px-2 duration-200 hover:bg-blue-100 rounded-full'> {item.name}
+                                        className={'inline-bock px-2 duration-200 hover:bg-blue-100 rounded-full'}> {item.name}
                                     </button>
                                 </li>
                             ) : null )

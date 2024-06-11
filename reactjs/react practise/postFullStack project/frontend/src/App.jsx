@@ -1,18 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Header } from './componetes/index.js'
+import React from 'react'
+import { Header, Footer } from './componetes'
+import { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { Outlet } from 'react-router-dom'
+import axios from 'axios'
+import {Login, Logout} from  "./componetes/index.js"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [loading , setLoading] = useState(true)
+  const dispatch = useDispatch()
 
-  return (
-   <>
-   <Header />
-   <h1>shubham</h1>
-   </>
-  )
+  useEffect(() => {
+    axios.get('/current-user', {
+      withCredentials: true 
+    })
+    .then(response => {
+      if (response.data) {
+        dispatch(Login(response.data));
+      } else {
+        dispatch(Login());
+      }
+    })
+    .catch(error => {
+      console.log('Error fetching user:', error);
+      dispatch(Logout());
+    })
+    .finally(() => setLoading(false));
+  }, [dispatch]);
+
+
+  return !loading ? (
+    <div className='flex items-center justify-between'>
+        <div>
+            <Header />
+            <main>
+                <Outlet />
+            </main>
+            <Footer />
+        </div>
+    </div>
+  ): null
 }
 
 export default App
