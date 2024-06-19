@@ -4,6 +4,9 @@ import {Button, Input, Logo} from  "./index.js"
 import {useDispatch} from  "react-redux"
 import {useForm} from  "react-hook-form"
 import axios from 'axios'
+// import { useSelector } from 'react-redux'
+import {login as authLogin} from '..//../store/AuthSlice.js'
+
 
 function Login() {
     // const [email , setEmail] = useState("")
@@ -17,9 +20,30 @@ function Login() {
     // api data fatch pending
     const onSubmit = async (data) => {
         try {
-          const response = await axios.post('http://localhost:8000/api/v1/users/login', data);
-          alert(response.data.message);
-          navigate("/")
+          const session = await axios.post('http://localhost:8000/api/users/login', data);
+          console.log(session)
+
+
+          if(session){
+            const userData = await session.data
+
+            console.log(userData.data.user)
+            // const accessToken = await userData.data.accessToken
+
+            // console.log(accessToken)
+
+
+            if(userData){
+              dispatch(authLogin(userData.data.user))
+
+              // set accessToken
+              // localStorage.setItem("accessToken", accessToken)
+              navigate("/")
+            } 
+
+           
+          }
+          
         } catch (error) {
           console.log(error);
           alert('Error login user');
@@ -28,32 +52,33 @@ function Login() {
    
 
   return (
-    <div>
+    <div> 
         <div>
-            <Logo />
+        <Logo />
+    </div>
+    <h3>Sign in to your account</h3>
+    <p>Don&apos;t have any account?&nbsp;<Link to="/Signup">Sign Up</Link></p>
+
+    <form onSubmit={handleSubmit(onSubmit)}>
+        <div>
+            <Input label="Email:" placeholder= "Enter email address" type="email" {...register("email", {required: "email required", 
+                pattern: {
+                    value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+                    message: 'Email address must be a valid address',
+                  },
+            })} />
+
+            <Input label="password" type="password" placeholder="esnter password" {...register("password", {
+                required:"password required"
+            })} />
+
+          
+
+            <Button type="submit" className="w-full">Sign In </Button>
+            
         </div>
-        <h3>Sign in to your account</h3>
-        <p>Don&apos;t have any account?&nbsp;<Link to="/Signup">Sign Up</Link></p>
-        {/* {error && <p className="text-red-600 mt-8 text-center">{error}</p>} */}
-
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div>
-                <Input label="Email:" placeholder= "Enter email address" type="email" {...register("email", {required: "email required", 
-                    pattern: {
-                        value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-                        message: 'Email address must be a valid address',
-                      },
-                })} />
-
-                <Input label="password" type="password" placeholder="esnter password" {...register("password", {
-                    required:"password required"
-                })} />
-
-                <Button type="submit" className="w-full">Sign In </Button>
-                
-            </div>
-        </form>
-
+    </form>
+        
     </div>
   )
 }

@@ -33,8 +33,8 @@ function Header() {
             active: authStatus,
         },
         {
-            name: "Add Post",
-            slug: "/add-post",
+            name: "AddPost",
+            slug: "/Add-Post",
             active: authStatus,
         },
     ]
@@ -50,16 +50,23 @@ function Header() {
                     </Link>
                 </div>
                 <ul className={'flex items-center justify-between gap-5'}>
-                    {
+                    {/* {
                         navItems.map((item)=>
                             item.active ? (
                                 <li key={item.name}>
                                     <button onClick={() => navigate(item.slug)}
-                                        className={'inline-bock px-2 duration-200 hover:bg-blue-100 rounded-full'}> {item.name}
+                                        className={'inline-block px-2 duration-200 hover:bg-blue-100 rounded-full'}> {item.name}
                                     </button>
                                 </li>
                             ) : null )
-                    }
+                    } */}
+                    {navItems.filter(item => item.active).map((item) => (
+                        <li key={item.name}>
+                            <button onClick={() => navigate(item.slug)}
+                            className={'inline-block px-2 duration-200 hover:bg-blue-100 rounded-full'}>
+                                {item.name}
+                                </button>
+                    </li>))}
 
                     {
                         authStatus && (

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {Button , Input, Logo} from "./index.js"
-import { useDispatch } from 'react-redux'
 import {useForm} from "react-hook-form"
 import axios from "axios"
+import {login  as authLogin} from '..//../store/AuthSlice.js'
+import { useDispatch } from 'react-redux'
 
 function Signup() {
     // create varible
@@ -20,12 +21,19 @@ function Signup() {
 
     const onSubmit = async (data) => {
         try {
-          const response = await axios.post('http://localhost:8000/api/v1/users/register', data);
-          alert(response.data.message);
+          const userData = await axios.post('http://localhost:8000/api/users/register', data);
+          alert(userData.data.message);
+          console.log(userData.data.data)
+
+        //   login dispatch
+          dispatch(authLogin(userData.data.data))
+
+        //   navigate router
           navigate("/")
+
         } catch (error) {
           console.log(error);
-          alert('Error registering user');
+          alert('Error registration ');
         }
       };
 

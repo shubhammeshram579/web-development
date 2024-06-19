@@ -4,14 +4,14 @@ import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Outlet } from 'react-router-dom'
 import axios from 'axios'
-import {Login, Logout} from  "./componetes/index.js"
+import {Login, Logout} from  "./componetes/index"
 
 function App() {
   const [loading , setLoading] = useState(true)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    axios.get('/current-user', {
+    axios.get('/users/current-user', {
       withCredentials: true 
     })
     .then(response => {

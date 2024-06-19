@@ -10,4 +10,8 @@ const store = configureStore({
 
 })
 
+// console.log(store)
+
 export default store
+
+

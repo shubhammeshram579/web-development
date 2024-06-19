@@ -8,6 +8,8 @@ import Logo from "./Logo.jsx"
 import Login from "./Login.jsx"
 import AuthLayout from "./AuthLayout.jsx"
 import Logout from "./Header/LogoutBtn.jsx"
+import PostForm from "./PostForm/PostForm.jsx"
+import Contenier from "./contenier/Contenier.jsx"
 export {
     Header,
     Footer,
@@ -19,6 +21,9 @@ export {
     Login,
     AuthLayout,
     Logout,
+    PostForm,
+    Contenier
+
 
 
 }

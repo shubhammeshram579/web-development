@@ -3,7 +3,7 @@ import React , {useId} from 'react'
 function Select({
     options,
     label,
-    classname,
+    className,
     ...props
 }, ref) {
 
@@ -18,7 +18,7 @@ function Select({
         <select {...props} id={id} ref={ref} className={`py-3 rounded-lg bg-white
      text-black outline-none focus:bg-gray-50 
      duration-200 border border-gray-200 w-full 
-     ${classname}`}>
+     ${className}`}>
         {options?.map((option) => (
             <option value={option} key={option}></option>
         ))}

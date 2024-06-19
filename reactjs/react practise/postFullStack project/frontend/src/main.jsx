@@ -10,6 +10,7 @@ import store from "..//..//frontend/store/Store.js"
 import Signup from './componetes/pages/signup/Signup.jsx'
 import Home from "./componetes/pages/home/Home.jsx"
 import Login from './componetes/pages/login/Login.jsx'
+import Addpost from './componetes/pages/Addpost/Addpost.jsx'
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,15 @@ const router = createBrowserRouter([
                 </AuthLayout>
             ),
         },
+        {
+          path: "/Add-Post",
+          element: (
+              <AuthLayout authentication>
+                  {" "}
+                  <Addpost />
+              </AuthLayout>
+          ),
+      },
         // {
         //     path: "/all-posts",
         //     element: (
@@ -46,15 +56,7 @@ const router = createBrowserRouter([
         //         </AuthLayout>
         //     ),
         // },
-        // {
-        //     path: "/add-post",
-        //     element: (
-        //         <AuthLayout authentication>
-        //             {" "}
-        //             <AddPost />
-        //         </AuthLayout>
-        //     ),
-        // },
+        
         // {
         //     path: "/edit-post/:slug",
         //     element: (
