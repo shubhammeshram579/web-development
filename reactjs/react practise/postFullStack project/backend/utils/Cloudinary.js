@@ -4,9 +4,9 @@ import fs from "fs"
 
 // connect with cloudinary cloud server
 cloudinary.config({
-    cloud_name:process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret:process.env.CLOUDINARY_API_SECRET
+    cloud_name:"dsfepcba9",
+    api_key: "111319568374775",
+    api_secret:"pySO5Q6eYqkN0tLEuEYomyCniSw"
 });
 
 
@@ -19,7 +19,7 @@ const uploadCloudinary = async (localFilePath) =>{
         })
 
         console.log("file uploaded on cloudenery", response.url)
-        // fs.unlinkSync(localFilePath)
+        fs.unlinkSync(localFilePath)
         return response;
 
         

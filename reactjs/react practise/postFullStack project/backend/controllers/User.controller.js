@@ -100,7 +100,10 @@ const loginUser = AsynceHendler( async (req, res) => {
 
     const {accessToken, refreshToken} = await genrateAccessAndRefreshToken(user._id)
 
+    console.log(accessToken)
+
     const loggedInUser = await User.findById(user._id).select("-password -refreshToken")
+    console.log(loggedInUser)
 
 
     // send cookies
@@ -172,7 +175,7 @@ const refreshAccessToken = AsynceHendler(async (req, res) =>{
     }
 
     try {
-        const  decodedToken = jwt.verify( // jwt is accesse and refresh token for help of match cookie.refresh takon and body.refress tokon and 200 error healnling
+        const decodedToken = jwt.verify( // jwt is accesse and refresh token for help of match cookie.refresh takon and body.refress tokon and 200 error healnling
             incomingRefreshToken, 
             process.env.REFRESH_TOKEN_SECRET
         )
@@ -196,6 +199,7 @@ const refreshAccessToken = AsynceHendler(async (req, res) =>{
         }
     
         const {accessToken, newRefreshToken} = await genrateAccessAndRefreshToken(user._id)
+        // console.log(accessToken)
     
         return res
         .status(200)

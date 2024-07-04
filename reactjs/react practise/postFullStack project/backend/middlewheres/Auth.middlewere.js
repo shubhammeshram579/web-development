@@ -4,10 +4,10 @@ import jwt from "jsonwebtoken"
 import {User} from "../models/User.model.js"
 
 
-export const verifyJWT = AsynceHendler( async (req, _, next) =>{
+export const verifyJWT = AsynceHendler( async (req, res, next) =>{
 try {
-    const token = req.cookies?.accessToken || req.headers["Authorization"]?.replace("Bearer ", "");
-    console.log(token)
+    const token = req.cookies?.accessToken || req.headers["authorization"]?.replace("Bearer ", "");
+    console.log("Token:", token);
 
     if(!token){
         throw new ApiError(401, "Unauthorized requrest")
@@ -15,12 +15,16 @@ try {
 
     const decodedToken = jwt.verify(token,process.env.ACCESS_TOKEN_SECRET)
 
+    console.log("Decoded Token:", decodedToken);
+
     const user = await User.findById(decodedToken?._id).select(
         "-password -refreshToken"
     )
 
+    console.log("User:", user);
+
     if(!user){
-        throw new ApiError(401 , "invalid acces token")
+        throw new ApiError(401 , "invalid access token")
     }
 
 

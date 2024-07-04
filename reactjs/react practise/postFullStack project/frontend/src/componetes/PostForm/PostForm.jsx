@@ -1,38 +1,50 @@
-import React ,{useCallback,useEffect} from 'react';
+import React ,{useState,useCallback} from 'react';
 import { Input, Select, Button } from '../index.js';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
-function PostForm({ post }) {
-  const navigate = useNavigate()
-  const userData = useSelector((state) => state.userData )
+
+
+
+const  PostForm = ({post}) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const navigate = useNavigate()
 
- 
-  const onSubmit = async (post) => {
-    try {
+    // Get the token from cookies or local storage
+    const localStorageToken = localStorage.getItem("token");
+    const stoken = sessionStorage.getItem("token")
+    const accessToken = useSelector((state) => state.auth.user?.accessToken);
+    const token = stoken || localStorageToken || accessToken;
 
 
-    console.log(userData)
-      // const response = await axios.post('http://localhost:8000/api/posts/addpost', post);
-      // alert(response.data.message);
-   
 
-    //   console.log(response)
 
-    //   login dispatch
-      // dispatch(authLogin(response.data))
+    // form data setup
+  const onSubmit = async (data) => {
+    const formData = new FormData();
+    formData.append("title",data.title);
+    formData.append("description",data.description);
+    formData.append("postImg",data.postImg[0]);
+    formData.append("status",data.status);
 
-    //   navigate router
+
+    // fatch addpost api
+try {
+      const response = await axios.post("http://localhost:8000/api/posts/addpost",formData,{
+        headers:{"Authorization":`Bearer ${token}`}
+      })
       navigate("/")
+      return response.data
 
-    } catch (error) {
-      console.log(error);
-      alert('Error registration ');
-    }
-  };
+     
+} catch (error) {
+  alert("postImg not upload")
+  
+}
+
+};
 
 
 
@@ -41,8 +53,8 @@ function PostForm({ post }) {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
         <Input
-          label="Title: "
-          placeholder="Title"
+          label="title: "
+          placeholder="title"
           className="mb-4"
           {...register('title', { required: 'Title required' })}
         />
@@ -63,12 +75,12 @@ function PostForm({ post }) {
           type="file"
           className="mb-4"
           accept="image/png, image/jpg, image/jpeg, image/gif"
-          {...register('postImg', { required: !post })}
+          {...register('postImg', { required: "post image required"})}
         />
         {errors.postImg && <p>{errors.postImg.message}</p>}
 
         <Select
-          options={["active", "inactive"]}
+          options={[true, false]}
           label="Status: "
           className="mb-4 text-black p-10"
           {...register('status', { required: 'Status required' })}

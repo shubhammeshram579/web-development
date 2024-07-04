@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {Button , Input, Logo} from "./index.js"
 import {useForm} from "react-hook-form"
 import axios from "axios"
-import {login  as authLogin} from '..//../store/AuthSlice.js'
-import { useDispatch } from 'react-redux'
+// import { useDispatch } from 'react-redux'
 
-function Signup() {
+function Register() {
     // create varible
     // const [fullname, setFullname] = useState("")
     // const [username, setUsername] = useState("")
@@ -15,18 +14,15 @@ function Signup() {
     // const [error, setError] = useState()
 
     const navigate = useNavigate()
-    const dispatch = useDispatch()
     const { register, handleSubmit, formState: { errors } } = useForm();
    
 
     const onSubmit = async (data) => {
+      
         try {
-          const userData = await axios.post('http://localhost:8000/api/users/register', data);
-          alert(userData.data.message);
-          console.log(userData.data.data)
-
-        //   login dispatch
-          dispatch(authLogin(userData.data.data))
+          const user = await axios.post('http://localhost:8000/api/users/register', data);
+          alert(user.data.message);
+          console.log(user)        
 
         //   navigate router
           navigate("/")
@@ -98,4 +94,4 @@ function Signup() {
   )
 }
 
-export default Signup
+export default Register

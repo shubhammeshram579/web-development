@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body{
+            height: 100%;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .bgcolor{
+            min-height: 70vh;
+            background-color: red;
+            padding: 10px;
+        }
+
+        .btn{
+            padding: 20px;
+            background-color: yellow;
+            border-radius: 10px;
+            margin-top: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+        }
+
+        .btn button{
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+        .red{
+            background-color: green;
+        }
+
+        .green{
+            background-color: red;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="bgcolor">
+        <h1>Shubham</h1>
+        <div class="btn">
+            <button class="red">red</button>
+            <button class="green">green</button>
+        </div>
+        
+    </div>
+
+    <script>
+       let redbtn=  document.querySelector(".bgcolor .btn .red");
+       let greenbtn = document.querySelector(".green")
+       let bgBbtn = document.querySelector(".bgcolor")
+
+
+       redbtn.addEventListener("click",function(){
+        bgBbtn.style.backgroundColor = "green"
+       })
+
+
+       greenbtn.addEventListener("click",function(){
+        bgBbtn.style.backgroundColor = "red"
+       })
+
+    </script>
+    
+</body>
+</html>

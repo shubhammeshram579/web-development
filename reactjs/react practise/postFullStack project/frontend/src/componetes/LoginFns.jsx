@@ -1,55 +1,49 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {Link , useNavigate} from "react-router-dom"
 import {Button, Input, Logo} from  "./index.js"
 import {useDispatch} from  "react-redux"
 import {useForm} from  "react-hook-form"
 import axios from 'axios'
-// import { useSelector } from 'react-redux'
-import {login as authLogin} from '..//../store/AuthSlice.js'
+import {login as authLogin} from '../../store/AuthSlice.js'
 
 
-function Login() {
+function LoginFns() {
     // const [email , setEmail] = useState("")
     // const [password , setPassword] = useState("")
     // const [error, setError] = useState("")
     
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const { register, handleSubmit, formState: { errors } } = useForm();
 
     // api data fatch pending
     const onSubmit = async (data) => {
-        try {
-          const session = await axios.post('http://localhost:8000/api/users/login', data);
-          console.log(session)
+      try {
+
+        const session = await axios.post("http://localhost:8000/api/users/login",data)
+
+        // console.log(session.data.data.accessToken)
 
 
-          if(session){
-            const userData = await session.data
-
-            console.log(userData.data.user)
-            // const accessToken = await userData.data.accessToken
-
-            // console.log(accessToken)
+        // localStorage token set
+        localStorage.setItem("token",session.data.data.accessToken)
 
 
-            if(userData){
-              dispatch(authLogin(userData.data.user))
+        // reduct tookit token set
+        dispatch(authLogin(session.data.data))
 
-              // set accessToken
-              // localStorage.setItem("accessToken", accessToken)
-              navigate("/")
-            } 
+        // sessionStorage token set
+        sessionStorage.setItem("token",session.data.data.accessToken)
 
-           
-          }
-          
-        } catch (error) {
-          console.log(error);
-          alert('Error login user');
-        }
+        // navigate page
+        navigate("/")
+        
+      } catch (error) {
+        console.log("error")
+        
+      }
+        
       };
-   
 
   return (
     <div> 
@@ -83,4 +77,4 @@ function Login() {
   )
 }
 
-export default Login
+export default LoginFns

@@ -3,11 +3,11 @@ import Footer from "./Footer/Footer.jsx"
 import Button from "./Button.jsx"
 import Input from "./Input.jsx"
 import Select from "./Select.jsx"
-import Signup from "./Signup.jsx"
+import Register from "./Register.jsx"
 import Logo from "./Logo.jsx"
-import Login from "./Login.jsx"
+import LoginFns from "./LoginFns.jsx"
 import AuthLayout from "./AuthLayout.jsx"
-import Logout from "./Header/LogoutBtn.jsx"
+import LogoutBtn from "./Header/LogoutBtn.jsx"
 import PostForm from "./PostForm/PostForm.jsx"
 import Contenier from "./contenier/Contenier.jsx"
 export {
@@ -16,11 +16,11 @@ export {
     Button,
     Input,
     Select,
-    Signup,
+    Register,
     Logo,
-    Login,
+    LoginFns,
     AuthLayout,
-    Logout,
+    LogoutBtn,
     PostForm,
     Contenier
 

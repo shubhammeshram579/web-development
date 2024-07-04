@@ -7,7 +7,7 @@ import {useNavigate} from "react-router-dom"
 import LogoutBtn from './LogoutBtn.jsx'
 
 function Header() {
-    const authStatus = useSelector((state) => state.auth.status)
+    const authStatus = useSelector((state) => state.auth.isLoggedIn)
     const navigate = useNavigate()
 
 
@@ -23,8 +23,8 @@ function Header() {
             active: !authStatus,
         },
         {
-            name: "Signup",
-            slug: "/signup",
+            name: "Register",
+            slug: "/Register",
             active: !authStatus,
         },
         {
@@ -34,7 +34,7 @@ function Header() {
         },
         {
             name: "AddPost",
-            slug: "/Add-Post",
+            slug: "/addpost",
             active: authStatus,
         },
     ]

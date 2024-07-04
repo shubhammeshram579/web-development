@@ -5,6 +5,7 @@ const Input = React.forwardRef(function Input({
     label,
     type = "text",
     className = "",
+    onchange = {},
     ...props
 
 },ref) {

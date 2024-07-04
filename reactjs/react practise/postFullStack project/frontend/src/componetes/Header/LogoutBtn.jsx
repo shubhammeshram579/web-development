@@ -12,7 +12,7 @@ function LogoutBtn() {
     const logoutHandler =  () => {
       try {
 
-        localStorage.removeItem("accessToken")
+        localStorage.removeItem("token")
 
         dispatch(authLogout())
 
