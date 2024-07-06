@@ -2,7 +2,7 @@ import {Router} from "express"
 // import cors from "cors"
 import express from "express"
 
-import { publishPost,getAllPost} from "../controllers/Post.controller.js"
+import { publishPost, getAllPost, getPost, updatePost, deletePost ,getPostById} from "../controllers/Post.controller.js"
 
 import {verifyJWT} from "../middlewheres/Auth.middlewere.js"
 import {upload} from "../middlewheres/Multer.js"
@@ -11,9 +11,7 @@ import {upload} from "../middlewheres/Multer.js"
 
 
 const router = Router();
-// router.use(cors());
 router.use(verifyJWT);
-// router.use(express.json())
 
 
 
@@ -28,6 +26,10 @@ router.route("/posts/addpost").post(
 );
 
 router.route("/posts/getAllpost").get(getAllPost)
+router.route("/posts/getPost").get(getPost)
+router.route("/posts/getPostByID/:postId").get(getPostById)
+router.route("/posts/EditPost/:postId").patch(upload.single("postImg"),updatePost)
+router.route("/posts/deletePost/:postId").delete(deletePost)
 
 
 export default router

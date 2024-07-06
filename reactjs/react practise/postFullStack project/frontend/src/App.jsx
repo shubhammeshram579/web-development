@@ -60,10 +60,10 @@ function App() {
   }
 
   return (
-    <div className='flex items-center justify-between'>
-        <div>
+    <div className=' w-full'>
+        <div className='flex justify-normal flex-col gap-4 h-full'>
             <Header />
-            <main>
+            <main className='flex items-centre justify-center'>
                 <Outlet />
             </main>
             <Footer />

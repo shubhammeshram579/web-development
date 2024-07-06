@@ -1,0 +1,78 @@
+import React ,{useState, useEffect} from 'react'
+import axios from 'axios'
+import { Link ,useNavigate} from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+
+
+const GetPostbyId = () => {
+  const {postId} = useParams()
+  const [post, setPost] = useState([])
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate()
+
+
+  const accessToken = useSelector((state)=>state.auth.user?.accessToken)
+
+  useEffect(() => {
+    const fatchgetpost = async () =>{
+      try {
+        const response = await axios.get(`http://localhost:8000/api/posts/getPostByID/${postId}`,{
+          headers: {
+            "Authorization": `Bearer ${accessToken}`
+          }
+        });
+       
+        setPost(response.data.data.getPostbyId)
+        // console.log(response.data.data.getPostbyId)
+        setLoading(false)
+        
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
+        
+      }
+
+    };
+    fatchgetpost();
+  },[postId])
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!post) return <div>No post found</div>;
+
+
+  // delete post 
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`http://localhost:8000/api/posts/deletePost/${postId}`,{
+        headers:{
+          "Authorization":`Bearer ${accessToken}`
+        }
+      });
+      navigate("/getPost"); // Redirect to the posts list page after successful deletion
+    } catch (error) {
+      console.error('Error deleting post:', error);
+    }
+  };
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
+  return (
+    <div className='py-5'>
+      {post.postImg && <img className='h-[400px] w-[400px] rounded-xl object-cover' src={post.postImg} alt={post.title} />}
+      <h1 className='text-center font-bold'>{post.title}</h1>
+      <p className='text-center'>{post.description}</p>
+      {/* <p>Owner ID: {post.owner}</p> */}
+      <div className='flex items-center justify-around'>
+      <Link to={`/EditPost/${post._id}`}><button className='py-3 px-10 bg-green-500 rounded-lg mt-5'>Edit</button></Link>
+      <button onClick={handleDelete} className='py-3 px-10 bg-red-500 rounded-lg mt-5'>Delete</button>
+      </div>
+      
+    </div>
+  );
+}
+
+export default GetPostbyId

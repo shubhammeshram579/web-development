@@ -28,8 +28,8 @@ function Header() {
             active: !authStatus,
         },
         {
-            name: "All Posts",
-            slug: "/all-posts",
+            name: "AllPosts",
+            slug: "/getPost",
             active: authStatus,
         },
         {
@@ -37,11 +37,16 @@ function Header() {
             slug: "/addpost",
             active: authStatus,
         },
+        // {
+        //     name: "EditPost",
+        //     slug: "/EditPost/:postId",
+        //     active: authStatus,
+        // },
     ]
 
 
   return (
-    <header className={'bg-gray-500 p-5 w-full'}>
+    <header className={'bg-gray-500 p-7'}>
         <Contenier>
             <nav className={'flex items-center justify-between'}>
                 <div>

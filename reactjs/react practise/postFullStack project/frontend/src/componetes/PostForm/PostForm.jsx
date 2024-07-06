@@ -35,7 +35,9 @@ try {
       const response = await axios.post("http://localhost:8000/api/posts/addpost",formData,{
         headers:{"Authorization":`Bearer ${token}`}
       })
+      console.log(response.data)
       navigate("/")
+
       return response.data
 
      
@@ -50,10 +52,10 @@ try {
 
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className='flex items-start justify-between gap-[50px] bg-gray-400 py-20 px-20' onSubmit={handleSubmit(onSubmit)}>
       <div>
         <Input
-          label="title: "
+          label="Title: "
           placeholder="title"
           className="mb-4"
           {...register('title', { required: 'Title required' })}
@@ -63,7 +65,7 @@ try {
         <Input
           label="Description: "
           placeholder="Description"
-          className="mb-4"
+          className="py-5"
           {...register('description', { required: 'Description required' })}
         />
         {errors.description && <p>{errors.description.message}</p>}
@@ -78,16 +80,21 @@ try {
           {...register('postImg', { required: "post image required"})}
         />
         {errors.postImg && <p>{errors.postImg.message}</p>}
+        {/* {post && (
+          <div>
+            <img src={response.data.PostPublish.postImg} alt="title" />
+          </div>
+        )} */}
 
         <Select
-          options={[true, false]}
           label="Status: "
-          className="mb-4 text-black p-10"
+          options={[true,false]}
+          className="mb-4 p-10"
           {...register('status', { required: 'Status required' })}
         />
         {errors.status && <p>{errors.status.message}</p>}
 
-        <Button type="submit" bgColor={post ? 'bg-green-500' : undefined} className="w-full">
+        <Button type="submit" bgColor={post ? 'bg-green-500' : undefined} className="w-full mt-10">
           {post ? 'Update' : 'Submit'}
         </Button>
       </div>

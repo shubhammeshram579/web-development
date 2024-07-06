@@ -10,17 +10,15 @@ function Select({
     const id = useId()
 
   return (
-    <div className='w-full'>
+    <div className='w-full mt-5'>
         {
-            label && <label htmlFor={id} ></label>
+            label && <label htmlFor={id}>Status:</label>
         }
 
-        <select {...props} id={id} ref={ref} className={`py-3 rounded-lg bg-white
-     text-black outline-none focus:bg-gray-50 
-     duration-200 border border-gray-200 w-full 
+        <select {...props} id={id} ref={ref} className={`py-3 rounded-lg text-black outline-none focus:bg-gray-50duration-200 border border-gray-200 w-full 
      ${className}`}>
         {options?.map((option) => (
-            <option value={option} key={option}></option>
+          <option  value={option} key={option}></option>
         ))}
      </select>
 

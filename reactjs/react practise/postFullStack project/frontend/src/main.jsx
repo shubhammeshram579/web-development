@@ -11,6 +11,9 @@ import RegisterPage from './componetes/pages/signup/RegisterPage.jsx'
 import Home from "./componetes/pages/home/Home.jsx"
 import LoginPage from './componetes/pages/login/LoginPage.jsx'
 import Addpost from './componetes/pages/Addpost/Addpost.jsx'
+import OwnerPost from "./componetes/pages/getpostbyOwner/OwnerPost.jsx"
+import EditPost from "./componetes/pages/EditPost/EditPost.jsx"
+import GetPostbyId from "./componetes/pages/Getpost/GetPostbyId.jsx"
 
 
 const router = createBrowserRouter([
@@ -46,29 +49,39 @@ const router = createBrowserRouter([
               </AuthLayout>
           ),
       },
-        // {
-        //     path: "/all-posts",
-        //     element: (
-        //         <AuthLayout authentication>
-        //             {" "}
-        //             <AllPosts />
-        //         </AuthLayout>
-        //     ),
-        // },
-        
-        // {
-        //     path: "/edit-post/:slug",
-        //     element: (
-        //         <AuthLayout authentication>
-        //             {" "}
-        //             <EditPost />
-        //         </AuthLayout>
-        //     ),
-        // },
-        // {
-        //     path: "/post/:slug",
-        //     element: <Post />,
-        // },
+        {
+            path: "/getPost",
+            element: (
+                <AuthLayout authentication>
+                    <OwnerPost />
+                </AuthLayout>
+            ),
+        },
+        {
+            path: "/getPostByID/:postId",
+            element: (
+                <AuthLayout authentication>
+                    <GetPostbyId />
+                </AuthLayout>
+            
+            ),
+        },
+        {
+            path: "/EditPost/:postId",
+            element: (
+                <AuthLayout authentication>
+                    <EditPost />
+                </AuthLayout>
+            ),
+        },
+        {
+            path: "/deletePost/:postId",
+            element: (
+                <AuthLayout authentication>
+                    <EditPost />
+                </AuthLayout>
+            ),
+        },
     ],
 
   }

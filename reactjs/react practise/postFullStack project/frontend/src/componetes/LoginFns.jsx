@@ -46,12 +46,13 @@ function LoginFns() {
       };
 
   return (
-    <div> 
-        <div>
+    <div className='py-[75px]'>
+    <div className='bg-gray-400 py-10 px-20 rounded'> 
+        <div className='text-center'>
         <Logo />
     </div>
-    <h3>Sign in to your account</h3>
-    <p>Don&apos;t have any account?&nbsp;<Link to="/Signup">Sign Up</Link></p>
+    <h3 className='text-center'>Sign in to your account</h3>
+    <p className='text-center mb-5'>Don&apos;t have any account?&nbsp;<Link to="/Signup">Sign Up</Link></p>
 
     <form onSubmit={handleSubmit(onSubmit)}>
         <div>
@@ -68,11 +69,12 @@ function LoginFns() {
 
           
 
-            <Button type="submit" className="w-full">Sign In </Button>
+            <Button type="submit" className="w-full mt-5">Sign In </Button>
             
         </div>
     </form>
         
+    </div>
     </div>
   )
 }
