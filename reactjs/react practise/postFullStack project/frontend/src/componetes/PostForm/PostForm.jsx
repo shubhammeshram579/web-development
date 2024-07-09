@@ -82,14 +82,14 @@ try {
         {errors.postImg && <p>{errors.postImg.message}</p>}
         {/* {post && (
           <div>
-            <img src={response.data.PostPublish.postImg} alt="title" />
+            <img src={response.data.data.PostPublish.postImg} alt="title" />
           </div>
         )} */}
 
         <Select
-          label="Status: "
-          options={[true,false]}
-          className="mb-4 p-10"
+          options={["active","inactive"]}
+          label="status :"
+          className="p-2 mb-4 text-black"
           {...register('status', { required: 'Status required' })}
         />
         {errors.status && <p>{errors.status.message}</p>}

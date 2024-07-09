@@ -106,12 +106,12 @@ const EditPost = () => {
 
         <Select
           label="Status: "
-          options={[true,false]}
-          className="mb-4 p-10"
+          options={["active","inactive"]}
+          className="mb-4 p-2"
           {...register('status', { required: 'Status required' })}
         />
         {errors.status && <p>{errors.status.message}</p>}
-        <button className='py-3 px-10 bg-orange-400 rounded-lg' type="submit">Update Post</button>
+        <button className='py-3 px-10 bg-orange-500 rounded-lg mt-10' type="submit">Update Post</button>
       </div>
     </form>
     </div>

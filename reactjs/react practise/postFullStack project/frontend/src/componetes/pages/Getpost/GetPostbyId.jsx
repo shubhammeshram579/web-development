@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link ,useNavigate} from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-
+import {Contenier} from "..//../index.js"
 
 const GetPostbyId = () => {
   const {postId} = useParams()
@@ -62,6 +62,7 @@ const GetPostbyId = () => {
 
   return (
     <div className='py-5'>
+      <Contenier>
       {post.postImg && <img className='h-[400px] w-[400px] rounded-xl object-cover' src={post.postImg} alt={post.title} />}
       <h1 className='text-center font-bold'>{post.title}</h1>
       <p className='text-center'>{post.description}</p>
@@ -70,6 +71,7 @@ const GetPostbyId = () => {
       <Link to={`/EditPost/${post._id}`}><button className='py-3 px-10 bg-green-500 rounded-lg mt-5'>Edit</button></Link>
       <button onClick={handleDelete} className='py-3 px-10 bg-red-500 rounded-lg mt-5'>Delete</button>
       </div>
+      </Contenier>
       
     </div>
   );

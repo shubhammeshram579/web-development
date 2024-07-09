@@ -1,6 +1,7 @@
 import React, {useEffect,useState} from 'react'
 import axios from "axios"
 import { useSelector } from 'react-redux';
+import {Contenier} from "..//../index.js"
 
 
 const Home = () => {
@@ -38,17 +39,34 @@ const Home = () => {
   }, []);
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div className='font-bold text-5xl py-[27vh] text-green-900'>Please Loging first</div>;
+  // if (error) return <div className='font-bold text-5xl py-[27vh] text-green-900'>Login to read posts</div>;
   
+
+  if (posts.length === 0) {
+    return (
+        <div className="w-full py-8 mt-4 text-center">
+            <Contenier>
+                <div className="flex flex-wrap p-[23vh]">
+                    <div className="p-2 w-full">
+                        <h1 className="text-2xl font-bold hover:text-gray-500">
+                            Login to read posts
+                        </h1>
+                    </div>
+                </div>
+            </Contenier>
+        </div>
+    )
+}
 
 
 
 
   return (
-  
+    <Contenier>
     <div className='py-10'>
+      
       {/* <h1>home: {posts.length}</h1> */}
-      <ul className='flex flex-row items-center justify-center flex-wrap gap-20'>
+      <ul className='flex flex-row items-center justify-center flex-wrap gap-10'>
         {posts.map(post => (
           <li key={post._id} className='p-10 rounded-lg'>
             <img className='h-[500px] w-[300px] rounded-3xl object-cover' src={post.postImg} alt="image" />
@@ -57,16 +75,9 @@ const Home = () => {
           </li>
         ))}
       </ul>
-      {/* <ul className='flex flex-row items-center justify-center flex-wrap gap-20'>
-        {posts.map(post => (
-          <li key={post._id} className='p-10 rounded-lg'>
-            <img className='h-[300px] w-[300px] rounded-3xl object-cover' src={post.postImg} alt="image" />
-            <h2 className='text-center mt-5 font-bold'>{post.title}</h2>
-            <p className='text-center'>{post.description}</p>
-          </li>
-        ))}
-      </ul> */}
+     
     </div>
+    </Contenier>
 
   )
 }

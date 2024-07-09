@@ -17,7 +17,7 @@ const postSchema = new mongoose.Schema(
             required: true
         },
         status:{
-            type:Boolean
+            type:String
         },
         owner:{
             type: mongoose.Schema.Types.ObjectId,
