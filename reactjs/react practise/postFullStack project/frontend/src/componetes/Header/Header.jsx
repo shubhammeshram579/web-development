@@ -1,10 +1,12 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Contenier from "../contenier/Contenier.jsx"
 import Logo from "../Logo.jsx"
 import {Link} from "react-router-dom"
 import {useSelector} from "react-redux"
 import {useNavigate} from "react-router-dom"
 import LogoutBtn from './LogoutBtn.jsx'
+// import PostsList from "..//../componetes/pages/SearchPost/SearchPost.jsx"
+import ChatSearchBar from "../ChatSearchbar.jsx"
 
 function Header() {
     const authStatus = useSelector((state) => state.auth.isLoggedIn)
@@ -38,8 +40,8 @@ function Header() {
             active: authStatus,
         },
         // {
-        //     name: "EditPost",
-        //     slug: "/EditPost/:postId",
+        //     name: "Search post",
+        //     slug: "/posts/getAllpost/search",
         //     active: authStatus,
         // },
     ]
@@ -54,6 +56,13 @@ function Header() {
                     <Logo />
                     </Link>
                 </div>
+                {
+                        authStatus && (
+                            <div>
+                                <ChatSearchBar/>
+                        </div>
+                        )
+                    }
                 <ul className={'flex items-center justify-between gap-5'}>
                     {/* {
                         navItems.map((item)=>

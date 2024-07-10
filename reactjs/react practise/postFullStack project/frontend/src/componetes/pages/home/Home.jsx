@@ -2,6 +2,7 @@ import React, {useEffect,useState} from 'react'
 import axios from "axios"
 import { useSelector } from 'react-redux';
 import {Contenier} from "..//../index.js"
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -69,7 +70,7 @@ const Home = () => {
       <ul className='flex flex-row items-center justify-center flex-wrap gap-10'>
         {posts.map(post => (
           <li key={post._id} className='p-10 rounded-lg'>
-            <img className='h-[500px] w-[300px] rounded-3xl object-cover' src={post.postImg} alt="image" />
+            <Link to={`/getPostByID2/${post._id}`}> <img className='h-[500px] w-[300px] rounded-3xl object-cover' src={post.postImg} alt="image" /></Link>
             <h2 className='text-center mt-5 font-bold'>{post.title}</h2>
             <p className='text-center'>{post.description}</p>
           </li>

@@ -1,0 +1,23 @@
+// SearchBar.js
+import React from 'react';
+import { useForm } from 'react-hook-form';
+
+const SearchBar = ({ handleSearch }) => {
+  const { register, handleSubmit } = useForm();
+
+
+  const onSubmit = (data) => {
+    handleSearch(data.query);
+    
+  };
+  
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className='flex items-center justify-center mb-20'>
+      <input type="text" {...register('query')} placeholder="Search posts..." className='w-[1000px] bg-red-300 py-2 rounded-lg rounded-e-none' />
+      <button type="submit" className='bg-blue-500 py-[9px] rounded-e-sm px-5'>Search</button>
+    </form>
+    
+  );
+};
+
+export default SearchBar;

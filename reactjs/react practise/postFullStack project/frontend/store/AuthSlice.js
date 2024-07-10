@@ -18,7 +18,12 @@ const authSlice = createSlice({
         state.isLoggedIn = false;
         state.user = null;
 
-    }
+    },
+  //   posts: (state,action) => {
+  //     state.isLoggedIn = true;
+  //     state.posts = action.payload.posts;
+
+  // }
   },
 });
 

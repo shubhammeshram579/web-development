@@ -14,6 +14,10 @@ import Addpost from './componetes/pages/Addpost/Addpost.jsx'
 import OwnerPost from "./componetes/pages/getpostbyOwner/OwnerPost.jsx"
 import EditPost from "./componetes/pages/EditPost/EditPost.jsx"
 import GetPostbyId from "./componetes/pages/Getpost/GetPostbyId.jsx"
+// import PostsList from "./componetes/pages/SearchPost/SearchPost.jsx"
+import SearchResults from "./componetes/pages/SearchPost/ChatSearchResult.jsx"
+import HomePagePost from "./componetes/pages/home/HomePagePost.jsx"
+
 
 
 const router = createBrowserRouter([
@@ -79,6 +83,25 @@ const router = createBrowserRouter([
             element: (
                 <AuthLayout authentication>
                     <EditPost />
+                </AuthLayout>
+            ),
+        },
+        {
+            path: "/posts/getAllpost/search",
+            element: (
+                <AuthLayout authentication>
+                    {/* <PostsList /> */}
+                    <SearchResults />
+
+                </AuthLayout>
+            ),
+        },
+        {
+            path: "/getPostByID2/:postId",
+            element: (
+                <AuthLayout authentication>
+                    <HomePagePost />
+
                 </AuthLayout>
             ),
         },

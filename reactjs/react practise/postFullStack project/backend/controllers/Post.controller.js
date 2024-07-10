@@ -92,6 +92,7 @@ const getPost = AsynceHendler( async (req, res) => {
 const getAllPost = AsynceHendler(async (req,res) => {
     try {
         const getPosts = await Post.find()
+        console.log(getPosts)
 
         if(!getPosts){
             throw new ApiError(400, "post not found")
@@ -109,6 +110,9 @@ const getAllPost = AsynceHendler(async (req,res) => {
     }
 
 })
+
+
+
 
 
 const updatePost = AsynceHendler(async (req, res) => {    
@@ -224,6 +228,37 @@ const getPostById = AsynceHendler( async (req, res) => {
 
 
 
+const searchBarByPost = AsynceHendler( async (req,res) => {
+    
+    try {
+
+        const query = req.query.query;
+
+        if(!query){
+        throw new ApiError(400, "query is not working")
+    }
+        const getPost = await Post.find({
+            $or:[
+                {title: {$regex: query, $options: "i"}},
+                {description: {$regex: query, $options: "i"}}
+            ]
+        })
+
+        return res
+        .status(200)
+        .json(
+            new ApiResponse(200, {getPost} , "succees")
+        )
+
+        
+    } catch (error) {
+        throw new ApiError(404, error.message)
+        
+    }
+
+});
+
+
 
 
 
@@ -233,6 +268,7 @@ export {
     getPost,
     updatePost,
     deletePost,
-    getPostById
+    getPostById,
+    searchBarByPost
 
 }
