@@ -3,6 +3,7 @@ import {ApiError}  from "../utils/ApiError.js"
 import {ApiResponse} from "../utils/ApiResponse.js"
 import {User} from "../models/User.model.js"
 import jwt from "jsonwebtoken"
+import mongoose from "mongoose"
 
 
 
@@ -127,9 +128,21 @@ const loginUser = AsynceHendler( async (req, res) => {
 
 // Getcurrent user
 const getCurrentUser = AsynceHendler(async (req, res) =>{
+    const userId = req.user._id;
+
+    const curentUser = await User.findById(userId).select("-password -refreshToken");
+    console.log(curentUser)
+
+
+    if(!curentUser){
+        throw new ApiError(404, "user not found")
+    }
+
     return res
     .status(200)
-    .json(200, req.user, "current user fetched successfully")
+    .json(
+        new ApiResponse(200, {curentUser}, "current user fetched successfully")
+    )
 })
 
 
@@ -221,6 +234,45 @@ const refreshAccessToken = AsynceHendler(async (req, res) =>{
 
 })
 
+const updateUser = AsynceHendler(async (req, res) => {
+    try {
+        const userId = req.user._id;
+        const {username, fullname, email} = req.body;
+
+        if(!userId){
+            throw new ApiError(404, "user not found")
+        }
+
+        const updateUser = await User.findByIdAndUpdate(
+            userId,
+            {
+                $set:{
+                    username:username,
+                    fullname:fullname,
+                    email:email
+                }
+            },
+            {
+                new:true
+            }
+        )
+
+        if(!updateUser){
+            throw new ApiError(404, "user not upated")
+        }
+        
+        return res
+        .status(200)
+        .json(
+            new ApiResponse(200, {updateUser} , "susscefully updated user")
+        )
+    } catch (error) {
+        throw new ApiError(401, error?.message || "invalid  user") 
+        
+    }
+
+})
+
 
 
 
@@ -232,6 +284,7 @@ export {
     loginUser,
     getCurrentUser,
     logoutUser,
-    refreshAccessToken
+    refreshAccessToken,
+    updateUser
 
 }

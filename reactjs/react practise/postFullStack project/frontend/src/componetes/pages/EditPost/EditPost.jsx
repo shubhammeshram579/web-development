@@ -1,4 +1,3 @@
-// EditPost.js
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -41,6 +40,8 @@ const EditPost = () => {
     fetchPost();
   }, [postId, setValue]);
 
+
+  
   const onSubmit = async (data) => {
     const formData = new FormData();
     formData.append("title",data.title);

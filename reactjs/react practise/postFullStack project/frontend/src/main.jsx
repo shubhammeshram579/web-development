@@ -17,6 +17,7 @@ import GetPostbyId from "./componetes/pages/Getpost/GetPostbyId.jsx"
 // import PostsList from "./componetes/pages/SearchPost/SearchPost.jsx"
 import SearchResults from "./componetes/pages/SearchPost/ChatSearchResult.jsx"
 import HomePagePost from "./componetes/pages/home/HomePagePost.jsx"
+import UpdateUser from "./componetes/pages/UpdateUser/UpdateUser.jsx"
 
 
 
@@ -42,6 +43,14 @@ const router = createBrowserRouter([
             element: (
                 <AuthLayout authentication={false}>
                     <RegisterPage />
+                </AuthLayout>
+            ),
+        },
+        {
+            path: "/UpdateUser",
+            element: (
+                <AuthLayout authentication>
+                    <UpdateUser />
                 </AuthLayout>
             ),
         },

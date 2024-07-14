@@ -30,7 +30,7 @@ function Header() {
             active: !authStatus,
         },
         {
-            name: "AllPosts",
+            name: "Profile",
             slug: "/getPost",
             active: authStatus,
         },

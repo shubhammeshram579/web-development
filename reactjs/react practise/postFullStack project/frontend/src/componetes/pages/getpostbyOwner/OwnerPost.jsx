@@ -12,6 +12,9 @@ const PostsByOwner = () => {
   // console.log(posts)
 
   const accessToken = useSelector((state)=>state.auth.user?.accessToken)
+  const user = useSelector((state)=>state.auth.user)
+
+  // console.log(user.user._id)
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -37,8 +40,25 @@ const PostsByOwner = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
+    
+    <Contenier>
+    <div className='flex items-center justify-center flex-col'>
+      <h1 className='w-10 h-10 p-16 rounded-full bg-gray-400 flex items-center justify-center font-bold text-xl mb-5'>{user.user.fullname[0]}</h1>
+      <h1 className='font-bold text-4xl mb-2'>{user.user.fullname}</h1>
+      <h2 >@ {user.user.username}</h2>
+      <h2 className='mt-2'> 0 Follwing</h2>
+      <div className='flex items-center justify-center gap-3 mt-5'>
+        <Link to="https://web.whatsapp.com/"><h1 className=' rounded-3xl py-3 px-10 bg-slate-400 text-center'>Share</h1></Link>
+        <Link to="/UpdateUser"><h1 className=' rounded-3xl py-3 px-10 bg-slate-400 flex items-center justify-center'>Edit profile</h1></Link>
+      </div>
+      <div className='flex items-center justify-center gap-5 mt-20'>
+        <Link to="/addpost"><h1 className='font-semibold text-xl hover:border-b-4'>Create</h1></Link>
+        <h1 className='font-semibold text-xl hover:border-b-4'>Saved</h1>
+      </div>
+
+    </div>
     <div className='p-[100px]'>
-      <Contenier>
+      
       {/* <h1>Posts by Owner {posts.length}</h1> */}
 
       <ul className='flex justify-center items-center gap-20 flex-row'>
@@ -54,9 +74,11 @@ const PostsByOwner = () => {
         ))}
       </ul>
 
-      </Contenier>
+      
      
     </div>
+    </Contenier>
+
   );
 };
 

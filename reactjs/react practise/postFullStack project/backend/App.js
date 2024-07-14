@@ -24,12 +24,14 @@ app.use(cors());
 // router import
 import userrouter from "./routers/User.route.js";
 import userPost from "./routers/Post.route.js";
+import comment from "./routers/Comment.route.js"
 
 // console.log(userrouter)
 
 // router declation 
 app.use("/api" , userrouter)
 app.use("/api", userPost)
+app.use("/api", comment)
 
 
 console.log("ACCESS_TOKEN_SECRET:", process.env.ACCESS_TOKEN_SECRET);
