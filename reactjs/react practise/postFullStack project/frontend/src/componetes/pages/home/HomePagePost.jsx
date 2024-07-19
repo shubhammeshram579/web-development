@@ -5,7 +5,8 @@ import { useParams } from "react-router-dom";
 import { Contenier } from "..//../index.js";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { Input } from "..//../index.js";
+import { Input, SharePost ,SavePostButton} from "..//../index.js";
+import OptionsCard from "..//../OptionCard.jsx";
 
 const HomePagePost = () => {
   const { postId } = useParams();
@@ -22,7 +23,14 @@ const HomePagePost = () => {
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
   const user = useSelector((state) => state.auth.user);
 
-  // get post 
+  // console.log(user.user._id)
+
+
+  // donload butten and hide butten 
+  const [visible, setVisible] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+
+  // get post
   useEffect(() => {
     const fatchgetpost = async () => {
       try {
@@ -68,12 +76,12 @@ const HomePagePost = () => {
     fatchgetComment();
   }, [postId, accessToken]);
 
+  const postUrl = window.location.href;
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   if (!post) return <div>No post found</div>;
 
-
-  
   // post comment function
   const onSubmit = async (data) => {
     try {
@@ -98,6 +106,12 @@ const HomePagePost = () => {
       alert("Error registration ");
     }
   };
+  
+
+  // hide image 
+  const handleHide = () => {
+    setIsHidden(!isHidden)
+  };
 
   return (
     <Contenier>
@@ -110,24 +124,35 @@ const HomePagePost = () => {
 
         <div className="bg-gray-400 w-[900px] flex items-center rounded ml-[300px]">
           <div className="py-5 flex items-start justify-start">
+            <div className={`transition-colors duration-500 rounded-lg ${isHidden ? "bg-gray-200" : ""}`}>
             {post.postImg && (
               <img
-                className="h-[600px] w-[400px] rounded-xl object-cover ml-2"
+                className={`h-[600px] w-[400px] rounded-xl object-cover ml-2 ${isHidden ? "opacity-0" : "opacity-100"}`}
                 src={post.postImg}
                 alt={post.title}
               />
             )}
+            </div>
+
+            {/* share post and download image */}
             <div className="flex items-center flex-col">
               <div className="flex items-center justify-between w-full pl-4">
-                <div className="flex gap-4 text-[50px] items-center">
-                  <i class="ri-share-2-line"></i>
-                  <i class="fa-solid fa-ellipsis"></i>
+                <div className="flex gap-4 text-[45px] items-center">
+                  <SharePost postUrl={postUrl} postTitle={post.title} />
+                  <i
+                    className="fa-solid fa-ellipsis cursor-pointer"
+                    onClick={() => setVisible(!visible)}
+                  ></i>
+                  <OptionsCard onHide={handleHide} visible={visible} />
                 </div>
+
+
+                {/* profile and save post card */}
                 <div className="flex gap-4 text-[25px] items-center">
                   <h5>
                     Profile <i class="fa-solid fa-chevron-down"></i>
                   </h5>
-                  <h5 className="bg-green-600 py-2 px-4 rounded-2xl">Save</h5>
+                  <SavePostButton userId={user.user._id} postId={postId}/>
                 </div>
               </div>
               <div className="flex items-start justify-start flex-col w-full pl-5">
@@ -139,13 +164,18 @@ const HomePagePost = () => {
 
               {/* get comment */}
               <div className="mt-10 w-full pl-5">
-              <h1 className="font-bold text-2xl mb-2">Comment : {comment.length}</h1>
-              {comment.map((c) => (
-                <div key={c._id} className="flex items-center justify-between">
-                  <p className="ml-10 text-xl">{c.content}</p>
-                  <small className="ml-10">By: {c.owner.email}</small>
-                </div>
-              ))}
+                <h1 className="font-bold text-2xl mb-2">
+                  Comment : {comment.length}
+                </h1>
+                {comment.map((c) => (
+                  <div
+                    key={c._id}
+                    className="flex items-center justify-between"
+                  >
+                    <p className="ml-10 text-xl">{c.content}</p>
+                    <small className="ml-10">By: {c.owner.email}</small>
+                  </div>
+                ))}
               </div>
 
               {/* create comment */}

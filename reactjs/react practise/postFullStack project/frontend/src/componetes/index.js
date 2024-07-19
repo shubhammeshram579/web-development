@@ -10,6 +10,8 @@ import AuthLayout from "./AuthLayout.jsx"
 import LogoutBtn from "./Header/LogoutBtn.jsx"
 import PostForm from "./PostForm/PostForm.jsx"
 import Contenier from "./contenier/Contenier.jsx"
+import SharePost from "./SharePost.jsx"
+import SavePostButton from "./SavePostBtn.jsx"
 export {
     Header,
     Footer,
@@ -22,7 +24,9 @@ export {
     AuthLayout,
     LogoutBtn,
     PostForm,
-    Contenier
+    Contenier,
+    SharePost,
+    SavePostButton
 
 
 

@@ -2,7 +2,12 @@ import mongoose from "mongoose";
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
 
-
+// const savePostsSchema =  mongoose.Schema({
+//     postId : {type: mongoose.Schema.Types.ObjectId, ref:"Post"},
+//     title: {type: String},
+//     description: {type: String},
+//     postImg: {type:String}
+// })
 
 const userSchema = new mongoose.Schema(
     {
@@ -30,13 +35,17 @@ const userSchema = new mongoose.Schema(
             trim:true,
 
         },
+        savePosts: [
+            {type: mongoose.Schema.Types.ObjectId,
+             ref:"Post"}],
         password:{
             type: String,
             required:[true, "password is required"]
         },
         refreshToken:{
             type: String,
-        }
+        },
+        
 
     },{timestamps:true}
 )

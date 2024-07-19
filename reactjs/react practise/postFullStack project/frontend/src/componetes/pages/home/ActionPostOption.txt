@@ -1,0 +1,38 @@
+// src/components/PostActions.jsx
+import React, { useState } from 'react';
+import OptionsCard from '..//../OptionCard.jsx'; // Adjust the import path as needed
+
+const PostActions = ({ imageUrl }) => {
+  const [visible, setVisible] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = imageUrl;
+    link.download = 'post-image.jpg';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleHide = () => {
+    // alert('Hide Post Image feature not implemented yet');
+    // // Implement your logic for hiding the post image
+    setIsHidden(true);
+  };
+
+  return (
+    <div className="relative">
+      <i
+        className="fa-solid fa-ellipsis cursor-pointer"
+        onClick={() => setVisible(!visible)}
+      ></i>
+      <OptionsCard onDownload={handleDownload} onHide={handleHide} visible={visible} />
+      <div className={`transition-colors duration-500 ${isHidden ? 'bg-gray-200' : ''}`}>
+        <img src={imageUrl} alt="Post" className={`w-full h-auto ${isHidden ? 'hidden' : ''}`} />
+      </div>
+    </div>
+  );
+};
+
+export default PostActions;

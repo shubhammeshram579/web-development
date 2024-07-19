@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import { RouterProvider ,createBrowserRouter } from 'react-router-dom'
 import {AuthLayout} from "./componetes/index.js"
 
+
 import store from "..//..//frontend/store/Store.js"
 import RegisterPage from './componetes/pages/signup/RegisterPage.jsx'
 import Home from "./componetes/pages/home/Home.jsx"
@@ -21,7 +22,9 @@ import UpdateUser from "./componetes/pages/UpdateUser/UpdateUser.jsx"
 
 
 
+
 const router = createBrowserRouter([
+    
   {
     path: "/",
     element: <App />,
@@ -109,10 +112,10 @@ const router = createBrowserRouter([
             path: "/getPostByID2/:postId",
             element: (
                 <AuthLayout authentication>
-                    <HomePagePost />
-
+                    <HomePagePost/>
                 </AuthLayout>
             ),
+            
         },
     ],
 

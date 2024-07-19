@@ -25,7 +25,7 @@ const GetPostbyId = () => {
         });
        
         setPost(response.data.data.getPostbyId)
-        // console.log(response.data.data.getPostbyId)
+        console.log(response.data.data.getPostbyId)
         setLoading(false)
         
       } catch (error) {

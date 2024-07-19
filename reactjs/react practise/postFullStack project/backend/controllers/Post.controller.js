@@ -62,6 +62,12 @@ const getPost = AsynceHendler( async (req, res) => {
 
         // const {ownerId} = req.params;
         const userId = req.user?._id;
+        // const savePostId = req.user.savePosts;
+        // console.log("saveId",savePostId)
+
+        // const user = await User.findById(userId).select('savePosts._id').exec();
+        // const savePostIds = user.savePosts.map(post => post._id);
+        // console.log("savIddddd",savePostIds)
 
         if(!userId){
             throw new ApiError(404, "owner id not found")
@@ -92,7 +98,7 @@ const getPost = AsynceHendler( async (req, res) => {
 const getAllPost = AsynceHendler(async (req,res) => {
     try {
         const getPosts = await Post.find()
-        console.log(getPosts)
+        // console.log(getPosts)
 
         if(!getPosts){
             throw new ApiError(400, "post not found")
@@ -120,6 +126,7 @@ const updatePost = AsynceHendler(async (req, res) => {
             const {postId} = req.params;
             const {title, description,status} = req.body;
             const localfilpath = req.file?.path;
+            // const userId = req.user._id;
         
             console.log(localfilpath)
         
@@ -131,16 +138,17 @@ const updatePost = AsynceHendler(async (req, res) => {
                 throw new ApiError(404, "post id not found")
             }
         
-        
-            
-            const uploadcloud = await uploadCloudinary(localfilpath);
-        
-            if(!uploadcloud){
-                throw new ApiError(404, "filenot upladted not found")
+            const postToUpdate = await Post.findById(postId)
+
+            if (!postToUpdate) {
+                throw new ApiError(404, "Post not found");
             }
-        
-        
-            const public_post = await Post.findById(postId)
+
+            const uploadcloud = await uploadCloudinary(localfilpath);
+            
+            if(!uploadcloud){
+                    throw new ApiError(404, "filenot upladted not found")
+                }
         
         
         
@@ -163,6 +171,7 @@ const updatePost = AsynceHendler(async (req, res) => {
             if(!updatePost){
                 throw new ApiError(404, "post upladted not found")
             };
+    
             
     
             return res
@@ -183,18 +192,40 @@ const updatePost = AsynceHendler(async (req, res) => {
 const deletePost = AsynceHendler( async (req, res) => {
    try {
     const {postId} = req.params;
+    const userId = req.user._id;
+
+
+    const postToDelete = await Post.findById(postId);
+
+
  
+    //  const deletePostOnServer = await Post.findByIdAndDelete(postId)
  
-     const deletePostOnServer = await Post.findByIdAndDelete(postId)
- 
-     if(!deletePostOnServer){
-         throw new ApiError(404, "post not delted")
+     if(!postToDelete){
+         throw new ApiError(404, "post not founs")
+     }
+
+     if(postToDelete.owner.toString() === userId.toString()){
+        await Post.findByIdAndDelete(postId)
+
+     }else {
+        const user = await User.findById(userId);
+        const isSavedPost = user.savePosts.includes(postId);
+
+        if(isSavedPost){
+            user.savePosts = user.savePosts.filter(id => id.toString() !== postId);
+            await user.save();
+
+        }else{
+            throw new ApiError(403, "You do not have permission to delete this post");
+
+        }
      }
 
      return res
      .status(200)
      .json(
-        new ApiResponse(200,{deletePostOnServer}, "post deleted succesfully")
+        new ApiResponse(200, null, "post deleted succesfully")
      )
    } catch (error) {
     throw new ApiError(500, error.message,"post not delted")
@@ -260,6 +291,48 @@ const searchBarByPost = AsynceHendler( async (req,res) => {
 
 });
 
+const savePost = AsynceHendler(async (req, res) =>{
+      
+
+    try {
+        const {userId ,postId} = req.body;
+
+        if(!userId || !postId){
+            throw new ApiError(404, "userId and postId not found")
+        }
+
+        const user = await User.findById(userId);
+        const post = await Post.findById(postId);
+
+        // console.log(user)
+        // console.log(post)
+
+
+        if(!user || !post){
+            throw new ApiError(404, "user and post not found")
+        }
+
+        if(user.savePosts.includes(postId)){
+            throw new ApiError(404, "Post already saved")
+        }
+
+
+        user.savePosts.push(postId)
+        await user.save();
+
+        return res.
+        status(200)
+        .json(
+            new ApiResponse(200,{message: "post successfully add"})
+        )
+        
+    } catch (error) {
+        throw new ApiError(500 ,error.message, "server error")
+        
+    }
+
+})
+
 
 
 
@@ -271,6 +344,7 @@ export {
     updatePost,
     deletePost,
     getPostById,
-    searchBarByPost
+    searchBarByPost,
+    savePost
 
 }

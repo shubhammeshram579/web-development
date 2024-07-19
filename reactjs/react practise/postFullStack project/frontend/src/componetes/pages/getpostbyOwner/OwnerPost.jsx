@@ -8,13 +8,63 @@ const PostsByOwner = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  // const [savePost ,setSavePost] = useState([])
+  const [newpost, setNewPosts] = useState([])
 
   // console.log(posts)
 
   const accessToken = useSelector((state)=>state.auth.user?.accessToken)
   const user = useSelector((state)=>state.auth.user)
 
-  // console.log(user.user._id)
+  // console.log(user.user.savePosts)
+
+
+  // useEffect(() =>{
+  //   const fatchCurrentUser = async () => {
+  //     try {
+
+  //       const userData = await axios.get("http://localhost:8000/api/users/current-user",{
+  //         headers: {
+  //           "Authorization":`Bearer ${accessToken}`
+  //         }
+  //       })
+  //       // console.log("savePost currentuser",userData.data.data.curentUser)
+  //       setSavePost(userData.data.data.curentUser.savePosts)
+
+  //       setLoading(false);
+  //     } catch (error) {
+  //       setError(error.message);
+  //       setLoading(false);
+  //     }
+
+  //   };
+
+  //   fatchCurrentUser()
+  // },[]);
+
+
+  useEffect(()=>{
+  const fatchSavePost = async () => {
+    try {
+      const userSavePost = await axios.get("http://localhost:8000/api/users/savePosts",{
+        headers: {
+          "Authorization":`Bearer ${accessToken}`
+        }
+      });
+      console.log("usersavepost",userSavePost.data.data)
+      setNewPosts(userSavePost.data.data)
+      setLoading(false);
+      
+    } catch (error) {
+      setError(error.message);
+        setLoading(false);
+      
+    }
+
+  };
+  fatchSavePost();
+
+  },[]);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -57,7 +107,7 @@ const PostsByOwner = () => {
       </div>
 
     </div>
-    <div className='p-[100px]'>
+    <div className='p-[100px] flex flex-wrap items-center justify-center'>
       
       {/* <h1>Posts by Owner {posts.length}</h1> */}
 
@@ -73,6 +123,20 @@ const PostsByOwner = () => {
           </li>
         ))}
       </ul>
+
+      <ul className='flex justify-center items-center gap-20 flex-row pt-14 flex-wrap'>
+        {newpost.map(post => (
+          <li key={post._id}>
+            <Link to={`/getPostByID/${post._id}`}>
+            {post.postImg && <img className='h-[300px] w-[400px] rounded-xl object-cover' src={post.postImg} alt={post.title} />}</Link>
+            <h2 className='text-center font-bold mt-5'>{post.title}</h2>
+            <p className='text-center'>{post.description}</p>
+            <div className='flex items-center justify-around'>
+            </div>
+          </li>
+        ))}
+      </ul>
+      {/* <h1>current user: {savePost.length}</h1> */}
 
       
      

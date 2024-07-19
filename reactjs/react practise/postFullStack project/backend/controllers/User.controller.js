@@ -271,6 +271,32 @@ const updateUser = AsynceHendler(async (req, res) => {
         
     }
 
+});
+
+
+const userSavePost = AsynceHendler( async (req,res) =>{
+    try {
+        const userId = req.user._id;
+
+        const user = await User.findById(userId).populate("savePosts");
+        console.log("data",user)
+
+        if(!user){
+            throw new ApiError(404, "user not found")
+        }
+
+
+        return res
+        .status(200)
+        .json(
+            new ApiResponse(200, user.savePosts, "succesfully get savepost")
+        )
+        
+    } catch (error) {
+        throw new ApiError(500, error.message)
+        
+    }
+
 })
 
 
@@ -285,6 +311,7 @@ export {
     getCurrentUser,
     logoutUser,
     refreshAccessToken,
-    updateUser
+    updateUser,
+    userSavePost
 
 }
