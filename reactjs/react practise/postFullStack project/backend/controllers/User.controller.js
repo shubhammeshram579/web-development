@@ -297,6 +297,71 @@ const userSavePost = AsynceHendler( async (req,res) =>{
         
     }
 
+});
+
+
+const follow = AsynceHendler(async (req, res) =>{
+    try {
+        const {userId} = req.params;
+        const followerId = req.user._id;
+
+
+        if(userId === followerId.toString()){
+            throw new ApiError(400, "You connot follow yourself");
+        }
+
+        const user = await User.findById(userId);
+
+        if(!user){
+            throw new ApiError(404, "user not found")
+        }
+
+        if(!user.followers.includes(followerId)){
+            user.followers.push(followerId);
+            await user.save();
+        }
+
+        return res
+        .status(200)
+        .json(
+            new ApiResponse(200, {user} , "succesfully")
+        )
+        
+    } catch (error) {
+        throw new ApiError(500, error.message)
+        
+    }
+
+
+})
+
+const unfollow = AsynceHendler(async (req, res) => {
+    try {
+        const {userId} = req.params;
+        const followerId = req.user._id
+        
+        const user = await User.findById(userId);
+        
+        if(!user){
+            throw new ApiError(404, "user not found")
+        }
+
+        // Remove the followerId from the user's followers array
+
+        user.followers = user.followers.filter(id => id.toString() !== followerId.toString());
+        await user.save();
+
+        return res
+        .status(200)
+        .json(
+            new ApiResponse(200, {user}, "success")
+        )
+        
+    } catch (error) {
+        throw new ApiError(500, error.message)
+        
+    }
+
 })
 
 
@@ -312,6 +377,8 @@ export {
     logoutUser,
     refreshAccessToken,
     updateUser,
-    userSavePost
+    userSavePost,
+    follow,
+    unfollow
 
 }

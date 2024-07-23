@@ -19,6 +19,8 @@ import GetPostbyId from "./componetes/pages/Getpost/GetPostbyId.jsx"
 import SearchResults from "./componetes/pages/SearchPost/ChatSearchResult.jsx"
 import HomePagePost from "./componetes/pages/home/HomePagePost.jsx"
 import UpdateUser from "./componetes/pages/UpdateUser/UpdateUser.jsx"
+import SavePosts from "./componetes/pages/getpostbyOwner/SavePosts.jsx"
+import CreatedPosts from "./componetes/pages/getpostbyOwner/CreatedPosts.jsx"
 
 
 
@@ -73,6 +75,22 @@ const router = createBrowserRouter([
                 </AuthLayout>
             ),
         },
+        // {
+        //     path: "/SavePosts",
+        //     element: (
+        //         <AuthLayout authentication>
+        //             <SavePosts />
+        //         </AuthLayout>
+        //     ),
+        // },
+        // {
+        //     path: "/CreatedPosts",
+        //     element: (
+        //         <AuthLayout authentication>
+        //             <CreatedPosts />
+        //         </AuthLayout>
+        //     ),
+        // },
         {
             path: "/getPostByID/:postId",
             element: (

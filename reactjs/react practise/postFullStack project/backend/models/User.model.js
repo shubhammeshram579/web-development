@@ -38,6 +38,9 @@ const userSchema = new mongoose.Schema(
         savePosts: [
             {type: mongoose.Schema.Types.ObjectId,
              ref:"Post"}],
+        followers:[
+            {type: mongoose.Schema.Types.ObjectId, ref:"User" }
+        ],
         password:{
             type: String,
             required:[true, "password is required"]

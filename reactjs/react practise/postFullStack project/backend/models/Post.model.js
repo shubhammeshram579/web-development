@@ -22,7 +22,11 @@ const postSchema = new mongoose.Schema(
         owner:{
             type: mongoose.Schema.Types.ObjectId,
             ref: "User"
-        }
+        },
+        isSaved: {
+            type: Boolean,
+            default: false, // Default value is false
+        },
     
 
 },{timestamps:true})

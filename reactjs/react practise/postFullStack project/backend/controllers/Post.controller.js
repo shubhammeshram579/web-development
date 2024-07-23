@@ -307,6 +307,9 @@ const savePost = AsynceHendler(async (req, res) =>{
         // console.log(user)
         // console.log(post)
 
+        post.isSaved = true;
+        await post.save();
+
 
         if(!user || !post){
             throw new ApiError(404, "user and post not found")

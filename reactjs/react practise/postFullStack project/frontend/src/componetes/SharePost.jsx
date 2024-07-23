@@ -20,9 +20,9 @@ const SharePost = ({ postUrl, postTitle }) => {
   };
 
   return (
-    <div className='w-14 h-20'>
+    <div className='w-10 h-10'>
         <i
-        className="ri-share-2-line cursor-pointer text-[35px] p-2 hover:bg-green-400 rounded-full"
+        className="ri-share-2-line cursor-pointer text-[30px]"
         onClick={() => setVisible(!visible)}
       ></i>
       <div
@@ -30,7 +30,7 @@ const SharePost = ({ postUrl, postTitle }) => {
           visible ? 'inline-block' : 'hidden' 
         }`}
       >
-        <div className='h-[100px] w-[400px] bg-white rounded-lg'>
+      <div className=' bg-white rounded-lg px-2 mt-2'>
       <h3 className='text-xl text-center mb-5'>Share</h3>
       <div className='flex justify-center items-center gap-10'>
         <FacebookShareButton url={postUrl} quote={postTitle}>

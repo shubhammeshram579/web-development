@@ -7,11 +7,14 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { Input, SharePost ,SavePostButton} from "..//../index.js";
 import OptionsCard from "..//../OptionCard.jsx";
+import FollowButton from "..//../FollowBtn.jsx"
 
 const HomePagePost = () => {
   const { postId } = useParams();
   const [post, setPost] = useState([]);
   const [comment, setComment] = useState([]);
+  const [userId, setUserId] = useState([])
+  const [isFollowing, setIsFollowing] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const {
@@ -23,7 +26,8 @@ const HomePagePost = () => {
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
   const user = useSelector((state) => state.auth.user);
 
-  // console.log(user.user._id)
+
+  console.log("userId",userId)
 
 
   // donload butten and hide butten 
@@ -42,8 +46,9 @@ const HomePagePost = () => {
             },
           }
         );
-
+        console.log("getPost",response.data.data.getPostbyId.owner)
         setPost(response.data.data.getPostbyId);
+        setUserId(response.data.data.getPostbyId.owner)
         setLoading(false);
       } catch (error) {
         setError(error.message);
@@ -52,6 +57,28 @@ const HomePagePost = () => {
     };
     fatchgetpost();
   }, [postId, accessToken]);
+
+
+  useEffect(() =>{
+    const fatchCurrentUser = async () =>{
+    try {
+      const currentUser = await axios.get("http://localhost:8000/api/users/current-user",{
+        headers: {
+          "Authorization":`Bearer ${accessToken}`
+        }
+      })
+      console.log("curret",currentUser.data.data.curentUser)
+      setIsFollowing(currentUser.data.data.curentUser.followers.includes(user.user._id))
+      setLoading(false);
+      
+    } catch (error) {
+      setError(error.message);
+      setLoading(false);
+    }
+  }
+  fatchCurrentUser()
+
+  },[accessToken])
 
   // get comment
   useEffect(() => {
@@ -137,7 +164,7 @@ const HomePagePost = () => {
             {/* share post and download image */}
             <div className="flex items-center flex-col">
               <div className="flex items-center justify-between w-full pl-4">
-                <div className="flex gap-4 text-[45px] items-center">
+                <div className="flex items-center justify-center gap-4 text-[30px]">
                   <SharePost postUrl={postUrl} postTitle={post.title} />
                   <i
                     className="fa-solid fa-ellipsis cursor-pointer"
@@ -160,6 +187,14 @@ const HomePagePost = () => {
                   {post.title}
                 </h1>
                 <p className="mt-3 pb-20">{post.description}</p>
+              </div>
+              <div className="w-full pl-5 flex items-center justify-between">
+                <div className="flex items-center justify-center gap-3">
+                <h1 className="rounded-full bg-blue-500 px-3 py-3">Logo</h1>
+                <h1 className="flex flex-col">folower name <span>0 followers</span></h1>
+                </div>
+                <FollowButton userId={userId}  isFollowing={isFollowing} currentUser={user.user._id}  />
+                <button className="bg-green-400 px-6 py-3 rounded-xl">follow</button>
               </div>
 
               {/* get comment */}

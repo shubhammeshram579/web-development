@@ -12,6 +12,9 @@ const GetPostbyId = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate()
 
+  console.log("checksavepost",post)
+  console.log("checksavepost",post.Saved)
+
 
   const accessToken = useSelector((state)=>state.auth.user?.accessToken)
 
@@ -68,7 +71,9 @@ const GetPostbyId = () => {
       <p className='text-center'>{post.description}</p>
       {/* <p>Owner ID: {post.owner}</p> */}
       <div className='flex items-center justify-around'>
-      <Link to={`/EditPost/${post._id}`}><button className='py-3 px-10 bg-green-500 rounded-lg mt-5'>Edit</button></Link>
+      {post.isSaved ? null : (
+            <Link to={`/EditPost/${post._id}`}><button className='py-3 px-10 bg-green-500 rounded-lg mt-5'>Edit</button></Link>
+      )}
       <button onClick={handleDelete} className='py-3 px-10 bg-red-500 rounded-lg mt-5'>Delete</button>
       </div>
       </Contenier>
