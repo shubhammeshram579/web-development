@@ -1,0 +1,64 @@
+// followSlice.js
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { useSelector } from 'react-redux';
+
+export const followUser = createAsyncThunk('follow/followUser', async (userId) => {
+//   const { auth } = getState();
+  const accessToken = useSelector((state) => state.auth.user?.accessToken);
+  const response = await axios.post(`http://localhost:8000/api//users/follow/${userId}`, {}, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`
+    }
+  });
+  console.log("followuser",response.data)
+  return response.data;
+});
+
+export const unfollowUser = createAsyncThunk('follow/unfollowUser', async (userId) => {
+//   const { auth } = getState();
+  const accessToken = useSelector((state) => state.auth.user?.accessToken);
+  const response = await axios.post(`http://localhost:8000/api//users/unfollow/${userId}`, {}, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`
+    }
+  });
+  console.log("unflower",response.data)
+  return response.data;
+});
+
+export const checkFollowStatus = createAsyncThunk('follow/checkFollowStatus', async (userId) => {
+//   const { auth } = getState();
+  const accessToken = useSelector((state) => state.auth.user?.accessToken);
+  const response = await axios.get(`http://localhost:8000/api//users/statusFollow/${userId}`, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`
+    }
+  });
+  console.log("status",response.data)
+  return response.data;
+});
+
+const followSlice = createSlice({
+  name: 'follow',
+  initialState: {
+    isFollowing: false,
+    status: 'idle',
+    error: null
+  },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(checkFollowStatus.fulfilled, (state, action) => {
+        state.isFollowing = action.payload.isFollowing;
+      })
+      .addCase(followUser.fulfilled, (state) => {
+        state.isFollowing = true;
+      })
+      .addCase(unfollowUser.fulfilled, (state) => {
+        state.isFollowing = false;
+      });
+  }
+});
+
+export default followSlice.reducer;

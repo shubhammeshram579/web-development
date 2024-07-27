@@ -6,7 +6,7 @@ import { Contenier ,SharePost} from "..//../index.js";
 import CreatedPosts from "./CreatedPosts.jsx";
 import SavePosts from "./SavePosts.jsx";
 
-const PostsByOwner = () => {
+const PostsByOwner = ({userId}) => {
   const [activeSection, setActiveSection] = useState("created");
 
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
@@ -52,7 +52,10 @@ const PostsByOwner = () => {
         </h1>
         <h1 className="font-bold text-4xl mb-2">{user.user.fullname}</h1>
         <h2>@ {user.user.username}</h2>
-        <h2 className="mt-2"> 0 Follwing</h2>
+        <div className="flex items-center justify-between gap-5 font-bold">
+        <h2 className="mt-2">{user.user.followers.length} Followers</h2>
+        <h2 className="mt-2">{user.user.following.length} Follwing</h2>
+        </div>
         <div className="flex items-center justify-center gap-3 mt-5">
           <h1 className="px-10 flex items-center justify-center py-1 rounded-3xl bg-slate-400 hover:bg-green-500"><SharePost postUrl={postUrl} />Share</h1>
           <Link to="/UpdateUser">
@@ -65,7 +68,7 @@ const PostsByOwner = () => {
         {/* button */}
         <div>
           <div className="button-group flex items-center justify-center gap-5 font-bold mt-[150px]">
-            <button
+           <button
               onClick={() => handleSectionChange("created")}
               className={
                 activeSection === "created"

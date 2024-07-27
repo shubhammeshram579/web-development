@@ -60,14 +60,8 @@ const publishPost = AsynceHendler(async (req, res) =>{
 const getPost = AsynceHendler( async (req, res) => {
     try {
 
-        // const {ownerId} = req.params;
-        const userId = req.user?._id;
-        // const savePostId = req.user.savePosts;
-        // console.log("saveId",savePostId)
-
-        // const user = await User.findById(userId).select('savePosts._id').exec();
-        // const savePostIds = user.savePosts.map(post => post._id);
-        // console.log("savIddddd",savePostIds)
+        // const userId = req.user?._id;
+        const {userId} = req.params;
 
         if(!userId){
             throw new ApiError(404, "owner id not found")
@@ -92,10 +86,37 @@ const getPost = AsynceHendler( async (req, res) => {
         
     }
 
-})
+});
+
+// const getPostUser = AsynceHendler( async (req, res) =>{
+//     try {
+//         const {userId} = req.params;
+
+//         if(!userId){
+//             throw new ApiError(404, "owner id not found")
+//         }
+
+//         const postUserPost = await Post.find({owner: userId})
+
+//         if(!postUserPost){
+//             throw new ApiError(404 , "post not found")
+//         }
+
+//         return res
+//         .status(200)
+//         .json(
+//             new ApiResponse(200 , {postUserPost} , "success")
+//         )
+
+//     } catch (error) {
+//         throw new ApiError(404, error.message , "post not found")
+        
+//     }
+
+// })
 
 
-const getAllPost = AsynceHendler(async (req,res) => {
+const getAllPost = AsynceHendler(async (req, res) => {
     try {
         const getPosts = await Post.find()
         // console.log(getPosts)
@@ -240,7 +261,7 @@ const getPostById = AsynceHendler( async (req, res) => {
     try {
         const {postId} = req.params;
     
-        const getPostbyId = await Post.findById(postId);
+        const getPostbyId = await Post.findById(postId).populate("owner");
     
         if(!getPostbyId){
             throw new ApiError(404, "post not found")
@@ -292,7 +313,6 @@ const searchBarByPost = AsynceHendler( async (req,res) => {
 });
 
 const savePost = AsynceHendler(async (req, res) =>{
-      
 
     try {
         const {userId ,postId} = req.body;
@@ -348,6 +368,7 @@ export {
     deletePost,
     getPostById,
     searchBarByPost,
-    savePost
+    savePost,
+    // getPostUser
 
 }

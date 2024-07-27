@@ -1,9 +1,10 @@
 // pages/SearchResults.jsx
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation,Link } from 'react-router-dom';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import Contenier from '../../contenier/Contenier';
+
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -40,9 +41,9 @@ const SearchResults = () => {
       {posts.length > 0 ? (
         posts.map((post) => (
           <div key={post._id}>
-            <img src={post.postImg} alt={post.title} className='w-[350px] h-[500px] object-cover rounded-xl' />
-            <h2 className='font-bold'>{post.title}</h2>
-            <p>{post.description}</p>
+            <Link to={`/getPostByID2/${post._id}`}><img src={post.postImg} alt={post.title} className='w-[350px] h-[500px] object-cover rounded-xl' />
+            <h2 className='font-bold text-center mt-5'>{post.title}</h2>
+            <p className='text-center'>{post.description}</p></Link>
           </div>
         ))
       ) : (

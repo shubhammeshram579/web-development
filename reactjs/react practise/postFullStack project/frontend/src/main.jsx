@@ -14,13 +14,14 @@ import LoginPage from './componetes/pages/login/LoginPage.jsx'
 import Addpost from './componetes/pages/Addpost/Addpost.jsx'
 import OwnerPost from "./componetes/pages/getpostbyOwner/OwnerPost.jsx"
 import EditPost from "./componetes/pages/EditPost/EditPost.jsx"
-import GetPostbyId from "./componetes/pages/Getpost/GetPostbyId.jsx"
+// import GetPostbyId from "./componetes/pages/Getpost/GetPostbyId.jsx"
 // import PostsList from "./componetes/pages/SearchPost/SearchPost.jsx"
 import SearchResults from "./componetes/pages/SearchPost/ChatSearchResult.jsx"
 import HomePagePost from "./componetes/pages/home/HomePagePost.jsx"
 import UpdateUser from "./componetes/pages/UpdateUser/UpdateUser.jsx"
-import SavePosts from "./componetes/pages/getpostbyOwner/SavePosts.jsx"
-import CreatedPosts from "./componetes/pages/getpostbyOwner/CreatedPosts.jsx"
+import GetPotsByUserProfile from "./componetes/pages/home/GetPotsByUserProfile.jsx"
+import HomePagePost2 from "./componetes/pages/Getpost/PostPage.jsx"
+import GetpostByotherUser from "./componetes/pages/Getpost/GetPostByOtherUser.jsx"
 
 
 
@@ -68,34 +69,19 @@ const router = createBrowserRouter([
           ),
       },
         {
-            path: "/getPost",
+            path: "/getPost/:userId",
             element: (
                 <AuthLayout authentication>
                     <OwnerPost />
                 </AuthLayout>
             ),
         },
-        // {
-        //     path: "/SavePosts",
-        //     element: (
-        //         <AuthLayout authentication>
-        //             <SavePosts />
-        //         </AuthLayout>
-        //     ),
-        // },
-        // {
-        //     path: "/CreatedPosts",
-        //     element: (
-        //         <AuthLayout authentication>
-        //             <CreatedPosts />
-        //         </AuthLayout>
-        //     ),
-        // },
         {
             path: "/getPostByID/:postId",
             element: (
                 <AuthLayout authentication>
-                    <GetPostbyId />
+                    {/* <GetPostbyId /> */}
+                    <HomePagePost2 />
                 </AuthLayout>
             
             ),
@@ -131,6 +117,24 @@ const router = createBrowserRouter([
             element: (
                 <AuthLayout authentication>
                     <HomePagePost/>
+                </AuthLayout>
+            ),
+            
+        },
+        {
+            path: "/getPostByID3/:postId",
+            element: (
+                <AuthLayout authentication>
+                    <GetpostByotherUser />
+                </AuthLayout>
+            ),
+            
+        },
+        {
+            path: "/getPostByUserPorofile/:userId",
+            element: (
+                <AuthLayout authentication>
+                    <GetPotsByUserProfile/>
                 </AuthLayout>
             ),
             

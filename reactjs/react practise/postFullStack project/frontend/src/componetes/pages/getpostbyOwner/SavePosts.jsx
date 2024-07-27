@@ -3,21 +3,26 @@ import axios from 'axios';
 import {useSelector} from "react-redux"
 import { Link } from 'react-router-dom';
 import {Contenier} from "..//../index.js"
+import { useParams  ,useLocation} from 'react-router-dom';
+
 
 const SavePosts = () => {
+  const { userId } = useParams();
+  const location = useLocation();
     const [savePost ,setSavePost] = useState([])
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    // url location selection 
+    const isUserProfileRoute = location.pathname.includes('/getPostByUserPorofile/');
     
-
-
     const accessToken = useSelector((state)=>state.auth.user?.accessToken)
 
     
   useEffect(()=>{
     const fatchSavePost = async () => {
       try {
-        const userSavePost = await axios.get("http://localhost:8000/api/users/savePosts",{
+        const userSavePost = await axios.get(`http://localhost:8000/api/users/savePosts/${userId}`,{
           headers: {
             "Authorization":`Bearer ${accessToken}`
           }
@@ -45,7 +50,9 @@ const SavePosts = () => {
          <ul className='flex justify-center items-center gap-20 flex-row pt-14 flex-wrap'>
         {savePost.map(post => (
           <li key={post._id}>
-            <Link to={`/getPostByID/${post._id}`}>
+
+            {/* set condition for url  */}
+            <Link to={isUserProfileRoute ? `/getPostByID3/${post._id}`:`/getPostByID/${post._id}`}>
             {post.postImg && <img className='h-[300px] w-[400px] rounded-xl object-cover' src={post.postImg} alt={post.title} />}</Link>
             <h2 className='text-center font-bold mt-5'>{post.title}</h2>
             <p className='text-center'>{post.description}</p>
@@ -54,7 +61,9 @@ const SavePosts = () => {
           </li>
         ))}
       </ul>
+
       </Contenier>
+      
     </div>
   )
 }

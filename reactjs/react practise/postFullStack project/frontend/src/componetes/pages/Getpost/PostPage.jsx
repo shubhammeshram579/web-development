@@ -8,13 +8,15 @@ import { Link } from "react-router-dom";
 import { Input, SharePost, SavePostButton } from "..//../index.js";
 import OptionsCard from "..//../OptionCard.jsx";
 import FollowButton from "..//../FollowBtn.jsx";
-import Home from "./Home.jsx"
+import { useNavigate } from "react-router-dom";
+import Home from '../home/Home.jsx';
 
-const HomePagePost = () => {
+const HomePagePost2 = () => {
   const { postId } = useParams();
   const [post, setPost] = useState([]);
   const [comment, setComment] = useState([]);
-  const [currentUser , setCurrentUser] = useState([])
+  const [currentUser, setCurrentUser] = useState([]);
+  const navigate = useNavigate()
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const {
@@ -30,7 +32,6 @@ const HomePagePost = () => {
   // donload butten and hide butten
   const [visible, setVisible] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
-
 
   // console.log("posts",post)
 
@@ -72,7 +73,7 @@ const HomePagePost = () => {
         );
 
         // console.log("currentUser", currentUser.data.data.curentUser);
-        setCurrentUser(currentUser.data.data.curentUser)
+        setCurrentUser(currentUser.data.data.curentUser);
         // setIsFollowing(currentUser.data.data.curentUser.followers.includes(user.user._id))
         setLoading(false);
       } catch (error) {
@@ -109,61 +110,6 @@ const HomePagePost = () => {
   // postUrl copy
   const postUrl = window.location.href;
 
-
-
-  // useEffect(() => {
-  //   const fetchPostUser = async () => {
-  //     try {
-  //       const postUser = await axios.get(
-  //         `http://localhost:8000/api/users/getUsersById?_id=${post.owner}`,
-  //         {
-  //           headers: {
-  //             Authorization: `Bearer ${accessToken}`,
-  //           },
-  //         }
-  //       );
-
-  //       console.log("postuserdata", postUser.data.data.postUser);
-  //       setPostUser(postUser.data.data.postUser);
-  //       setLoading(false);
-  //     } catch (error) {
-  //       setError(error.message);
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchPostUser();
-  // }, [post.owner, accessToken]);
-
-  // useEffect(() => {
-  //   if (post.owner) {
-  //     const fetchPostUser = async () => {
-  //       try {
-  //         const postUser = await axios.get(`http://localhost:8000/api/users/getUsersById`, {
-  //           params: { _id: post.owner },
-  //           headers: {
-  //             "Authorization": `Bearer ${accessToken}`
-  //           }
-  //         });
-  
-  //         console.log("postuserdata", postUser.data);
-  //         setPostUser(postUser.data.data.postUser);
-  //         setLoading(false);
-  //       } catch (error) {
-  //         setError(error.message);
-  //         setLoading(false);
-  //       }
-  //     };
-  
-  //     fetchPostUser();
-  //   } else {
-  //     console.error("post.owner is undefined");
-  //   }
-  // }, [post.owner, accessToken]);
-  
-
- 
-
   // add comment function
   const onSubmit = async (data) => {
     try {
@@ -180,7 +126,6 @@ const HomePagePost = () => {
       // console.log(addcomment);
       reset();
       return addcomment.data;
-      
     } catch (error) {
       console.log(error);
       alert("Error registration ");
@@ -189,27 +134,60 @@ const HomePagePost = () => {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
-  if (!post || !post.owner || !post.owner.fullname || !currentUser.fullname){
+  if (!post || !post.owner || !post.owner.fullname || !currentUser.fullname) {
     return <div>Loading...</div>;
-  } 
+  }
 
   //post image hide
   const handleHide = () => {
     setIsHidden(!isHidden);
   };
 
- 
+  const handleDelete = async () => {
+    try {
+      await axios.delete(
+        `http://localhost:8000/api/posts/deletePost/${postId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      navigate(`/getPost/${currentUser._id}`); // Redirect to the posts list page after successful deletion
+    } catch (error) {
+      console.error("Error deleting post:", error);
+    }
+  };
 
   return (
     <Contenier>
-      <div className="pt-10">
+      <div>
+        <div className="flex items-center justify-between">
         <div className="font-bold text-[25px]">
-          <Link to="/">
-            <i class="ri-arrow-left-fill"></i>
-          </Link>
+            <Link to={`/getPost/${currentUser._id}`}>
+              <i class="ri-arrow-left-fill"></i>
+            </Link>
+          </div>
+
+          <div className="flex items-center justify-end gap-5">
+            {post.isSaved ? null : (
+              <Link to={`/EditPost/${post._id}`}>
+                <button className="py-3 px-10 bg-green-500 rounded-lg mt-5">
+                  Edit
+                </button>
+              </Link>
+            )}
+
+            <button
+              onClick={handleDelete}
+              className="py-3 px-10 bg-red-500 rounded-lg mt-5"
+            >
+              Delete
+            </button>
+          </div>
         </div>
 
-        <div className="bg-gray-400 w-[900px] flex items-center rounded ml-[450px]">
+        <div className="bg-gray-400 w-[900px] flex items-center rounded ml-[400px]">
           <div className="py-5 flex items-start justify-start">
             <div
               className={`transition-colors duration-500 rounded-lg ${
@@ -258,13 +236,27 @@ const HomePagePost = () => {
 
               <div className="w-full pl-5 flex items-center justify-between">
                 <div className="flex items-center justify-center gap-3">
-                  <h1 className="rounded-full bg-blue-500 px-3 py-3">{post.owner.fullname[0]}</h1>
+                  <h1 className="rounded-full bg-blue-500 px-3 py-3">
+                    {post.owner.fullname[0]}
+                  </h1>
                   <h1 className="flex flex-col">
-                  <Link to={post.owner._id === currentUser._id ? `/getPost/${currentUser._id}`: `/getPostByUserPorofile/${post.owner._id}`}>{post.owner.fullname} </Link><span>{post.owner.followers.length} followers</span>
+                    <Link
+                      to={
+                        post.owner._id === currentUser._id
+                          ? `/getPost/${currentUser._id}`
+                          : `/getPostByUserPorofile/${post.owner._id}`
+                      }
+                    >
+                      {post.owner.fullname}{" "}
+                    </Link>
+                    <span>{post.owner.followers.length} followers</span>
                   </h1>
                 </div>
                 <div className="bg-green-400 px-6 py-3 rounded-xl">
-                  <FollowButton userId={currentUser._id} targetUserId={post.owner} />
+                  <FollowButton
+                    userId={currentUser._id}
+                    targetUserId={post.owner}
+                  />
                 </div>
               </div>
 
@@ -309,13 +301,12 @@ const HomePagePost = () => {
           </div>
         </div>
       </div>
-      <div>
+      { !post.isSaved ? null :(<div>
         <h1 className="text-center mt-20 font-medium text-3xl">More to explore</h1>
         <Home />
-      </div>
-      
+      </div>)}
     </Contenier>
   );
 };
 
-export default HomePagePost;
+export default HomePagePost2;

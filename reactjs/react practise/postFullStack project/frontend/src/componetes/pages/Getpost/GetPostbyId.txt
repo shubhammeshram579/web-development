@@ -12,11 +12,10 @@ const GetPostbyId = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate()
 
-  console.log("checksavepost",post)
-  console.log("checksavepost",post.Saved)
 
 
   const accessToken = useSelector((state)=>state.auth.user?.accessToken)
+  const user = useSelector((state)=>state.auth.user?.user)
 
   useEffect(() => {
     const fatchgetpost = async () =>{
@@ -60,6 +59,8 @@ const GetPostbyId = () => {
     }
   };
 
+  
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
@@ -74,8 +75,12 @@ const GetPostbyId = () => {
       {post.isSaved ? null : (
             <Link to={`/EditPost/${post._id}`}><button className='py-3 px-10 bg-green-500 rounded-lg mt-5'>Edit</button></Link>
       )}
+     
       <button onClick={handleDelete} className='py-3 px-10 bg-red-500 rounded-lg mt-5'>Delete</button>
+  
       </div>
+      
+
       </Contenier>
       
     </div>

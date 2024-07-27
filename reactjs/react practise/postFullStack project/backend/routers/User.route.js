@@ -7,7 +7,8 @@ import {regitsterUser,
     updateUser,
     userSavePost,
     follow,
-    unfollow
+    unfollow,
+    getusetbyId
 } from "../controllers/User.controller.js"
 // import cors from "cors"
 import {verifyJWT} from "../middlewheres/Auth.middlewere.js"
@@ -27,10 +28,11 @@ router.route("/users/login").post(loginUser)
 router.route("/users/logout").post(verifyJWT, logoutUser)
 router.route("/users/refresh-token").post(refreshAccessToken)
 router.route("/users/current-user").get(verifyJWT,getCurrentUser)
-router.route("/users/savePosts").get(verifyJWT,userSavePost)
+router.route("/users/savePosts/:userId").get(verifyJWT,userSavePost)
 router.route("/users/updateuser").patch(verifyJWT,updateUser)
-router.route("/users/follow/:userId").post(follow)
-router.route("/users/unfollow/:userId").post(verifyJWT,unfollow)
+router.route("/users/follow").post(verifyJWT, follow)
+router.route("/users/unfollow").post(verifyJWT,unfollow)
+router.route("/users/getUsersById").get(verifyJWT,getusetbyId)
 
 
 export default router

@@ -11,6 +11,7 @@ import ChatSearchBar from "../ChatSearchbar.jsx"
 function Header() {
     const authStatus = useSelector((state) => state.auth.isLoggedIn)
     const navigate = useNavigate()
+    const user = useSelector((state) => state.auth.user);
 
 
     const navItems = [
@@ -31,7 +32,7 @@ function Header() {
         },
         {
             name: "Profile",
-            slug: "/getPost",
+            slug: authStatus ? `/getPost/${user.user._id}` : '/getPost/null',
             active: authStatus,
         },
         {

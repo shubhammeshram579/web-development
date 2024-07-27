@@ -21,7 +21,7 @@ const SavePostButton = ({ userId, postId }) => {
 
       });
       // return response.data
-      navigate("/getPost")
+      navigate(`/getPost/${userId}`)
       console.log(response.data)
       alert(response.data.message);
     } catch (error) {

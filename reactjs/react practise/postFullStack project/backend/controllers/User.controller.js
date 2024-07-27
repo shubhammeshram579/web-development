@@ -276,7 +276,8 @@ const updateUser = AsynceHendler(async (req, res) => {
 
 const userSavePost = AsynceHendler( async (req,res) =>{
     try {
-        const userId = req.user._id;
+        // const userId = req.user._id;
+        const {userId} = req.params;
 
         const user = await User.findById(userId).populate("savePosts");
         console.log("data",user)
@@ -284,7 +285,6 @@ const userSavePost = AsynceHendler( async (req,res) =>{
         if(!user){
             throw new ApiError(404, "user not found")
         }
-
 
         return res
         .status(200)
@@ -299,62 +299,85 @@ const userSavePost = AsynceHendler( async (req,res) =>{
 
 });
 
+const getusetbyId = AsynceHendler( async (req, res) => {
+    try {
+        // const userId = req.body._id;
+        const userId = req.query._id;
+
+        // const postUser = await User.find({_id:userId});
+        const postUser = await User.findById(userId);
+        console.log("postUser",postUser)
+
+        if(!postUser){
+            throw new ApiError(404, "postUser not found")
+        }
+
+        return res
+        .status(200)
+        .json(
+            new ApiResponse(200, {postUser}, "successFully get post user")
+        )
+        
+    } catch (error) {
+        throw new ApiError(500, error.message)
+        
+    }
+
+});
+
 
 const follow = AsynceHendler(async (req, res) =>{
     try {
-        const {userId} = req.params;
-        const followerId = req.user._id;
+        const { userId, targetUserId } = req.body;
 
-
-        if(userId === followerId.toString()){
-            throw new ApiError(400, "You connot follow yourself");
-        }
 
         const user = await User.findById(userId);
+        const targetUser = await User.findById(targetUserId);
 
-        if(!user){
-            throw new ApiError(404, "user not found")
+        if (!user || !targetUser) {
+            throw new ApiError(404, "userId and targetId not found")
         }
 
-        if(!user.followers.includes(followerId)){
-            user.followers.push(followerId);
+        if (!user.following.includes(targetUserId)) {
+            user.following.push(targetUserId);
+            targetUser.followers.push(userId);
             await user.save();
+            await targetUser.save();
         }
 
         return res
         .status(200)
-        .json(
-            new ApiResponse(200, {user} , "succesfully")
-        )
+        .json(new ApiResponse(200 , "user follow succesfully")
+    )
         
     } catch (error) {
-        throw new ApiError(500, error.message)
-        
+        throw new ApiError(500, error.message)   
     }
 
+});
 
-})
 
 const unfollow = AsynceHendler(async (req, res) => {
     try {
-        const {userId} = req.params;
-        const followerId = req.user._id
+        const { userId, targetUserId } = req.body;
         
         const user = await User.findById(userId);
-        
-        if(!user){
-            throw new ApiError(404, "user not found")
+        const targetUser = await User.findById(targetUserId);
+
+        if (!user || !targetUser) {
+            throw new ApiError(404, "userId and targetId not found")
         }
 
-        // Remove the followerId from the user's followers array
+        user.following = user.following.filter(id => id.toString() !== targetUserId);
+        targetUser.followers = targetUser.followers.filter(id => id.toString() !== userId);
 
-        user.followers = user.followers.filter(id => id.toString() !== followerId.toString());
         await user.save();
+        await targetUser.save();
 
         return res
         .status(200)
         .json(
-            new ApiResponse(200, {user}, "success")
+            new ApiResponse(200, "user unfollow success")
         )
         
     } catch (error) {
@@ -362,7 +385,35 @@ const unfollow = AsynceHendler(async (req, res) => {
         
     }
 
-})
+});
+
+
+
+// const statusFollow = AsynceHendler(async (req, res) => {
+//     try {
+//         const {userId} = req.params;
+//         const followerId = req.user._id;
+
+//         const currentUser = await User.findById(followerId);
+
+//         if(!currentUser){
+//             throw new ApiError(404 , "user not found")
+//         };
+
+//         const isFollowing = currentUser.following.includes(userId)
+
+//         return res
+//         .status(200)
+//         .json(
+//             new ApiResponse(200, {isFollowing})
+//         )
+        
+//     } catch (error) {
+//         throw new ApiError(500, error.message)
+        
+//     }
+
+// });
 
 
 
@@ -379,6 +430,7 @@ export {
     updateUser,
     userSavePost,
     follow,
-    unfollow
+    unfollow,
+    getusetbyId
 
 }

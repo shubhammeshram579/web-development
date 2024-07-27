@@ -40,6 +40,9 @@ const Home = () => {
   }, []);
 
   if (loading) return <div>Loading...</div>;
+  if(!posts){
+    return <div>Loading...</div>
+  }
   // if (error) return <div className='font-bold text-5xl py-[27vh] text-green-900'>Login to read posts</div>;
   
 
@@ -64,12 +67,11 @@ const Home = () => {
 
   return (
     <Contenier>
-    <div className='py-10'>
-      
+    <div className='py-10 w-full'>
       {/* <h1>home: {posts.length}</h1> */}
-      <ul className='flex flex-row items-center justify-center flex-wrap gap-10'>
+      <ul className='flex flex-row items-center justify-around flex-wrap'>
         {posts.map(post => (
-          <li key={post._id} className='p-10 rounded-lg'>
+          <li key={post._id} className='py-10 px-2 rounded-lg'>
             <Link to={`/getPostByID2/${post._id}`}> <img className='h-[500px] w-[300px] rounded-3xl object-cover' src={post.postImg} alt="image" /></Link>
             <h2 className='text-center mt-5 font-bold'>{post.title}</h2>
             <p className='text-center'>{post.description}</p>
