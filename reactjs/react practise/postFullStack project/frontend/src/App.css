@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -36,8 +36,46 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+
+.container{
+  background-color: red;
+  color: green;
+  font-size: 100px;
+  font-weight: 600;
 }
 
+
+.cardImg{
+  height: 550px;
+  width: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  position: absolute;
+  z-index: -10;
+}
+
+.hoverEffect{
+  height: 550px;
+  width: 300px;
+  border-radius: 20px;
+  opacity: 0;
+}
+
+
+.hoverEffect:hover{
+  background-color:#18171762;
+  position: relative;
+  z-index: 10;
+  opacity: 10;
+}
+
+.SaveBtn:hover{
+  position: relative;
+  z-index: 11;
+}
 
 
 

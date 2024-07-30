@@ -22,6 +22,7 @@ import UpdateUser from "./componetes/pages/UpdateUser/UpdateUser.jsx"
 import GetPotsByUserProfile from "./componetes/pages/home/GetPotsByUserProfile.jsx"
 import HomePagePost2 from "./componetes/pages/Getpost/PostPage.jsx"
 import GetpostByotherUser from "./componetes/pages/Getpost/GetPostByOtherUser.jsx"
+// import Notification from "./componetes/Header/Notification.jsx"
 
 
 
@@ -139,6 +140,15 @@ const router = createBrowserRouter([
             ),
             
         },
+        // {
+        //     path: "/notification",
+        //     element: (
+        //         <AuthLayout authentication>
+        //             <Notification/>
+        //         </AuthLayout>
+        //     ),
+            
+        // },
     ],
 
   }

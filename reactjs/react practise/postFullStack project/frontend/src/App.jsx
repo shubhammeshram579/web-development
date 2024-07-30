@@ -7,10 +7,15 @@ import axios from 'axios'
 // import {Login} from  "./componetes/index.js"
 import {login as authLogin} from "..//store/AuthSlice.js"
 import {logout as authLogout} from "..//store/AuthSlice.js"
+import "./App.css"
+import Notification from "./componetes/Header/Notification.jsx"
+import Massage from "./componetes/Header/Massage.jsx"
 
 function App() {
   const [loading , setLoading] = useState(true)
   const dispatch = useDispatch()
+  const [showNotifications, setShowNotifications] = useState(false);
+  const [showMassage, setShowMassage] = useState(false);
 
 
   useEffect(() => {
@@ -37,6 +42,13 @@ function App() {
     }
   }, [dispatch]);
 
+  // const bacgroundC = {
+  //   backgroundColor: "red",
+  // color: "green",
+  // fontSize: "100px"
+    
+  // }
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -44,9 +56,14 @@ function App() {
   return (
     <div className=' w-full'>
         <div className='flex justify-normal flex-col gap-4 h-full'>
-            <Header />
+            <Header setShowNotifications={setShowNotifications} setShowMassage={setShowMassage}/>
+            <div className="absolute z-50 left-[79vw] mt-28">
+                {showNotifications && (<Notification />)}
+                {showMassage && (<Massage />)}
+                </div>
             <main className='flex items-centre justify-center'>
                 <Outlet />
+                
             </main>
             <Footer />
         </div>

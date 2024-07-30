@@ -12,6 +12,7 @@ import PostForm from "./PostForm/PostForm.jsx"
 import Contenier from "./contenier/Contenier.jsx"
 import SharePost from "./SharePost.jsx"
 import SavePostButton from "./SavePostBtn.jsx"
+import OptionsCard from "./OptionCard.jsx"
 export {
     Header,
     Footer,
@@ -26,6 +27,7 @@ export {
     PostForm,
     Contenier,
     SharePost,
+    OptionsCard,
     SavePostButton
 
 

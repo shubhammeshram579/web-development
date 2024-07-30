@@ -35,4 +35,7 @@ router.route("/posts/EditPost/:postId").patch(upload.single("postImg"),updatePos
 router.route("/posts/deletePost/:postId").delete(deletePost)
 
 
+// router.route("/posts/notification/:userId").get(notification)
+
+
 export default router

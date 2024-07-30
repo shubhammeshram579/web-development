@@ -4,6 +4,8 @@ import {AsynceHendler} from "../utils/AsynceHendler.js"
 import {Post} from "../models/Post.model.js"
 import { User } from "../models/User.model.js"
 import {uploadCloudinary} from "../utils/Cloudinary.js"
+import {Notification} from "../models/Notification.js"
+
 
 
 
@@ -14,7 +16,7 @@ const publishPost = AsynceHendler(async (req, res) =>{
         const userId = req.user?._id;
         const postImageLocalpath = req.files?.postImg?.[0].path;
 
-        console.log(req.body)
+        // console.log(req.body)
 
         if(!postImageLocalpath){
             throw new ApiError(400, "Post file requred")
@@ -40,6 +42,24 @@ const publishPost = AsynceHendler(async (req, res) =>{
         if(!PostPublish){
             throw new ApiError(500, "somthing went wrong")
         }
+
+        // console.log("PostPublish",PostPublish.owner)
+        console.log("PostPublish username",PostPublish)
+
+
+        // posts creation notification page feature
+        const followers = await User.find({following: PostPublish.owner});
+        console.log("followers" , followers)
+
+        const notification = followers.map(follower => ({
+            recipient: follower._id,
+            sender: PostPublish.owner,
+            postId: PostPublish._id,
+            message: `${PostPublish.title} has created a new post.`
+
+        }))
+
+        await Notification.insertMany(notification);
 
         return res
         .status(200)
@@ -87,6 +107,31 @@ const getPost = AsynceHendler( async (req, res) => {
     }
 
 });
+
+// const notification  = AsynceHendler(async (req, res) =>{
+//     try {
+
+//         const {userId} = req.params._id;
+
+//         const notification = await Notification.find({recipient:userId}).populate("sender postId");
+//         console.log("notification",notification)
+
+//         if(!notification){
+//             throw new ApiError(404, "notication not get")
+//         }
+
+//         return res
+//         .status(200)
+//         .json(
+//             new ApiResponse(200, {notification}, "success")
+//         )
+        
+//     } catch (error) {
+//         throw new ApiError(500, error.message)
+        
+//     }
+
+// });
 
 // const getPostUser = AsynceHendler( async (req, res) =>{
 //     try {
@@ -369,6 +414,7 @@ export {
     getPostById,
     searchBarByPost,
     savePost,
+    // notification
     // getPostUser
 
 }
