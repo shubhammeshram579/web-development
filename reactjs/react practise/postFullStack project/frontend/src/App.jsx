@@ -10,6 +10,7 @@ import {logout as authLogout} from "..//store/AuthSlice.js"
 import "./App.css"
 import Notification from "./componetes/Header/Notification.jsx"
 import Massage from "./componetes/Header/Massage.jsx"
+import NewMessage from "./componetes/Header/NewMessage.jsx"
 
 function App() {
   const [loading , setLoading] = useState(true)
@@ -57,9 +58,10 @@ function App() {
     <div className=' w-full'>
         <div className='flex justify-normal flex-col gap-4 h-full'>
             <Header setShowNotifications={setShowNotifications} setShowMassage={setShowMassage}/>
-            <div className="absolute z-50 left-[79vw] mt-28">
+            <div className="absolute z-50 left-[76vw] mt-28">
                 {showNotifications && (<Notification />)}
                 {showMassage && (<Massage />)}
+                {/* <NewMessage /> */}
                 </div>
             <main className='flex items-centre justify-center'>
                 <Outlet />

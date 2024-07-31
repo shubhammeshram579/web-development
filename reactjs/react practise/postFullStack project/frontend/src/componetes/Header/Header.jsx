@@ -65,14 +65,16 @@ function Header({
     <header className={"bg-gray-500 p-7"}>
       <Contenier>
         <nav className={"flex items-center justify-between"}>
-          <div className="flex items-center justify-around gap-10">
+          <div className="flex items-center justify-around gap-20">
             <Link to="/">
               <Logo />
             </Link>
-          </div>
-          <div>
+
+            <div>
           <Link to="/" active={true} className="inline-block px-2 py-2 duration-200 hover:bg-blue-100 rounded-full">Home</Link>
           </div>
+          </div>
+          
 
           {authStatus && (
             <div>

@@ -67,12 +67,12 @@ const Notification = ({userId})  => {
   
 
   return (
-    <div className='w-[400px] h-[90vh] rounded-xl bg-slate-200'>
-    <div >
-      <h1>notification: {notification.length} </h1>
-      <h1 className='font-bold ml-2 mb-5'>Updates</h1>
+    <div className='w-[22vw] h-[89vh] rounded-xl bg-gray-200'>
+    <div className='flex items-start justify-center  flex-col gap-2' >
+      <h1 className='px-2 py-2 font-semibold text-xl'>notification: {notification.length} </h1>
+      <h1 className='font-bold ml-2 mb-5 text-xl'>Updates</h1>
       {notification.length === 0 ? (
-        <p>No notifications</p> 
+        <p className='px-2'>No notifications</p> 
       ):(
         <ul>
       {notification.map((n)=>(
