@@ -78,4 +78,33 @@
 }
 
 
+.Chatbox{
+  /* position: relative;
+  z-index: 90; */
+  overflow: hidden;
+}
+
+/* .chatboxheader{
+  background-color: green;
+  position: fixed;
+  z-index: 91;
+  width: 22vw;
+} */
+
+
+
+/* .bodyData{
+  background-color: red;
+  overflow-y: scroll;
+
+} */
+
+/* .fotterbox{
+  position: fixed;
+  top: 700px;
+  z-index: 91;
+  background-color: yellow;
+} */
+
+
 

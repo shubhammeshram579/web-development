@@ -13,6 +13,7 @@ function Header({
   setShowNotifications,
   showMassage,
   setShowMassage,
+  setShereProfile,
 }) {
   const authStatus = useSelector((state) => state.auth.isLoggedIn);
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ function Header({
   const handleMessagesClick = () => {
     setShowMassage((prev) => !prev);
     setShowNotifications(false); // Hide notifications when showing messages
+    setShereProfile(false)
   };
 
   const navItems = [
@@ -62,7 +64,7 @@ function Header({
   ];
 
   return (
-    <header className={"bg-gray-500 p-7"}>
+    <header className={"bg-gray-500 p-7 fixed w-full z-[100]"}>
       <Contenier>
         <nav className={"flex items-center justify-between"}>
           <div className="flex items-center justify-around gap-20">

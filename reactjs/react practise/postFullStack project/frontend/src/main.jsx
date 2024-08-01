@@ -23,6 +23,7 @@ import GetPotsByUserProfile from "./componetes/pages/home/GetPotsByUserProfile.j
 import HomePagePost2 from "./componetes/pages/Getpost/PostPage.jsx"
 import GetpostByotherUser from "./componetes/pages/Getpost/GetPostByOtherUser.jsx"
 // import Notification from "./componetes/Header/Notification.jsx"
+// import ShareProfile from "./componetes/Header/ShareProfile.jsx"
 
 
 
@@ -141,10 +142,10 @@ const router = createBrowserRouter([
             
         },
         // {
-        //     path: "/notification",
+        //     path: "/ShareProfile",
         //     element: (
         //         <AuthLayout authentication>
-        //             <Notification/>
+        //             <ShareProfile />
         //         </AuthLayout>
         //     ),
             

@@ -85,7 +85,7 @@ const Home = () => {
     
     <Contenier>
 
-      <div className="py-10 w-full">
+      <div className="py-10 w-full mt-14">
         {/* <h1>home: {posts.length}</h1> */}
         
         <ul className="flex flex-row items-center justify-around flex-wrap">

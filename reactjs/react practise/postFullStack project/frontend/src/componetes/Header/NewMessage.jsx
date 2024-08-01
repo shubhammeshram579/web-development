@@ -2,7 +2,7 @@ import React from "react";
 
 const NewMessage = () => {
   return (
-    <div className="w-[22vw] h-[85vh] bg-gray-200 rounded-xl">
+    <div className="w-[22vw] h-[85vh] bg-gray-200 rounded-xl fixed z-50">
       <div className="flex items-center justify-between p-4 font-semibold text-2xl">
         <h1>New Messages</h1>
         <h1 className="text-xl">cancel</h1>

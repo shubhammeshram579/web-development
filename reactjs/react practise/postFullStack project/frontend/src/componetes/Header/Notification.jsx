@@ -67,7 +67,7 @@ const Notification = ({userId})  => {
   
 
   return (
-    <div className='w-[22vw] h-[89vh] rounded-xl bg-gray-200'>
+    <div className='w-[22vw] h-[89vh] rounded-xl bg-gray-200 fixed z-50'>
     <div className='flex items-start justify-center  flex-col gap-2' >
       <h1 className='px-2 py-2 font-semibold text-xl'>notification: {notification.length} </h1>
       <h1 className='font-bold ml-2 mb-5 text-xl'>Updates</h1>

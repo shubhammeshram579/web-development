@@ -11,14 +11,24 @@ import "./App.css"
 import Notification from "./componetes/Header/Notification.jsx"
 import Massage from "./componetes/Header/Massage.jsx"
 import NewMessage from "./componetes/Header/NewMessage.jsx"
+import ShareProfile from "./componetes/Header/ShareProfile.jsx"
+import Chatbox from "./componetes/Header/Chatbox.jsx"
 
 function App() {
   const [loading , setLoading] = useState(true)
   const dispatch = useDispatch()
   const [showNotifications, setShowNotifications] = useState(false);
   const [showMassage, setShowMassage] = useState(false);
+  const [shereProfile , setShereProfile] = useState(false)
+
+  // const toggleShareProfile = () =>{
+  //   setShereProfile(!shereProfile)
+
+  // }
 
 
+
+  // fatch current user api
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user && user.accessToken) {
@@ -57,12 +67,17 @@ function App() {
   return (
     <div className=' w-full'>
         <div className='flex justify-normal flex-col gap-4 h-full'>
-            <Header setShowNotifications={setShowNotifications} setShowMassage={setShowMassage}/>
+            <Header setShowNotifications={setShowNotifications} setShowMassage={setShowMassage} setShereProfile={setShereProfile}/>
             <div className="absolute z-50 left-[76vw] mt-28">
                 {showNotifications && (<Notification />)}
-                {showMassage && (<Massage />)}
+                {showMassage && (<Massage  setShereProfile={setShereProfile}  shereProfile={shereProfile}/>)}
                 {/* <NewMessage /> */}
+                {/* {<Chatbox />} */}
                 </div>
+                <div className='absolute z-1100 left-[76vw] mt-28'> 
+                  {shereProfile && (<ShareProfile />)}
+                  
+                  </div>
             <main className='flex items-centre justify-center'>
                 <Outlet />
                 
