@@ -416,6 +416,40 @@ const unfollow = AsynceHendler(async (req, res) => {
 // });
 
 
+const Allusers = AsynceHendler(async (req, res) => {
+    try {
+
+        const query = req.query.query;
+
+        if(!query){
+            throw new ApiError(400, "query is not working")
+        }
+        
+        const getUsers = await User.find({
+            $or:[
+                {fullname: {$regex: query, $options: "i"}},
+                {username: {$regex: query, $options: "i"}}
+            ]
+        })
+        
+        if(!getUsers){
+            throw new ApiError(404, "users not found")
+        }
+
+        return res
+        .status(200)
+        .json(
+            new ApiResponse(200, {getUsers} , "succefully get users")
+        )
+        
+    } catch (error) {
+        throw new ApiError(500, error.message , "something went rwong")
+        
+    }
+
+})
+
+
 
 
 
@@ -431,6 +465,7 @@ export {
     userSavePost,
     follow,
     unfollow,
-    getusetbyId
+    getusetbyId,
+    Allusers
 
 }

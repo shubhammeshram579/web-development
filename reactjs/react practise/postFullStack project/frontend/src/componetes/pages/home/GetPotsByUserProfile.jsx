@@ -77,6 +77,7 @@ const GetPotsByUserProfile = () => {
 
   return (
     <>
+    <div className="mt-32">
       {/* <div>GetPotsByUserProfile: {getUser.fullname}</div> */}
       <Contenier>
         <div className="flex items-center justify-center flex-col">
@@ -124,13 +125,13 @@ const GetPotsByUserProfile = () => {
 
             <div className="content">
               {activeSection === "created" && (
-                <div className="created-posts mt-20">
+                <div className="created-posts mt-10">
                   <CreatedPosts />
                 </div>
               )}
 
               {activeSection === "saved" && (
-                <div className="saved-posts">
+                <div className="saved-posts mt-5">
                   <SavePosts />
                 </div>
               )}
@@ -138,6 +139,7 @@ const GetPotsByUserProfile = () => {
           </div>
         </div>
       </Contenier>
+      </div>
     </>
   );
 };

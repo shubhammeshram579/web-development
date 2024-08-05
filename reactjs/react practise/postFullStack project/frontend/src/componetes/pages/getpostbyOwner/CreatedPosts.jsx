@@ -45,7 +45,7 @@ const CreatedPosts = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="p-[100px] flex flex-wrap items-center justify-center">
+    <div className="py-[50px] flex flex-wrap items-center justify-center">
       {/* <h1>Posts by Owner {posts.length}</h1> */}
       <Contenier>
         <ul className="flex justify-center items-center gap-20 flex-row flex-wrap">

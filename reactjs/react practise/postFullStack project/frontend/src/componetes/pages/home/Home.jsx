@@ -67,7 +67,7 @@ const Home = () => {
 
   if (posts.length === 0) {
     return (
-      <div className="w-full py-8 mt-4 text-center">
+      <div className="w-full py-8 mt-32 text-center">
         <Contenier>
           <div className="flex flex-wrap p-[23vh]">
             <div className="p-2 w-full">
@@ -93,7 +93,7 @@ const Home = () => {
             <li key={post._id} className="py-10 px-2 rounded-lg">
               <Link to={`/getPostByID2/${post._id}`}>
                 {" "}
-                <img className="cardImg" src={post.postImg} alt="image" /></Link>
+                <img className="cardImg" src={post.postImg} alt="image" />
                 <div className="hoverEffect flex items-end justify-between flex-col text-white">
                   <div>
                     <h1 className="SaveBtn mr-5 mt-5 bg-green-500 py-2 px-10 rounded-lg">Save</h1>
@@ -102,7 +102,7 @@ const Home = () => {
                       <i className="ri-share-2-line cursor-pointer text-[30px] mr-2"></i>
                       <i className="fa-solid fa-ellipsis cursor-pointer mr-5 text-2xl "></i>
                   </div>
-                </div>
+                </div></Link>
                 
               
               <h2 className="text-center mt-5 font-bold">{post.title}</h2>

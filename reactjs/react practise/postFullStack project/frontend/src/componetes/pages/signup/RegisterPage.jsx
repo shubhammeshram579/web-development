@@ -3,7 +3,7 @@ import {Register as  RegisterComponate} from '../../index.js'
 
 function RegisterPage() {
   return (
-    <div>
+    <div className='mt-32'>
       <RegisterComponate />
     </div>
   )

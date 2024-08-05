@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+            background-color: #111;
+            color: yellow;
+            padding: 0px 50px;
+        }
+
+        nav h1 {
+            font-size: 2vh;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            text-transform: capitalize;
+            font-weight: 400;
+            font-size: 2vh;
+        }
+
+        nav ul li:hover {
+            border-bottom: 2px solid yellow;
+        }
+
+        .page1 {
+            min-height: 70vh;
+            width: 100%;
+            background-color: antiquewhite;
+            display: flex;
+            align-items: end;
+            justify-content: space-around;
+            
+        }
+
+        .page1 .card1 {
+            text-shadow: 3px 2px red;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: oblique;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            font-size: 4vw;
+            text-transform: capitalize;
+            padding-left: 50px;
+        }
+        .page1 .card1:hover{
+            color: red;
+            text-shadow: 3px 3px black;
+        }
+
+        .page1 .card2{
+            margin-bottom: 140px;
+            padding-right: 50px;
+        }
+
+        .page1 .card2 img{
+            height: 400px;
+            width: 400px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 100%;
+            border: 2px solid red;
+
+        }
+
+        .page1 .card2 img:hover{
+            border: 2px solid yellow;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav>
+        <div>
+            <h1>Logo</h1>
+        </div>
+        <div>
+            <ul>
+                <li>home</li>
+                <li>about</li>
+                <li>project</li>
+                <li>contact</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- body page -->
+    <div class="page1">
+        <div class="card1">
+            <h1>shuhcode</h1>
+            <h1>shubham meshram</h1>
+        </div>
+        <div class="card2">
+            <img src="/notes/2.jpg" alt="">
+        </div>
+    </div>
+
+</body>
+
+</html>

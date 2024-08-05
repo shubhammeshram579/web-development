@@ -4,7 +4,7 @@ import {LoginFns as LoginComponate} from  "../../index.js"
 
 function LoginPage() {
   return (
-    <div>
+    <div className='mt-32'>
         <LoginComponate />
     </div>
   )

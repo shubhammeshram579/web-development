@@ -3,7 +3,7 @@ import {PostForm,Contenier} from "..//../index.js"
 
 function Addpost() {
   return (
-    <div className='py-12'>
+    <div className='py-12 mt-32'>
         <Contenier>
         <PostForm />
         </Contenier>

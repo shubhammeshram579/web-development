@@ -143,6 +143,7 @@ const GetpostByotherUser = () => {
 
 
   return (
+    <div className="mt-28">
     <Contenier>
       <div>
         <div className="font-bold text-[25px]">
@@ -266,6 +267,7 @@ const GetpostByotherUser = () => {
         </div>
       </div>
     </Contenier>
+    </div>
   );
 };
 

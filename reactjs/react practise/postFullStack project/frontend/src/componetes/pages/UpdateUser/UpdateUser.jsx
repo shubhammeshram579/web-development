@@ -73,7 +73,7 @@ const UpdateUser = () => {
   return (
     <>
     
-      <div>
+      <div className="mt-32">
       <Contenier>
       <div className="text-center font-bold mt-10">Update User</div>
         <form onSubmit={handleSubmit(onSubmit)}>

@@ -69,7 +69,7 @@ const EditPost = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className='py-14'>
+    <div className='py-14 mt-32'>
       <h1>Edit Post</h1>
       <form className='flex items-start justify-between gap-[50px] bg-gray-400 py-20 px-20' onSubmit={handleSubmit(onSubmit)}>
       <div>

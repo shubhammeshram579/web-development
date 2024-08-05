@@ -45,6 +45,7 @@ const PostsByOwner = ({userId}) => {
   };
 
   return (
+    <div className="mt-32">
     <Contenier>
       <div className="flex items-center justify-center flex-col">
         <h1 className="w-10 h-10 p-16 rounded-full bg-gray-400 flex items-center justify-center font-bold text-xl mb-5">
@@ -106,6 +107,7 @@ const PostsByOwner = ({userId}) => {
         </div>
       </div>
     </Contenier>
+    </div>
   );
 };
 

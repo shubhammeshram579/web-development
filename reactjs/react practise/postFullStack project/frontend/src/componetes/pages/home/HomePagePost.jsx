@@ -202,7 +202,7 @@ const HomePagePost = () => {
 
   return (
     <Contenier>
-      <div className="pt-10">
+      <div className="pt-10 mt-20">
         <div className="font-bold text-[25px]">
           <Link to="/">
             <i class="ri-arrow-left-fill"></i>

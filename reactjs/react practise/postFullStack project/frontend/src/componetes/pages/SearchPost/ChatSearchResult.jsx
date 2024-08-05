@@ -35,8 +35,9 @@ const SearchResults = () => {
   }, [query]);
 
   return (
+    <div className='mt-20'>
     <Contenier>
-    <div className='flex items-center justify-center gap-20 p-20 flex-wrap'>
+    <div className='flex items-center justify-center gap-20 p-20 flex-wrap '>
       {/* <h1>Search Results</h1> */}
       {posts.length > 0 ? (
         posts.map((post) => (
@@ -51,6 +52,7 @@ const SearchResults = () => {
       )}
     </div>
     </Contenier>
+    </div>
   );
 };
 

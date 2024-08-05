@@ -161,7 +161,7 @@ const HomePagePost2 = () => {
 
   return (
     <Contenier>
-      <div>
+      <div className="mt-28">
         <div className="flex items-center justify-between">
         <div className="font-bold text-[25px]">
             <Link to={`/getPost/${currentUser._id}`}>
@@ -306,6 +306,7 @@ const HomePagePost2 = () => {
         <Home />
       </div>)}
     </Contenier>
+
   );
 };
 
