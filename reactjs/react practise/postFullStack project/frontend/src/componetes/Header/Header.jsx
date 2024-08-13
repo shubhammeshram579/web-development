@@ -8,6 +8,7 @@ import LogoutBtn from "./LogoutBtn.jsx";
 // import PostsList from "..//../componetes/pages/SearchPost/SearchPost.jsx"
 import ChatSearchBar from "../ChatSearchbar.jsx";
 
+
 function Header({
   showNotifications,
   setShowNotifications,
@@ -15,6 +16,7 @@ function Header({
   setShowMassage,
   setShereProfile,
 }) {
+  const [showMessages, setShowMessages] = useState(false);
   const authStatus = useSelector((state) => state.auth.isLoggedIn);
   const navigate = useNavigate();
   const user = useSelector((state) => state.auth.user);
@@ -29,6 +31,22 @@ function Header({
     setShowNotifications(false); // Hide notifications when showing messages
     setShereProfile(false)
   };
+
+  const handleMessagesClick2 = () => {
+    setShowMessages(prevState => {
+      const newState = !prevState;
+      if (newState) {
+        navigate('/message');
+      } else {
+        navigate('/');
+      }
+      return newState;
+    });
+  };
+
+
+  
+  // const navigate = useNavigate();
 
   const navItems = [
     // {
@@ -101,7 +119,7 @@ function Header({
           )}
 
           {authStatus && (
-              <button onClick={handleMessagesClick}>
+              <button onClick={handleMessagesClick2}>
                 {showMassage ? (
                   "Hide Massage"
                 ) : (

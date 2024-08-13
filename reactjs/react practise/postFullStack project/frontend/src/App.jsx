@@ -18,10 +18,10 @@ function App() {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   const [showNotifications, setShowNotifications] = useState(false);
-  const [showMassage, setShowMassage] = useState(false);
-  const [shereProfile, setShereProfile] = useState(false);
-  const [chatboxpage, setChatboxpage] = useState(false);
-  const [sendmessage, setSendMessage] = useState(false);
+  // const [showMassage, setShowMassage] = useState(false);
+  // const [shereProfile, setShereProfile] = useState(false);
+  // const [chatboxpage, setChatboxpage] = useState(false);
+  // const [sendmessage, setSendMessage] = useState(false);
 
   // const toggleShareProfile = () =>{
   //   setShereProfile(!shereProfile)
@@ -70,12 +70,10 @@ function App() {
       <div className="flex justify-normal flex-col gap-4 h-full">
         <Header
           setShowNotifications={setShowNotifications}
-          setShowMassage={setShowMassage}
-          setShereProfile={setShereProfile}
         />
         <div className="absolute z-50 left-[76vw] mt-28">
           {showNotifications && <Notification />}
-          {showMassage && (
+          {/* {showMassage && (
             <Massage
               setShereProfile={setShereProfile}
               shereProfile={shereProfile}
@@ -84,10 +82,10 @@ function App() {
               sendmessage={sendmessage}
               setSendMessage={setSendMessage}
             />
-          )}
+          )} */}
         </div>
 
-        <div className="absolute z-[60] left-[76vw] mt-28">
+        {/* <div className="absolute z-[60] left-[76vw] mt-28">
           {sendmessage && (
             <NewMessage
               setShowMassage={setShowMassage}
@@ -96,12 +94,12 @@ function App() {
               setChatboxpage={setChatboxpage}
             />
           )}
-        </div>
+        </div> */}
 
-        <div className="absolute z-[50] left-[76vw] mt-28">
+        {/* <div className="absolute z-[50] left-[76vw] mt-28">
           {shereProfile && <ShareProfile />}
-        </div>
-        <div className="absolute z-[50] left-[76vw] mt-28">
+        </div> */}
+        {/* <div className="absolute z-[50] left-[76vw] mt-28">
           {chatboxpage && (
             <Chatbox
               showMassage={showMassage}
@@ -109,7 +107,7 @@ function App() {
               setChatboxpage={setChatboxpage}
             />
           )}
-        </div>
+        </div> */}
         <main className="flex items-centre justify-center">
           <Outlet />
         </main>

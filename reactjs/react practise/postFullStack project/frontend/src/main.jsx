@@ -25,7 +25,9 @@ import GetpostByotherUser from "./componetes/pages/Getpost/GetPostByOtherUser.js
 // import Notification from "./componetes/Header/Notification.jsx"
 // import ShareProfile from "./componetes/Header/ShareProfile.jsx"
 import NewMessage from "./componetes/Header/NewMessage.jsx"
+import Massage from "./componetes/Header/Massage.jsx"
 import Chatbox from "./componetes/Header/Chatbox.jsx"
+import ShareProfile from "./componetes/Header/ShareProfile.jsx"
 
 
 
@@ -153,11 +155,38 @@ const router = createBrowserRouter([
             
         // },
         {
-            path: "/otherUser/:userId",
+            path: "/otherUser/:from/:to",
             element: (
                 <AuthLayout authentication>
-                    <Chatbox />
-
+                    <Chatbox  />
+                    <Home />
+                </AuthLayout>
+            ),
+        },
+        {
+            path: "/message",
+            element: (
+                <AuthLayout authentication>
+                    <Massage />
+                    <Home />
+                </AuthLayout>
+            ),
+        },
+        {
+            path: "/newmessage",
+            element: (
+                <AuthLayout authentication>
+                    <NewMessage />
+                    <Home />
+                </AuthLayout>
+            ),
+        },
+        {
+            path: "/shareprofile",
+            element: (
+                <AuthLayout authentication>
+                    <ShareProfile />
+                    <Home />
                 </AuthLayout>
             ),
         },

@@ -1,0 +1,20 @@
+import React from 'react';
+
+const SavedUsers = ({ savedUsers }) => {
+  return (
+    <div className="saved-users mt-4 p-2 bg-blue-500 text-white">
+      <h3>Saved Users:</h3>
+      {savedUsers.length > 0 ? (
+        <ul>
+          {savedUsers.map((user) => (
+            <li key={user._id}>{user.fullname}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>No users saved.</p>
+      )}
+    </div>
+  );
+};
+
+export default SavedUsers;

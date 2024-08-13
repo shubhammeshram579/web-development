@@ -9,10 +9,11 @@ const useQuery = () => {
   return new URLSearchParams(useLocation().search);
 };
 
-const NewMessage = ({ setShowMassage, setSendMessage ,chatboxpage ,setChatboxpage }) => {
+const NewMessage = () => {
   const { register, handleSubmit, reset } = useForm();
   const [getAllUser, setGetAllUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
+  const [currentUser , setCurrentUser] = useState([])
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
@@ -24,9 +25,33 @@ const NewMessage = ({ setShowMassage, setSendMessage ,chatboxpage ,setChatboxpag
 
   // current user
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
-  const currentUser = useSelector((state) => state.auth.user?.user);
+  // const currentUser = useSelector((state) => state.auth.user?.user);
 
   // console.log(currentUser)
+
+
+  useEffect(()=>{
+    const fatchcurrentUser = async () => {
+      try {
+        
+        const getcurrentUser = await axios.get(`http://localhost:8000/api/users/current-user`,{
+          headers:{
+            "Authorization":`Bearer ${accessToken}`,
+          }
+        })
+
+        console.log("getcurrentUser.data.data.curentUser",getcurrentUser.data.data.curentUser)
+        setCurrentUser(getcurrentUser.data.data.curentUser)
+      } catch (error) {
+        console.error("Error fetching search results", error);
+        
+      }
+
+    }
+    fatchcurrentUser();
+  },[accessToken])
+
+
 
   const onSubmit = async (data) => {
     const query = data.query.trim();
@@ -41,7 +66,7 @@ const NewMessage = ({ setShowMassage, setSendMessage ,chatboxpage ,setChatboxpag
             },
           }
         );
-        console.log(getUsers.data.data.getUsers)
+        // console.log(getUsers.data.data.getUsers)
         setGetAllUsers(getUsers.data.data.getUsers);
       } catch (error) {
         console.error("Error fetching search results", error);
@@ -56,6 +81,9 @@ const NewMessage = ({ setShowMassage, setSendMessage ,chatboxpage ,setChatboxpag
   };
 
 
+
+
+
   const handleSendMessage = async () => {
     if (selectedUser && message.trim()) {
       try {
@@ -67,14 +95,18 @@ const NewMessage = ({ setShowMassage, setSendMessage ,chatboxpage ,setChatboxpag
         },{ headers:{
           "Authorization":`Bearer ${accessToken}`,
         }});
-        localStorage.setItem("toUser",selectedUser._id)
+        // localStorage.setItem("toUser",selectedUser._id)
         // console.log(`Message sent to ${selectedUser.username}`);
         setMessage("");
+        // const newMessage = response.data.data;
+        // setMessage(prevMessages => [...prevMessages, newMessage].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)));
       } catch (error) {
         console.log('Error sending message', error);
       }
     }
   };
+
+  // console.log("selectedUser",selectedUser)
 
   // getAlluser Router
 
@@ -121,23 +153,13 @@ const NewMessage = ({ setShowMassage, setSendMessage ,chatboxpage ,setChatboxpag
   //   }
   // }, [query]);
 
-  const canclebtn = () => {
-    setSendMessage(false);
-    setShowMassage(true);
-  };
-
-  const chatboxfun = () =>{
-    setChatboxpage(!chatboxpage)
-    setSendMessage(false);
-  }
-
   return (
-    <div className="w-[22vw] h-[85vh] bg-gray-200 rounded-xl fixed z-50">
+    <div className="w-[22vw] h-[85vh] bg-gray-200 rounded-xl fixed z-50 mt-28 ml-[73%]">
       <div className="flex items-center justify-between p-4 font-semibold text-2xl">
         <h1>New Messages</h1>
-        <button onClick={canclebtn}>
+        <Link to="/message"><button>
           <h1 className="text-xl">cancel</h1>
-        </button>
+        </button></Link>
       </div>
 
 
@@ -161,7 +183,7 @@ const NewMessage = ({ setShowMassage, setSendMessage ,chatboxpage ,setChatboxpag
 
         <div className="mt-2">
         {getAllUser.length > 0 && (
-          <ul>
+          <ul className="mt-10">
             {getAllUser.map((user) => (
               <li
                 key={user._id}
@@ -173,8 +195,13 @@ const NewMessage = ({ setShowMassage, setSendMessage ,chatboxpage ,setChatboxpag
                   borderRadius: '5px',
                 }}
               >
-                <Link to={`/otherUser/${user._id}`}><h1>hello</h1></Link>
-                {user.username} - {user.fullname} {user._id}
+                <div className="flex items-center justify-start gap-5">
+                <h1 className="bg-blue-400 py-3 px-5 rounded-full">{user.fullname[0]}</h1>
+                <div>
+                <h1 className="font-semibold">{user.fullname}</h1>
+                <h1>{user.username}</h1>
+                </div>
+                </div>
               </li>
             ))}
           </ul>
@@ -195,7 +222,7 @@ const NewMessage = ({ setShowMassage, setSendMessage ,chatboxpage ,setChatboxpag
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-          <Link to={`/otherUser/${selectedUser._id}`}><button onClick={chatboxfun}><i class="ri-send-plane-2-fill text-xl bg-red-600 p-4 rounded-full ml-[-35px]" onClick={handleSendMessage}></i></button></Link>
+          <Link to={`/otherUser/${currentUser._id}/${selectedUser._id}`}><i class="ri-send-plane-2-fill text-xl bg-red-600 p-4 rounded-full ml-1" onClick={handleSendMessage}></i></Link>
           </form>
         </div>
          )}

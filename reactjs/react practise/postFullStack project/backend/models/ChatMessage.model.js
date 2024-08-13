@@ -15,10 +15,15 @@ const chatMessageSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      timestamp: {
+      createdAt: {
         type: Date,
         default: Date.now,
       },
+      isRead: { 
+        type: Boolean,
+        default: false 
+      },
+      
 
 })
 
