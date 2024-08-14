@@ -7,7 +7,7 @@ import mongoose from "mongoose"
 
 
 
-// accestoken
+// genrate accestoken
 const genrateAccessAndRefreshToken = async(userId)=> {
     try {
         const user = await User.findById(userId)
@@ -79,6 +79,7 @@ const regitsterUser = AsynceHendler( async (req, res) => {
 
 // login user
 const loginUser = AsynceHendler( async (req, res) => {
+
     const {username, email, password} = req.body;
 
     if (!(username || email)){
@@ -177,7 +178,7 @@ const logoutUser = AsynceHendler( async (req,res)=>{
     )
     
 
-})
+});
 
 // refreshtokken and accestoken 
 const refreshAccessToken = AsynceHendler(async (req, res) =>{
@@ -389,31 +390,6 @@ const unfollow = AsynceHendler(async (req, res) => {
 
 
 
-// const statusFollow = AsynceHendler(async (req, res) => {
-//     try {
-//         const {userId} = req.params;
-//         const followerId = req.user._id;
-
-//         const currentUser = await User.findById(followerId);
-
-//         if(!currentUser){
-//             throw new ApiError(404 , "user not found")
-//         };
-
-//         const isFollowing = currentUser.following.includes(userId)
-
-//         return res
-//         .status(200)
-//         .json(
-//             new ApiResponse(200, {isFollowing})
-//         )
-        
-//     } catch (error) {
-//         throw new ApiError(500, error.message)
-        
-//     }
-
-// });
 
 
 const Allusers = AsynceHendler(async (req, res) => {
@@ -469,3 +445,33 @@ export {
     Allusers
 
 }
+
+
+
+
+
+// const statusFollow = AsynceHendler(async (req, res) => {
+//     try {
+//         const {userId} = req.params;
+//         const followerId = req.user._id;
+
+//         const currentUser = await User.findById(followerId);
+
+//         if(!currentUser){
+//             throw new ApiError(404 , "user not found")
+//         };
+
+//         const isFollowing = currentUser.following.includes(userId)
+
+//         return res
+//         .status(200)
+//         .json(
+//             new ApiResponse(200, {isFollowing})
+//         )
+        
+//     } catch (error) {
+//         throw new ApiError(500, error.message)
+        
+//     }
+
+// });

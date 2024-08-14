@@ -108,57 +108,7 @@ const getPost = AsynceHendler( async (req, res) => {
 
 });
 
-// const notification  = AsynceHendler(async (req, res) =>{
-//     try {
 
-//         const {userId} = req.params._id;
-
-//         const notification = await Notification.find({recipient:userId}).populate("sender postId");
-//         console.log("notification",notification)
-
-//         if(!notification){
-//             throw new ApiError(404, "notication not get")
-//         }
-
-//         return res
-//         .status(200)
-//         .json(
-//             new ApiResponse(200, {notification}, "success")
-//         )
-        
-//     } catch (error) {
-//         throw new ApiError(500, error.message)
-        
-//     }
-
-// });
-
-// const getPostUser = AsynceHendler( async (req, res) =>{
-//     try {
-//         const {userId} = req.params;
-
-//         if(!userId){
-//             throw new ApiError(404, "owner id not found")
-//         }
-
-//         const postUserPost = await Post.find({owner: userId})
-
-//         if(!postUserPost){
-//             throw new ApiError(404 , "post not found")
-//         }
-
-//         return res
-//         .status(200)
-//         .json(
-//             new ApiResponse(200 , {postUserPost} , "success")
-//         )
-
-//     } catch (error) {
-//         throw new ApiError(404, error.message , "post not found")
-        
-//     }
-
-// })
 
 
 const getAllPost = AsynceHendler(async (req, res) => {
@@ -263,9 +213,6 @@ const deletePost = AsynceHendler( async (req, res) => {
 
     const postToDelete = await Post.findById(postId);
 
-
- 
-    //  const deletePostOnServer = await Post.findByIdAndDelete(postId)
  
      if(!postToDelete){
          throw new ApiError(404, "post not founs")
@@ -357,6 +304,9 @@ const searchBarByPost = AsynceHendler( async (req,res) => {
 
 });
 
+
+
+
 const savePost = AsynceHendler(async (req, res) =>{
 
     try {
@@ -414,7 +364,61 @@ export {
     getPostById,
     searchBarByPost,
     savePost,
-    // notification
-    // getPostUser
 
 }
+
+
+
+
+
+// const notification  = AsynceHendler(async (req, res) =>{
+//     try {
+
+//         const {userId} = req.params._id;
+
+//         const notification = await Notification.find({recipient:userId}).populate("sender postId");
+//         console.log("notification",notification)
+
+//         if(!notification){
+//             throw new ApiError(404, "notication not get")
+//         }
+
+//         return res
+//         .status(200)
+//         .json(
+//             new ApiResponse(200, {notification}, "success")
+//         )
+        
+//     } catch (error) {
+//         throw new ApiError(500, error.message)
+        
+//     }
+
+// });
+
+// const getPostUser = AsynceHendler( async (req, res) =>{
+//     try {
+//         const {userId} = req.params;
+
+//         if(!userId){
+//             throw new ApiError(404, "owner id not found")
+//         }
+
+//         const postUserPost = await Post.find({owner: userId})
+
+//         if(!postUserPost){
+//             throw new ApiError(404 , "post not found")
+//         }
+
+//         return res
+//         .status(200)
+//         .json(
+//             new ApiResponse(200 , {postUserPost} , "success")
+//         )
+
+//     } catch (error) {
+//         throw new ApiError(404, error.message , "post not found")
+        
+//     }
+
+// })

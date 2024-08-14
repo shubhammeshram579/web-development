@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser"
 
 
 
+
 const app = express()
 
 // app.use(cors({
@@ -28,7 +29,7 @@ import comment from "./routers/Comment.route.js"
 import notification from "./routers/Notification.route.js"
 import addChatMessage from "./routers/ChatMessage.route.js"
 
-// console.log(userrouter)
+
 
 // router declation 
 app.use("/api" , userrouter)

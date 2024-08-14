@@ -34,27 +34,9 @@ const Massage = ({shereProfile}) => {
     }
     fatchcurrentUser();
   },[accessToken])
-
-
-
-  
-
-
   
   
-  // const toggleShareProfile = () =>{
-  //   setShereProfile(!shereProfile)
-
-  // }
-
-  // const chatboxfun = () =>{
-  //   setChatboxpage(!chatboxpage)
-  // }
-
-  // const sendMessagefns = () =>{
-  //   setSendMessage(!sendmessage)
-
-  // }
+  
 
   return (
     <div className="w-[22vw] h-[85vh] bg-gray-200 rounded-xl fixed z-50 mt-28 ml-[73%]">
@@ -88,21 +70,7 @@ const Massage = ({shereProfile}) => {
         <ChatNotification />
         </div>
 
-        {/* <Link to="/otherUser/:from/:to"> */}
-          {/* {chatboxpage ? (""):( */}
-        {/* <div className="flex items-center justify-start gap-5 hover:bg-green-300 py-5 px-2 rounded w-[20vw]">
-          <h1 className="bg-blue-600 py-2 px-5 rounded-full">s</h1>
-          <div className="flex items-start flex-col">
-            <h1 className="font-semibold text-xl">shubham</h1>
-            <div className="flex items-start gap-20">
-              <h1>i am fine bro .....</h1>
-              <h1>26m</h1>
-              <i class="fa-solid fa-xmark opacity-0 hover:opacity-100"></i>
-            </div>
-          </div>
-        </div> */}
-        {/* )} */}
-        {/* </Link> */}
+       
   
         <Link to="/shareprofile">
           {shereProfile ? ( "Hide Massage") 
@@ -121,3 +89,37 @@ const Massage = ({shereProfile}) => {
 };
 
 export default Massage;
+
+
+
+
+// const toggleShareProfile = () =>{
+  //   setShereProfile(!shereProfile)
+
+  // }
+
+  // const chatboxfun = () =>{
+  //   setChatboxpage(!chatboxpage)
+  // }
+
+  // const sendMessagefns = () =>{
+  //   setSendMessage(!sendmessage)
+
+  // }
+
+
+   {/* <Link to="/otherUser/:from/:to"> */}
+          {/* {chatboxpage ? (""):( */}
+        {/* <div className="flex items-center justify-start gap-5 hover:bg-green-300 py-5 px-2 rounded w-[20vw]">
+          <h1 className="bg-blue-600 py-2 px-5 rounded-full">s</h1>
+          <div className="flex items-start flex-col">
+            <h1 className="font-semibold text-xl">shubham</h1>
+            <div className="flex items-start gap-20">
+              <h1>i am fine bro .....</h1>
+              <h1>26m</h1>
+              <i class="fa-solid fa-xmark opacity-0 hover:opacity-100"></i>
+            </div>
+          </div>
+        </div> */}
+        {/* )} */}
+        {/* </Link> */}

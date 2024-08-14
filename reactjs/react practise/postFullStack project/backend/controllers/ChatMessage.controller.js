@@ -6,23 +6,16 @@ import { AsynceHendler } from "../utils/AsynceHendler.js";
 import {User} from "../models/User.model.js"
 
 
-
+// send message
 const addChatMessage = AsynceHendler(async (req, res) => {
     
     try {
         const { from, to, message } = req.body;
-        
-        // const sender = await User.findById(from);
-        // const receiver = await User.findById(to);
-
-        // console.log("sender",sender)
-        // console.log("receiver",receiver)
 
 
-        // if (!sender || !receiver) {
-        //    throw new ApiError(404, "sender and reciver not found ")
-        // }
-
+        if (!from || !to || !message) {
+            throw new ApiError(400, 'All fields are required');
+        }
 
         const newMessage = new ChatMessage({ from, to, message, createdAt: new Date(), });
         await newMessage.save();
@@ -43,28 +36,8 @@ const addChatMessage = AsynceHendler(async (req, res) => {
     }
 });
 
-// chat create 2 router
-const messagesend = AsynceHendler( async (req,res) => {
-    try {
-        const { from, to, message } = req.body;
 
-        if (!from || !to || !message) {
-            throw new ApiError(400, 'All fields are required');
-        }
-
-        const newChatMessage = new ChatMessage({ from, to, message });
-        await newChatMessage.save();
-
-        return res.status(201).json(
-            new ApiResponse(201, newChatMessage, 'Message sent successfully')
-        );
-    } catch (error) {
-        throw new ApiError(500, error.message);
-    }
-
-})
-
-
+// get chats
 const getchat = AsynceHendler(async (req, res) => {
     try {
 
@@ -88,29 +61,75 @@ const getchat = AsynceHendler(async (req, res) => {
 });
 
 
-const fromChatMessage = AsynceHendler( async (req, res) =>{
+// chats from to and to from
+const fromAndTo = AsynceHendler(async (req, res) =>{
     try {
-        const from = req.user._id;
-        const {to} = req.params;
+        const {from , to } = req.params;
 
-        if(!from || !to){
-            throw new ApiError(404, "user id not found")
-        }
+        const chatMessages = await ChatMessage.find({
+            $or:[
+                {from, to},
+                {from: to , to: from}
+            ]
+        }).sort({createdAt:1}).populate("from");
 
-        const fromuserChat = await ChatMessage.find({from: from});
-        console.log("fromuserChat",fromuserChat)
+        console.log(chatMessages)
 
-        const toUserChat = await ChatMessage.find({ to: to });
-        console.log("toUserChat",toUserChat)
-
-        if(!fromuserChat.length && !toUserChat.length){
-            throw new ApiError(404, "chat not found");
-        }
-        
         return res
         .status(200)
         .json(
-            new ApiResponse(200 ,{fromuserChat,toUserChat} ,"success")
+            new ApiResponse(200, {chatMessages} , "succefully")
+        )
+        
+    } catch (error) {
+        throw new ApiError(500, error.message)
+        
+    }
+
+});
+
+
+// chat notification 
+const chatNotification = AsynceHendler(async (req, res) => {
+    try {
+        // const userId = req.query.userId;
+        const userId = req.user._id;
+
+        const chatNotify = await ChatMessage.find(
+            {to: userId , isRead: false}).sort({createdAt:-1}).populate("from")
+
+
+        return res
+        .status(200)
+        .json(
+            new ApiResponse(200, {chatNotify} , "succefully")
+        )
+    } catch (error) {
+        throw new ApiError(500, error.message)
+        
+    }
+
+});
+
+
+
+
+// read chat
+const readChat = AsynceHendler( async (req, res) =>{
+    try {
+
+        const {from , to} = req.params;
+
+        const readchat = await ChatMessage.updateMany(
+            {from, to, isRead: false},
+            {$set: {isRead: true}}
+        )
+
+
+        return res
+        .status(200)
+        .json(
+            new ApiResponse(200, {readchat} , "succefully")
         )
     } catch (error) {
         throw new ApiError(500, error.message)
@@ -118,6 +137,46 @@ const fromChatMessage = AsynceHendler( async (req, res) =>{
     }
 
 })
+
+
+
+
+
+
+
+export {
+    addChatMessage,
+    getchat,
+    fromAndTo,
+    chatNotification,
+    readChat
+
+}
+
+
+
+
+
+// const messagesend = AsynceHendler( async (req,res) => {
+//     try {
+//         const { from, to, message } = req.body;
+
+//         if (!from || !to || !message) {
+//             throw new ApiError(400, 'All fields are required');
+//         }
+
+//         const newChatMessage = new ChatMessage({ from, to, message });
+//         await newChatMessage.save();
+
+//         return res.status(201).json(
+//             new ApiResponse(201, newChatMessage, 'Message sent successfully')
+//         );
+//     } catch (error) {
+//         throw new ApiError(500, error.message);
+//     }
+
+// })
+
 
 
 
@@ -173,94 +232,35 @@ const fromChatMessage = AsynceHendler( async (req, res) =>{
 
 
 
-const fromAndTo = AsynceHendler(async (req, res) =>{
-    try {
-        const {from , to } = req.params;
 
-        const chatMessages = await ChatMessage.find({
-            $or:[
-                {from, to},
-                {from: to , to: from}
-            ]
-        }).sort({createdAt:1});
 
-        console.log(chatMessages)
+// const fromChatMessage = AsynceHendler( async (req, res) =>{
+//     try {
+//         const from = req.user._id;
+//         const {to} = req.params;
 
-        return res
-        .status(200)
-        .json(
-            new ApiResponse(200, {chatMessages} , "succefully")
-        )
+//         if(!from || !to){
+//             throw new ApiError(404, "user id not found")
+//         }
+
+//         const fromuserChat = await ChatMessage.find({from: from});
+//         console.log("fromuserChat",fromuserChat)
+
+//         const toUserChat = await ChatMessage.find({ to: to });
+//         console.log("toUserChat",toUserChat)
+
+//         if(!fromuserChat.length && !toUserChat.length){
+//             throw new ApiError(404, "chat not found");
+//         }
         
-    } catch (error) {
-        throw new ApiError(500, error.message)
+//         return res
+//         .status(200)
+//         .json(
+//             new ApiResponse(200 ,{fromuserChat,toUserChat} ,"success")
+//         )
+//     } catch (error) {
+//         throw new ApiError(500, error.message)
         
-    }
+//     }
 
-});
-
-
-
-const chatNotification = AsynceHendler(async (req, res) => {
-    try {
-        // const userId = req.query.userId;
-        const userId = req.user._id;
-
-        const chatNotify = await ChatMessage.find({to: userId , isRead: false}).sort({createdAt:-1}).populate("from")
-
-        return res
-        .status(200)
-        .json(
-            new ApiResponse(200, {chatNotify} , "succefully")
-        )
-    } catch (error) {
-        throw new ApiError(500, error.message)
-        
-    }
-
-});
-
-// read chat
-
-const readChat = AsynceHendler( async (req, res) =>{
-    try {
-
-        const {from , to} = req.params;
-
-        const readchat = await ChatMessage.updateMany(
-            {from, to, isRead: false},
-            {$set: {isRead: true}}
-        )
-
-
-        return res
-        .status(200)
-        .json(
-            new ApiResponse(200, {readchat} , "succefully")
-        )
-    } catch (error) {
-        throw new ApiError(500, error.message)
-        
-    }
-
-})
-
-
-
-
-
-
-
-export {
-    addChatMessage,
-    messagesend,
-    getchat,
-    fromChatMessage,
-    fromAndTo,
-    chatNotification,
-    readChat
-    // toUserChatMessage,
-    // getChatMessagesToUser,
-    
-
-}
+// })

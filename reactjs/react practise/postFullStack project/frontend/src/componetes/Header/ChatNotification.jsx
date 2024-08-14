@@ -114,7 +114,7 @@ const ChatNotification = () => {
           {latestNotifications.map((notification, index) => (
             
               <div key={index} onClick={() => handleNotificationClick(notification)} className="notification cursor-pointer flex items-start justify-between gap-10 rounded-lg py-5 mb-3 mt-5 hover:bg-green-300">
-                <Link key={index} to={`/otherUser/${notification.from._id}/${notification.to}`}>
+                <Link key={index} to={`/otherUser/${notification.to}/${notification.from._id}`}>
                 <div className='flex items-center justify-start gap-5'>
                 <h1 className='bg-blue-600 py-2 px-5 rounded-full ml-2'>{notification.from.fullname[0]}</h1>
                 <div>

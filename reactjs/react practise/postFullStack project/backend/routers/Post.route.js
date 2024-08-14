@@ -27,15 +27,12 @@ router.route("/posts/addpost").post(
 
 router.route("/posts/getAllpost").get(getAllPost)
 router.route("/posts/getPost/:userId").get(getPost)
-// router.route("/posts/getPostUser/:userId").get(getPostUser)
 router.route("/posts/savePost").post(savePost)
 router.route("/posts/getAllpost/search").get(searchBarByPost)
 router.route("/posts/getPostByID/:postId").get(getPostById)
 router.route("/posts/EditPost/:postId").patch(upload.single("postImg"),updatePost)
 router.route("/posts/deletePost/:postId").delete(deletePost)
 
-
-// router.route("/posts/notification/:userId").get(notification)
 
 
 export default router

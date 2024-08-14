@@ -6,6 +6,8 @@ import { User } from "../models/User.model.js"
 import {Post} from "../models/Post.model.js"
 
 
+
+// new post upload notification
 const notification  = AsynceHendler(async (req, res) =>{
     try {
 
@@ -30,6 +32,7 @@ const notification  = AsynceHendler(async (req, res) =>{
     }
 
 });
+
 
 const deleteNotification  = AsynceHendler(async (req,res) =>{
     try {

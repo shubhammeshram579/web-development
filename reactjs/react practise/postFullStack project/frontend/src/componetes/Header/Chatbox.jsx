@@ -6,213 +6,149 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import CurrentDateTime from "../Header/CurrentDate.jsx"
-import Header from "./Header.jsx";
+import CurrentDateTime from "../Header/CurrentDate.jsx";
+// import { formatDistanceToNow } from "date-fns";
+import { format, formatDistanceToNow, isToday } from "date-fns";
+
+// same time fatch chats librily
+import io from "socket.io-client";
+
+const socket = io("http://localhost:8000");
 
 const Chatbox = () => {
   const { from, to } = useParams();
-  // const { to } = useParams();
   const { handleSubmit, register, reset } = useForm();
-  const [message, setMessage] = useState("");
+  // const [message, setMessage] = useState("");
   const [chats, setChats] = useState([]);
-  const [currentUser , setCurrentUser] = useState([])
+  const [currentUser, setCurrentUser] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
   // current user
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
-  // const currentUser = useSelector((state) => state.auth.user?.user);
 
-
-// console.log("to",to)
-  
-  useEffect(()=>{
+  useEffect(() => {
     const fatchcurrentUser = async () => {
       try {
-        
-        const getcurrentUser = await axios.get(`http://localhost:8000/api/users/current-user`,{
-          headers:{
-            "Authorization":`Bearer ${accessToken}`,
+        const getcurrentUser = await axios.get(
+          `http://localhost:8000/api/users/current-user`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
           }
-        })
+        );
 
         // console.log("getcurrentUser.data.data.curentUser",getcurrentUser.data.data.curentUser)
-        setCurrentUser(getcurrentUser.data.data.curentUser)
+        setCurrentUser(getcurrentUser.data.data.curentUser);
       } catch (error) {
         console.error("Error fetching search results", error);
-        
       }
-
-    }
+    };
     fatchcurrentUser();
-  },[accessToken]);
-
-
-  
+  }, [accessToken]);
 
 
 
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     fatchChats(); // Function to fetch latest messages from the server
+  //   }, 5000); // Poll every 2 seconds
+
+  //   return () => clearInterval(interval);
+  // }, []);
 
 
+
+
+
+  // fatch messages chats
   useEffect(() => {
     const fatchChats = async () => {
       try {
+        const response = await axios.get(
+          `http://localhost:8000/api/chatMessage/${from}/${to}`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
 
-        const response = await axios.get(`http://localhost:8000/api/chatMessage/${from}/${to}`,{
-          headers: {
-            "Authorization": `Bearer ${accessToken}`,
-          },
-        });
-
-        console.log("gett chats",response.data.data.chatMessages)
-        setChats(response.data.data.chatMessages)
+        console.log("gett chats", response.data.data.chatMessages);
+        setChats(response.data.data.chatMessages);
         setLoading(false);
       } catch (error) {
         setError(error.message);
         console.log(error.message);
         setLoading(false);
-        
       }
-
     };
-    fatchChats()
-
-  },[from, to,accessToken])
-
+    fatchChats();
+  }, [from, to, accessToken]);
 
 
-  const addMessageToChat = (newMessage) => {
-    setChats((prevMessages) => [...prevMessages, newMessage]);
-  };
 
 
-  
+  // get chat same time to other user funcnality
+  useEffect(() => {
+    socket.on("receiveMessage", (newMessage) => {
+      setChats((prevChats) => [...prevChats, newMessage]);
+    });
+
+    return () => socket.off("receiveMessage");
+  }, []);
+
+
+
+  // onsubmit buttne for sed message
   const onSubmit = async (data) => {
     try {
-
-
       const newMessage = {
         from: from,
         to: to,
         message: data.message.trim(),
-        createdAt: new Date().toISOString(), // Optional: Add a timestamp for immediate display
+        createdAt: new Date().toISOString(),
       };
 
+      // Add the new message to the current chat state
+      // setChats((prevChats) => [...prevChats, newMessage])
 
-      addMessageToChat(newMessage);
-      console.log("new magges",newMessage)
-
-
-      const response = await axios.post(
+      // send message router
+      await axios.post(
         `http://localhost:8000/api/chatMessage/send`,
-        {
-          newMessage
-        },
+        newMessage,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
         }
       );
-
-      // fatchChats()
       // setMessage("");
-      // console.log("response.data",response.data.data.addMessage)
-      // setChats(response.data.data.addMessage)
-      reset();
-      
 
+      // same time get message othor user
+      socket.emit("sendMessage", newMessage);
+      reset();
     } catch (error) {
       console.log(error.message);
-      
     }
   };
 
-
- 
-
-
-
-
-
-  // useEffect(() => {
-  //   const fatchChat = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `http://localhost:8000/api/chatMessage/fromUserChat/${userId}`,{
-  //           headers: {
-  //             "Authorization": `Bearer ${accessToken}`,
-  //           },
-  //         }
-  //       );
-
-  //       console.log("response.data.data",response.data.data)
-  //       const { fromuserChat, toUserChat } = response.data.data;
-  //       // Merge and sort messages by createdAt
-  //       const allMessages = [...fromuserChat, ...toUserChat].sort(
-  //         (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
-  //       );
-
-  //       console.log("allMessages", allMessages);
-  //       setChats(allMessages);
-
-  //       setLoading(false);
-  //     } catch (error) {
-  //       setError(error.message);
-  //       console.log(error.message);
-  //       setLoading(false);
-  //     }
-  //   };
-  //   fatchChat();
-  // }, [accessToken]);
-
-
-
-
-
-
-  // useEffect(()=>{
-  //   const fatchredchat = async () =>{
-  //     try {
-
-  //       const response = await axios.put(`http://localhost:8000/api/chatMessage/readchat/${from}/${to}`,{},{
-  //         headers: {
-  //           Authorization: `Bearer ${accessToken}`,
-  //         },
-
-          
-  //       });
-        
-  //     } catch (error) {
-  //       console,log(error.message)
-        
-  //     }
-  //   }
-  //   fatchredchat()
-
-  // },[from, to])
-
-
-
-
-
-  // time format
+  // time data format
   const formatDate = (createdAt) => {
     const date = new Date(createdAt);
     const options = {
-        // year: 'numeric',
-        // month: '2-digit',
-        // day: '2-digit',
-        // weekday:"long",
-        hour: '2-digit',
-        minute: '2-digit',
-        // second: '2-digit',
-        hour12: true
+      // year: 'numeric',
+      // month: '2-digit',
+      // day: '2-digit',
+      // weekday:"long",
+      hour: "2-digit",
+      minute: "2-digit",
+      // second: '2-digit',
+      hour12: true,
     };
-    return date.toLocaleString('en-US', options);
-};
-
-
+    return date.toLocaleString("en-US", options);
+  };
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
@@ -231,10 +167,11 @@ const Chatbox = () => {
       </nav>
       {/* <h1> getchat: {getFromchat.length}</h1> */}
 
-      {/* new learnig for page overflow scroling */}
+      {/* new learnig for page overflow scroling  hendeling*/}
       <div className="bodyData mt-[7px] overflow-y-auto h-[calc(78vh-100px)]">
         <div>
           <div>
+            {/* curentUser info */}
             <div className="flex flex-col items-center justify-center">
               <div className="mt-10">
                 <i className="fa-solid fa-hands-clapping ml-48 text-yellow-600 py-2 px-3 text-xl bg-gray-300 rounded-full"></i>
@@ -259,51 +196,72 @@ const Chatbox = () => {
           <h1 className="text-center">
             <CurrentDateTime />
           </h1>
-          <h2>Chat between {from} and {to}</h2>
+          {/* <h2>Chat between {from} and {to}</h2> */}
         </div>
+
+        {/* chat page  */}
         <div className="flex items-start justify-between px-5 mt-5 mb-10">
-        <h1 >Other</h1>
-        <h1 >You</h1>
+          <h1>Other</h1>
+          <h1>You</h1>
         </div>
         <div>
-
-          <div>
-
+          {/* get chats */}
+          <div className="px-5">
             {chats.map((chat) => (
-              
               <div
                 key={chat._id}
-                style={{
-                  textAlign: chat.from === currentUser._id ? "right" : "left",
-                }}
+                className={`flex ${
+                  chat.to !== currentUser._id ? "justify-end" : "justify-start"
+                }`}
               >
-               
-                <div className="px-7">
-                  <strong className=" bg-gray-300 w-44 rounded-lg pl-1 mt-5 flex items-center justify-start gap-4 font-normal">
-                    {chat.from === currentUser._id ? "" : "other user"}
-                  </strong>{" "}
-                  <div className="font-semibold pl-2">
-                  {chat.message}
+                <div
+                  className={`bg-gray-300 rounded-lg px-4 py-2 mt-7 max-w-xs ${
+                    chat.to !== currentUser._id ? "text-right" : "text-left"
+                  }`}
+                >
+                  <div className="font-normal text-sm text-gray-700">
+                    {chat.to !== currentUser._id ? "" : chat.from.fullname}
+                  </div>
+                  <div className="font-semibold text-black flex items-center justify-between gap-2">
+                    {chat.message}
+
+                    {/* date and time formate */}
+                    <div className="text-xs text-gray-500 mt-1">
+                      {
+                        isToday(new Date(chat.createdAt))
+                          ? format(new Date(chat.createdAt), "hh:mm a") // Show time if the message is from today
+                          : formatDistanceToNow(new Date(chat.createdAt), {
+                              addSuffix: true,
+                            }) // Show relative time if the message is from a previous day
+                      }
+                      
+                    </div>
                   </div>
                 </div>
-               
               </div>
             ))}
           </div>
         </div>
-        <h1 className="text-end pr-3 pb-5">Seen</h1>  
+        <h1 className="text-end pr-3 pb-5">Seen</h1>
       </div>
 
       <footer className="footerbox flex items-center justify-evenly mt-10 w-[22vw] bg-gray-200 z-50">
         <i className="fa-solid fa-circle-plus text-4xl"></i>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={(e) => e.preventDefault()}>
           <input
             type="text"
             placeholder="Type a message"
             className="w-[13vw] h-16 rounded-full"
-            {...register('message', { required: true })}
+            // value={message}
+            // onChange={(e) => setMessage(e.target.value)}
+            {...register("message", { required: true })}
           />
-          <i className="fa-solid fa-arrow-up-long bg-gray-500 py-4 px-6 ml-2 rounded-full" onClick={handleSubmit(onSubmit)}></i>
+          <Link to={`/otherUser/${from}/${to}`}>
+            <i
+              className="fa-solid fa-arrow-up-long bg-gray-500 py-4 px-6 ml-2 rounded-full"
+              onClick={handleSubmit(onSubmit)}
+            ></i>
+          </Link>
         </form>
       </footer>
     </div>
@@ -314,8 +272,65 @@ export default Chatbox;
 
 
 
+{/* {formatDistanceToNow(new Date(chat.createdAt), {
+                      addSuffix: true,
+                    })}
+                     {format(new Date(chat.createdAt), 'hh:mm a')} */}
 
 
+
+
+
+// useEffect(() => {
+//   const fatchChat = async () => {
+//     try {
+//       const response = await axios.get(
+//         `http://localhost:8000/api/chatMessage/fromUserChat/${userId}`,{
+//           headers: {
+//             "Authorization": `Bearer ${accessToken}`,
+//           },
+//         }
+//       );
+
+//       console.log("response.data.data",response.data.data)
+//       const { fromuserChat, toUserChat } = response.data.data;
+//       // Merge and sort messages by createdAt
+//       const allMessages = [...fromuserChat, ...toUserChat].sort(
+//         (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+//       );
+
+//       console.log("allMessages", allMessages);
+//       setChats(allMessages);
+
+//       setLoading(false);
+//     } catch (error) {
+//       setError(error.message);
+//       console.log(error.message);
+//       setLoading(false);
+//     }
+//   };
+//   fatchChat();
+// }, [accessToken]);
+
+// useEffect(()=>{
+//   const fatchredchat = async () =>{
+//     try {
+
+//       const response = await axios.put(`http://localhost:8000/api/chatMessage/readchat/${from}/${to}`,{},{
+//         headers: {
+//           Authorization: `Bearer ${accessToken}`,
+//         },
+
+//       });
+
+//     } catch (error) {
+//       console,log(error.message)
+
+//     }
+//   }
+//   fatchredchat()
+
+// },[from, to])
 
 // <div className="flex items-end justify-end flex-col">
 //                 <h2>Sent Messages</h2>
@@ -330,12 +345,12 @@ export default Chatbox;
 //                 ))}
 //             </div>
 
+{
+  /* getchat current user */
+}
 
-
-        {/* getchat current user */}
-        
-
-        {/* <div>
+{
+  /* <div>
         {getFromchat.map((user) => (
           <div className="flex items-center justify-end">
             <div className="flex flex-col items-end gap-2 pr-5">
@@ -359,10 +374,11 @@ export default Chatbox;
           </div>
         ))}
 
-        </div> */}
+        </div> */
+}
 
-
-        {/* <div className="flex items-start flex-col pl-5">
+{
+  /* <div className="flex items-start flex-col pl-5">
           {getTochat.map((t) => (
             <div className="flex items-center justify-start gap-5 mt-5">
             
@@ -377,68 +393,59 @@ export default Chatbox;
            
             </div>
           ))}
-        </div> */}
+        </div> */
+}
 
+// gett alla chatts
+// useEffect(() =>{
+//   const fatchChats = async () =>{
+//     try {
+//       const response = await axios.get(`http://localhost:8000/api/chatMessage/getchats`,{
+//         headers:{
+//           "Authorization":`Bearer ${accessToken}`
+//         }
+//       });
+//       console.log(response.data.data.getchats)
+//       setGetchats(response.data.data.getchats)
 
+//     } catch (error) {
+//       console.log(error.message)
 
+//     }
 
-        // gett alla chatts
-  // useEffect(() =>{
-  //   const fatchChats = async () =>{
-  //     try {
-  //       const response = await axios.get(`http://localhost:8000/api/chatMessage/getchats`,{
-  //         headers:{
-  //           "Authorization":`Bearer ${accessToken}`
-  //         }
-  //       });
-  //       console.log(response.data.data.getchats)
-  //       setGetchats(response.data.data.getchats)
+//   };
+//   fatchChats()
 
-  //     } catch (error) {
-  //       console.log(error.message)
+// },[accessToken]);
 
-  //     }
+// current user chat
 
-  //   };
-  //   fatchChats()
+// to user chat
+// useEffect(() => {
+//   const fatchChat = async () => {
+//     try {
+//       const response = await axios.get(
+//         `http://localhost:8000/api/chatMessage/toUserChat/${userId}`,
+//         {
+//           headers: {
+//             Authorization: `Bearer ${accessToken}`,
+//           },
+//         }
+//       );
 
-  // },[accessToken]);
+//       const newMessage = response.data.data;
+//       setGetTochat((prevMessages) =>
+//         [...prevMessages, newMessage].sort(
+//           (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+//         )
+//       );
 
-  // current user chat
-
-
-
-
-  
-
-  // to user chat
-  // useEffect(() => {
-  //   const fatchChat = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `http://localhost:8000/api/chatMessage/toUserChat/${userId}`,
-  //         {
-  //           headers: {
-  //             Authorization: `Bearer ${accessToken}`,
-  //           },
-  //         }
-  //       );
-
-       
-  //       const newMessage = response.data.data;
-  //       setGetTochat((prevMessages) =>
-  //         [...prevMessages, newMessage].sort(
-  //           (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
-  //         )
-  //       );
-
-
-  //       setLoading(false);
-  //     } catch (error) {
-  //       setError(error.message);
-  //       console.log(error.message);
-  //       setLoading(false);
-  //     }
-  //   };
-  //   fatchChat();
-  // }, [accessToken]);
+//       setLoading(false);
+//     } catch (error) {
+//       setError(error.message);
+//       console.log(error.message);
+//       setLoading(false);
+//     }
+//   };
+//   fatchChat();
+// }, [accessToken]);
