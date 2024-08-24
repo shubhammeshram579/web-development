@@ -20,6 +20,7 @@ function Header({
   const authStatus = useSelector((state) => state.auth.isLoggedIn);
   const navigate = useNavigate();
   const user = useSelector((state) => state.auth.user);
+  // const [loading, setLoading] = useState(true);
 
   const handleNotificationsClick = () => {
     setShowNotifications((prev) => !prev);
@@ -45,6 +46,10 @@ function Header({
   };
 
 
+
+
+
+
   
   // const navigate = useNavigate();
 
@@ -65,7 +70,7 @@ function Header({
       active: !authStatus,
     },
     {
-      name: <h1 className="font-semibold uppercase bg-green-400 px-4 py-2 rounded-full hover:bg-slate-300">{user.user.username[0]}</h1>,
+      name: authStatus ? <h1 className="font-semibold uppercase bg-green-400 px-4 py-2 rounded-full hover:bg-slate-300">{user.user.fullname[0]}</h1> : "null",
       slug: authStatus ? `/getPost/${user.user._id}` : "/getPost/null",
       active: authStatus,
     },
@@ -80,6 +85,10 @@ function Header({
     //     active: authStatus,
     // },
   ];
+
+  // if(!user.user.fullname){
+  //   return <div>loading...</div>
+  // }
 
   return (
     <header className={"bg-gray-500 p-7 fixed w-full z-[100]"}>

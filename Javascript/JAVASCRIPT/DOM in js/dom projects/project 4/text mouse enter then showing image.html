@@ -75,6 +75,7 @@
 
 
         text.forEach(function(val){
+            console.log("val",val.childNodes)
             val.addEventListener("mouseenter",function(){
                 val.childNodes[3].style.opacity = 1
                 val.childNodes[3].style.transition = "all ease 0.2s"

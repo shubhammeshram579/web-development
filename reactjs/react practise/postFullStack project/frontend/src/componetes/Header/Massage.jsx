@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import ChatNotification from "./ChatNotification.jsx"
 import { useSelector } from "react-redux";
 import axios from "axios";
 import SavedUsers from "./SaveUserChat.jsx"
 import Notification from "./Notification/Notification.jsx"
-// import SavedUsers2 from "./Notification/SaveCom.jsx"
 import ChatNotification from "./ChatNotification.jsx"
 
 
@@ -75,6 +73,8 @@ const Massage = ({shereProfile}) => {
           <h1 className="text-xl font-semibold">Messages</h1>
         <ChatNotification />
         </div>
+
+        {/* pending saveuser createion */}
         {/* <div>
           <SavedUsers />
         </div> */}

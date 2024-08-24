@@ -2,13 +2,9 @@ import React, { useState, useEffect ,useMemo} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import SavedUsers from "./SaveUserChat.jsx"
 
 const ChatNotification = () => {
   const [notifications, setNotifications] = useState([]);
-
-
-  // const [saveuser,setSaveUser] = useState([]);
 
   const [selectMessage , setSelectMessage] = useState(null)
  
@@ -107,31 +103,6 @@ const ChatNotification = () => {
 
 
 
-   // Save user details in localStorage
-  //  const saveUser = (userId) => {
-  //   const savedUsers = JSON.parse(localStorage.getItem('savedUsers')) || [];
-  //   if (!savedUsers.includes(userId)) {
-  //     savedUsers.push(userId);
-  //     localStorage.setItem('savedUsers', JSON.stringify(savedUsers));
-  //   }
-  // };
-
-  // const saveUser = (user) => {
-  //   const savedUsers = JSON.parse(localStorage.getItem('savedUsers')) || [];
-    
-  //   // Check if the user is already saved
-  //   const existingUserIndex = savedUsers.findIndex(savedUser => savedUser._id === user._id);
-    
-  //   if (existingUserIndex > -1) {
-  //     // Update the existing user with the latest message
-  //     savedUsers[existingUserIndex].latestMessage = user.latestMessage;
-  //   } else {
-  //     // Save the new user
-  //     savedUsers.push(user);
-  //   }
-  
-  //   localStorage.setItem('savedUsers', JSON.stringify(savedUsers));
-  // };
 
   const saveUser = (user) => {
     const savedUsers = JSON.parse(localStorage.getItem('savedUsers')) || [];
@@ -155,38 +126,22 @@ const ChatNotification = () => {
 
 
 
-  // useEffect(()=> {
-  //   const foatSaveUser = async () => {
-  //     try {
-  //       const response
-        
-  //     } catch (error) {
-  //       console.log(error.message)
-        
-  //     }
-
+  // const saveUserOnSumbimt = () =>{
+  //   try {
+  //     axios.post(`http://localhost:8000/api/Saveuser`,{
+  //       owner: notifications.from._id,
+  //       userIdToSave: notifications.to,
+  //     },{
+  //       headers:{
+  //         "Authorization":`Bearer ${accessToken}`
+  //       }
+  //     })
+      
+  //   } catch (error) {
+  //     console.log(error.message)
+      
   //   }
-  //   foatSaveUser()
-
-  // })
-
-
-  const saveUserOnSumbimt = () =>{
-    try {
-      axios.post(`http://localhost:8000/api/Saveuser`,{
-        owner: notifications.from._id,
-        userIdToSave: notifications.to,
-      },{
-        headers:{
-          "Authorization":`Bearer ${accessToken}`
-        }
-      })
-      
-    } catch (error) {
-      console.log(error.message)
-      
-    }
-  };
+  // };
 
 
 
@@ -304,3 +259,31 @@ export default ChatNotification;
   //   fatchredchat()
 
   // },[from, to])
+
+
+  
+   // Save user details in localStorage
+  //  const saveUser = (userId) => {
+  //   const savedUsers = JSON.parse(localStorage.getItem('savedUsers')) || [];
+  //   if (!savedUsers.includes(userId)) {
+  //     savedUsers.push(userId);
+  //     localStorage.setItem('savedUsers', JSON.stringify(savedUsers));
+  //   }
+  // };
+
+  // const saveUser = (user) => {
+  //   const savedUsers = JSON.parse(localStorage.getItem('savedUsers')) || [];
+    
+  //   // Check if the user is already saved
+  //   const existingUserIndex = savedUsers.findIndex(savedUser => savedUser._id === user._id);
+    
+  //   if (existingUserIndex > -1) {
+  //     // Update the existing user with the latest message
+  //     savedUsers[existingUserIndex].latestMessage = user.latestMessage;
+  //   } else {
+  //     // Save the new user
+  //     savedUsers.push(user);
+  //   }
+  
+  //   localStorage.setItem('savedUsers', JSON.stringify(savedUsers));
+  // };

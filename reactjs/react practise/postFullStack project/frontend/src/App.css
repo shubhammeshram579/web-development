@@ -47,35 +47,44 @@
 }
 
 
+/* .card{
+  background-color: green;
+} */
+
+
+
+
 .cardImg{
-  height: 550px;
+  height: 540px;
   width: 300px;
   object-fit: cover;
   object-position: center;
-  border-radius: 20px;
-  position: absolute;
-  z-index: -10;
-}
+ }
 
-.hoverEffect{
-  height: 550px;
-  width: 300px;
-  border-radius: 20px;
+/* .SaveBtn{
   opacity: 0;
-}
-
-
-.hoverEffect:hover{
-  background-color:#18171762;
   position: relative;
-  z-index: 10;
-  opacity: 10;
+  z-index: 100;
 }
 
-.SaveBtn:hover{
+
+.selectbtn{
+  opacity: 0;
+  position: absolute;
+  z-index: 100;
+
+} */
+
+/* .SaveBtn:hover{
   position: relative;
   z-index: 11;
-}
+} */
+
+
+
+
+
+
 
 
 .Chatbox{

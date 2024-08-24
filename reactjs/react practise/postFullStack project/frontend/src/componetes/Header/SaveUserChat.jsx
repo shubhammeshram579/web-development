@@ -33,20 +33,7 @@ const SavedUsers = () => {
   };
 
 
-//   // functinating for latest message only sowing 
-//   const latestNotifications = useMemo(() => {
-//     const map = new Map();
-//     savedUsers.forEach((notification) => {
-//       const { from } = notification;
-//       if (!map.has(from) || map.get(from).createdAt < notification.createdAt) {
-//         map.set(from, notification);
-//       }
-//     });
-//     return Array.from(map.values());
-//   }, [savedUsers]);
 
-
-//   console.log("latestNotifications",latestNotifications)
 
   return (
     <div>
@@ -69,3 +56,20 @@ const SavedUsers = () => {
 };
 
 export default SavedUsers;
+
+
+
+//   // functinating for latest message only sowing 
+//   const latestNotifications = useMemo(() => {
+//     const map = new Map();
+//     savedUsers.forEach((notification) => {
+//       const { from } = notification;
+//       if (!map.has(from) || map.get(from).createdAt < notification.createdAt) {
+//         map.set(from, notification);
+//       }
+//     });
+//     return Array.from(map.values());
+//   }, [savedUsers]);
+
+
+//   console.log("latestNotifications",latestNotifications)
