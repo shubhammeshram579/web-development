@@ -28,6 +28,7 @@ import userPost from "./routers/Post.route.js";
 import comment from "./routers/Comment.route.js"
 import notification from "./routers/Notification.route.js"
 import addChatMessage from "./routers/ChatMessage.route.js"
+import SaveUser from "./routers/SaveUsers.route.js"
 
 
 
@@ -37,6 +38,7 @@ app.use("/api", userPost)
 app.use("/api", comment)
 app.use("/api", notification)
 app.use("/api", addChatMessage)
+app.use("/api", SaveUser)
 
 
 console.log("ACCESS_TOKEN_SECRET:", process.env.ACCESS_TOKEN_SECRET);

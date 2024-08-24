@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>varible</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            background-color: #111;
+            color: #fff;
+            height: 100%;
+            width: 100%;
+        }
+
+        .styleh1 {
+            color: yellow;
+            text-transform: capitalize;
+            text-align: center;
+            padding-top: 20px;
+            font-size: 5vh;
+        }
+
+        .styleh2 {
+            margin-top: 10vh;
+            text-align: center;
+            color: green;
+            font-size: 4vw;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="styleh1">day 1 variable in javascript</h1>
+    <div
+        style="display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; padding: 0px 20px;">
+        <h5 class="styleh2">what is varible in js ?</h5>
+        <p>varible means store the data as a memory store in javascript. 3 type of varible in js (Var, Let, Const)</p>
+    </div>
+
+    <script>
+        // varblile types in js
+
+        // first
+        var data1 = "shubham"; // var is old ES5 version and function scoped and add on window object;
+        let data2 = 1234567; // let is old ES6 version and block scoped and doen't add on window object;
+        const data3 = "shubham meshram"; // const is old ES6 version and block scoped and doen't add on window object, and it is fixed varibke creation;
+
+        console.log("var", data1);
+        console.log(typeof data1)
+        console.log("let", data2);
+        console.log(typeof data2)
+        console.log("const", data3);
+        console.log(typeof data3)
+
+
+
+        // quetion1 diference between var and let for function scoped and block scoped
+
+        function vl() {
+            for (var i = 0; i < 10; i++) {
+                console.log("var", i)
+            }
+            console.log("var", i)
+        };
+        vl();
+
+
+
+        function vl2() {
+            for (let i = 0; i < 10; i++) {
+                console.log("let", i)
+            }
+            // console.log("let", i)
+                // ReferenceError: i is not defined
+                // at vl2(day1 varible.html: 79: 27)
+                // at day1 varible.html: 81: 9
+        };
+        vl2();
+
+
+
+        // quetion 2 what is diffence beetween const and let
+
+        let name1 = ["shubham", "meshram"];
+        const name2 = ["labham", "meshram"]; //it is conteds
+
+
+        // let's update like name1 [0] is pallavi
+        // let's update like name2 [0] is pallavi
+
+
+        // select index [0]
+        console.log(name1[0])
+
+        name1[0] = "pallavi"
+
+        console.log("after change let array",name1);
+
+
+
+        console.log(name2[0])
+
+        name2[0] = "pallavi"
+
+        console.log("after change const array",name2);
+
+
+        const a = name2
+
+        console.log("copy",a);  // i have quetion how it's posible change consted varible value change
+
+
+
+
+    </script>
+</body>
+
+</html>

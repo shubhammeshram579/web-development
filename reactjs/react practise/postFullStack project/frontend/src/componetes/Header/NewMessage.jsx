@@ -10,6 +10,7 @@ import { Link, useLocation } from "react-router-dom";
 const NewMessage = () => {
   const { register, handleSubmit, reset } = useForm();
   const [getAllUser, setGetAllUsers] = useState([]);
+  const [resadChat, setReadchat] = useState(null) 
   const [selectedUser, setSelectedUser] = useState(null);
   const [currentUser , setCurrentUser] = useState([])
   const [message, setMessage] = useState('');
@@ -96,6 +97,9 @@ const NewMessage = () => {
       }
     }
   };
+
+
+  
 
  
 

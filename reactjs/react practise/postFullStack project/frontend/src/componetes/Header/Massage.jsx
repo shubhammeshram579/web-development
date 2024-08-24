@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ChatNotification from "./ChatNotification.jsx"
+// import ChatNotification from "./ChatNotification.jsx"
 import { useSelector } from "react-redux";
 import axios from "axios";
+import SavedUsers from "./SaveUserChat.jsx"
+import Notification from "./Notification/Notification.jsx"
+// import SavedUsers2 from "./Notification/SaveCom.jsx"
+import ChatNotification from "./ChatNotification.jsx"
 
 
 
 const Massage = ({shereProfile}) => {
   const [currentUser,setCurrentUser] = useState([])
+
+  const [selectedUser, setSelectedUser] = useState(null);
 
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
 
@@ -69,6 +75,13 @@ const Massage = ({shereProfile}) => {
           <h1 className="text-xl font-semibold">Messages</h1>
         <ChatNotification />
         </div>
+        {/* <div>
+          <SavedUsers />
+        </div> */}
+        {/* <div className="flex items-start flex-col gap-7 ml-8">
+        <Notification setSelectedUser={setSelectedUser} />
+        <SavedUsers savedUsers={selectedUser ? [selectedUser] : []} setSelectedUser={setSelectedUser} />
+      </div> */}
 
        
   

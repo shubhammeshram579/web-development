@@ -17,12 +17,33 @@ const addChatMessage = AsynceHendler(async (req, res) => {
             throw new ApiError(400, 'All fields are required');
         }
 
-        const newMessage = new ChatMessage({ from, to, message, createdAt: new Date(), });
+        const newMessage = new ChatMessage({ from, to, message, createdAt: new Date(), isRead:false});
         await newMessage.save();
+
 
         if(!newMessage){
             throw new ApiError(404, "something went error")
         }
+
+        //  // Find or create the saved user
+        // let savedUser = await User.findById(from);
+
+        // if (!savedUser) {
+        //     savedUser = await User.create({ _id: from, messages: [] });
+        // }
+
+        //  // Add message to the saved user's messages array
+        // savedUser.messages.push(newMessage);
+        // await savedUser.save();
+
+        // // Emit a new message notification via Socket.IO
+        // req.io.to(from).emit('newMessageNotification', {
+        //     from,
+        //     to,
+        //     message: newMessage,
+        // });
+
+        
 
         return res
         .status(200)
@@ -129,6 +150,32 @@ const readChat = AsynceHendler( async (req, res) =>{
         return res
         .status(200)
         .json(
+            new ApiResponse(200, readchat , "succefully")
+        )
+    } catch (error) {
+        throw new ApiError(500, error.message)
+        
+    }
+
+});
+
+
+// / read chat
+const readChat2 = AsynceHendler( async (req, res) =>{
+    try {
+
+        // const {from , to} = req.params;
+        const userId = req.user._id;
+
+        const readchat = await ChatMessage.updateMany(
+            {userId, isRead: false},
+            {$set: {isRead: true}}
+        )
+
+
+        return res
+        .status(200)
+        .json(
             new ApiResponse(200, {readchat} , "succefully")
         )
     } catch (error) {
@@ -136,7 +183,15 @@ const readChat = AsynceHendler( async (req, res) =>{
         
     }
 
-})
+});
+
+
+
+
+
+
+
+
 
 
 
@@ -149,7 +204,8 @@ export {
     getchat,
     fromAndTo,
     chatNotification,
-    readChat
+    readChat,
+    readChat2
 
 }
 

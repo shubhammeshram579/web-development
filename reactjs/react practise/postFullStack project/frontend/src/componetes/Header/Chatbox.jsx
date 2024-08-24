@@ -1,32 +1,43 @@
-import React, { useState, useEffect } from "react";
-// import "./App.css"
+import React, { useState, useEffect,useRef } from "react";
 import "../../App.css";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import CurrentDateTime from "../Header/CurrentDate.jsx";
 // import { formatDistanceToNow } from "date-fns";
 import { format, formatDistanceToNow, isToday } from "date-fns";
+
 
 // same time fatch chats librily
 import io from "socket.io-client";
 
 const socket = io("http://localhost:8000");
 
+
+
 const Chatbox = () => {
   const { from, to } = useParams();
   const { handleSubmit, register, reset } = useForm();
-  // const [message, setMessage] = useState("");
   const [chats, setChats] = useState([]);
   const [currentUser, setCurrentUser] = useState([]);
+  const latestMessageRef = useRef(null); // Ref to track the latest message
+
+
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  // current user
+  const navigate = useNavigate()
+  const currentPath = window.location.pathname;
+
+  // current user accessToken
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
 
+
+
+// current user 
   useEffect(() => {
     const fatchcurrentUser = async () => {
       try {
@@ -39,7 +50,6 @@ const Chatbox = () => {
           }
         );
 
-        // console.log("getcurrentUser.data.data.curentUser",getcurrentUser.data.data.curentUser)
         setCurrentUser(getcurrentUser.data.data.curentUser);
       } catch (error) {
         console.error("Error fetching search results", error);
@@ -62,7 +72,7 @@ const Chatbox = () => {
 
 
 
-  // fatch messages chats
+  // // fatch messages chats
   useEffect(() => {
     const fatchChats = async () => {
       try {
@@ -77,6 +87,7 @@ const Chatbox = () => {
 
         console.log("gett chats", response.data.data.chatMessages);
         setChats(response.data.data.chatMessages);
+        // socket.emit("sendMessage", response.data.data.chatMessages);
         setLoading(false);
       } catch (error) {
         setError(error.message);
@@ -89,11 +100,13 @@ const Chatbox = () => {
 
 
 
+  
 
   // get chat same time to other user funcnality
   useEffect(() => {
-    socket.on("receiveMessage", (newMessage) => {
-      setChats((prevChats) => [...prevChats, newMessage]);
+    socket.on("receiveMessage", (data) => {
+      setChats((prevChats) => [...prevChats, data]);
+      scrollToLatestMessage();
     });
 
     return () => socket.off("receiveMessage");
@@ -109,10 +122,13 @@ const Chatbox = () => {
         to: to,
         message: data.message.trim(),
         createdAt: new Date().toISOString(),
+        isRead: false,
       };
 
       // Add the new message to the current chat state
       // setChats((prevChats) => [...prevChats, newMessage])
+
+
 
       // send message router
       await axios.post(
@@ -127,12 +143,112 @@ const Chatbox = () => {
       // setMessage("");
 
       // same time get message othor user
+      console.log("newmessage",newMessage)
       socket.emit("sendMessage", newMessage);
+      scrollToLatestMessage();
       reset();
     } catch (error) {
       console.log(error.message);
     }
   };
+
+
+  // const sendMessage = () => {
+  //   const newMessage = { from, message: message.trim(), createdAt: new Date(), isRead: false };
+  //   socket.emit('sendMessage', newMessage);
+  //   setChats((prevChats) => [...prevChats, newMessage]);
+  //   setMessage("");
+  //   scrollToLatestMessage();
+  // };
+
+
+  // chat refress
+  const scrollToLatestMessage = () => {
+    if (latestMessageRef.current) {
+      latestMessageRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+
+  
+
+
+
+
+
+
+  useEffect(()=>{
+     // Mark the message as read
+     const readchats = async () =>{
+     try {
+      await axios.put(`http://localhost:8000/api/chatMessage/readchat/${from}/${to}`,{
+      },{
+        headers:{
+          "Authorization":`Bearer ${accessToken}`
+        }
+      });
+
+      setChats((prevChats) =>
+        prevChats.map(chat =>
+          chat.from === currentUser._id && chat.to === to ? { ...chat, isRead: true } : chat
+        )
+      );
+
+      console.log("read succefully")
+    } catch (error) {
+      console.error('Failed to mark as read:', error);
+    }
+
+  };
+  readchats()
+},[from,to]);
+
+
+// const readchats = async () =>{
+//   try {
+//    await axios.put(`http://localhost:8000/api/chatMessage/readchat/${from}/${to}`,{
+//    },{
+//      headers:{
+//        "Authorization":`Bearer ${accessToken}`
+//      }
+//    });
+
+//    setChats((prevChats) =>
+//           prevChats.map(chat =>
+//             chat.from === currentUser._id && chat.from === to ? { ...chat, isRead: true } : chat
+//           )
+//         );
+
+//    console.log("read succefully")
+//  } catch (error) {
+//    console.error('Failed to mark as read:', error);
+//  }
+
+// };
+
+
+// chat read marks 
+  // const markAsRead = async () => {
+  //   try {
+  //     await axios.put(`http://localhost:8000/api/chatMessage/readchat/${from}/${to}`,{
+  //     },{
+  //       headers:{
+  //         "Authorization":`Bearer ${accessToken}`
+  //       }
+  //     });
+  //     // Update local state to mark messages as read
+  //     setChats((prevChats) =>
+  //       prevChats.map(chat =>
+  //         chat.from !== currentUser._id && chat.to === to ? { ...chat, isRead: true } : chat
+  //       )
+  //     );
+  //   } catch (error) {
+  //     console.error('Failed to mark messages as read:', error);
+  //   }
+  // };
+
+
+  
 
   // time data format
   const formatDate = (createdAt) => {
@@ -152,6 +268,24 @@ const Chatbox = () => {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
+
+
+  // const handleRefresh = () => {
+  //   window.location.reload();
+  // };
+
+  const handleRefresh = () => {
+    navigate('/'); // Redirect to another page temporarily
+    setTimeout(() => {
+      navigate(`/otherUser/${from}/${to}`); // Navigate back to the current page after a brief delay
+    }, 0);
+  };
+
+
+
+
+
+
 
   return (
     <div className="Chatbox w-[23vw] h-[100vh] bg-gray-200 rounded-xl overflow-hidden fixed z-50 mt-28 ml-[73%]">
@@ -205,14 +339,17 @@ const Chatbox = () => {
           <h1>You</h1>
         </div>
         <div>
+
           {/* get chats */}
           <div className="px-5">
-            {chats.map((chat) => (
+            {chats.map((chat,index) => (
               <div
-                key={chat._id}
+                key={chat._id} 
+                ref={chat._id === chats.length - 1 ? latestMessageRef : null}
                 className={`flex ${
                   chat.to !== currentUser._id ? "justify-end" : "justify-start"
                 }`}
+                
               >
                 <div
                   className={`bg-gray-300 rounded-lg px-4 py-2 mt-7 max-w-xs ${
@@ -235,14 +372,17 @@ const Chatbox = () => {
                             }) // Show relative time if the message is from a previous day
                       }
                       
+                      {chat.isRead && <span>✔</span>} {/* Show double checkmark if read */}
+                      
                     </div>
                   </div>
                 </div>
               </div>
             ))}
+
           </div>
         </div>
-        <h1 className="text-end pr-3 pb-5">Seen</h1>
+        <h1 className="text-end pr-3 pb-5 mt-14">Seen</h1>
       </div>
 
       <footer className="footerbox flex items-center justify-evenly mt-10 w-[22vw] bg-gray-200 z-50">
@@ -261,8 +401,10 @@ const Chatbox = () => {
               className="fa-solid fa-arrow-up-long bg-gray-500 py-4 px-6 ml-2 rounded-full"
               onClick={handleSubmit(onSubmit)}
             ></i>
+           
           </Link>
         </form>
+        <button onClick={handleRefresh}>refp</button>
       </footer>
     </div>
   );

@@ -65,7 +65,7 @@ function Header({
       active: !authStatus,
     },
     {
-      name: <i class="fa-solid fa-user py-2 px-2 text-xl"></i>,
+      name: <h1 className="font-semibold uppercase bg-green-400 px-4 py-2 rounded-full hover:bg-slate-300">{user.user.username[0]}</h1>,
       slug: authStatus ? `/getPost/${user.user._id}` : "/getPost/null",
       active: authStatus,
     },
@@ -146,7 +146,7 @@ function Header({
                   <button
                     onClick={() => navigate(item.slug)}
                     className={
-                      "inline-block px-2 duration-200 hover:bg-blue-100 rounded-full"
+                      "inline-block px-auto duration-200 hover:bg-blue-100 rounded-full"
                     }
                   >
                     {item.name}
