@@ -25,12 +25,13 @@ const navigate = useNavigate()
     <form onSubmit={handleSubmit(onSubmit)} className="search-bar flex items-center">
       <input
         type="text"
-        className='w-[1000px] py-3 rounded-s-xl'
+        className='w-[50vw] py-4 rounded-s-xl bg-orange-50'
         placeholder="Search posts..."
         {...register('query')}
+        
       />
       {/* <button type="submit" className='py-[12px] bg-white rounded-e-xl px-3'>Search</button> */}
-      <div className='bg-red-400 py-[12px] px-5 rounded-e-lg font-bold'>
+      <div className='bg-red-400 py-[17px] px-5 rounded-e-lg font-bold'>
       <Link to="/"><i class="ri-close-large-line" onClick={Inpute}></i></Link>
       </div>
     </form>

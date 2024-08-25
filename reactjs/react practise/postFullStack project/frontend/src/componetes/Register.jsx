@@ -35,7 +35,7 @@ function Register() {
 
   return (
     <div>
-        <div className='bg-gray-400 py-10 px-20 rounded'>
+        <div className='bg-slate-200 py-10 px-20 rounded-3xl'>
             <div className='text-center'>
                 <Logo />
             </div>

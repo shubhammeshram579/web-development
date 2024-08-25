@@ -209,7 +209,7 @@ const HomePagePost = () => {
           </Link>
         </div>
 
-        <div className="bg-gray-400 w-[900px] flex items-center rounded ml-[450px]">
+        <div className="bg-neutral-100 w-[900px] flex items-center rounded ml-[450px]">
           <div className="py-5 flex items-start justify-start">
             <div
               className={`transition-colors duration-500 rounded-lg ${

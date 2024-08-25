@@ -2,7 +2,7 @@ import React from 'react'
 
 function Contenier({children}) {
   return (
-    <div className='w-full mx-auto px-2'>{children}</div>
+    <div className='w-full mx-auto px-20'>{children}</div>
   )
 }
 

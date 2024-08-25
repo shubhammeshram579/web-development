@@ -8,6 +8,7 @@ import "..//..//../App.js";
 import { SharePost, SavePostButton, OptionsCard } from "..//../index.js";
 import Notification from ".//..//../Header/Notification.jsx";
 import Header from "..//../Header/Header.jsx";
+import Homepage from "..//../HomePage/Homepage.jsx"
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -55,15 +56,17 @@ const Home = () => {
 
   if (posts.length === 0) {
     return (
-      <div className="w-full py-8 mt-32 text-center">
+      <div className="w-full py-8 pt-20 text-center">
         <Contenier>
-          <div className="flex flex-wrap p-[23vh]">
+          {/* <div className="flex flex-wrap p-[23vh]">
             <div className="p-2 w-full">
               <h1 className="text-2xl font-bold hover:text-gray-500">
                 Login to read posts
               </h1>
+              <Homepage />
             </div>
-          </div>
+          </div> */}
+          <Homepage />
         </Contenier>
       </div>
     );
@@ -84,7 +87,7 @@ const Home = () => {
         return (
           <li
             key={post._id}
-            className="card py-10 px-2 relative bg-gray-300 mb-[-55px] rounded-2xl"
+            className="card relative mb-[-55px] rounded-2xl"
             
             style={{ marginTop: randomMargin}} // Apply staggered top margin
             onMouseEnter={() => setHoveredIndex(index)} // Set hover state on mouse enter
@@ -92,7 +95,7 @@ const Home = () => {
           >
             <Link to={`/getPostByID2/${post._id}`} className="relative group">
               <img
-                className={`cardImg transition duration-300 rounded-lg ${
+                className={`cardImg transition duration-300 rounded-3xl ${
                   hoveredIndex === index ? 'opacity-50' : 'opacity-100'
                   // index % 2 !== 0 ? 'h-[450px]' : ''
                 }`}
@@ -101,7 +104,7 @@ const Home = () => {
               />
               {/* Overlay for light dark effect on hover */}
               {hoveredIndex === index && (
-                <div className="absolute inset-0 bg-black opacity-25 rounded-lg transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-black opacity-45 rounded-3xl transition-opacity duration-300"></div>
               )}
             </Link>
 

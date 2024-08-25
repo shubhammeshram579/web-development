@@ -91,7 +91,7 @@ function Header({
   // }
 
   return (
-    <header className={"bg-gray-500 p-7 fixed w-full z-[100]"}>
+    <header className={"bg-slate-100 p-7 fixed w-full z-[100] font-semibold"}>
       <Contenier>
         <nav className={"flex items-center justify-between"}>
           <div className="flex items-center justify-around gap-20">
@@ -100,7 +100,7 @@ function Header({
             </Link>
 
             <div>
-          <Link to="/" active={true} className="inline-block px-2 py-2 duration-200 hover:bg-blue-100 rounded-full">Home</Link>
+          <Link to="/" active={true} className="inline-block py-2 duration-200 bg-black text-white px-6 rounded-full">Home</Link>
           </div>
           </div>
           
@@ -155,7 +155,7 @@ function Header({
                   <button
                     onClick={() => navigate(item.slug)}
                     className={
-                      "inline-block px-auto duration-200 hover:bg-blue-100 rounded-full"
+                      "inline-block px-auto py-2 p-2 duration-200 hover:bg-blue-200 rounded-full"
                     }
                   >
                     {item.name}
