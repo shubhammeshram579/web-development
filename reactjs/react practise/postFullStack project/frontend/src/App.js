@@ -1,3 +1,6 @@
+import {gsap} from "gsap"
+
+
 const img = document.querySelectorAll(".cardImg");
 const carditem = document.querySelectorAll(".hoverEffect");
 const savebtn = document.querySelectorAll(".SaveBtn");
@@ -36,3 +39,21 @@ const postcard = document.querySelectorAll(".postcard");
 //     selectbtn.style.opacity = 0
 //     img.style.filter = "none"
 // })
+
+
+
+
+// function homePageAnimationEffect(){
+//     var tl = gsap.timeline();
+//     tl.from(".carousel .carousel-cell h1",{
+//         y:-100,
+//         duration:2,
+//         // opacity:0,
+//         stagger:1
+//     })
+
+    
+// }
+
+
+// homePageAnimationEffect()

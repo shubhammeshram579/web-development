@@ -41,28 +41,6 @@ const GetPotsByUserProfile = () => {
     fatchGetUser();
   }, []);
 
-  // useEffect(() => {
-  //   const fatchPostUser = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `http://localhost:8000/api/posts/getPostUser/${userId}`,
-  //         {
-  //           headers: {
-  //             Authorization: `Bearer ${accessToken}`,
-  //           },
-  //         }
-  //       );
-  //       // console.log(response.data.data.postUserPost);
-  //       setGetPost(response.data.data.postUserPost);
-
-  //       setLoading(false);
-  //     } catch (error) {
-  //       setError(error.message);
-  //       setLoading(false);
-  //     }
-  //   };
-  //   fatchPostUser();
-  // }, []);
 
   const postUrl = window.location.href;
   if (loading) return <div>Loading...</div>;
@@ -95,7 +73,7 @@ const GetPotsByUserProfile = () => {
               <SharePost postUrl={postUrl} />
               Share
             </h1>
-            <div className="bg-green-500 py-3 px-10 rounded-xl">
+            <div className=" bg-red-500 px-10 rounded-3xl">
               <FollowButton userId={targetId} targetUserId={userId} />
             </div>
           </div>
@@ -145,3 +123,30 @@ const GetPotsByUserProfile = () => {
 };
 
 export default GetPotsByUserProfile;
+
+
+
+
+
+  // useEffect(() => {
+  //   const fatchPostUser = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `http://localhost:8000/api/posts/getPostUser/${userId}`,
+  //         {
+  //           headers: {
+  //             Authorization: `Bearer ${accessToken}`,
+  //           },
+  //         }
+  //       );
+  //       // console.log(response.data.data.postUserPost);
+  //       setGetPost(response.data.data.postUserPost);
+
+  //       setLoading(false);
+  //     } catch (error) {
+  //       setError(error.message);
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fatchPostUser();
+  // }, []);

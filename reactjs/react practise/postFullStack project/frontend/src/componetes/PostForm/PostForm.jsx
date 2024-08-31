@@ -52,7 +52,7 @@ try {
 
 
   return (
-    <form className='flex items-start justify-between gap-[50px] bg-gray-400 py-20 px-20' onSubmit={handleSubmit(onSubmit)}>
+    <form className='flex items-start justify-between gap-[50px] bg-gray-200 rounded-3xl py-20 px-20' onSubmit={handleSubmit(onSubmit)}>
       <div>
         <Input
           label="Title: "
@@ -94,7 +94,7 @@ try {
         />
         {errors.status && <p>{errors.status.message}</p>}
 
-        <Button type="submit" bgColor={post ? 'bg-green-500' : undefined} className="w-full mt-10">
+        <Button type="submit" bgColor={post ? 'bg-green-500' : undefined} className="w-full mt-10 bg-red-500">
           {post ? 'Update' : 'Submit'}
         </Button>
       </div>

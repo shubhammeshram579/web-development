@@ -1,11 +1,34 @@
-import React from "react";
+import React ,{useEffect,useRef} from "react";
 import img2 from "..//../assets/img.png";
 import RegisterPage from "..//../componetes/pages/signup/RegisterPage";
+import FlickityCarousel from "../HomePage/LendingPage.jsx";
+import Flickity from "flickity";
+import "..//../App.css"
+import { gsap } from "gsap";
 
 function Homepage() {
+  const downbtn = useRef(null)
+
+
+
+  useEffect(() => {
+    const tl = gsap.timeline({ repeat: -1, yoyo: true });
+    tl.to(downbtn.current, {
+      y: 40,
+      duration: 2,
+      opacity: 1,
+      ease: "power1.inOut",
+      transition: "linear 0.5s",
+    });
+  });
   return (
     // page2
     <>
+      <div><FlickityCarousel /></div>
+      <i ref={downbtn} class="ri-arrow-down-wide-line bg-green-600 py-3 px-4 rounded-full absolute  z-50 mt-[-100px]"></i>
+      <div className="butn bg-yellow-200 relative z-40 pb-5">
+        <h1 className="font-semibold">Here's how it works <i class="ri-arrow-down-wide-line"></i></h1>
+      </div>
       <div className="page2 flex items-center justify-between h-[100vh] w-full bg-yellow-200 px-20">
         <div className="card1 absolute z-10">
           <div className="images flex items-center justify-evenly gap-[12vw]">

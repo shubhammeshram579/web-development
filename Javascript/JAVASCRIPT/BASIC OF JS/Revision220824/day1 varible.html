@@ -69,7 +69,7 @@
             }
             console.log("var", i)
         };
-        vl();
+        // vl();
 
 
 
@@ -82,7 +82,7 @@
                 // at vl2(day1 varible.html: 79: 27)
                 // at day1 varible.html: 81: 9
         };
-        vl2();
+        // vl2();
 
 
 
@@ -115,6 +115,201 @@
         const a = name2
 
         console.log("copy",a);  // i have quetion how it's posible change consted varible value change
+
+
+        // day 2
+
+        // dtype in js
+        // 1. primative dtype : num , str, int, float , bloon , simbole, null , undefind 
+        // 2. refrence dtype : () , [] ,{}
+
+
+        // example
+        // array
+        var arr = [12,4,6,7];
+
+        // object
+        const obj = {
+            name: "shubham",
+            age: 27
+        };
+
+        // function
+        function ab(a,b){
+            return a + b
+        };
+
+        let sum = ab(10,20);
+        console.log(sum);
+
+
+        // opraters in js
+        // 1. aggregete opraters
+        //  + , - , + , *, / , **, //, %
+        // exmaple
+        let a1 = 10;
+        let a2 = 30;
+
+        let sum2 = a1 + a2
+        console.log(sum2)
+
+        // 2. logical opt
+        // <, >,=, >=, <= , === , !== , ?
+
+        let arr2 = [1,2,3,4,5,6];
+
+        // for (let i of arr2){
+        //     console.log(i)
+        // }
+
+        // arr2.forEach(function(i){
+        //     if(i > 4){
+        //         console.log(i)
+        //     }
+        // })
+
+
+
+        // let time = prompt("time: ");
+
+        // if (time > 5 && time < 12){
+        //     // console.log("good moring")
+        //     alert("good morning")
+        // }else if(time > 12 && time < 16){
+        //     // console.log("good afternoon")
+        //     alert("good afternoon")
+        // }else{
+        //     // console.log("good evening")
+        //     alert("good evening")
+        // }
+
+
+
+        // day2
+
+        // loops and condition
+        // stored loop value
+        // let result2 = []
+        // for (let i = 10; i < 100; i += 10){
+        //     if(i <= 50){
+        //         // console.log(i)
+        //         result2.push(i)
+        //     }
+          
+        // }
+
+        // console.log("out",result2)
+
+
+        // types of loops in js
+        // for loops
+        // while loops
+        // do while loops
+        // forEach loop  only for array value 
+        // forign loops object valupe
+
+
+        // 1. for loops like 2 x 10 
+        for (let i = 2; i <= 20; i += 2){
+            console.log(i)
+        };
+
+        // reverse
+        // for (let i = 20; i >= 2; i -= 2){
+        //     console.log(i)
+        // };
+
+
+
+        // 2. while loops
+        let w1 = 0;
+
+
+        // print dell 10 times and stored array form using while loops
+        let storedWhild = [];
+        while (w1 <= 10){
+            // console.log("hello")
+            // prompt("hello: ")
+            let laptop = "dell"
+            let sto = w1 += 1
+            storedWhild.push(laptop)
+        };
+
+        console.log("while loop",storedWhild)
+
+        
+        // print dell 10 times and stored array form using for loops
+        let staray = []
+        for (let i = 2; i <= 20; i += 2){
+            let r = "shubham"
+            // console.log(i,r)
+            staray.push(r)
+        };
+
+        console.log("for loop:",staray)
+
+
+
+        // 3. forEach loops
+        staray.forEach((i,index)=>{
+            console.log(i[index])
+        });
+
+        //with array function 
+        arr2.forEach((i) => console.log(i+10));
+
+
+        const obj2 = {
+            name:"shubham",
+            age: 18
+        }
+
+        // single time obj 
+        // for(let i in obj2){
+        //     console.log(obj2[i])
+        // }
+
+        // 10 time obj it call as nested loops also
+        // for(let i = 0; i <= 10; i++){
+        //     for (let k in obj2){
+        //         console.log(obj2[k])
+        //     }
+        // }
+
+
+        // nested loops baktick formating
+        // for(let i = 0; i <= 2; i++){
+        //     for (let k = 0; k <=2; k++){
+        //         for (let b = 0; b <= 5; b++){
+        //             console.log(`loop in ${i} of total: ${k+ b}`)
+        //         }
+        //     }
+        // };
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -13,6 +13,8 @@ import Homepage from "..//../HomePage/Homepage.jsx"
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [visible, setVisible] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -43,6 +45,11 @@ const Home = () => {
 
     fetchPosts();
   }, []);
+
+  //post image hide
+  const handleHide = () => {
+    setIsHidden(!isHidden);
+  };
 
 
    // Function to randomly decide if a margin should be applied
@@ -75,13 +82,13 @@ const Home = () => {
 
   return (
     <Contenier>
-      <div className="py-10 w-full mt-14">
+      <div className="w-full py-20 mt-14 px-20 bg-slate-100">
         
       <ul className="flex flex-row items-center justify-between flex-wrap">
       {posts.map((post, index) => {
         // Use a random function to decide margin for every other card
-        const randomMargin = index % 2 === 0 ? '80px' : '0px'; // Stagger every second post card with a margin of 30px
-        // const hights = index % 2 !== 0 ? '7px' : ''; // Stagger every second post card with a margin of 30px
+        const randomMargin = index % 2 !== 0 ? '70px' : '0px'; // Stagger every second post card with a margin of 30px
+        // const margingbuttem = index %  2 === 0 ? '30vh' : '0px'; // Stagger every second post card with a margin of 30px
         // const butten = index % 2 !== 0 ? '--70px' : ''; // Stagger every second post card with a margin of 30px
 
         return (
@@ -89,15 +96,15 @@ const Home = () => {
             key={post._id}
             className="card relative mb-[-55px] rounded-2xl"
             
-            style={{ marginTop: randomMargin}} // Apply staggered top margin
+            
+            style={{ marginTop: randomMargin }} // Apply staggered top margin
             onMouseEnter={() => setHoveredIndex(index)} // Set hover state on mouse enter
             onMouseLeave={() => setHoveredIndex(null)} // Reset hover state on mouse leave
           >
             <Link to={`/getPostByID2/${post._id}`} className="relative group">
               <img
-                className={`cardImg transition duration-300 rounded-3xl ${
+                className={`cardImg  w-[14vw] h-[60vh] object-cover object-center transition duration-300 rounded-3xl ${
                   hoveredIndex === index ? 'opacity-50' : 'opacity-100'
-                  // index % 2 !== 0 ? 'h-[450px]' : ''
                 }`}
                 src={post.postImg}
                 alt="image"
@@ -110,9 +117,8 @@ const Home = () => {
 
             {/* Save button with conditional opacity */}
             <h1
-              className={`SaveBtn absolute ml-[160px] mt-[-530px] mb-[500px] py-2 px-5 rounded-lg transition-opacity duration-300 ${
+              className={`SaveBtn absolute ml-[150px] mt-[-530px] mb-[500px] py-1 px-4 bg-red-500 rounded-3xl transition-opacity duration-300 text-white ${
                 hoveredIndex === index ? 'opacity-100' : 'opacity-0'
-                // index % 2 !== 0 ? 'mt-[-370px]' : ''
               }`}
             >
               <SavePostButton userId={user._id} postId={post._id} />
@@ -120,13 +126,21 @@ const Home = () => {
 
             {/* Icons with conditional opacity */}
             <div
-              className={`selectbtn flex items-center gap-4 absolute mt-[-100px] ml-[180px] mb-14 transition-opacity duration-300 ${
+              className={`selectbtn flex items-center justify-between absolute mt-[-80px] pl-4 mb-14 transition-opacity duration-300 ${
                 hoveredIndex === index ? 'opacity-100' : 'opacity-0'
                 // index % 2 !== 0 ? 'mt-[-70px]' : ''
               }`}
-            >
-              <i className="ri-share-2-line cursor-pointer text-[30px] mr-2 text-white"></i>
-              <i className="fa-solid fa-ellipsis cursor-pointer mr-5 text-2xl text-white"></i>
+            > 
+            <i class="ri-arrow-right-up-line bg-white flex items-center justify-center px-6 py-[8px] rounded-3xl gap-2 text-lg"> behance</i>
+            <div className="flex items-center justify-center gap-4 ml-[20px]">
+              <div className="bg-white rounded-full mt-1">
+              <SharePost postUrl={post._id} postTitle={post.title} />
+              </div>
+              
+            
+              <i className="fa-solid fa-ellipsis cursor-pointer mr-5 text-2xl bg-white px-2 py-[3px] mt-[5px] rounded-full" onClick={() => setVisible(!visible)}></i>
+              <OptionsCard onHide={handleHide} visible={visible}  postId={post._id}/>
+              </div>
             </div>
 
             <h2 className="text-center mt-5 font-bold">{post.title}</h2>

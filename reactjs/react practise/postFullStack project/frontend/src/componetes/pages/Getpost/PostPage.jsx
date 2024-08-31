@@ -161,7 +161,7 @@ const HomePagePost2 = () => {
 
   return (
     <Contenier>
-      <div className="mt-28">
+      <div className="mt-28 px-20">
         <div className="flex items-center justify-between">
         <div className="font-bold text-[25px]">
             <Link to={`/getPost/${currentUser._id}`}>
@@ -187,7 +187,7 @@ const HomePagePost2 = () => {
           </div>
         </div>
 
-        <div className="bg-gray-400 w-[900px] flex items-center rounded ml-[400px]">
+        <div className="bg-slate-200 w-[900px] flex items-center rounded-3xl ml-[400px]">
           <div className="py-5 flex items-start justify-start">
             <div
               className={`transition-colors duration-500 rounded-lg ${
@@ -208,13 +208,13 @@ const HomePagePost2 = () => {
             {/* share post and download image */}
             <div className="flex items-center flex-col">
               <div className="flex items-center justify-between w-full pl-4">
-                <div className="flex items-center justify-center gap-4 text-[30px]">
+                <div className="flex items-center justify-center gap-4">
                   <SharePost postUrl={postUrl} postTitle={post.title} />
                   <i
-                    className="fa-solid fa-ellipsis cursor-pointer"
+                    className="fa-solid fa-ellipsis cursor-pointer text-[30px]"
                     onClick={() => setVisible(!visible)}
                   ></i>
-                  <OptionsCard onHide={handleHide} visible={visible} />
+                  <OptionsCard onHide={handleHide} visible={visible} postId={postId}/>
                 </div>
 
                 {/* profile and save post card */}
@@ -236,7 +236,7 @@ const HomePagePost2 = () => {
 
               <div className="w-full pl-5 flex items-center justify-between">
                 <div className="flex items-center justify-center gap-3">
-                  <h1 className="rounded-full bg-blue-500 px-3 py-3">
+                  <h1 className="rounded-full bg-gray-400 px-5 py-3">
                     {post.owner.fullname[0]}
                   </h1>
                   <h1 className="flex flex-col">
@@ -252,7 +252,7 @@ const HomePagePost2 = () => {
                     <span>{post.owner.followers.length} followers</span>
                   </h1>
                 </div>
-                <div className="bg-green-400 px-6 py-3 rounded-xl">
+                <div>
                   <FollowButton
                     userId={currentUser._id}
                     targetUserId={post.owner}
@@ -268,10 +268,10 @@ const HomePagePost2 = () => {
                 {comment.map((c) => (
                   <div
                     key={c._id}
-                    className="flex items-center justify-between"
+                    className="flex items-start justify-start gap-2"
                   >
-                    <p className="ml-10 text-xl">{c.content}</p>
-                    <small className="ml-10">By: {c.owner.email}</small>
+                    <h1 className="font-semibold text-lg">{c.owner.fullname}</h1>
+                    <p >{c.content} !</p>
                   </div>
                 ))}
               </div>
@@ -280,7 +280,7 @@ const HomePagePost2 = () => {
               <div className="mt-10 w-full pl-5">
                 <h1 className="font-bold text-[25px]">What do you think?</h1>
                 <div className="flex items-center gap-3 mt-4">
-                  <h1 className="bg-green-600 py-5  px-10 rounded-full">
+                  <h1 className="bg-gray-400 py-5  px-7 rounded-full">
                     {currentUser.fullname[0]}
                   </h1>
                   <form onSubmit={handleSubmit(onSubmit)}>

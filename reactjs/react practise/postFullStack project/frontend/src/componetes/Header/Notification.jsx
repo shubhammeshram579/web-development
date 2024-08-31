@@ -67,16 +67,16 @@ const Notification = ({userId})  => {
   
 
   return (
-    <div className='w-[22vw] h-[89vh] rounded-xl bg-gray-200 fixed z-50'>
+    <div className='w-[22vw] h-[80vh] rounded-xl bg-gray-200 fixed z-50 px-5'>
     <div className='flex items-start justify-center  flex-col gap-2' >
       <h1 className='px-2 py-2 font-semibold text-xl'>notification: {notification.length} </h1>
       <h1 className='font-bold ml-2 mb-5 text-xl'>Updates</h1>
       {notification.length === 0 ? (
         <p className='px-2'>No notifications</p> 
       ):(
-        <ul>
+        <ul className='flex items-center justify-between flex-col gap-2 overflow-y-auto overflow-hidden h-[calc(70vh-100px)]'>
       {notification.map((n)=>(
-        <div className='h-full bg-green-300 rounded-lg pb-2 mr-1' onClick={() => handleNotificationClick(n._id, n.postId._id)}>
+        <div className='h-full w-full bg-gray-300 rounded-lg pb-2 mr-1' onClick={() => handleNotificationClick(n._id, n.postId._id)}>
          <h1 className='font-bold ml-2'>New</h1>
         <div className='flex items-center justify-evenly mb-2 gap-4'>
             <img src={n.postId.postImg} alt={n.postId.title} className='h-20 w-28 rounded-lg ml-2'/>

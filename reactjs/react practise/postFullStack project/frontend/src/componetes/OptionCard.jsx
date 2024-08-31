@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
-const OptionsCard = ({ onDownload, onHide, visible }) => {
-  const { postId } = useParams();
+const OptionsCard = ({ onDownload, onHide, visible, postId }) => {
+  // const { postId } = useParams();
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -43,18 +43,18 @@ const OptionsCard = ({ onDownload, onHide, visible }) => {
         visible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
-      <div className="bg-white shadow-md rounded-lg p-4 absolute z-20">
+      <div className="h-[100px] w-[200px] flex items-center justify-center flex-col bg-white shadow-md rounded-lg absolute z-20 font-semibold">
         <a
           href={post.postImg}
           target="target"
-          className="block w-full text-left text-[15px] px-4 py-2 text-gray-700 hover:bg-gray-200"
+          className="py-2 px-5 rounded-3xl flex items-center justify-center text-gray-700 hover:bg-gray-200"
         >
-          Download Post Image
+          Download post Image
         </a>
         {/* <button onClick={onDownload} className="block w-full text-left text-[15px] px-4 py-2 text-gray-700 hover:bg-gray-200">Download Post Image</button> */}
         <button
           onClick={onHide}
-          className="block w-full text-left text-[15px] px-4 py-2 text-gray-700 hover:bg-gray-200"
+          className="py-2 px-5 rounded-3xl text-left text-[15px] text-gray-700 hover:bg-gray-200"
         >
           Hide Post Image
         </button>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            height: 300px;
+            width: 400px;
+            background-color: rgb(177, 110, 241);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .pipe {
+            height: 80px;
+            width: 20px;
+            background-color:yellow;
+            margin-bottom: 200px;
+            margin-left: 20px;
+            /* ratation */
+            /* transform:rotate3d(1,2,3, 15deg); */
+            /* transform: skew(-20deg, 5deg); */
+            /* transition:all 1s ease-out; */
+            /* animation: 3s linear 1s infinite alternate slidein; */
+            animation: .5s linear 1s infinite alternate slidein;
+            border-radius: 10px 10px 0px 0px;
+            position: absolute;
+            z-index: 20;
+        }
+
+        @keyframes slidein {
+            from {
+                /* pushes the sun down past the viewport */
+                transform: translatex(2vh);
+            }
+
+            to {
+                /* returns the sun to its default position */
+                transform: translateY(10px);
+                
+            }
+        }
+
+        .cup {
+            height: 150px;
+            width: 140px;
+            background-color:rgb(99, 29, 29);
+            /* padding: 10px 10px 10px 20px; */
+            border-radius: 5px 5px 50px 50px;
+            border: 2px solid yellow;
+        }
+
+        .cup2 {
+            height: 35px;
+            width: 139px;
+            background-color:chocolate;
+            /* padding: 10px 10px 10px 20px; */
+            border-radius: 5px 5px 200px 200px;
+            border: 2px solid yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="pipe">
+
+        </div>
+        <div class="cup">
+            <div class="cup2">
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

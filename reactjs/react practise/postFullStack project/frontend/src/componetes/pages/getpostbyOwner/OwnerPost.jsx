@@ -58,9 +58,9 @@ const PostsByOwner = ({userId}) => {
         <h2 className="mt-2">{user.user.following.length} Follwing</h2>
         </div>
         <div className="flex items-center justify-center gap-3 mt-5">
-          <h1 className="px-10 flex items-center justify-center py-1 rounded-3xl bg-slate-400 hover:bg-green-500"><SharePost postUrl={postUrl} />Share</h1>
+          <h1 className="px-10 flex items-center justify-center py-1 rounded-3xl bg-gray-400 hover:bg-green-500"><SharePost postUrl={postUrl} />Share</h1>
           <Link to="/UpdateUser">
-            <h1 className=" rounded-3xl py-3 px-10 bg-slate-400">
+            <h1 className=" rounded-3xl py-3 px-10 bg-gray-400 hover:bg-red-500 hover:text-white">
               Edit profile
             </h1>
           </Link>

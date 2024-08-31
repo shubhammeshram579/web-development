@@ -36,11 +36,11 @@ function Register() {
   return (
     <div>
         <div className='bg-slate-200 py-10 px-20 rounded-3xl'>
-            <div className='text-center'>
+            <div className='flex items-center justify-center py-2'>
                 <Logo />
             </div>
             <h2 className='text-center'>Sign up to create account</h2>
-            <h3 className='text-center'>Already have an account?&nbsp; <Link to="/Login">Sign In</Link>  </h3>
+            <h3 className='flex items-center justify-center'>Already have an account?&nbsp; <Link to="/Login"><h1 className='text-red-500'>Sign In</h1></Link>  </h3>
             {errors && <p className="text-red-600 mt-8 text-center">There are some errors in your submission</p>}
 
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -83,7 +83,7 @@ function Register() {
                     })}
                     />
                     {errors.password && <p className="text-red-600">{errors.password?.message}</p>}
-                    <Button type="submit" className="w-full mt-5">Create Account</Button>
+                    <Button type="submit" className="w-full mt-5 bg-red-600">Create Account</Button>
 
 
                 </div>

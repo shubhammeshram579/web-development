@@ -72,7 +72,7 @@ try {
     
         // const postId = req.params;
     
-        const getcomment = await Comment.find({post:req.params.postId}).populate("owner","email")
+        const getcomment = await Comment.find({post:req.params.postId}).populate("owner","email fullname")
         console.log(getcomment)
     
         if(!getComment.length){

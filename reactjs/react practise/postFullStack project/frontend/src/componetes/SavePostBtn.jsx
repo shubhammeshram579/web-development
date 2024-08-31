@@ -32,7 +32,7 @@ const SavePostButton = ({ userId, postId }) => {
   return (
     <form onSubmit={handleSubmit(handleSavePost)}>
       {/* <input type="hidden" {...register('userId')} value={userId} /> */}
-      <button type="submit" className="bg-green-600 py-2 px-4 rounded-2xl">Save</button>
+      <button type="submit" className="bg-red-500 text-white py-2 px-4 rounded-3xl text-xl">Save</button>
     </form>
   );
 };

@@ -73,7 +73,7 @@ const UpdateUser = () => {
   return (
     <>
     
-      <div className="mt-32">
+      <div className="mt-44 pb-10 bg-slate-200 px-10 rounded-3xl">
       <Contenier>
       <div className="text-center font-bold mt-10">Update User</div>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -115,7 +115,7 @@ const UpdateUser = () => {
             {errors.email && (
               <p className="text-red-600">{errors.email?.message}</p>
             )}
-            <Button type="submit" className="mt-5">Sumbit</Button>
+            <Button type="submit" className="mt-5 bg-red-500">Sumbit</Button>
           </div>
         </form>
         </Contenier>

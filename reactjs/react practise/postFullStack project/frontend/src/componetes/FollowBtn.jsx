@@ -30,7 +30,7 @@ const FollowButton = ({ userId, targetUserId }) => {
   };
 
   return (
-    <button onClick={handleFollow}>
+    <button onClick={handleFollow} className='bg-red-500 py-3 px-5 rounded-3xl text-white'>
       {isFollowing ? 'Unfollow' : 'Follow'}
     </button>
   );

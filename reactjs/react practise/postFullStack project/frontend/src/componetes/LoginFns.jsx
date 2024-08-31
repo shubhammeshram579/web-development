@@ -48,12 +48,12 @@ function LoginFns() {
   return (
     <div className="py-[75px]">
       <div className="bg-slate-200 py-10 px-20 rounded-3xl">
-        <div className="text-center">
+        <div className="flex items-center justify-center py-5">
           <Logo />
         </div>
         <h3 className="text-center">Sign in to your account</h3>
-        <p className="text-center mb-5">
-          Don&apos;t have any account?&nbsp;<Link to="/Signup">Sign Up</Link>
+        <p className="mb-5 flex items-center justify-center">
+          Don&apos;t have any account?&nbsp;<Link to="/Register"><h1 className="text-red-500">Sign Up</h1></Link>
         </p>
 
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -80,7 +80,7 @@ function LoginFns() {
               })}
             />
 
-            <Button type="submit" className="w-full mt-5">
+            <Button type="submit" className="w-full mt-5 bg-red-600">
               Sign In{" "}
             </Button>
           </div>

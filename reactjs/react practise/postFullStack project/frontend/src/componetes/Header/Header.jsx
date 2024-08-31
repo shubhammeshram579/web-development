@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Contenier from "../contenier/Contenier.jsx";
 import Logo from "../Logo.jsx";
 import { Link } from "react-router-dom";
@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import LogoutBtn from "./LogoutBtn.jsx";
 // import PostsList from "..//../componetes/pages/SearchPost/SearchPost.jsx"
 import ChatSearchBar from "../ChatSearchbar.jsx";
+import axios from "axios";
 
 
 function Header({
@@ -15,23 +16,28 @@ function Header({
   showMassage,
   setShowMassage,
   setShereProfile,
+  userId
 }) {
   const [showMessages, setShowMessages] = useState(false);
+  const [notification , setNotification] = useState([]);
+  const [currentUser,setCurrentUser] = useState([])
   const authStatus = useSelector((state) => state.auth.isLoggedIn);
   const navigate = useNavigate();
-  const user = useSelector((state) => state.auth.user);
-  // const [loading, setLoading] = useState(true);
+
+  const accessToken = useSelector((state) => state.auth.user?.accessToken)
+  const user = useSelector((state) => state.auth.user?.user)
+  const [loading, setLoading] = useState(true);
 
   const handleNotificationsClick = () => {
     setShowNotifications((prev) => !prev);
     setShowMassage(false); // Hide messages when showing notifications
   };
 
-  const handleMessagesClick = () => {
-    setShowMassage((prev) => !prev);
-    setShowNotifications(false); // Hide notifications when showing messages
-    setShereProfile(false)
-  };
+  // const handleMessagesClick = () => {
+  //   setShowMassage((prev) => !prev);
+  //   setShowNotifications(false); // Hide notifications when showing messages
+  //   setShereProfile(false)
+  // };
 
   const handleMessagesClick2 = () => {
     setShowMessages(prevState => {
@@ -44,6 +50,61 @@ function Header({
       return newState;
     });
   };
+
+
+  
+  useEffect(()=>{
+    const fatchcurrentUser = async () => {
+      try {
+        
+        const getcurrentUser = await axios.get(`http://localhost:8000/api/users/current-user`,{
+          headers:{
+            "Authorization":`Bearer ${accessToken}`,
+          }
+        })
+
+        console.log("getcurrentUser.data.data.curentUser massage page",getcurrentUser.data.data.curentUser)
+        setCurrentUser(getcurrentUser.data.data.curentUser)
+      } catch (error) {
+        console.error("Error fetching search results", error);
+        
+      }
+
+    }
+    fatchcurrentUser();
+  },[accessToken])
+
+
+ 
+
+
+
+  useEffect(() => {
+    const fatchnotification =  async () => {
+      try {
+        const response = await axios.get(`http://localhost:8000/api/Notification/${currentUser._id}`,{
+          headers:{
+            "Authorization":`Bearer ${accessToken}`,
+          }
+        });
+        console.log("notit ",response.data.data.notification)
+        setNotification(response.data.data.notification)
+
+        setLoading(false)
+        
+      } catch (error) {
+        console.log("notification not fatch",error)
+        setLoading(false)
+        
+      }
+    }
+    fatchnotification();
+
+  },[userId]);
+
+
+  
+  if(loading) return <div>Loading...</div>
 
 
 
@@ -70,8 +131,8 @@ function Header({
       active: !authStatus,
     },
     {
-      name: authStatus ? <h1 className="font-semibold uppercase bg-green-400 px-4 py-2 rounded-full hover:bg-slate-300">{user.user.fullname[0]}</h1> : "null",
-      slug: authStatus ? `/getPost/${user.user._id}` : "/getPost/null",
+      name: authStatus ? <h1 className="font-semibold uppercase bg-gray-300 px-4 py-2 rounded-full hover:bg-slate-300">{user.fullname[0]}</h1> : "null",
+      slug: authStatus ? `/getPost/${user._id}` : "/getPost/null",
       active: authStatus,
     },
     // {
@@ -91,7 +152,7 @@ function Header({
   // }
 
   return (
-    <header className={"bg-slate-100 p-7 fixed w-full z-[100] font-semibold"}>
+    <header className={"bg-slate-100 p-7 fixed w-full z-[100] font-semibold px-20"}>
       <Contenier>
         <nav className={"flex items-center justify-between"}>
           <div className="flex items-center justify-around gap-20">
@@ -122,7 +183,18 @@ function Header({
                 {showNotifications ? (
                   "Hide Notifications"
                 ) : (
+
+                  
+                  <div className="flex items-center">
+                    
                   <i class="fa-solid fa-bell text-xl inline-block px-2 py-2 duration-200 hover:bg-blue-100 rounded-full"></i>
+
+                  {notification.length === 0 ? (
+                    null
+                  ): (
+                  <div className=" text-red-500 mb-5 ml-[-10px] text-lg ">{notification.length}</div>
+                )}
+                  </div> 
                 )}
               </button>
           )}
