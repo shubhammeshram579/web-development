@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {Button , Input, Logo} from "./index.js"
 import {useForm} from "react-hook-form"
@@ -6,15 +6,9 @@ import axios from "axios"
 // import { useDispatch } from 'react-redux'
 
 function Register() {
-    // create varible
-    // const [fullname, setFullname] = useState("")
-    // const [username, setUsername] = useState("")
-    // const [email, setEmail] = useState("")
-    // const [password, setPassword] = useState("")
-    // const [error, setError] = useState()
-
     const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [error , setError] = useState("")
    
 
     const onSubmit = async (data) => {
@@ -29,6 +23,9 @@ function Register() {
 
         } catch (error) {
           console.log(error);
+          if(error){
+            setError("There are some errors in your submission")
+          }
           alert('Error registration ');
         }
       };
@@ -41,7 +38,7 @@ function Register() {
             </div>
             <h2 className='text-center'>Sign up to create account</h2>
             <h3 className='flex items-center justify-center'>Already have an account?&nbsp; <Link to="/Login"><h1 className='text-red-500'>Sign In</h1></Link>  </h3>
-            {errors && <p className="text-red-600 mt-8 text-center">There are some errors in your submission</p>}
+            {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
@@ -95,3 +92,13 @@ function Register() {
 }
 
 export default Register
+
+
+
+
+  // create varible
+    // const [fullname, setFullname] = useState("")
+    // const [username, setUsername] = useState("")
+    // const [email, setEmail] = useState("")
+    // const [password, setPassword] = useState("")
+    // const [error, setError] = useState()

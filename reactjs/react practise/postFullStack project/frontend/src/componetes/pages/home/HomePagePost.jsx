@@ -9,11 +9,16 @@ import { Input, SharePost, SavePostButton } from "..//../index.js";
 import OptionsCard from "..//../OptionCard.jsx";
 import FollowButton from "..//../FollowBtn.jsx";
 import Home from "./Home.jsx"
+import io from "socket.io-client";
+
+
+const socket = io("http://localhost:8000");
 
 const HomePagePost = () => {
   const { postId } = useParams();
   const [post, setPost] = useState([]);
   const [comment, setComment] = useState([]);
+  // const [newComment, setNewComment] = useState("");
   const [currentUser , setCurrentUser] = useState([])
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -83,9 +88,11 @@ const HomePagePost = () => {
     fatchCurrentUser();
   }, []);
 
-  // get comment
+
+
+  // Fetch comments and set up socket listeners
   useEffect(() => {
-    const fatchgetComment = async () => {
+    const fetchComments = async () => {
       try {
         const resComment = await axios.get(
           `http://localhost:8000/api/comments/getcomment/${postId}`,
@@ -95,32 +102,47 @@ const HomePagePost = () => {
             },
           }
         );
-        // console.log("comment", resComment.data.data.getcomment);
-        setComment(resComment.data.data.getcomment);
+        setComment(resComment.data.data.comments);
         setLoading(false);
       } catch (error) {
         setError(error.message);
         setLoading(false);
       }
     };
-    fatchgetComment();
-  }, [postId, accessToken]);
+
+    // Fetch comments initially
+    fetchComments();
+
+    socket.on("recivedComment", (data) => {
+      setComment((prevComment) => [...prevComment, data]);
+    });
+
+    return () => socket.off("recivedComment");
+
+    
+  }, [postId, accessToken]); // Add accessToken and postId as dependencies
+
 
   // postUrl copy
   const postUrl = window.location.href;
-
-
-
-  
 
  
 
   // add comment function
   const onSubmit = async (data) => {
     try {
+
+      const newComment = {
+        content: data.content,
+        owner:currentUser._id,
+      }
+
+      // setComment((prevComment) => [...prevComment, data]);
+
+
       const addcomment = await axios.post(
         `http://localhost:8000/api/comments/addcomment/${postId}`,
-        data,
+        newComment,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -128,7 +150,8 @@ const HomePagePost = () => {
         }
       );
       alert(addcomment.data.message);
-      // console.log(addcomment);
+      // console.log(newComment);
+      socket.emit("sendComment", newComment);
       reset();
       return addcomment.data;
       
@@ -137,6 +160,8 @@ const HomePagePost = () => {
       alert("Error registration ");
     }
   };
+
+
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
@@ -326,3 +351,86 @@ export default HomePagePost;
   //     console.error("post.owner is undefined");
   //   }
   // }, [post.owner, accessToken]);
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+// useEffect(()=>{
+//   // Join the Socket.IO room for this post
+//   socket.emit("joinPost", postId);
+
+//   // Listen for new comments
+//   socket.on("newComment", (comment) => {
+//     setComment((prevComments) => [...prevComments,comment ]);
+//   });
+
+
+//   return () => {
+//     socket.off("newComment");
+// };
+
+// })
+
+  // get comment
+  // useEffect(() => {
+  //   const fatchgetComment = async () => {
+  //     try {
+  //       const resComment = await axios.get(
+  //         `http://localhost:8000/api/comments/getcomment/${postId}`,
+  //         {
+  //           headers: {
+  //             Authorization: `Bearer ${accessToken}`,
+  //           },
+  //         } 
+  //       );
+  //       console.log("comment", resComment.data.data.comments);
+  //       setComment(resComment.data.data.comments);
+  //       setLoading(false);
+  //     } catch (error) {
+  //       setError(error.message);
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fatchgetComment();
+
+      
+
+  // }, [postId, accessToken]);
+
+
+
+  
+  // const handleCommentSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   if (!newComment.trim()) return;
+
+  //   try {
+  //     await axios.post(
+  //       `http://localhost:8000/api/comments/${postId}`,
+  //       {
+  //         content: newComment,
+  //         owner: "Anonymous", // Change owner logic as needed
+  //       },
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${accessToken}`,
+  //         },
+  //       }
+  //     );
+  //     setNewComment("");
+  //   } catch (error) {
+  //     setError("Failed to post comment");
+  //   }
+  // };

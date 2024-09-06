@@ -25,7 +25,7 @@ function Homepage() {
     // page2
     <>
       <div><FlickityCarousel /></div>
-      <i ref={downbtn} class="ri-arrow-down-wide-line bg-green-600 py-3 px-4 rounded-full absolute  z-50 mt-[-100px]"></i>
+      <a href="#registerPage"><i ref={downbtn} class="ri-arrow-down-wide-line bg-green-600 py-3 px-4 rounded-full absolute  z-50 mt-[-100px]"></i></a>
       <div className="butn bg-yellow-200 relative z-40 pb-5">
         <h1 className="font-semibold">Here's how it works <i class="ri-arrow-down-wide-line"></i></h1>
       </div>
@@ -172,7 +172,7 @@ function Homepage() {
               ideas
             </h1>
           </div>
-          <div className="card2 text-start">
+          <div className="registerPage text-start" id="registerPage">
             <RegisterPage />
           </div>
         </div>

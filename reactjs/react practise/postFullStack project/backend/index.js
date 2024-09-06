@@ -1,3 +1,4 @@
+const onlineUsers = {}; 
 import dotenv from "dotenv"
 import connectDB from "../backend/db/IndexDB.js"
 import {app} from "./App.js"
@@ -13,6 +14,8 @@ import { Server } from 'socket.io';
 dotenv.config({
     path: "./.env"
 })
+
+
 
 
 
@@ -79,7 +82,7 @@ io.on('connection', (socket) => {
 
 
       } catch (error) {
-          console.error('Error fetching user details:', error);
+          console.log('Error fetching user details:', error);
       }
   });
 
@@ -90,36 +93,87 @@ io.on('connection', (socket) => {
 
 
 
+// // Socket.IO connection handling
+// io.on("connection", (socket) => {
+//     console.log("New client connected");
 
+//     // Join room based on postId
+//     socket.on("joinPost", (postId) => {
+//         socket.join(postId);
+//         console.log(`User joined post: ${postId}`);
+//     });
 
-
-// io.on('connection', (socket) => {
-//   console.log('New client connected');
-
-//   socket.on('sendMessage', async (newMessage) => {
-//     try {
-//       // Save the message to the database
-//       const chatMessage = new ChatMessage({
-//         from: newMessage.from,
-//         to: newMessage.to,
-//         message: newMessage.message,
-//         createdAt: new Date(),
-//         isRead: false
-//       });
-
-//       await chatMessage.save();
-
-//       // Broadcast the message to all clients
-//       io.emit('receiveMessage', chatMessage);
-//     } catch (error) {
-//       console.error('Error sending message:', error.message);
-//     }
-//   });
-
-//   socket.on('disconnect', () => {
-//     console.log('Client disconnected');
-//   });
+//     socket.on("disconnect", () => {
+//         console.log("Client disconnected");
+//     });
 // });
+
+
+// Socket.IO connection handling
+io.on("connection", (socket) => {
+    console.log("New client connected");
+
+    // Join room based on postId
+    socket.on("sendComment", async (data) => {
+        const {content ,owner} = data;
+        try {
+
+            const user = await User.findById(owner);
+            console.log("sockedi",user)
+            if(!user){
+                console.error('User not found');
+              return;
+            }
+
+
+            io.emit('recivedComment', {  
+                content:content, 
+                owner:user,
+                createdAt: new Date(), 
+            });
+
+            
+        } catch (error) {
+            console.log(error.message)
+            
+        }
+    });
+
+    socket.on("disconnect", () => {
+        console.log('Client disconnected');
+    });
+});
+
+
+
+
+
+
+
+
+io.on('connection', (socket) => {
+    console.log('a user connected');
+  
+    socket.on('deleteNotification', async (notificationId) => {
+      try {
+        // Perform your delete logic here, e.g., removing from a database
+        // Assuming deleteNotificationById is a function that deletes the notification
+        await deleteNotificationById(notificationId);
+        
+        // Notify all clients to update their notification list
+        io.emit('notificationDeleted', notificationId);
+      } catch (error) {
+        console.error('Error deleting notification:', error);
+      }
+    });
+  
+    socket.on('disconnect', () => {
+      console.log('user disconnected');
+    });
+  });
+
+
+// const PORT = process.env.PORT || 8000;
 
 
 // mongodb databases connection
@@ -132,3 +186,40 @@ connectDB()
 .catch((err) => {
     console.log("MONGO db connection failed !!! ", err);
 })
+
+
+export default io
+
+
+
+
+
+// // Mock data to simulate connected users
+// let users = [];
+
+// // Handle client connections
+// io.on('connection', (socket) => {
+//     console.log('User connected:', socket.id);
+
+//     // User joins with their user ID
+//     socket.on('join', (userId) => {
+//         users.push({ userId, socketId: socket.id });
+//         console.log('Connected users:', users);
+//     });
+
+//     // Listen for new post creation
+//     socket.on('newPost', (data) => {
+//         // Notify all users except the one who created the post
+//         socket.broadcast.emit('receiveNotification', {
+//             senderId: data.senderId,
+//             postId: data.postId,
+//             createdAt: new Date()
+//         });
+//     });
+
+//     // Handle user disconnect
+//     socket.on('disconnect', () => {
+//         users = users.filter(user => user.socketId !== socket.id);
+//         console.log('User disconnected:', socket.id);
+//     });
+// });

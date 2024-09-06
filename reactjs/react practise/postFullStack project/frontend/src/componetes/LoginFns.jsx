@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Input, Logo } from "./index.js";
 import { useDispatch } from "react-redux";
@@ -9,7 +9,7 @@ import { login as authLogin } from "../../store/AuthSlice.js";
 function LoginFns() {
   // const [email , setEmail] = useState("")
   // const [password , setPassword] = useState("")
-  // const [error, setError] = useState("")
+  
 
   const {
     register,
@@ -18,6 +18,11 @@ function LoginFns() {
   } = useForm();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const [error, setError] = useState("")
+
+
+
 
   // api data fatch pending
   const onSubmit = async (data) => {
@@ -41,7 +46,14 @@ function LoginFns() {
       // navigate page
       navigate("/");
     } catch (error) {
-      console.log("error");
+      // console.log("error");
+      // error hendeling
+      if(error && error.message){
+        setError("password is incorrect")
+      }else{
+        setError("Something went wrong")
+
+      }
     }
   };
 
@@ -72,13 +84,14 @@ function LoginFns() {
             />
 
             <Input
-              label="password"
+              label="Password"
               type="password"
               placeholder="esnter password"
               {...register("password", {
                 required: "password required",
               })}
             />
+            {error && <p className="text-red-600 pt-2">{error}</p>}
 
             <Button type="submit" className="w-full mt-5 bg-red-600">
               Sign In{" "}
@@ -88,6 +101,6 @@ function LoginFns() {
       </div>
     </div>
   );
-}
+};
 
 export default LoginFns;

@@ -5,6 +5,10 @@ import {Post} from "../models/Post.model.js"
 import { User } from "../models/User.model.js"
 import {uploadCloudinary} from "../utils/Cloudinary.js"
 import {Notification} from "../models/Notification.js"
+import io from "../index.js"
+
+
+const onlineUsers = {}; 
 
 
 
@@ -61,6 +65,22 @@ const publishPost = AsynceHendler(async (req, res) =>{
 
         await Notification.insertMany(notification);
 
+
+         // Emit the 'newPost' event to all followers
+        //  followers.forEach(follower => {
+        //     const recipientSocketId = onlineUsers[follower._id]; // Assuming you have a mechanism to map userId to their socketId
+        //     if (recipientSocketId) {
+        //         io.to(recipientSocketId).emit('newPost', {
+        //             postId: PostPublish._id,
+        //             title: PostPublish.title,
+        //             owner: PostPublish.owner,
+        //             message: `${PostPublish.title} has created a new post.`,
+        //         });
+        //     }
+        // });
+
+      
+
         return res
         .status(200)
         .json(
@@ -76,6 +96,8 @@ const publishPost = AsynceHendler(async (req, res) =>{
 
 
 })
+
+
 
 const getPost = AsynceHendler( async (req, res) => {
     try {

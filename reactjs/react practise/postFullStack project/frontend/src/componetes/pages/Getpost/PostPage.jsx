@@ -96,8 +96,8 @@ const HomePagePost2 = () => {
             },
           }
         );
-        // console.log("comment", resComment.data.data.getcomment);
-        setComment(resComment.data.data.getcomment);
+        // console.log("comment", resComment.data.data.comments);
+        setComment(resComment.data.data.comments);
         setLoading(false);
       } catch (error) {
         setError(error.message);

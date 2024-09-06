@@ -3,33 +3,40 @@ import {Comment} from "../models/Comment.model.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { AsynceHendler } from "../utils/AsynceHendler.js";
+// import io from "../index.js";
+
+
 
 
 const addComment = AsynceHendler(async (req, res)=>{
     try {
         const {content} = req.body;
         const userId = req.user._id;
-        const postId = req.params
+        const postId = req.params;
 
 
         if(!userId){
             throw new ApiError(404, "user id not found")
         }
 
-        const addComment  = await Comment.create({
-            content:content,
-            owner:userId,
-            post:postId,
-        });
+        // const newComment  = await Comment.create({
+        //     content:content,
+        //     owner:userId,
+        //     post:postId,
+        // });
 
-        if(!addComment){
+        const newComment = new Comment({ post:postId, content:content,owner:userId });
+        await newComment.save();
+        
+
+        if(!newComment){
             throw new ApiError(404, "comment not created")
         }
 
         return res
         .status(200)
         .json(
-            new ApiResponse(200, {addComment}, "susscefully add comment")
+            new ApiResponse(200, {newComment}, "susscefully add comment")
         )
         
     } catch (error) {
@@ -72,8 +79,8 @@ try {
     
         // const postId = req.params;
     
-        const getcomment = await Comment.find({post:req.params.postId}).populate("owner","email fullname")
-        console.log(getcomment)
+        const comments = await Comment.find({post:req.params.postId}).populate("owner","email fullname").sort({createdAt:-1})
+        console.log(comments)
     
         if(!getComment.length){
             throw new ApiError(404, "post comment not found")
@@ -82,7 +89,7 @@ try {
         return res
         .status(200)
         .json(
-            new ApiResponse(200,{getcomment},"success")
+            new ApiResponse(200,{comments},"success")
         )
 } catch (error) {
     throw new ApiError(500, error.message)

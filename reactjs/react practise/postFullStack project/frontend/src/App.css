@@ -183,6 +183,57 @@
 
 
 
+.page-container {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s linear, transform 0.5s linear;
+}
+
+.page-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+.page-container2 {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 1s linear, transform .8s linear;
+}
+
+.page-container2.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.Notification {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 1s linear, transform 0.8s linear;
+}
+
+.Notification.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // Here are 20 JavaScript function-related questions along with their solutions, ranging from basic to advanced levels:
+
+        // Basic Level:
+        // 1.What is a function in JavaScript?
+
+        // 1.A function is a block of code designed to perform a particular task. It is executed when invoked (called).
+        // Example:
+
+        function greet() {
+            console.log("Hello, World!");
+        }
+        greet();  // Output: Hello, World!
+
+
+    // 2.Write a function to add two numbers.
+        function add(a, b) {
+            return a + b;
+        }
+        console.log(add(5, 3));  // Output: 8
+
+
+
+    // 3.Write a function to find the factorial of a number.
+        function factorial(n) {
+            if (n === 0) return 1;
+            return n * factorial(n - 1);
+        }
+        console.log(factorial(5));  // Output: 120
+
+
+    // 4.What is a function expression?
+
+    // 4. A function expression is a function defined within an expression and can be anonymous.
+        const multiply = function (a, b) {
+            return a * b;
+        };
+        console.log(multiply(3, 4));  // Output: 12
+
+
+    // 5.Write a function to check if a number is even or odd.
+        function isEven(num) {
+            return num % 2 === 0 ? "Even" : "Odd";
+        }
+        console.log(isEven(4));  // Output: Even
+        console.log(isEven(5));  // Output: Odd
+
+
+    // Intermediate Level:
+    // 6.Write a function to reverse a string.
+        function reverseString(str) {
+            return str.split('').reverse().join('');
+        }
+        console.log(reverseString("hello"));  // Output: olleh
+
+
+    // 7.What is a higher - order function in JavaScript ?
+
+        // 7.A higher - order function is a function that takes another function as an argument or returns a function as a result.
+        // Example:
+        function applyOperation(a, b, operation) {
+            return operation(a, b);
+        }
+        console.log(applyOperation(5, 3, add));  // Output: 8
+
+
+
+    // 8.Write a function that returns the square of a number.
+        function square(num) {
+            return num * num;
+        }
+        console.log(square(5));  // Output: 25
+
+
+
+    // 9.What is an Immediately Invoked Function Expression(IIFE) ?
+
+    // 9.An IIFE is a function that runs immediately after it is defined.
+            (function () {
+                console.log("This is an IIFE");
+            })();  // Output: This is an IIFE
+
+
+
+    // 10.Write a function to find the greatest of two numbers.
+        function max(a, b) {
+            return a > b ? a : b;
+        }
+        console.log(max(10, 20));  // Output: 20
+
+
+    // Advanced Level:
+    // 11.What is a pure function?
+    // 11.A pure function is a function that, given the same inputs, will always return the same output without causing any side effects.
+        function pureAdd(a, b) {
+            return a + b;
+        }
+
+
+    // 12.Write a function that returns a function (closure).
+        function outerFunction(x) {
+            return function innerFunction(y) {
+                return x + y;
+            };
+        }
+        const add5 = outerFunction(5);
+        console.log(add5(10));  // Output: 15
+
+
+
+    // 13.What is the difference between function declaration and function expression?
+    // A function declaration defines a function with a specified name, whereas a function expression creates a function inside an expression.
+        // Function Declaration
+        function declaredFunction() {
+            return "I am a declared function";
+        }
+
+        // Function Expression
+        const expressedFunction = function () {
+            return "I am an expressed function";
+        };
+
+
+
+    // 14.Write a function that counts the number of vowels in a string.
+        function countVowels(str) {
+            let count = 0;
+            const vowels = 'aeiouAEIOU';
+            for (let char of str) {
+                if (vowels.includes(char)) {
+                    count++;
+                }
+            }
+            return count;
+        }
+        console.log(countVowels("JavaScript"));  // Output: 3
+
+
+
+    // 15.What are arrow functions, and how are they different from regular functions ?
+    // 15. Arrow functions are a shorthand way to write functions, and they do not have their own this or arguments binding.
+        const arrowFunction = (a, b) => a + b;
+        console.log(arrowFunction(3, 7));  // Output: 10
+
+
+
+    // 16.Write a function that returns the nth Fibonacci number.
+        function fibonacci(n) {
+            if (n <= 1) return n;
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+        console.log(fibonacci(6));  // Output: 8
+
+
+    // 17.Explain function currying and provide an example.
+    // 17.Currying is the process of breaking a function with multiple arguments into a series of functions that each take one argument.
+
+        function multiply(a) {
+            return function (b) {
+                return a * b;
+            };
+        }
+        const multiplyBy2 = multiply(2);
+        console.log(multiplyBy2(3));  // Output: 6
+
+
+
+    // 18.Write a function to flatten an array.
+        function flattenArray(arr) {
+            return arr.reduce((flat, toFlatten) => {
+                return flat.concat(Array.isArray(toFlatten) ? flattenArray(toFlatten) : toFlatten);
+            }, []);
+        }
+        console.log(flattenArray([1, [2, [3, 4]], 5]));  // Output: [1, 2, 3, 4, 5]
+
+
+
+    // 19.What is the call, apply, and bind method in JavaScript ?
+            // call : Invokes a function with a given this value and arguments passed one by one.
+            // apply: Invokes a function with a given this value and arguments as an array.
+            // bind: Returns a new function, with a given this value, but does not execute it immediately.
+        const person = {
+            name: "John",
+            greet: function (greeting) {
+                console.log(greeting + ", " + this.name);
+            }
+        };
+
+        const anotherPerson = { name: "Jane" };
+        person.greet.call(anotherPerson, "Hello");  // Output: Hello, Jane
+        person.greet.apply(anotherPerson, ["Hi"]);  // Output: Hi, Jane
+        const greetJane = person.greet.bind(anotherPerson, "Hey");
+        greetJane();  // Output: Hey, Jane
+
+
+
+    // 20.Write a recursive function to calculate the power of a number(e.g., power(2, 3) should return 8).
+        function power(base, exponent) {
+            if (exponent === 0) return 1;
+            return base * power(base, exponent - 1);
+        }
+        console.log(power(2, 3));  // Output: 8
+    </script>
+</body>
+
+</html>

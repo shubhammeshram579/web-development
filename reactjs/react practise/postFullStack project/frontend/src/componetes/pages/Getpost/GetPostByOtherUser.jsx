@@ -94,7 +94,7 @@ const GetpostByotherUser = () => {
           }
         );
         // console.log("comment", resComment.data.data.getcomment);
-        setComment(resComment.data.data.getcomment);
+        setComment(resComment.data.data.comments);
         setLoading(false);
       } catch (error) {
         setError(error.message);

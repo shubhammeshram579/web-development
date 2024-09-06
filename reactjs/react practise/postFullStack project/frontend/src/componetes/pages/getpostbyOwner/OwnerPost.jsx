@@ -9,35 +9,12 @@ import SavePosts from "./SavePosts.jsx";
 const PostsByOwner = ({userId}) => {
   const [activeSection, setActiveSection] = useState("created");
 
-  const accessToken = useSelector((state) => state.auth.user?.accessToken);
+  // const accessToken = useSelector((state) => state.auth.user?.accessToken);
   const user = useSelector((state) => state.auth.user);
 
   const postUrl = window.location.href;
 
-  // console.log(user.user.savePosts)
-
-  // useEffect(() =>{
-  //   const fatchCurrentUser = async () => {
-  //     try {
-
-  //       const userData = await axios.get("http://localhost:8000/api/users/current-user",{
-  //         headers: {
-  //           "Authorization":`Bearer ${accessToken}`
-  //         }
-  //       })
-  //       // console.log("savePost currentuser",userData.data.data.curentUser)
-  //       setSavePost(userData.data.data.curentUser.savePosts)
-
-  //       setLoading(false);
-  //     } catch (error) {
-  //       setError(error.message);
-  //       setLoading(false);
-  //     }
-
-  //   };
-
-  //   fatchCurrentUser()
-  // },[]);
+  
 
 
   const handleSectionChange = (section) => {
@@ -112,3 +89,31 @@ const PostsByOwner = ({userId}) => {
 };
 
 export default PostsByOwner;
+
+
+
+
+// console.log(user.user.savePosts)
+
+  // useEffect(() =>{
+  //   const fatchCurrentUser = async () => {
+  //     try {
+
+  //       const userData = await axios.get("http://localhost:8000/api/users/current-user",{
+  //         headers: {
+  //           "Authorization":`Bearer ${accessToken}`
+  //         }
+  //       })
+  //       // console.log("savePost currentuser",userData.data.data.curentUser)
+  //       setSavePost(userData.data.data.curentUser.savePosts)
+
+  //       setLoading(false);
+  //     } catch (error) {
+  //       setError(error.message);
+  //       setLoading(false);
+  //     }
+
+  //   };
+
+  //   fatchCurrentUser()
+  // },[]);

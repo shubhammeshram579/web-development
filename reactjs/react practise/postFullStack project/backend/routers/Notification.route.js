@@ -6,7 +6,7 @@ import {verifyJWT} from "../middlewheres/Auth.middlewere.js"
 const router = Router();
 router.use(verifyJWT);
 
-router.route("/Notification/:userId").get(notification)
+router.route("/Notification").get(notification)
 router.route("/Notification/:notificationId").delete(deleteNotification)
 
 

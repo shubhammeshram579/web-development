@@ -6,6 +6,12 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 
+import io from "socket.io-client";
+
+
+const socket = io("http://localhost:8000");
+
+
 
 
 const  PostForm = ({post}) => {
@@ -36,7 +42,12 @@ try {
         headers:{"Authorization":`Bearer ${token}`}
       })
       console.log(response.data)
+      // socket.emit("sendNotification", response.data);
+      // socket.emit('newPost', response.data);
+    
+      // socket.emit('sendNotification', { id: new Date().getTime(), message: "New notification from client!" });
       navigate("/")
+
 
       return response.data
 
@@ -47,6 +58,12 @@ try {
 }
 
 };
+
+
+
+// const emitNotification = () => {
+//   socket.emit('sendNotification', { id: new Date().getTime(), message: "New notification from client!" });
+// };
 
 
 

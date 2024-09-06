@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "..//..//../App.css";
 import "..//..//../App.js";
 import { SharePost, SavePostButton, OptionsCard } from "..//../index.js";
-import Notification from ".//..//../Header/Notification.jsx";
+import Notification from "..//../NotificationPost/NotificationPage.jsx";
 import Header from "..//../Header/Header.jsx";
 import Homepage from "..//../HomePage/Homepage.jsx"
 
@@ -55,7 +55,7 @@ const Home = () => {
    // Function to randomly decide if a margin should be applied
    const shouldApplyMargin = () => Math.random() < 0.5; // 50% chance to apply margin
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="py-[90vh]">Loading...</div>;
   if (!posts) {
     return <div>Loading...</div>;
   }
@@ -103,7 +103,7 @@ const Home = () => {
           >
             <Link to={`/getPostByID2/${post._id}`} className="relative group">
               <img
-                className={`cardImg  w-[14vw] h-[60vh] object-cover object-center transition duration-300 rounded-3xl ${
+                className={`cardImg  w-[14vw] h-[50vh] object-cover object-center transition duration-300 rounded-3xl ${
                   hoveredIndex === index ? 'opacity-50' : 'opacity-100'
                 }`}
                 src={post.postImg}
@@ -117,7 +117,7 @@ const Home = () => {
 
             {/* Save button with conditional opacity */}
             <h1
-              className={`SaveBtn absolute ml-[150px] mt-[-530px] mb-[500px] py-1 px-4 bg-red-500 rounded-3xl transition-opacity duration-300 text-white ${
+              className={`SaveBtn absolute ml-[150px] mt-[-450px] mb-[500px] py-1 px-4 bg-red-500 rounded-3xl transition-opacity duration-300 text-white ${
                 hoveredIndex === index ? 'opacity-100' : 'opacity-0'
               }`}
             >

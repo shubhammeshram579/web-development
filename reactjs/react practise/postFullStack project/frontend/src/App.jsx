@@ -4,24 +4,32 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import axios from "axios";
-// import {Login} from  "./componetes/index.js"
 import { login as authLogin } from "..//store/AuthSlice.js";
 import { logout as authLogout } from "..//store/AuthSlice.js";
 import "./App.css";
-import Notification from "./componetes/Header/Notification.jsx";
+// import Notification from "./componetes/Header/Notification.jsx";
+
+import Notification from "./componetes/NotificationPost/NotificationPage.jsx";
+
+import { NotificationProvider } from "./componetes/NotificationPost/NotificationContext.jsx";
+
 import Massage from "./componetes/Header/Massage.jsx";
 import NewMessage from "./componetes/Header/NewMessage.jsx";
-import ShareProfile from "./componetes/Header/ShareProfile.jsx";
-import Chatbox from "./componetes/Header/Chatbox.jsx";
+// import ShareProfile from "./componetes/Header/ShareProfile.jsx";
+// import Chatbox from "./componetes/Header/Chatbox.jsx";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  // const [notify , setNotify] = useState([])
+
   const dispatch = useDispatch();
   const [showNotifications, setShowNotifications] = useState(false);
+  const accessToken = useSelector((state) => state.auth.user?.accessToken);
+
   // const [showMassage, setShowMassage] = useState(false);
   // const [shereProfile, setShereProfile] = useState(false);
   // const [chatboxpage, setChatboxpage] = useState(false);
-  // const [sendmessage, setSendMessage] = useState(false);
+  // const [newMessage, setNewMessage] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // const toggleShareProfile = () =>{
   //   setShereProfile(!shereProfile)
@@ -54,6 +62,7 @@ function App() {
     }
   }, [dispatch]);
 
+  // css style
   // const bacgroundC = {
   //   backgroundColor: "red",
   // color: "green",
@@ -66,14 +75,27 @@ function App() {
   }
 
   return (
-    <div className=" w-full">
-      <div className="flex justify-normal flex-col gap-4 h-full">
-        <Header
-          setShowNotifications={setShowNotifications}
-        />
-        <div className="absolute z-50 left-[76vw] mt-28">
-          {showNotifications && <Notification />}
-          {/* {showMassage && (
+    <NotificationProvider>
+      <div className=" w-full h-full">
+        <div className="flex justify-normal flex-col gap-4 h-full">
+          {/* <NotificationProvider> */}
+          <Header
+            setShowNotifications={setShowNotifications}
+            // setShowMassage={setShowMassage}
+            // showMassage={showMassage}
+            // notify={notify}
+          />
+
+          {/* </NotificationProvider> */}
+          <div className="absolute z-[100] left-[76vw] mt-28">
+            {showNotifications && (
+              <Notification
+                setShowNotifications={setShowNotifications}
+                showNotifications={showNotifications}
+              />
+            )}
+            {/* {showMassage && <Massage />} */}
+            {/* {showMassage && (
             <Massage
               setShereProfile={setShereProfile}
               shereProfile={shereProfile}
@@ -83,23 +105,22 @@ function App() {
               setSendMessage={setSendMessage}
             />
           )} */}
+          </div>
+
+          {/* <div className="absolute z-50 left-[76vw] mt-28 bg-red-600">
+          {showMassage && (<Massage newMessage={newMessage}  setNewMessage={setNewMessage}/>
+          )}
         </div>
 
-        {/* <div className="absolute z-[60] left-[76vw] mt-28">
-          {sendmessage && (
-            <NewMessage
-              setShowMassage={setShowMassage}
-              setSendMessage={setSendMessage}
-              chatboxpage={chatboxpage}
-              setChatboxpage={setChatboxpage}
-            />
-          )}
+        <div className="absolute z-50 left-[76vw] mt-28 bg-red-600">
+          {newMessage && (<NewMessage   setShowMassage={setShowMassage} />)}
+
         </div> */}
 
-        {/* <div className="absolute z-[50] left-[76vw] mt-28">
+          {/* <div className="absolute z-[50] left-[76vw] mt-28">
           {shereProfile && <ShareProfile />}
         </div> */}
-        {/* <div className="absolute z-[50] left-[76vw] mt-28">
+          {/* <div className="absolute z-[50] left-[76vw] mt-28">
           {chatboxpage && (
             <Chatbox
               showMassage={showMassage}
@@ -108,12 +129,13 @@ function App() {
             />
           )}
         </div> */}
-        <main className="flex items-centre justify-center">
-          <Outlet />
-        </main>
-        <Footer />
+          <main className="flex items-centre justify-center">
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </NotificationProvider>
   );
 }
 

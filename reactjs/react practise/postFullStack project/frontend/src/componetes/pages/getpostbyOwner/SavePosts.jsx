@@ -9,14 +9,14 @@ import { useParams  ,useLocation} from 'react-router-dom';
 const SavePosts = () => {
   const { userId } = useParams();
   const location = useLocation();
-    const [savePost ,setSavePost] = useState([])
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+  const [savePost ,setSavePost] = useState([])
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
     // url location selection 
-    const isUserProfileRoute = location.pathname.includes('/getPostByUserPorofile/');
+  const isUserProfileRoute = location.pathname.includes('/getPostByUserPorofile/');
     
-    const accessToken = useSelector((state)=>state.auth.user?.accessToken)
+  const accessToken = useSelector((state)=>state.auth.user?.accessToken)
 
     
   useEffect(()=>{
@@ -44,6 +44,7 @@ const SavePosts = () => {
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
+    
   return (
     <div>
         <Contenier>
