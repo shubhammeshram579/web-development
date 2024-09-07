@@ -52,7 +52,7 @@ const FlickityCarousel = () => {
           opacity: 0,
         }); // Adjust overlap here as needed
       });
-      console.log("ref", refs);
+      // console.log("ref", refs);
       return tl;
     };
 
@@ -120,7 +120,7 @@ const FlickityCarousel = () => {
         `}
       </style>
       <Contenier>
-        <div className="carousel w-full h-[87vh] bg-slate-100">
+        <div className="carousel w-full h-[90vh] bg-slate-100">
           <div className="carousel-cell w-full h-[74vh] flex items-center justify-between flex-col pt-20">
             <div className="flex items-center justify-between flex-col gap-10">
               <h1 className="font-semibold text-4xl pt-10">Get your next</h1>

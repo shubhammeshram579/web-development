@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { Link, useLocation } from "react-router-dom";
+import "..//../App.css"
 
 
 
@@ -14,6 +15,8 @@ const NewMessage = () => {
   const [selectedUser, setSelectedUser] = useState(null);
   const [currentUser , setCurrentUser] = useState([])
   const [message, setMessage] = useState('');
+
+  const [visible ,setVisible] = useState(false)
   // const navigate = useNavigate();
 
 
@@ -99,12 +102,22 @@ const NewMessage = () => {
   };
 
 
+
+// animation set time
+  useEffect(()=>{
+    setTimeout(()=>{
+      setVisible(true)
+
+    },100)
+  })
+
+
   
 
  
 
   return (
-    <div className="w-[22vw] h-[85vh] bg-gray-200 rounded-xl fixed z-50 mt-28 ml-[73%]">
+    <div className={`NewMassage w-[22vw] h-[85vh] bg-gray-200 rounded-xl fixed z-50 mt-28 ml-[73%] ${visible? "visible":""}`}>
       <div className="flex items-center justify-between p-4 font-semibold text-2xl">
         <h1>New Messages</h1>
         <Link to="/message"><button>

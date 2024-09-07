@@ -3,7 +3,7 @@ import { Input, Button } from "..//../index.js";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate ,Link} from "react-router-dom";
 import {Contenier} from "..//../index.js"
 
 const UpdateUser = () => {
@@ -13,6 +13,7 @@ const UpdateUser = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const accessToken = useSelector((state) => state.auth.user.accessToken);
+  const CurrentUId = useSelector((state) => state.auth.user.user);
 
 
   useEffect( () =>{
@@ -67,14 +68,16 @@ const UpdateUser = () => {
     }
   }
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="py-[100vh]">Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
     <>
-    
-      <div className="mt-44 pb-10 bg-slate-200 px-10 rounded-3xl">
-      <Contenier>
+    <div>
+    <Contenier>
+      
+      <div className="mt-44 pb-10 bg-slate-200 px-10 py-5 mb-10 rounded-3xl">
+      <Link to={`/getPost/${CurrentUId._id}`}><i class="ri-arrow-left-fill text-xl text-red-500"></i></Link>
       <div className="text-center font-bold mt-10">Update User</div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
@@ -118,8 +121,12 @@ const UpdateUser = () => {
             <Button type="submit" className="mt-5 bg-red-500">Sumbit</Button>
           </div>
         </form>
-        </Contenier>
+        
       </div>
+
+      </Contenier>
+      </div>
+      
      
     </>
   );

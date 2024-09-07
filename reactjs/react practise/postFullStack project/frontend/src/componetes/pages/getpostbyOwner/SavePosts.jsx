@@ -47,7 +47,7 @@ const SavePosts = () => {
     
   return (
     <div>
-        <Contenier>
+        {/* <Contenier> */}
          <ul className='flex justify-center items-center gap-20 flex-row pt-14 flex-wrap'>
         {savePost.map(post => (
           <li key={post._id}>
@@ -63,7 +63,7 @@ const SavePosts = () => {
         ))}
       </ul>
 
-      </Contenier>
+      {/* </Contenier> */}
       
     </div>
   )

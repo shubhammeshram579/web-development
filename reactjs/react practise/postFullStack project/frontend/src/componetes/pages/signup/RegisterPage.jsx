@@ -1,9 +1,19 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import {Register as  RegisterComponate} from '../../index.js'
+import "..//..//../App.css"
 
 function RegisterPage() {
+  const [visible, setVisible] = useState(false)
+
+  useEffect(()=>{
+    setTimeout(() =>{
+      setVisible(true)
+    },100)
+  },[])
+
+
   return (
-    <div className='mt-32'>
+    <div className={`RegisterPage mt-32 ${visible ? "visible" : ""}`}>
       <RegisterComponate />
     </div>
   )

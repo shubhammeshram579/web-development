@@ -26,7 +26,7 @@ const Massage = ({shereProfile,setNewMessage,newMessage}) => {
     // Delay the visibility state change to trigger smooth transition
     setTimeout(() => {
         setVisible(true);
-    }, 200); // Delay for smooth transition
+    }, 100); // Delay for smooth transition
 }, []);
 
 

@@ -47,7 +47,7 @@ const CreatedPosts = () => {
   return (
     <div className="py-[50px] flex flex-wrap items-center justify-center">
       {/* <h1>Posts by Owner {posts.length}</h1> */}
-      <Contenier>
+      {/* <Contenier> */}
         <ul className="flex justify-center items-center gap-20 flex-row flex-wrap">
           {posts.map((post) => (
             <li key={post._id}>
@@ -68,7 +68,7 @@ const CreatedPosts = () => {
             </li>
           ))}
         </ul>
-      </Contenier>
+      {/* </Contenier> */}
     </div>
   );
 };

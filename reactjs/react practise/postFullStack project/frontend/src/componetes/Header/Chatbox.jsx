@@ -1,5 +1,5 @@
 import React, { useState, useEffect,useRef } from "react";
-import "../../App.css";
+import "..//../App.css";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -22,6 +22,7 @@ const Chatbox = () => {
   const { from, to } = useParams();
   const { handleSubmit, register, reset } = useForm();
   const [chats, setChats] = useState([]);
+  const [visible ,setVisible] = useState(false)
   const [currentUser, setCurrentUser] = useState([]);
   const latestMessageRef = useRef(null); // Ref to track the latest message
 
@@ -34,8 +35,17 @@ const Chatbox = () => {
 
   // current user accessToken
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
+  
 
 
+
+  // Animation set time
+  useEffect(()=>{
+    setTimeout(()=>{
+      setVisible(true)
+
+    },100)
+  })
 
 // current user 
   useEffect(() => {
@@ -285,10 +295,8 @@ const Chatbox = () => {
 
 
 
-
-
   return (
-    <div className="Chatbox w-[23vw] h-[100vh] bg-gray-200 rounded-xl overflow-hidden fixed z-50 mt-28 ml-[73%]">
+    <div className={`Chatbox w-[23vw] h-[100vh] bg-gray-200 rounded-xl overflow-hidden fixed z-50 mt-28 ml-[73%]  ${visible ? "visible" : ""}`}>
       <nav className="chatboxheader flex items-center justify-around font-semibold text-2xl pt-5 ">
         <Link to="/message">
           <i className="fa-solid fa-angle-left"></i>

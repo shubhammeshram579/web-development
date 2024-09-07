@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Contenier } from "..//../index.js";
 import { Link } from "react-router-dom";
 import "..//..//../App.css";
-import "..//..//../App.js";
+// import "..//..//../App.js";
 import { SharePost, SavePostButton, OptionsCard } from "..//../index.js";
 import Notification from "..//../NotificationPost/NotificationPage.jsx";
 import Header from "..//../Header/Header.jsx";
@@ -52,6 +52,7 @@ const Home = () => {
   };
 
 
+
    // Function to randomly decide if a margin should be applied
    const shouldApplyMargin = () => Math.random() < 0.5; // 50% chance to apply margin
 
@@ -63,8 +64,9 @@ const Home = () => {
 
   if (posts.length === 0) {
     return (
-      <div className="w-full py-8 pt-20 text-center">
-        <Contenier>
+      <Contenier>
+      <div className="text-center">
+        
           {/* <div className="flex flex-wrap p-[23vh]">
             <div className="p-2 w-full">
               <h1 className="text-2xl font-bold hover:text-gray-500">
@@ -74,8 +76,9 @@ const Home = () => {
             </div>
           </div> */}
           <Homepage />
-        </Contenier>
+        
       </div>
+      </Contenier>
     );
   }
 

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import LogoutBtn from "./LogoutBtn.jsx";
 import ChatSearchBar from "../ChatSearchbar.jsx";
-// import axios from "axios";
+import axios from "axios";
 import { NotificationContext } from "../NotificationPost/NotificationContext.jsx";
 
 import io from "socket.io-client";
@@ -17,9 +17,10 @@ function Header({
   showNotifications,
   setShowNotifications,
   showMassage,
-  setShowMassage,
+  // setShowMassage,
   // notify
 }) {
+  const [currentUser ,setCurrentUser] = useState([])
 
   const { notificationCount } = useContext(NotificationContext);
   const [showMessages, setShowMessages] = useState(false);
@@ -27,9 +28,39 @@ function Header({
   // authstatus user is login or not
   const authStatus = useSelector((state) => state.auth.isLoggedIn);
   const navigate = useNavigate();
+  const accessToken = useSelector((state)=>state.auth.user?.accessToken)
+  const [loading, setLoading] = useState(true);
 
   // current user from redux
   const user = useSelector((state) => state.auth.user?.user);
+
+
+
+// console.log("currentUser",currentUser._id)
+
+  useEffect(() =>{
+  const fatchCurrentUser = async () => {
+    try {
+
+      const userData = await axios.get("http://localhost:8000/api/users/current-user",{
+        headers: {
+          "Authorization":`Bearer ${accessToken}`
+        }
+      })
+      // console.log("savePost currentuser",userData.data.data.curentUser._id)
+      setCurrentUser(userData.data.data.curentUser)
+
+      setLoading(false);
+    } catch (error) {
+      // setError(error.message);
+      console.log(error.message)
+      setLoading(false);
+    }
+
+  };
+
+  fatchCurrentUser()
+},[]);
 
 
 
@@ -43,7 +74,7 @@ function Header({
 // notication buttnet hendeler
   const handleNotificationsClick = () => {
       setShowNotifications((prev) => !prev);
-    setShowMassage(false); // Hide messages when showing notifications
+    // setShowMassage(false); // Hide messages when showing notifications
   };
 
 
@@ -66,6 +97,12 @@ function Header({
       return newState;
     });
   };
+
+
+  if (loading) return <div className="py-[90vh]">Loading...</div>;
+  // if (!currentUser.fullname) {
+  //   return <div>Loading...</div>;
+  // }
 
 
 
@@ -102,9 +139,9 @@ function Header({
 
   return (
     <header
-      className={"bg-slate-100 p-7 fixed w-full top-0 z-50 font-semibold px-20"}
+      className={"bg-slate-100 py-8 fixed w-full top-0 z-50 font-semibold px-20"}
     >
-      <Contenier>
+      {/* <Contenier> */}
         <nav className={"flex items-center justify-between"}>
           <div className="flex items-center justify-around gap-20">
             <Link to="/">
@@ -192,7 +229,7 @@ function Header({
             )}
           </ul>
         </nav>
-      </Contenier>
+      {/* </Contenier> */}
     </header>
   );
 }

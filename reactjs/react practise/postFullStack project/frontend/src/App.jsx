@@ -1,11 +1,12 @@
-import React from "react";
+import React  from "react";
 import { Header, Footer } from "./componetes";
-import { useState, useEffect } from "react";
+import { useState, useEffect ,useRef} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import axios from "axios";
 import { login as authLogin } from "..//store/AuthSlice.js";
 import { logout as authLogout } from "..//store/AuthSlice.js";
+import LocomotiveScroll from "locomotive-scroll"
 import "./App.css";
 // import Notification from "./componetes/Header/Notification.jsx";
 
@@ -20,6 +21,7 @@ import NewMessage from "./componetes/Header/NewMessage.jsx";
 
 function App() {
   // const [notify , setNotify] = useState([])
+  // const scrollRef = useRef(null);
 
   const dispatch = useDispatch();
   const [showNotifications, setShowNotifications] = useState(false);
@@ -70,9 +72,33 @@ function App() {
 
   // }
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  
+
+
+  
+// useEffect(() => {
+//   // Initialize Locomotive Scroll
+//   const scroll = new LocomotiveScroll({
+//     el: scrollRef.current,
+//     smooth: true,
+//     smoothMobile: true, // Enable smooth scrolling on mobile
+//     inertia: 1, // Inertia-based smooth scrolling
+//     getDirection: true, // Track scroll direction (useful for triggering effects)
+//     getSpeed: true, // Track scroll speed
+//     reloadOnContextChange: true, // Reload on content changes
+//   });
+
+//   // Clean up on component unmount
+//   return () => {
+//     scroll.destroy();
+//   };
+// }, []);
+
+
+
+if (loading) {
+  return <div>Loading...</div>;
+}
 
   return (
     <NotificationProvider>
@@ -129,9 +155,10 @@ function App() {
             />
           )}
         </div> */}
-          <main className="flex items-centre justify-center">
+          <main  className="flex items-centre justify-center">
             <Outlet />
           </main>
+       
           <Footer />
         </div>
       </div>

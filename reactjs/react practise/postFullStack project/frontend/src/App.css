@@ -179,10 +179,28 @@
 } */
 
 
+/* page loading style */
+.page-enter {
+  opacity: 0;
+}
+.page-enter-active {
+  opacity: 1;
+  transition: opacity 100ms;
+}
+.page-exit {
+  opacity: 1;
+}
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 100ms;
+}
 
 
 
 
+
+
+/* contanier pages */
 .page-container {
   opacity: 0;
   transform: translateY(100px);
@@ -196,7 +214,7 @@
 
 
 
-
+/* massage page */
 .page-container2 {
   opacity: 0;
   transform: translateX(100px);
@@ -209,7 +227,7 @@
 }
 
 
-
+/* notifaction page */
 .Notification {
   opacity: 0;
   transform: translateX(100px);
@@ -217,6 +235,60 @@
 }
 
 .Notification.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+/* new message page */
+.NewMassage {
+  opacity: 0;
+  transform: translateX(100px);
+  transition:transform 0.8s linear;
+}
+
+.NewMassage.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* chatbox page */
+.Chatbox {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.5s linear, transform 2s linear;
+}
+
+.Chatbox.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+/* loagin page */
+.LoginPage {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s linear, transform 0.8s linear;
+}
+
+.LoginPage.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* registerpage */
+.RegisterPage {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.5s linear, transform 0.8s linear;
+}
+
+.RegisterPage.visible {
   opacity: 1;
   transform: translateX(0);
 }

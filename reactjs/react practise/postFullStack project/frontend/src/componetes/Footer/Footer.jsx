@@ -1,15 +1,18 @@
-import React ,{useState,useEffect} from 'react'
+import React ,{useState,useEffect ,useRef} from 'react'
 import {Link} from "react-router-dom"
 import Logo from "../Logo.jsx"
 import {Contenier} from "..//index.js"
+// import LocomotiveScroll from "locomotive-scroll"
 
 
 
 function Footer() {
-   
+    
+
+    
 
   return (
-    <section className={`Footer relative z-[-10] overflow-hidden py-10 bg-slate-100 float-end`}>
+    <section className={`Footer relative z-50 overflow-hidden py-10 bg-slate-100 float-end w-full`}>
             <div className="relative z-10 mx-auto max-w-7xl px-4">
                 <div className="-m-6 flex flex-wrap">
                     <div className="w-full p-6 md:w-1/2 lg:w-5/12">

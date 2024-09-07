@@ -2,12 +2,37 @@ import React ,{useEffect,useRef} from "react";
 import img2 from "..//../assets/img.png";
 import RegisterPage from "..//../componetes/pages/signup/RegisterPage";
 import FlickityCarousel from "../HomePage/LendingPage.jsx";
+import LocomotiveScroll from "locomotive-scroll"
 import Flickity from "flickity";
+import Footer from "../Footer/Footer.jsx"
 import "..//../App.css"
 import { gsap } from "gsap";
 
 function Homepage() {
   const downbtn = useRef(null)
+  //  const scrollRef = useRef(null);
+
+
+
+
+
+  // useEffect(() => {
+  //   // Initialize Locomotive Scroll
+  //   const scroll = new LocomotiveScroll({
+  //     el: scrollRef.current,
+  //     smooth: true,
+  //     smoothMobile: true, // Enable smooth scrolling on mobile
+  //     inertia: 0.8, // Inertia-based smooth scrolling
+  //     getDirection: true, // Track scroll direction (useful for triggering effects)
+  //     getSpeed: true, // Track scroll speed
+  //     reloadOnContextChange: true, // Reload on content changes
+  //   });
+  
+  //   // Clean up on component unmount
+  //   return () => {
+  //     scroll.destroy();
+  //   };
+  // }, []);
 
 
 
@@ -21,12 +46,15 @@ function Homepage() {
       transition: "linear 0.5s",
     });
   });
+
+
   return (
     // page2
     <>
+    <div className="relative z-50">
       <div><FlickityCarousel /></div>
-      <a href="#registerPage"><i ref={downbtn} class="ri-arrow-down-wide-line bg-green-600 py-3 px-4 rounded-full absolute  z-50 mt-[-100px]"></i></a>
-      <div className="butn bg-yellow-200 relative z-40 pb-5">
+      <a href="#registerPage"><i ref={downbtn} class="ri-arrow-down-wide-line bg-green-600 py-3 px-4 absolute z-50 rounded-full mt-[-100px]"></i></a>
+      <div className="butn bg-yellow-200 relative z-40  mt-20 pb-6">
         <h1 className="font-semibold">Here's how it works <i class="ri-arrow-down-wide-line"></i></h1>
       </div>
       <div className="page2 flex items-center justify-between h-[100vh] w-full bg-yellow-200 px-20">
@@ -157,7 +185,7 @@ function Homepage() {
         </div>
       </div>
 
-      <div className="page4">
+      <div className="page4 pb-10">
         <img className="w-full absolute z-10" src={img2} alt="" />
         <div className="absolute z-20 bg-gray-950 opacity-75 h-[90vh] w-full"></div>
         <div className="relative z-50 flex items-center justify-between px-80">
@@ -176,6 +204,10 @@ function Homepage() {
             <RegisterPage />
           </div>
         </div>
+      </div>
+      <div className="w-full mt-24 flex items-center justify-center">
+      <Footer />
+      </div>
       </div>
     </>
   );
