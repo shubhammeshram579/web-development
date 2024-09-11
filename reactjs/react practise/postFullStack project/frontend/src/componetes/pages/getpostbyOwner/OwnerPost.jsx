@@ -3,39 +3,31 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import LocomotiveScroll from "locomotive-scroll";
-import { Contenier, SharePost } from "..//../index.js";
+import { Contenier, SharePost, Footer } from "..//../index.js";
 import CreatedPosts from "./CreatedPosts.jsx";
 import SavePosts from "./SavePosts.jsx";
+import "..//..//../App.css";
 
-const OwnerPost = ({ userId }) => {
+
+
+const OwnerPost = () => {
   const scrollRef2 = useRef(null);
   const scrollInstance = useRef(null); // Keep track of Locomotive Scroll instance
   const [currentUser, setCurrentUser] = useState([]);
   const [activeSection, setActiveSection] = useState("created");
+  const [visible, setVisible] = useState(false);
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
   const [loading, setLoading] = useState(true);
   const postUrl = window.location.href;
 
-  // Initialize Locomotive Scroll
-  useEffect(() => {
-    if (scrollRef2.current) {
-      scrollInstance.current = new LocomotiveScroll({
-        el: scrollRef2.current,
-        smooth: true,
-        smoothMobile: true, // Enable smooth scrolling on mobile
-        inertia: 1, // Inertia-based smooth scrolling
-        getDirection: true, // Track scroll direction
-        getSpeed: true, // Track scroll speed
-        multiplier: 1.5, // Scroll speed multiplier
-      });
 
-      // Clean up Locomotive Scroll on component unmount
-      return () => {
-        if (scrollInstance.current) {
-          scrollInstance.current.destroy();
-        }
-      };
-    }
+
+
+   // Animation effect
+   useEffect(() => {
+    setTimeout(() => {
+      setVisible(true);
+    }, 2000);
   }, []);
 
   // Fetch current user data
@@ -66,6 +58,8 @@ const OwnerPost = ({ userId }) => {
     fetchCurrentUser();
   }, [accessToken]);
 
+
+  // handel savepost and create post section
   const handleSectionChange = (section) => {
     setActiveSection(section);
 
@@ -73,18 +67,51 @@ const OwnerPost = ({ userId }) => {
     if (scrollInstance.current) {
       setTimeout(() => {
         scrollInstance.current.update();
-      }, 100); // Add a slight delay to ensure content has rendered
+      }, 200); // Add a slight delay to ensure content has rendered
     }
   };
 
-  if (loading) return <div className="py-[90vh]">Loading...</div>;
+  // Initialize Locomotive Scroll
+  useEffect(() => {
+    if (scrollRef2.current) {
+      scrollInstance.current = new LocomotiveScroll({
+        el: scrollRef2.current,
+        smooth: true,
+        smoothMobile: true, // Enable smooth scrolling on mobile
+        inertia: 1, // Inertia-based smooth scrolling
+        getDirection: true, // Track scroll direction
+        getSpeed: true, // Track scroll speed
+        // multiplier: 1.5, // Scroll speed multiplier
+      });
+
+      // Clean up Locomotive Scroll on component unmount
+      return () => {
+        if (scrollInstance.current) {
+          scrollInstance.current.destroy();
+        }
+      };
+    }
+  }, []);
+
+
+  if (loading) return <div className="py-[100vh]">Loading...</div>;
   if (!currentUser.fullname) {
-    return <div>Loading...</div>;
+    return <div className="py-[100vh]">Loading...</div>;
   }
 
   return (
-    <div className="h-auto w-full py-40 bg-gray-100 " ref={scrollRef2}>
-      <div className="flex items-center justify-center flex-col">
+    
+    <div
+      className={`w-full h-full  bg-slate-100 relative z-30 scroll-smooth`}
+      // ref={scrollRef2}
+      // data-scroll
+    >
+      <div
+        className={`Ownerpage pt-40 flex items-center justify-center flex-col ${
+          visible ? "visible" : ""
+        } `}
+        ref={scrollRef2}
+      >
         <h1 className="w-10 h-10 p-16 rounded-full bg-gray-400 flex items-center justify-center font-bold text-xl mb-5">
           {currentUser.fullname[0]}
         </h1>
@@ -106,8 +133,7 @@ const OwnerPost = ({ userId }) => {
           </Link>
         </div>
 
-        {/* Section buttons */}
-        <div className="button-group flex items-center justify-center gap-5 font-bold mt-[150px]">
+        <div className="button-group flex items-center justify-center gap-5 font-bold pt-10">
           <button
             onClick={() => handleSectionChange("created")}
             className={
@@ -129,8 +155,7 @@ const OwnerPost = ({ userId }) => {
             Saved
           </button>
         </div>
-
-        <div className="content">
+        <div className="h-full pt-10">
           {activeSection === "created" && (
             <div className="created-posts">
               <CreatedPosts />
@@ -144,7 +169,9 @@ const OwnerPost = ({ userId }) => {
           )}
         </div>
       </div>
+  
     </div>
+   
   );
 };
 

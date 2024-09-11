@@ -72,7 +72,7 @@ function LoginFns() {
           <div>
             <Input
               label="Email:"
-              placeholder="Enter email address"
+              placeholder="labham123@gmail.com"
               type="email"
               {...register("email", {
                 required: "email required",
@@ -86,7 +86,7 @@ function LoginFns() {
             <Input
               label="Password"
               type="password"
-              placeholder="esnter password"
+              placeholder="123456"
               {...register("password", {
                 required: "password required",
               })}

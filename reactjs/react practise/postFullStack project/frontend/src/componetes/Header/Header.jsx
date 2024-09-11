@@ -5,25 +5,30 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import LogoutBtn from "./LogoutBtn.jsx";
+import "..//../ResonsivePage.css"
 import ChatSearchBar from "../ChatSearchbar.jsx";
 import axios from "axios";
 import { NotificationContext } from "../NotificationPost/NotificationContext.jsx";
 
 import io from "socket.io-client";
-
 const socket = io("http://localhost:8000");
 
+
+
+
+
 function Header({
-  showNotifications,
+// showNotifications,
   setShowNotifications,
   showMassage,
   // setShowMassage,
   // notify
 }) {
-  const [currentUser ,setCurrentUser] = useState([])
 
+  const [currentUser ,setCurrentUser] = useState([])
   const { notificationCount } = useContext(NotificationContext);
   const [showMessages, setShowMessages] = useState(false);
+  const [ownerUser, setOwnerUser] = useState(false);
  
   // authstatus user is login or not
   const authStatus = useSelector((state) => state.auth.isLoggedIn);
@@ -74,7 +79,7 @@ function Header({
 // notication buttnet hendeler
   const handleNotificationsClick = () => {
       setShowNotifications((prev) => !prev);
-    // setShowMassage(false); // Hide messages when showing notifications
+    // showMessages(null); // Hide messages when showing notifications
   };
 
 
@@ -89,14 +94,31 @@ function Header({
   const handleMessagesClick2 = () => {
     setShowMessages((prevState) => {
       const newState = !prevState;
+      
       if (newState) {
         navigate("/message");
+        // showNotifications(false)
       } else {
         navigate("/");
+        // showNotifications(false)
       }
       return newState;
     });
   };
+
+
+  // massage butten hendaler
+  // const handleUserClick2 = () => {
+  //   setOwnerUser((prevState) => {
+  //     const newState = !prevState;
+  //     if (newState) {
+  //       navigate(`/getPost/${user._id}`);
+  //     } else {
+  //       navigate("/");
+  //     }
+  //     return newState;
+  //   });
+  // };
 
 
   if (loading) return <div className="py-[90vh]">Loading...</div>;
@@ -139,12 +161,12 @@ function Header({
 
   return (
     <header
-      className={"bg-slate-100 py-8 fixed w-full top-0 z-50 font-semibold px-20"}
+      className={"navbar bg-slate-100 py-8 fixed top-0 w-full z-50 font-semibold px-20"}
     >
       {/* <Contenier> */}
         <nav className={"flex items-center justify-between"}>
           <div className="flex items-center justify-around gap-20">
-            <Link to="/">
+            <Link to="/" className="navitem">
               <Logo />
             </Link>
 
@@ -152,7 +174,7 @@ function Header({
               <Link
                 to="/"
                 active={true}
-                className="inline-block py-2 duration-200 bg-black text-white px-6 rounded-full"
+                className="navitem inline-block py-2 duration-200 bg-black text-white px-6 rounded-full"
               >
                 Home
               </Link>
@@ -164,7 +186,7 @@ function Header({
               <Link
                 to="/addpost"
                 active={authStatus}
-                className="inline-block px-2 py-3 duration-200 hover:bg-blue-100 rounded-full"
+                className="navitem inline-block px-2 py-3 duration-200 hover:bg-blue-100 rounded-full"
               >
                 Create
               </Link>
@@ -179,10 +201,7 @@ function Header({
 
           {authStatus && (
             <button onClick={handleNotificationsClick}>
-              {showNotifications ? (
-                "Hide Notifications"
-              ) : (
-                <div className="flex items-center">
+              <div className="flex items-center">
                   <i class="fa-solid fa-bell text-xl inline-block px-2 py-2 duration-200 hover:bg-blue-100 rounded-full"></i>
 
                   {/* {notification.length === 0 ? null : ( */}
@@ -191,28 +210,49 @@ function Header({
                     </div>
                   {/* )} */}
                 </div>
-              )}
+
+            </button>
+          )}
+          
+          {/* {authStatus && (
+            <button onClick={handleUserClick2}>
+              <div className="flex items-center">
+              <h1 className="font-semibold uppercase bg-gray-300 px-4 py-2 rounded-full hover:bg-slate-300">
+          {user.fullname[0]}
+        </h1>
+                </div>
+
+            </button>
+          )} */}
+
+
+
+          {authStatus && (
+            <button onClick={handleMessagesClick2} className="navitem">
+            
+                <i class="fa-solid fa-comment-dots text-xl inline-block px-2 py-2 duration-200 hover:bg-blue-100 rounded-full"></i>
+  
             </button>
           )}
 
-          {authStatus && (
-            <button onClick={handleMessagesClick2}>
+            {/* {authStatus && (
+            <button onClick={handleUserClick2}>
               {showMassage ? (
                 "Hide Massage"
               ) : (
                 <i class="fa-solid fa-comment-dots text-xl inline-block px-2 py-2 duration-200 hover:bg-blue-100 rounded-full"></i>
               )}
             </button>
-          )}
+          )} */}
 
-          <ul className={"flex items-center justify-between gap-5"}>
+          <ul className={"navitem flex items-center justify-between gap-5"}>
             
             {navItems
               .filter((item) => item.active)
               .map((item) => (
                 <li key={item.name}>
                   <button
-                    onClick={() => navigate(item.slug)}
+                    onClick={() => {navigate(item.slug)}}
                     className={
                       "inline-block px-auto py-2 p-2 duration-200 hover:bg-blue-200 rounded-full"
                     }

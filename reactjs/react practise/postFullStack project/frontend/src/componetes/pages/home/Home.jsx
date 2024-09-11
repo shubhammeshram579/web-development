@@ -4,11 +4,13 @@ import { useSelector } from "react-redux";
 import { Contenier } from "..//../index.js";
 import { Link } from "react-router-dom";
 import "..//..//../App.css";
-// import "..//..//../App.js";
-import { SharePost, SavePostButton, OptionsCard } from "..//../index.js";
-import Notification from "..//../NotificationPost/NotificationPage.jsx";
-import Header from "..//../Header/Header.jsx";
-import Homepage from "..//../HomePage/Homepage.jsx"
+import {
+  SharePost,
+  SavePostButton,
+  OptionsCard,
+  Footer,
+} from "..//../index.js";
+import Homepage from "..//../HomePage/Homepage.jsx";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -20,8 +22,6 @@ const Home = () => {
 
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
   const user = useSelector((state) => state.auth.user?.user);
-
-
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -51,10 +51,8 @@ const Home = () => {
     setIsHidden(!isHidden);
   };
 
-
-
-   // Function to randomly decide if a margin should be applied
-   const shouldApplyMargin = () => Math.random() < 0.5; // 50% chance to apply margin
+  // Function to randomly decide if a margin should be applied
+  const shouldApplyMargin = () => Math.random() < 0.5; // 50% chance to apply margin
 
   if (loading) return <div className="py-[90vh]">Loading...</div>;
   if (!posts) {
@@ -65,8 +63,7 @@ const Home = () => {
   if (posts.length === 0) {
     return (
       <Contenier>
-      <div className="text-center">
-        
+        <div className="text-center">
           {/* <div className="flex flex-wrap p-[23vh]">
             <div className="p-2 w-full">
               <h1 className="text-2xl font-bold hover:text-gray-500">
@@ -76,83 +73,92 @@ const Home = () => {
             </div>
           </div> */}
           <Homepage />
-        
-      </div>
+        </div>
       </Contenier>
     );
   }
 
-
   return (
     <Contenier>
-      <div className="w-full py-20 mt-14 px-20 bg-slate-100">
-        
-      <ul className="flex flex-row items-center justify-between flex-wrap">
-      {posts.map((post, index) => {
-        // Use a random function to decide margin for every other card
-        const randomMargin = index % 2 !== 0 ? '70px' : '0px'; // Stagger every second post card with a margin of 30px
-        // const margingbuttem = index %  2 === 0 ? '30vh' : '0px'; // Stagger every second post card with a margin of 30px
-        // const butten = index % 2 !== 0 ? '--70px' : ''; // Stagger every second post card with a margin of 30px
+      <div className="w-full h-full relative z-40 pt-32 bg-slate-100 flex items-center justify-between flex-col">
+        <ul className="flex flex-row items-center justify-between flex-wrap pb-24  px-20">
+          {posts.map((post, index) => {
+            // Use a random function to decide margin for every other card
+            const randomMargin = index % 2 !== 0 ? "70px" : "0px"; // Stagger every second post card with a margin of 30px
+            // const margingbuttem = index %  2 === 0 ? '30vh' : '0px'; // Stagger every second post card with a margin of 30px
+            // const butten = index % 2 !== 0 ? '--70px' : ''; // Stagger every second post card with a margin of 30px
 
-        return (
-          <li
-            key={post._id}
-            className="card relative mb-[-55px] rounded-2xl"
-            
-            
-            style={{ marginTop: randomMargin }} // Apply staggered top margin
-            onMouseEnter={() => setHoveredIndex(index)} // Set hover state on mouse enter
-            onMouseLeave={() => setHoveredIndex(null)} // Reset hover state on mouse leave
-          >
-            <Link to={`/getPostByID2/${post._id}`} className="relative group">
-              <img
-                className={`cardImg  w-[14vw] h-[50vh] object-cover object-center transition duration-300 rounded-3xl ${
-                  hoveredIndex === index ? 'opacity-50' : 'opacity-100'
-                }`}
-                src={post.postImg}
-                alt="image"
-              />
-              {/* Overlay for light dark effect on hover */}
-              {hoveredIndex === index && (
-                <div className="absolute inset-0 bg-black opacity-45 rounded-3xl transition-opacity duration-300"></div>
-              )}
-            </Link>
+            return (
+              <li
+                key={post._id}
+                className="card relative mb-[-55px] rounded-2xl"
+                style={{ marginTop: randomMargin }} // Apply staggered top margin
+                onMouseEnter={() => setHoveredIndex(index)} // Set hover state on mouse enter
+                onMouseLeave={() => setHoveredIndex(null)} // Reset hover state on mouse leave
+              >
+                <Link
+                  to={`/getPostByID2/${post._id}`}
+                  className="relative group"
+                >
+                  <img
+                    className={`cardImg  w-[14vw] h-[50vh] object-cover object-center transition duration-300 rounded-3xl ${
+                      hoveredIndex === index ? "opacity-50" : "opacity-100"
+                    }`}
+                    src={post.postImg}
+                    alt="image"
+                  />
+                  {/* Overlay for light dark effect on hover */}
+                  {hoveredIndex === index && (
+                    <div className="absolute inset-0 bg-black opacity-45 rounded-3xl transition-opacity duration-300"></div>
+                  )}
+                </Link>
 
-            {/* Save button with conditional opacity */}
-            <h1
-              className={`SaveBtn absolute ml-[150px] mt-[-450px] mb-[500px] py-1 px-4 bg-red-500 rounded-3xl transition-opacity duration-300 text-white ${
-                hoveredIndex === index ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <SavePostButton userId={user._id} postId={post._id} />
-            </h1>
+                {/* Save button with conditional opacity */}
+                <h1
+                  className={`SaveBtn absolute ml-[150px] mt-[-450px] mb-[500px] py-1 px-4 bg-red-500 rounded-3xl transition-opacity duration-300 text-white ${
+                    hoveredIndex === index ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <SavePostButton userId={user._id} postId={post._id} />
+                </h1>
 
-            {/* Icons with conditional opacity */}
-            <div
-              className={`selectbtn flex items-center justify-between absolute mt-[-80px] pl-4 mb-14 transition-opacity duration-300 ${
-                hoveredIndex === index ? 'opacity-100' : 'opacity-0'
-                // index % 2 !== 0 ? 'mt-[-70px]' : ''
-              }`}
-            > 
-            <i class="ri-arrow-right-up-line bg-white flex items-center justify-center px-6 py-[8px] rounded-3xl gap-2 text-lg"> behance</i>
-            <div className="flex items-center justify-center gap-4 ml-[20px]">
-              <div className="bg-white rounded-full mt-1">
-              <SharePost postUrl={post._id} postTitle={post.title} />
-              </div>
-              
-            
-              <i className="fa-solid fa-ellipsis cursor-pointer mr-5 text-2xl bg-white px-2 py-[3px] mt-[5px] rounded-full" onClick={() => setVisible(!visible)}></i>
-              <OptionsCard onHide={handleHide} visible={visible}  postId={post._id}/>
-              </div>
-            </div>
+                {/* Icons with conditional opacity */}
+                <div
+                  className={`selectbtn flex items-center justify-between absolute mt-[-80px] pl-4 mb-14 transition-opacity duration-300 ${
+                    hoveredIndex === index ? "opacity-100" : "opacity-0"
+                    // index % 2 !== 0 ? 'mt-[-70px]' : ''
+                  }`}
+                >
+                  <i class="ri-arrow-right-up-line bg-white flex items-center justify-center px-6 py-[8px] rounded-3xl gap-2 text-lg">
+                    {" "}
+                    behance
+                  </i>
+                  <div className="flex items-center justify-center gap-4 ml-[20px]">
+                    <div className="bg-white rounded-full mt-1">
+                      <SharePost postUrl={post._id} postTitle={post.title} />
+                    </div>
 
-            <h2 className="text-center mt-5 font-bold">{post.title}</h2>
-            <p className="text-center">{post.description}</p>
-          </li>
-        );
-      })}
-    </ul>
+                    <i
+                      className="fa-solid fa-ellipsis cursor-pointer mr-5 text-2xl bg-white px-2 py-[3px] mt-[5px] rounded-full"
+                      onClick={() => setVisible(!visible)}
+                    ></i>
+                    <OptionsCard
+                      onHide={handleHide}
+                      visible={visible}
+                      postId={post._id}
+                    />
+                  </div>
+                </div>
 
+                <h2 className="text-center mt-5 font-bold">{post.title}</h2>
+                <p className="text-center">{post.description}</p>
+              </li>
+            );
+          })}
+        </ul>
+        <div className="w-full">
+          <Footer />
+        </div>
       </div>
     </Contenier>
   );
@@ -188,8 +194,6 @@ export default Home;
               </div> */
 }
 
-
-
 // useEffect(() => {
 //   // Adding an event listener directly to the button element
 //   const buttonElement = buttonRef.current;
@@ -215,10 +219,8 @@ export default Home;
 //   };
 // }, []); // Empty dependency array ensures this effect runs only once after the initial render
 
-
-
-
-{/* <ul className="flex flex-row items-center justify-around flex-wrap">
+{
+  /* <ul className="flex flex-row items-center justify-around flex-wrap">
           {posts.map((post) => (
             <li key={post._id} className="card py-10 px-2 rounded-lg">
               
@@ -239,4 +241,5 @@ export default Home;
                 <p className="text-center">{post.description}</p>
             </li>
           ))}
-        </ul> */}
+        </ul> */
+}

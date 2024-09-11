@@ -7,16 +7,27 @@ import { Contenier, SharePost } from "..//../index.js";
 import FollowButton from "..//../FollowBtn.jsx";
 import CreatedPosts from "..//getpostbyOwner/CreatedPosts.jsx";
 import SavePosts from "..//getpostbyOwner/SavePosts.jsx";
+import "..//..//../App.css"
 
 const GetPotsByUserProfile = () => {
   const { userId } = useParams();
   const [getUser, setGetUser] = useState([]);
-  // const [getPost, setGetPost] = useState([]);
+  const [visible ,setVisible] = useState(false)
   const [activeSection, setActiveSection] = useState("created");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
   const targetId = useSelector((state) => state.auth.user?.user._id);
+
+
+
+  // annimation effect
+  useEffect(() => {
+    setTimeout(()=>{
+      setVisible(true)
+    },500)
+
+  },[])
 
   useEffect(() => {
     const fatchGetUser = async () => {
@@ -54,11 +65,12 @@ const GetPotsByUserProfile = () => {
   };
 
   return (
-    <>
-    <div className="mt-32">
+ 
+   
+       
+    <div className="pt-40 bg-slate-100 w-full h-full ">
       {/* <div>GetPotsByUserProfile: {getUser.fullname}</div> */}
-      <Contenier>
-        <div className="flex items-center justify-center flex-col">
+        <div className={`Ownerpage flex items-center justify-center flex-col ${visible ? "visible" : ""}`}>
           <h1 className="w-10 h-10 p-16 rounded-full bg-gray-400 flex items-center justify-center font-bold text-xl mb-5">
             {getUser.fullname?.[0]}
           </h1>
@@ -116,9 +128,13 @@ const GetPotsByUserProfile = () => {
             </div>
           </div>
         </div>
-      </Contenier>
+      {/* </Contenier> */}
+  
+    
       </div>
-    </>
+      
+     
+  
   );
 };
 

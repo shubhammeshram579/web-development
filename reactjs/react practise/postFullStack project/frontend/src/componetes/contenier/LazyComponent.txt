@@ -1,0 +1,8 @@
+// LazyComponent.js
+import React from 'react';
+
+const LazyComponent = () => {
+  return <div className='h-[100vh]'>This component is loaded lazily!</div>;
+};
+
+export default LazyComponent;

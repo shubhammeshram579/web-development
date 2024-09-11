@@ -39,15 +39,17 @@ const CreatedPosts = () => {
     };
 
     fetchPosts();
+   
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="h-[100vh]">Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
+    //  <Contenier>
     <div className="py-[50px] flex flex-wrap items-center justify-center">
       {/* <h1>Posts by Owner {posts.length}</h1> */}
-      {/* <Contenier> */}
+     
         <ul className="flex justify-center items-center gap-20 flex-row flex-wrap">
           {posts.map((post) => (
             <li key={post._id}>
@@ -68,8 +70,9 @@ const CreatedPosts = () => {
             </li>
           ))}
         </ul>
-      {/* </Contenier> */}
+    
     </div>
+    // </Contenier>
   );
 };
 

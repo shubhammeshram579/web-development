@@ -12,7 +12,7 @@ function Footer() {
     
 
   return (
-    <section className={`Footer relative z-50 overflow-hidden py-10 bg-slate-100 float-end w-full`}>
+    <section className={`Footer relative z-40  py-10 bg-slate-100 float-end w-full`}>
             <div className="relative z-10 mx-auto max-w-7xl px-4">
                 <div className="-m-6 flex flex-wrap">
                     <div className="w-full p-6 md:w-1/2 lg:w-5/12">
@@ -145,6 +145,7 @@ function Footer() {
                 </div>
             </div>
         </section>
+        
   )
 }
 

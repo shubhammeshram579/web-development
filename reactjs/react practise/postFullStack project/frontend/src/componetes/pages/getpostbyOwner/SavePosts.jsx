@@ -42,12 +42,13 @@ const SavePosts = () => {
   
     },[]);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <div className='h-[100vh]'>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
     
   return (
+    // <Contenier>
     <div>
-        {/* <Contenier> */}
+       
          <ul className='flex justify-center items-center gap-20 flex-row pt-14 flex-wrap'>
         {savePost.map(post => (
           <li key={post._id}>
@@ -63,9 +64,10 @@ const SavePosts = () => {
         ))}
       </ul>
 
-      {/* </Contenier> */}
+ 
       
     </div>
+    // {/* </Contenier> */}
   )
 }
 

@@ -5,15 +5,32 @@ import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { useParams, useNavigate ,Link} from "react-router-dom";
 import {Contenier} from "..//../index.js"
+import "..//..//../App.css"
 
 const UpdateUser = () => {
   // const {userId} = useParams()
   const {register,handleSubmit,reset, setValue, formState: { errors }} = useForm();
+  const [visible, setVisible] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const accessToken = useSelector((state) => state.auth.user.accessToken);
   const CurrentUId = useSelector((state) => state.auth.user.user);
+
+
+
+
+
+
+
+
+
+  useEffect(() => {
+    // Delay the visibility state change to trigger smooth transition
+    setTimeout(() => {
+        setVisible(true);
+    }, 100); // Delay for smooth transition
+  }, []);
 
 
   useEffect( () =>{
@@ -74,9 +91,8 @@ const UpdateUser = () => {
   return (
     <>
     <div>
-    <Contenier>
-      
-      <div className="mt-44 pb-10 bg-slate-200 px-10 py-5 mb-10 rounded-3xl">
+    {/* <Contenier> */}
+      <div className={`UpdatedUser mt-40 pb-7 bg-slate-200 px-10 py-5 mb-10 rounded-3xl ${visible ? "visible" : ""}`}>
       <Link to={`/getPost/${CurrentUId._id}`}><i class="ri-arrow-left-fill text-xl text-red-500"></i></Link>
       <div className="text-center font-bold mt-10">Update User</div>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -124,7 +140,7 @@ const UpdateUser = () => {
         
       </div>
 
-      </Contenier>
+      {/* </Contenier> */}
       </div>
       
      

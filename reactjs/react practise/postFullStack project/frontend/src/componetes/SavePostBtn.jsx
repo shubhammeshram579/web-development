@@ -25,7 +25,7 @@ const SavePostButton = ({ userId, postId }) => {
       console.log(response.data)
       alert(response.data.message);
     } catch (error) {
-      alert('Error saving post');
+      alert('Error Allready saved post');
     }
   };
 

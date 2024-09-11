@@ -22,7 +22,7 @@ const navigate = useNavigate()
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="search-bar flex items-center">
+    <form onSubmit={handleSubmit(onSubmit)} className="search-bar flex items-center ">
       <input
         type="text"
         className='w-[50vw] py-4 rounded-s-3xl bg-gray-300'

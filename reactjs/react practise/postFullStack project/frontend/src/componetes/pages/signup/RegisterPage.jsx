@@ -13,7 +13,7 @@ function RegisterPage() {
 
 
   return (
-    <div className={`RegisterPage mt-32 ${visible ? "visible" : ""}`}>
+    <div className={`RegisterPage mt-32 py-10 ${visible ? "visible" : ""}`}>
       <RegisterComponate />
     </div>
   )

@@ -1,5 +1,5 @@
 import React  from "react";
-import { Header, Footer } from "./componetes";
+import { Header, Footer, Contenier } from "./componetes";
 import { useState, useEffect ,useRef} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
@@ -7,6 +7,7 @@ import axios from "axios";
 import { login as authLogin } from "..//store/AuthSlice.js";
 import { logout as authLogout } from "..//store/AuthSlice.js";
 import LocomotiveScroll from "locomotive-scroll"
+import SmoothScrolling from "./componetes/contenier/SmoothScroling.jsx"
 import "./App.css";
 // import Notification from "./componetes/Header/Notification.jsx";
 
@@ -103,10 +104,11 @@ if (loading) {
   return (
     <NotificationProvider>
       <div className=" w-full h-full">
-        <div className="flex justify-normal flex-col gap-4 h-full">
+        <div className="flex justify-normal flex-col">
           {/* <NotificationProvider> */}
           <Header
             setShowNotifications={setShowNotifications}
+            showNotifications={showNotifications}
             // setShowMassage={setShowMassage}
             // showMassage={showMassage}
             // notify={notify}
@@ -155,14 +157,23 @@ if (loading) {
             />
           )}
         </div> */}
+         
+         
           <main  className="flex items-centre justify-center">
             <Outlet />
           </main>
        
           <Footer />
+  
+          
         </div>
+
+        
       </div>
+      
     </NotificationProvider>
+  
+   
   );
 }
 

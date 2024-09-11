@@ -9,14 +9,18 @@ import { Input, SharePost, SavePostButton } from "..//../index.js";
 import OptionsCard from "..//../OptionCard.jsx";
 import FollowButton from "..//../FollowBtn.jsx";
 import { useNavigate } from "react-router-dom";
-import Home from '../home/Home.jsx';
+import Home from "../home/Home.jsx";
+import "..//..//../App.css"
 
 const HomePagePost2 = () => {
   const { postId } = useParams();
   const [post, setPost] = useState([]);
   const [comment, setComment] = useState([]);
   const [currentUser, setCurrentUser] = useState([]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  // animation
+  const [visible1, setVisible1] = useState(false);
+  
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const {
@@ -34,6 +38,16 @@ const HomePagePost2 = () => {
   const [isHidden, setIsHidden] = useState(false);
 
   // console.log("posts",post)
+
+
+
+  // Annimation effect
+  useEffect(() => {
+    // Delay the visibility state change to trigger smooth transition
+    setTimeout(() => {
+      setVisible1(true);
+    }, 500); // Delay for smooth transition
+  }, []);
 
   // get post
   useEffect(() => {
@@ -132,6 +146,9 @@ const HomePagePost2 = () => {
     }
   };
 
+
+
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   if (!post || !post.owner || !post.owner.fullname || !currentUser.fullname) {
@@ -159,11 +176,18 @@ const HomePagePost2 = () => {
     }
   };
 
+
+
+  
+
+ 
+
   return (
-    <Contenier>
-      <div className="mt-28 px-20">
-        <div className="flex items-center justify-between">
-        <div className="font-bold text-[25px]">
+    // <Contenier>
+    <div className={` w-full h-full min-h-[100vh] `}>
+      <div className={`CreatePost mt-28 px-20 flex items-center justify-evenly flex-col pt-5 ${visible1 ? "visible1" : ""} `}>
+        <div className="flex items-center justify-between w-full">
+          <div className="font-bold text-[25px]">
             <Link to={`/getPost/${currentUser._id}`}>
               <i class="ri-arrow-left-fill"></i>
             </Link>
@@ -187,7 +211,7 @@ const HomePagePost2 = () => {
           </div>
         </div>
 
-        <div className="bg-slate-200 w-[900px] flex items-center rounded-3xl ml-[400px]">
+        <div className="bg-slate-200 w-[900px] flex items-center rounded-3xl">
           <div className="py-5 flex items-start justify-start">
             <div
               className={`transition-colors duration-500 rounded-lg ${
@@ -214,7 +238,11 @@ const HomePagePost2 = () => {
                     className="fa-solid fa-ellipsis cursor-pointer text-[30px]"
                     onClick={() => setVisible(!visible)}
                   ></i>
-                  <OptionsCard onHide={handleHide} visible={visible} postId={postId}/>
+                  <OptionsCard
+                    onHide={handleHide}
+                    visible={visible}
+                    postId={postId}
+                  />
                 </div>
 
                 {/* profile and save post card */}
@@ -270,8 +298,10 @@ const HomePagePost2 = () => {
                     key={c._id}
                     className="flex items-start justify-start gap-2"
                   >
-                    <h1 className="font-semibold text-lg">{c.owner.fullname}</h1>
-                    <p >{c.content} !</p>
+                    <h1 className="font-semibold text-lg">
+                      {c.owner.fullname}
+                    </h1>
+                    <p>{c.content} !</p>
                   </div>
                 ))}
               </div>
@@ -301,12 +331,16 @@ const HomePagePost2 = () => {
           </div>
         </div>
       </div>
-      { !post.isSaved ? null :(<div>
-        <h1 className="text-center mt-20 font-medium text-3xl">More to explore</h1>
-        <Home />
-      </div>)}
-    </Contenier>
-
+      {/* {!post.isSaved ? null : (
+        <div>
+          <h1 className="text-center mt-20 font-medium text-3xl">
+            More to explore
+          </h1>
+          <Home />
+        </div>
+      )} */}
+    </div>
+    // </Contenier>
   );
 };
 

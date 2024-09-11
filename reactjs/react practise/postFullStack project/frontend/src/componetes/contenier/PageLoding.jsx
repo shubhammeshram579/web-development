@@ -3,6 +3,7 @@ import {Contenier} from "./Contenier.jsx"
 // import {PostsByOwner} from "../pages/getpostbyOwner/OwnerPost.jsx"
 // import {Header} from "../Header/Header.jsx"
 import {Chatbox} from "../Header/Chatbox.jsx"
+import HomePagePost from "../pages/home/HomePagePost.jsx"
 import '..//../App.css';
 
 function MyPage({ show }) {
@@ -11,6 +12,7 @@ function MyPage({ show }) {
       <div className="page">
         <Contenier />
         <Chatbox />
+        <HomePagePost />
         </div>
     </CSSTransition>
   );

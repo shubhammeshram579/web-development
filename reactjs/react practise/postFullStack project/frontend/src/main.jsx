@@ -28,6 +28,7 @@ import NewMessage from "./componetes/Header/NewMessage.jsx"
 import Massage from "./componetes/Header/Massage.jsx"
 import Chatbox from "./componetes/Header/Chatbox.jsx"
 import ShareProfile from "./componetes/Header/ShareProfile.jsx"
+// import SmoothScrolling from "./componetes/contenier/SmoothScroling.jsx"
 
 
 
@@ -196,8 +197,10 @@ const router = createBrowserRouter([
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    {/* <SmoothScrolling> */}
     <Provider store={store}>
     <RouterProvider router={router} />
     </Provider> 
+    {/* </SmoothScrolling> */}
   </React.StrictMode>,
 )

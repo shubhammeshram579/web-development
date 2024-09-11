@@ -48,7 +48,7 @@ const publishPost = AsynceHendler(async (req, res) =>{
         }
 
         // console.log("PostPublish",PostPublish.owner)
-        console.log("PostPublish username",PostPublish)
+        // console.log("PostPublish username",PostPublish)
 
 
         // posts creation notification page feature
@@ -64,22 +64,6 @@ const publishPost = AsynceHendler(async (req, res) =>{
         }))
 
         await Notification.insertMany(notification);
-
-
-         // Emit the 'newPost' event to all followers
-        //  followers.forEach(follower => {
-        //     const recipientSocketId = onlineUsers[follower._id]; // Assuming you have a mechanism to map userId to their socketId
-        //     if (recipientSocketId) {
-        //         io.to(recipientSocketId).emit('newPost', {
-        //             postId: PostPublish._id,
-        //             title: PostPublish.title,
-        //             owner: PostPublish.owner,
-        //             message: `${PostPublish.title} has created a new post.`,
-        //         });
-        //     }
-        // });
-
-      
 
         return res
         .status(200)
@@ -166,7 +150,7 @@ const updatePost = AsynceHendler(async (req, res) => {
             const localfilpath = req.file?.path;
             // const userId = req.user._id;
         
-            console.log(localfilpath)
+            // console.log(localfilpath)
         
             if(!localfilpath){
                 throw new ApiError(404, "localfilpath not found")
@@ -266,8 +250,6 @@ const deletePost = AsynceHendler( async (req, res) => {
     throw new ApiError(500, error.message,"post not delted")
     
    }
-
-
 
 });
 
