@@ -1,0 +1,288 @@
+
+
+#navbar2{
+    display: none;
+}
+
+
+/* #postCard{
+    background-color:green;
+} */
+@media (max-width:767px) {
+
+    /* navbar */
+    #navhead{
+        /* background-color:yellow; */
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        padding-left: 170px;
+
+    }
+
+    #navhead #navitem{
+        background-color: red;
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        gap: 100px;
+        display: none;
+    }
+
+    #navhead #topnavitem{
+        /* background-color: yellow; */
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        margin: 30px;
+
+    }
+
+    #navbar2{
+        display: block;
+        display: flex;
+        align-items: center;
+    }
+
+    #navuser{
+        display: none;
+    }
+
+    #navList{
+        /* background-color: red; */
+        margin-left: 100px;
+    }
+
+    #Logop{
+        /* background-color: green; */
+        /* margin-left: -350px; */
+        width: 100px;
+        margin: 100px;
+        margin-left: -50px;
+    }
+
+
+
+    /* homepost style */
+    #homePost{
+        padding: 0px 40px;
+        /* padding-bottom: 150px; */
+    }
+
+
+
+    #postCard{
+        height: 45vh;
+        width: 42vw;
+        margin-bottom: 2px;
+        /* background-color: red; */
+
+    }
+
+    #postCard img{
+        height: 38vh;
+        width: 42vw;
+
+    }
+
+    #postCard #text1{
+        font-size: 15px;
+        text-align: start;
+        margin-top: -1px;
+        padding-top: 5px;
+        /* background-color: red; */
+        padding-left: 10px;
+    }
+
+    #SavebtnId{
+        background-color: transparent;
+        padding-top: 100px;
+        padding-left: 40px;
+
+    }
+
+
+    #footer{
+        display: none;
+    }
+
+    #footeritem{
+        /* background-color: rebeccapurple; */
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+
+
+    #footeritem ul li{
+        text-size-adjust: 10px;
+        margin-top: -10px;
+    }
+
+
+
+    /* own post page  */
+    #createdPost{
+        /* background-color: red; */
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+
+    }
+
+    #ownpostcard{
+        /* background-color: green; */
+        height: 40vh;
+        width: 42vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+
+    #ownpostcard img{
+        height: 32vh;
+        width: 40vw;
+        object-fit: cover;
+
+    }
+
+
+    /* addpost  */
+    #AddpostForm{
+        /* background-color: red; */
+        height: 45vh;
+        width: 85vw;
+        margin-top: 100px;
+    }
+
+
+    /* notificarion page */
+    #Notification{
+        /* background-color: red; */
+        left: 45%;
+        width: 52vw;
+        height: 75vh;
+
+    }
+
+    #Noticationcard{
+        margin-top: 20px;
+    }
+
+    #masseagebox{
+        /* background-color: red; */
+        width: 62vw;
+        height: 76vh;
+        margin-right: 270px;
+    }
+
+    #masseageboxcard{
+        /* background-color: green; */
+        width: 57vw;
+        height: 74vh;
+    }
+
+    #masseagebox #Sharepage{
+        /* background-color: rebeccapurple; */
+        width: 50vw;
+        margin-top: -20px;
+    }
+
+    #masseagebox #massageItem{
+        /* background-color: yellow; */
+        width: 50vw;
+    }
+
+    #masseagebox #SearchUser{
+        width: 46vw;
+    }
+
+
+    /* userSelect page */
+    #SendMassagepage{
+        /* background-color: red; */
+        width: 57vw;
+        height: 76vh;
+        margin-right: 220px;
+    }
+
+    #SendMassagepageItem{
+        width: 55vw;
+        /* background-color: green; */
+
+    }
+
+
+    #SendMassagepageItem #SearchUser{
+        width: 40vw;
+
+    }
+
+    #sendmessageCard{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #SendMessagesInput{
+        height: 7vh;
+        width: 30vw;
+    }
+
+
+
+
+    /* user chatbox */
+    #chatBox{
+        /* background-color: red; */
+        width: 57vw;
+        height: 76vh;
+        margin-right: 220px;
+
+    }
+
+    #chatMessagebox{
+        /* background-color: green; */
+        /* overflow-y: auto; */
+        height: 56vh;
+    }
+
+    #chatFoter{
+        /* background-color: blue; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2px;
+        width: 56vw;
+    }
+
+
+    #SendChatMessage{
+        height: 6vh;
+        width: 35vw;
+    }
+
+
+    #chatMessagebox::-webkit-scrollbar {
+        display: block;
+        width: 7px;
+        background-color:#fff;
+      }
+  
+      #chatMessagebox::-webkit-scrollbar-thumb {
+        background-color: gray;
+        border-radius: 50px;
+  
+      }
+
+    
+    
+}
+

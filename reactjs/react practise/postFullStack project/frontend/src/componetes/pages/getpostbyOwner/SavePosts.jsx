@@ -4,6 +4,7 @@ import {useSelector} from "react-redux"
 import { Link } from 'react-router-dom';
 import {Contenier} from "..//../index.js"
 import { useParams  ,useLocation} from 'react-router-dom';
+import "..//..//../Responsive.css"
 
 
 const SavePosts = () => {
@@ -47,11 +48,11 @@ const SavePosts = () => {
     
   return (
     // <Contenier>
-    <div>
+    <div id='createdPost'>
        
-         <ul className='flex justify-center items-center gap-20 flex-row pt-14 flex-wrap'>
+         <ul className='flex justify-center items-center gap-10 flex-row pt-14 flex-wrap'>
         {savePost.map(post => (
-          <li key={post._id}>
+          <li key={post._id} id='ownpostcard'>
 
             {/* set condition for url  */}
             <Link to={isUserProfileRoute ? `/getPostByID3/${post._id}`:`/getPostByID/${post._id}`}>

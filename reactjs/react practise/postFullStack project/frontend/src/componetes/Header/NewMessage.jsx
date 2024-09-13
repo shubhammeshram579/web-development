@@ -117,15 +117,15 @@ const NewMessage = () => {
  
 
   return (
-    <div className={`NewMassage w-[22vw] h-[85vh] bg-gray-200 rounded-xl fixed z-50 mt-28 ml-[73%] ${visible? "visible":""}`}>
+    <div id="SendMassagepage" className={`NewMassage w-[22vw] h-[85vh] bg-gray-200 rounded-xl fixed z-50 mt-28 ml-[73%] ${visible? "visible":""}`}>
       <div className="flex items-center justify-between p-4 font-semibold text-2xl">
-        <h1>New Messages</h1>
+        <h1 className="text-xl">New Messages</h1>
         <Link to="/message"><button>
           <h1 className="text-xl">cancel</h1>
         </button></Link>
       </div>
 
-      <div className="flex items-start justify-between gap-[45vh] flex-col px-5">
+      <div id="SendMassagepageItem" className="flex items-start justify-between gap-[45vh] flex-col px-5">
         {/* seearch users */}
         <div className="mt-10">
           <div>
@@ -134,6 +134,7 @@ const NewMessage = () => {
               <input
                 type="text"
                 placeholder="search user"
+                id="SearchUser"
                 className="w-[18vw] h-12 rounded-e-lg bg-green-300"
                 {...register("query")}
               />
@@ -175,11 +176,12 @@ const NewMessage = () => {
 
         {/* sendMessage */}
         {selectedUser && (
-        <div className="flex items-center justify-center gap-5 mt-[-50px]">
+        <div id="sendmessageCard" className="flex items-center justify-center gap-5 mt-[-50px]">
           <i class="ri-tools-fill text-2xl"></i>
           <form onSubmit={(e) => e.preventDefault()}>
             <input
               type="text"
+              id="SendMessagesInput"
               placeholder={`Send message to ${selectedUser.username}`}
               className="w-[15vw] h-16 rounded-full bg-green-300"
               // {...register('message', { required: true })}

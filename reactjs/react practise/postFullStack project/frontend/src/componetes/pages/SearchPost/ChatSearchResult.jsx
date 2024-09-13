@@ -4,6 +4,7 @@ import { useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import "..//..//../App.css";
+import "..//..//../Responsive.css"
 import {
   SharePost,
   SavePostButton,
@@ -53,7 +54,7 @@ const SearchResults = () => {
   return (
     
       <div className="w-full h-full relative z-40 pt-32 bg-slate-100 flex items-center justify-between flex-col">
-        <ul className="flex flex-row items-center justify-between flex-wrap gap-5 pb-24  px-20">
+        <ul id="homePost" className="flex flex-row items-center justify-between flex-wrap gap-5 pb-24  px-20">
           {posts.map((post, index) => {
             // Use a random function to decide margin for every other card
             const randomMargin = index % 2 !== 0 ? "70px" : "0px"; // Stagger every second post card with a margin of 30px
@@ -65,6 +66,7 @@ const SearchResults = () => {
                 style={{ marginTop: randomMargin }} // Apply staggered top margin
                 onMouseEnter={() => setHoveredIndex(index)} // Set hover state on mouse enter
                 onMouseLeave={() => setHoveredIndex(null)} // Reset hover state on mouse leave
+                id="postCard"
               >
                 <Link
                   to={`/getPostByID2/${post._id}`}
@@ -85,6 +87,7 @@ const SearchResults = () => {
 
                 {/* Save button with conditional opacity */}
                 <h1
+                id="SavebtnId"
                   className={`SaveBtn absolute ml-[150px] mt-[-450px] mb-[500px] py-1 px-4 bg-red-500 rounded-3xl transition-opacity duration-300 text-white ${
                     hoveredIndex === index ? "opacity-100" : "opacity-0"
                   }`}
@@ -120,8 +123,8 @@ const SearchResults = () => {
                   </div>
                 </div>
 
-                <h2 className="text-center mt-5 font-bold">{post.title}</h2>
-                <p className="text-center">{post.description}</p>
+                <h2 id="text1" className="text-center mt-5 font-bold">{post.title}</h2>
+                <p id="text1" className="text-center">{post.description}</p>
               </li>
             );
           })}

@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Contenier } from "..//../index.js";
 import { useParams,useLocation } from "react-router-dom";
+import "..//..//../Responsive.css"
 
 const CreatedPosts = () => {
   const {userId} = useParams()
@@ -47,12 +48,12 @@ const CreatedPosts = () => {
 
   return (
     //  <Contenier>
-    <div className="py-[50px] flex flex-wrap items-center justify-center">
+    <div id="createdPost" className="py-[50px] flex flex-wrap items-center justify-center">
       {/* <h1>Posts by Owner {posts.length}</h1> */}
      
-        <ul className="flex justify-center items-center gap-20 flex-row flex-wrap">
+        <ul className="flex items-center gap-10 justify-center flex-row flex-wrap">
           {posts.map((post) => (
-            <li key={post._id}>
+            <li key={post._id} id="ownpostcard">
 
               {/* set condition for url */}
               <Link to={isUserProfileRoute ? `/getPostByID3/${post._id}`:`/getPostByID/${post._id}`}>

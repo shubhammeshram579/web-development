@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import "..//../App.css";
+import "..//../Responsive.css"
 // import {motion} from "framer-motion"
 // import { CSSTransition } from 'react-transition-group';
 
@@ -44,6 +45,7 @@ function Contenier({ children }) {
     <div
       className={`page-container w-full h-full ${visible ? "visible" : ""} `}
       ref={scrollRef}
+      id="Contiener"
     >
       {children}
     </div>

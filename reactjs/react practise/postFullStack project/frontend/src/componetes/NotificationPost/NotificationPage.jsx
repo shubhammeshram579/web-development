@@ -1,6 +1,7 @@
 import React, {useState ,useEffect, createContext,useContext} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { NotificationContext } from './NotificationContext.jsx';
+import "..//../Responsive.css"
 
 
 
@@ -29,8 +30,8 @@ const Notification = ({setShowNotifications,showNotifications})  => {
   
 
   return (
-    <div className={`Notification w-[22vw] h-[80vh] rounded-xl bg-gray-200 fixed z-50 px-5 ${visible ? "visible" : ""}`}>
-    <div className='flex items-start justify-center  flex-col gap-2' >
+    <div id='Notification' className={`Notification w-[22vw] h-[80vh] rounded-xl bg-gray-200 fixed z-50 px-5 ${visible ? "visible" : ""}`}>
+    <div id='Noticationcard' className='flex items-start justify-center  flex-col gap-2' >
       <h1 className='px-2 py-2 font-semibold text-xl'>notification: {notifications.length} </h1>
       <h1 className='font-bold ml-2 mb-5 text-xl'>Updates</h1>
       {notifications.length === 0 ? (

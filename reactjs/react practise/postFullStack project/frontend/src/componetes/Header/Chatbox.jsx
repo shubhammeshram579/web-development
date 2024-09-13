@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import CurrentDateTime from "../Header/CurrentDate.jsx";
+import "..//../Responsive.css"
 // import { formatDistanceToNow } from "date-fns";
 import { format, formatDistanceToNow, isToday } from "date-fns";
 
@@ -296,7 +297,7 @@ const Chatbox = () => {
 
 
   return (
-    <div className={`Chatbox w-[23vw] h-[100vh] bg-gray-200 rounded-xl overflow-hidden fixed z-50 mt-28 ml-[73%]  ${visible ? "visible" : ""}`}>
+    <div id="chatBox" className={`Chatbox w-[23vw] h-[100vh] bg-gray-200 rounded-xl overflow-hidden fixed z-50 mt-28 ml-[73%]  ${visible ? "visible" : ""}`}>
       <nav className="chatboxheader flex items-center justify-around font-semibold text-2xl pt-5 ">
         <Link to="/message">
           <i className="fa-solid fa-angle-left"></i>
@@ -310,7 +311,7 @@ const Chatbox = () => {
       {/* <h1> getchat: {getFromchat.length}</h1> */}
 
       {/* new learnig for page overflow scroling  hendeling*/}
-      <div className="bodyData mt-[7px] overflow-y-auto h-[calc(78vh-100px)]">
+      <div id="chatMessagebox" className="bodyData mt-[7px] overflow-y-auto h-[calc(78vh-100px)]">
         <div>
           <div>
             {/* curentUser info */}
@@ -393,12 +394,13 @@ const Chatbox = () => {
         <h1 className="text-end pr-3 pb-5 mt-14">Seen</h1>
       </div>
 
-      <footer className="footerbox flex items-center justify-evenly mt-10 w-[22vw] bg-gray-200 z-50">
+      <footer id="chatFoter" className="footerbox flex items-center justify-evenly mt-10 w-[22vw] bg-gray-200 z-50">
         <i className="fa-solid fa-circle-plus text-4xl"></i>
         <form onSubmit={(e) => e.preventDefault()}>
           <input
             type="text"
             placeholder="Type a message"
+            id="SendChatMessage"
             className="w-[13vw] h-16 rounded-full"
             // value={message}
             // onChange={(e) => setMessage(e.target.value)}

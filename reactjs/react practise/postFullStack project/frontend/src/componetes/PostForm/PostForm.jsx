@@ -3,7 +3,9 @@ import { Input, Select, Button } from '../index.js';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import "..//../Responsive.css"
 import axios from 'axios';
+
 
 
 import io from "socket.io-client";
@@ -69,7 +71,7 @@ try {
 
 
   return (
-    <form className='flex items-start justify-between gap-[50px] bg-gray-200 rounded-3xl py-20 px-20' onSubmit={handleSubmit(onSubmit)}>
+    <form id='AddpostForm' className='flex items-start justify-between gap-[50px] bg-gray-200 rounded-3xl py-20 px-20' onSubmit={handleSubmit(onSubmit)}>
       <div>
         <Input
           label="Title: "

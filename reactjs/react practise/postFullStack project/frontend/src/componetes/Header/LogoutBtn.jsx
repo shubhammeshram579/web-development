@@ -29,10 +29,10 @@ function LogoutBtn() {
     return (
         <div>
             <button 
-            className='inline-block px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
+            className='inline-block px-3 py-2 duration-200 hover:bg-red-500 rounded-full'
             onClick={logoutHandler}
         >
-            Logout
+          <i class="fa-solid fa-right-from-bracket"></i>
         </button>
 
             
