@@ -11,6 +11,7 @@ import FollowButton from "..//../FollowBtn.jsx";
 import Home from "./Home.jsx";
 import io from "socket.io-client";
 import "..//..//../App.css"
+import "..//..//../Responsive.css"
 
 
 const socket = io("http://localhost:8000");
@@ -176,10 +177,10 @@ const HomePagePost = () => {
 
   return (
     <>
-        <div className={`w-full min-h-[100vh]  overflow-hidden flex items-center justify-center flex-col pt-28  bg-slate-100 `}>
+        <div id="PostbyId" className={`w-full min-h-[100vh]  overflow-hidden flex items-center justify-center flex-col pt-28  bg-slate-100 `}>
           {/* <div className="pt-10 mt-20 pl-20 flex items-center justify-between"> */}
           <div className="w-full font-bold text-[25px] flex items-center justify-between px-20">
-            <div>
+            <div id="ArrowBtn">
               <Link to="/">
                 <i class="ri-arrow-left-fill"></i>
               </Link>
@@ -190,7 +191,7 @@ const HomePagePost = () => {
           </div>
 
           
-          <div className={`HomePost bg-slate-200 w-[900px] flex items-center rounded-xl ${visible1 ? 'visible1' : ''}`}>
+          <div id="PostCard" className={`HomePost bg-slate-200 w-[38vw] flex items-center rounded-xl ${visible1 ? 'visible1' : ''}`}>
             <div className="py-5 flex items-start justify-start">
               <div
                 className={`transition-colors duration-500 rounded-lg ${
@@ -199,7 +200,7 @@ const HomePagePost = () => {
               >
                 {post.postImg && (
                   <img
-                    className={`h-[600px] w-[400px] rounded-xl object-cover ml-2 ${
+                    className={`h-[72vh] w-[17vw] rounded-xl object-cover ml-2 ${
                       isHidden ? "opacity-0" : "opacity-100"
                     }`}
                     src={post.postImg}
@@ -209,8 +210,8 @@ const HomePagePost = () => {
               </div>
 
               {/* share post and download image */}
-              <div className="flex items-center flex-col">
-                <div className="flex items-center justify-between w-full pl-4">
+              <div id="postItems" className="flex items-center flex-col">
+                <div id="shareItem" className="flex items-center justify-between w-full pl-4">
                   <div className="flex items-center justify-center gap-4">
                     <SharePost postUrl={postUrl} postTitle={post.title} />
 
@@ -227,7 +228,7 @@ const HomePagePost = () => {
 
                   {/* profile and save post card */}
                   <div className="flex gap-4 text-[25px] items-center">
-                    <h5>
+                    <h5 id="ProfileText">
                       Profile <i class="fa-solid fa-chevron-down"></i>
                     </h5>
                     <SavePostButton userId={currentUser._id} postId={postId} />
@@ -235,7 +236,7 @@ const HomePagePost = () => {
                 </div>
 
                 {/* post titel and description */}
-                <div className="flex items-start justify-start flex-col w-full pl-5">
+                <div id="Title" className="flex items-start justify-start flex-col w-full pl-5">
                   <h1 className="font-bold text-[40px] mt-[100px]">
                     {post.title}
                   </h1>
@@ -269,7 +270,7 @@ const HomePagePost = () => {
                 </div>
 
                 {/* get comment */}
-                <div className="mt-10 w-full pl-5">
+                <div id="CommentCard" className="mt-10 w-full pl-5 overflow-y-auto h-[calc(15vh-10px)]">
                   <h1 className="font-bold text-2xl mb-2">
                     Comment : {comment.length}
                   </h1>

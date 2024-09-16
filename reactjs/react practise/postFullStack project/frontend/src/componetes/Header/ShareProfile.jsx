@@ -9,14 +9,18 @@ import {
   TwitterIcon,
 } from "react-share";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const ShareProfile = ({ postTitle }) => {
+  const user = useSelector((state) => state.auth.user);
+  // console.log(user)
+
   const postUrl = window.location.href;
-  // const postUrl = `http://localhost:5173/getPost/${userId}`;
-  const shareMessage = `I found someone who you should follow on our platform! Check out my profile: ${postUrl}`;
+  const postUrl2 = `${postUrl}/getPost/${user.user._id}`;
+  const shareMessage = `I found someone who you should follow on our platform! Check out my profile: ${postUrl2}`;
 
   const emailSubject = `Check out this profile: ${postTitle}`;
-  const emailBody = `I found someone you should follow! Check out this profile: ${postUrl}`;
+  const emailBody = `I found someone you should follow! Check out this profile: ${postUrl2}`;
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(shareMessage).then(
@@ -62,19 +66,19 @@ const ShareProfile = ({ postTitle }) => {
       <div>
         <div className="flex justify-center items-center gap-20 flex-wrap mt-10">
           <div className="flex items-center justify-center flex-col gap-1">
-            <FacebookShareButton url={postUrl} quote={postTitle}>
+            <FacebookShareButton url={postUrl2} quote={postTitle}>
               <FacebookIcon size={60} round/>
             </FacebookShareButton>
             <h1>Facebook</h1>
           </div>
           <div className="flex items-center justify-center flex-col gap-1">
-            <WhatsappShareButton url={postUrl} title={postTitle}>
+            <WhatsappShareButton url={postUrl2} title={postTitle}>
               <WhatsappIcon size={60} round />
             </WhatsappShareButton>
             <h1>Whatsapp</h1>
           </div>
           <div className="flex items-center justify-center flex-col gap-1">
-            <TwitterShareButton url={postUrl} title={postTitle}>
+            <TwitterShareButton url={postUrl2} title={postTitle}>
               <TwitterIcon size={60} round />
             </TwitterShareButton>
             <h1>X</h1>

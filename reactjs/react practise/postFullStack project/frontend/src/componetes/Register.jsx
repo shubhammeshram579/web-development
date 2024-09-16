@@ -4,6 +4,7 @@ import {Button , Input, Logo} from "./index.js"
 import {useForm} from "react-hook-form"
 import axios from "axios"
 // import { useDispatch } from 'react-redux'
+import "../Responsive.css"
 
 function Register() {
     const navigate = useNavigate()
@@ -19,7 +20,7 @@ function Register() {
           console.log(user)        
 
         //   navigate router
-          navigate("/")
+          navigate("/Login")
 
         } catch (error) {
           console.log(error);
@@ -32,12 +33,12 @@ function Register() {
 
   return (
     <div>
-        <div className='bg-slate-200 py-10 px-20 rounded-3xl'>
+        <div id='SignInpagetext' className='bg-slate-200 py-10 px-20 rounded-3xl'>
             <div className='flex items-center justify-center py-2'>
                 <Logo />
             </div>
             <h2 className='text-center'>Sign up to create account</h2>
-            <h3 className='flex items-center justify-center'>Already have an account?&nbsp; <Link to="/Login"><h1 className='text-red-500'>Sign In</h1></Link>  </h3>
+            <h3  className='flex items-center justify-center'>Already have an account?&nbsp; <Link to="/Login"><h1 className='text-red-500'>Sign In</h1></Link>  </h3>
             {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
             <form onSubmit={handleSubmit(onSubmit)}>

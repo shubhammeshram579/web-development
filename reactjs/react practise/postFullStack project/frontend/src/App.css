@@ -1,60 +1,12 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-
-.read-the-docs {
-  color: #888;
-} */
 
 
 .container{
-  background-color: red;
-  color: green;
+  /* background-color: red; */
+  /* color: green; */
   font-size: 100px;
   font-weight: 600;
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%; */
-  /* background-image: image(); */
 }
-
-
-/* .card{
-  background-color: green;
-} */
-
 
 
 
@@ -65,11 +17,7 @@
   object-position: center;
  }
 
-/* .SaveBtn{
-  opacity: 0;
-  position: relative;
-  z-index: 100;
-}
+
 
 
 .selectbtn{
@@ -79,10 +27,6 @@
 
 } */
 
-/* .SaveBtn:hover{
-  position: relative;
-  z-index: 11;
-} */
 
 
 
@@ -92,91 +36,11 @@
 
 
 .Chatbox{
-  /* position: relative;
-  z-index: 90; */
   overflow: hidden;
 }
 
-/* .chatboxheader{
-  background-color: green;
-  position: fixed;
-  z-index: 91;
-  width: 22vw;
-} */
 
 
-
-/* .bodyData{
-  background-color: red;
-  overflow-y: scroll;
-
-} */
-
-/* .fotterbox{
-  position: fixed;
-  top: 700px;
-  z-index: 91;
-  background-color: yellow;
-} */
-
-
-
-
-
-
-/* .card-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.card {
-  display: none;
-  width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  text-align: center;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.card.active {
-  display: block;
-  opacity: 1;
-} */
-
-
-
-
-
-/* .carousel {
-  background: #f8f9fa;
-  width: 100%;
-  margin: 0 auto;
-} */
-
-/* .carousel-cell {
-  width: 100%; 
-  height: 200px;
-  margin-right: 10px;
-  background: #e1e5ea;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  color: #333;
-} */
-
-
-
-
-
-/* .carousel .carousel-cell h1{
-  background-color: red;
-  transition: linear 1s;
-} */
 
 
 /* page loading style */

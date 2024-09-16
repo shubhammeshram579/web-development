@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import SavedUsers from "./SaveUserChat.jsx"
-import Notification from "./Notification/Notification.jsx"
+// import SavedUsers from "./SaveUserChat.jsx"
+// import Notification from "./Notification/Notification.jsx"
 import ChatNotification from "./ChatNotification.jsx"
 import "..//../App.css"
 import "..//../Responsive.css"
@@ -92,19 +92,12 @@ const Massage = ({shereProfile,setNewMessage,newMessage}) => {
           {/* </button> */}
           </Link>
         </div>
-        <div id="massageItem" className="mt-10 ml-2">
+        <div id="massageItem2" className="mt-10 ml-2">
           <h1 className="text-xl font-semibold">Messages</h1>
         <ChatNotification />
         </div>
 
-        {/* pending saveuser createion */}
-        {/* <div>
-          <SavedUsers />
-        </div> */}
-        {/* <div className="flex items-start flex-col gap-7 ml-8">
-        <Notification setSelectedUser={setSelectedUser} />
-        <SavedUsers savedUsers={selectedUser ? [selectedUser] : []} setSelectedUser={setSelectedUser} />
-      </div> */}
+      
 
        
   
@@ -126,6 +119,17 @@ const Massage = ({shereProfile,setNewMessage,newMessage}) => {
 };
 
 export default Massage;
+
+
+
+  {/* pending saveuser createion */}
+        {/* <div>
+          <SavedUsers />
+        </div> */}
+        {/* <div className="flex items-start flex-col gap-7 ml-8">
+        <Notification setSelectedUser={setSelectedUser} />
+        <SavedUsers savedUsers={selectedUser ? [selectedUser] : []} setSelectedUser={setSelectedUser} />
+      </div> */}
 
 
 

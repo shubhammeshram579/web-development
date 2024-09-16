@@ -65,6 +65,8 @@ const FlickityCarousel = () => {
     return () => masterTimeline.kill();
   }, []);
 
+
+  // text time line set
   useEffect(() => {
     const tl = gsap.timeline({ repeat: -1, yoyo: true });
     tl.to(header1.current, {
@@ -97,6 +99,8 @@ const FlickityCarousel = () => {
       transition: "linear 0.5s",
     });
   });
+
+
   useEffect(() => {
     const tl = gsap.timeline({ repeat: -1, yoyo: true });
     tl.to(header4.current, {
@@ -120,8 +124,8 @@ const FlickityCarousel = () => {
         `}
       </style>
       <Contenier>
-        <div className="carousel w-full h-[88vh] bg-slate-100">
-          <div className="carousel-cell w-full h-[74vh] flex items-center justify-between flex-col pt-20">
+        <div id="hpage1" className="carousel w-full h-[95vh] bg-slate-100">
+          <div className="carousel-cell w-full h-[95vh] flex items-center justify-between flex-col pt-20">
             <div className="flex items-center justify-between flex-col gap-10">
               <h1 className="font-semibold text-4xl pt-10">Get your next</h1>
               <h1
@@ -138,25 +142,28 @@ const FlickityCarousel = () => {
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
                 <img
+                id="p1imgs1"
                   className="h-[370px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/302457/pexels-photo-302457.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
                 <img
+                id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
                   src="https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D"
                   alt=""
                 />
               </div>
-              <div ref={(el) => (circleRefs.current[1] = el)} className="card1">
+              <div id="hp1img2" ref={(el) => (circleRefs.current[1] = el)} className="card1">
                 {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
+
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/248413/pexels-photo-248413.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
               </div>
-              <div ref={(el) => (circleRefs.current[2] = el)} className="card1">
+              <div  id="hp1img2" ref={(el) => (circleRefs.current[2] = el)} className="card1">
                 <img
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/1718199/pexels-photo-1718199.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -167,6 +174,7 @@ const FlickityCarousel = () => {
               <div ref={(el) => (circleRefs.current[3] = el)} className="card1">
                 {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
+                id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/8531680/pexels-photo-8531680.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
@@ -178,6 +186,7 @@ const FlickityCarousel = () => {
               >
                 {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
+                id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/1143754/pexels-photo-1143754.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
@@ -188,6 +197,7 @@ const FlickityCarousel = () => {
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
                 <img
+                id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/17729730/pexels-photo-17729730/free-photo-of-a-bicycle-parked-outside-a-shop-with-a-sign-that-says-ou-ne-manu.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
@@ -199,11 +209,13 @@ const FlickityCarousel = () => {
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
                 <img
+                id="p1imgs1"
                   className="h-[370px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/26950781/pexels-photo-26950781/free-photo-of-donuts-and-pancakes-on-table.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
                 <img
+                 id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/27365301/pexels-photo-27365301/free-photo-of-mexican-restaurant.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
@@ -228,17 +240,20 @@ const FlickityCarousel = () => {
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
                 <img
+                 id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/6074050/pexels-photo-6074050.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
                 <img
+                  id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/6232545/pexels-photo-6232545.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
               </div>
               <div
+              id="hp1img2"
                 ref={(el) => (newCircleRefs.current[1] = el)}
                 className="card1"
               >
@@ -249,7 +264,7 @@ const FlickityCarousel = () => {
                   alt=""
                 />
               </div>
-              <div
+              <div id="hp1img2"
                 ref={(el) => (newCircleRefs.current[2] = el)}
                 className="card1"
               >
@@ -266,6 +281,7 @@ const FlickityCarousel = () => {
               >
                 {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
+                 id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/5847724/pexels-photo-5847724.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
@@ -277,6 +293,7 @@ const FlickityCarousel = () => {
               >
                 {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
+                  id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/23495686/pexels-photo-23495686/free-photo-of-group-of-friends-celebrating-birthday-at-home.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
@@ -287,6 +304,7 @@ const FlickityCarousel = () => {
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
                 <img
+                 id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/5642108/pexels-photo-5642108.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
@@ -298,11 +316,13 @@ const FlickityCarousel = () => {
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
                 <img
+                 id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/6932293/pexels-photo-6932293.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
                 <img
+                  id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
                   src="https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D"
                   alt=""
@@ -327,17 +347,20 @@ const FlickityCarousel = () => {
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
                 <img
+                id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/34098/south-africa-hluhluwe-giraffes-pattern.jpg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
                 <img
+                  id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/52500/horse-herd-fog-nature-52500.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
               </div>
               <div
+              id="hp1img2"
                 ref={(el) => (new3CircleRefs.current[1] = el)}
                 className="card1"
               >
@@ -349,6 +372,7 @@ const FlickityCarousel = () => {
                 />
               </div>
               <div
+              id="hp1img2"
                 ref={(el) => (new3CircleRefs.current[2] = el)}
                 className="card1"
               >
@@ -365,6 +389,7 @@ const FlickityCarousel = () => {
               >
                 {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
+                id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/1181181/pexels-photo-1181181.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
@@ -376,6 +401,7 @@ const FlickityCarousel = () => {
               >
                 {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
+                id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/1054650/pexels-photo-1054650.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
@@ -386,6 +412,7 @@ const FlickityCarousel = () => {
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
                 <img
+                id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/1661179/pexels-photo-1661179.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
@@ -397,11 +424,13 @@ const FlickityCarousel = () => {
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
                 <img
+                id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/4588065/pexels-photo-4588065.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
                 <img
+                id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
                   src="https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D"
                   alt=""
@@ -426,17 +455,20 @@ const FlickityCarousel = () => {
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
                 <img
+                id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/6475527/pexels-photo-6475527.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
                 <img
+                id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/6768487/pexels-photo-6768487.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
               </div>
               <div
+              id="hp1img2"
                 ref={(el) => (new4CircleRefs.current[1] = el)}
                 className="card1"
               >
@@ -448,6 +480,7 @@ const FlickityCarousel = () => {
                 />
               </div>
               <div
+              id="hp1img2"
                 ref={(el) => (new4CircleRefs.current[2] = el)}
                 className="card1"
               >
@@ -464,6 +497,7 @@ const FlickityCarousel = () => {
               >
                 {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
+                id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/27310486/pexels-photo-27310486/free-photo-of-pokemon-ice-cream-pops.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
@@ -475,6 +509,7 @@ const FlickityCarousel = () => {
               >
                 {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
+                id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/27837198/pexels-photo-27837198/free-photo-of-a-person-is-making-a-clay-pot-with-a-rolling-pin.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
@@ -485,6 +520,7 @@ const FlickityCarousel = () => {
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
                 <img
+                id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/7641238/pexels-photo-7641238.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
@@ -496,11 +532,13 @@ const FlickityCarousel = () => {
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
                 <img
+                id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/7213503/pexels-photo-7213503.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
                 <img
+                id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/7606225/pexels-photo-7606225.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""

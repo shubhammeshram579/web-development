@@ -3,6 +3,7 @@ import { useSelector ,useDispatch } from 'react-redux';
 import { logout as authLogout } from "..//..//../store/AuthSlice.js";
 import { useNavigate } from 'react-router-dom';
 import { ApiError } from '../../../../backend/utils/ApiError.js';
+import "..//..//Responsive.css"
 
 
 function LogoutBtn() {
@@ -32,7 +33,10 @@ function LogoutBtn() {
             className='inline-block px-3 py-2 duration-200 hover:bg-red-500 rounded-full'
             onClick={logoutHandler}
         >
-          <i class="fa-solid fa-right-from-bracket"></i>
+          <i id='LogoutIcon' class="fa-solid fa-right-from-bracket"></i>
+          <button id='Logoutbtn'>
+            Logout
+          </button>
         </button>
 
             

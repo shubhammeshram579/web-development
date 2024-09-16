@@ -14,21 +14,17 @@ import LoginPage from './componetes/pages/login/LoginPage.jsx'
 import Addpost from './componetes/pages/Addpost/Addpost.jsx'
 import OwnerPost from "./componetes/pages/getpostbyOwner/OwnerPost.jsx"
 import EditPost from "./componetes/pages/EditPost/EditPost.jsx"
-// import GetPostbyId from "./componetes/pages/Getpost/GetPostbyId.jsx"
-// import PostsList from "./componetes/pages/SearchPost/SearchPost.jsx"
 import SearchResults from "./componetes/pages/SearchPost/ChatSearchResult.jsx"
 import HomePagePost from "./componetes/pages/home/HomePagePost.jsx"
 import UpdateUser from "./componetes/pages/UpdateUser/UpdateUser.jsx"
 import GetPotsByUserProfile from "./componetes/pages/home/GetPotsByUserProfile.jsx"
 import HomePagePost2 from "./componetes/pages/Getpost/PostPage.jsx"
 import GetpostByotherUser from "./componetes/pages/Getpost/GetPostByOtherUser.jsx"
-// import Notification from "./componetes/Header/Notification.jsx"
-// import ShareProfile from "./componetes/Header/ShareProfile.jsx"
 import NewMessage from "./componetes/Header/NewMessage.jsx"
 import Massage from "./componetes/Header/Massage.jsx"
 import Chatbox from "./componetes/Header/Chatbox.jsx"
 import ShareProfile from "./componetes/Header/ShareProfile.jsx"
-// import SmoothScrolling from "./componetes/contenier/SmoothScroling.jsx"
+
 
 
 
@@ -146,15 +142,6 @@ const router = createBrowserRouter([
             ),
             
         },
-        // {
-        //     path: "/ShareProfile",
-        //     element: (
-        //         <AuthLayout authentication>
-        //             <ShareProfile />
-        //         </AuthLayout>
-        //     ),
-            
-        // },
         {
             path: "/otherUser/:from/:to",
             element: (

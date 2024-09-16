@@ -1,6 +1,7 @@
 import React ,{useState ,useEffect} from 'react'
 import {PostForm,Contenier} from "..//../index.js"
 import "..//..//../App.css"
+import "..//..//../Responsive.css"
 
 function Addpost() {
   const [visible, setVisible] = useState(false);
@@ -15,7 +16,7 @@ function Addpost() {
 
   return (
     
-    <div className={`AddPost py-12 mt-32 overflow-hidden ${visible ? "visible" : ""}`}>
+    <div id='AddPostCard' className={`AddPost py-12 mt-32 overflow-hidden ${visible ? "visible" : ""}`}>
       
         <PostForm />
 

@@ -53,7 +53,7 @@ const SearchResults = () => {
 
   return (
     
-      <div className="w-full h-full relative z-40 pt-32 bg-slate-100 flex items-center justify-between flex-col">
+      <div id="HomePostCard" className="w-full h-full relative z-40 pt-32 bg-slate-100 flex items-center justify-between flex-col">
         <ul id="homePost" className="flex flex-row items-center justify-between flex-wrap gap-5 pb-24  px-20">
           {posts.map((post, index) => {
             // Use a random function to decide margin for every other card
@@ -101,8 +101,9 @@ const SearchResults = () => {
                     hoveredIndex === index ? "opacity-100" : "opacity-0"
                     // index % 2 !== 0 ? 'mt-[-70px]' : ''
                   }`}
+                  id="btnsitems"
                 >
-                  <i class="ri-arrow-right-up-line bg-white flex items-center justify-center px-6 py-[8px] rounded-3xl gap-2 text-lg">
+                  <i id="webLink" class="ri-arrow-right-up-line bg-white flex items-center justify-center px-6 py-[8px] rounded-3xl gap-2 text-lg">
                     {" "}
                     behance
                   </i>

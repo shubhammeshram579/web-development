@@ -11,6 +11,7 @@ import FollowButton from "..//../FollowBtn.jsx";
 import { useNavigate } from "react-router-dom";
 import Home from "../home/Home.jsx";
 import "..//..//../App.css"
+import "..//..//../Responsive.css"
 
 const HomePagePost2 = () => {
   const { postId } = useParams();
@@ -184,16 +185,16 @@ const HomePagePost2 = () => {
 
   return (
     // <Contenier>
-    <div className={` w-full h-full min-h-[100vh] `}>
+    <div id="PostbyId" className={` w-full h-full min-h-[100vh] pb-10 `}>
       <div className={`CreatePost mt-28 px-20 flex items-center justify-evenly flex-col pt-5 ${visible1 ? "visible1" : ""} `}>
-        <div className="flex items-center justify-between w-full">
+        <div id="topArrowBtnAndEditBtn" className="flex items-center justify-between w-full">
           <div className="font-bold text-[25px]">
             <Link to={`/getPost/${currentUser._id}`}>
               <i class="ri-arrow-left-fill"></i>
             </Link>
           </div>
 
-          <div className="flex items-center justify-end gap-5">
+          <div id="EditBtn" className="flex items-center justify-end gap-5">
             {post.isSaved ? null : (
               <Link to={`/EditPost/${post._id}`}>
                 <button className="py-3 px-10 bg-green-500 rounded-lg mt-5">
@@ -211,7 +212,7 @@ const HomePagePost2 = () => {
           </div>
         </div>
 
-        <div className="bg-slate-200 w-[900px] flex items-center rounded-3xl">
+        <div id="PostCard" className="bg-slate-200 w-[39vw] flex items-center rounded-3xl">
           <div className="py-5 flex items-start justify-start">
             <div
               className={`transition-colors duration-500 rounded-lg ${
@@ -220,7 +221,7 @@ const HomePagePost2 = () => {
             >
               {post.postImg && (
                 <img
-                  className={`h-[600px] w-[400px] rounded-xl object-cover ml-2 ${
+                  className={`h-[72vh] w-[18vw] rounded-xl object-cover ml-2 ${
                     isHidden ? "opacity-0" : "opacity-100"
                   }`}
                   src={post.postImg}
@@ -230,7 +231,7 @@ const HomePagePost2 = () => {
             </div>
 
             {/* share post and download image */}
-            <div className="flex items-center flex-col">
+            <div  id="postItems" className="flex items-center flex-col">
               <div className="flex items-center justify-between w-full pl-4">
                 <div className="flex items-center justify-center gap-4">
                   <SharePost postUrl={postUrl} postTitle={post.title} />
@@ -247,7 +248,7 @@ const HomePagePost2 = () => {
 
                 {/* profile and save post card */}
                 <div className="flex gap-4 text-[25px] items-center">
-                  <h5>
+                  <h5 id="ProfileText">
                     Profile <i class="fa-solid fa-chevron-down"></i>
                   </h5>
                   <SavePostButton userId={currentUser._id} postId={postId} />
@@ -255,7 +256,7 @@ const HomePagePost2 = () => {
               </div>
 
               {/* post titel and description */}
-              <div className="flex items-start justify-start flex-col w-full pl-5">
+              <div id="Title" className="flex items-start justify-start flex-col w-full pl-5">
                 <h1 className="font-bold text-[40px] mt-[100px]">
                   {post.title}
                 </h1>
@@ -289,7 +290,7 @@ const HomePagePost2 = () => {
               </div>
 
               {/* get comment */}
-              <div className="mt-10 w-full pl-5">
+              <div id="CommentCard" className="mt-10 w-full pl-5 overflow-y-auto h-[calc(15vh-10px)]">
                 <h1 className="font-bold text-2xl mb-2">
                   Comment : {comment.length}
                 </h1>

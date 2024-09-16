@@ -52,6 +52,11 @@ const Home = () => {
     setIsHidden(!isHidden);
   };
 
+
+  // postUrl copy
+  const postUrl = window.location.href;
+  // console.log("url",`${postUrl}getPostByID2`)
+
   // Function to randomly decide if a margin should be applied
   const shouldApplyMargin = () => Math.random() < 0.5; // 50% chance to apply margin
 
@@ -65,14 +70,6 @@ const Home = () => {
     return (
       <Contenier>
         <div className="text-center">
-          {/* <div className="flex flex-wrap p-[23vh]">
-            <div className="p-2 w-full">
-              <h1 className="text-2xl font-bold hover:text-gray-500">
-                Login to read posts
-              </h1>
-              <Homepage />
-            </div>
-          </div> */}
           <Homepage />
         </div>
       </Contenier>
@@ -132,14 +129,15 @@ const Home = () => {
                     hoveredIndex === index ? "opacity-100" : "opacity-0"
                     // index % 2 !== 0 ? 'mt-[-70px]' : ''
                   }`}
+                  id="btnsitems"
                 >
-                  <i class="ri-arrow-right-up-line bg-white flex items-center justify-center px-6 py-[8px] rounded-3xl gap-2 text-lg">
+                  <i id="webLink" class="ri-arrow-right-up-line bg-white flex items-center justify-center px-6 py-[8px] rounded-3xl gap-2 text-lg">
                     {" "}
                     behance
                   </i>
                   <div className="flex items-center justify-center gap-4 ml-[20px]">
                     <div className="bg-white rounded-full mt-1">
-                      <SharePost postUrl={post._id} postTitle={post.title} />
+                      <SharePost postUrl={`${postUrl}getPostByID2/${post._id}`} postTitle={post.title} />
                     </div>
 
                     <i

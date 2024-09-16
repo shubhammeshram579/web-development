@@ -13,7 +13,7 @@ function Contenier({ children }) {
     // Delay the visibility state change to trigger smooth transition
     setTimeout(() => {
       setVisible(true);
-    }, 2000); // Delay for smooth transition
+    }, 800); // Delay for smooth transition
   }, []);
 
   useEffect(() => {

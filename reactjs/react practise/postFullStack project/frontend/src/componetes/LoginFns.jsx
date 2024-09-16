@@ -58,7 +58,7 @@ function LoginFns() {
   };
 
   return (
-    <div className="py-[75px]">
+    <div className="py-[4vh]">
       <div className="bg-slate-200 py-10 px-20 rounded-3xl">
         <div className="flex items-center justify-center py-5">
           <Logo />

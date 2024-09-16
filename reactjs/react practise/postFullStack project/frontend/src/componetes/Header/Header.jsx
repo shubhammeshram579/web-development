@@ -34,8 +34,6 @@ function Header({
   // current user from redux
   const user = useSelector((state) => state.auth.user?.user);
 
-  // console.log("currentUser",currentUser._id)
-
   useEffect(() => {
     const fatchCurrentUser = async () => {
       try {
@@ -61,9 +59,7 @@ function Header({
     fatchCurrentUser();
   }, []);
 
-  // const [notification, setNotification] = useState([]);
-  // const accessToken = useSelector((state) => state.auth.user?.accessToken);
-  // const [loading, setLoading] = useState(true);
+ 
 
   // notication buttnet hendeler
   const handleNotificationsClick = () => {
@@ -71,10 +67,7 @@ function Header({
     // showMessages(null); // Hide messages when showing notifications
   };
 
-  // const handleMessagesClick2 = () => {
-  //   setShowMassage((prevState) => !prevState);
-  //   setShowNotifications(false); // Hide messages when showing notifications
-  // };
+ 
 
   // massage butten hendaler
   const handleMessagesClick2 = () => {
@@ -153,7 +146,7 @@ function Header({
             {!authStatus ? (<Link to="/" id="Logop" className="bnavitem">
               <Logo />
             </Link>) :(
-              null
+               <Link to="/"><Logo /></Link>
             )}
 
             <div>
@@ -207,15 +200,7 @@ function Header({
             </button>
           )}
 
-          {/* {authStatus && (
-            <button onClick={handleUserClick2}>
-              {showMassage ? (
-                "Hide Massage"
-              ) : (
-                <i class="fa-solid fa-comment-dots text-xl inline-block px-2 py-2 duration-200 hover:bg-blue-100 rounded-full"></i>
-              )}
-            </button>
-          )} */}
+          
 
           <ul
             className={" flex items-center justify-between gap-5"}
@@ -295,6 +280,26 @@ function Header({
 export default Header;
 
 // const [currentUser, setCurrentUser] = useState([]);
+ // const [notification, setNotification] = useState([]);
+  // const accessToken = useSelector((state) => state.auth.user?.accessToken);
+  // const [loading, setLoading] = useState(true);
+
+
+  {/* {authStatus && (
+            <button onClick={handleUserClick2}>
+              {showMassage ? (
+                "Hide Massage"
+              ) : (
+                <i class="fa-solid fa-comment-dots text-xl inline-block px-2 py-2 duration-200 hover:bg-blue-100 rounded-full"></i>
+              )}
+            </button>
+          )} */}
+
+
+   // const handleMessagesClick2 = () => {
+  //   setShowMassage((prevState) => !prevState);
+  //   setShowNotifications(false); // Hide messages when showing notifications
+  // };
 
 // useEffect(() => {
 //   const fatchcurrentUser = async () => {

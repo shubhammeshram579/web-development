@@ -19,6 +19,7 @@ const socket = io("http://localhost:8000");
 const  PostForm = ({post}) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate()
+  // const [loading ,setLoading] = useState(true)
 
     // Get the token from cookies or local storage
     const localStorageToken = localStorage.getItem("token");
@@ -44,6 +45,7 @@ try {
         headers:{"Authorization":`Bearer ${token}`}
       })
       console.log(response.data)
+      alert("post uploaded successfully")
       // socket.emit("sendNotification", response.data);
       // socket.emit('newPost', response.data);
     
@@ -56,6 +58,7 @@ try {
      
 } catch (error) {
   alert("postImg not upload")
+
   
 }
 
@@ -63,9 +66,6 @@ try {
 
 
 
-// const emitNotification = () => {
-//   socket.emit('sendNotification', { id: new Date().getTime(), message: "New notification from client!" });
-// };
 
 
 
@@ -122,3 +122,12 @@ try {
 }
 
 export default PostForm;
+
+
+// if(loading) return <div>uploding img</div>
+
+
+
+// const emitNotification = () => {
+//   socket.emit('sendNotification', { id: new Date().getTime(), message: "New notification from client!" });
+// };

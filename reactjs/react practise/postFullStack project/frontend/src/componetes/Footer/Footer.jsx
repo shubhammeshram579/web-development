@@ -2,7 +2,6 @@ import React ,{useState,useEffect ,useRef} from 'react'
 import {Link} from "react-router-dom"
 import Logo from "../Logo.jsx"
 import {Contenier} from "..//index.js"
-// import LocomotiveScroll from "locomotive-scroll"
 import "..//../Responsive.css"
 import { useSelector } from 'react-redux'
 

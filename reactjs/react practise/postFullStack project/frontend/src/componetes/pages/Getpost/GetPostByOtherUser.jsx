@@ -9,6 +9,9 @@ import { Input, SharePost, SavePostButton } from "..//../index.js";
 import OptionsCard from "..//../OptionCard.jsx";
 import FollowButton from "..//../FollowBtn.jsx";
 import "..//..//../App.css"
+import "..//..//../Responsive.css"
+
+
 const GetpostByotherUser = () => {
   const { postId } = useParams();
   const [post, setPost] = useState([]);
@@ -154,9 +157,9 @@ const GetpostByotherUser = () => {
  
 
   return (
-    <div className={` mt-14 w-full min-h-[100vh] flex items-center justify-center flex-col `}>
+    <div id="PostbyId"  className={` mt-14 w-full min-h-[100vh] flex items-center justify-center flex-col `}>
       <div className="font-bold text-[25px] flex items-center justify-between w-full px-20">
-        <Link to={`/getPostByUserPorofile/${post.owner._id}`}>
+        <Link to={`/getPostByUserPorofile/${post.owner._id}`} id="ArrowBtn">
           <i class="ri-arrow-left-fill"></i>
         </Link>
         <div>
@@ -164,7 +167,7 @@ const GetpostByotherUser = () => {
         </div>
       </div>
       {/* <Contenier> */}
-      <div className={`CreatePost bg-slate-200 w-[900px] flex items-center rounded ${visible1 ? "visible1" : ""}`}>
+      <div id="PostCard" className={`CreatePost bg-slate-200 w-[39vw] flex items-center rounded-xl ${visible1 ? "visible1" : ""}`}>
         <div className="py-5 flex items-start justify-start">
           <div
             className={`transition-colors duration-500 rounded-lg ${
@@ -173,7 +176,7 @@ const GetpostByotherUser = () => {
           >
             {post.postImg && (
               <img
-                className={`h-[600px] w-[400px] rounded-xl object-cover ml-2 ${
+                className={`h-[72vh] w-[18vw] rounded-xl object-cover ml-2 ${
                   isHidden ? "opacity-0" : "opacity-100"
                 }`}
                 src={post.postImg}
@@ -183,7 +186,7 @@ const GetpostByotherUser = () => {
           </div>
 
           {/* share post and download image */}
-          <div className="flex items-center flex-col">
+          <div id="postItems" className="flex items-center flex-col">
             <div className="flex items-center justify-between w-full pl-4">
               <div className="flex items-center justify-center gap-4 ">
                 <SharePost postUrl={postUrl} postTitle={post.title} />
@@ -200,7 +203,7 @@ const GetpostByotherUser = () => {
 
               {/* profile and save post card */}
               <div className="flex gap-4 text-[25px] items-center">
-                <h5>
+                <h5 id="ProfileText">
                   Profile <i class="fa-solid fa-chevron-down"></i>
                 </h5>
                 <SavePostButton userId={currentUser._id} postId={postId} />
@@ -208,7 +211,7 @@ const GetpostByotherUser = () => {
             </div>
 
             {/* post titel and description */}
-            <div className="flex items-start justify-start flex-col w-full pl-5">
+            <div id="Title" className="flex items-start justify-start flex-col w-full pl-5">
               <h1 className="font-bold text-[40px] mt-[100px]">{post.title}</h1>
               <p className="mt-3 pb-20">{post.description}</p>
             </div>
@@ -240,7 +243,7 @@ const GetpostByotherUser = () => {
             </div>
 
             {/* get comment */}
-            <div className="mt-10 w-full pl-5">
+            <div id="CommentCard" className="mt-10 w-full pl-5 overflow-y-auto h-[calc(15vh-10px)]">
               <h1 className="font-bold text-2xl mb-2">
                 Comment : {comment.length}
               </h1>

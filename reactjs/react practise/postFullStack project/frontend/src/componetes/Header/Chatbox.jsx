@@ -71,13 +71,7 @@ const Chatbox = () => {
 
 
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     fatchChats(); // Function to fetch latest messages from the server
-  //   }, 5000); // Poll every 2 seconds
-
-  //   return () => clearInterval(interval);
-  // }, []);
+  
 
 
 
@@ -164,13 +158,7 @@ const Chatbox = () => {
   };
 
 
-  // const sendMessage = () => {
-  //   const newMessage = { from, message: message.trim(), createdAt: new Date(), isRead: false };
-  //   socket.emit('sendMessage', newMessage);
-  //   setChats((prevChats) => [...prevChats, newMessage]);
-  //   setMessage("");
-  //   scrollToLatestMessage();
-  // };
+  
 
 
   // chat refress
@@ -215,48 +203,6 @@ const Chatbox = () => {
 },[from,to]);
 
 
-// const readchats = async () =>{
-//   try {
-//    await axios.put(`http://localhost:8000/api/chatMessage/readchat/${from}/${to}`,{
-//    },{
-//      headers:{
-//        "Authorization":`Bearer ${accessToken}`
-//      }
-//    });
-
-//    setChats((prevChats) =>
-//           prevChats.map(chat =>
-//             chat.from === currentUser._id && chat.from === to ? { ...chat, isRead: true } : chat
-//           )
-//         );
-
-//    console.log("read succefully")
-//  } catch (error) {
-//    console.error('Failed to mark as read:', error);
-//  }
-
-// };
-
-
-// chat read marks 
-  // const markAsRead = async () => {
-  //   try {
-  //     await axios.put(`http://localhost:8000/api/chatMessage/readchat/${from}/${to}`,{
-  //     },{
-  //       headers:{
-  //         "Authorization":`Bearer ${accessToken}`
-  //       }
-  //     });
-  //     // Update local state to mark messages as read
-  //     setChats((prevChats) =>
-  //       prevChats.map(chat =>
-  //         chat.from !== currentUser._id && chat.to === to ? { ...chat, isRead: true } : chat
-  //       )
-  //     );
-  //   } catch (error) {
-  //     console.error('Failed to mark messages as read:', error);
-  //   }
-  // };
 
 
   
@@ -422,6 +368,23 @@ const Chatbox = () => {
 
 export default Chatbox;
 
+
+// const sendMessage = () => {
+  //   const newMessage = { from, message: message.trim(), createdAt: new Date(), isRead: false };
+  //   socket.emit('sendMessage', newMessage);
+  //   setChats((prevChats) => [...prevChats, newMessage]);
+  //   setMessage("");
+  //   scrollToLatestMessage();
+  // };
+
+
+// useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     fatchChats(); // Function to fetch latest messages from the server
+  //   }, 5000); // Poll every 2 seconds
+
+  //   return () => clearInterval(interval);
+  // }, []);
 
 
 {/* {formatDistanceToNow(new Date(chat.createdAt), {
@@ -601,3 +564,50 @@ export default Chatbox;
 //   };
 //   fatchChat();
 // }, [accessToken]);
+
+
+
+
+
+// const readchats = async () =>{
+//   try {
+//    await axios.put(`http://localhost:8000/api/chatMessage/readchat/${from}/${to}`,{
+//    },{
+//      headers:{
+//        "Authorization":`Bearer ${accessToken}`
+//      }
+//    });
+
+//    setChats((prevChats) =>
+//           prevChats.map(chat =>
+//             chat.from === currentUser._id && chat.from === to ? { ...chat, isRead: true } : chat
+//           )
+//         );
+
+//    console.log("read succefully")
+//  } catch (error) {
+//    console.error('Failed to mark as read:', error);
+//  }
+
+// };
+
+
+// chat read marks 
+  // const markAsRead = async () => {
+  //   try {
+  //     await axios.put(`http://localhost:8000/api/chatMessage/readchat/${from}/${to}`,{
+  //     },{
+  //       headers:{
+  //         "Authorization":`Bearer ${accessToken}`
+  //       }
+  //     });
+  //     // Update local state to mark messages as read
+  //     setChats((prevChats) =>
+  //       prevChats.map(chat =>
+  //         chat.from !== currentUser._id && chat.to === to ? { ...chat, isRead: true } : chat
+  //       )
+  //     );
+  //   } catch (error) {
+  //     console.error('Failed to mark messages as read:', error);
+  //   }
+  // };
