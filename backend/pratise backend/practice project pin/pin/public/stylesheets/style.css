@@ -14,6 +14,8 @@
 html{
   height: 100%;
   width: 100%;
+  background-color: #cfcaca;
+  /* color: #888282; */
 }
 
 body{
@@ -116,6 +118,7 @@ body{
   z-index: 99;
   padding: 0 2vw;
   padding-top: 15vh;
+  /* background-color: #111; */
   
 
 }
@@ -333,6 +336,7 @@ body{
 /*product page3 */
 
 .page3{
+  /* background-color: red; */
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -352,12 +356,14 @@ body{
   align-items:flex-start;
   justify-content: space-between;
   padding: 28px;
+  /* background-color: rebeccapurple; */
 
 }
 
 .product-details h1{
   width: 70%;
   font-size: 7vh;
+  /* background-color: red; */
 }
 
 
@@ -378,6 +384,7 @@ body{
 .page3 .summary h4{
   font-weight: 100;
   margin-top: -30px;
+  /* background-color: rebeccapurple; */
 }
 
 .page3 .summary h4:hover{
@@ -387,24 +394,27 @@ body{
 
 
 .child{
-  height: 79vh;
+  height: 60vh;
   width: 50%;
   margin-bottom: 5vh;
   opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.child2{
+/* .child2{
   height: 79vh;
   width: 50%;
   margin-bottom: 5vh;
   opacity: 0;
   padding: 5vw;
-}
+} */
 
 .page3 img{
-  height: 90%;
-  width: 100%;
-  padding: 10px 100px;
+  height: 50vh;
+  width: 25vw;
   object-fit: cover;
   object-position: center;
 }
@@ -421,7 +431,10 @@ body{
   text-transform: uppercase;
   font-size: 17px;
   font-weight: 100;
+  /* background-color: red; */
 }
+
+
 
 /* impacat page4  style */
 

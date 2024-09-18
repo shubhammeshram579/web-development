@@ -20,12 +20,15 @@
             padding-top: 250px;
             padding-left: 20px;
             padding-right: 20px;
+            /* background-color: red; */
         }
 
         .product .card h1 {
-            width: 45%;
+            width: 30vw;
             font-size: 3vw;
             font-weight: 900;
+            /* background-color: red; */
+            text-transform: capitalize;
         }
 
         .product .card h5 {
@@ -41,19 +44,23 @@
         }
 
         .product .card .part {
-            width: 45%;
+            width: 20vw;
             height: 45px;
             background-color: #E6622B;
+            /* background-color: red; */
             display: flex;
             align-items: center;
             justify-content: space-evenly;
             border-radius: 30px;
             margin-top: 20px;
+            /* background-color: green; */
+
         }
 
         .product .card .part a {
             color: #fff;
             text-decoration: none;
+            /* background-color: rebeccapurple; */
         }
 
         .product .card .part span {
@@ -66,8 +73,11 @@
 
 
         .product img {
+            height: 52vh;
+            width: 30vw;
             object-fit: cover;
-            margin-left: -400px;
+            /* margin-left: -400px; */
+            /* background-color: red; */
         }
 
         .product .card3 {
@@ -95,18 +105,37 @@
         }
     </style>
     <div class="product">
+
+
+
         <div class="card">
-            <h1 name="title">CHANGE THE COURSE COOK KIT</h1>
+            <h1 name="title">
+                <%= getProduct.producttitle %>
+            </h1>
+
             <div class="part">
-                <%- include("shared.ejs") -%>
-                    <a href="#">$96</a>
-                    <a href="/add-to-card">ADD TO CARD</a>
+                <div style="display: flex; align-items: center; justify-content: center; width: 3vw; gap: 10px;">
+                    <form action="/update-quantity/<%= getProduct._id %>" method="POST">
+                        <input type="hidden" name="action" value="decrease">
+                        <button style="border: none;" type="submit"><i style="background-color: #E6622B; color: #fff; border: 1px solid #E6622B;" class="ri-subtract-line"></i></button>
+                    </form>
+                    <h1 style="color:#fff; font-size: 1vw;">
+                        <%= getProduct.quantity %>
+                    </h1>
+                    <form action="/update-quantity/<%= getProduct._id %>" method="POST">
+                        <input type="hidden" name="action" value="increase">
+                        <button style="border: none;" type="submit"><i style="background-color: #E6622B; color: #fff; border: 1px solid #E6622B;" class="ri-add-line"></i></button>
+                    </form>
+                </div>
+                <a href="#">$<%= getProduct.pPrice %></a>
+                <form action="/add-to-cart/<%= getProduct._id %>" method="POST">
+                    <button style="background-color: #E6622B; color: #fff; border: none; font-size: 2vh;" type="submit">Add to Cart</button>
+                </form>
             </div>
 
         </div>
         <div class="card2">
-            <img src="https://cdn.sanity.io/images/w8f1ak3c/production/adb77436d60e62d2b5b0574016abcc864b8e65b0-4498x2999.png/DSC0078_Dexter%20Kim.png?rect=2,0,4495,2999&w=640&h=427&auto=format"
-                alt="">
+            <img src="<%= getProduct.pImage %>" alt="">
 
         </div>
 
@@ -125,7 +154,16 @@
         </div>
     </div>
     <div class="produc2">
-        <h5>$95</h5>
+        <h5>$<%= getProduct.pPrice %>
+        </h5>
         <h5>50% OF PROFITS REINVESTED INTO THE TWO GOOD FOUNDATIO</h5>
     </div>
     <% include ./partial/footer.ejs %>
+
+
+
+
+
+        <!-- <% if (getProduct) { %> -->
+        <!-- <h2><%= getProduct._id %></h2> -->
+        <!-- <% } %> -->

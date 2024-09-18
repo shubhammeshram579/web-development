@@ -98,7 +98,25 @@
                             <h4>SHOP TO SUPPORT</h4>
                 </div>
             </div>
-            <div id="child1" class="child">
+
+
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-direction:row; flex-wrap: wrap;">
+                <% if (productList.length > 0) { %>
+                  <% productList.slice(0, 4).forEach(function(product) { %>
+                    <div id="child1" class="child">
+                      <a href="/product/<%= product._id %>">
+                        <img src="<%= product.pImage %>" alt="">
+                      </a>
+                      <h5><%= product.producttitle %></h5>
+                      <h6>$<%= product.pPrice %></h6>
+                    </div>
+                  <% }) %>
+                <% } else { %>
+                  <h3>Not found</h3>
+                <% } %>
+            </div>
+
+            <!-- <div id="child1" class="child">
                 <a href="/product"><img src="https://cdn.sanity.io/images/w8f1ak3c/production/adb77436d60e62d2b5b0574016abcc864b8e65b0-4498x2999.png/DSC0078_Dexter%20Kim.png?rect=470,108,3458,2760&fp-x=0.4888698630136987&fp-y=0.49614340367765025&w=1024&h=817&fit=crop&crop=focalpoint&auto=format"
                     alt="">  </a>
                 <h5>Change the course cook kit</h5>
@@ -123,7 +141,7 @@
                     alt="">
                 <h5>The good night's sleep care pack</h5>
                 <h6>$96</h6>
-            </div>
+            </div> -->
         </div>
         <!-- IMPACT page4 -->
         <div class="page4">

@@ -4,12 +4,48 @@
         href="/product"><i class="fa-solid fa-xmark"></i></a>
     <div class="main" style="background-color: #111; color: #fff; padding-top: 300px;">
         <div class="card"
-            style="display: flex; align-items: center; justify-content: space-between;padding-right: 650px;border-bottom: 1px solid gray; margin: 0px 20px;padding-bottom: 20px;">
-            <h1 style="font-size: 11px;padding-left: 20px; color: gray;">CARD</h1>
-            <h1 style="font-size: 11px; color: gray;">Quentity</h1>
+            style="display: flex; align-items: center; justify-content: space-between;border-bottom: 1px solid gray; margin: 0px 20px;padding-bottom: 20px;">
+            <h1 style="font-size: 2vh; color: gray;">CARD</h1>
+            <h1 style="font-size: 2vh; color: gray; margin-left: 22vw;">Quentity</h1>
+            <h1></h1>
         </div>
         <div class="cards">
-           
+            <% if (cart && cart.products.length> 0) { %>
+                <% cart.products.forEach(cartItem=> { %>
+                    <div id="card2"
+                        style="display: flex; align-items: center; justify-content:space-between; padding: 50px 20px; border-bottom: 1px solid gray;">
+                        <h1 style="font-size: 20px; font-weight: 500; text-transform: capitalize; width: 30%;">
+                            <%= cartItem.productId.producttitle %>
+                        </h1>
+                        <div class="addcard" style="display: flex; gap: 25px;">
+
+                            <!-- Decrease quantity button -->
+                            <form  action="/update-quantity2/<%= cartItem.productId._id %>" method="POST">
+                                <input type="hidden" name="action" value="decrease">
+                                <button  style="border: none;"  type="submit"><i style="background-color:#111; color: #fff; border: 1px solid #111;" class="ri-subtract-line"></i></button>
+                            </form>
+                            <h1 style="font-size: 1vw; font-weight: 400;">
+                                <%= cartItem.quantity %>
+                            </h1>
+
+                            <!-- Increase quantity button -->
+                            <form action="/update-quantity2/<%= cartItem.productId._id %>" method="POST">
+                                <input type="hidden" name="action" value="increase">
+                                <button  style="border: none;" type="submit"><i style="background-color:#111; color: #fff; border: 1px solid #111;" class="ri-add-line"></i></button>
+                            </form>
+                        </div>
+                        <div class="amt" style="display: flex; align-items: center; gap: 50px;">
+                            <h1 style="font-size: 20px; font-weight: 100;">$<%= cartItem.productId.pPrice %>
+                            </h1>
+                            <a style="text-decoration: none; color: #fff;" href="/card"><i
+                                    class="fa-solid fa-xmark"></i></a>
+                        </div>
+                    </div>
+                    <% }) %>
+                        <% } else { %>
+                            <p>Your cart is empty.</p>
+                            <% } %>
+
         </div>
 
         <div class="card3"
@@ -28,11 +64,10 @@
         </div>
         <div class="card4"
             style="float: right; margin-right: 20px; border: 1px solid #fff; padding: 20px 300px;border-radius: 30px; margin-top: 50px;">
-            <a href="/checkout">CHECKOUT</a>
-            <!-- <input type="submit" value="addtocard"> -->
+            <a style="color: #fff;" href="/checkout">CHECKOUT</a>
         </div>
-        </form>
-        <div class="card5" style="margin-top: 200px; font-size: 3vw;width: 70%;padding-left:20px ;">
+        <div class="card5"
+            style="margin-top: 200px; font-size: 3vw;width: 70%;padding-left:20px ; background-color: #111;">
             <h2 style="font-family: 900; color: #f2eaea;">THANK YOU FOR WALKING
                 ALONGSIDE VULNERABLE
                 WOMEN AS THEY FIND THEIR
@@ -40,83 +75,87 @@
         </div>
     </div>
 
+
+
+    
     <script>
 
 
 
-        let arr = [
-            { product: "CHNAGE THE COUSER COOK KIT", price: "$95" },
-            { product: "THE COUSER COOK KIT", price: "$50" },
-        ];
+        // let arr = [
+        //     { product: "CHNAGE THE COUSER COOK KIT", price: "$95" },
+        //     { product: "THE COUSER COOK KIT", price: "$50" },
+        // ];
 
 
-        function cardproduct() {
-            let cultter = ""
-            arr.forEach(function (val, index) {
-                cultter += `<div id="card2"
-            style="display: flex; align-items: center; justify-content:space-between; padding: 50px 10px; border-bottom: 1px solid gray; margin: 0px 20px;">
-                <h1 style="font-size: 20px; font-weight: 500;">${val.product}</h1>
-                <div class="addcard" style="display: flex; gap: 25px; padding-left: 280px;">
-                    <!-- <%- include("shared.ejs") -%> -->
-                    <form action="/add-to-card" method="post">
-                        <a class="minus" href="#" style="text-decoration: none; color: #fff;">-</a>
-                        <a data-index="${index}" class="num" href="#"
-                            style="text-decoration: none; color: #fff;padding-left: 20px;padding-right: 20px;">1</a>
-                        <a class="plus" href="#" style="text-decoration: none; color: #fff;">+</a>
-                    </form>
-                </div>
-                <div class="amt" style="display: flex; align-items: center; gap: 50px;">
-                    <h1 style="font-size: 20px; font-weight: 100;">${val.price}</h1>
-                    <a style="text-decoration: none; color: #fff;" href="/card"><i class="fa-solid fa-xmark"></i></a>
-                </div>
-        </div>  `
+        // function cardproduct() {
+        //     let cultter = ""
+        //     arr.forEach(function (val, index) {
+        //         cultter += `<div id="card2"
+        //     style="display: flex; align-items: center; justify-content:space-between; padding: 50px 10px; border-bottom: 1px solid gray; margin: 0px 20px;">
+        //         <h1 style="font-size: 20px; font-weight: 500;">${val.product}</h1>
+        //         <div class="addcard" style="display: flex; gap: 25px; padding-left: 280px;">
+        //             <!-- <%- include("shared.ejs") -%> -->
+        //             <form action="/add-to-card" method="post">
+        //                 <a class="minus" href="#" style="text-decoration: none; color: #fff;">-</a>
+        //                 <a data-index="${index}" class="num" href="#"
+        //                     style="text-decoration: none; color: #fff;padding-left: 20px;padding-right: 20px;">1</a>
+        //                 <a class="plus" href="#" style="text-decoration: none; color: #fff;">+</a>
+        //             </form>
+        //         </div>
+        //         <div class="amt" style="display: flex; align-items: center; gap: 50px;">
+        //             <h1 style="font-size: 20px; font-weight: 100;">${val.price}</h1>
+        //             <a style="text-decoration: none; color: #fff;" href="/card"><i class="fa-solid fa-xmark"></i></a>
+        //         </div>
+        // </div>  `
 
 
-            })
-            document.querySelector(".main .cards").innerHTML = cultter;
-        }
+        //     })
+        //     document.querySelector(".main .cards").innerHTML = cultter;
+        // }
 
-        cardproduct();
-
-
-
-
-
-        let plusbtn = document.querySelector(".main .plus");
-        let numbtn = document.querySelector(".main .num");
-        let minusbtn = document.querySelector(".main .minus");
-        let pricebtn = document.querySelector(".main .price");
+        // cardproduct();
 
 
 
 
 
-        let a = 1;
-        let p = 1;
-        plusbtn.addEventListener("click", () => {
-            a++;
-            p++;
-            numbtn.innerHTML = a;
-            pricebtn.innerHTML = p * 95;
-            if (a < 0) {
-                numbtn.innerHTML = 0;
-                pricebtn.innerHTML = 0;
-            }
-        });
+        // let plusbtn = document.querySelector(".main .plus");
+        // let numbtn = document.querySelector(".main .num");
+        // let minusbtn = document.querySelector(".main .minus");
+        // let pricebtn = document.querySelector(".main .price");
 
-        minusbtn.addEventListener("click", () => {
-            a--;
-            p--;
-            numbtn.innerHTML = a;
-            pricebtn.innerHTML = p * 95;
-            if (a < 0) {
-                numbtn.innerHTML = 0;
-                pricebtn.innerHTML = 0;
-            };
-        });
+
+
+
+
+        // let a = 1;
+        // let p = 1;
+        // plusbtn.addEventListener("click", () => {
+        //     a++;
+        //     p++;
+        //     numbtn.innerHTML = a;
+        //     pricebtn.innerHTML = p * 95;
+        //     if (a < 0) {
+        //         numbtn.innerHTML = 0;
+        //         pricebtn.innerHTML = 0;
+        //     }
+        // });
+
+        // minusbtn.addEventListener("click", () => {
+        //     a--;
+        //     p--;
+        //     numbtn.innerHTML = a;
+        //     pricebtn.innerHTML = p * 95;
+        //     if (a < 0) {
+        //         numbtn.innerHTML = 0;
+        //         pricebtn.innerHTML = 0;
+        //     };
+        // });
 
 
 
 
     </script>
+
     <% include ./partial/footer.ejs %>

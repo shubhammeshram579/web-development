@@ -10,10 +10,24 @@ const productSchema = mongoose.Schema({
   //   type: mongoose.Schema.Types.ObjectId,
   //   ref:"user"
   // },
-  producttitle: String,
-  qty:Number,
-  price: String,
-  pimags:String,
+  producttitle:{
+    type:String,
+  },
+  pPrice:{
+    type:String
+  },
+  pImage:{
+    type: String
+  },
+  quantity: {
+    type: Number,
+    default: 1, // Default to 1 quantity
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+
 });
 
 
