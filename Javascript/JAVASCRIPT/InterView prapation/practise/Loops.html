@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Loops</h1>
-    
+
 
 
     <script>
@@ -15,346 +17,729 @@
         console.log("loops")
 
         // Basic Level:
-    // 1. Print numbers from 1 to 10 using a loop.
+        // 1. Print numbers from 1 to 10 using a loop.
 
-    // for(let i = 1; i <= 10; i++){
-    //     console.log(i)
-    // }
-
-
-    // // practice
-    // for(let i = 1; i <= 10; i++){
-    //     console.log("print 1 to 10 range of nummber ",i)
-    // }
+        // for(let i = 1; i <= 10; i++){
+        //     console.log(i)
+        // }
 
 
-    // 2.Print even numbers between 1 and 20.
+        // // practice
+        // for(let i = 1; i <= 10; i++){
+        //     console.log("print 1 to 10 range of nummber ",i)
+        // }
 
-    // for(let i = 2; i <= 20; i += 2){
-    //     console.log(i)
-    // }
-
-
-
-    // // practice
-    // for(let i = 2; i <=20; i += 2){
-    //     console.log("even number betweeb 1 to 20", i)
-    // }
+        // for (let i = 0; i <= 10; i++){
+        //     console.log(`zero to ten range of number ${i}`)
+        // }
 
 
-    // 3.Print the sum of numbers from 1 to 100.
-    // let sum1 = 0;
+        // 2.Print even numbers between 1 and 20.
 
-    // for(let i = 1; i <= 10; i++){
-    //     sum1 += i;
-    // }
-
-    // console.log(sum1)
-
-    // practice
-    let subTotal = 0;
-    for(let i = 1; i <= 5; i++){
-        subTotal += i
-    }
-    console.log("subTotal",subTotal)
-    
-
-    // array values subtotal using reduce fuction
-    let arrSum = [1,2,3,4,5];
-    let totalArrsum = arrSum.reduce((a, b) => (a + b))
-    console.log(totalArrsum)
+        // for(let i = 2; i <= 20; i += 2){
+        //     console.log(i)
+        // }
 
 
 
+        // // practice
+        // for(let i = 2; i <=20; i += 2){
+        //     console.log("even number betweeb 1 to 20", i)
+        // }
+
+        // for(let i = 2; i <= 20; i += 2){
+        //     console.log(`print even number 2 to 20 range ${i}`)
+        // }
+
+        for (let i = 3; i <= 30; i += 3) {
+            console.log(`3 to 30 range of even numbers ${i}`)
+        }
 
 
-    // 4.Reverse a string using a loop.
+        // 3.Print the sum of numbers from 1 to 100.
+        // let sum1 = 0;
 
-    let str = "javascript";
-    let reversed = '';
+        // for(let i = 1; i <= 10; i++){
+        //     sum1 += i;
+        // }
 
-    for(let i = str.length - 1; i >= 0; i--){
-        reversed += str[i]
-    }
+        // console.log(sum1)
 
-    console.log(reversed)
-
-
-
-    // own quetion
-    // for(let i = 10; i >= 1; i -= 1){
-    //     console.log(i)
-    // }
+        // practice
+        // let subTotal = 0;
+        // for(let i = 1; i <= 5; i++){
+        //     subTotal += i
+        // }
+        // console.log("subTotal",subTotal)
 
 
-    // practice
-    let sname = "shubham";
-    let store = ''
+        let sum = 0;
 
-    for(let i = sname.length -1; i >= 0; i--){
-        // console.log(sname[i])
-        store += sname[i]
-    }
-
-    console.log("shubham",store)
+        // for (let i = 2; i <= 6; i++) {
+        //     sum += i
+        // }
+        // console.log(`1 to 20 range of number sum ${sum}`)
 
 
-    // 5.Print each character of a string.
-    let str2 = "shubham meshram"
+        for (let i = 3; i <= 30; i += 3) {
+            sum += i
 
-    // for(let i = 0; i <= str2.length; i++){
-    //     console.log(str2[i])
-    // }
+        }
 
-    // practice
-    for(let i = 0; i < str2.length; i++){
-        console.log("print each str",str2[i])
-    }
+        console.log(`3 to 30 range of even numbers ${sum}`)
 
 
 
-    
-    // Intermediate Level:
-    // 6.Print the factorial of a number(e.g., 5!).
 
-    // Calculation Process:
-    // 1.First iteration (i = 5):
+
+
+
+        // array values subtotal using reduce fuction
+        let arrSum = [1, 2, 3, 4, 5];
+        let totalArrsum = arrSum.reduce((a, b) => (a + b))
+        console.log(totalArrsum)
+
+
+        let std = [2, 5, 4, 6, 7, 8];
+        let Subtotal = std.reduce((a, b) => (a + b))
+        console.log(`total sum of student ${Subtotal}`)
+
+
+
+
+
+        // 4.Reverse a string using a loop.
+
+        let str = "javascript";
+        let reversed = '';
+
+        for (let i = str.length - 1; i >= 0; i--) {
+            reversed += str[i]
+        }
+
+        console.log(reversed)
+
+
+
+        // own quetion
+        // for(let i = 10; i >= 1; i -= 1){
+        //     console.log(i)
+        // }
+
+
+        // practice
+        let sname = "shubham";
+        let store = ''
+
+        // for(let i = sname.length -1; i >= 0; i--){
+        //     // console.log(sname[i])
+        //     store += sname[i]
+        // }
+
+        // console.log("shubham",store)
+
+
+
+        let Lname = "labham meshram";
+        let RName = '';
+
+        for (let i = Lname.length - 1; i >= 0; i--) {
+            RName += Lname[i]
+
+        }
+
+        console.log(`${Lname} then ${RName}`)
+
+
+        let Pname = "pallavi meshram"
+        let storeRevens = ''
+
+        for (let i = Pname.length - 1; i >= 0; i--) {
+            // console.log("dddd",Pname[i])
+            storeRevens += Pname[i]
+        }
+
+        console.log(`old str ${Pname} new str ${storeRevens}`)
+
+
+        // 5.Print each character of a string.
+        let str2 = "shubham meshram"
+
+        // for(let i = 0; i <= str2.length; i++){
+        //     console.log(str2[i])
+        // }
+
+        // practice
+        // for(let i = 0; i < str2.length; i++){
+        //     console.log("print each str",str2[i])
+        // }
+
+        let LnamePL = "labham meshram";
+
+        for (let i = 0; i < LnamePL.length; i++) {
+            console.log(LnamePL[i])
+
+        }
+
+
+        let Pname2 = "pallavi meshram";
+
+        for (let i = 0; i <= Pname2.length; i++) {
+            console.log(`print of str ${Pname2[i]}`)
+        }
+
+
+
+
+
+
+        // Intermediate Level:
+        // 6.Print the factorial of a number(e.g., 5!).
+
+        // Calculation Process:
+        // 1.First iteration (i = 5):
         // factorial = factorial * i = 1 * 5 = 5
-    // 2. Second iteration (i = 4):
+        // 2. Second iteration (i = 4):
         // factorial = factorial * i = 5 * 4 = 20
-    // 3. Third iteration (i = 3):
+        // 3. Third iteration (i = 3):
         // factorial = factorial * i = 20 * 3 = 60
-    // 4. Fourth iteration (i = 2):
+        // 4. Fourth iteration (i = 2):
         // factorial = factorial * i = 60 * 2 = 120
-    // 5.  Fifth iteration (i = 1):
+        // 5.  Fifth iteration (i = 1):
         // factorial = factorial * i = 120 * 1 = 120
         // Once the loop finishes, the value of factorial will be 120, which is the factorial of 5.
 
 
 
-    // Conclusion:
-    // This code calculates 5! = 5 * 4 * 3 * 2 * 1 = 120, and the final result is printed as 120.
+        // Conclusion:
+        // This code calculates 5! = 5 * 4 * 3 * 2 * 1 = 120, and the final result is printed as 120.
 
 
-    let num2 = 5;
-    let factorial = 1;
-    
-    for (let i = num2; i >= 1; i--) {
-        // console.log("s",i)
+        let num2 = 5;
+        let factorial = 1;
+
+        for (let i = num2; i >= 1; i--) {
+            // console.log("s",i)
             factorial *= i;
-    }
-    console.log("factorial",factorial);
-
-
-
-    // practice number series caluculate
-    let numberOfrangeSelect = 6;
-    let factorialSum = 1;
-
-    for(let i = numberOfrangeSelect; i >= 1; i--){
-        factorialSum *= i
-    }
-
-    console.log("factorialSum" ,factorialSum)
-
-
-
-    // 7.Check if a number is prime.
-    let num = 7;
-    let isPrime = true
-
-    // for (let i = 2; i >= num; i++){
-    //     if(num % i === 0){
-    //         isPrime = false
-    //         break;
-
-    //     }
-    // }
-    // console.log(isPrime ? "Prime" : "not Prime");
-
-
-
-    // practice
-    for(let i = 2; i >= num; i++){
-        if(num % i === 0){
-            isPrime = false
-            break
         }
-    }
-
-    console.log(isPrime ? "prime value" : "not Prime value")
+        console.log("factorial", factorial);
 
 
 
+        // practice number series caluculate
+        let numberOfrangeSelect = 6;
+        let factorialSum = 1;
 
-
-
-    // 8.Print Fibonacci series up to 10 terms.
-
-    // Fibonacci Sequence
-    let n1 = 0;
-    let n2 = 1;
-    let nextTerm;
-
-    for(let i = 1; i <= 10; i++){
-        // console.log(i)
-        console.log("Fibonacci",n1)
-        nextTerm = n1 + n2
-        n1 = n2
-        n2 = nextTerm
-    }
-
-
-    // practice
-    let m1 = 0 , m2 = 1, nextTerm2;
-
-    for(let i = 1; i <=10; i++){
-        console.log("m1",m1)
-        nextTerm2 = m1 + m2
-        // console.log(nextTerm2)
-        m1 = m2
-        // console.log("m1",m1)
-        m2 = nextTerm2
-    }
-
-
-    // console.log("nexttem",nextTerm)
-
-
-     // 9.Sum all the elements in an array.
-     let array1 = [2,3,5,6,7,8];
-     let sumA = 0;
-
-
-     for(let i = 0; i < array1.length; i++){
-        // console.log(array1[i])
-        sumA += array1[i]
-     }
-
-     console.log(sumA)
-
-
-    //  myOwn solution using forEach function for array
-    //  array1.forEach(function(i){
-    //     // console.log(i)
-    //     sumA += i
-    //  })
-
-    //  console.log(sumA)
-
-
-
-    // 10.Find the maximum number in an array.
-    let array2 = [2,4,5,7,8,2,9];
-    let max = array2[0];
-
-
-    // for(let i = 1; i < array2.length; i++){
-    //     if(array2[i] > max){
-    //         max = array2[i];
-    //     }
-    // }
-    // console.log(max)
-
-
-    // practice
-    for(let i = 1; i < array2.length; i++){
-        // console.log(array2[i])
-        if(array2[i] > max){
-            max = array2[i]
+        for (let i = numberOfrangeSelect; i >= 1; i--) {
+            factorialSum *= i
         }
-    }
 
-    console.log(`array of the max value ${max}`)
-
+        console.log("factorialSum", factorialSum)
 
 
-    // my own method 2
-    // for(let i = array2.length -1 ; i >= 0 ; i--){
-    //     console.log(array2[i], i)
-    //     max = array2[6]
-    // }
+        let rangeNum = 5;
+        let factorialCal = 1;
 
-    // console.log(max)
-
-
-
-    // my own 3 methon solution 
-    let sortValue = array2.sort((a , b) => (a - b))
-
-    console.log(sortValue)
-    let max2 = sortValue[6]
-    console.log(max2)
-
-
-
-
-
-     // Advanced Level:
-    // 11.Print the elements of a 2D array.
-
-    let matrix2DA = [[1,2,3,4,5] , [2,5,63,6,7],[5,6,3,7,4]];
-    console.log(matrix2DA) 
-
-
-    for(let i = 0; i < matrix2DA.length; i++){
-        // console.log(i) array index select
-        // console.log(matrix2DA[i]) value acsess
-        for(let j = 0; j < matrix2DA[i].length; j++){
-            // console.log(j) //value index select
-            console.log(matrix2DA[i][j]) //print of array value
+        for (let i = rangeNum; i >= 1; i--) {
+            factorialCal += i
         }
-    };
+
+        console.log(`factorialCal ${factorialCal}`)
 
 
-    // 12.Flatten a nested array(without using built -in methods).
-    let nestArray = [1, [2, [3, 4]], 5];
-    console.log(nestArray)
-    let flattenStore = []
 
-    function flatten(arr){
-        for(let i = 0; i < arr.length; i++){
-            if(Array.isArray(arr[i])){
-                flatten(arr[i]);
-            }else{
+        let numberSelect = 6;
+        let factorialNum = 1;
 
-            }flattenStore.push(arr[i])
+        for (let i = numberSelect; i >= 1; i--) {
+            // console.log("fdfds",i)
+            factorialNum += i
         }
-    }
 
-    flatten(nestArray)
-    console.log(flattenStore)
+        console.log("fff", factorialNum)
 
 
 
-    // 13.Find the intersection of two arrays.
+        // 7.Check if a number is prime.
+        // let num = 6;
+        // let isPrime = true
 
-    // intersection means find arr1 and arr same values 
+        // for (let i = 2; i >= num; i++){
+        //     if(num % i === 0){
+        //         isPrime = false
+        //         break;
 
-    let arr1 = [2,4,6,8]
-    let arr2 = [4,8,12,16]
-    let intersection = []
+        //     }
+        // }
+        // console.log(isPrime ? "Prime" : "not Prime");
 
 
-    for(let i = 0; i < arr1.length; i++){
-        if(arr2.includes(arr1[i])){
-            intersection.push(arr1[i])
+
+        // practice
+        // for(let i = 2; i >= num; i++){
+        //     if(num % i === 0){
+        //         isPrime = false
+        //         break
+        //     }
+        // }
+
+        // console.log(isPrime ? "prime value" : "not Prime value")
+
+
+
+        // for (let i = 2; i >= num; i++) {
+        //     if (num % i === 0) {
+        //         isPrime = false
+        //         break
+        //     }
+
+        // }
+
+        // console.log(isPrime ? "prim value" : "not prim")
+
+
+
+        let num = 6; // Example number to check
+        let isPrime = true; // Assume num is prime
+
+        if (num <= 1) {
+            isPrime = false; // Numbers less than or equal to 1 are not prime
+        } else {
+            for (let i = 2; i <= Math.sqrt(num); i++) { // Check from 2 to sqrt(num)
+                if (num % i === 0) { // If num is divisible by i
+                    isPrime = false; // It's not prime
+                    break; // No need to check further
+                }
+            }
         }
-    }
 
-    console.log(intersection)
-
+        console.log(isPrime ? "prime value" : "not prime");
 
 
-    // 14.Rotate an array by n positions.
-    let arr7 = [1, 2, 3, 4, 5];
-    let n10 = 2;
-    for (let i = 0; i < n10; i++) {
-        arr7.unshift(arr7.pop());
-    }
-    
-    console.log(arr7);
+        let numD = 11;
+        let isPrime2 = true
 
+        if (numD <= 1) {
+            isPrime2 = false
+        } else {
+            for (let i = 2; i <= Math.sqrt(numD); i++) {
+                if (numD % i === 0) {
+                    isPrime2 = false
+                    break
+                }
+            }
+        }
+
+
+        console.log(isPrime2 ? "it is prime value" : "not a prime value")
+
+
+
+
+
+
+
+
+
+        // 8.Print Fibonacci series up to 10 terms.
+
+        // Fibonacci Sequence
+        let n1 = 0;
+        let n2 = 1;
+        let nextTerm;
+
+        for (let i = 1; i <= 10; i++) {
+            // console.log(i)
+            console.log("Fibonacci", n1)
+            nextTerm = n1 + n2
+            n1 = n2
+            n2 = nextTerm
+        }
+
+
+        // practice
+        let m1 = 0, m2 = 1, nextTerm2;
+
+        for (let i = 1; i <= 10; i++) {
+            console.log("m1", m1)
+            nextTerm2 = m1 + m2
+            // console.log(nextTerm2)
+            m1 = m2
+            // console.log("m1",m1)
+            m2 = nextTerm2
+        }
+
+
+        let Lnum = 0;
+        let Lnum2 = 1;
+        let nexttemL;
+
+        for (let i = 0; i <= 10; i++) {
+            console.log("pp", Lnum)
+            nexttemL = Lnum + Lnum2
+            Lnum = Lnum2
+            Lnum2 = nexttemL
+        }
+
+        console.log("result", nexttemL)
+
+
+        // console.log("nexttem",nextTerm)
+
+
+        // 9.Sum all the elements in an array.
+        let array1 = [2, 3, 5, 6, 7, 8];
+        let sumA = 0;
+
+
+        // for (let i = 0; i < array1.length; i++) {
+        //     // console.log(array1[i])
+        //     sumA += array1[i]
+        // }
+
+        // console.log(sumA)
+
+
+        // practice
+
+        for (let i = 0; i < array1.length; i++) {
+            // console.log(array1[i])
+            sumA += array1[i]
+        }
+
+        console.log(`sum of array ${sumA}`)
+
+
+
+        //  myOwn solution using forEach function for array
+        //  array1.forEach(function(i){
+        //     // console.log(i)
+        //     sumA += i
+        //  })
+
+        //  console.log(sumA)
+
+
+
+        // 10.Find the maximum number in an array.
+        let array2 = [2, 4, 5, 7, 8, 2, 9, 15];
+        let max = array2[0];
+
+
+        // for(let i = 1; i < array2.length; i++){
+        //     if(array2[i] > max){
+        //         max = array2[i];
+        //     }
+        // }
+        // console.log(max)
+
+
+        for (let i = 1; i < array2.length; i++) {
+            if (array2[i] > max) {
+                max = array2[i]
+            }
+        }
+
+        console.log(`array of the max value ${max}`)
+
+
+        // practice
+        // for (let i = 1; i < array2.length; i++) {
+        //     // console.log(array2[i])
+        //     if (array2[i] > max) {
+        //         max = array2[i]
+        //     }
+        // }
+
+        // console.log(`array of the max value ${max}`)
+
+
+
+        // my own method 2
+        // for(let i = array2.length -1 ; i >= 0 ; i--){
+        //     console.log(array2[i], i)
+        //     max = array2[6]
+        // }
+
+        // console.log(max)
+
+
+
+        // my own 3 methon solution 
+        let sortValue = array2.sort((a, b) => (a - b))
+
+        console.log(sortValue)
+        let max2 = sortValue[6]
+        console.log(max2)
+
+
+
+
+
+        // Advanced Level:
+        // 11.Print the elements of a 2D array.
+
+        let matrix2DA = [[1, 2, 3, 4, 5], [2, 5, 63, 6, 7], [5, 6, 3, 7, 4]];
+        console.log(matrix2DA)
+
+
+        for (let i = 0; i < matrix2DA.length; i++) {
+            // console.log(i) array index select
+            // console.log(matrix2DA[i]) value acsess
+            for (let j = 0; j < matrix2DA[i].length; j++) {
+                // console.log(j) //value index select
+                console.log(matrix2DA[i][j]) //print of array value
+            }
+        };
+
+
+
+        let two2 = [[1, 2, 3, 5, 6], [3, 5, 4, 6, 7]]
+
+        console.log(two2)
+
+        for (let i = 0; i < two2.length; i++) {
+            // console.log(two2[i])
+            for (let j = 0; j < two2[i].length; j++) {
+                console.log(two2[i][j])
+            }
+        }
+
+
+        // 12.Flatten a nested array(without using built -in methods).
+        let nestArray = [1, [2, [3, 4]], 5];
+        console.log(nestArray)
+        let flattenStore = []
+
+        // function flatten(arr) {
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (Array.isArray(arr[i])) {
+        //             flatten(arr[i]);
+        //         } else {
+
+        //         } flattenStore.push(arr[i])
+        //     }
+        // }
+
+        // flatten(nestArray)
+        // console.log(flattenStore)
+
+        function flatten(arr) {
+            for (let i = 0; i < nestArray.length; i++) {
+                if (Array.isArray(arr[i])) {
+                    flatten(arr[i]);
+                } else {
+                    flattenStore.push(arr[i])
+                }
+            }
+
+        }
+
+        flatten(nestArray)
+        console.log(flattenStore)
+
+
+
+
+
+
+
+        // 13.Find the intersection of two arrays.
+
+        // intersection means find arr1 and arr same values 
+
+        let arr1 = [2, 4, 6, 8, 12, 14]
+        let arr2 = [4, 8, 12, 16, 12, 18]
+        let intersection = []
+
+
+        // for (let i = 0; i < arr1.length; i++) {
+        //     if (arr2.includes(arr1[i])) {
+        //         intersection.push(arr1[i])
+        //     }
+        // }
+
+        // console.log(intersection)
+
+
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr2.includes(arr1[i])) {
+                intersection.push(arr1[i])
+            }
+        }
+
+        console.log(intersection)
+
+
+
+        // 14.Rotate an array by n positions.
+        let arr7 = [1, 2, 3, 4, 5];
+        let n10 = 2;
+        for (let i = 0; i < n10; i++) {
+            arr7.unshift(arr7.pop());
+        }
+
+        console.log(arr7);
+
+
+        // practice
+        let arr8 = [20, 21, 50, 55, 63];
+        let nRange = 2;
+
+        for (let i = 0; i < nRange; i++) {
+            arr8.unshift(arr8.pop())
+        }
+
+        console.log(arr8);
+
+
+
+
+        let arr9 = [3, 4, 5, 6, 7];
+
+        for (let i = 0; i < 2; i++) {
+            arr9.unshift(arr9.pop())
+        }
+
+        console.log(arr9)
+
+
+
+        // 15.Check if a string is a palindrome.
+
+        let strP = "madam";
+        let isPalindrome = true;
+        for (let i = 0; i < strP.length / 2; i++) {
+            if (strP[i] !== strP[strP.length - 1 - i]) {
+                isPalindrome = false;
+                break;
+            }
+        }
+        console.log(isPalindrome ? "Palindrome" : "Not a palindrome");
+
+
+
+        let strP2 = 'dad' // palindrom str is read to same promsation like dad , madam.
+        let isPalindrome2 = true
+
+        for (let i = 0; i < strP2.length / 2; i++) {
+            // console.log(strP2[i])
+            // set condition
+            if (strP2[i] != strP2[strP2.length - 1 - i]) {
+                isPalindrome2 = false;
+                break
+            }
+        }
+
+        console.log(isPalindrome2 ? "it is a palindrome str" : "it is not palindrome str");
+
+
+
+
+
+        // Advanced Challenges:
+        // 16.Implement bubble sort using a loop.
+        let buArrary = [2, 5, 4, 12, 8, 9];
+
+        for (let i = 0; i < buArrary.length - 1; i++) {
+            // console.log(i)
+            for (let j = 0; j < buArrary.length - 1 - i; j++) {
+                if (buArrary[j] > buArrary[j + 1]) {
+                    [buArrary[j], buArrary[j + 1]] = [buArrary[j + 1], buArrary[j]]
+                }
+            }
+        }
+
+        console.log(buArrary);
+
+
+
+        // 17.Count the occurrence of each element in an array.
+        let ArrofRepVCout = [1, 2, 3, 4, 5, 4, 6, 4];
+        let count = {};
+
+        for (let i = 0; i < ArrofRepVCout.length; i++) {
+            count[ArrofRepVCout[i]] = (count[ArrofRepVCout[i]] || 0) + 1;
+        }
+        console.log(count)
+
+
+
+        // 18.Generate a pyramid pattern.
+        let n = 5;
+
+        for (let i = 1; i < n; i++) {
+            console.log(' '.repeat(n - i) + "*".repeat(i * 2 - 1))
+        }
+
+
+        let nP = 10; // Number of rows
+
+        for (let i = 1; i <= nP; i++) {
+            // Print spaces
+            let spaces = ' '.repeat(nP - i);
+
+            // Print stars
+            let stars = '*'.repeat(2 * i - 1);
+
+            // Print one row of the pyramid
+            console.log(spaces + stars);
+        }
+
+
+
+        //19.Find the missing number in an array of consecutive numbers.
+
+        // single missing value find out
+        let mArrayNumber = [1, 2, 4, 5, 6, 7, 9];
+        let mising;
+
+        for (let i = 0; i < mArrayNumber.length - 1; i++) {
+            if (mArrayNumber[i + 1] - mArrayNumber[i] !== 1) {
+                mising = mArrayNumber[i] + 1;
+                break
+            }
+
+        }
+
+        console.log(mising)
+
+
+
+        // multiple missing value find out
+        let mArrayNumber2 = [1, 2, 4, 5, 6, 7, 9];
+        let missingNumbers = []; // Array to store missing numbers
+
+        for (let i = 0; i < mArrayNumber2.length - 1; i++) {
+            // Check if the difference between consecutive elements is more than 1
+            if (mArrayNumber2[i + 1] - mArrayNumber2[i] !== 1) {
+                // Calculate the missing numbers between mArrayNumber[i] and mArrayNumber[i + 1]
+                for (let j = mArrayNumber2[i] + 1; j < mArrayNumber2[i + 1]; j++) {
+                    missingNumbers.push(j); // Add missing number to the array
+                }
+            }
+        }
+
+        console.log(missingNumbers);
+
+
+
+        // 20.Transpose a matrix.
+        let matrix = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+
+        // console.log(matrix)
+        let transposed = [];
+        for (let i = 0; i < matrix.length; i++) {
+            transposed[i] = [];
+            for (let j = 0; j < matrix[i].length; j++) {
+                transposed[i][j] = matrix[j][i];
+            }
+        }
+        console.log(transposed);
 
 
 
@@ -365,4 +750,5 @@
 
     </script>
 </body>
+
 </html>

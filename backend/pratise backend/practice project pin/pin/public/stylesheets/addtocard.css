@@ -8,6 +8,7 @@ html,body{
     height: 100%;
     width: 100%;
     /* overflow-x: hidden */
+    background-color: red
 };
 
 .header-nav{
@@ -47,14 +48,22 @@ html,body{
 
 .main .card4 a{
     text-decoration: none;
+    color:#fff;
+    float: right;
+    padding: 20px 250px;
+    margin-right: 100px;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    margin-top: 20px;
 }
 
 
 
-.main .card4:hover{
+.main .card4 a:hover{
+    color: #111;
     background-color: #fff;
-    color:#111;
-    
+    font-weight: 800;
 }
+
 
 

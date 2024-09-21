@@ -11,16 +11,17 @@
         </div>
         <div class="cards">
             <% if (cart && cart.products.length> 0) { %>
-                <% cart.products.forEach(cartItem=> { %>
-                    <div id="card2"
-                        style="display: flex; align-items: center; justify-content:space-between; padding: 50px 20px; border-bottom: 1px solid gray;">
-                        <h1 style="font-size: 20px; font-weight: 500; text-transform: capitalize; width: 30%;">
-                            <%= cartItem.productId.producttitle %>
-                        </h1>
-                        <div class="addcard" style="display: flex; gap: 25px;">
+                <% let totalAmount=0; %> <!-- Initialize total amount -->
+                    <% cart.products.forEach(cartItem=> { %>
+                        <div id="card2"
+                            style="display: flex; align-items: center; justify-content:space-between; padding: 50px 20px; border-bottom: 1px solid gray;">
+                            <h1 style="font-size: 20px; font-weight: 500; text-transform: capitalize; width: 30%;">
+                                <%= cartItem.productId.producttitle %>
+                            </h1>
+                            <div class="addcard" style="display: flex; gap: 25px;">
 
-                            <!-- Decrease quantity button -->
-                            <form  action="/update-quantity2/<%= cartItem.productId._id %>" method="POST">
+                                <!-- Decrease quantity button -->
+                                <form  action="/update-quantity/<%= cartItem.productId._id %>" method="POST">
                                 <input type="hidden" name="action" value="decrease">
                                 <button  style="border: none;"  type="submit"><i style="background-color:#111; color: #fff; border: 1px solid #111;" class="ri-subtract-line"></i></button>
                             </form>
@@ -28,23 +29,50 @@
                                 <%= cartItem.quantity %>
                             </h1>
 
-                            <!-- Increase quantity button -->
-                            <form action="/update-quantity2/<%= cartItem.productId._id %>" method="POST">
+                                <!-- Increase quantity button -->
+                                <form action="/update-quantity/<%= cartItem.productId._id %>" method="POST">
                                 <input type="hidden" name="action" value="increase">
                                 <button  style="border: none;" type="submit"><i style="background-color:#111; color: #fff; border: 1px solid #111;" class="ri-add-line"></i></button>
                             </form>
+                                <!-- Decrease quantity button -->
+                                <!-- <button onclick="updateQuantity('<%= cartItem.productId._id %>', 'decrease')"
+                                    style="border: none;">
+                                    <i style="background-color: #111; color: #fff; border: 1px solid #111;"
+                                        class="ri-subtract-line"></i>
+                                </button>
+                                <h1 id="quantity-<%= cartItem.productId._id %>"
+                                    style="font-size: 1vw; font-weight: 400;">
+                                    <%= cartItem.quantity %>
+                                </h1> -->
+                                <!-- Increase quantity button -->
+                                <!-- <button onclick="updateQuantity('<%= cartItem.productId._id %>', 'increase')"
+                                    style="border: none;">
+                                    <i style="background-color: #111; color: #fff; border: 1px solid #111;"
+                                        class="ri-add-line"></i>
+                                </button> -->
+                            </div>
+                            <div class="amt" style="display: flex; align-items: center; gap: 50px;">
+                                <h1 style="font-size: 20px; font-weight: 100;">$<%= cartItem.productId.pPrice %>
+                                </h1>
+                                <!-- <a style="text-decoration: none; color: #fff;" href="/card"><i
+                                    class="fa-solid fa-xmark"></i></a> -->
+                                <form action="/delete-from-cart/<%= cartItem.productId._id %>" method="POST"
+                                    style="margin: 0;">
+                                    <button style="border: none; background-color: transparent;" type="submit">
+                                        <i style="color: #fff;" class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <!-- Delete button -->
+
+
                         </div>
-                        <div class="amt" style="display: flex; align-items: center; gap: 50px;">
-                            <h1 style="font-size: 20px; font-weight: 100;">$<%= cartItem.productId.pPrice %>
-                            </h1>
-                            <a style="text-decoration: none; color: #fff;" href="/card"><i
-                                    class="fa-solid fa-xmark"></i></a>
-                        </div>
-                    </div>
-                    <% }) %>
-                        <% } else { %>
-                            <p>Your cart is empty.</p>
-                            <% } %>
+                        <% totalAmount +=cartItem.quantity * cartItem.productId.pPrice; %>
+                            <!-- Calculate total amount -->
+                            <!-- Display total amount -->
+                            <% }) %>
+
+
 
         </div>
 
@@ -57,27 +85,54 @@
             </div>
             <div class="amt2" style="display: flex; justify-content: end;flex-direction: column; align-items: end;">
                 <h1 style="font-size: 15px; font-weight: 500;">SHIPPING CALCULATION AT CHECK-OUT.</h1>
-                <h1 name="price" style="font-size: 15px; font-weight: 500;padding-top: 10px;">$<span
-                        class="price">95</span></h1>
+                <div style="text-align: right; padding: 20px 50px; font-size: 20px; font-weight: 600;">
+                    $<%= totalAmount.toFixed(2) %>
+                </div>
             </div>
 
         </div>
-        <div class="card4"
-            style="float: right; margin-right: 20px; border: 1px solid #fff; padding: 20px 300px;border-radius: 30px; margin-top: 50px;">
-            <a style="color: #fff;" href="/checkout">CHECKOUT</a>
-        </div>
-        <div class="card5"
-            style="margin-top: 200px; font-size: 3vw;width: 70%;padding-left:20px ; background-color: #111;">
-            <h2 style="font-family: 900; color: #f2eaea;">THANK YOU FOR WALKING
-                ALONGSIDE VULNERABLE
-                WOMEN AS THEY FIND THEIR
-                WAY HOME AGAIN.</h2>
-        </div>
+
+
+        <% } else { %>
+            <p>Your cart is empty.</p>
+            <% } %>
+                <div class="card4">
+                    <a class="ChecBtn" href="/add-to-cart2">CHECKOUT</a>
+                </div>
+                <div class="card5"
+                    style="margin-top: 200px; font-size: 3vw;width: 70%;padding-left:20px ; background-color: #111;">
+                    <h2 style="font-family: 900; color: #f2eaea;">THANK YOU FOR WALKING
+                        ALONGSIDE VULNERABLE
+                        WOMEN AS THEY FIND THEIR
+                        WAY HOME AGAIN.</h2>
+                </div>
     </div>
 
+    <script>
+        // function updateQuantity(productId, action) {
+        //     fetch(`/update-quantity/${productId}`, {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify({ action: action })
+        //     })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         if (data.success) {
+        //             // Update the quantity displayed on the page
+        //             document.getElementById(`quantity-${productId}`).textContent = data.newQuantity;
+        //         } else {
+        //             console.error('Failed to update quantity');
+        //         }
+        //     })
+        //     .catch(error => console.log('Error:', error));
+        // }
+        // </script>
 
 
-    
+
+<!-- 
     <script>
 
 
@@ -154,8 +209,34 @@
         // });
 
 
+        function updateQuantity(productId, action) {
+            fetch(`/update-quantity/${productId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ action: action })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Update the quantity displayed on the page
+                        document.getElementById(`quantity-${productId}`).textContent = data.newQuantity;
+
+                        // Optionally update the total amount if you have a total amount element
+                        // document.getElementById('total-amount').textContent = data.newTotalAmount;
+                    } else {
+                        console.error('Failed to update quantity');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        updateQuantity()
 
 
-    </script>
+
+
+    </script> -->
 
     <% include ./partial/footer.ejs %>

@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
-            padding:0;
+        * {
+            padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
 
-        html,body{
+        html,
+        body {
             height: 100%;
             width: 100%;
         }
 
-        body{
+        body {
             background-color: #111;
         }
 
-        .card{
+        .card {
             color: #fff;
             text-align: center;
             padding-top: 20px;
         }
 
-        .card h1{
+        .card h1 {
             text-transform: capitalize;
             text-shadow: 1px 1px red;
-            font-size:25px;
+            font-size: 25px;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             font-weight: 500;
             letter-spacing: 2px;
             word-spacing: 10px;
         }
 
-        .card h5{
+        .card h5 {
             font-size: 20px;
             font-weight: 400;
             padding-top: 20px;
@@ -44,10 +46,9 @@
             text-transform: capitalize;
 
         }
-
-
     </style>
 </head>
+
 <body>
     <div class="card">
         <h1>Contional statement practice day 1</h1>
@@ -56,73 +57,102 @@
 
     <script>
 
-       
-        
-         // 1. Question: What is the syntax of an if statement in JavaScript ? Answer :
+
+
+        // 1. Question: What is the syntax of an if statement in JavaScript ? Answer :
 
         let condition = ''
 
-         if(condition){
-            
-         }
+        if (condition) {
 
-         // 2.Question: How do you write an if-else statement in JavaScript ? Answer :
-
-         let condition2 = ''
-
-         if(condition){
-
-         }else if(condition2){
-
-         }
+        }
 
 
-          // 3. Question: How can you check if a number is positive, negative, or zero ? Answer :
+        //  practice
+        if (true) {
+            console.log("averithing is okay")
+        }
 
-          let number = 0
+        // 2.Question: How do you write an if-else statement in JavaScript ? Answer :
 
-          if(number > 0){
+        let condition2 = ''
+
+        if (condition) {
+
+        } else if (condition2) {
+
+        }
+
+
+
+        if (false) {
+            console.log("your phone number is not visible")
+        } else if (true) {
+            console.log("i gotten your number")
+        }
+
+
+        // 3. Question: How can you check if a number is positive, negative, or zero ? Answer :
+
+        let number = 0
+
+        if (number > 0) {
             console.log("number is positive")
-          }else if(number < 0){
+        } else if (number < 0) {
             console.log("number is negative")
-          }else{
+        } else {
             console.log("zero")
-          }
+        }
 
 
         //   pratice
-          let obj = "red"
-          if(obj === "red"){
+        let obj = "red"
+        if (obj === "red") {
             console.log("it is red")
-          }else if(obj === "green"){
+        } else if (obj === "green") {
             console.log("it is not red")
-          }else{
+        } else {
             console.log("it is not red color")
-          }
+        }
+
+
+        let headphone = 7;
+        if (headphone > 5) {
+            console.log("greter then 5")
+        } else if (headphone < 5) {
+            console.log("less then 5")
+        } else {
+            console.log("equel")
+        }
 
 
 
-           // 4. Question: What’s the difference between == and === in JavaScript ? Answer : == compares values after type coercion, while === compares both value and type strictly.
+        // 4. Question: What’s the difference between == and === in JavaScript ? Answer : == compares values after type coercion, while === compares both value and type strictly.
 
-           // 4.Question: How can you check if a value is null or undefined ? Answer :
+        // 4.Question: How can you check if a value is null or undefined ? Answer :
 
-           let value = null;
-           let value2 = undefined;
+        let value = null;
+        let value2 = undefined;
 
-           if(value === null && value2 === undefined){
+        if (value === null && value2 === undefined) {
             console.log("the value is null and undefined")
-           }
+        }
 
 
 
         //    pracice
-           if(value === null){
+        if (value === null) {
             console.log("value is null")
-           }else if(value === undefined){
+        } else if (value === undefined) {
             console.log("value is undifined")
-           }else{
+        } else {
             console.log("value is not null and undfied")
-           }
+        }
+
+
+        if (value === null && value2 === undefined) {
+            console.log("both are true")
+        }
 
 
 
@@ -130,18 +160,18 @@
         // 5.Question: How can you check if a number is even or odd using a conditional statement?Answer:
 
         // dout % 2?
-       
+
         // evend
-        if(number % 2 === 0){
+        if (number % 2 === 0) {
             console.log("even")
-        }else{
+        } else {
             console.log("odd")
         }
 
         // odd
-        if(number % 0 === 2){
+        if (number % 0 === 2) {
             console.log("even")
-        }else{
+        } else {
             console.log("odd")
         }
 
@@ -149,21 +179,29 @@
 
         // practice
         let nums = 20
-        if(nums % 3 === 0){
+        if (nums % 3 === 0) {
             console.log("it is even")
-        }else{
+        } else {
             console.log("it is odd")
         }
 
 
-         // 6. Question: How can you write a ternary operator that checks if a person is old enough to vote ? Answer :
+        let nums2 = 11;
+        if (nums2 % 2 === 0) {
+            console.log("even")
+        } else {
+            console.log("odd")
+        }
 
-         let canVot = 30;
-         if(canVot >= 18){
+
+        // 6. Question: How can you write a ternary operator that checks if a person is old enough to vote ? Answer :
+
+        let canVot = 30;
+        if (canVot >= 18) {
             console.log("yes you can vot for eligebel")
-         }else{
+        } else {
             console.log("not eligble")
-         }
+        }
 
 
         //  advance level condition
@@ -174,19 +212,26 @@
 
         // practise
         let age2 = 10
-        if(age2 >= 18){
+        if (age2 >= 18) {
             console.log("yes your eligble for vot")
 
-        }else{
+        } else {
             console.log("not eligible for vot")
         }
+
+
+        let male = 16;
+
+        let Vresult = male >= 18 ? "yes it is eligible" : "not eligible"
+
+        console.log(Vresult)
 
 
         // 7.Question: How do you use a switch statement to check the value of a variable ? Answer :
 
         // dout ?
-        switch(value){
-            case 1: 
+        switch (value) {
+            case 1:
                 console.log("valur is 1")
                 break;
             case 2:
@@ -199,11 +244,11 @@
 
         // 8. Question: How can you check if a number is within a certain range(e.g., 10 to 20) ? Answer :
 
-        let number2 = 14;
+        let number2 = 20;
 
-        if(number2 >= 10 && number2 <= 20){
+        if (number2 >= 10 && number2 <= 20) {
             console.log("the number of range")
-        }else{
+        } else {
             console.log("number is out of the range")
         }
 
@@ -217,23 +262,37 @@
         //     alert("out of the range")
         // }
 
+        if (number2 >= 10 && number2 <= 20) {
+            console.log("it is the range of 10 to 20 range")
+        } else {
+            console.log("it is not range of number")
+        }
+
 
         // 9.Question: How can you conditionally check if a string is non - empty ? Answer :
 
         let str = ''
-        if(str){
+        if (str) {
             console.log("str is not empaty")
-        }else{
+        } else {
             console.log("str is empty")
         }
 
 
 
         let str2 = 'shubham meshram'
-        if(str2 && str2.length > 0){
+        if (str2 && str2.length > 0) {
             console.log("str is not empaty")
-        }else{
+        } else {
             console.log("str is empty")
+        }
+
+
+        let namestr = ' '
+        if (namestr && namestr.length > 0) {
+            console.log("str is not empyty")
+        } else {
+            console.log("str is empety")
         }
 
 
@@ -241,7 +300,7 @@
 
         let items = "potato"
 
-        switch(items){
+        switch (items) {
             case "Apple":
             case "banana":
                 console.log("it is fruits")
@@ -255,9 +314,78 @@
 
 
 
+        // practice
+        let product = "banana"
+
+        switch (product) {
+            case "laptop":
+            case "mouse":
+                console.log("product is electonic")
+                break
+            case "apple":
+            case "banana":
+                console.log("it is fruits")
+                break
+            default: {
+                console.log("other proucts")
+            }
+        }
+
+
+        // day 2 practice
+
+        let pI = "bottel"
+
+        switch (pI) {
+            case "bottel":
+                console.log("it is plactice item")
+            case "banana":
+                console.log("fruits items")
+            default:
+                console.log("it other items")
+        }
+
+
+
+        // my own practise leaning
+        // if else consdtion match array of list items
+        let proItems = ["laptop", "mouse", "banana", "moterCycle", "bottel", "Apple"]
+
+        for (let i = 0; i < proItems.length; i++) {
+            if (proItems[i].toLowerCase() === "apple") {
+                console.log(`${proItems[i]} it is fruits items`)
+            } else if (proItems[i].toLowerCase() === "mouse" || proItems[i].toLowerCase() === "laptop") {
+                console.log(`${proItems[i]} it is electronic items`)
+            } else {
+                console.log(`${proItems[i]} other items`)
+            }
+        }
+
+
+        // switch statement array list match 
+        let proItems2 = ["laptop", "mouse","banana","moterCycle", "bottel","Apple"];
+
+        for(let i = 0; i < proItems2.length; i++){
+            switch(proItems2[i]){
+                case "banana":
+                case "Apple":
+                    console.log(`${proItems2[i]} it is fruits`)
+                    break
+                case "laptop":
+                case "mouse":
+                    console.log(`${proItems2[i]} it is electronic items`)
+                    break
+                default:{
+                    console.log(`${proItems2[i]} other items`)
+                }
+            }
+        }
+
+
+
         // 11. Question: How can you use a conditional(ternary) operator to assign a default value if a variable is undefined ? Answer :
 
-        let input 
+        let input
         let value3 = input !== undefined ? input : "default value"
         console.log(value3)
 
@@ -266,41 +394,122 @@
         let value4 = input2 !== undefined ? input2 : "default value"
         console.log(value4)
 
+        // practice
+
+        let pV;
+        let pV2 = 10;
+
+        let PVR = pV2 !== undefined ? pV2 : "it is default value"
+        console.log(PVR)
+
+
+        let pv3 = 2000;
+        
+        let PVR2 = pv3 !== undefined ? pv3 : "defualt value";
+        console.log(PVR2)
+
+
+        let nV
+
+        let resualt = nV !== undefined ? nV : "default values"
+        console.log(resualt)
+
+        
+        
+
 
         // 12.Question: How can you use && (logical AND) to conditionally execute code if two conditions are true ? Answer :
 
-        let a  = 0;
+        let a = 0;
         let b = 0
-        if(a === 0 && b === 0){
+        if (a === 0 && b === 0) {
             console.log("both are positive")
         }
 
 
-        
+        // practice
+        let a2 = 1;
+        let b2 = 20;
+        let ress = function () {
+            if (a2 === 10 && b2 === 20) {
+                // console.log("both are values is match")
+                return true
+            } else {
+                return false
+            }
+        }
+
+        console.log(ress())
+
+
+
+        let Bottel = "bottel"
+        let remote = "botte"
+
+        // if(Bottel === "botte" || remote === "remote"){
+        //     console.log("it is both candition is match")
+        // }else{
+        //     console.log("not match")
+        // }
+
+
+        if(Bottel === "botte"){
+            console.log(" match")
+        }else if(remote === "botte"){
+            console.log("match2")
+        }else{
+            console.log("not motch")
+        }
+
+
+
         // 13.Question: How can you use || (logical OR) to assign a fallback value if a condition is false ? Answer :
         let userName;
         let name = userName || "Guest";
 
+        console.log(name)
+
+
+
+        let userName2 = "shubham meshram"
+        let currentuser = userName2 || "other user"
+
+        console.log(currentuser)
 
         // 14.Question: How can you use a nested if statement to check multiple conditions inside a loop ? Answer :
 
-        for (let i = 0; i < 10; i++){
-            if(i % 2 === 0){
-                if(i > 5){
+        for (let i = 0; i < 10; i++) {
+            if (i % 2 === 0) {
+                if (i > 5) {
                     console.log(`${i} is even and greater than 5`)
-                }else{
+                } else {
                     console.log(`${i} is even and less than or equal to 5`)
                 }
             }
         }
 
+
+        for(let i = 1; i <= 10; i++){
+            if(i % 2 === 0){
+                if(i > 5){
+                    console.log(`${i} i s even greter then 5`)
+                }else{
+                    console.log(`${i} is even less then 5`)
+                }
+            }
+           
+                
+        }
+
+       
+
         // own quetion nested loops and nested condition
-        for(let i = 0; i < 5; i++){
-            for(let k = 0; k < 5; k++){
-                if(i > 2 && k < 2){
+        for (let i = 0; i < 5; i++) {
+            for (let k = 0; k < 5; k++) {
+                if (i > 2 && k < 2) {
                     console.log(`${i} is grether then 2 and ${k} less then 2`)
 
-                }else{
+                } else {
                     console.log(`${i} is less ot ecvel then 2 and ${k} gteter then 2`)
 
                 }
@@ -308,63 +517,80 @@
         }
 
 
-         // 15.Question: How do you use a ternary operator to check if a value is null and assign a fallback value ? Answer :
-         let result = value === null ? "No value provided" : value;
-         console.log(result)
+        let weekday = ["s","m","t","w","t"]
+        let time = prompt("time: ")
+
+        for(let i = 0; i < weekday.length; i++){
+           if(weekday[i] === "s"){
+
+            if(time >= 5 && time <= 12){
+                alert(`today is ${weekday[i]} and the time is moring`)
+            }else if(time >= 12 && time <= 16){
+                alert(`today is ${weekday[i]} and the time is afternoon`)
+            }else{
+                alert(`today is ${weekday[i]} and the time is evening`)
+            }
+           }
+        }
 
 
-         let value6 = 46
-         let result4 = value6 === null ? "No value provided" : value6;
-         console.log(result4)
+        // 15.Question: How do you use a ternary operator to check if a value is null and assign a fallback value ? Answer :
+        let result = value === null ? "No value provided" : value;
+        console.log(result)
 
 
-         // 16.Question: How do you use conditional statements to determine the largest of three numbers ? Answer :
-         let x = 10;
-         let y = 12;
-         let z = 11;
+        let value6 = 46
+        let result4 = value6 === null ? "No value provided" : value6;
+        console.log(result4)
 
-         if(x > y && x > z){
+
+        // 16.Question: How do you use conditional statements to determine the largest of three numbers ? Answer :
+        let x = 10;
+        let y = 12;
+        let z = 11;
+
+        if (x > y && x > z) {
             console.log("x is the largest")
-         }else if(y > x && y > z){
+        } else if (y > x && y > z) {
             console.log("y is the largest")
-         }else{
+        } else {
             console.log("z is the largest")
-         }
+        }
 
 
-         // 17.Question: How can you use an if-else chain to handle multiple conditions ? Answer :
+        // 17.Question: How can you use an if-else chain to handle multiple conditions ? Answer :
 
-         let cont = false;
-         let cont2 = true;
-         if(cont){
+        let cont = false;
+        let cont2 = true;
+        if (cont) {
             console.log("condition 1 is true")
-         }else if(cont2){
+        } else if (cont2) {
             console.log("condition 2 is true")
-         }else{
+        } else {
             console.log("Neither condition is true")
-         }
+        }
 
 
-          // 18.Question: How can you write an if statement that checks for both a truthy value and a specific condition ? Answer :
+        // 18.Question: How can you write an if statement that checks for both a truthy value and a specific condition ? Answer :
 
-          let user = true
-          let user2 = false
+        let user = true
+        let user2 = false
 
-          if(user2 ){
+        if (user2) {
             console.log("user is Active")
-          }else{
+        } else {
             console.log("user is notActive")
-          }
+        }
 
 
-          // 19.Question: How can you use a switch statement to handle different operations based on an operator ? Answer :
+        // 19.Question: How can you use a switch statement to handle different operations based on an operator ? Answer :
 
-          let s = 10;
-          let h = 20;
-          let operator = "*"
-          let res = []
+        let s = 10;
+        let h = 20;
+        let operator = "*"
+        let res = []
 
-          switch(operator){
+        switch (operator) {
             case "+":
                 res = s + h
                 break;
@@ -379,12 +605,39 @@
                 break;
             default:
                 console.log("Unknown operator")
-          }
+        }
 
-          console.log("result",res)
+        console.log("result", res)
+
+
+
+
+
+
+        // 21. my own quetion for find cout of null, undefined and ' ' value from this list?
+
+        let arrList = ["laptop", "mouse","banana"," ", ," ","bottel","Apple", null, undefined, null ,undefined,undefined];
+        let count = {}
+        let actualValues = []
+
+
+        for(let i = 0; i < arrList.length; i++){
+            if(arrList[i] === undefined || arrList[i] === null || arrList[i] === " "){
+                count[arrList[i]] = (count[arrList[i]] || 0) + 1
+                // console.log(`${arrList[i]} value`)
+            }else{
+                actualValues.push(arrList[i])
+                // console.log(`other value`)
+            }
+        }
+
+        console.log(count)
+        console.log(actualValues)
+
 
 
 
     </script>
 </body>
+
 </html>

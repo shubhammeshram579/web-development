@@ -32,6 +32,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 passport.serializeUser(usersRouter.serializeUser());
 passport.deserializeUser(usersRouter.deserializeUser());
+// passport.deserializeUser(paymentRoutes.deserializeUser());
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -41,6 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+// app.use('/', paymentRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
