@@ -83,7 +83,7 @@
             <button type="submit" class="btn btn-primary">Proceed to Pay</button>
         </form> -->
 
-        <form action="/process-payment" method="POST">
+        <form action="/create-upi-payment" method="POST">
             <!-- Payment Method Selection -->
             <label for="paymentMethod">Select Payment Method:</label>
             <select name="paymentMethod" id="paymentMethod" required>
@@ -106,6 +106,7 @@
 
             <h3>Total Amount: $<%= totalAmount.toFixed(2) %></h3>
             <button type="submit">Pay Now</button>
+            <a href="/create-upi-payment">order now</a>
         </form>
 
     </div>

@@ -9,6 +9,12 @@ const passport = require('passport');
 const localStrategy = require("passport-local");
 const Afternoon = require("./Afternoon");
 const AddtoProduct2 = require(".//../routes/product")
+const Razorpay = require('razorpay');
+
+
+const axios = require("axios")
+
+require('dotenv').config(); // Load environment variables
 // const payment = require("../views/partial/")
 
 
@@ -628,10 +634,88 @@ router.post("/add-to-cart2", async function (req, res, next) {
 
 
 
-// Render payment page
-router.get('/payment', async (req, res) => {
+// // Render payment page
+// router.get('/payment', async (req, res) => {
 
-   // const productId = req.params.productId;
+//    // const productId = req.params.productId;
+//    const user = await userModel.findOne({username:req.session.passport.user});
+//    const userId = user._id; // Get the current logged-in user's ID
+
+
+//    const products = await AddtoProduct2.find(); // Get all products
+//     const cart = await Cart.findOne({ userId }).populate('products.productId'); // Get the current user's cart
+
+//     console.log("pyament card" , cart)
+
+//   // const cart = req.session.cart; // Assuming you store the cart in session
+//   let totalAmount = 0;
+
+//   if (cart && cart.products.length > 0) {
+//       totalAmount = cart.products.reduce((total, cartItem) => {
+//           return total + (cartItem.quantity * cartItem.productId.pPrice);
+//       }, 0);
+//   }
+
+//   res.render('payment', { cart, totalAmount });
+// });
+
+
+
+// // Process payment
+// router.post('/process-payment', (req, res) => {
+//   const { paymentMethod } = req.body;
+
+//   // Placeholder for order details and payment status
+//   const orderDetails = {
+//       orderId: Math.floor(Math.random() * 1000000), // Example order ID
+//       status: 'pending', // Order status can be updated based on payment status
+//       paymentMethod,
+//   };
+
+//   // Simulate different payment methods handling
+//   switch (paymentMethod) {
+//       case 'netBanking':
+//           // Simulate a redirect to a bank gateway (in a real-world scenario, you would integrate with a bank API)
+//           orderDetails.status = 'redirecting to bank gateway';
+//           res.send(`Redirecting to bank gateway for order ID: ${orderDetails.orderId}`);
+//           break;
+
+//       case 'upi':
+//           // Simulate initiating a UPI transaction (you'd typically use a UPI API here)
+//           orderDetails.status = 'UPI transaction initiated';
+//           res.send(`UPI transaction initiated for order ID: ${orderDetails.orderId}`);
+//           break;
+
+//       case 'cod':
+//           // For cash on delivery, you just save the order and mark it as COD
+//           orderDetails.status = 'order placed with COD';
+//           res.send(`Order placed with cash on delivery. Order ID: ${orderDetails.orderId}`);
+//           break;
+
+//       default:
+//           // If no valid payment method is provided, return an error
+//           res.status(400).send('Invalid payment method selected');
+//           break;
+//   }
+
+//   // Save the orderDetails to a database if necessary (skipping for this example)
+//   // db.save(orderDetails);
+// });
+
+
+
+
+// Razorpay instance
+const razorpay = new Razorpay({
+  key_id: process.env.YOUR_RAZORPAY_KEY_ID ,// Replace with your key_id
+  key_secret: process.env.YOUR_RAZORPAY_KEY_SECRET  // Replace with your key_secret
+});
+
+
+// Route to render payment page
+router.get('/payment',async (req, res) => {
+
+  const productId = req.params.productId;
    const user = await userModel.findOne({username:req.session.passport.user});
    const userId = user._id; // Get the current logged-in user's ID
 
@@ -639,7 +723,7 @@ router.get('/payment', async (req, res) => {
    const products = await AddtoProduct2.find(); // Get all products
     const cart = await Cart.findOne({ userId }).populate('products.productId'); // Get the current user's cart
 
-    console.log("pyament card" , cart)
+    // console.log("pyament card" , cart)
 
   // const cart = req.session.cart; // Assuming you store the cart in session
   let totalAmount = 0;
@@ -650,69 +734,103 @@ router.get('/payment', async (req, res) => {
       }, 0);
   }
 
-  res.render('payment', { cart, totalAmount });
+  let productDetails = cart.products.map(item => ({
+    productName: item.productId.producttitle,
+    productPrice: item.productId.pPrice,
+    quantity: item.quantity
+  }));
+
+
+  res.render('razorpayPayment', { key: razorpay.key_id ,cart,totalAmount,user,productDetails});
 });
 
 
+// Route to create an order
+router.post('/create/order', async (req, res) => {
+  const { amount, username, email, contact, address, productDetails } = req.body;
 
-// Process payment
-router.post('/process-payment', (req, res) => {
-  const { paymentMethod } = req.body;
 
-  // Placeholder for order details and payment status
-  const orderDetails = {
-      orderId: Math.floor(Math.random() * 1000000), // Example order ID
-      status: 'pending', // Order status can be updated based on payment status
-      paymentMethod,
+  // Ensure productDetails is a string if it's not already
+  const formattedProductDetails = typeof productDetails === 'string' 
+  ? productDetails 
+  : JSON.stringify(productDetails);
+
+  const options = {
+      amount: amount,  // Amount in paise
+      currency: "INR",
+      receipt: `order_rcptid_${Date.now()}`,
+      notes: {  // Store additional details in notes
+          username: username,
+          email: email,
+          contact: contact,
+          address: address,
+          products: formattedProductDetails // Store product details as a string
+      }
   };
 
-  // Simulate different payment methods handling
-  switch (paymentMethod) {
-      case 'netBanking':
-          // Simulate a redirect to a bank gateway (in a real-world scenario, you would integrate with a bank API)
-          orderDetails.status = 'redirecting to bank gateway';
-          res.send(`Redirecting to bank gateway for order ID: ${orderDetails.orderId}`);
-          break;
-
-      case 'upi':
-          // Simulate initiating a UPI transaction (you'd typically use a UPI API here)
-          orderDetails.status = 'UPI transaction initiated';
-          res.send(`UPI transaction initiated for order ID: ${orderDetails.orderId}`);
-          break;
-
-      case 'cod':
-          // For cash on delivery, you just save the order and mark it as COD
-          orderDetails.status = 'order placed with COD';
-          res.send(`Order placed with cash on delivery. Order ID: ${orderDetails.orderId}`);
-          break;
-
-      default:
-          // If no valid payment method is provided, return an error
-          res.status(400).send('Invalid payment method selected');
-          break;
+  try {
+      const order = await razorpay.orders.create(options);
+      res.json(order);
+  } catch (error) {
+      res.status(500).send(error);
   }
-
-  // Save the orderDetails to a database if necessary (skipping for this example)
-  // db.save(orderDetails);
 });
 
 
 
 
-// payment router upi payment
-// // UPI Payment Endpoint
+// Route for verifying payment
+router.post('/verify', (req, res) => {
+  const crypto = require("crypto");
+  const shasum = crypto.createHmac('sha256', razorpay.key_secret);
+  shasum.update(req.body.razorpay_order_id + "|" + req.body.razorpay_payment_id);
+  const digest = shasum.digest('hex');
+
+  if (digest === req.body.razorpay_signature) {
+      // Payment successful, do further actions like storing in database
+      res.json({ status: "success" });
+  } else {
+      // Payment failed
+      res.json({ status: "failed" });
+  }
+});
+
+
+
+
+// // payment router upi payment
+// // // // UPI Payment Endpoint
 // router.post('/create-upi-payment', async (req, res) => {
+
 //   try {
 //       // Get payment details from the request body
 //       const { amount, customerEmail, customerPhone } = req.body;
 
+//     const user = await userModel.findOne({username:req.session.passport.user});
+//     const userId = user._id; // Get the current logged-in user's ID
+
+//     const products = await AddtoProduct2.find(); // Get all products
+//     const cart = await Cart.findOne({ userId }).populate('products.productId'); // Get the current user's cart
+//     console.log("card",cart)
+//     console.log("products",products)
+
+
+//      // const cart = req.session.cart; // Assuming you store the cart in session
+//   let totalAmount = 0;
+
+//   if (cart && cart.products.length > 0) {
+//       totalAmount = cart.products.reduce((total, cartItem) => {
+//           return total + (cartItem.quantity * cartItem.productId.pPrice);
+//       }, 0);
+//   }
+
 //       // Request payload for UPI provider
 //       const payload = {
-//           amount: amount * 100, // Amount in paise (for example: 100 = ₹1.00)
+//           amount: totalAmount, // Amount in paise (for example: 100 = ₹1.00)
 //           currency: 'INR',
 //           customer: {
-//               email: customerEmail,
-//               phone: customerPhone,
+//               email: user.email,
+//               phone: user.phone_number,
 //           },
 //           method: 'upi',
 //           purpose: 'Payment for Order #12345',

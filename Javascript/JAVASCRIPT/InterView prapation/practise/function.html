@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div>logo</div>
+        <div class="navItems">
+            <h1>home</h1>
+            <h1>about</h1>
+            <h1>project</h1>
+            <h1>contact</h1>
+        </div>
+    </header>
+    <div class="page1">
+        <div class="card">
+            <h1>
+                function of javascript
+            </h1>
+        </div>
+        <div class="card2">
+            <p class="Summery">
+                A function in JavaScript is similar to a procedure—a set of statements that performs a task or
+                calculates a value, but for a procedure to qualify as a function, it should take some input and return
+                an output where there is some obvious relationship between the input and the outpu
+            </p>
+        </div>
+    </div>
+
+
+    <script>
+        // Here are 20 JavaScript function-related questions along with their solutions, ranging from basic to advanced levels:
+
+        // Basic Level:
+        // 1.What is a function in JavaScript?
+
+
+        // 1.A function is a block of code designed to perform a particular task. It is executed when invoked (called).
+        // Example:
+
+        function abcd(){
+            console.log("hello shubham")
+        }
+        abcd();
+
+
+        // 2.Write a function to add two numbers.
+
+        function ab(a,b){
+            return a + b
+        }
+
+        console.log(ab(10,20));
+
+
+        // 3.Write a function to find the factorial of a number.
+
+        function factorial(n){
+            if(n === 0) return 1 ;
+            return n * factorial(n - 1)
+        }
+
+        console.log(factorial(5))
+
+        // calculation process
+        // console.log(5 * 4)
+        // console.log(20 * 3)
+        // console.log(60 * 2)
+        // console.log(120 * 1)
+
+
+
+        // 4.What is a function expression?
+        
+        // Def: A function expression is a function defined within an expression and can be anonymous.
+
+
+        const FExpression = function(a,b){
+            // console.log("hello anonymous function expration")
+            return a * b
+        }
+
+        console.log(FExpression(2,10));
+
+
+
+        // 5.Write a function to check if a number is even or odd.
+
+        const isEven2 = function(num){
+            return num % 2 === 0 ? "even": "odd"
+
+        }
+
+        console.log(isEven2(11))
+        console.log(isEven2(18))
+
+
+        // my own
+        const isEven = function(num){
+            if(num % 2 === 0){
+                console.log("even")
+            }else{
+                console.log("odd")
+            }
+
+        }
+
+        isEven(6)
+        isEven(7)
+
+
+
+    // Intermediate Level:
+    // 6.Write a function to reverse a string.
+
+    // function wise
+    function reverseStr(str){
+        return str.split("").reverse().join("");
+    }
+
+    console.log(reverseStr("shubham"))
+
+
+
+    // my own loops wise
+    function reverseStr2(str){
+        let MStr = ''
+        for(let i = str.length - 1; i >= 0 ; i--){
+            MStr += str[i]
+        }
+        return MStr
+    }
+    console.log(reverseStr2("labham"))
+
+
+     // 7.What is a higher - order function in JavaScript ?
+
+    // 7.A higher - order function is a function that takes another function as an argument or returns a function as a result.
+
+
+    // my own
+    const HOF = function(a){
+        return function(b){
+            return a + b
+        }
+
+    }
+    let res = HOF(10)
+    console.log(res(20))
+
+
+
+     // 8.Write a function that returns the square of a number.
+
+     function multifly(num){
+        return num * num
+
+     }
+     console.log(multifly(20));
+
+
+    // 9.What is an Immediately Invoked Function Expression(IIFE) ?
+
+    // 9.An IIFE is a function that runs immediately after it is defined.
+
+     // normal fuction
+     (function (){
+        console.log("hello iffe")
+        }
+     )();
+
+        // getter for acces to privet code 
+        var ans = (function(){
+            var privatel = 12;
+            return { getter: function(){
+                console.log(privatel);
+            }}
+        })();
+
+        ans.getter();
+
+
+         // setter for help to change privet code value
+         var ans2 = (function(){
+            var privatel = 120;
+            return {
+                getter: function(){
+                console.log(privatel);
+            },
+            setter: function(val){
+            console.log(privatel = val);
+            }
+        }
+        })();
+
+        // ans2.getter();
+        ans2.setter(`setter iff function ${100}`);
+        ans2.getter();
+        ans2.setter(`setter iff function ${500}`);
+        ans2.getter();
+
+
+    // 10.Write a function to find the greatest of two numbers.
+    function max(a,b){
+        return a > b ? a : b
+    }
+
+    console.log(max(20,40));
+
+
+
+    // my own basic 
+    function max2(a,b){
+        if(a > b){
+            return a;
+        }else{
+            return b
+        }
+    }
+
+    console.log(max2(40,30));
+
+
+
+    // Advanced Level:
+    // 11.What is a pure function?
+    // 11.A pure function is a function that, given the same inputs, will always return the same output without causing any side effects.
+
+    function pureAdd(a,b){
+        return a + b
+    }
+    console.log(pureAdd(20,40))
+
+
+
+    // my own
+    function IsPure(a , b){
+        return a / b   
+    }
+
+    console.log(IsPure(200,10))
+
+
+    // 12.Write a function that returns a function (closure).
+
+    let Cf = function(a){
+        return function(b){
+            return a * b
+        }
+    }
+
+    let ansClr = Cf(10);
+    let ansClr2 = ansClr(300)
+    console.log(ansClr2)
+
+
+
+    // similer to curring function
+    let Fans = Cf(10)(30)
+    console.log(Fans)
+
+
+
+
+    // 13.What is the difference between function declaration and function expression?
+    // A function declaration defines a function with a specified name, whereas a function expression creates a function inside an expression.
+        // Function Declaration
+        function fnsDeclation(){
+            return "i am function Declation"
+        }
+        console.log(fnsDeclation());
+
+
+        let fnsExpration = function(){
+            console.log("i am function expressin")
+        }
+        fnsExpration()
+
+
+    // 14.Write a function that counts the number of vowels in a string.
+    function countVowels(str) {
+            let count = 0;
+            const vowels = 'aeiouAEIOU';
+            for (let char of str) {
+                if (vowels.includes(char)) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+    console.log(countVowels("shubham"));  // Output: 3
+
+
+
+    // practice
+    const countVowels2 = (str) =>{
+        let count = 0;
+        const vowels = "aeiouAEIOU";
+        for(let i of str){
+            // console.log(i)
+            if(vowels.includes(i)){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    console.log(countVowels2("pallavi"));
+
+
+    // second way to find vowels string
+    let string = "labham";
+    const reg = /[aeiouAEIOU]/gi;
+    let char = string.match(reg)
+    console.log(char.join(","))
+    console.log(char.length)
+
+
+
+    // 15.What are arrow functions, and how are they different from regular functions ?
+    // 15. Arrow functions are a shorthand way to write functions, and they do not have their own this or arguments binding.
+    const arrowFns = (a,b) => ( a + b);
+    console.log(arrowFns(30,50))
+
+
+    </script>
+
+</body>
+
+</html>

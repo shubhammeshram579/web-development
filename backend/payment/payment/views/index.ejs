@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Products</h1>
+  <a href="/createProduct">CreateProduct</a>
+
+  <!-- <img src="/images/pexels-tima-miroshnichenko-5912613.jpg" alt=""> -->
+  <div>
+    <% products.forEach(product => { %>
+      <div>
+        <img style="height: 300px; width: 200px; object-fit: cover;"  src="/images/pexels-tima-miroshnichenko-5912613.jpg" alt="">
+        <h2><%= product.name %></h2>
+        <p><%= product.description %></p>
+        <p>$<%= product.price %></p>
+        <button onclick="buyProduct('<%= product._id %>')">Buy Now</button>
+      </div>
+    <% }) %>
+  </div>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    const stripe = Stripe('<%= process.env.STRIPE_PUBLIC_KEY %>');
+
+    function buyProduct(productId) {
+      fetch('/create-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ productId, email: 'customer@example.com' })
+      })
+      .then(response => response.json())
+      .then(data => {
+        stripe.redirectToCheckout({ sessionId: data.id });
+      })
+      .catch(error => console.error('Error:', error));
+    }
+  </script>
+</body>
+</html>

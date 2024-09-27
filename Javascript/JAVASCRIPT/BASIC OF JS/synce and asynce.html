@@ -181,17 +181,7 @@
         // console.log(abcd());
 
 
-
-        async function f() {
-            const thenable = {
-                then(resolve, _reject) {
-                    _reject("reected");
-                },
-            };
-            console.log(await thenable); // "resolved!"
-        }
-
-        f();
+        
 
 
 

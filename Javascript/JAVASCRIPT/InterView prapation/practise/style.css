@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color:rgb(32, 93, 73);
+    color: #fff;
+}
+
+header{
+    background-color:#111;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    color: red;
+    text-shadow: 1px 1px yellow;
+}
+
+.navItems{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.navItems h1{
+    font-size: 17px;
+}
+
+
+.navItems h1:hover{
+    color: yellow;
+    border-bottom: 2px solid yellow;
+}
+
+
+.page1{
+    min-height: 100vh;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.page1 h1{
+    text-align: center;
+    text-decoration: underline;
+    text-transform: capitalize;
+    text-shadow: 1px 1px red;
+
+}
+
+.page1 .Summery{
+    margin-top: 20px;
+    border: 1px solid yellow;
+    padding: 10px;
+    text-align: justify;
+    word-spacing: 2px;
+    line-height: 20px;
+}
