@@ -11,6 +11,8 @@ const Afternoon = require("./Afternoon");
 const AddtoProduct2 = require(".//../routes/product")
 const Razorpay = require('razorpay');
 
+const ProductOrders = require("./ProductOrders")
+
 
 const axios = require("axios")
 
@@ -745,6 +747,8 @@ router.get('/payment',async (req, res) => {
 });
 
 
+
+
 // Route to create an order
 router.post('/create/order', async (req, res) => {
   const { amount, username, email, contact, address, productDetails } = req.body;
@@ -755,6 +759,16 @@ router.post('/create/order', async (req, res) => {
   ? productDetails 
   : JSON.stringify(productDetails);
 
+
+  //  // Parse the productDetails from the string, if necessary
+  //  let parsedProductDetails;
+  //  try {
+  //      parsedProductDetails = JSON.parse(productDetails); // Parse stringified product details
+  //  } catch (error) {
+  //      console.error("Error parsing product details:", error);
+  //      return res.status(400).json({ status: "failed", message: "Invalid product details format" });
+  //  }
+
   const options = {
       amount: amount,  // Amount in paise
       currency: "INR",
@@ -764,12 +778,16 @@ router.post('/create/order', async (req, res) => {
           email: email,
           contact: contact,
           address: address,
-          products: formattedProductDetails // Store product details as a string
+          products: JSON.stringify(productDetails) // Store product details as a string
+          // amount: amount  // Optional: You can store the amount as well
       }
   };
 
+  console.log("createorder option" ,options)
+
   try {
       const order = await razorpay.orders.create(options);
+      console.log("create oder" ,order)
       res.json(order);
   } catch (error) {
       res.status(500).send(error);
@@ -779,21 +797,92 @@ router.post('/create/order', async (req, res) => {
 
 
 
-// Route for verifying payment
-router.post('/verify', (req, res) => {
+// // Route for verifying payment
+// router.post('/verify', (req, res) => {
+//   const crypto = require("crypto");
+//   const shasum = crypto.createHmac('sha256', razorpay.key_secret);
+//   shasum.update(req.body.razorpay_order_id + "|" + req.body.razorpay_payment_id);
+//   const digest = shasum.digest('hex');
+
+//   if (digest === req.body.razorpay_signature) {
+//       // Payment successful, do further actions like storing in database
+//       res.json({ status: "success" });
+//   } else {
+//       // Payment failed
+//       res.json({ status: "failed" });
+//   }
+// });
+
+// Route for verifying payment and saving order to the database
+router.post('/verify', async (req, res) => {
   const crypto = require("crypto");
   const shasum = crypto.createHmac('sha256', razorpay.key_secret);
   shasum.update(req.body.razorpay_order_id + "|" + req.body.razorpay_payment_id);
   const digest = shasum.digest('hex');
 
+  console.log('Received payment verification request:', req.body); // Log the entire request
+
+  const user = await userModel.findOne({username:req.session.passport.user});
+  const userId = user._id; // Get the current logged-in user's ID
+
   if (digest === req.body.razorpay_signature) {
-      // Payment successful, do further actions like storing in database
-      res.json({ status: "success" });
+    // Payment is successful, store the order in the database
+    console.log('Payment notes:', req.body.notes);  // Log the notes
+    try {
+      const { razorpay_order_id, razorpay_payment_id, notes } = req.body;
+
+        // Check if the notes are undefined or empty
+        if (!notes || !notes.username || !notes.email || !notes.contact) {
+          throw new Error("Missing user details in Razorpay notes.");
+        }
+
+      // Create a new order with payment details and user info
+      const newOrder = new ProductOrders({
+        userId: userId,  // Assuming user ID is in session
+        username: notes.username,
+        email: notes.email,
+        contact: notes.contact,
+        address: notes.address,
+        products: notes.products,  // Convert the products string back to an array
+        amount: notes.amount,
+        paymentId: razorpay_payment_id,
+        orderId: razorpay_order_id,
+        status: 'paid'  // Update status to 'paid'
+      });
+
+      // Save the order in MongoDB
+      await newOrder.save();
+
+      // Respond to client with success
+      res.json({ status: "success", orderId: newOrder._id });
+      // Redirect to order confirmation page after saving
+      // res.redirect(`/order/confirmation/${newOrder._id}`);
+    } catch (error) {
+      console.error('Error saving order:', error);
+      res.status(500).json({ status: "failed", message: "Error saving order to the database." });
+    }
   } else {
-      // Payment failed
-      res.json({ status: "failed" });
+    // Payment verification failed
+    res.json({ status: "failed" });
   }
 });
+
+
+
+// // Route to display order confirmation page
+// router.get('/order/confirmation/:orderId', async (req, res) => {
+//   try {
+//       const order = await ProductOrders.findById(req.params.orderId).populate('userId');
+//       if (!order) {
+//           return res.status(404).send('Order not found');
+//       }
+
+//       res.render('orderConfirmation', { order });
+//   } catch (error) {
+//       console.error('Error fetching order:', error);
+//       res.status(500).send('Error fetching order details.');
+//   }
+// });
 
 
 

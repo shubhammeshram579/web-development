@@ -3,16 +3,17 @@
 <!-- addtocard page -->
     <link rel="stylesheet" href="/stylesheets/addtocard.css">
     <a style="text-decoration: none; color:#fff;left: 94%; padding-right: 100px; padding-top: 40px; font-size: 20px; position: fixed; z-index: 999;"
-        href="/product"><i class="fa-solid fa-xmark"></i></a>
+        href="/"><i class="fa-solid fa-xmark"></i></a>
     <div class="main" style="background-color:#111; color: #fff; padding-top: 300px;">
-        <div class="card"
-            style="display: flex; align-items: center; justify-content: space-between;border-bottom: 1px solid gray; margin: 0px 20px;padding-bottom: 20px;">
-            <h1 style="font-size: 2vh; color: gray;">CARD</h1>
-            <h1 style="font-size: 2vh; color: gray; margin-left: 22vw;">Quentity</h1>
-            <h1></h1>
-        </div>
+       
         <div class="cards">
             <% if (cart && cart.products.length> 0) { %>
+                <div class="card"
+                style="display: flex; align-items: center; justify-content: space-between;border-bottom: 1px solid gray; margin: 0px 20px;padding-bottom: 20px;">
+                <h1 style="font-size: 2vh; color: gray;">CARD</h1>
+                <h1 style="font-size: 2vh; color: gray; margin-left: 22vw;">Quentity</h1>
+                <h1></h1>
+            </div>
                 <% let totalAmount=0; %> <!-- Initialize total amount -->
                     <% cart.products.forEach(cartItem=> { %>
                         <div id="card2"
@@ -96,7 +97,82 @@
 
 
         <% } else { %>
-            <p>Your cart is empty.</p>
+            <div class="card-details" style="margin-top: -350px;">
+                <h1>Your card is empaty</h1>
+                <h2>See All Good Things</h2>
+                <div id="cardpage">
+                    <div id="scroller">
+                        <div id="scroller-in">
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                        </div>
+                        <div id="scroller-in">
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                        </div>
+                        <div id="scroller-in">
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                            <h4>Card</h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="cardpage2">
+                    <div id="scroller2">
+                        <div id="scroller-in2">
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                        </div>
+                        <div id="scroller-in2">
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                        </div>
+                        <div id="scroller-in2">
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                            <h4>empty</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <% } %>
                 <div class="card4">
                     <a class="ChecBtn" href="/add-to-cart2">CHECKOUT</a>
@@ -152,7 +228,7 @@
         //     style="display: flex; align-items: center; justify-content:space-between; padding: 50px 10px; border-bottom: 1px solid gray; margin: 0px 20px;">
         //         <h1 style="font-size: 20px; font-weight: 500;">${val.product}</h1>
         //         <div class="addcard" style="display: flex; gap: 25px; padding-left: 280px;">
-        //             <!-- <%- include("shared.ejs") -%> -->
+        //             <%- include("shared.ejs") -%>
         //             <form action="/add-to-card" method="post">
         //                 <a class="minus" href="#" style="text-decoration: none; color: #fff;">-</a>
         //                 <a data-index="${index}" class="num" href="#"

@@ -78,12 +78,15 @@
             let productDetails = JSON.parse(document.getElementById('productData').getAttribute('data-products'));
             console.log(productDetails);  // Ensure product details are correct in the console
 
-             // Format productDetails to a readable string for the invoice (e.g., product names and quantities)
-            let productDetailsString = productDetails.map(item => {
-                return `Product: ${item.productName}, Quantity: ${item.quantity}, Price: ${item.price}`;
-            }).join(', ');
+            //  // Format productDetails to a readable string for the invoice (e.g., product names and quantities)
+            // let productDetailsString = productDetails.map(item => {
+            //     return `${item.productName},${item.quantity},${item.price}`;
+            // }).join(', ');
 
-            // console.log(productDetailsString);  // Check the formatted product details
+            const formattedProducts = productDetails.map(item => `${item.productName} (Qty: ${item.quantity}, Price: ${item.productPrice})`).join(', ');
+
+            console.log('Formatted Products:', formattedProducts);
+
 
             // Create order on the server with product details
             const response = await fetch('/create/order', {
@@ -103,6 +106,8 @@
 
             const order = await response.json();
 
+            console.log("response",response)
+
             // Configure Razorpay options
             const options = {
                 "key": "<%= key %>",  // Your Razorpay key_id
@@ -117,10 +122,24 @@
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify(response)
+                        // body: JSON.stringify()
+                        body: JSON.stringify({
+                            razorpay_order_id: response.razorpay_order_id,
+                            razorpay_payment_id: response.razorpay_payment_id,
+                            razorpay_signature: response.razorpay_signature,
+                            notes: {
+                                username: username,
+                                email: email,
+                                contact: contact,
+                                address: address,
+                                amount:amount / 100,
+                                products: productDetails
+                            }
+                            })
                     });
 
                     const result = await verificationResponse.json();
+                    console.log("result",result)
                     if (result.status === 'success') {
                         alert('Payment Successful!');
                     } else {
@@ -134,7 +153,11 @@
                 },
                 "notes": {
                     "address": address,
-                    "products": productDetailsString  // Store product details in notes
+                    "username": username,
+                    "email": email,
+                    "contact": contact,
+                    "amount":amount / 100,
+                    "products": productDetails  // Store product details in notes
                 },
                 "method": {
                     "upi": true,
