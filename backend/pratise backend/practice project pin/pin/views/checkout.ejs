@@ -76,7 +76,7 @@
                     
                             <!-- Add more HTML as needed -->
                     
-                            <form style="display: flex; align-items:start; justify-content: space-between; flex-direction: column;" action="/add-to-cart2" method="POST">
+                            <form style="display: flex; align-items:start; justify-content: space-between; flex-direction: row;flex-wrap: wrap; font-size: 1vw; width: 40%;" action="/add-to-cart2" method="POST">
                                 <label for="address">Address:</label>
                                 <input type="text" id="address" name="address" value="<%= user.address %>" required>
                                 
@@ -102,8 +102,8 @@
             </div>
         </div>
 
-        <h1 style="border-top: 1px solid gray;padding-top: 30px;font-size: 2.5vw;">Billing</h1>
-        <h1 style="border-top: 1px solid gray;padding-top: 30px;font-size: 2.5vw;"><a href="/payment">Payment</a></h1>
+        <!-- <h1 style="border-top: 1px solid gray;padding-top: 30px;font-size: 2.5vw;">Billing</h1> -->
+        <h1 style="border-top: 1px solid gray;padding-top: 30px;font-size: 2.5vw;"><a style="text-decoration: none; background-color: orange; padding: 2px 10px; border-radius: 10px; color:#111; font-size: 2vw;" href="/payment">CONTINUE Payment</a></h1>
 
 
     </div>

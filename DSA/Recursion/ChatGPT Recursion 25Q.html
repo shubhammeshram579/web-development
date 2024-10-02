@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+//         Basic Level Questions
+// What is recursion?
+
+// Answer: Recursion is a technique in programming where a function calls itself to solve a smaller instance of the same problem until a base condition is met.
+// What are the two essential parts of any recursive function?
+
+// Answer: The two essential parts are:
+// Base case: The condition that stops the recursion.
+// Recursive case: The part where the function calls itself to solve smaller instances of the problem.
+// What is a base case in recursion?
+
+// Answer: A base case is a condition in a recursive function that stops further recursive calls. Without it, the recursion would continue indefinitely, causing a stack overflow.
+// Write a recursive function to find the sum of the first n natural numbers.
+
+// Answer:
+// javascript
+// Copy code
+// function sum(n) {
+//     if (n === 0) {
+//         return 0;
+//     }
+//     return n + sum(n - 1);
+// }
+// console.log(sum(5)); // Output: 15
+// What is the difference between recursion and iteration?
+
+// Answer: Recursion solves a problem by calling the function within itself, whereas iteration uses loops like for or while. Recursion has a base case, and iteration has a termination condition.
+// Explain the concept of the call stack in recursion.
+
+// Answer: The call stack is a data structure used to manage function calls. In recursion, each time a function calls itself, a new frame is pushed onto the call stack. When the base case is reached, the stack begins to unwind, popping frames as it returns values to previous function calls.
+// What is tail recursion?
+
+// Answer: Tail recursion is a form of recursion where the recursive call is the last operation in the function. This allows some optimizations by compilers to reduce the overhead of multiple recursive calls.
+// Write a recursive function to reverse a string.
+
+// Answer:
+// javascript
+// Copy code
+// function reverseString(str) {
+//     if (str === "") {
+//         return "";
+//     }
+//     return reverseString(str.slice(1)) + str[0];
+// }
+// console.log(reverseString("hello")); // Output: "olleh"
+// How does recursion terminate?
+
+// Answer: Recursion terminates when it reaches the base case, which stops the function from calling itself further.
+// Can every recursion be converted to iteration?
+
+// Answer: Yes, any recursive solution can be transformed into an iterative one, although the iterative version might not always be as simple or as intuitive.
+// Intermediate Level Questions
+// Write a recursive function to calculate the nth Fibonacci number.
+
+// Answer:
+// javascript
+// Copy code
+// function fibonacci(n) {
+//     if (n === 0 || n === 1) {
+//         return n;
+//     }
+//     return fibonacci(n - 1) + fibonacci(n - 2);
+// }
+// console.log(fibonacci(6)); // Output: 8
+// What are the advantages of recursion?
+
+// Answer: Recursion makes code simpler and easier to understand for problems like tree traversal, factorial, Fibonacci, and divide-and-conquer algorithms. It is useful when a problem can be broken into similar sub-problems.
+// What are the disadvantages of recursion?
+
+// Answer: Disadvantages include higher memory usage due to the call stack, potential for stack overflow, and sometimes inefficiency compared to iterative solutions (e.g., naive Fibonacci).
+// What is memoization in the context of recursion?
+
+// Answer: Memoization is a technique used to optimize recursive functions by caching previously computed results to avoid redundant calculations and improve efficiency.
+// Write a recursive function to find the greatest common divisor (GCD) of two numbers.
+
+// Answer:
+// javascript
+// Copy code
+// function gcd(a, b) {
+//     if (b === 0) {
+//         return a;
+//     }
+//     return gcd(b, a % b);
+// }
+// console.log(gcd(48, 18)); // Output: 6
+// Explain the concept of divide-and-conquer in recursion.
+
+// Answer: Divide-and-conquer is a recursive problem-solving approach where the problem is divided into smaller sub-problems, solved independently, and then combined to form the solution. Examples include merge sort and quicksort.
+// What is an infinite recursion, and how can it be avoided?
+
+// Answer: Infinite recursion occurs when the base case is never reached or not defined correctly, causing the function to call itself indefinitely. It can be avoided by ensuring that every recursive call eventually reaches a base case.
+// Write a recursive function to check if a number is prime.
+
+// Answer:
+// javascript
+// Copy code
+// function isPrime(num, divisor = 2) {
+//     if (num <= 2) {
+//         return num === 2;
+//     }
+//     if (num % divisor === 0) {
+//         return false;
+//     }
+//     if (divisor * divisor > num) {
+//         return true;
+//     }
+//     return isPrime(num, divisor + 1);
+// }
+// console.log(isPrime(29)); // Output: true
+// What is recursion depth, and how does it affect performance?
+
+// Answer: Recursion depth refers to the number of times a function calls itself before reaching the base case. If the depth is too large, it can lead to a stack overflow or excessive memory usage, affecting performance.
+// Write a recursive function to flatten a nested array.
+
+// Answer:
+// javascript
+// Copy code
+// function flattenArray(arr) {
+//     return arr.reduce((flat, item) => {
+//         return flat.concat(Array.isArray(item) ? flattenArray(item) : item);
+//     }, []);
+// }
+// console.log(flattenArray([1, [2, [3, 4], 5], 6])); // Output: [1, 2, 3, 4, 5, 6]
+// Advanced Level Questions
+// Explain the Tower of Hanoi problem and solve it using recursion.
+
+// Answer:
+// javascript
+// Copy code
+// function towerOfHanoi(n, fromRod, toRod, auxRod) {
+//     if (n === 1) {
+//         console.log(`Move disk 1 from ${fromRod} to ${toRod}`);
+//         return;
+//     }
+//     towerOfHanoi(n - 1, fromRod, auxRod, toRod);
+//     console.log(`Move disk ${n} from ${fromRod} to ${toRod}`);
+//     towerOfHanoi(n - 1, auxRod, toRod, fromRod);
+// }
+// towerOfHanoi(3, 'A', 'C', 'B');
+// What is backtracking, and how does it relate to recursion?
+
+// Answer: Backtracking is a recursive technique used for solving problems by trying out different solutions and undoing the previous steps if a solution doesn't work. It’s often used for puzzles like Sudoku or the N-Queens problem.
+// Write a recursive function to solve the N-Queens problem.
+
+// Answer: (Outline provided for simplicity)
+// javascript
+// Copy code
+// function solveNQueens(n) {
+//     let board = Array.from({ length: n }, () => Array(n).fill('.'));
+//     let results = [];
+
+//     function isSafe(board, row, col) {
+//         for (let i = 0; i < row; i++) {
+//             if (board[i][col] === 'Q') return false;
+//             if (col - (row - i) >= 0 && board[i][col - (row - i)] === 'Q') return false;
+//             if (col + (row - i) < n && board[i][col + (row - i)] === 'Q') return false;
+//         }
+//         return true;
+//     }
+
+//     function solve(row) {
+//         if (row === n) {
+//             results.push(board.map(row => row.join('')));
+//             return;
+//         }
+//         for (let col = 0; col < n; col++) {
+//             if (isSafe(board, row, col)) {
+//                 board[row][col] = 'Q';
+//                 solve(row + 1);
+//                 board[row][col] = '.';
+//             }
+//         }
+//     }
+
+//     solve(0);
+//     return results;
+// }
+
+// console.log(solveNQueens(4));
+// What is mutual recursion?
+
+// Answer: Mutual recursion occurs when two or more functions call each other in a cyclical manner. For example, function A calls function B, and function B calls function A.
+// Can you identify a situation where recursion is not the best solution?
+
+// Answer: Recursion is not ideal for problems with very deep recursion trees, like calculating Fibonacci naively. An iterative or dynamic programming solution would be more efficient in terms of time complexity and memory usage.
+// These questions cover both conceptual and practical aspects of recursion, moving from simple problems to more advanced ones like backtracking and the Tower of Hanoi.
+    </script>
+    
+</body>
+</html>

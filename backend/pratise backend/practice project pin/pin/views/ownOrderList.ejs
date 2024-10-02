@@ -1,0 +1,53 @@
+<% include ./partial/header.ejs %>
+<div style=" margin-top: 150px; overflow: hidden;">
+  <% orders.forEach(order=> { %>
+    <!-- <h2>Order for <%= order.paymentId %></h2> -->
+     <a style="color: #111; text-decoration: none;" href="/OwnOrder/<%= order._id %>"><div style="background-color:cadetblue; padding: 0px 20px;margin: 20px 13%; border-radius: 20px;">
+      <h1 style="font-size: 3vh; padding-top: 10px;">Order Details</h1>
+      <!-- <div style="display: flex; align-items: center;justify-content: space-between; gap: 100px;">
+        <p style="font-size: 1.2vw;">Address: <%= order.address %>
+        </p>
+        <p style="font-size: 1vw;">OrderId: <%= order.orderId %>
+        </p>
+      </div> -->
+
+    <h3>Products</h3>
+    <ul>
+      <% order.products.forEach((product, index)=> { %>
+        <% if (product.productName) { %>
+          <li style="display: flex; align-items:center; justify-content:space-around; flex-direction: row; gap: 10px; background-color:ghostwhite; margin: 5px 0px;border-radius: 10px; padding: 15px 0px;">
+
+            <h5 style="width: 30%; font-size: 1vw; font-weight: 400; text-transform: capitalize;"><%= product.productName %></h5>
+            <h5 style="font-weight: 400;"> Price: $<%= product.price %></h5>
+            <h5 style="font-weight: 400; font-size: 2vh;">Qty: <%= product.quantity %></h5>
+              
+          </li>
+          <% } %>
+            <!-- <% if (product.paymentId) { %>
+              <li>
+                <strong>Amount:</strong> $<%= product.amount %><br>
+                  <strong>Payment ID:</strong>
+                  <%= product.paymentId %><br>
+                    <strong>Order ID:</strong>
+                    <%= product.orderId %><br>
+                      <strong>Status:</strong>
+                      <%= product.status %><br>
+                        <strong>Created At:</strong>
+                        <%= new Date(product.createdAt).toLocaleString() %><br>
+                          <strong>Updated At:</strong>
+                          <%= new Date(product.updatedAt).toLocaleString() %>
+              </li>
+              <% } %> -->
+                <% }); %>
+    </ul>
+
+    <div style="display: flex; align-items: center;justify-content:space-between; padding-bottom: 10px;">
+      <p style="font-size: 1vw;">Payment Stauts: <%= order.status %>
+      </p>
+      <p style="font-size: 1.2vw;">Total Invoice <%= order.amount %>.00
+      </p>
+    </div>
+  </div></a>
+    <% }); %>
+  </div>
+    <% include ./partial/footer.ejs %>

@@ -14,7 +14,8 @@ const Razorpay = require('razorpay');
 const ProductOrders = require("./ProductOrders")
 
 
-const axios = require("axios")
+const axios = require("axios");
+const { cpSync, copyFileSync } = require('fs');
 
 require('dotenv').config(); // Load environment variables
 // const payment = require("../views/partial/")
@@ -589,7 +590,7 @@ router.get('/add-to-cart2',isLoggedIn, async (req, res) => {
 
 
 // updatedAddress user
-router.post("/add-to-cart2", async function (req, res, next) {
+router.post("/add-to-cart2", isLoggedIn,async function (req, res, next) {
   try {
     let { address, country, state, postcode, phone_number } = req.body;
 
@@ -715,7 +716,7 @@ const razorpay = new Razorpay({
 
 
 // Route to render payment page
-router.get('/payment',async (req, res) => {
+router.get('/payment',isLoggedIn ,async (req, res) => {
 
   const productId = req.params.productId;
    const user = await userModel.findOne({username:req.session.passport.user});
@@ -725,7 +726,7 @@ router.get('/payment',async (req, res) => {
    const products = await AddtoProduct2.find(); // Get all products
     const cart = await Cart.findOne({ userId }).populate('products.productId'); // Get the current user's cart
 
-    // console.log("pyament card" , cart)
+    console.log("pyament card" , cart)
 
   // const cart = req.session.cart; // Assuming you store the cart in session
   let totalAmount = 0;
@@ -738,7 +739,7 @@ router.get('/payment',async (req, res) => {
 
   let productDetails = cart.products.map(item => ({
     productName: item.productId.producttitle,
-    productPrice: item.productId.pPrice,
+    price: item.productId.pPrice,
     quantity: item.quantity
   }));
 
@@ -750,7 +751,7 @@ router.get('/payment',async (req, res) => {
 
 
 // Route to create an order
-router.post('/create/order', async (req, res) => {
+router.post('/create/order',isLoggedIn, async (req, res) => {
   const { amount, username, email, contact, address, productDetails } = req.body;
 
 
@@ -787,7 +788,7 @@ router.post('/create/order', async (req, res) => {
 
   try {
       const order = await razorpay.orders.create(options);
-      console.log("create oder" ,order)
+      // console.log("create oder" ,order)
       res.json(order);
   } catch (error) {
       res.status(500).send(error);
@@ -813,21 +814,74 @@ router.post('/create/order', async (req, res) => {
 //   }
 // });
 
+
+
+router.get("/OwnOrder",isLoggedIn ,async function(req,res){
+  try {
+    const user = await userModel.findOne({username:req.session.passport.user});
+    const userId = user._id; // Get the current logged-in user's ID
+  
+  
+    let orderList = await ProductOrders.find({userId:userId});
+  
+    if(!orderList){
+      console.log("orderList not found")
+    }
+
+    // let storeProduct;
+    // orderList.forEach((item)=>{
+    //   storeProduct += item.products
+    // })
+
+    // console.log("storeProduct",storeProduct)
+
+
+    res.render("ownOrderList",{orders: orderList })
+  } catch (error) {
+    console.log(error.message)
+    
+  }
+})
+
+
+
+router.get("/OwnOrder/:productId",isLoggedIn ,async function(req,res){
+  try {
+    const {productId} = req.params;
+    const user = await userModel.findOne({username:req.session.passport.user});
+    const userId = user._id; // Get the current logged-in user's ID
+  
+  
+    let getproduct = await ProductOrders.findById(productId);
+  
+    if(!getproduct){
+      console.log("orderList not found")
+    }
+
+
+
+    res.render("orderConfirmation",{getproduct })
+  } catch (error) {
+    console.log(error.message)
+    
+  }
+})
+
 // Route for verifying payment and saving order to the database
-router.post('/verify', async (req, res) => {
+router.post('/verify',isLoggedIn, async (req, res) => {
   const crypto = require("crypto");
   const shasum = crypto.createHmac('sha256', razorpay.key_secret);
   shasum.update(req.body.razorpay_order_id + "|" + req.body.razorpay_payment_id);
   const digest = shasum.digest('hex');
 
-  console.log('Received payment verification request:', req.body); // Log the entire request
+  // console.log('Received payment verification request:', req.body); // Log the entire request
 
   const user = await userModel.findOne({username:req.session.passport.user});
   const userId = user._id; // Get the current logged-in user's ID
 
   if (digest === req.body.razorpay_signature) {
     // Payment is successful, store the order in the database
-    console.log('Payment notes:', req.body.notes);  // Log the notes
+    // console.log('Payment notes:', req.body.notes);  // Log the notes
     try {
       const { razorpay_order_id, razorpay_payment_id, notes } = req.body;
 
@@ -853,10 +907,12 @@ router.post('/verify', async (req, res) => {
       // Save the order in MongoDB
       await newOrder.save();
 
+      console.log("save oredr ",newOrder._id)
+
+
       // Respond to client with success
       res.json({ status: "success", orderId: newOrder._id });
-      // Redirect to order confirmation page after saving
-      // res.redirect(`/order/confirmation/${newOrder._id}`);
+      // res.redirect(`/OwnOrder/${newOrder._id}`)
     } catch (error) {
       console.error('Error saving order:', error);
       res.status(500).json({ status: "failed", message: "Error saving order to the database." });
@@ -883,6 +939,8 @@ router.post('/verify', async (req, res) => {
 //       res.status(500).send('Error fetching order details.');
 //   }
 // });
+
+
 
 
 

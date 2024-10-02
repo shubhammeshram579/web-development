@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>recusion class 1</h1>
+
+    <script>
+
+        //1. Recursive Function to Print Numbers from 5 to 1;
+
+        function printNumbers(n) {
+            if (n === 0) {
+                return; // Base case: stop when n reaches 0
+            }
+            console.log(n); // Print the current number
+            printNumbers(n - 1); // Recursive call with n-1
+        }
+
+        printNumbers(5); // Output: 5 4 3 2 1
+
+
+        // Explanation:
+        // The function printNumbers(n) takes an integer n.
+        // The base case is when n becomes 0. At that point, the recursion stops.
+        // On each recursive call, the current value of n is printed, and then the function calls itself with n-1 to handle the next number.
+        // This process continues until the base case is reached.
+
+
+        // 2. Recursive Function to Print Numbers from 1 to 5;
+        function printNumbers(n) {
+            if (n > 5) {
+                return; // Base case: stop when n exceeds 5
+            }
+            console.log(n); // Print the current number
+            printNumbers(n + 1); // Recursive call with n+1
+        }
+
+        printNumbers(1); // Output: 1 2 3 4 5
+
+
+        // Explanation:
+        // The function printNumbers(n) starts with an integer n.
+        // The base case is when n exceeds 5, at which point the recursion stops.
+        // On each recursive call, the current value of n is printed, and then the function calls itself with n + 1 to handle the next number.
+        // This continues until the base case is reached, i.e., when n becomes greater than 5.
+
+
+
+        //3. Recursive Function to Calculate the Sum of First n Natural Numbers;
+        function sumOfNaturalNumbers(n) {
+            if (n === 0) {
+                return 0; // Base case: sum of 0 is 0
+            }
+            return n + sumOfNaturalNumbers(n - 1); // Recursive call: add current n to the sum of (n-1) numbers
+        }
+
+        console.log(sumOfNaturalNumbers(5)); // Output: 15 (1 + 2 + 3 + 4 + 5 = 15);
+
+
+
+        // 4.Recursive Function to Calculate Factorial of n
+        function factorial(n) {
+            if (n === 0 || n === 1) {
+                return 1; // Base case: factorial of 0 or 1 is 1
+            }
+            return n * factorial(n - 1); // Recursive call: multiply current n with factorial of (n-1)
+        }
+
+        console.log(factorial(5)); // Output: 120 (5 * 4 * 3 * 2 * 1 = 120)
+
+
+        // 5.Recursive Function to Calculate Fibonacci Sequence
+        function fibonacci(n) {
+            if (n === 0) return 0; // Base case: F(0) = 0
+            if (n === 1) return 1; // Base case: F(1) = 1
+            return fibonacci(n - 1) + fibonacci(n - 2); // Recursive call: F(n) = F(n-1) + F(n-2)
+        }
+
+        function printFibonacciSequence(n) {
+            for (let i = 0; i < n; i++) {
+                console.log(fibonacci(i));
+            }
+        }
+
+        printFibonacciSequence(10); // Output: 0 1 1 2 3 5 8 13 21 34
+
+
+
+        // 6. Recursive Function to Calculate x^n (Stack Height = n)
+        function power(x, n) {
+            if (n === 0) {
+                return 1; // Base case: x^0 = 1
+            }
+            return x * power(x, n - 1); // Recursive call: multiply x with power(x, n-1)
+        }
+
+        console.log(power(2, 5)); // Output: 32 (2^5 = 32)
+
+        // Explanation:
+        // The function power(x, n) calculates x^n recursively.
+        // The base case is when n = 0, where any number raised to the power of 0 is 1.
+        // The recursive step reduces the power n by 1 on each call, and multiplies x with the result of power(x, n - 1) until n becomes 0.
+        // This approach ensures a stack height of n, meaning the recursion will go n levels deep.
+        // For example, calling power(2, 5) will calculate 2^5 as 2 * 2 * 2 * 2 * 2 = 32.
+
+
+
+        // 7.Recursive Function to Calculate 𝑥𝑛 x n (Stack Height = log𝑛 logn)
+        function power(x, n) {
+            if (n === 0) {
+                return 1; // Base case: x^0 = 1
+            }
+            if (n % 2 === 0) {
+                // If n is even: use (x^2)^(n/2)
+                let halfPower = power(x, n / 2);
+                return halfPower * halfPower;
+            } else {
+                // If n is odd: x * (x^(n-1))
+                return x * power(x, n - 1);
+            }
+        }
+
+        console.log(power(2, 10)); // Output: 1024 (2^10 = 1024)
+
+
+
+
+
+    </script>
+</body>
+
+</html>

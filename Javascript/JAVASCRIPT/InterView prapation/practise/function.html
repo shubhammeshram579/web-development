@@ -330,6 +330,123 @@
     console.log(arrowFns(30,50))
 
 
+
+     // 16.Write a function that returns the nth Fibonacci number.
+     function fibonacci(n){
+        if(n <= 1) return n;
+        return fibonacci(n -1 ) + fibonacci(n-2)
+        
+     }
+
+     console.log("result",fibonacci(6))
+
+
+     // 17.Explain function currying and provide an example.
+    // 17.Currying is the process of breaking a function with multiple arguments into a series of functions that each take one argument.
+
+    function CF(a){
+        return function(b){
+            return a + b
+        }
+    }
+
+    let resCF = CF(10)(30)
+    console.log(resCF);
+
+
+
+    // 18.Write a function to flatten an array.
+    function FlattenArray(arr){
+        return arr.reduce((flat, flatArray) => {
+            return arr.concat(Array.isArray(flatArray) ? FlattenArray(flatArray) : flatArray);
+
+        },[])
+    }
+
+    console.log(FlattenArray([1,2,4,[3,5,6],4,7]))
+
+
+
+    // my onw
+    let nestArray = [1, [2, [3, 4]], 5];
+        console.log(nestArray)
+        let flattenStore = []
+
+
+        function flatten(arr) {
+            for (let i = 0; i < nestArray.length; i++) {
+                if (Array.isArray(arr[i])) {
+                    flatten(arr[i]);
+                } else {
+                    flattenStore.push(arr[i])
+                }
+            }
+
+        }
+
+        flatten(nestArray)
+        console.log(flattenStore)
+
+
+    
+    
+    // 19.What is the call, apply, and bind method in JavaScript ?
+            // call : Invokes a function with a given this value and arguments passed one by one.
+            // apply: Invokes a function with a given this value and arguments as an array.
+            // bind: Returns a new function, with a given this value, but does not execute it immediately.
+
+    let person = {
+        name: "shubham",
+        age:27,
+        greek: function(greeting){
+            console.log(greeting + " "+ this.name);
+        }
+    }
+
+    console.log(person)
+
+
+    let anotherPerson = {
+        name: "labham"
+    };
+
+
+    person.greek.call(anotherPerson,"hello")
+    person.greek.apply(anotherPerson,["hi"])
+    let greenjaan = person.greek.bind(anotherPerson, "hey")
+    greenjaan()
+
+
+    // my own practice basic used call apply bind with more paramaters
+
+    function abc(a,b,c){
+        console.log(this.age,a,b,c)
+    }
+
+
+    let obj = {
+        age:44
+    }
+
+
+    abc.call(obj,1,2,3)
+    abc.apply(obj,[2,4,6])
+    let fUsed = abc.bind(obj,1,3,5)
+    fUsed();
+
+
+
+    // 20.Write a recursive function to calculate the power of a number(e.g., power(2, 3) should return 8).
+    function power(base,exponent){
+        // basecase condition
+        if(exponent == 0) return 1;
+
+        return base * power(base,exponent -1);
+
+    }
+    console.log(power(2,3));
+
+
     </script>
 
 </body>
