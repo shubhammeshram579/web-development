@@ -91,6 +91,8 @@ showproduct();
 
 
 
+
+// i thingh this funcinality for moring product page 
     
 var srbtn =  document.querySelector(".searbar input");  
 

@@ -8,16 +8,16 @@
 <div class="searbar"
     style="display: flex; align-items: center; justify-content: center; height: 100px;display: none; transition: all ease-in 1s;">
   
-    <form style="display: flex; align-items: center;" action="/Afternoon/search" method="post">
+    <!-- <form style="display: flex; align-items: center;" action="/Afternoon/search" method="post"> -->
     <p style="font-size: 20px; font-weight: 800;">Search: <input
             style="border: 1px solid #808080; padding: 15px 0px;width: 25vw; border-radius: 5px 0px 0px 5px;"
-            type="text"  name="query" id="Search" placeholder="Search for product" value="<%= query %>" required></p>
+            type="text" id="search" placeholder="Search for product" autocomplete="off"></p>
     <i style="border: 1px solid gray; padding: 14.5px 15px; margin-right: 20px;"
         class="fa-solid fa-magnifying-glass"></i>
     <a id="searbtn2" href="#"
         style="text-decoration: none; color: #111; font-size: 20px; border-left: 0.5px solid gray; padding: 10px 0px; font-weight: 800;">
-        <i class="fa-solid fa-xmark"></i><button style="border: none; font-size: 1vw; background-color: transparent;" type="submit">Search</button></a>
-    </form>
+        <i class="fa-solid fa-xmark"></i><button id="searchButton" style="border: none; font-size: 1vw; background-color: transparent;" type="submit">Search</button></a>
+    <!-- </form> -->
 </div>
 <!-- navbar -->
 <header class="navbar">
@@ -84,16 +84,17 @@
     <div class="card1">
         <a style="text-decoration: none;color: #111;" href="/morningProduct"><h1>Morning</h1></a>
         <a style="text-decoration: none; font-weight:800;color: #111;" href="/lunch"><h1>Lunch</h1></a>
-        <a  style="text-decoration: none; font-weight:800;color: #111;" href="/Afternoon"><h1 style="font-weight: 800;">Afternoon</h1></a>
-        <a  style="text-decoration: none; font-weight:800;color: #111;" href="/evining"><h1>Evening</h1></a>
+        <a  style="text-decoration: none; font-weight:800;color: #111;" href="/Afternoon"><h1>Afternoon</h1></a>
+        <a  style="text-decoration: none; font-weight:800;color: #111;" href="/evining"><h1 style="font-weight: 800;">Evening</h1></a>
         <h1>Individually Packeaged
             Meals</h1>
         <h1>Bio Disponsable</h1>
 
     </div>
     <div class="card2">
-        <% if(AfternoonProduct.length > 0){ %>
-            <% AfternoonProduct.forEach(function(product){ %>
+
+        <% if(eveningproducts.length > 0){ %>
+            <% eveningproducts.forEach(function(product){ %>
                 <div class="cards">
                     <div class="card">
                         <h1><%=product.name %></h1>
@@ -112,9 +113,14 @@
             <% }else if (query) { %>
                 <p>No products found for "<%= query %>"</p>
               <% } %>
+         
+       
        
 
     </div>
+
+     <!-- Search Results
+    <ul id="results"></ul> -->
 
 
 </div>

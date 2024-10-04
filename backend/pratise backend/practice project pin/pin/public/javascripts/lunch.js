@@ -7,7 +7,7 @@ let navbarbtn = document.querySelector(".navbar");
 
 
 
-
+// search scone butten
 sebtn1.addEventListener("click",function(){
     searbar.style.display = "block";
     navbarbtn.style.display = "none";
@@ -18,6 +18,7 @@ sebtn1.addEventListener("click",function(){
 })
 
 
+// after search inpute opene then close searbar btn
 sebtn2.addEventListener("click",function(){
     searbar.style.display = "none"
     navbarbtn.style.display = "block"
@@ -30,7 +31,7 @@ sebtn2.addEventListener("click",function(){
 
 
 
-// lunch product
+// lunch product list
 var arr2 = [
     {name:"SHARED SALAD TRAYS MEDIUM",
     qty:"Serves 6 as a meal or 10 as a side"
@@ -86,6 +87,8 @@ function lunchproduct(){
 lunchproduct();
 
 
+
+// searbar butten
 var srbtn2 =  document.querySelector(".searbar input");  
 function lunchproserch(){
     srbtn2.addEventListener("input",function(){

@@ -1,15 +1,9 @@
 <% include ./partial/header.ejs %>
-<div style=" margin-top: 150px; overflow: hidden;">
+<div style=" margin-top: 150px; overflow-y: hidden;">
   <% orders.forEach(order=> { %>
-    <!-- <h2>Order for <%= order.paymentId %></h2> -->
      <a style="color: #111; text-decoration: none;" href="/OwnOrder/<%= order._id %>"><div style="background-color:cadetblue; padding: 0px 20px;margin: 20px 13%; border-radius: 20px;">
       <h1 style="font-size: 3vh; padding-top: 10px;">Order Details</h1>
-      <!-- <div style="display: flex; align-items: center;justify-content: space-between; gap: 100px;">
-        <p style="font-size: 1.2vw;">Address: <%= order.address %>
-        </p>
-        <p style="font-size: 1vw;">OrderId: <%= order.orderId %>
-        </p>
-      </div> -->
+     
 
     <h3>Products</h3>
     <ul>

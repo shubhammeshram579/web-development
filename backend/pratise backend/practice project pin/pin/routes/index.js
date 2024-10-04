@@ -8,6 +8,7 @@ const Cart = require("./addcard");
 const passport = require('passport');
 const localStrategy = require("passport-local");
 const Afternoon = require("./Afternoon");
+const Eveningproduct = require("./eveningProduct");
 const AddtoProduct2 = require(".//../routes/product")
 const Razorpay = require('razorpay');
 
@@ -31,6 +32,7 @@ passport.use(new localStrategy(userModel.authenticate()));
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
+  
   let productList = await AddtoProduct2.find({});
   // console.log(productList)
   res.render('index',{productList});
@@ -45,8 +47,8 @@ router.get('/menu', function(req, res, next) {
 
 
 
-router.get('/products', function(req, res, next) {
-  res.render('products');
+router.get('/morningProduct', function(req, res, next) {
+  res.render('morningProduct');
 });
 
 
@@ -57,9 +59,71 @@ router.get('/lunch', function(req, res, next) {
 
 
 router.get("/Afternoon", async function(req, res, next){
-  let users = await Afternoon.find();
-  res.render("Afternoon",{users})
+  let AfternoonProduct = await Afternoon.find();
+  res.render("Afternoon",{AfternoonProduct, query:""})
 });
+
+
+router.get("/Afternoon", async function(req, res, next){
+  res.render("Afternoon",{AfternoonProduct:[], query:""})
+});
+
+// Search route
+router.post('/Afternoon/search', async (req, res) => {
+  const query = req.body.query.toLowerCase();
+
+  // Filter products based on the search query
+  // const filteredProducts = await Afternoon.filter(product =>
+  //   product.name.toLowerCase().includes(query)
+  // );
+
+  const findProduct = await Afternoon.find({
+    $or:[
+      {name: {$regex: query, $options: "i"}},
+      {qty: {$regex: query, $options: "i"}}
+    ]
+  })
+
+  // Render the index.ejs file with the filtered products
+  res.render('Afternoon', { AfternoonProduct: findProduct, query });
+});
+
+
+// facth evening product data from mongodb
+router.get("/evining", async function(req, res) {
+  let eveningproducts = await Eveningproduct.find({});
+  res.render("eveningProduct" ,{eveningproducts})
+})
+
+
+// API route for live search
+router.get('/evining/search', async (req, res) => {
+  const query = req.query.q;
+  try {
+
+    let  eveningproducts;
+
+    if(query){
+       // Fetch products from MongoDB matching the search query
+    eveningproducts = await Eveningproduct.find({
+      name: { $regex: query, $options: 'i' }, // 'i' for case-insensitive search
+    });
+
+    }else{
+      eveningproducts = await Eveningproduct.find({});
+    }
+  
+    // Return the search results as JSON
+    res.json(eveningproducts);
+
+    // res.render("eveningProduct" ,{eveningproducts})
+
+  } catch (err) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
 
 
 
@@ -551,7 +615,7 @@ router.get('/card', function(req, res, next) {
 
 // Route to display products and the current user's cart
 router.get('/add-to-cart',isLoggedIn, async (req, res) => {
-
+  // const userLoggedIn = req.isAuthenticated();
   // const productId = req.params.productId;
   const user = await userModel.findOne({username:req.session.passport.user});
   const userId = user._id; // Get the current logged-in user's ID
@@ -1144,7 +1208,7 @@ function isLoggedIn(req, res, next){
     return next();
   }
   req.flash("error", "Please login first.");
-  res.redirect("/");
+  res.redirect("/log-register");
 }
 
 
