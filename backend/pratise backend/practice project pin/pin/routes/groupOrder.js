@@ -17,6 +17,6 @@ const groupOrderscema = mongoose.Schema({
 
 
 // export data on mongodb server create a user name model table
-module.exports = mongoose.model("order", groupOrderscema);
+module.exports = mongoose.model("groupOrder", groupOrderscema);
 
 

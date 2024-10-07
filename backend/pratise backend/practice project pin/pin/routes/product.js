@@ -33,6 +33,6 @@ const productSchema = mongoose.Schema({
 
 
 // export data on mongodb server create a user name model table
-module.exports = mongoose.model("AddtoProduct2", productSchema);
+module.exports = mongoose.model("Products", productSchema);
 
 

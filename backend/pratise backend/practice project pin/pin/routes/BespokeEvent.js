@@ -26,6 +26,6 @@ const BespokeSchma = mongoose.Schema({
 
 
 // export data on mongodb server create a user name model table
-module.exports = mongoose.model("post", BespokeSchma);
+module.exports = mongoose.model("BespokeEvent", BespokeSchma);
 
 

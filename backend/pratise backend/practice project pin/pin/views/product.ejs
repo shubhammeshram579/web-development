@@ -115,27 +115,6 @@
                 <%= getProduct.producttitle %>
             </h1>
 
-            <!-- <div class="part">
-                <div style="display: flex; align-items: center; justify-content: center; width: 3vw; gap: 10px;">
-                    <form action="/update-quantity/<%= getProduct._id %>" method="POST">
-                        <input type="hidden" name="action" value="decrease">
-                        <button style="border: none;" type="submit"><i style="background-color: #E6622B; color: #fff; border: 1px solid #E6622B;" class="ri-subtract-line"></i></button>
-                    </form>
-                    <h1 style="color:#fff; font-size: 1vw;">
-                        <%= getProduct.quantity %>
-                    </h1>
-                    <form action="/update-quantity/<%= getProduct._id %>" method="POST">
-                        <input type="hidden" name="action" value="increase">
-                        <button style="border: none;" type="submit"><i style="background-color: #E6622B; color: #fff; border: 1px solid #E6622B;" class="ri-add-line"></i></button>
-                    </form>
-                </div>
-                <a href="#">$<%= getProduct.pPrice %></a>
-                <form action="/add-to-cart/<%= getProduct._id %>" method="post">
-                    <button style="background-color: #E6622B; color: #fff; border: none; font-size: 2vh;" type="submit">Add to Cart</button>
-                </form>
-
-                <button style="background-color: #E6622B; color: #fff; border: none; font-size: 2vh;" type="submit"><a href="/add-to-cart">Add to Cart2</a></button>
-            </div> -->
 
             <div class="part">
                 <div style="display: flex; align-items: center; justify-content: center; width: 3vw;background-color:#E6622B; gap: 10px;">
@@ -165,9 +144,7 @@
                         type="submit">Add to Cart</button>
                 </form>
 
-                <!-- <button style="background-color: #E6622B; color: #fff; border: none; font-size: 2vh;" type="submit">
-                    <a href="/add-to-cart">Add to Cart2</a>
-                </button> -->
+               
             </div>
 
         </div>
@@ -232,3 +209,32 @@
         <!-- <% if (getProduct) { %> -->
         <!-- <h2><%= getProduct._id %></h2> -->
         <!-- <% } %> -->
+
+
+        
+            <!-- <div class="part">
+                <div style="display: flex; align-items: center; justify-content: center; width: 3vw; gap: 10px;">
+                    <form action="/update-quantity/<%= getProduct._id %>" method="POST">
+                        <input type="hidden" name="action" value="decrease">
+                        <button style="border: none;" type="submit"><i style="background-color: #E6622B; color: #fff; border: 1px solid #E6622B;" class="ri-subtract-line"></i></button>
+                    </form>
+                    <h1 style="color:#fff; font-size: 1vw;">
+                        <%= getProduct.quantity %>
+                    </h1>
+                    <form action="/update-quantity/<%= getProduct._id %>" method="POST">
+                        <input type="hidden" name="action" value="increase">
+                        <button style="border: none;" type="submit"><i style="background-color: #E6622B; color: #fff; border: 1px solid #E6622B;" class="ri-add-line"></i></button>
+                    </form>
+                </div>
+                <a href="#">$<%= getProduct.pPrice %></a>
+                <form action="/add-to-cart/<%= getProduct._id %>" method="post">
+                    <button style="background-color: #E6622B; color: #fff; border: none; font-size: 2vh;" type="submit">Add to Cart</button>
+                </form>
+
+                <button style="background-color: #E6622B; color: #fff; border: none; font-size: 2vh;" type="submit"><a href="/add-to-cart">Add to Cart2</a></button>
+            </div> -->
+
+
+             <!-- <button style="background-color: #E6622B; color: #fff; border: none; font-size: 2vh;" type="submit">
+                    <a href="/add-to-cart">Add to Cart2</a>
+                </button> -->

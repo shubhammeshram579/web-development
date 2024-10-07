@@ -1,56 +1,68 @@
 var express = require('express');
 var router = express.Router();
+
+// import models
 const userModel = require("./users");
 const bespokeModel = require("./BespokeEvent");
 const groupOrderModel = require("./groupOrder");
 const donateModel = require("./donate");
 const Cart = require("./addcard");
-const passport = require('passport');
-const localStrategy = require("passport-local");
 const Afternoon = require("./Afternoon");
 const Eveningproduct = require("./eveningProduct");
-const AddtoProduct2 = require(".//../routes/product")
-const Razorpay = require('razorpay');
 
+// product list
+const Products = require("./product");
+
+
+// order product model
 const ProductOrders = require("./ProductOrders")
 
+
+// import pass genrater
+const passport = require('passport');
+const localStrategy = require("passport-local");
+
+// razorpay
+const Razorpay = require('razorpay');
 
 const axios = require("axios");
 const { cpSync, copyFileSync } = require('fs');
 
 require('dotenv').config(); // Load environment variables
-// const payment = require("../views/partial/")
-
-
-// const paymentRoutes = require('./routes/payment');
-
-
-
-
 
 passport.use(new localStrategy(userModel.authenticate()));
+
+
+
+
+
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   
-  let productList = await AddtoProduct2.find({});
+  let productList = await Products.find({});
   // console.log(productList)
   res.render('index',{productList});
 });
 
 
+
+// menu page
 router.get('/menu', function(req, res, next) {
   res.render('menu');
 });
 
 
+// catering page router
+router.get('/catering', function(req, res, next) {
+  res.render('catering');
+});
 
 
-
+// catering morning product router
 router.get('/morningProduct', function(req, res, next) {
   res.render('morningProduct');
 });
-
 
 router.get('/lunch', function(req, res, next) {
   res.render('lunch');
@@ -63,19 +75,13 @@ router.get("/Afternoon", async function(req, res, next){
   res.render("Afternoon",{AfternoonProduct, query:""})
 });
 
-
 router.get("/Afternoon", async function(req, res, next){
   res.render("Afternoon",{AfternoonProduct:[], query:""})
 });
 
-// Search route
+// catering product Search router
 router.post('/Afternoon/search', async (req, res) => {
   const query = req.body.query.toLowerCase();
-
-  // Filter products based on the search query
-  // const filteredProducts = await Afternoon.filter(product =>
-  //   product.name.toLowerCase().includes(query)
-  // );
 
   const findProduct = await Afternoon.find({
     $or:[
@@ -86,10 +92,11 @@ router.post('/Afternoon/search', async (req, res) => {
 
   // Render the index.ejs file with the filtered products
   res.render('Afternoon', { AfternoonProduct: findProduct, query });
+
 });
 
 
-// facth evening product data from mongodb
+// facth catering evening product data from mongodb
 router.get("/evining", async function(req, res) {
   let eveningproducts = await Eveningproduct.find({});
   res.render("eveningProduct" ,{eveningproducts})
@@ -127,62 +134,19 @@ router.get('/evining/search', async (req, res) => {
 
 
 
-
-
-// router.get("/productList",async function(req, res){
-//   let productList = await AddtoProduct2.find({});
-//   res.json({productList})
-
-// })
-
-
-// router.get('/add-to-card' ,isLoggedIn,  async function(req, res, next) {
-//   const user = await userModel
-//   .findOne({username:req.session.passport.user})
-//   .populate("addcard")
-//   res.render('addtocard');
-// });
-
-
-// router.post('/add-to-card', isLoggedIn, async function(req, res, next) {
-//   const user = await userModel.findOne({username:req.session.passport.user});
-//   const addcard = await addcardModel.create({
-//     user: user._id,
-//     addcards: req.body.addcards,
-//     price:req.body.price,
-//   });
-
-//   user.addcard.push(addcard._id);
-//   await user.save();
-//   res.redirect("/add-to-card");
-// });
-
-
-
-
-router.get('/shop', async function(req, res, next) {
-  let productList = await AddtoProduct2.find({});
-  // console.log(productList)
-  res.render('shop',{productList});
-});
-
-
-router.get('/catering', function(req, res, next) {
-  res.render('catering');
-});
-
-// product details 
-
-
+// stories page router
 router.get('/stories', function(req, res, next) {
   res.render('stories');
 });
 
+
+// about page router
 router.get('/about', function(req, res, next) {
   res.render('about');
 });
 
 
+// contact page router
 router.get('/contact', function(req, res, next) {
   res.render('contact');
 });
@@ -190,9 +154,7 @@ router.get('/contact', function(req, res, next) {
 
 
 
-
-
-
+// donation payment roter
 router.get('/donate', function(req, res, next) {
   res.render('donate');
 });
@@ -204,7 +166,7 @@ router.get('/donate2' ,isLoggedIn,  async function(req, res, next) {
   res.render('donate');
 });
 
-
+// donation amout sumbit roter post
 router.post('/donate2', isLoggedIn, async function(req, res, next) {
   const user = await userModel.findOne({username:req.session.passport.user});
   const donatem = await donateModel.create({
@@ -218,10 +180,7 @@ router.post('/donate2', isLoggedIn, async function(req, res, next) {
 });
 
 
-// router.get('/bespoke', function(req, res, next) {
-//   res.render('bespoke');
-// });
-
+// bespokeEvent page 
 router.get('/bespoke' ,isLoggedIn,  async function(req, res, next) {
   const user = await userModel
   .findOne({username:req.session.passport.user})
@@ -257,19 +216,7 @@ router.post('/bespoke', isLoggedIn, async function(req, res, next) {
 
 
 
-router.get('/log-register', function(req, res, next) {
-  res.render('loregiter');
-});
-
-router.get('/register', function(req, res, next) {
-  res.render('register');
-});
-
-// router.get('/group-order', function(req, res, next) {
-//   res.render('groupOrder');
-// });
-
-
+// get group order catring page 
 router.get('/group-order' ,isLoggedIn,  async function(req, res, next) {
   const user = await userModel
   .findOne({username:req.session.passport.user})
@@ -294,129 +241,35 @@ router.post('/group-order', isLoggedIn, async function(req, res, next) {
 });
 
 
+
+
+
+// product functionlity setup
+// shop product list router
+router.get('/shop', async function(req, res, next) {
+  let productList = await Products.find({});
+  // console.log(productList)
+  res.render('shop',{productList});
+});
+
+
+// product page 
 router.get('/product/:_id',async function(req, res, next) {
   let _id = req.params;
-  let getProduct = await AddtoProduct2.findById(_id)
-  console.log("getProduct id",getProduct._id)
+  let getProduct = await Products.findById(_id)
+  // console.log("getProduct id",getProduct._id)
   res.render('product',{getProduct});
 });
 
 
 
-
-// // // Route to handle quantity increment and decrement
-// router.post('/update-quantity/:id', isLoggedIn,async (req, res) => {
-//   const { id } = req.params;
-//   const { action } = req.body;
-
-//   try {
-//     // Find the product by ID
-//     const product = await AddtoProduct2.findById(id);
-
-//     if (action === 'increase') {
-//       product.quantity += 1;
-//     } else if (action === 'decrease' && product.quantity > 1) {
-//       product.quantity -= 1;
-//     }
-
-//     // Save the updated product
-//     await product.save();
-
-//     res.redirect(`/product/${id}`)
-
-//     // // / Check the referrer to redirect accordingly
-//     // const referrer = req.get('Referrer');
-
-//     // if (referrer.includes('/product')) {
-//     //   // If the referrer URL includes '/product', redirect to the product page
-//     //   res.redirect(`/product/${id}`);
-//     // } else if (referrer.includes('/add-to-cart')) {
-//     //   // If the referrer URL includes '/add-to-cart', redirect to the cart page
-//     //   res.redirect(`/add-to-cart/${id}`);
-//     // } else {
-//     //   // Default redirection to cart if referrer doesn't match
-//     //   res.redirect('/cart');
-//     // }
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).send('Error updating product quantity');
-//   }
-// });
-
-
-
-// // Route to update product quantity
-// router.post('/update-quantity2/:id', isLoggedIn, async (req, res) => {
-//   const { id } = req.params;
-//   const { action } = req.body;
-//   const user = await userModel.findOne({username:req.session.passport.user});
-
-//   try {
-//     // Find the product by ID (modify this based on where your product is stored)
-//     let productInCart = await Cart.findOne({ userId: user._id, "products.productId": id });
-
-//     if (!productInCart) {
-//       return res.status(404).send('Product not found in cart');
-//     }
-
-//     const productIndex = productInCart.products.findIndex(p => p.productId.toString() === id);
-
-//     if (action === 'increase') {
-//       productInCart.products[productIndex].quantity += 1;
-//     } else if (action === 'decrease' && productInCart.products[productIndex].quantity > 1) {
-//       productInCart.products[productIndex].quantity -= 1;
-//     }
-
-//     // Save the updated cart
-//     await productInCart.save();
-
-
-
-//     res.redirect(`/add-to-cart/${id}`);
-
-//     // Redirect back to the product or cart page based on the referrer
-//     // Check the referrer to redirect accordingly
-//     // const referrer = req.get('Referrer');
-
-//     // if (referrer.includes('/product')) {
-//     //   // If the referrer URL includes '/product', redirect to the product page
-//     //   res.redirect(`/product/${id}`);
-//     // } else if (referrer.includes('/add-to-cart')) {
-//     //   // If the referrer URL includes '/add-to-cart', redirect to the cart page
-//     //   res.redirect(`/add-to-cart/${id}`);
-//     // } else {
-//     //   // Default redirection to cart if referrer doesn't match
-//     //   res.redirect('/cart');
-//     // }
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).send('Error updating product quantity');
-//   }
-// });
-
-
+// increate quenty and decrese quentity functionlity
 router.post('/update-quantity/:id', isLoggedIn, async (req, res) => {
   const { id } = req.params;
   const { action } = req.body;
   const user = await userModel.findOne({ username: req.session.passport.user });
 
   try {
-    // Update in the product collection
-    const product = await AddtoProduct2.findById(id);
-
-    if (!product) {
-      return res.status(404).send('Product not found');
-    }
-
-    if (action === 'increase') {
-      product.quantity += 1;
-    } else if (action === 'decrease' && product.quantity > 1) {
-      product.quantity -= 1;
-    }
-
-    // Save the updated product
-    await product.save();
-
     // Update in the cart collection
     let productInCart = await Cart.findOne({ userId: user._id, "products.productId": id });
 
@@ -448,94 +301,8 @@ router.post('/update-quantity/:id', isLoggedIn, async (req, res) => {
   }
 });
 
-// // Express route to handle quantity updates
-// router.post('/update-quantity/:productId', isLoggedIn, async (req, res) => {
-//   const { productId } = req.params;
-//   const { action } = req.body; // Expecting { action: 'increase' or 'decrease' }
-//   // const user = await userModel.findOne({username:req.session.passport.user});
-
-//   // Find the product in the cart and update its quantity
-//   Cart.findOne({ userId: req.session.passport.user._id }, (err, cart) => {
-//       if (err) return res.status(500).json({ success: false, error: err.message });
-
-//       const cartItem = cart.products.find(item => item.productId.toString() === productId);
-//       if (!cartItem) return res.status(404).json({ success: false, error: 'Product not found in cart' });
-
-//       // Update the quantity based on action
-//       if (action === 'increase') {
-//           cartItem.quantity += 1;
-//       } else if (action === 'decrease' && cartItem.quantity > 1) {
-//           cartItem.quantity -= 1;
-//       }
-
-//       // Save the cart and return the updated quantity
-//       cart.save((err, updatedCart) => {
-//           if (err) return res.status(500).json({ success: false, error: err.message });
-
-//           // Optionally, calculate the new total amount if needed
-//           const newTotalAmount = updatedCart.products.reduce((total, item) => total + item.quantity * item.productId.pPrice, 0);
-
-//           res.json({
-//               success: true,
-//               newQuantity: cartItem.quantity,
-//               newTotalAmount: newTotalAmount // If you want to update the total amount
-//           });
-//       });
-//   });
-// });
 
 
-
-
-
-
-
-
-// router.get('/add-to-card', isLoggedIn, async function(req, res, next) {
-//   const user = await userModel.findOne({username:req.session.passport.user});
-//   res.render('addtocard');
-// });
-
-
-// // Route to add a product to the cart
-// router.post('/add-to-cart/:productId',isLoggedIn, async (req, res) => {
-//   const productId = req.params.productId;
-//   const user = await userModel.findOne({username:req.session.passport.user});
-//   // const userId = req.session.user._id; // Get the current logged-in user ID
-//   const userId = user._id
-
-//   console.log("userId",user._id)
-//   try {
-//     let cart = await Cart.findOne({ userId });
-
-//     // If the cart does not exist for the current user, create a new one
-//     if (!cart) {
-//       cart = new Cart({
-//         userId,
-//         products: [{ productId, quantity: 1 }],
-//       });
-//     } else {
-//       // If the cart exists, check if the product is already in the cart
-//       const productIndex = cart.products.findIndex(p => p.productId.toString() === productId);
-
-//       if (productIndex > -1) {
-//         // Product exists in the cart, increment the quantity
-//         cart.products[productIndex].quantity += 1;
-//       } else {
-//         // Product does not exist in the cart, add a new one
-//         cart.products.push({ productId, quantity: 1 });
-//       }
-//     }
-
-//     // Save the cart
-//     await cart.save();
-//     res.redirect(`/add-to-cart`);
-//     // res.render('addtocard');
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).send('Error adding product to cart');
-//   }
-// });
 
 // Route to add a product to the cart
 router.post('/add-to-cart/:productId', isLoggedIn, async (req, res) => {
@@ -606,24 +373,15 @@ router.post('/delete-from-cart/:productId', async (req, res) => {
 
 
 
-
-
-router.get('/card', function(req, res, next) {
-  res.render('card');
-});
-
-
 // Route to display products and the current user's cart
 router.get('/add-to-cart',isLoggedIn, async (req, res) => {
-  // const userLoggedIn = req.isAuthenticated();
-  // const productId = req.params.productId;
   const user = await userModel.findOne({username:req.session.passport.user});
   const userId = user._id; // Get the current logged-in user's ID
 
   try {
-    const products = await AddtoProduct2.find(); // Get all products
+    const products = await Products.find(); // Get all products
     const cart = await Cart.findOne({ userId }).populate('products.productId'); // Get the current user's cart
-    console.log("cardsss",cart)
+    // console.log("cardsss",cart)
     res.render('addtocard', { products, cart });
   } catch (err) {
     console.error(err);
@@ -641,9 +399,9 @@ router.get('/add-to-cart2',isLoggedIn, async (req, res) => {
   const userId = user._id; // Get the current logged-in user's ID
 
   try {
-    const products = await AddtoProduct2.find(); // Get all products
+    const products = await Products.find(); // Get all products
     const cart = await Cart.findOne({ userId }).populate('products.productId'); // Get the current user's cart
-    console.log("cardsss",cart)
+    // console.log("cardsss",cart)
     res.render('checkout', { products, cart,user});
   } catch (err) {
     console.error(err);
@@ -694,85 +452,12 @@ router.post("/add-to-cart2", isLoggedIn,async function (req, res, next) {
 });
 
 
-// router.get("/payment", function(req,res,next) {
-//   res.render("payment")
-
-// })
-
-
-
-// // Render payment page
-// router.get('/payment', async (req, res) => {
-
-//    // const productId = req.params.productId;
-//    const user = await userModel.findOne({username:req.session.passport.user});
-//    const userId = user._id; // Get the current logged-in user's ID
-
-
-//    const products = await AddtoProduct2.find(); // Get all products
-//     const cart = await Cart.findOne({ userId }).populate('products.productId'); // Get the current user's cart
-
-//     console.log("pyament card" , cart)
-
-//   // const cart = req.session.cart; // Assuming you store the cart in session
-//   let totalAmount = 0;
-
-//   if (cart && cart.products.length > 0) {
-//       totalAmount = cart.products.reduce((total, cartItem) => {
-//           return total + (cartItem.quantity * cartItem.productId.pPrice);
-//       }, 0);
-//   }
-
-//   res.render('payment', { cart, totalAmount });
-// });
-
-
-
-// // Process payment
-// router.post('/process-payment', (req, res) => {
-//   const { paymentMethod } = req.body;
-
-//   // Placeholder for order details and payment status
-//   const orderDetails = {
-//       orderId: Math.floor(Math.random() * 1000000), // Example order ID
-//       status: 'pending', // Order status can be updated based on payment status
-//       paymentMethod,
-//   };
-
-//   // Simulate different payment methods handling
-//   switch (paymentMethod) {
-//       case 'netBanking':
-//           // Simulate a redirect to a bank gateway (in a real-world scenario, you would integrate with a bank API)
-//           orderDetails.status = 'redirecting to bank gateway';
-//           res.send(`Redirecting to bank gateway for order ID: ${orderDetails.orderId}`);
-//           break;
-
-//       case 'upi':
-//           // Simulate initiating a UPI transaction (you'd typically use a UPI API here)
-//           orderDetails.status = 'UPI transaction initiated';
-//           res.send(`UPI transaction initiated for order ID: ${orderDetails.orderId}`);
-//           break;
-
-//       case 'cod':
-//           // For cash on delivery, you just save the order and mark it as COD
-//           orderDetails.status = 'order placed with COD';
-//           res.send(`Order placed with cash on delivery. Order ID: ${orderDetails.orderId}`);
-//           break;
-
-//       default:
-//           // If no valid payment method is provided, return an error
-//           res.status(400).send('Invalid payment method selected');
-//           break;
-//   }
-
-//   // Save the orderDetails to a database if necessary (skipping for this example)
-//   // db.save(orderDetails);
-// });
 
 
 
 
-// Razorpay instance
+
+// Razorpay instance payment intergration
 const razorpay = new Razorpay({
   key_id: process.env.YOUR_RAZORPAY_KEY_ID ,// Replace with your key_id
   key_secret: process.env.YOUR_RAZORPAY_KEY_SECRET  // Replace with your key_secret
@@ -787,7 +472,7 @@ router.get('/payment',isLoggedIn ,async (req, res) => {
    const userId = user._id; // Get the current logged-in user's ID
 
 
-   const products = await AddtoProduct2.find(); // Get all products
+   const products = await Products.find(); // Get all products
     const cart = await Cart.findOne({ userId }).populate('products.productId'); // Get the current user's cart
 
     console.log("pyament card" , cart)
@@ -892,14 +577,6 @@ router.get("/OwnOrder",isLoggedIn ,async function(req,res){
       console.log("orderList not found")
     }
 
-    // let storeProduct;
-    // orderList.forEach((item)=>{
-    //   storeProduct += item.products
-    // })
-
-    // console.log("storeProduct",storeProduct)
-
-
     res.render("ownOrderList",{orders: orderList })
   } catch (error) {
     console.log(error.message)
@@ -989,159 +666,14 @@ router.post('/verify',isLoggedIn, async (req, res) => {
 
 
 
-// // Route to display order confirmation page
-// router.get('/order/confirmation/:orderId', async (req, res) => {
-//   try {
-//       const order = await ProductOrders.findById(req.params.orderId).populate('userId');
-//       if (!order) {
-//           return res.status(404).send('Order not found');
-//       }
+// user register page
+router.get('/log-register', function(req, res, next) {
+  res.render('loregiter');
+});
 
-//       res.render('orderConfirmation', { order });
-//   } catch (error) {
-//       console.error('Error fetching order:', error);
-//       res.status(500).send('Error fetching order details.');
-//   }
-// });
-
-
-
-
-
-
-// // payment router upi payment
-// // // // UPI Payment Endpoint
-// router.post('/create-upi-payment', async (req, res) => {
-
-//   try {
-//       // Get payment details from the request body
-//       const { amount, customerEmail, customerPhone } = req.body;
-
-//     const user = await userModel.findOne({username:req.session.passport.user});
-//     const userId = user._id; // Get the current logged-in user's ID
-
-//     const products = await AddtoProduct2.find(); // Get all products
-//     const cart = await Cart.findOne({ userId }).populate('products.productId'); // Get the current user's cart
-//     console.log("card",cart)
-//     console.log("products",products)
-
-
-//      // const cart = req.session.cart; // Assuming you store the cart in session
-//   let totalAmount = 0;
-
-//   if (cart && cart.products.length > 0) {
-//       totalAmount = cart.products.reduce((total, cartItem) => {
-//           return total + (cartItem.quantity * cartItem.productId.pPrice);
-//       }, 0);
-//   }
-
-//       // Request payload for UPI provider
-//       const payload = {
-//           amount: totalAmount, // Amount in paise (for example: 100 = ₹1.00)
-//           currency: 'INR',
-//           customer: {
-//               email: user.email,
-//               phone: user.phone_number,
-//           },
-//           method: 'upi',
-//           purpose: 'Payment for Order #12345',
-//       };
-
-//       // UPI Provider API Endpoint (Example for Razorpay)
-//       const upiProviderEndpoint = 'https://api.razorpay.com/v1/payment_links';
-
-//       // Request to create a UPI payment link
-//       const response = await axios.post(upiProviderEndpoint, payload, {
-//           headers: {
-//               'Authorization': `Basic ${Buffer.from(`${process.env.UPI_PROVIDER_API_KEY}:${process.env.UPI_PROVIDER_SECRET}`).toString('base64')}`,
-//               'Content-Type': 'application/json'
-//           }
-//       });
-
-//       // Send the payment link or QR code URL back to the client
-//       res.status(200).json({
-//           success: true,
-//           paymentLink: response.data.short_url,
-//           message: 'UPI payment link created successfully'
-//       });
-//   } catch (error) {
-//       console.error('Error creating UPI payment:', error);
-//       res.status(500).json({
-//           success: false,
-//           message: 'Failed to create UPI payment'
-//       });
-//   }
-// });
-
-
-
-
-// router.post('/submitOrder', async (req, res) => {
-//   try {
-//     const { fullName, email, address, city, postcode, phone, paymentMethod, bankName, accountNumber, upiId } = req.body;
-
-//     // Validation: Check if all required fields are provided
-//     if (!fullName || !email || !address || !city || !postcode || !phone || !paymentMethod) {
-//       return res.status(400).send('All fields are required.');
-//     }
-
-//     // Payment method specific validation
-//     if (paymentMethod === 'internet-banking' && (!bankName || !accountNumber)) {
-//       return res.status(400).send('Bank name and account number are required for Internet Banking.');
-//     }
-//     if (paymentMethod === 'upi' && !upiId) {
-//       return res.status(400).send('UPI ID is required for UPI payment.');
-//     }
-
-//     // Process order (e.g., save to database)
-//     // TODO: Implement order processing logic here
-
-//     // Example response
-//     res.status(200).send(`Order placed successfully using ${paymentMethod}.`);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).send('An error occurred while processing the order.');
-//   }
-// });
-
-
-
-
-// // product order page
-// router.get('/checkout', isLoggedIn, async function(req, res, next) {
-//   const user = await userModel.findOne({username:req.session.passport.user});
-//   const userId = user._id;
-//   const cart = await Cart.findOne({ userId }).populate('products.productId'); // Get the current user's cart
-//   res.render('checkout',{ products, cart });
-// });
-
-// router.get('/product' ,isLoggedIn,  async function(req, res, next) {
-//   const user = await userModel
-//   .findOne({username:req.session.passport.user})
-//   .populate("Addtoproduct")
-//   res.render('product');
-// });
-
-
-
-// get create post router for posted file store in multer folder 
-// router.post('/product', isLoggedIn, async function(req, res, next) {
-//   const user = await userModel.findOne({username:req.session.passport.user});
-//   const orderp = await addtoproduct.create({
-//     user: user._id,
-//     productname: req.body,
-//     price: String,
-//     pimags:String,
-//   });
-
-//   user.gOrder.push(orderp._id);
-//   await user.save();
-//   res.redirect("/catering")
-// });
-
-
-
-
+router.get('/register', function(req, res, next) {
+  res.render('register');
+});
 
 // second regiter router for databses post in mongodb databses set
 router.post('/register', function(req, res, next) {
@@ -1174,9 +706,6 @@ router.post('/register', function(req, res, next) {
 
 
 
-
-
-
 // get create loging router page
 router.post('/login' , passport.authenticate("local",{
   failureRedirect: "/",
@@ -1193,16 +722,7 @@ router.get("/logout",function(req, res, next){
 });
 
 
-
-var altw = "please login in "
-// set function for passport protected purpuse
-// function isLoggedIn(req, res, next){
-//   if (req.isAuthenticated()){
-//     return next();
-//   }
-//   res.redirect("/");
-// };
-
+// user isAuthenticated 
 function isLoggedIn(req, res, next){
   if (req.isAuthenticated()){
     return next();

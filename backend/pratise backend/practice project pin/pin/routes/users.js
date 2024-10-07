@@ -36,12 +36,12 @@ const userSchma = mongoose.Schema({
   posts:[
     {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "post"
+    ref: "BespokeEvent"
   }],
   gOrder:[
     {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "order"
+    ref: "groupOrder"
   }],
   donate:[
     {
@@ -51,7 +51,7 @@ const userSchma = mongoose.Schema({
   addcard:[
     {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "addcord"
+    ref: "Cart"
   }],
   // Afternoon:[
   //   {
