@@ -7,6 +7,19 @@ body{
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+
+body::-webkit-scrollbar{
+    display: block;
+    width: 7px;
+    background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color:#827f7f;
+    border-radius: 50px;
 }
 
 h4{
@@ -56,6 +69,7 @@ h4{
 }
 
 
+
 .page1{
     text-align: center;
     padding-bottom: 50px;
@@ -73,8 +87,8 @@ h4{
     align-items: center;
     justify-content:center;
     flex-wrap:wrap;
+    /* background-color: red; */
 }
-
 
 
 .page2 .card1{
@@ -229,9 +243,111 @@ h4{
 
 
 
+@media (max-width: 600px) {
+    .product-page{
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .product-page .card1{
+        display: flex;
+        flex-direction: column;
+        align-items:start;
+       justify-content: start; 
+       background-color: #fff;
+       position: sticky;
+       top: 0;
+       z-index: 99;
+       width: 100%;
+       padding-bottom: 10px;
+        
+
+    }
+     
+    .product-page .card1 .Atag{
+        /* background-color: rebeccapurple; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 30px;
+    }
+
+    .product-page .card1 .nonAtag{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        /* background-color: red; */
+        /* margin-left: -50px; */
+    }
+
+    .product-page .card2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* background-color: green; */
+        width: 85%;
+    }
 
 
+    .product-page .card2 .cards{
+        width: 100%;
+        height: 200px;
+    }
 
+
+    .product-page .card2 .cards .card{
+        width: 60%;
+       
+    }
+    .product-page .card2 .cards .card2{
+        width: 45%;
+    }
+
+
+    .navbar .part2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .navbar .part2 a{
+        font-size: 3.5vw;
+        /* background-color: rebeccapurple; */
+    }
+
+    footer h5{
+        font-size: 2.5vw;
+    }
+
+    footer .card3 .icone{
+        margin-right: 15px;
+    }
+
+    footer .card3 .icone i{
+        font-size: 2.5vw;
+        /* background-color: red; */
+    }
+
+    footer .card3 .good{
+        font-size: 2.5vw;
+    }
+
+    footer .card3 h5 span{
+        font-size: 2.5vw;
+    }
+
+   
+
+  
+}
 
 
 
@@ -284,3 +400,6 @@ footer .card3 h5{
     font-size: 20px;
 
 }
+
+
+

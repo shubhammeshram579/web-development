@@ -1,5 +1,39 @@
 
 
+body::-webkit-scrollbar{
+    display: block;
+    width: 7px;
+    background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color:#827f7f;
+    border-radius: 50px;
+}
+.page1{
+    padding-top: 300px; min-height: 90vh; width: 100%; display: flex; align-items: center; justify-content: space-between;
+}
+
+.page1 .card{
+    width: 50%;
+}
+.page1 .card2{
+    width: 25%;
+}
+.page1 .card2 .stories{
+    font-size: 1.1vw; font-weight: 500; margin-top: 60px;
+}
+.page1 .card2 .showall{
+    padding-top: 100px; font-size: 1vw; font-weight: 500;
+}
+.page1 .card2 .span{
+    color: gray;
+}
+.page1 .card2 .span i{
+    margin-left: 212px; font-weight: 500;
+}
+
+
 .page2{
     display: flex;
     align-items: center;
@@ -7,6 +41,7 @@
     flex-wrap: wrap;
     gap: 20px;
     padding: 0px 20px;
+    /* background-color: red; */
 }
 
 
@@ -117,4 +152,11 @@
    
     
 };
+
+
+
+
+
+
+
 

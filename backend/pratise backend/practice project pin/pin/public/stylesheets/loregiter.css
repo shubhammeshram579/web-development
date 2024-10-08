@@ -3,10 +3,27 @@
     padding: 0px;
 }
 
-body{
+html,body{
     height: 100%;
     width: 100%;
+}
+
+body{
+    
     overflow-x: hidden;
+    /* background-color: green; */
+    
+}
+
+body::-webkit-scrollbar{
+    display: block;
+    width: 7px;
+    background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color:#827f7f;
+    border-radius: 50px;
 }
 
 h4{
@@ -74,6 +91,7 @@ h4{
     align-items: start;
     justify-content: space-evenly;
     /* padding: 100px; */
+    /* background-color: red; */
 }
 
 .page2 .part1{
@@ -150,6 +168,7 @@ footer{
     align-items: center;
     justify-content: space-evenly;
     background-color: #111;
+    /* background-color: red; */
     color: #fff;
     margin-top: 100px;
 }
@@ -191,4 +210,57 @@ footer .card3 h5{
     justify-content: space-between;
     font-size: 20px;
 
+}
+
+
+
+
+@media (max-width:600px) {
+
+    
+    .page2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+        /* padding: 100px; */
+        /* background-color: red; */
+        min-height: 60vh;
+    }
+
+
+
+    .navbar .part2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .navbar .part2 a{
+        font-size: 3.5vw;
+        /* background-color: rebeccapurple; */
+    }
+
+    footer h5{
+        font-size: 2.5vw;
+    }
+
+    footer .card3 .icone{
+        margin-right: 15px;
+    }
+
+    footer .card3 .icone i{
+        font-size: 2.5vw;
+        /* background-color: red; */
+    }
+
+    footer .card3 .good{
+        font-size: 2.5vw;
+    }
+
+    footer .card3 h5 span{
+        font-size: 2.5vw;
+    }
+    
 }

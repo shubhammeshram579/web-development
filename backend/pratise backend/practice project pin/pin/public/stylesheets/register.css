@@ -9,6 +9,17 @@ body{
     overflow-x: hidden;
 }
 
+body::-webkit-scrollbar{
+    display: block;
+    width: 7px;
+    background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color:#827f7f;
+    border-radius: 50px;
+}
+
 h4{
     width: 100%;
     text-align: center;

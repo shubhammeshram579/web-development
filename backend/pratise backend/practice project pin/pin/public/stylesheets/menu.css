@@ -1,4 +1,9 @@
 /* menubar style */
+body{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
 
 #svg1{
     color: #fff;

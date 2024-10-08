@@ -1,20 +1,36 @@
-// let orderpage = document.querySelector(".hidden");
-// let btn = document.querySelector(".navbar #group");
 
-// let a = 0
-// btn.addEventListener("click",function(){
-//     if (a === 0){
-//         orderpage.style.opacity = 1;
-//         orderpage.style.backgroundColor = "red";
-//         a = 1 
-
-//     }else{
-//         orderpage.style.opacity = 0;
-//         a = 0
-//     }
-    
-// });
-
+// smothscroling
+// function locoscrollani(){
+//     gsap.registerPlugin(ScrollTrigger);
+//  const locoScroll = new LocomotiveScroll({
+//    el: document.querySelector(".main"),
+//    smooth: true,
+//     mobile: {
+//        smooth: true
+//    },
+//    tablet: {
+//        smooth: true
+//    }
+//  });
+//  locoScroll.on("scroll", ScrollTrigger.update);
+ 
+//  ScrollTrigger.scrollerProxy(".main", {
+//    scrollTop(value) {
+//      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+//    }, 
+//    getBoundingClientRect() {
+//      return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+//    },
+   
+//    pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
+//  });
+ 
+//  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+ 
+//  ScrollTrigger.refresh();
+ 
+//  };
+// locoscrollani()
 
 let sebtn1 = document.querySelector(".navbar .part2 .fa-magnifying-glass");
 let sebtn2 = document.querySelector("#searbtn2");
