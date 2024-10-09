@@ -172,6 +172,14 @@ body{
     margin-bottom: 16px;
   }
 
+  .menu #dignup{
+    color:red;
+    border-bottom: 1px solid red;
+  }
+  .menu #signout{
+    color:red;
+  }
+
 
 
   @media (max-width:600px){
@@ -258,6 +266,16 @@ body{
   .menu h3{
       font-size: 27px;
       margin-bottom: 16px;
+  }
+
+
+  .menu .bar .card2{
+    display: none;
+    height: 400px;
+    width: 380px;
+    padding: 10px;
+    /* background-color: rebeccapurple; */
+    margin-bottom: 450px;
   }
   }
 
