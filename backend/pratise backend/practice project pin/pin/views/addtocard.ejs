@@ -1,19 +1,17 @@
 <% include ./partial/header.ejs %>
 
-<!-- addtocard page -->
+    <!-- addtocard page -->
     <link rel="stylesheet" href="/stylesheets/addtocard.css">
-    <a style="text-decoration: none; color:#fff;left: 94%; padding-right: 100px; padding-top: 40px; font-size: 20px; position: fixed; z-index: 999;"
-        href="/"><i class="fa-solid fa-xmark"></i></a>
     <div class="main" style="background-color:#111; color: #fff; padding-top: 300px;">
-       
+
         <div class="cards">
             <% if (cart && cart.products.length> 0) { %>
                 <div class="card"
-                style="display: flex; align-items: center; justify-content: space-between;border-bottom: 1px solid gray; margin: 0px 20px;padding-bottom: 20px;">
-                <h1 style="font-size: 2vh; color: gray;">CARD</h1>
-                <h1 style="font-size: 2vh; color: gray; margin-left: 22vw;">Quentity</h1>
-                <h1></h1>
-            </div>
+                    style="display: flex; align-items: center; justify-content: space-between;border-bottom: 1px solid gray; margin: 0px 20px;padding-bottom: 20px;">
+                    <h1 style="font-size: 2vh; color: gray;">CARD</h1>
+                    <h1 id="Qty">Quentity</h1>
+                    <h1></h1>
+                </div>
                 <% let totalAmount=0; %> <!-- Initialize total amount -->
                     <% cart.products.forEach(cartItem=> { %>
                         <div id="card2"
@@ -24,20 +22,24 @@
                             <div class="addcard" style="display: flex; gap: 25px;">
 
                                 <!-- Decrease quantity button -->
-                                <form  action="/update-quantity/<%= cartItem.productId._id %>" method="POST">
-                                <input type="hidden" name="action" value="decrease">
-                                <button  style="border: none;"  type="submit"><i style="background-color:#111; color: #fff; border: 1px solid #111;" class="ri-subtract-line"></i></button>
-                            </form>
-                            <h1 style="font-size: 1vw; font-weight: 400;">
-                                <%= cartItem.quantity %>
-                            </h1>
+                                <form action="/update-quantity/<%= cartItem.productId._id %>" method="POST">
+                                    <input type="hidden" name="action" value="decrease">
+                                    <button style="border: none;" type="submit"><i id="minusbtn"
+                                            style="background-color:#111; color: #fff; border: 1px solid #111;"
+                                            class="ri-subtract-line"></i></button>
+                                </form>
+                                <h1 class="productQty">
+                                    <%= cartItem.quantity %>
+                                </h1>
 
                                 <!-- Increase quantity button -->
                                 <form action="/update-quantity/<%= cartItem.productId._id %>" method="POST">
-                                <input type="hidden" name="action" value="increase">
-                                <button  style="border: none;" type="submit"><i style="background-color:#111; color: #fff; border: 1px solid #111;" class="ri-add-line"></i></button>
-                            </form>
-                                
+                                    <input type="hidden" name="action" value="increase">
+                                    <button style="border: none;" type="submit"><i
+                                            style="background-color:#111; color: #fff; border: 1px solid #111;"
+                                            class="ri-add-line"></i></button>
+                                </form>
+
                             </div>
                             <div class="amt" style="display: flex; align-items: center; gap: 50px;">
                                 <h1 style="font-size: 20px; font-weight: 100;">$<%= cartItem.productId.pPrice %>
@@ -47,7 +49,7 @@
                                 <form action="/delete-from-cart/<%= cartItem.productId._id %>" method="POST"
                                     style="margin: 0;">
                                     <button style="border: none; background-color: transparent;" type="submit">
-                                        <i style="color: #fff;" class="fa-solid fa-xmark"></i>
+                                        <i id="deleteCardBtn" class="fa-solid fa-xmark"></i>
                                     </button>
                                 </form>
                             </div>
@@ -64,17 +66,18 @@
 
         </div>
 
-        <div class="card3"
-            style="display: flex; justify-content: space-between; align-items: start; padding: 20px 20px;">
+        <div class="card3">
             <h1 style="font-size: 15px; color: gray;">ADD A PERSONALISED CARD FOR THAT SOMEONE SPECIAL FOR JUST $5.</h1>
-            <div class="delevery" style="padding-left: 260px;">
-                <h1 style="color: gray; font-size: 15px;padding-bottom: 10px;">DELIVERY</h1>
-                <h1 style="color: gray; font-size: 15px;">SUBTOTAL</h1>
-            </div>
-            <div class="amt2" style="display: flex; justify-content: end;flex-direction: column; align-items: end;">
-                <h1 style="font-size: 15px; font-weight: 500;">SHIPPING CALCULATION AT CHECK-OUT.</h1>
-                <div style="text-align: right; padding: 20px 50px; font-size: 20px; font-weight: 600;">
-                    $<%= totalAmount.toFixed(2) %>
+            <div class="subtotal">
+                <div class="delevery">
+                    <h1 style="color: gray; font-size: 15px;padding-bottom: 10px;">DELIVERY</h1>
+                    <h1 id="Subtext" style="color: gray; font-size: 15px;">SUBTOTAL</h1>
+                </div>
+                <div class="amt2" style="display: flex; justify-content: end;flex-direction: column; align-items: end;">
+                    <h1 style="font-size: 15px; font-weight: 500;">SHIPPING CALCULATION AT CHECK-OUT.</h1>
+                    <div style="text-align: right; padding: 20px 50px; font-size: 20px; font-weight: 600;">
+                        $<%= totalAmount.toFixed(2) %>
+                    </div>
                 </div>
             </div>
 
@@ -162,9 +165,8 @@
                 <div class="card4">
                     <a class="ChecBtn" href="/add-to-cart2">CHECKOUT</a>
                 </div>
-                <div class="card5"
-                    style="margin-top: 200px; font-size: 3vw;width: 70%;padding-left:20px ; background-color: #111;">
-                    <h2 style="font-family: 900; color: #f2eaea;">THANK YOU FOR WALKING
+                <div class="card5">
+                    <h2 id="buttemText">THANK YOU FOR WALKING
                         ALONGSIDE VULNERABLE
                         WOMEN AS THEY FIND THEIR
                         WAY HOME AGAIN.</h2>
@@ -176,7 +178,7 @@
 
 
 
-    <!-- <script>
+        <!-- <script>
         // function updateQuantity(productId, action) {
         //     fetch(`/update-quantity/${productId}`, {
         //         method: 'POST',
@@ -200,7 +202,7 @@
 
 
 
-<!-- 
+        <!-- 
     <script>
 
 
@@ -306,5 +308,3 @@
 
 
     </script> -->
-
-                               

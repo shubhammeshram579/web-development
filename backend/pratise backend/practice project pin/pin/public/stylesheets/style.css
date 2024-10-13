@@ -621,6 +621,8 @@ body{
       position: fixed;
       z-index: 999;
       max-width: inherit;
+      /* background-color: #fff; */
+
   }
   
   .header-nav .nav-part2 #cat{
@@ -635,6 +637,7 @@ body{
 
   .header-nav .nav-part2 .icon #home{
     margin-left: 25vw;
+    /* background-color: green; */
   }
   
   
