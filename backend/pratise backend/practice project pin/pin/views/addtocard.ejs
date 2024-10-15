@@ -22,10 +22,9 @@
                             <div class="addcard" style="display: flex; gap: 25px;">
 
                                 <!-- Decrease quantity button -->
-                                <form action="/update-quantity/<%= cartItem.productId._id %>" method="POST">
+                                <form id="deleteForm" action="/update-quantity/<%= cartItem.productId._id %>" method="POST">
                                     <input type="hidden" name="action" value="decrease">
-                                    <button style="border: none;" type="submit"><i id="minusbtn"
-                                            style="background-color:#111; color: #fff; border: 1px solid #111;"
+                                    <button id="deleteBtn" type="submit"><i id="minusbtn"
                                             class="ri-subtract-line"></i></button>
                                 </form>
                                 <h1 class="productQty">
@@ -33,10 +32,9 @@
                                 </h1>
 
                                 <!-- Increase quantity button -->
-                                <form action="/update-quantity/<%= cartItem.productId._id %>" method="POST">
+                                <form id="addFom" action="/update-quantity/<%= cartItem.productId._id %>" method="POST">
                                     <input type="hidden" name="action" value="increase">
-                                    <button style="border: none;" type="submit"><i
-                                            style="background-color:#111; color: #fff; border: 1px solid #111;"
+                                    <button type="submit"><i
                                             class="ri-add-line"></i></button>
                                 </form>
 

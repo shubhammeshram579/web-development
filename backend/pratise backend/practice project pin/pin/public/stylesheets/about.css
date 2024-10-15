@@ -44,6 +44,7 @@ html,body{
 .page1 .card p{
     width: 50%;
     font-size: 1.2vw;
+    /* background-color: red; */
 }
 
 .page1 img{
@@ -335,7 +336,7 @@ html,body{
         width: 100%;
         text-align: justify;
         word-spacing: 0px;
-        padding-top: 10px;
+        padding-top: 25px;
     }
 
     .page1 img{
@@ -345,11 +346,13 @@ html,body{
     }
 
     .page1 .headbtn{
-        font-size: 10vw;
-        padding: 25px 0px;
+        text-align: center;
+        font-size: 7vw;
+        padding: 5vw 0px;
         line-height: 0px;
         width: 100%;
         letter-spacing: 0px;
+        /* background-color: rebeccapurple; */
     }
 
     /* page2  */

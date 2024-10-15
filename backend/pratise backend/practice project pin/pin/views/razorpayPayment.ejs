@@ -1,148 +1,14 @@
-<style>
-    #page1 {
-        background-color: rgb(234, 230, 230);
-        margin: 0px 15%;
-        border-radius: 20px;
-        padding: 10px 10px 100px;
-        margin-top: 30px;
-        position: relative;
-        z-index: 999;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/razonpayPayment.css">
+</head>
+<body>
 
-    }
-
-    #productnav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-top: 20px;
-        background-color: rgb(220, 219, 219);
-        padding: 0px 300px;
-
-    }
-
-    #description {
-        margin-left: -60px;
-
-    }
-
-    #QandA {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        gap: 250px;
-
-    }
-
-    #orderProduct {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(187, 165, 208);
-        gap: 20%;
-        margin: 10px;
-
-    }
-
-    #orderProductCard {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        width: auto;
-        width: 25%;
-        margin-left: -200px;
-    }
-
-
-    #amount2 {
-        text-align: end;
-        margin-right: 20%;
-        padding-top: 30px;
-
-    }
-
-    #paymentBtn {
-        float: right;
-        margin-right: 20%;
-        padding: 20px 50px;
-        background-color: orange;
-        margin-top: -90px;
-        position: relative;
-        z-index: 999;
-
-    }
-
-
-    strong{
-        text-transform: capitalize;
-    }
-
-    @media (max-width:600px) {
-        #page1 {
-            background-color: rgb(234, 230, 230);
-            margin: 0px 2%;
-            border-radius: 20px;
-            padding: 10px 10px 100px;
-            margin-top: 30px;
-            position: relative;
-            z-index: 999;
-        }
-
-        #productnav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-top: 20px;
-            background-color: rgb(220, 219, 219);
-            padding: 0px 10px;
-
-        }
-
-        #description {
-            margin-left: -1%;
-        }
-
-        #QandA {
-            display: flex;
-            align-items: start;
-            justify-content: start;
-            gap: 10px;
-        }
-
-        #orderProduct {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            gap: 2%;
-            margin: 10px;
-
-        }
-
-        #orderProductCard {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1px;
-            width: 60%;
-            margin-left: -2px;
-        }
-
-
-        #amount2 {
-            text-align: end;
-            margin-right: 5%;
-            padding-top: 30px;
-
-        }
-
-        #paymentBtn {
-        margin-right: 5%;
-
-    }
-
-
-    }
-</style>
+    
 <nav style="display: flex; align-items: center;justify-content: space-between;">
     <div class="logo">
         <a style="text-decoration: none; color: #111;" href="/"><svg id="svg1" class="logo" width="106" height="83"
@@ -188,14 +54,14 @@
             </svg></a>
 
     </div>
-    <h4>CONTINUE PAYMENT</h4>
+    <a id="checkPage" href="/add-to-cart2">CONTINUE PAYMENT</a>
 </nav>
 <div id="page1">
     <h1 id="cutD" style="text-align: start; font-size:25px;">Customer Details</h1>
     <div style="display: flex; align-items: start; justify-content: start; flex-direction: column;">
         <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
 
-            <h1 style="font-size: 25px; font-weight: 500;"> <strong style="font-size: 20px;">Cust_Name:</strong>
+            <h1 style="font-size: 25px; font-weight: 500;"> <strong id="cutName">Cust_Name:</strong>
                 <%= user.first_name %>
             </h1>
             <h1 style="font-size: 25px; font-weight: 500;">
@@ -409,3 +275,7 @@
         razorpay.open();
     });
 </script>
+    
+</body>
+</html>
+

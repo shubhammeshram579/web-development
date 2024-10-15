@@ -240,6 +240,13 @@ body{
   
   .menu .bar{
       margin-left: -100vw;
+      /* background-color: rebeccapurple; */
+  }
+
+  .menu .bar .card a{
+    /* color: yellow; */
+    font-size: 8vw;
+
   }
   .menu .bar li{
       font-size: 4vh;

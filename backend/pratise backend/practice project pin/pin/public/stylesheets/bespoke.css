@@ -107,9 +107,23 @@ h4{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: row;
     margin-bottom: 30px;
     gap: 20px;
+    /* background-color: rebeccapurple; */
 }
+
+#mobileAndDate{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 66px;
+
+}
+
+
+
 
 
 .page2 .pard4 input{
@@ -257,6 +271,105 @@ footer .card3 h5{
 
 
 @media (max-width:600px) {
+
+    h4{
+        padding: 5px 0px;
+    }
+    #svg1{
+        height: 13vw;
+        width: 13vw;
+    }
+
+    .page1 img{
+        height: 20vh;
+        object-fit: cover;
+    }
+
+    .page2{
+        padding: 0px 50px;
+
+    }
+
+    #firstname{
+        width: 90vw;
+        border: 1px solid #8b8484;
+        /* background-color: rebeccapurple; */
+    }
+
+    #lastname{
+        width: 90vw;
+        border: 1px solid #8b8484;
+        /* background-color: rebeccapurple; */
+    }
+    #company{
+        width: 90vw;
+        border: 1px solid #8b8484;
+        /* background-color: rebeccapurple; */
+    }
+
+    #mobileAndDate{
+        /* background-color:rebeccapurple; */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #email{
+        width: 90vw;
+        /* background-color: rebeccapurple; */
+
+    }
+
+    #phonenumber{
+        padding: 0px;
+        width: 40vw;
+        /* background-color: rebeccapurple; */
+    }
+
+    #address{
+        border: 1px solid #8b8484;
+    }
+
+    .page2 .part1{
+        /* background-color: red; */
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        width: 100%;
+    }
+    .page2 .pard4{
+        /* background-color: red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #pastcode{
+        width: 25vw;
+        border: 1px solid #8b8484;
+    }
+    #suburb{
+        width: 25vw;
+        border: 1px solid #8b8484;
+    }
+    #state{
+        width: 25vw;
+        border: 1px solid #8b8484;
+    }
+
+    #butten{
+        width: 100%;
+        margin: 0px;
+    }
+
+    #checkbox{
+        font-size: 3vw;
+        /* background-color: rebeccapurple; */
+    }
+
 
 
     .navbar .part2{

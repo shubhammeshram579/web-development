@@ -98,7 +98,18 @@ h4{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* background-color: rebeccapurple; */
+    width: 100%;
 
+}
+
+#first_name{
+    padding-right: 3vw;
+}
+
+#last_name{
+    padding-right: 0.5vw;
+    margin-right: 100px;
 }
 .page2 .part1 .card2{
     display: flex;
@@ -107,21 +118,20 @@ h4{
 
 }
 
-#first-name{
-    padding-right: 110px;
+
+.page2 .part1 .card2 .mobile{
+    padding-right: 2.6vw;
+    /* background-color: rebeccapurple; */
 }
 
-#last-name{
-    padding-right: 140px;
-}
-
-
-#Phone-number{
-    padding-right: 93px;
-}
+/* #email{
+    padding-right: px;
+    background-color: rebeccapurple;
+} */
 
 #email{
-    padding-right: 170px;
+    padding-right: 0.5vw;
+    margin-right: 140px;
 }
 
 
@@ -250,4 +260,133 @@ h4{
     justify-content: space-between;
     font-size: 20px;
 
+}
+
+
+
+@media (max-width:600px) {
+
+    body{
+        /* background-color: green; */
+        overflow-x: hidden;
+    }
+
+
+
+    h4{
+        width: 100%;
+        text-align: center;
+        font-size: 3vw;
+        background-color: aquamarine;
+        padding: 5px 0px;
+    }
+
+    #svg1{
+        height: 13vw;
+        width: 13vw;
+    }
+
+    .page2 .part1{
+        /* background-color: red; */
+        padding: 0px 20px;
+    }
+    .page2 .part2{
+        /* background-color: red; */
+        padding: 0px 20px;
+    }
+    .page2 .part3{
+        /* background-color: red; */
+        padding: 0px 20px;
+    }
+    .page2 .part4{
+        /* background-color: red; */
+        padding: 0px 20px;
+    }
+    .page2 .part5{
+        /* background-color: red; */
+        padding: 0px 20px;
+    }
+
+    .page2 input{
+        /* background-color: rebeccapurple; */
+        width: 100%;
+        border: 1px solid #111;
+    }
+
+    #first_name{
+        padding: 0px;
+    }
+    
+    #last_name{
+       padding: 0px;
+       margin: 0px;
+    }
+
+    #Email{
+        /* background-color: rebeccapurple; */
+        margin-right: 1px;
+    }
+
+    .page2 .part1 .card2 .mobile{
+        padding: 0px;
+        width: 95%;
+        /* background-color: rebeccapurple; */
+    }
+    
+    #email{
+        padding-right: 0.5vw;
+        margin-right: 40px;
+    }
+
+  
+
+    #address{
+        /* background-color: rebeccapurple; */
+        border: 1px solid #111;
+    }
+
+    #country{
+        border: 1px solid #111;
+        padding-right: 65px;
+
+    }
+
+    #state{
+        padding: 0px;
+        border: 1px solid #111;
+        padding-right: 70px;
+    }
+    
+    .navbar .part2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .navbar .part2 a{
+        font-size: 3.5vw;
+        /* background-color: rebeccapurple; */
+    }
+
+    footer h5{
+        font-size: 2.5vw;
+    }
+
+    footer .card3 .icone{
+        margin-right: 15px;
+    }
+
+    footer .card3 .icone i{
+        font-size: 2.5vw;
+        /* background-color: red; */
+    }
+
+    footer .card3 .good{
+        font-size: 2.5vw;
+    }
+
+    footer .card3 h5 span{
+        font-size: 2.5vw;
+    }
 }

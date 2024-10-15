@@ -261,7 +261,15 @@ footer .card3 h5{
 @media (max-width:600px) {
     .hidden{
         /* background-color: red; */
-        height: 270vh;
+        height: 340vh;
+    }
+
+    h4{
+        padding: 5px 0px;
+    }
+    #svg1{
+        height: 13vw;
+        width: 13vw;
     }
 
 

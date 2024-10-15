@@ -299,6 +299,31 @@ body::-webkit-scrollbar-thumb{
     font-family: 900; color: #f2eaea;
 
   }
+
+  /* #minusbtn{
+    background-color: rebeccapurple;
+  } */
+
+  /* #deleteBtn{
+    border: none;
+  } */
+
+  /* #minusbtn{
+    background-color:yellow; color: #fff; border: 1px solid #111;
+  } */
+
+  .addcard #deleteForm button{
+    background-color:transparent;
+    border: none;
+    color: #fff;
+
+  }
+  .addcard #addFom button{
+    background-color:transparent;
+    border: none;
+    color: #fff;
+
+  }
   
 
   
@@ -396,7 +421,7 @@ body::-webkit-scrollbar-thumb{
   text-decoration: none;
   color:#fff;
   float: left;
-  padding: 20px 170px;
+  padding: 4vw 20vw;
   margin-left: 10px;
   border-radius: 30px;
 }
@@ -408,6 +433,7 @@ body::-webkit-scrollbar-thumb{
 #buttemText{
   font-size: 6vw;
   width: 100%;
+  /* background-color: rebeccapurple; */
 }
 
 #scroller{

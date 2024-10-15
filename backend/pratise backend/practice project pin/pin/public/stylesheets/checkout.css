@@ -7,7 +7,14 @@
 #SvgLink {
     text-decoration: none;
     color: #111;
+    transform: translate(0px, 0px)
 
+}
+
+#contShop{
+    text-decoration: none;
+    color: #111;
+    
 }
 
 
@@ -63,6 +70,16 @@
     font-size: 1vw;
     /* background-color: rebeccapurple; */
     padding-top: 30px;
+
+}
+
+.formContainer #card1{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15px;
 
 }
 
@@ -231,11 +248,30 @@ h1 {
     display: none;
 }
 
+.page2 .formContainer label{
+    margin-left: 10px;
+    /* background-color: rebeccapurple; */
+}
+
 
 @media (max-width:600px) {
 
+    body{
+        overflow-x: hidden;
+    }
+
+    #svg1{
+        height: 13vw;
+        width: 13vw;
+    }
+
+    #contShop{
+        font-size: 3vw;
+    }
+
     .chekout{
         padding-top: 20px;
+        /* background-color: rebeccapurple; */
     }
 
     .page2 .card .cust{
@@ -268,12 +304,40 @@ h1 {
        
     }
 
-    .formContainer label{
-        font-size: 3vw;
+    .formContainer {
+        display: flex;
+        align-items: start;
+        justify-content:center;
+        flex-direction: column;
+        gap: 20px;
+   
+    
+    }
+    
+
+    
+
+    .formContainer #card1{
+        /* background-color: red; */
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+
     }
 
-    .formContainer input{
-        font-size: 2vw;
+    .formContainer label{
+        font-size: 3.5vw;
+        font-weight: 600;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .formContainer  input{
+        font-size: 3vw;
+       margin-bottom: 10px;
+       margin-left: 10px;
     }
 
     #paymentbtn{
