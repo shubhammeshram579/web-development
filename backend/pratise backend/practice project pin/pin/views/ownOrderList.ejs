@@ -1,7 +1,6 @@
 <% include ./partial/header.ejs %>
   <style>
-
-    .main{
+    .main {
       margin-top: 160px;
 
     }
@@ -12,16 +11,18 @@
       padding: 0px 20px;
       margin: 20px 13%;
       border-radius: 20px;
+      /* color: #fff; */
     }
 
-    .main .orderDetails{
+    .main .orderDetails {
       font-size: 3vh;
       padding-top: 10px;
 
     }
 
-    .main .card .productList{
+    .main .card .productList {
       width: 100%;
+
     }
 
     .main .card .listItem {
@@ -33,20 +34,42 @@
       background-color: ghostwhite;
       margin: 5px 0px;
       border-radius: 10px;
-      padding: 15px 0px;
+      /* padding: 15px 0px; */
+      /* color: #111; */
+      font-size: 1vw;
+
+    }
+
+    .main .card .listItem img {
+      height: 4vw;
+      width: 4vw;
+      object-fit: cover;
+    }
+
+    #imageAndName {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2vw;
+      width: 60%;
+
 
     }
 
 
     .main .card .productName {
       font-size: 1vw;
-      width: 30%;
+      width: 50%;
       font-weight: 400;
       text-transform: capitalize;
+      /* background-color: rebeccapurple; */
     }
 
-    .paymentCard{
-      display: flex; align-items: center;justify-content:space-between; padding-bottom: 10px;
+    .paymentCard {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 10px;
 
     }
 
@@ -62,30 +85,46 @@
 
 
 
+
+
     @media (max-width:600px) {
 
       .main .card {
-      padding: 0px 20px;
-      margin: 20px 7%;
-      border-radius: 20px;
-    }
+        padding: 0px 20px;
+        margin: 20px 7%;
+        border-radius: 20px;
+        /* background-color: rebeccapurple; */
+      }
 
       .main .card .orderDetails {
         padding-bottom: 20px;
+  
       }
+
+      .main .card .listItem{
+        font-size: 3vw;
+        font-weight: 600;
+      }
+
+      .main .card .listItem img {
+      height: 10vw;
+      width: 10vw;
+      object-fit: cover;
+    }
 
       .main .card .productName {
         font-size: 3vw;
         width: 70%;
       }
 
-      .paymentCard{
+      .paymentCard {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 50px;
         padding-top: 20px;
       }
+
       .orderStatus {
         font-size: 3vw;
 
@@ -93,6 +132,7 @@
 
       .orderAmout {
         font-size: 3vw;
+        /* color: rebeccapurple; */
       }
 
 
@@ -110,10 +150,12 @@
             <% order.products.forEach((product, index)=> { %>
               <% if (product.productName) { %>
                 <li class="listItem">
-
-                  <h5 class="productName">
-                    <%= product.productName %>
-                  </h5>
+                  <div id="imageAndName">
+                    <img src=" <%= product.pImage %>" alt="">
+                    <h5 class="productName">
+                      <%= product.productName %>
+                    </h5>
+                  </div>
                   <h5 style="font-weight: 400;"> Price: $<%= product.price %>
                   </h5>
                   <h5 style="font-weight: 400; font-size: 2vh;">Qty: <%= product.quantity %>

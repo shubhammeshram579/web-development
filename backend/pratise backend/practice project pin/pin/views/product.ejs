@@ -1,6 +1,6 @@
 <% include ./partial/header.ejs %>
 
-<!-- single product page -->
+    <!-- single product page -->
     <style>
         * {
             color: #E6622B;
@@ -33,6 +33,17 @@
             text-transform: capitalize;
         }
 
+        .pCard1 {
+                /* background-color: rebeccapurple; */
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+                /* height: 60vh; */
+                width: 70%;
+                /* background-color: rebeccapurple; */
+            }
+
         .product .card h5 {
             height: 45px;
             width: 45%;
@@ -49,7 +60,7 @@
             width: 20vw;
             height: 45px;
             /* background-color: #E6622B; */
-            background-color:#E6622B;
+            background-color: #E6622B;
             display: flex;
             align-items: center;
             justify-content: space-evenly;
@@ -105,52 +116,198 @@
             margin: 0px 50px;
             padding-top: 15px;
         }
+
+
+        .product .pCard1 .card .part #quantityForm h1 {
+            /* background-color: rebeccapurple; */
+            color: #fff;
+            font-size: 1vw;
+
+        }
+
+        #decreaseQuantityBtn {
+            border: none;
+
+        }
+
+        #decreaseQuantityBtn {
+            background-color: #E6622B;
+            color: #fff;
+            border: 1px solid #E6622B;
+      
+
+        }
+
+
+        #increaseQuantityBtn {
+            border: none;
+
+        }
+
+        #increaseQuantityBtnLink {
+            background-color: #E6622B;
+            color: #fff;
+            border: 1px solid #E6622B;
+           
+
+        }
+
+
+        @media (max-width:600px) {
+
+            .product {
+                /* background-color: green; */
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+                width: 100%;
+                /* background-color: rebeccapurple; */
+            }
+
+            .pCard1 {
+                /* background-color: rebeccapurple; */
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column-reverse;
+                height: 60vh;
+                width: 100%;
+            }
+
+            .pCard1 img {
+                height: 50vw;
+                width: 100%;
+                object-fit: cover;
+
+            }
+
+
+            .product .pCard1 .card h1 {
+                /* color: green; */
+                width: 100%;
+                font-size: 7vw;
+                /* padding-bottom: 100px; */
+            }
+
+            .product .pCard1 .card {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                /* background-color: gray; */
+                height: 200px;
+
+            }
+
+
+            .product .pCard1 .card .part {
+                width: 70%;
+            }
+
+            .product .pCard1 .card .part #quantityForm h1 {
+                /* background-color: rebeccapurple; */
+                font-size: 3vw;
+            }
+
+
+            #decreaseQuantityBtn {
+                border: none;
+
+            }
+
+            #decreaseQuantityBtn {
+                background-color: transparent;
+                color: #fff;
+                border: 1px solid #E6622B;
+                font-size: 3vw;
+
+            }
+
+
+            #increaseQuantityBtn {
+                border: none;
+
+            }
+
+            #increaseQuantityBtnLink {
+                background-color: E6622B;
+                color: #fff;
+                border: 3px solid #E6622B;
+                font-size: 3vw;
+
+            }
+
+            .card3 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                /* width: 50vw; */
+                /* background-color: green; */
+            }
+
+            .card3 h5 {
+                width: 90vw;
+                text-align: justify;
+
+            }
+
+            .produc2{
+                /* background-color: rebeccapurple; */
+                width: 100%;
+                padding: 0px;
+                margin: 0px;
+                padding: 10px 20px;
+            }
+
+        }
     </style>
     <div class="product">
 
 
+        <div class="pCard1">
+            <div class="card">
+                <h1 name="title">
+                    <%= getProduct.producttitle %>
+                </h1>
 
-        <div class="card">
-            <h1 name="title">
-                <%= getProduct.producttitle %>
-            </h1>
 
+                <div class="part">
+                    <div
+                        style="display: flex; align-items: center; justify-content: center; width: 3vw;background-color:#E6622B; gap: 10px;">
+                        <!-- Form to update quantity -->
+                        <form id="quantityForm" action="/update-quantity/<%= getProduct._id %>" method="POST"
+                            style="display: flex; gap: 10px; align-items: center; justify-content: center; width: 10px;">
+                            <input type="hidden" id="actionInput" name="action" value="increase">
+                            <button type="button" id="decreaseQuantityBtn"><i id="decreaseQuantityBtn"
+                                    class="ri-subtract-line"></i></button>
 
-            <div class="part">
-                <div style="display: flex; align-items: center; justify-content: center; width: 3vw;background-color:#E6622B; gap: 10px;">
-                    <!-- Form to update quantity -->
-                    <form id="quantityForm" action="/update-quantity/<%= getProduct._id %>" method="POST"
-                        style="display: flex; gap: 10px; align-items: center; justify-content: center; width: 10px;">
-                        <input type="hidden" id="actionInput" name="action" value="increase">
-                        <button style="border: none;" type="button" id="decreaseQuantityBtn"><i
-                                style="background-color:#E6622B; color: #fff; border: 1px solid #E6622B; font-size: 1vw;"
-                                class="ri-subtract-line"></i></button>
+                            <h1 id="productQuantity">
+                                <%= getProduct.quantity %>
+                            </h1>
 
-                        <h1 id="productQuantity" style="color:#fff; font-size: 1vw;">
-                            <%= getProduct.quantity %>
-                        </h1>
+                            <button type="button" id="increaseQuantityBtn"><i id="increaseQuantityBtnLink"
+                                    class="ri-add-line"></i></button>
+                        </form>
+                    </div>
+                    <a href="#">$<%= getProduct.pPrice %></a>
 
-                        <button style="border: none;" type="button" id="increaseQuantityBtn"><i
-                                style="background-color:#E6622B; color: #fff; border: 1px solid #E6622B;"
-                                class="ri-add-line"></i></button>
+                    <!-- Form to add to cart with the current quantity -->
+                    <form id="addToCartForm" action="/add-to-cart/<%= getProduct._id %>" method="post">
+                        <input type="hidden" id="cartQuantity" name="quantity" value="<%= getProduct.quantity %>">
+                        <button style="background-color: #E6622B; color: #fff; border: none; font-size: 2vh;"
+                            type="submit">Add to Cart</button>
                     </form>
+
+
                 </div>
-                <a href="#">$<%= getProduct.pPrice %></a>
 
-                <!-- Form to add to cart with the current quantity -->
-                <form id="addToCartForm" action="/add-to-cart/<%= getProduct._id %>" method="post">
-                    <input type="hidden" id="cartQuantity" name="quantity" value="<%= getProduct.quantity %>">
-                    <button style="background-color: #E6622B; color: #fff; border: none; font-size: 2vh;"
-                        type="submit">Add to Cart</button>
-                </form>
-
-               
             </div>
+            <div class="card2">
+                <img src="<%= getProduct.pImage %>" alt="">
 
-        </div>
-        <div class="card2">
-            <img src="<%= getProduct.pImage %>" alt="">
-
+            </div>
         </div>
 
 
@@ -211,8 +368,8 @@
         <!-- <% } %> -->
 
 
-        
-            <!-- <div class="part">
+
+        <!-- <div class="part">
                 <div style="display: flex; align-items: center; justify-content: center; width: 3vw; gap: 10px;">
                     <form action="/update-quantity/<%= getProduct._id %>" method="POST">
                         <input type="hidden" name="action" value="decrease">
@@ -235,6 +392,6 @@
             </div> -->
 
 
-             <!-- <button style="background-color: #E6622B; color: #fff; border: none; font-size: 2vh;" type="submit">
+        <!-- <button style="background-color: #E6622B; color: #fff; border: none; font-size: 2vh;" type="submit">
                     <a href="/add-to-cart">Add to Cart2</a>
                 </button> -->

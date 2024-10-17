@@ -393,15 +393,48 @@ body{
 
 
 
+#products{
+  /* height: 100vh; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  
+}
+
+
+
 .child{
-  height: 60vh;
-  width: 50%;
+  /* height: 60vh; */
+  width: 100%;
   margin-bottom: 5vh;
   opacity: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  /* background-color: green; */
+}
+
+#ProductItems{
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  /* flex-wrap: nowrap; */
+  /* background-color: rebeccapurple; */
+  width: 100%;
+ 
+}
+
+#ProductItems2{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
 }
 
 /* .child2{
@@ -847,6 +880,7 @@ body{
       align-items: center;
       justify-content: space-between;
       flex-wrap: nowrap;
+      /* background-color: red; */
   }
 
   .page3 .product-details{
@@ -854,6 +888,7 @@ body{
       align-items:center;
       flex-direction: column;
       justify-content: space-between;
+      /* background-color: red; */
   
   }
   
@@ -862,6 +897,7 @@ body{
       width: 70%;
       font-size: 5vh;
       padding-bottom: 50px;
+      /* background-color: rebeccapurple; */
   }
   
   
@@ -899,7 +935,63 @@ body{
       align-items: center;
       justify-content: center;
       opacity: 1;
+      /* background-color: rebeccapurple; */
 
+  }
+
+  #ProductItems{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  #ProductItems img{
+    height: 40vw;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    object-fit: cover;
+    object-position: center;
+    
+
+  }
+
+  #ProductItems h5{
+    font-size: 2.5vw;
+    /* background-color: rebeccapurple; */
+  }
+
+
+  #ProductItems2{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  #ProductItems2 img{
+    height: 40vw;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    object-fit: cover;
+    object-position: center;
+    
+
+  }
+
+  #ProductItems2 h5{
+    font-size: 2.5vw;
+    /* background-color: rebeccapurple; */
   }
 
   .child2{
@@ -914,14 +1006,15 @@ body{
 
   }
 
-  .page3 img{
+  /* .page3 img{
       height: 100%;
       width: 100%;
       object-fit: cover;
       object-position: center;
       padding: 10vh;
+      background-color: red;
       
-  }
+  } */
 
  
   

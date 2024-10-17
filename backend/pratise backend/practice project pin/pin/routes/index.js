@@ -486,8 +486,11 @@ router.get('/payment',isLoggedIn ,async (req, res) => {
       }, 0);
   }
 
+
+
   let productDetails = cart.products.map(item => ({
     productName: item.productId.producttitle,
+    pImage: item.productId.pImage,
     price: item.productId.pPrice,
     quantity: item.quantity
   }));

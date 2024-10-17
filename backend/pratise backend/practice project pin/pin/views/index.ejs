@@ -99,10 +99,10 @@
                 </div>
             </div>
 
-
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-direction:row; flex-wrap: wrap;">
+            <div id="products">
+            <div id="ProductItems">
                 <% if (productList.length > 0) { %>
-                  <% productList.slice(0, 4).forEach(function(product) { %>
+                  <% productList.slice(0, 2).forEach(function(product) { %>
                     <div id="child1" class="child">
                       <a href="/product/<%= product._id %>">
                         <img src="<%= product.pImage %>" alt="">
@@ -115,6 +115,24 @@
                   <h3>Not found</h3>
                 <% } %>
             </div>
+
+            
+            <div id="ProductItems2">
+                <% if (productList.length > 0) { %>
+                  <% productList.slice(2, 4).forEach(function(product) { %>
+                    <div id="child1" class="child">
+                      <a href="/product/<%= product._id %>">
+                        <img src="<%= product.pImage %>" alt="">
+                      </a>
+                      <h5><%= product.producttitle %></h5>
+                      <h6>$<%= product.pPrice %></h6>
+                    </div>
+                  <% }) %>
+                <% } else { %>
+                  <h3>Not found</h3>
+                <% } %>
+            </div>
+        </div>
 
             <!-- <div id="child1" class="child">
                 <a href="/product"><img src="https://cdn.sanity.io/images/w8f1ak3c/production/adb77436d60e62d2b5b0574016abcc864b8e65b0-4498x2999.png/DSC0078_Dexter%20Kim.png?rect=470,108,3458,2760&fp-x=0.4888698630136987&fp-y=0.49614340367765025&w=1024&h=817&fit=crop&crop=focalpoint&auto=format"
