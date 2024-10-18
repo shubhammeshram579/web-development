@@ -179,8 +179,8 @@ h4{
 }
 
 .hidden .page{
-    height: 400px;
-    width: 450px;
+    height: 45vh;
+    width: 25vw;
     background-color: #fff;
     color: #111;
     padding: 20px 40px;
@@ -261,7 +261,17 @@ footer .card3 h5{
 @media (max-width:600px) {
     .hidden{
         /* background-color: red; */
-        height: 340vh;
+        height: 100%;
+    }
+
+    .hidden .page{
+        height: 50vh;
+        width:100%;
+        background-color: #fff;
+        color: #111;
+        padding: 20px 40px;
+        border-radius: 20px;
+        
     }
 
     h4{

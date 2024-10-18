@@ -212,7 +212,6 @@ body{
       display: flex;
       align-items:flex-start;
       margin-top: 100vh;
-      
 
 
   }
@@ -245,13 +244,14 @@ body{
 
   .menu .bar .card a{
     /* color: yellow; */
-    font-size: 8vw;
+    font-size: 10vw;
 
   }
   .menu .bar li{
       font-size: 4vh;
       font-weight: 1000;
       text-transform: uppercase;
+      /* background-color: red; */
       
   }
   

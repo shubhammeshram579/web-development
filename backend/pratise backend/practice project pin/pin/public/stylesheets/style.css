@@ -548,6 +548,7 @@ body{
   padding-bottom: 5vh;
   position: relative;
   z-index: 99;
+  /* background-color: rebeccapurple; */
 }
 
 .page6 .card1 li{
@@ -1085,6 +1086,8 @@ body{
   .page6 svg{
       margin-top: -300px;
       height: 70px;
+      /* background-color: rebeccapurple; */
+      opacity: 1;
   }
 
   .page6 .card1{

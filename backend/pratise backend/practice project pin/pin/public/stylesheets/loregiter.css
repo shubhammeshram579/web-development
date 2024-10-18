@@ -244,6 +244,7 @@ footer .card3 h5{
         /* padding: 100px; */
         /* background-color: yellow; */
         min-height: 70vh;
+        width: 100%;
     }
 
     .page2 .part1{
@@ -260,6 +261,15 @@ footer .card3 h5{
 
     }
 
+    .page2 .part2{
+        /* background-color: rebeccapurple; */
+        height: 20vh;
+        /* width: 100%; */
+        padding: 0px 3vw;
+    }
+
+  
+
 
 
     .navbar .part2{
@@ -267,6 +277,7 @@ footer .card3 h5{
         align-items: center;
         justify-content: center;
         gap: 15px;
+        /* background-color: red; */
     }
 
     .navbar .part2 a{
@@ -293,6 +304,15 @@ footer .card3 h5{
 
     footer .card3 h5 span{
         font-size: 2.5vw;
+    }
+
+    #cEmail{
+        /* color: red; */
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        padding: 5px;
     }
     
 }

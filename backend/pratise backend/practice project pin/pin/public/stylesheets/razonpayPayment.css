@@ -9,6 +9,12 @@
 
 }
 
+
+#page1 h1{
+    /* background-color: green; */
+    font-size: 1vw; font-weight: 500;
+}
+
 #checkPage {
     text-decoration: none;
     color: #111;
@@ -162,6 +168,8 @@ strong {
     #page1 h1{
         /* background-color: rebeccapurple; */
         font-weight: 500;
+        /* background-color: red; */
+        font-size: 3vw;
     }
 
     strong {
@@ -175,6 +183,11 @@ strong {
         font-weight: 600;
         font-size: 3vw;
 
+    }
+
+    #productnav h3{
+        /* background-color: red; */
+        font-size: 3vw;
     }
 
 }

@@ -254,6 +254,8 @@ body{
     width: 100%;
   }
 
+
+
   .menu .bar .btn{
     padding-top: 100px;
     font-size:3vw;
@@ -283,8 +285,10 @@ body{
   .menu .bar .card .card2{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: nowrap;
+    gap: 1vw;
+    /* background-color: rebeccapurple; */
   }
   .menu .bar .card a{
     /* background-color: red; */

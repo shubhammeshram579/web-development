@@ -308,6 +308,10 @@ html,body{
 
   @media (max-width:600px) {
 
+    .main{
+        /* background-color: rebeccapurple; */
+        padding: 0px 10px;
+    }
     .page1{
         display: flex;
         align-items: start;
@@ -397,9 +401,10 @@ html,body{
     }
 
     .page3 .card2 img{
-        height:450px;
-        width: 125vw;
+        height:60vh;
+        width: 100vw;
         margin: 0px;
+        padding: 10px;
         
     }
 
