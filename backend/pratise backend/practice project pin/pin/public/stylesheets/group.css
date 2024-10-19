@@ -316,5 +316,11 @@ footer .card3 h5{
         font-size: 2.5vw;
     }
 
+    #cEmail{
+        display: flex;
+        flex-direction: column;
+    }
+
+
     
 }

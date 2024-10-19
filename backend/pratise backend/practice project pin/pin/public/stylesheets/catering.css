@@ -80,6 +80,7 @@ h4{
     width: 100%;
     object-fit: cover;
     object-position: center;
+
     
 }
 
@@ -94,11 +95,13 @@ h4{
 
 .page2 .card1{
     height: 350px;
-   width: 450px;
+    width: 450px;
     background-image: url(https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/5aec660f8f6c4177a532fe4a4cbe693d_540w.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    border-radius: 10px;
+
 }
 .page2 .card2{
     height: 350px;
@@ -107,6 +110,7 @@ h4{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    border-radius: 10px;
 }
 .page2 .card3{
     height: 350px;
@@ -115,6 +119,7 @@ h4{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    border-radius: 10px;
 }
 .page2 .card4{
     height: 350px;
@@ -124,6 +129,7 @@ h4{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    border-radius: 10px;
         
 }
 .page2 .card5{
@@ -133,6 +139,7 @@ h4{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    border-radius: 10px;
 }
 .page2 .card6{
    height: 350px;
@@ -141,6 +148,7 @@ h4{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    border-radius: 10px;
 }
 
 

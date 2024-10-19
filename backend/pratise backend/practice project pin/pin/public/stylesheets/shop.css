@@ -266,8 +266,13 @@ body{
   .page1 .card1{
     height: 100%;
     width: 100%;
+    
+
 
   }
+
+  
+
   .page1 .card2{
     height: 100%;
     width: 100%;
@@ -279,8 +284,8 @@ body{
 
   .page1 .card1 h1{
     font-size: 14vw;
-    letter-spacing: 2px;
-    line-height: 10vh;
+    letter-spacing: 0.5vw;
+    line-height: 15vw;
     font-weight: 900;
   }
 

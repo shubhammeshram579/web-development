@@ -83,6 +83,10 @@
       font-size: 1.2vw;
     }
 
+    #qty{
+      font-weight: 400; font-size: 1vw;
+    }
+
 
 
 
@@ -135,6 +139,11 @@
         /* color: rebeccapurple; */
       }
 
+      #qty{
+      font-weight: 400; font-size: 2.5vw;
+    }
+
+
 
     }
   </style>
@@ -158,7 +167,7 @@
                   </div>
                   <h5 style="font-weight: 400;"> Price: $<%= product.price %>
                   </h5>
-                  <h5 style="font-weight: 400; font-size: 2vh;">Qty: <%= product.quantity %>
+                  <h5 id="qty">Qty: <%= product.quantity %>
                   </h5>
 
                 </li>
