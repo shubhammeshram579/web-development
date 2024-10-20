@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>reconssion praction </h1>
+
+
+    <script>
+        // basic of recusrtion in java script
+        //1. Recursive Function to Print Numbers from 5 to 1;
+
+        // narmal loops in js
+
+        // for (let i = 5; i >= 1; i--) {
+        //     console.log(i)
+        // }
+
+        // recusion example
+
+        function recursion(n) {
+            // base condition
+            if (n === 0) {
+                return;
+            }
+
+            // print number
+            console.log("recustion function 5 to 1",n);
+
+            // it self return recursion function
+            recursion(n - 1)
+        }
+
+        // main function
+        recursion(5)
+
+
+
+        // 2. Recursive Function to Print Numbers from 1 to 5;
+
+        // for (let i = 1; i <= 5; i++){
+        //     console.log(i)
+        // }
+
+        function reconssion2(n){
+            // base case
+            if(n > 5){
+                return;
+            }
+
+            // print number
+            console.log(n)
+            reconssion2(n + 1)
+        }
+
+        // reconssion2(1)
+
+
+
+        //3. Recursive Function to Calculate the Sum of First n Natural Numbers;
+
+
+        // array value sum
+        let arr = [1,2,3,4,5];
+        let storeSum = 0;
+
+        for(let i = 0; i < arr.length; i++){
+            // console.log(arr[i])
+            storeSum += arr[i];
+        }
+
+        console.log(storeSum)
+
+
+
+        // number of range sum
+        let storeSum2 = 0;
+        for (let j = 0; j <= 5; j++){
+            storeSum2 += j
+
+        }
+
+        console.log(storeSum2)
+
+
+
+
+        // Recursive function sum 
+        function recursionSum(n){
+            // base case
+            if(n=== 0){
+                return 0;
+            }
+            return n + recursionSum(n - 1);
+        }
+
+        console.log(recursionSum(5));
+
+
+
+
+        // 4.Recursive Function to Calculate Factorial of n
+
+
+        // normal in js
+        let numR = 5;
+        let Factorial = 1;
+
+        for (let i = numR; i >= 1; i--){
+            Factorial *= i
+        }
+        console.log(Factorial)
+
+
+
+        // recursive function
+        function CalFactrial(n){
+            // base case
+            if(n=== 1 || n === 0){
+                return 1;
+            }
+            return n * CalFactrial(n - 1);
+        }
+
+        console.log(CalFactrial(5));
+
+
+
+        
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
