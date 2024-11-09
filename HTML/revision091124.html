@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+
+        .mainHead{
+            background-color: yellow;
+            text-align: center;
+            text-decoration: underline;
+            text-transform: capitalize;
+            font-size: 4vw;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 600;
+            text-shadow: 1px 1px red;
+        }
+
+
+        .card1{
+            display: flex;
+            align-items: center;
+            justify-content:space-around;
+        }
+
+        .card1 h2{
+            text-transform: capitalize;
+            font-size: 3vw;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 400;
+            /* background-color: red; */
+            padding: 10px;
+        }
+
+        .card2 .summary{
+            background-color: antiquewhite;
+            text-align: justify;
+            font-size: 2vw;
+            /* line-height: 25px; */
+            word-spacing: 2px;
+            letter-spacing: 2px;
+            padding: 20px;
+        
+        }
+
+        .links{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: row;
+            /* background-color: red; */
+        }
+
+        .links a{
+            text-decoration: none;
+            color: green;
+            padding: 5px;
+            font-size: 2vw;
+            padding: 20px;
+        }
+
+        .links a:hover{
+            color: blueviolet;
+            background-color: yellow;
+        }
+
+
+        .table{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background-color: red; */
+            padding: 20px;
+            
+        }
+
+
+        .table table, tr, th, td{
+            /* background-color: red; */
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        .table table tr th{
+            background-color: yellow;
+            /* text-shadow: 1px 1px red; */
+
+        }
+
+        .orderList{
+            background-color:antiquewhite;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+
+        }
+
+        .orderList ol,ul{
+            list-style-type: none;
+        }
+
+
+        .orderList ol li{
+            color: green;
+        }
+
+        .orderList ul li{
+            color:rebeccapurple;
+        }
+
+
+        #pro{
+            color: red;
+        }
+
+        .media .img{
+            display: flex;
+            flex-direction: row;
+            gap: 100px;
+            padding: 20px;
+        }
+
+        .media img{
+            height: 250px;
+            width: 350px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+        }
+
+
+        .media .videos{
+            display: flex;
+            flex-direction: row;
+            gap: 100px;
+            padding: 20px;
+        }
+
+        .media video{
+            height: 250px;
+            width: 350px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1 class="mainHead">revission html css basic</h1>
+    <div class="card1">
+        <h2>shubham</h2>
+        <h2>meshram</h2>
+        <h2>murpar</h2>
+        <h2>gondia</h2>
+    </div>
+
+    <div class="card2">
+        <p class="summary">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque rerum optio pariatur animi accusamus vitae
+            commodi aperiam numquam,<small> eius minima, doloremque tempora itaque</small> quisquam, eos ratione tempore
+            distinctio
+            quae dicta modi facere odit ut cupiditate aliquid? Error, ex! Natus, eligendi unde non esse, tenetur rerum
+            consectetur laborum <i> necessitatibus praesentium quos ab dolorem obcaecati.</i> <b> Officia a recusandae
+            </b>impedit
+            molestias quo dicta repellat, exercitationem rem? Praesentium ipsum reprehenderit minus aperiam sunt ab
+            nesciunt rem doloremque <span>shubham meshram</span> quidem possimus. Officia pariatur totam, suscipit
+            cumque tempore nemo consequuntur
+            nulla ipsa doloremque nam aliquid. <sub>120</sub> Quis iste, natus <sup>110</sup> placeat repellendus minima
+            asperiores illo quo facilis
+            tenetur fuga!
+        </p>
+    </div>
+
+    <div class="links">
+        <a href="https://www.youtube.com/watch?v=9IwaS3nOnrs" target="_blank">shryansh coding school</a>
+        <a href="https://www.youtube.com/watch?v=pf-GH6yaVWQ" target="_blank">apna college</a>
+        <a href="https://www.youtube.com/watch?v=b_6NpaVL2tk" target="_blank">tecqnical suneja</a>
+    </div>
+
+    <div class="media">
+        <div class="img">
+            <img src="/new notes/income.png" alt="stock images">
+            <img src="/notes/1.jpg" alt="cortoon" height="200px">
+        </div>
+
+        <div class="videos">
+            <video src="/video/video.mp4" controls  muted height="300px" width="300px"></video>
+            <video src="/video/video2.mp4" controls muted height="300px"></video>
+        </div>
+
+        <!-- <div class="iframe">
+   
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/b_6NpaVL2tk?si=nDxsKbIlJRWMO0yx"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div> -->
+
+    </div>
+
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>firstName</th>
+                    <th>lastName</th>
+                    <th>address</th>
+                </tr>
+            </thead>
+
+            <body>
+                <tr>
+                    <td>shubham</td>
+                    <td>meshram</td>
+                    <td>gondia</td>
+                </tr>
+                <tr>
+                    <td>pallavi</td>
+                    <td>meshram</td>
+                    <td>Ap</td>
+                </tr>
+                <tr>
+                    <td>labham</td>
+                    <td>meshram</td>
+                    <td>delhi</td>
+                </tr>
+            </body>
+            <tfoot>
+                <th colspan="3">totel 3 col</th>
+            </tfoot>
+        </table>
+    </div>
+
+    <div class="orderList">
+        <ol type="i">
+            <li id="pro">javascript</li>
+            <li id="pro">python</li>
+            <li>node.Js</li>
+        </ol>
+        <ul>
+            <li>power bi</li>
+            <li>excel</li>
+            <li id="pro">machine learning</li>
+        </ul>
+    </div>
+
+
+    
+
+
+
+
+</body>
+
+</html>

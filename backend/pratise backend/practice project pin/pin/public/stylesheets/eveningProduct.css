@@ -37,8 +37,14 @@ body::-webkit-scrollbar-thumb{
     
 }
 
+
+
+
+
 /* products details */
-.lunch-product{
+
+
+.eveningProduct{
     display: flex;
     align-items: start;
     justify-content: space-evenly;
@@ -48,7 +54,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 
-.lunch-product .card1{
+.eveningProduct .card1{
     height: 100%;
     width: 20%;
     padding-left: 200px;
@@ -58,7 +64,7 @@ body::-webkit-scrollbar-thumb{
     /* background-color: red; */
 }
 
-.lunch-product .card1 h1{
+.eveningProduct .card1 h1{
     font-size: 20px; 
     font-weight: 500; 
     line-height: 40px;
@@ -67,7 +73,7 @@ body::-webkit-scrollbar-thumb{
     
 }
 
-.lunch-product .card2{
+.eveningProduct .card2{
     /* background-color:blue; */
     width: 70%;
     display: grid; 
@@ -75,7 +81,7 @@ body::-webkit-scrollbar-thumb{
     grid-gap: 50px;
 }
 
-.lunch-product .card2 .cards{
+.eveningProduct .card2 .cards{
     display: flex; 
     align-items: start;
     justify-content:space-between; 
@@ -85,29 +91,29 @@ body::-webkit-scrollbar-thumb{
     /* background-color: red; */
 }
 
-.lunch-product .card2 .cards .card{
+.eveningProduct .card2 .cards .card{
     width: 65%;
     /* background-color: red; */
    
 }
-.lunch-product .card2 .cards .card2{
+.eveningProduct .card2 .cards .card2{
     width: 35%;
     /* background-color: blue; */
 }
 
-.lunch-product .card2 .cards h1{
+.eveningProduct .card2 .cards h1{
     font-size: 20px;
     padding-bottom: 30px;
 }
 
-.lunch-product .card2 .cards h3{
+.eveningProduct .card2 .cards h3{
     font-size: 20px; 
     font-weight: 500;
     padding-bottom: 30px;
     width: 60%;
 }
 
-.lunch-product .card2 .cards img{
+.eveningProduct .card2 .cards img{
     height: 200px;
     width: 200px;
     object-fit: cover;
@@ -138,7 +144,7 @@ body::-webkit-scrollbar-thumb{
 
     
 
-    .lunch-product{
+    .eveningProduct{
         /* background-color: red; */
         display: flex;
         align-items: center;
@@ -149,7 +155,7 @@ body::-webkit-scrollbar-thumb{
 
     }
 
-    .lunch-product .card1{
+    .eveningProduct .card1{
         padding: 0px;
         margin: 0px;
         background-color:#fff;
@@ -162,7 +168,7 @@ body::-webkit-scrollbar-thumb{
 
     }
      
-    .lunch-product .card1 .Atag{
+    .eveningProduct .card1 .Atag{
         padding: 0px;
         margin: 0px;
         display: flex;
@@ -173,12 +179,12 @@ body::-webkit-scrollbar-thumb{
         
     }
 
-    .lunch-product .card1 .Atag h1{
+    .eveningProduct .card1 .Atag h1{
         font-size: 4vw;
    
     }
 
-    .lunch-product .card1 .nonAtag{
+    .eveningProduct .card1 .nonAtag{
        margin: 0px;
        padding: 0px;
        display: flex;
@@ -187,11 +193,11 @@ body::-webkit-scrollbar-thumb{
         /* margin-left: -50px; */
     }
 
-    .lunch-product .card1 .nonAtag h1{
+    .eveningProduct .card1 .nonAtag h1{
         font-size: 4vw;
     }
 
-    .lunch-product .card2{
+    .eveningProduct .card2{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -200,34 +206,34 @@ body::-webkit-scrollbar-thumb{
     }
 
 
-    .lunch-product .card2 .cards{
+    .eveningProduct .card2 .cards{
         width: 100%;
         height: auto;
         /* background-color: red; */
     }
 
 
-    .lunch-product .card2 .cards .card{
+    .eveningProduct .card2 .cards .card{
         width: 60%;
         /* background-color: green; */
        
     }
 
-    .lunch-product .card2 .cards .card h1{
+    .eveningProduct .card2 .cards .card h1{
         font-size: 3vw;
         /* color:yellow */
 
     }
 
-    .lunch-product .card2 .cards .card h3{
+    .eveningProduct .card2 .cards .card h3{
         font-size:3vw;
     }
 
 
-    .lunch-product .card2 .cards .card2{
+    .eveningProduct .card2 .cards .card2{
         width: 45%;
     }
-    .lunch-product .card2 .cards .card2 img{
+    .eveningProduct .card2 .cards .card2 img{
         height: 35vw;
         width: 35vw;
     }

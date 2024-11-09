@@ -1,68 +1,6 @@
 
-// smothscroling
-// function locoscrollani(){
-//     gsap.registerPlugin(ScrollTrigger);
-//  const locoScroll = new LocomotiveScroll({
-//    el: document.querySelector(".main"),
-//    smooth: true,
-//     mobile: {
-//        smooth: true
-//    },
-//    tablet: {
-//        smooth: true
-//    }
-//  });
-//  locoScroll.on("scroll", ScrollTrigger.update);
- 
-//  ScrollTrigger.scrollerProxy(".main", {
-//    scrollTop(value) {
-//      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-//    }, 
-//    getBoundingClientRect() {
-//      return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-//    },
-   
-//    pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
-//  });
- 
-//  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
- 
-//  ScrollTrigger.refresh();
- 
-//  };
-// locoscrollani()
 
-let sebtn1 = document.querySelector(".navbar .part2 .fa-magnifying-glass");
-let sebtn2 = document.querySelector("#searbtn2");
-let searbar = document.querySelector(".searbar");
-let navbarbtn = document.querySelector(".navbar");
-
-
-
-
-sebtn1.addEventListener("click",function(){
-    searbar.style.display = "block";
-    navbarbtn.style.display = "none";
-    searbar.style.display = "flex";
-    searbar.style.alignItems= "center";
-    searbar.style.justifyContent = "center";
-
-})
-
-
-sebtn2.addEventListener("click",function(){
-    searbar.style.display = "none"
-    navbarbtn.style.display = "block"
-    navbarbtn.style.display = "flex";
-    navbarbtn.style.alignItems= "center";
-    navbarbtn.style.justifyContent = "space-around";
-
-})
-
-
-
-
-// products
+// morning product list
 var arr = [
     {name:"YOGHURT & CHIA POTS SMALL",qty:"12 pots x 150ml Spoons provided",price:"$84.00 per box (12 prices)",pimage:"https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/e5b6023b7e444c769a09f6adf37a3416_360w.jpg"},
     {name:"YOGHURT & CHIA POTS LARGE",qty:"24 pots x 150ml Spoons provided",price:"$168.00 per box (24 prices)",pimage:"https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/f71eadb95ea24aba82e1d33d5a5fa374_360w.jpg"},
@@ -78,9 +16,9 @@ var arr = [
 // create cluster
 
 function showproduct(){
-    var clutters = ""
+    var cluttersMorning = ""
     arr.forEach(function(val){
-        clutters += `<div class="cards">
+        cluttersMorning += `<div class="cards">
         <div class="card">
             <h1>${val.name}</h1>
             <h3>${val.qty}</h3>
@@ -98,7 +36,7 @@ function showproduct(){
 
     })
 
-    document.querySelector(".product-page .card2").innerHTML = clutters;
+    document.querySelector(".product-page .card2").innerHTML = cluttersMorning;
 
     
 }

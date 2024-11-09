@@ -122,6 +122,7 @@ router.get('/evining/search', async (req, res) => {
   
     // Return the search results as JSON
     res.json(eveningproducts);
+    console.log("eveningproducts",eveningproducts)
 
     // res.render("eveningProduct" ,{eveningproducts})
 
