@@ -4,27 +4,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/stylesheets/afternoon.css">
 
-
-    <!-- serchbar  -->
-    <div class="searbar"
-        style="display: flex; align-items: center; justify-content: center; height: 100px;display: none; transition: all ease-in 1s;">
-
-        <form style="display: flex; align-items: center;" action="/Afternoon/search" method="post">
-            <p style="font-size: 20px; font-weight: 800;">Search: <input
-                    style="border: 1px solid #808080; padding: 15px 0px;width: 25vw; border-radius: 5px 0px 0px 5px;"
-                    type="text" name="query" id="search" placeholder="Search for product" value="<%= query %>" required>
-            </p>
-            <i style="border: 1px solid gray; padding: 14.5px 15px; margin-right: 20px;"
-                class="fa-solid fa-magnifying-glass"></i>
-            <a id="searbtn2" href="#"
-                style="text-decoration: none; color: #111; font-size: 20px; border-left: 0.5px solid gray; padding: 10px 0px; font-weight: 800;">
-                <i class="fa-solid fa-xmark"></i><button
-                    style="border: none; font-size: 1vw; background-color: transparent;"
-                    type="submit">Search</button></a>
-        </form>
-    </div>
-
-
     <!-- pages -->
     <div class="page1">
         <img src="https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/d3b249074f2d48c89939f0c1e399cf29_1728w.jpg"
@@ -86,5 +65,5 @@
 
     </div>
 
-    <script src="/javascripts/afternoon.js"></script>
+    <!-- <script src="/javascripts/afternoon.js"></script> -->
     <% include ./partial/cFooter.ejs %>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>basic of javascript</h3>
+    
+
+
+    <script>
+        // 1.  what is javascript?
+                // JavaScript is a programming language that allows web pages to be more interactive and dynamic: 
+                
+                // Functionality
+                // JavaScript enables web pages to respond to user interactions and change their content. For example, JavaScript can be used to display content updates, create interactive maps, and animate graphics. 
+                
+                // Use cases
+                // JavaScript can be used for both client-side and server-side development. It can also be used to create games, database-driven apps, and more. 
+                
+                // Syntax
+                // JavaScript's syntax is based on Java and C, and many structures from those languages apply to JavaScript as well. 
+                
+                // Features
+                // JavaScript supports object-oriented programming with object prototypes and classes. It also has arrays that can store multiple values in a single variable. 
+                
+                // Security
+                // Some security concerns with JavaScript include cross-site scripting, cross-site request forgery, and misplaced trust in the client or developers. 
+                
+                // Disabling JavaScript
+                // Disabling JavaScript in your browser can limit or make unavailable the content or functionality of a web page. It can also help you avoid ads and ad tracking. 
+            
+
+            // 2. what is varible?
+                // In JavaScript, a variable is a named container used to store data values. You can think of it as a box with a label where you can put different types of information, such as numbers, strings, objects, etc.
+                // Declaring a variable:
+                // You can declare a variable in JavaScript using the following keywords:
+                        // var: The traditional way to declare variables.
+                        // let: Introduced in ES6 (2015), provides block-scoped variables.
+                        // const: Also introduced in ES6, creates variables whose values cannot be reassigned.
+
+                // my own defination
+                    // 1. var is fuction scoped - var is a old vesrion es5 - var is add on window object
+                    // 2. let is block-scoped - let is a new virsion es6 2015 - let do not add on window objects
+                    // 3. const is block-scoped - const is a new virsion es6 2015 - const do not add on window objects - const is fixed varible creation.
+                
+
+            // 3. what is datatypes in js?
+
+                // In JavaScript, a data type is a classification that specifies the type of value a variable can hold. It determines what operations can be performed on the data and how it is stored in memory.
+
+                    // two type of datatype in js
+                    // 1. primitive
+                    // 2. refrence
+
+                        // 1. JavaScript has eight primitive data types:
+                            // Number: Represents both integer and floating-point numbers.
+                            // String: Represents a sequence of characters enclosed in single or double quotes.
+                            // Boolean: Represents a logical value, either true or false.
+                            // Null: Represents a special value indicating the absence of a value.
+                            // Undefined: Represents a variable that has been declared but has not been assigned a value.
+                            // BigInt: Represents an integer value that can be arbitrarily large.
+                            // Symbol: Represents a unique and immutable value, primarily used as keys for object properties.
+                            // Object: Represents a collection of key-value pairs.
+                
+            
+                            // for example
+
+                            let num = 123456;
+                            let str = "shubham";
+                            let isTure = true;
+                            let empty = null;
+                            let bight = 12345678n;
+                            let notDefind = undefined;
+                            let uniqueId = Symbol("id");
+                            let user = {name: "shubham", age: 27};
+
+                    // 2. Common Reference Data Types:
+                        // Objects: {} The most fundamental reference type. Used to store collections of key-value pairs.
+                        // Arrays: [] Used to store ordered collections of data.
+                        // Functions: () Functions are first-class objects in JavaScript, meaning they can be treated like any other object.
+
+                        // for example
+                        let obj = {name:"labham"}; // objects
+                        let array = [1,2,3,4,5]; // array
+                        
+                        function ab(){
+                            console.log("hello")  // function
+                        }
+            
+                    
+            // 4. JavaScript Operators
+                // Arithmetic Operators
+                // +	Addition
+                // -	Subtraction
+                // *	Multiplication
+                // **	Exponentiation (ES2016)
+                // /	Division
+                // %	Modulus (Division Remainder)
+                // ++	Increment
+                // --	Decrement
+
+
+                let a = 10;
+                let b = 20;
+                let sum = a + b;
+                console.log(sum)
+
+                let a2 = 3;
+                let x = (100 + 50) * a2;
+
+                // II. JavaScript Assignment Operators
+
+                // Operator	    Example	    Same As
+                //     =	    x = y	    x = y
+                //     +=	    x += y	    x = x + y
+                //     -=	    x -= y	    x = x - y
+                //     *=	    x *= y	    x = x * y
+                //     /=	    x /= y	    x = x / y
+                //     %=	    x %= y	    x = x % y
+                //     **=	    x **= y	    x = x ** y
+
+                let x2 = 10;
+                x2 += 5;
+
+                
+
+
+                // III. JavaScript Comparison Operators 
+                    // Operator	Description
+                    // ==	equal to
+                    // ===	equal value and equal type
+                    // !=	not equal
+                    // !==	not equal value or not equal type
+                    // >	greater than
+                    // <	less than
+                    // >=	greater than or equal to
+                    // <=	less than or equal to
+                    // ?	ternary operator
+
+
+
+                    if(a === b){
+                        console.log("match")
+                    }else{
+                        console.log("notmatch")
+                    }
+
+
+                // iv. JavaScript Logical Operators
+                // Operator	Description
+
+                //     &&	logical and
+                //     ||	logical or
+                //     !	logical not
+
+
+                let time = 12;
+
+                if(time > 5 && time < 12){
+                    console.log("morning")
+                } else if (time > 12 || time < 14){
+                    console.log("afternoon")
+
+                }else if(time != 5 && time != 14){
+                    console.log("not match time")
+                }else{
+                    console.log("evening")
+                }
+
+
+                // V. JavaScript Bitwise Operators
+                    // Bit operators work on 32 bits numbers.
+
+                    // Any numeric operand in the operation is converted into a 32 bit number. The result is converted back to a JavaScript number.
+
+
+                    // Operator	Description	    Example	Same as	Result	Decimal
+                    //     &	        AND	        5 & 1	0101 & 0001	0001	 1
+                    //     |	        OR	        5 | 1	0101 | 0001	0101	 5
+                    //     ~	        NOT	        ~ 5	 ~0101	1010	 10
+                    //     ^	        XOR	        5 ^ 1	0101 ^ 0001	0100	 4
+                    //     <<	        left shift	5 << 1	0101 << 1	1010	 10
+                    //     >>	        right shift	5 >> 1	0101 >> 1	0010	  2
+                    //     >>>	unsigned right shift 5 >>> 1	0101 >>> 1	0010	  2
+
+            // 5. what is hoisting?
+
+                // In JavaScript, hoisting is a behavior where variable and function declarations are moved to the top of their containing scope during the compilation phase, before the code is executed. This means you can use a variable or function before it's declared in your code. 
+                    
+                // Key Points:
+                    // Only declarations are hoisted: The actual assignment of values happens where it's written in the code.
+                    // Function declarations are fully hoisted: You can call a function before it's declared in your code.
+                    // Variable declarations are hoisted, but not their initializations: If you use a variable before its assignment, it will have the value undefined.
+
+                    // example
+
+                    console.log(x5); // Outputs: undefined
+                    var x5 = 5;
+                    console.log(x5); // Outputs: 5
+
+
+                    // Function Hoisting:
+                    foo(); // Outputs: "Hello"
+
+                    function foo() {
+                    console.log("Hello");
+                    }
+            
+    </script>
+</body>
+</html>
