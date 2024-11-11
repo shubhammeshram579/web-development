@@ -1,3 +1,4 @@
+// querySelector for function butten
 let sebtn1 = document.querySelector(".navbar .part2 .fa-magnifying-glass");
 let sebtn2 = document.querySelector("#searbtn2");
 let searbar = document.querySelector(".searbar");
@@ -5,7 +6,7 @@ let navbarbtn = document.querySelector(".navbar");
 
 
 
-
+// click after effect
 sebtn1.addEventListener("click",function(){
     searbar.style.display = "block";
     navbarbtn.style.display = "none";
@@ -24,16 +25,16 @@ sebtn2.addEventListener("click",function(){
 })
 
 
-// const resultsContainer = document.getElementById('results');
+// searchbtn
 const searchButton = document.querySelector('.searbar #searchButton');
 
 
-// DOM elements
+// search input
 const searchInput = document.querySelector('.searbar #search');
 
 
 
-// Event listener for input field for evening page
+//1. Event listener for input field in EveningProduct page
 searchInput.addEventListener('input', function () {
     const query = searchInput.value;
   
@@ -64,10 +65,9 @@ searchInput.addEventListener('input', function () {
           });
         }
   
+        // store card2 product list
         document.querySelector(".eveningProduct .card2").innerHTML = clutter;
-  
-        // // Reset the input field after the search is completed
-        // searchInput.value = '';
+
         
       })
       .catch(error => console.error('Error fetching products:', error));
@@ -80,7 +80,7 @@ searchInput.addEventListener('input', function () {
 
 
 
-// Event listener for input field for afternoon page
+//2. Event listener for input field in afternoonProduct page
 searchInput.addEventListener('input', function () {
     const query = searchInput.value;
   
@@ -113,8 +113,6 @@ searchInput.addEventListener('input', function () {
   
         document.querySelector(".afternoon-product .card2").innerHTML = clutter;
   
-        // // Reset the input field after the search is completed
-        // searchInput.value = '';
         
       })
       .catch(error => console.error('Error fetching products:', error));
@@ -122,7 +120,7 @@ searchInput.addEventListener('input', function () {
 
 
 
-  // remove input search
+//3. remove input search text
 searchButton.addEventListener("click",function(){
     searchInput.value = '';
 })

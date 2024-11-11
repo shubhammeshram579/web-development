@@ -70,34 +70,6 @@ router.get('/lunch', function(req, res, next) {
 
 
 
-// router.get("/Afternoon", async function(req, res, next){
-//   let AfternoonProduct = await Afternoon.find();
-//   res.render("Afternoon",{AfternoonProduct, query:""})
-// });
-
-// router.get("/Afternoon", async function(req, res, next){
-//   res.render("Afternoon",{AfternoonProduct:[], query:""})
-// });
-
-// // catering product Search router
-// router.post('/Afternoon/search', async (req, res) => {
-//   const query = req.body.query.toLowerCase();
-
-//   const findProduct = await Afternoon.find({
-//     $or:[
-//       {name: {$regex: query, $options: "i"}},
-//       {qty: {$regex: query, $options: "i"}}
-//     ]
-//   })
-
-//   // Render the index.ejs file with the filtered products
-//   res.render('Afternoon', { AfternoonProduct: findProduct, query });
-
-// });
-
-
-
-
 // facth catering apternoon product data from mongodb
 router.get("/Afternoon", async function(req, res) {
   let AfternoonProduct = await Afternoon.find({});
@@ -124,9 +96,7 @@ router.get('/Afternoon/search', async (req, res) => {
   
     // Return the search results as JSON
     res.json(afternoonProducts);
-    // console.log("eveningproducts",eveningproducts)
-
-    // res.render("eveningProduct" ,{eveningproducts})
+    
 
   } catch (err) {
     res.status(500).json({ error: 'Internal Server Error' });
@@ -162,9 +132,7 @@ router.get('/evining/search', async (req, res) => {
   
     // Return the search results as JSON
     res.json(eveningproducts);
-    // console.log("eveningproducts",eveningproducts)
-
-    // res.render("eveningProduct" ,{eveningproducts})
+  
 
   } catch (err) {
     res.status(500).json({ error: 'Internal Server Error' });

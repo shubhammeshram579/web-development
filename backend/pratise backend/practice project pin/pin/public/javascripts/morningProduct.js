@@ -13,7 +13,7 @@ var arr = [
 
 
 
-// create cluster
+// create cluster for morning product card
 
 function showproduct(){
     var cluttersMorning = ""
@@ -46,7 +46,7 @@ showproduct();
 
 
 
-// i thingh this funcinality for moring product page 
+// input search funclity in morning product page 
     
 var srbtn =  document.querySelector(".searbar input");  
 
@@ -80,17 +80,6 @@ function serchProduct(){
 
 serchProduct();
 
-
-
-
-
-// srbtn.addEventListener("input", serchProduct);
-
-// srbtn.addEventListener("keydown", function(event) {
-//     if (event.key === "Enter") {
-//         serchProduct();
-//     }
-// });
 
 
 
