@@ -1,158 +1,14 @@
 <% include ./partial/header.ejs %>
-  <style>
-    .main {
-      margin-top: 160px;
-
-    }
+  <link rel="stylesheet" href="/stylesheets/productOrderList.css">
 
 
-    .main .card {
-      background-color: cadetblue;
-      padding: 0px 20px;
-      margin: 20px 13%;
-      border-radius: 20px;
-      /* color: #fff; */
-    }
-
-    .main .orderDetails {
-      font-size: 3vh;
-      padding-top: 10px;
-
-    }
-
-    .main .card .productList {
-      width: 100%;
-
-    }
-
-    .main .card .listItem {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      flex-direction: row;
-      gap: 10px;
-      background-color: ghostwhite;
-      margin: 5px 0px;
-      border-radius: 10px;
-      /* padding: 15px 0px; */
-      /* color: #111; */
-      font-size: 1vw;
-
-    }
-
-    .main .card .listItem img {
-      height: 4vw;
-      width: 4vw;
-      object-fit: cover;
-    }
-
-    #imageAndName {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2vw;
-      width: 60%;
-
-
-    }
-
-
-    .main .card .productName {
-      font-size: 1vw;
-      width: 50%;
-      font-weight: 400;
-      text-transform: capitalize;
-      /* background-color: rebeccapurple; */
-    }
-
-    .paymentCard {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-bottom: 10px;
-
-    }
-
-
-    .orderStatus {
-      font-size: 1vw;
-
-    }
-
-    .orderAmout {
-      font-size: 1.2vw;
-    }
-
-    #qty{
-      font-weight: 400; font-size: 1vw;
-    }
-
-
-
-
-
-    @media (max-width:600px) {
-
-      .main .card {
-        padding: 0px 20px;
-        margin: 20px 7%;
-        border-radius: 20px;
-        /* background-color: rebeccapurple; */
-      }
-
-      .main .card .orderDetails {
-        padding-bottom: 20px;
-  
-      }
-
-      .main .card .listItem{
-        font-size: 3vw;
-        font-weight: 600;
-      }
-
-      .main .card .listItem img {
-      height: 10vw;
-      width: 10vw;
-      object-fit: cover;
-    }
-
-      .main .card .productName {
-        font-size: 3vw;
-        width: 70%;
-      }
-
-      .paymentCard {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 50px;
-        padding-top: 20px;
-      }
-
-      .orderStatus {
-        font-size: 3vw;
-
-      }
-
-      .orderAmout {
-        font-size: 3vw;
-        /* color: rebeccapurple; */
-      }
-
-      #qty{
-      font-weight: 400; font-size: 2.5vw;
-    }
-
-
-
-    }
-  </style>
+  <!-- page 1 order customer order list -->
   <div class="main">
+    <div class="page1"> </div>
     <% orders.forEach(order=> { %>
       <a style="color: #111; text-decoration: none;" href="/OwnOrder/<%= order._id %>">
         <div class="card">
           <h1 class="orderDetails">Order Details</h1>
-
 
           <h3>Products</h3>
           <ul class="productList">
@@ -184,5 +40,21 @@
         </div>
       </a>
       <% }); %>
+   
   </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"
+        integrity="sha512-1PKqXBz2ju2JcAerHKL0ldg0PT/1vr3LghYAtc59+9xy8e19QEtaNUyt1gprouyWnpOPqNJjL4gXMRMEpHYyLQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+  <script src="/javascripts/productOrderList.js"></script>
   <% include ./partial/footer.ejs %>

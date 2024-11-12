@@ -2,7 +2,7 @@
 function locoMotiveScrolling(){
     gsap.registerPlugin(ScrollTrigger);
  const locoScroll = new LocomotiveScroll({
-   el: document.querySelector("#main"),
+   el: document.querySelector(".main"),
    smooth: true,
     mobile: {
        smooth: true
@@ -13,7 +13,7 @@ function locoMotiveScrolling(){
  });
  locoScroll.on("scroll", ScrollTrigger.update);
  
- ScrollTrigger.scrollerProxy("#main", {
+ ScrollTrigger.scrollerProxy(".main", {
    scrollTop(value) {
      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
    }, 
@@ -21,7 +21,7 @@ function locoMotiveScrolling(){
      return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
    },
    
-   pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
+   pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
  });
  
  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
@@ -33,13 +33,17 @@ function locoMotiveScrolling(){
  locoMotiveScrolling();
 
 
+
+
+
+
 // navbar animation effect
- function navscrollanimation(){
+function navscrollanimation(){
     gsap.to(".nav-part1 svg", {
        transform: "translateY(-100%)",
        scrollTrigger: {
          trigger: ".page1",
-         scroller: "#main",
+         scroller: ".main",
          start: "top 0",
          end: "top -5%",
          scrub: true,
@@ -51,7 +55,7 @@ function locoMotiveScrolling(){
        opacity: 0,
        scrollTrigger: {
          trigger: ".page1",
-         scroller: "#main",
+         scroller: ".main",
          start: "top 0",
          end: "top -5%",
          scrub: true,
@@ -62,13 +66,14 @@ function locoMotiveScrolling(){
  navscrollanimation();
 
 
-// svg logo opacity shaong with animation
- gsap.to("#main .page6 .imagcon svg", {
+
+ // svg logo opacity shaong with animation
+ gsap.to(".main .page6 .imagcon svg", {
     transition: "all ease-in 1s",
     opacity: 1,
     scrollTrigger: {
       trigger: ".page6",
-      scroller: "#main",
+      scroller: ".main",
       start: "top 50%",
       end: "top 70%",
       scrub: 1,
@@ -78,24 +83,24 @@ function locoMotiveScrolling(){
 
 
 
-// page 4 hover content then open image hover showing
-let cards =  document.querySelectorAll(".page4 .card");
-let imgs =  document.querySelectorAll(".page4 .card img");
 
-cards.forEach(function(val){
- val.addEventListener("mouseenter",function(){
-     val.childNodes[7].style.opacity = 1;
-     val.style.color = "#1111115d";
- })
- val.addEventListener("mouseleave",function(){
-     val.childNodes[7].style.opacity = 0;
-     val.style.color = "#111";
-  
- })
 
- val.addEventListener("mousemove",function(dent){
-     val.childNodes[7].style.left = dent.x + "px";
-     val.childNodes[7].style.top = dent.y + "px";
- })
 
-});
+// page 1 h1 text Animation effect 
+gsap.from(".page1 h1", {
+    y: 200,
+    duration: 0.5,
+    delay: 0.5,
+    opacity: 0,
+    stagger: 0.3
+})
+
+
+    gsap.to(".main .page2", {
+    opacity:1,
+    transition: "all ease-in 4s",
+ });
+
+
+
+ 

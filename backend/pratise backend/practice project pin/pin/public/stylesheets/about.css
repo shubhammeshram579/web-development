@@ -11,6 +11,17 @@ html,body{
 }
 
 
+body::-webkit-scrollbar{
+    display: block;
+    width: 7px;
+    background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color:#827f7f;
+    border-radius: 50px;
+}
+
 .page1{
     /* min-height: 100vh; */
     width: 100%;
@@ -274,7 +285,7 @@ html,body{
   .page6 svg{
     height: 27vh;
     width: 100%;
-    opacity: 1;
+    opacity: 0;
   }
   
   .page6-part2{

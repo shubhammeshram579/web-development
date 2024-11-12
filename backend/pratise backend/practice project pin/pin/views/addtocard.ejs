@@ -2,7 +2,7 @@
 
     <!-- addtocard page -->
     <link rel="stylesheet" href="/stylesheets/addtocard.css">
-    <div class="main" style="background-color:#111; color: #fff; padding-top: 300px;">
+    <div class="main">
 
         <div class="cards">
             <% if (cart && cart.products.length> 0) { %>
@@ -83,7 +83,7 @@
 
 
         <% } else { %>
-            <div class="card-details" style="margin-top: -350px;">
+            <div class="card-details">
                 <h1>Your card is empaty</h1>
                 <h2>See All Good Things</h2>
                 <div id="cardpage">
@@ -171,138 +171,19 @@
                 </div>
     </div>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"
+        integrity="sha512-1PKqXBz2ju2JcAerHKL0ldg0PT/1vr3LghYAtc59+9xy8e19QEtaNUyt1gprouyWnpOPqNJjL4gXMRMEpHYyLQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+        <script src="/javascripts/addToCard.js"></script>
+
     <% include ./partial/footer.ejs %>
-
-
-
-
-        <!-- <script>
-        // function updateQuantity(productId, action) {
-        //     fetch(`/update-quantity/${productId}`, {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         },
-        //         body: JSON.stringify({ action: action })
-        //     })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         if (data.success) {
-        //             // Update the quantity displayed on the page
-        //             document.getElementById(`quantity-${productId}`).textContent = data.newQuantity;
-        //         } else {
-        //             console.error('Failed to update quantity');
-        //         }
-        //     })
-        //     .catch(error => console.log('Error:', error));
-        // }
-        // </script> -->
-
-
-
-        <!-- 
-    <script>
-
-
-
-        // let arr = [
-        //     { product: "CHNAGE THE COUSER COOK KIT", price: "$95" },
-        //     { product: "THE COUSER COOK KIT", price: "$50" },
-        // ];
-
-
-        // function cardproduct() {
-        //     let cultter = ""
-        //     arr.forEach(function (val, index) {
-        //         cultter += `<div id="card2"
-        //     style="display: flex; align-items: center; justify-content:space-between; padding: 50px 10px; border-bottom: 1px solid gray; margin: 0px 20px;">
-        //         <h1 style="font-size: 20px; font-weight: 500;">${val.product}</h1>
-        //         <div class="addcard" style="display: flex; gap: 25px; padding-left: 280px;">
-        //             <%- include("shared.ejs") -%>
-        //             <form action="/add-to-card" method="post">
-        //                 <a class="minus" href="#" style="text-decoration: none; color: #fff;">-</a>
-        //                 <a data-index="${index}" class="num" href="#"
-        //                     style="text-decoration: none; color: #fff;padding-left: 20px;padding-right: 20px;">1</a>
-        //                 <a class="plus" href="#" style="text-decoration: none; color: #fff;">+</a>
-        //             </form>
-        //         </div>
-        //         <div class="amt" style="display: flex; align-items: center; gap: 50px;">
-        //             <h1 style="font-size: 20px; font-weight: 100;">${val.price}</h1>
-        //             <a style="text-decoration: none; color: #fff;" href="/card"><i class="fa-solid fa-xmark"></i></a>
-        //         </div>
-        // </div>  `
-
-
-        //     })
-        //     document.querySelector(".main .cards").innerHTML = cultter;
-        // }
-
-        // cardproduct();
-
-
-
-
-
-        // let plusbtn = document.querySelector(".main .plus");
-        // let numbtn = document.querySelector(".main .num");
-        // let minusbtn = document.querySelector(".main .minus");
-        // let pricebtn = document.querySelector(".main .price");
-
-
-
-
-
-        // let a = 1;
-        // let p = 1;
-        // plusbtn.addEventListener("click", () => {
-        //     a++;
-        //     p++;
-        //     numbtn.innerHTML = a;
-        //     pricebtn.innerHTML = p * 95;
-        //     if (a < 0) {
-        //         numbtn.innerHTML = 0;
-        //         pricebtn.innerHTML = 0;
-        //     }
-        // });
-
-        // minusbtn.addEventListener("click", () => {
-        //     a--;
-        //     p--;
-        //     numbtn.innerHTML = a;
-        //     pricebtn.innerHTML = p * 95;
-        //     if (a < 0) {
-        //         numbtn.innerHTML = 0;
-        //         pricebtn.innerHTML = 0;
-        //     };
-        // });
-
-
-        function updateQuantity(productId, action) {
-            fetch(`/update-quantity/${productId}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ action: action })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        // Update the quantity displayed on the page
-                        document.getElementById(`quantity-${productId}`).textContent = data.newQuantity;
-
-                        // Optionally update the total amount if you have a total amount element
-                        // document.getElementById('total-amount').textContent = data.newTotalAmount;
-                    } else {
-                        console.error('Failed to update quantity');
-                    }
-                })
-                .catch(error => console.error('Error:', error));
-        }
-
-        updateQuantity()
-
-
-
-
-    </script> -->

@@ -38,6 +38,14 @@
     width: 50vw;padding-top: 520px;
 }
 
+
+
+.page6 svg{
+    height: 27vh;
+    width: 100%;
+    opacity: 0;
+  }
+
 @media (max-width:600px) {
 
     .page1{

@@ -114,43 +114,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        const scroll = new LocomotiveScroll({
-            el: document.querySelector('.main'),
-            smooth: true
-        });
 
 
 
-        gsap.from(".page1 h1", {
-            y: 200,
-            duration: 0.5,
-            delay: 0.5,
-            opacity: 0,
-            stagger: 0.3
-        })
-
-
-        // gsap.from(".main .page2",{
-        //     opacity:1,
-        //     scrollTrigger: {
-        //     trigger: ".page2",
-        //     scroller: "body",
-        //     start: "top 10%",
-        //     end: "top 35%",
-        //     scrub:true,
-        //     markers:true
-        // }})
-
-
-            gsap.to(".main .page2", {
-            opacity:1,
-            transition: "all ease-in 4s",
-         });
-
-        
-
-    </script>
+        <script src="/javascripts/contact.js"></script>
 
 
     <% include ./partial/footer.ejs %>

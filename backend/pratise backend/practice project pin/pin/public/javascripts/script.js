@@ -1,6 +1,5 @@
 // smooth scroling using LocomotiveScroll
-
-function locoscrollani(){
+function locoMotiveScrolling(){
     gsap.registerPlugin(ScrollTrigger);
  const locoScroll = new LocomotiveScroll({
    el: document.querySelector(".main"),
@@ -31,13 +30,13 @@ function locoscrollani(){
  
  };
  
- locoscrollani();
+ locoMotiveScrolling();
  
  
   
  
  
-//  navbar scroll page then hide navbar feature
+//  navbar scroll page then hide navbar items 
  function navscrollanimation(){
     gsap.to(".nav-part1 svg", {
        transform: "translateY(-100%)",
@@ -68,7 +67,7 @@ function locoscrollani(){
  
 
 //  animation effect using gsap for landing page and video
- function loadingani(){
+ function loadingAnimation(){
     gsap.from(".page1 h1",{
        y:100,
        opacity:0,
@@ -87,7 +86,7 @@ function locoscrollani(){
  } 
  
  
- loadingani();
+ loadingAnimation();
  
  
  

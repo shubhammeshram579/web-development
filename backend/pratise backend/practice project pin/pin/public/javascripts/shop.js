@@ -1,5 +1,5 @@
-// smothscroling
-function locoscrollani(){
+// smooth scroling using LocomotiveScroll
+function locoMotiveScrolling(){
     gsap.registerPlugin(ScrollTrigger);
  const locoScroll = new LocomotiveScroll({
    el: document.querySelector(".main"),
@@ -30,7 +30,7 @@ function locoscrollani(){
  
  };
  
- locoscrollani();
+ locoMotiveScrolling();
 
 
 // navbar animation effect

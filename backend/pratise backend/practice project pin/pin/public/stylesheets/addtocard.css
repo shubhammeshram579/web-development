@@ -7,12 +7,18 @@
 html,body{
     height: 100%;
     width: 100%;
+
     
+}
+
+html{
+  background-color: #111;
 }
 
 body{
   overflow-x: hidden;
   overflow-y: scroll;
+  background-color: #111;
 }
 
 
@@ -63,7 +69,11 @@ body::-webkit-scrollbar-thumb{
 
   }
 
-
+.main{
+  padding-top: 30vh;
+  background-color:#111;
+  color: #fff;
+}
 .main .card4 a{
     text-decoration: none;
     color:#fff;
@@ -91,6 +101,7 @@ body::-webkit-scrollbar-thumb{
 #svg1{
     color: #fff;
     /* margin: 0px 10px; */
+    background-color: #111;
 }
 
 .header-nav .nav-part2 a{
@@ -124,18 +135,19 @@ body::-webkit-scrollbar-thumb{
 
 
 .card-details{
-    min-height: 92vh;
+    min-height:50vh;
     width: 100vw;
     background-color: #111;
     position: absolute;
-    z-index: 41;
+    z-index: 999;
     opacity: 1;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    padding-top: 230px;
-    /* display:none; */
+    margin-top: -100px;
+    padding-bottom: 10vh;
+
   }
   
   
@@ -300,17 +312,6 @@ body::-webkit-scrollbar-thumb{
 
   }
 
-  /* #minusbtn{
-    background-color: rebeccapurple;
-  } */
-
-  /* #deleteBtn{
-    border: none;
-  } */
-
-  /* #minusbtn{
-    background-color:yellow; color: #fff; border: 1px solid #111;
-  } */
 
   .addcard #deleteForm button{
     background-color:transparent;
@@ -342,9 +343,10 @@ body::-webkit-scrollbar-thumb{
     /* card style */
   
   .card-details{
-    min-height: 50vh;
+    min-height: 95vh;
     width: 100%;
     background-color: #111;
+    /* background-color: red; */
     position: absolute;
     z-index: 41;
     opacity: 1;
@@ -352,7 +354,8 @@ body::-webkit-scrollbar-thumb{
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    padding-top: 25vh;
+    padding-top: 2vh;
+    margin-top: -300px;
 
 }
 
