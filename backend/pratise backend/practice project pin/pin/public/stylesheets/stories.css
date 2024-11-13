@@ -1,7 +1,12 @@
 
+/* overflow hidden style over the body */
 body{
     overflow-x: hidden;
 }
+
+
+
+/* side scroller style */
 body::-webkit-scrollbar{
     display: block;
     width: 7px;
@@ -12,6 +17,20 @@ body::-webkit-scrollbar-thumb{
     background-color:#827f7f;
     border-radius: 50px;
 }
+
+
+/* main contaner styling */
+.main{
+    height: 73vh;
+    width: 29.50vw;
+    background-color:azure;
+    border-radius: 2px;
+    overflow: hidden;
+    
+}
+
+
+/* stories page 1 styling */
 .page1{
     padding-top: 300px; min-height: 90vh; width: 100%; display: flex; align-items: center; justify-content: space-between;
 }
@@ -36,6 +55,8 @@ body::-webkit-scrollbar-thumb{
 }
 
 
+
+/* page2 styling */
 .page2{
     display: flex;
     align-items: center;
@@ -43,23 +64,13 @@ body::-webkit-scrollbar-thumb{
     flex-wrap: wrap;
     gap: 20px;
     padding: 0px 20px;
-    /* background-color: red; */
+    
 }
 
-
-.main{
-    height: 73vh;
-    width: 29.50vw;
-    background-color:azure;
-    border-radius: 2px;
-    overflow: hidden;
-    /* background-color: red; */
-}
-
+/* card image styling like hight more */
 .main .card1 .storyimg{
     height: 73vh;
     width: 29.50vw;
-    /* background-color: #816289e4; */
     background-image: url(https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600);
     background-repeat: no-repeat;
     background-position: center;
@@ -69,15 +80,18 @@ body::-webkit-scrollbar-thumb{
 }
 
 
+/* card img text styling */
 .page2 h4{
     padding: 30px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+  
 }
 
 
+/* card img text styling */
 .page2 h1{
     padding: 30px;
 }
@@ -161,6 +175,9 @@ body::-webkit-scrollbar-thumb{
 
 
 
+
+
+/* mobile responsive page styling using media query  */
 @media (max-width:600px) {
     body {
         overflow-x: hidden;
@@ -235,7 +252,6 @@ body::-webkit-scrollbar-thumb{
         height: 120vw;
         width: 100%;
         background-color: azure;
-        /* background-color: green; */
         border-radius: 2px;
         overflow: hidden;
     }
@@ -245,7 +261,6 @@ body::-webkit-scrollbar-thumb{
     .main .card1 .storyimg {
         height: 120vw;
         width: 100%;
-        /* background-color: red; */
     }
 
     .main .card1 .storycardtext {

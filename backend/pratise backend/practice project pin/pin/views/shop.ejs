@@ -1,11 +1,12 @@
 <% include ./partial/header.ejs %>
+<!-- css links  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="stylesheet" href="/stylesheets/shop.css">
 
 
-     <div class="curcer"></div>
+    <div class="curcer"></div>
     <div class="main">
-      <!-- lending page1 -->
+      <!-- lending shop home page1 -->
         <div class="page1">
             <div class="card1">
                 <h1>GOOD</h1>
@@ -20,7 +21,7 @@
             </div>
         </div>
 
-        <!-- product pages 2 -->
+        <!-- product list pages2 -->
         <div class="page2 chaids">
                 <% if (productList.length > 0) { %>
                     <% productList.slice(0,2).forEach(function(product) { %>

@@ -1,57 +1,39 @@
+/* univers section */
 *{
   margin: 0px;
   padding: 0px; 
   box-sizing: border-box;
-  /* font-family: 'Gilroy'; */
 }
 
+
+
+/* select the text then color style */
 *::selection{
   color:black;
   background-color: rgba(30, 139, 201, 0.433);
 }
 
 
+
+/* html and body style */
 html{
   height: 100%;
   width: 100%;
   background-color:#fff;
-  /* color: #888282; */
 }
 
 body{
   height: 100%;
   width: 100%;
-}
-
-
-
-/* logo img styly */
-.nav-part1 a{
-  text-decoration: none;
-  color: #111;
-}
-.nav-part1 svg{
-  display: block;
-  
-}
-
-.header-nav .nav-part2 .icon #home{
-  display: none;
-}
-
-
-
-.nav-part1{
-  height: 83px;
-  overflow: hidden;
-}
-
-body{
   position: absolute;
   z-index: 99;
 }
 
 
+
+
+
+/* navbar styling */
 .header-nav{
   height: 100px;
   width: 100%;
@@ -67,6 +49,29 @@ body{
   
 }
 
+
+/* logo img styling*/
+.nav-part1 svg{
+  display: block;
+}
+
+.nav-part1 a{
+  text-decoration: none;
+  color: #111;
+}
+
+.header-nav .nav-part2 .icon #home{
+  display: none;
+}
+
+.nav-part1{
+  height: 83px;
+  overflow: hidden;
+}
+
+
+
+/* navbar part2 styling */
 .header-nav .nav-part2 .link{
   display: flex;
   align-items: center;
@@ -97,8 +102,7 @@ body{
 }
 
 
-/* mouse circul mover */
-
+/* mouse circul mover style */
 .curcer{
   height: 150px;
   width: 150px;
@@ -110,7 +114,7 @@ body{
   
 }
 
-/* landing page */
+/* landing home page1 */
 .page1{
   min-height: 100hv;
   width: 100%;
@@ -118,18 +122,18 @@ body{
   z-index: 99;
   padding: 0 2vw;
   padding-top: 15vh;
-  /* background-color: #111; */
-  
 
 }
 
-
+/* h1 text styling */
 .page1 h1{
   font-size: 14vw;
   line-height: 13vw;
   letter-spacing: -1vw;
 }
 
+
+/* video conterner style */
 .video-contener{
   height: 100vh;
   width: 100%;
@@ -157,6 +161,8 @@ body{
   scale: 0;
 }
 
+
+/* video buttom text styling */
 .hading{
   display: flex;
   align-items: center;
@@ -170,7 +176,7 @@ body{
 }
 
 
-/*page2 product imgs */
+/*product page2 img styling  */
 
 .page2{
   min-height: 100vh;
@@ -178,7 +184,6 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* padding: 0px 50px; */
   position: relative;
   z-index: 99;  
 }
@@ -209,8 +214,6 @@ body{
   text-align: center;
   background-color:blanchedalmond;
 }
-
-
 
 
 .cotener2 .dets{
@@ -286,8 +289,7 @@ body{
 
 
 
-/* hover box */
-
+/*product page2 hover box */
 .page2 .box{
   display: flex;
   align-items: center;
@@ -334,9 +336,7 @@ body{
 
 
 /*product page3 */
-
 .page3{
-  /* background-color: red; */
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -356,14 +356,12 @@ body{
   align-items:flex-start;
   justify-content: space-between;
   padding: 28px;
-  /* background-color: rebeccapurple; */
 
 }
 
 .product-details h1{
   width: 70%;
   font-size: 7vh;
-  /* background-color: red; */
 }
 
 
@@ -384,7 +382,6 @@ body{
 .page3 .summary h4{
   font-weight: 100;
   margin-top: -30px;
-  /* background-color: rebeccapurple; */
 }
 
 .page3 .summary h4:hover{
@@ -394,7 +391,6 @@ body{
 
 
 #products{
-  /* height: 100vh; */
   width: 100%;
   display: flex;
   align-items: center;
@@ -418,13 +414,10 @@ body{
 }
 
 #ProductItems{
-  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  /* flex-wrap: nowrap; */
-  /* background-color: rebeccapurple; */
   width: 100%;
  
 }
@@ -437,13 +430,6 @@ body{
 
 }
 
-/* .child2{
-  height: 79vh;
-  width: 50%;
-  margin-bottom: 5vh;
-  opacity: 0;
-  padding: 5vw;
-} */
 
 .page3 img{
   height: 50vh;
@@ -451,6 +437,7 @@ body{
   object-fit: cover;
   object-position: center;
 }
+
 
 .page3 .child h5,h6{
   text-align: center;
@@ -464,13 +451,11 @@ body{
   text-transform: uppercase;
   font-size: 17px;
   font-weight: 100;
-  /* background-color: red; */
 }
 
 
 
 /* impacat page4  style */
-
 .page4{
   min-height: 100vh;
   width: 100%;
@@ -521,7 +506,6 @@ body{
 
 
 /* footer page5 and page6 */
-
 .page5.endpage h1{
   font-size: 5vh;
 }
@@ -532,10 +516,7 @@ body{
 }
 
 
-
-
-
-/* page6  */
+/*footer page6  */
 
 .page6{
   min-height: 20vh;
@@ -673,11 +654,6 @@ body{
     margin-left: 25vw;
     /* background-color: green; */
   }
-  
-  
-  
-  
-
 
 
 
@@ -1006,20 +982,7 @@ body{
 
 
   }
-
-  /* .page3 img{
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      object-position: center;
-      padding: 10vh;
-      background-color: red;
-      
-  } */
-
  
-  
-
 
   /* page4  */
 
@@ -1086,14 +1049,12 @@ body{
   .page6 svg{
       margin-top: -300px;
       height: 70px;
-      /* background-color: rebeccapurple; */
       opacity: 1;
   }
 
   .page6 .card1{
       margin-top: 50px;
       margin-left: -50vw;
-      /* background-color: red; */
   }
 
   .page6 .card1 h3{

@@ -1,6 +1,6 @@
 <% include ./partial/header.ejs %>
     <div class="main">
-        <!-- lending page1 -->
+        <!-- lending home page1 -->
         <div class="page1">
             <h1>CHANGE</h1>
             <h1>THE COURSE</h1>
@@ -86,7 +86,7 @@
             </div>
         </div>
 
-        <!-- product page3 -->
+        <!-- top sales product page3 -->
         <div class="page3">
             <div class="product-details">
                 <h1>WE BELIEVE IN PEOPLE, UNTIL THEY BELIEVE IN THEMSELVES AGAIN.</h1>
@@ -100,40 +100,48 @@
             </div>
 
             <div id="products">
-            <div id="ProductItems">
-                <% if (productList.length > 0) { %>
-                  <% productList.slice(0, 2).forEach(function(product) { %>
-                    <div id="child1" class="child">
-                      <a href="/product/<%= product._id %>">
-                        <img src="<%= product.pImage %>" alt="">
-                      </a>
-                      <h5><%= product.producttitle %></h5>
-                      <h6>$<%= product.pPrice %></h6>
-                    </div>
-                  <% }) %>
-                <% } else { %>
-                  <h3>Not found</h3>
-                <% } %>
-            </div>
+                <div id="ProductItems">
+                    <% if (productList.length> 0) { %>
+                        <% productList.slice(0, 2).forEach(function(product) { %>
+                            <div id="child1" class="child">
+                                <a href="/product/<%= product._id %>">
+                                    <img src="<%= product.pImage %>" alt="">
+                                </a>
+                                <h5>
+                                    <%= product.producttitle %>
+                                </h5>
+                                <h6>$<%= product.pPrice %>
+                                </h6>
+                            </div>
+                            <% }) %>
+                                <% } else { %>
+                                    <h3>Not found</h3>
+                                    <% } %>
+                </div>
 
-            
-            <div id="ProductItems2">
-                <% if (productList.length > 0) { %>
-                  <% productList.slice(2, 4).forEach(function(product) { %>
-                    <div id="child1" class="child">
-                      <a href="/product/<%= product._id %>">
-                        <img src="<%= product.pImage %>" alt="">
-                      </a>
-                      <h5><%= product.producttitle %></h5>
-                      <h6>$<%= product.pPrice %></h6>
-                    </div>
-                  <% }) %>
-                <% } else { %>
-                  <h3>Not found</h3>
-                <% } %>
+
+                <div id="ProductItems2">
+                    <% if (productList.length> 0) { %>
+                        <% productList.slice(2, 4).forEach(function(product) { %>
+                            <div id="child1" class="child">
+                                <a href="/product/<%= product._id %>">
+                                    <img src="<%= product.pImage %>" alt="">
+                                </a>
+                                <h5>
+                                    <%= product.producttitle %>
+                                </h5>
+                                <h6>$<%= product.pPrice %>
+                                </h6>
+                            </div>
+                            <% }) %>
+                                <% } else { %>
+                                    <h3>Not found</h3>
+                                    <% } %>
+                </div>
             </div>
         </div>
-        </div>
+
+
         <!-- IMPACT page4 -->
         <div class="page4">
             <div class="story">
@@ -154,6 +162,8 @@
                     alt="">
             </div>
         </div>
+
+        
         <!-- footer page5 and 6 -->
         <div class="page5">
             <div class="endpage">
@@ -229,5 +239,5 @@
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="/javascripts/script.js"></script>
-<% include ./partial/footer.ejs %>
+    <script src="/javascripts/index.js"></script>
+    <% include ./partial/footer.ejs %>

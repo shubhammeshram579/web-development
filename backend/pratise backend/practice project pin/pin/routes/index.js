@@ -2,42 +2,43 @@ var express = require('express');
 var router = express.Router();
 
 // import models
-const userModel = require("./users");
-const bespokeModel = require("./BespokeEvent");
-const groupOrderModel = require("./groupOrder");
-const donateModel = require("./donate");
-const Cart = require("./addcard");
-const Afternoon = require("./Afternoon");
-const Eveningproduct = require("./eveningProduct");
+const userModel = require(".//../models/users");
+const bespokeModel = require(".//../models/BespokeEvent");
+const groupOrderModel = require(".//../models/groupOrder");
+const donateModel = require(".//../models/donate");
+const Cart = require(".//../models/addcard");
+const Afternoon = require(".//../models/Afternoon");
+const Eveningproduct = require(".//../models/eveningProduct");
 
 // product list
-const Products = require("./product");
-
+const Products = require(".//../models/product");
 
 // order product model
-const ProductOrders = require("./ProductOrders")
+const ProductOrders = require(".//../models/ProductOrders")
 
 
 // import pass genrater
 const passport = require('passport');
 const localStrategy = require("passport-local");
 
-// razorpay
+// import razorpay
 const Razorpay = require('razorpay');
 
+// import axios
 const axios = require("axios");
 const { cpSync, copyFileSync } = require('fs');
+const product = require('.//../models/product');
 
 require('dotenv').config(); // Load environment variables
-
 passport.use(new localStrategy(userModel.authenticate()));
 
 
 
 
 
-
-/* GET home page. */
+// part 1 basic routers
+//*****************************************************************************************
+/* GET home page router */
 router.get('/', async function(req, res, next) {
   
   let productList = await Products.find({});
@@ -47,12 +48,61 @@ router.get('/', async function(req, res, next) {
 
 
 
-// menu page
+// get menu page
 router.get('/menu', function(req, res, next) {
   res.render('menu');
 });
 
 
+// stories page router
+router.get('/stories', function(req, res, next) {
+  res.render('stories');
+});
+
+
+// about page router
+router.get('/about', function(req, res, next) {
+  res.render('about');
+});
+
+
+// contact page router
+router.get('/contact', function(req, res, next) {
+  res.render('contact');
+});
+
+
+
+// donate router
+router.get('/donate', function(req, res, next) {
+  res.render('donate');
+});
+
+router.get('/donate2' ,isLoggedIn,  async function(req, res, next) {
+  const user = await userModel
+  .findOne({username:req.session.passport.user})
+  .populate("donate")
+  res.render('donate');
+});
+
+// donation amount sumbit post router
+router.post('/donate2', isLoggedIn, async function(req, res, next) {
+  const user = await userModel.findOne({username:req.session.passport.user});
+  const donatem = await donateModel.create({
+    user: user._id,
+    donate: req.body.donate,
+  });
+
+  user.donate.push(donatem._id);
+  await user.save();
+  res.redirect("/donate");
+});
+
+
+
+
+// part 2 catering page
+//*************************************************************************************
 // catering page router
 router.get('/catering', function(req, res, next) {
   res.render('catering');
@@ -64,6 +114,8 @@ router.get('/morningProduct', function(req, res, next) {
   res.render('morningProduct');
 });
 
+
+// lunch product router
 router.get('/lunch', function(req, res, next) {
   res.render('lunch');
 });
@@ -140,55 +192,8 @@ router.get('/evining/search', async (req, res) => {
 });
 
 
-
-
-
-// stories page router
-router.get('/stories', function(req, res, next) {
-  res.render('stories');
-});
-
-
-// about page router
-router.get('/about', function(req, res, next) {
-  res.render('about');
-});
-
-
-// contact page router
-router.get('/contact', function(req, res, next) {
-  res.render('contact');
-});
-
-
-
-
-// donation payment roter
-router.get('/donate', function(req, res, next) {
-  res.render('donate');
-});
-
-router.get('/donate2' ,isLoggedIn,  async function(req, res, next) {
-  const user = await userModel
-  .findOne({username:req.session.passport.user})
-  .populate("donate")
-  res.render('donate');
-});
-
-// donation amout sumbit roter post
-router.post('/donate2', isLoggedIn, async function(req, res, next) {
-  const user = await userModel.findOne({username:req.session.passport.user});
-  const donatem = await donateModel.create({
-    user: user._id,
-    donate: req.body.donate,
-  });
-
-  user.donate.push(donatem._id);
-  await user.save();
-  res.redirect("/donate");
-});
-
-
+// catrering header navabar router
+//*****************************************************
 // bespokeEvent page 
 router.get('/bespoke' ,isLoggedIn,  async function(req, res, next) {
   const user = await userModel
@@ -253,7 +258,8 @@ router.post('/group-order', isLoggedIn, async function(req, res, next) {
 
 
 
-// product functionlity setup
+//part 3 product pages
+//*******************************************************************************************************
 // shop product list router
 router.get('/shop', async function(req, res, next) {
   let productList = await Products.find({});
@@ -262,7 +268,7 @@ router.get('/shop', async function(req, res, next) {
 });
 
 
-// product page 
+// get product by id 
 router.get('/product/:_id',async function(req, res, next) {
   let _id = req.params;
   let getProduct = await Products.findById(_id)
@@ -313,7 +319,7 @@ router.post('/update-quantity/:id', isLoggedIn, async (req, res) => {
 
 
 
-// Route to add a product to the cart
+// add to card router by id
 router.post('/add-to-cart/:productId', isLoggedIn, async (req, res) => {
   const { productId } = req.params;
   const { quantity } = req.body; // Get the quantity from the form
@@ -354,7 +360,7 @@ router.post('/add-to-cart/:productId', isLoggedIn, async (req, res) => {
 
 
 
-// Route to delete a product from the cart
+// delete add to card router 
 router.post('/delete-from-cart/:productId', async (req, res) => {
   const { productId } = req.params;
   const user = await userModel.findOne({ username: req.session.passport.user });
@@ -382,7 +388,7 @@ router.post('/delete-from-cart/:productId', async (req, res) => {
 
 
 
-// Route to display products and the current user's cart
+// display products from the current user's cart router
 router.get('/add-to-cart',isLoggedIn, async (req, res) => {
   const user = await userModel.findOne({username:req.session.passport.user});
   const userId = user._id; // Get the current logged-in user's ID
@@ -420,7 +426,7 @@ router.get('/add-to-cart2',isLoggedIn, async (req, res) => {
 
 
 
-// updatedAddress user
+// user updatedAddress on add to card page
 router.post("/add-to-cart2", isLoggedIn,async function (req, res, next) {
   try {
     let { address, country, state, postcode, phone_number } = req.body;
@@ -463,9 +469,8 @@ router.post("/add-to-cart2", isLoggedIn,async function (req, res, next) {
 
 
 
-
-
-
+// part 4 payment intergration 
+//********************************************************************************************************
 // Razorpay instance payment intergration
 const razorpay = new Razorpay({
   key_id: process.env.YOUR_RAZORPAY_KEY_ID ,// Replace with your key_id
@@ -520,16 +525,6 @@ router.post('/create/order',isLoggedIn, async (req, res) => {
   const formattedProductDetails = typeof productDetails === 'string' 
   ? productDetails 
   : JSON.stringify(productDetails);
-
-
-  //  // Parse the productDetails from the string, if necessary
-  //  let parsedProductDetails;
-  //  try {
-  //      parsedProductDetails = JSON.parse(productDetails); // Parse stringified product details
-  //  } catch (error) {
-  //      console.error("Error parsing product details:", error);
-  //      return res.status(400).json({ status: "failed", message: "Invalid product details format" });
-  //  }
 
   const options = {
       amount: amount,  // Amount in paise
@@ -677,12 +672,15 @@ router.post('/verify',isLoggedIn, async (req, res) => {
 });
 
 
-
-// user register page
-router.get('/log-register', function(req, res, next) {
-  res.render('loregiter');
+// part 5 user register ,login , logout routers 
+//*************************************************************************************************
+// login user router
+router.get('/login-user', function(req, res, next) {
+  res.render('loginUser');
 });
 
+
+// user register router
 router.get('/register', function(req, res, next) {
   res.render('register');
 });
@@ -740,7 +738,7 @@ function isLoggedIn(req, res, next){
     return next();
   }
   req.flash("error", "Please login first.");
-  res.redirect("/log-register");
+  res.redirect("/login-user");
 }
 
 

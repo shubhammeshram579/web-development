@@ -1,6 +1,8 @@
 <% include ./partial/header.ejs %>
     <link rel="stylesheet" href="/stylesheets/menu.css">
     <div class="menu">
+
+        <!-- contact link page -->
         <div class="contenercardx">
             <div class="cardx">
                 <h3>CONNECT WITH US</h3>
@@ -32,10 +34,10 @@
             </div>
         </div>
         <div class="bar">
+            <!-- menu bar -->
             <div class="card">
                     <a href="/shop">shop</a>
                     <a href="/catering">catering<i class="ri-arrow-right-up-line"></i></a>
-                    <!-- <a href="/">impact</a> -->
                     <a href="/stories">stories</a>
                     <a href="/about">about</a>
                     <a href="/contact">Contact</a>
@@ -60,12 +62,14 @@
     </div>
 
     <script>
+        // dom query Selection
         let menubar = document.querySelector(".menu .bar .card");
         let mebtn = document.querySelector(".menu .bar .card .sigbtn");
         let signin = document.querySelector(".menu .bar .card2");
         let mebtn2 = document.querySelector(" .menu .bar .card2 h4");
 
 
+        // addEventListener
         mebtn.addEventListener("click",function(){
             menubar.style.opacity = 0;
             signin.style.display = "block";

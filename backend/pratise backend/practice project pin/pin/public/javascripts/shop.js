@@ -33,7 +33,7 @@ function locoMotiveScrolling(){
  locoMotiveScrolling();
 
 
-// navbar animation effect
+// navbar scroll then hide effect
  function navscrollanimation(){
     gsap.to(".nav-part1 svg", {
        transform: "translateY(-100%)",
@@ -78,7 +78,12 @@ function locoMotiveScrolling(){
  loadingani();
  
 
+
+
 // product pages aniamtion effect
+function productPageAnimation(){
+
+
  gsap.to(".page2", {
     transition: "all ease-in 0.3s",
     opacity: 1,
@@ -132,9 +137,16 @@ function locoMotiveScrolling(){
   });
 
 
+}
+
+productPageAnimation();
+
+
 
 
 // mouse cercul move effect
+
+function mouseEnderCurcleAnimation(){
   document.addEventListener("mousemove", function(dets){
     gsap.to(".curcer",{
        left: dets.x,
@@ -159,6 +171,8 @@ function locoMotiveScrolling(){
      })
   });
 
+}
 
+mouseEnderCurcleAnimation()
 
   

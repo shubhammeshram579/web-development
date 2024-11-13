@@ -33,7 +33,7 @@ function locoMotiveScrolling(){
 
 
  
-// navbar animation effect
+// navbar scroll page then hide nav items animation effect
 function navscrollanimation(){
     gsap.to(".nav-part1 svg", {
        transform: "translateY(-100%)",
