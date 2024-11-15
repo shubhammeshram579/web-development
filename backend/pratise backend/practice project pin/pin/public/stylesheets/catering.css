@@ -3,6 +3,11 @@
     padding: 0px;
 }
 
+
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     height: 100%;
     width: 100%;
@@ -11,6 +16,7 @@ body{
 }
 
 
+/* side scroller style */
 body::-webkit-scrollbar{
     display: block;
     width: 7px;
@@ -25,7 +31,7 @@ body::-webkit-scrollbar-thumb{
 
 
 
-
+/* catering home style */
 .page1{
     text-align: center;
     padding-bottom: 50px;
@@ -40,15 +46,17 @@ body::-webkit-scrollbar-thumb{
     
 }
 
+
+/* product categories list */
 .page2{
     display: flex;
     align-items: center;
     justify-content:center;
     flex-wrap:wrap;
-    /* background-color: red; */
 }
 
 
+/* each of categories procuct backround styling  */
 .page2 .card1{
     height: 350px;
     width: 450px;
@@ -109,7 +117,6 @@ body::-webkit-scrollbar-thumb{
 
 
 .page2 .card{
-    
     margin: 20px;
 }
 
@@ -132,7 +139,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 
-/* catring page resposive style */
+/* mobile resposive style */
 @media (max-width:600px) {
     .page1 img{
         height: 100px;
@@ -141,10 +148,6 @@ body::-webkit-scrollbar-thumb{
         object-position: center;
         
     }
-
-    /* .page2 h1{
-        color: yellow;
-    } */
 
     .page2 .card1{
         height: 60vw;
@@ -207,15 +210,15 @@ body::-webkit-scrollbar-thumb{
     
 }
 
-/* products details */
 
 
+
+/*catring products list style */
 .product-page{
     display: flex;
     align-items: start;
     justify-content: space-evenly;
     gap: 10px;
-    /* background-color: red; */
 
 }
 
@@ -254,17 +257,14 @@ body::-webkit-scrollbar-thumb{
     border: 1px solid rgba(128, 128, 128, 0.182);
     padding: 10px 0px 40px 10px;
     border-radius: 5px;
-    /* background-color: red; */
 }
 
 .product-page .card2 .cards .card{
     width: 65%;
-    /* background-color: red; */
    
 }
 .product-page .card2 .cards .card2{
     width: 35%;
-    /* background-color: blue; */
 }
 
 .product-page .card2 .cards h1{
@@ -295,6 +295,8 @@ body::-webkit-scrollbar-thumb{
 }
 
 
+
+/* product page mobile reponsive  */
 @media (max-width: 600px) {
 
     html,body{
@@ -303,7 +305,6 @@ body::-webkit-scrollbar-thumb{
     }
 
     body{
-        /* background-color: green; */
         overflow-x: hidden;
     }
 
@@ -311,13 +312,11 @@ body::-webkit-scrollbar-thumb{
     
 
     .product-page{
-        /* background-color: red; */
         display: flex;
         align-items: center;
         justify-content:center;
         flex-direction: column;
         width: 100%;
-        /* background-color:red; */
 
     }
 
@@ -341,7 +340,6 @@ body::-webkit-scrollbar-thumb{
         align-items: center;
         justify-content: center;
         width: 100%;
-        /* background-color: red; */
         
     }
 
@@ -356,7 +354,6 @@ body::-webkit-scrollbar-thumb{
        display: flex;
        align-items: start;
        justify-content: center;
-        /* margin-left: -50px; */
     }
 
     .product-page .card1 .nonAtag h1{
@@ -375,19 +372,16 @@ body::-webkit-scrollbar-thumb{
     .product-page .card2 .cards{
         width: 100%;
         height: auto;
-        /* background-color: red; */
     }
 
 
     .product-page .card2 .cards .card{
         width: 60%;
-        /* background-color: green; */
        
     }
 
     .product-page .card2 .cards .card h1{
         font-size: 3vw;
-        /* color:yellow */
 
     }
 

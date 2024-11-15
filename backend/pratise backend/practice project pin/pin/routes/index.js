@@ -3,19 +3,14 @@ var router = express.Router();
 
 // import models
 const userModel = require(".//../models/users");
-const bespokeModel = require(".//../models/BespokeEvent");
-const groupOrderModel = require(".//../models/groupOrder");
 const donateModel = require(".//../models/donate");
 const Cart = require(".//../models/addcard");
-const Afternoon = require(".//../models/Afternoon");
-const Eveningproduct = require(".//../models/eveningProduct");
 
 // product list
 const Products = require(".//../models/product");
 
 // order product model
 const ProductOrders = require(".//../models/ProductOrders")
-
 
 // import pass genrater
 const passport = require('passport');
@@ -26,8 +21,9 @@ const Razorpay = require('razorpay');
 
 // import axios
 const axios = require("axios");
+
+// import fill sytems
 const { cpSync, copyFileSync } = require('fs');
-const product = require('.//../models/product');
 
 require('dotenv').config(); // Load environment variables
 passport.use(new localStrategy(userModel.authenticate()));
@@ -36,11 +32,10 @@ passport.use(new localStrategy(userModel.authenticate()));
 
 
 
-// part 1 basic routers
+// home pages routers part 1
 //*****************************************************************************************
 /* GET home page router */
 router.get('/', async function(req, res, next) {
-  
   let productList = await Products.find({});
   // console.log(productList)
   res.render('index',{productList});
@@ -101,165 +96,9 @@ router.post('/donate2', isLoggedIn, async function(req, res, next) {
 
 
 
-// part 2 catering page
-//*************************************************************************************
-// catering page router
-router.get('/catering', function(req, res, next) {
-  res.render('catering');
-});
 
-
-// catering morning product router
-router.get('/morningProduct', function(req, res, next) {
-  res.render('morningProduct');
-});
-
-
-// lunch product router
-router.get('/lunch', function(req, res, next) {
-  res.render('lunch');
-});
-
-
-
-// facth catering apternoon product data from mongodb
-router.get("/Afternoon", async function(req, res) {
-  let AfternoonProduct = await Afternoon.find({});
-  res.render("Afternoon" ,{AfternoonProduct})
-})
-
-
-// API route for live search
-router.get('/Afternoon/search', async (req, res) => {
-  const query = req.query.q;
-  try {
-
-    let  afternoonProducts;
-
-    if(query){
-       // Fetch products from MongoDB matching the search query
-       afternoonProducts = await Afternoon.find({
-      name: { $regex: query, $options: 'i' }, // 'i' for case-insensitive search
-    });
-
-    }else{
-      afternoonProducts = await Afternoon.find({});
-    }
-  
-    // Return the search results as JSON
-    res.json(afternoonProducts);
-    
-
-  } catch (err) {
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
-
-
-
-
-// facth catering evening product data from mongodb
-router.get("/evining", async function(req, res) {
-  let eveningproducts = await Eveningproduct.find({});
-  res.render("eveningProduct" ,{eveningproducts})
-})
-
-
-// API route for live search
-router.get('/evining/search', async (req, res) => {
-  const query = req.query.q;
-  try {
-
-    let  eveningproducts;
-
-    if(query){
-       // Fetch products from MongoDB matching the search query
-    eveningproducts = await Eveningproduct.find({
-      name: { $regex: query, $options: 'i' }, // 'i' for case-insensitive search
-    });
-
-    }else{
-      eveningproducts = await Eveningproduct.find({});
-    }
-  
-    // Return the search results as JSON
-    res.json(eveningproducts);
-  
-
-  } catch (err) {
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
-
-
-// catrering header navabar router
-//*****************************************************
-// bespokeEvent page 
-router.get('/bespoke' ,isLoggedIn,  async function(req, res, next) {
-  const user = await userModel
-  .findOne({username:req.session.passport.user})
-  .populate("posts")
-  res.render('bespoke');
-});
-
-
-
-// get create post router for posted file store in multer folder 
-router.post('/bespoke', isLoggedIn, async function(req, res, next) {
-  const user = await userModel.findOne({username:req.session.passport.user});
-  const post = await bespokeModel.create({
-    user: user._id,
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-    email: req.body.email,
-    phonenumber: req.body.phonenumber,
-    date: req.body.date,
-    numberofgest:req.body.numberofgest,
-    address: req.body.address,
-    state: req.body.state,
-    pastcode: req.body.pastcode,
-    massage: req.body.massage,
-    checkbox: req.body.checkbox,
-  });
-
-  user.posts.push(post._id);
-  await user.save();
-  res.redirect("/catering")
-});
-
-
-
-
-// get group order catring page 
-router.get('/group-order' ,isLoggedIn,  async function(req, res, next) {
-  const user = await userModel
-  .findOne({username:req.session.passport.user})
-  .populate("gOrder")
-  res.render('groupOrder');
-});
-
-
-
-// get create post router for posted file store in multer folder 
-router.post('/group-order', isLoggedIn, async function(req, res, next) {
-  const user = await userModel.findOne({username:req.session.passport.user});
-  const orderp = await groupOrderModel.create({
-    user: user._id,
-    groupOrder: req.body.groupOrder,
-    email: req.body.email,
-  });
-
-  user.gOrder.push(orderp._id);
-  await user.save();
-  res.redirect("/catering")
-});
-
-
-
-
-
-//part 3 product pages
-//*******************************************************************************************************
+//product pages part 2
+//****************************************************************************************************
 // shop product list router
 router.get('/shop', async function(req, res, next) {
   let productList = await Products.find({});
@@ -469,7 +308,7 @@ router.post("/add-to-cart2", isLoggedIn,async function (req, res, next) {
 
 
 
-// part 4 payment intergration 
+// Razorpay instance payment intergration part 3
 //********************************************************************************************************
 // Razorpay instance payment intergration
 const razorpay = new Razorpay({
@@ -489,19 +328,19 @@ router.get('/payment',isLoggedIn ,async (req, res) => {
    const products = await Products.find(); // Get all products
     const cart = await Cart.findOne({ userId }).populate('products.productId'); // Get the current user's cart
 
-    console.log("pyament card" , cart)
+    // console.log("pyament card" , cart)
 
   // const cart = req.session.cart; // Assuming you store the cart in session
   let totalAmount = 0;
 
+  // product total amount 
   if (cart && cart.products.length > 0) {
       totalAmount = cart.products.reduce((total, cartItem) => {
           return total + (cartItem.quantity * cartItem.productId.pPrice);
       }, 0);
   }
 
-
-
+  // product Details 
   let productDetails = cart.products.map(item => ({
     productName: item.productId.producttitle,
     pImage: item.productId.pImage,
@@ -510,6 +349,7 @@ router.get('/payment',isLoggedIn ,async (req, res) => {
   }));
 
 
+  // rendering payment page
   res.render('razorpayPayment', { key: razorpay.key_id ,cart,totalAmount,user,productDetails});
 });
 
@@ -540,7 +380,7 @@ router.post('/create/order',isLoggedIn, async (req, res) => {
       }
   };
 
-  console.log("createorder option" ,options)
+  // console.log("createorder option" ,options)
 
   try {
       const order = await razorpay.orders.create(options);
@@ -571,13 +411,12 @@ router.post('/create/order',isLoggedIn, async (req, res) => {
 // });
 
 
-
+// get own order prouct detail router
 router.get("/OwnOrder",isLoggedIn ,async function(req,res){
   try {
     const user = await userModel.findOne({username:req.session.passport.user});
     const userId = user._id; // Get the current logged-in user's ID
-  
-  
+
     let orderList = await ProductOrders.find({userId:userId});
   
     if(!orderList){
@@ -592,7 +431,7 @@ router.get("/OwnOrder",isLoggedIn ,async function(req,res){
 })
 
 
-
+// oder product find by id 
 router.get("/OwnOrder/:productId",isLoggedIn ,async function(req,res){
   try {
     const {productId} = req.params;
@@ -614,6 +453,8 @@ router.get("/OwnOrder/:productId",isLoggedIn ,async function(req,res){
     
   }
 })
+
+
 
 // Route for verifying payment and saving order to the database
 router.post('/verify',isLoggedIn, async (req, res) => {
@@ -655,7 +496,7 @@ router.post('/verify',isLoggedIn, async (req, res) => {
       // Save the order in MongoDB
       await newOrder.save();
 
-      console.log("save oredr ",newOrder._id)
+      // console.log("save oredr ",newOrder._id)
 
 
       // Respond to client with success
@@ -672,17 +513,17 @@ router.post('/verify',isLoggedIn, async (req, res) => {
 });
 
 
-// part 5 user register ,login , logout routers 
+// part 4 user register ,login , logout routers 
 //*************************************************************************************************
 // login user router
 router.get('/login-user', function(req, res, next) {
-  res.render('loginUser');
+  res.render('catringPrduct/loginUser');
 });
 
 
 // user register router
 router.get('/register', function(req, res, next) {
-  res.render('register');
+  res.render('catringPrduct/register');
 });
 
 // second regiter router for databses post in mongodb databses set
@@ -740,8 +581,6 @@ function isLoggedIn(req, res, next){
   req.flash("error", "Please login first.");
   res.redirect("/login-user");
 }
-
-
 
 
 module.exports = router;

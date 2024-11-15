@@ -22,6 +22,8 @@ body::-webkit-scrollbar-thumb{
     border-radius: 50px;
 }
 
+
+/* about home page1 */
 .page1{
     /* min-height: 100vh; */
     width: 100%;
@@ -75,6 +77,8 @@ body::-webkit-scrollbar-thumb{
 }
 
 
+
+/* about video page2 */
 .page2{
     min-height: 100vh;
     width: 100%;
@@ -87,13 +91,12 @@ body::-webkit-scrollbar-thumb{
     width: 95%;
 }
 
+
+/* about who we are page3 */
 .page3{
     min-height: 140vh;
     width: 100%;
     border-bottom: 1.5px solid  #727070;
-    /* display: flex;
-    flex-direction: column;
-    align-items: start; */
     
 }
 
@@ -150,6 +153,9 @@ body::-webkit-scrollbar-thumb{
     font-size: 1vw;
 
 }
+
+
+/* mission list page4 */
 .page4{
     min-height: 100vh;
     width: 100%;
@@ -186,10 +192,6 @@ body::-webkit-scrollbar-thumb{
     font-size: 2vw;
 }
 
-/* .page4 .card:hover{
-    color: #1111115d;
-    transition: all ease 0.5s;
-} */
 
 
 .page4 .card{
@@ -236,7 +238,7 @@ body::-webkit-scrollbar-thumb{
   
   
   
-  /* page6  */
+  /* footer page6  */
   
   .page6{
     min-height: 20vh;

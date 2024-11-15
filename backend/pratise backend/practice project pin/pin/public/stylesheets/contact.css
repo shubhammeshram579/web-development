@@ -1,3 +1,5 @@
+
+/* navbar logo styling */
 .page6 svg {
     height: 27vh;
     width: 100%;
@@ -5,6 +7,8 @@
 }
 
 
+
+/* contact page2 styling */
 .page2{
     padding: 0px 20px;opacity: 0;
 }
@@ -39,13 +43,16 @@
 }
 
 
-
+/* footer logo styling */
 .page6 svg{
     height: 27vh;
     width: 100%;
     opacity: 0;
   }
 
+
+
+/* mobile responsive styling */
 @media (max-width:600px) {
 
     .page1{

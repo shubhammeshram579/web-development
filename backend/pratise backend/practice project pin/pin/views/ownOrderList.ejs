@@ -2,9 +2,11 @@
   <link rel="stylesheet" href="/stylesheets/productOrderList.css">
 
 
-  <!-- page 1 order customer order list -->
+  <!-- page1 customer order list -->
   <div class="main">
     <div class="page1"> </div>
+
+    <!-- fatch oderlist -->
     <% orders.forEach(order=> { %>
       <a style="color: #111; text-decoration: none;" href="/OwnOrder/<%= order._id %>">
         <div class="card">

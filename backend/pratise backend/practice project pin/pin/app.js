@@ -10,6 +10,7 @@ const expressSession =  require("express-session");
 const flash = require('express-flash');
 
 var indexRouter = require('./routes/index');
+var cateringRouter = require('./routes/catering');
 var usersRouter = require('./models/users');
 const passport = require('passport');
 
@@ -40,7 +41,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// router setup
 app.use('/', indexRouter);
+app.use('/', cateringRouter); //new
 app.use('/users', usersRouter);
 // app.use('/', paymentRoutes);
 
