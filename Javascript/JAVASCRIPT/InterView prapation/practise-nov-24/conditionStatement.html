@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+
+        h1{
+            text-align: center;
+            padding: 20px;
+            background-color: yellow;
+            font-size: 3vw;
+            font-weight: 500;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-transform: capitalize;
+            text-shadow: 1px 1px red;
+            word-spacing: 2px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>condition statement in javascript</h1>
+
+
+    <script>
+        // 1. what is condtional statement 
+        // def: condition statement is a set the condition object is true or false
+
+        // for example string text
+        let color = "green"
+
+        if(color === "red"){
+            console.log("currect")
+        }else{
+            console.log("incurrect")
+        }
+
+        // print greter then 10 number of range value? 
+        // for(let i = 1; i <= 20; i++){
+        //     // console.log(i)
+        //     if(i > 10){
+        //         console.log(i)
+        //     }
+        // }
+
+
+        // print less then 5 array values
+        let arr = [1,2,3,4,5,6,7,8,9,10];
+        
+        // for(let i = 0 ; i < arr.length;i++){
+        //     // console.log(arr[i])
+        //     if(arr[i] <= 5){
+        //         console.log(arr[i])
+        //     }
+        // }
+
+
+
+        // interview quetion start
+
+        // 1. Question: What is the syntax of an if statement in JavaScript ? Answer :
+
+        // if(true){
+        //     console.log("hello world")
+        // };
+
+        // 2.Question: How do you write an if-else statement in JavaScript ? Answer :
+
+
+        // let obj = "red"
+
+        // if(obj == "red"){
+        //     console.log(true)
+        // }else{
+        //     console.log(false)
+        // }
+
+
+        // 3. Question: How can you check if a number is positive, negative, or zero ? Answer :
+
+        let amt = 0; //text 1, -1 ,0
+
+        // example 1
+        // if(amt > 0){
+        //     console.log("postive value")
+        // }else if(amt < 0){
+        //     console.log("nagative value")
+        // }else{
+        //     console.log("zero")
+        // }
+
+
+        // example 2
+
+        let ob = "red";
+
+        if(ob == "green"){
+            console.log("match")
+        }else if(ob == "red"){
+            console.log("not match")
+        }else{
+            console.log("equel")
+        }
+
+        // example 3
+
+        let amt2 = 7;
+
+        if(amt2 > 5){
+            console.log("p")
+        }else if(amt2 < 5){
+            console.log("n")
+        }else{
+            console.log("e")
+        };
+
+
+
+        // 4. Question: What’s the difference between == and === in JavaScript ? Answer : == compares values after type coercion, while === compares both value and type strictly.
+
+
+        // value equel
+        let equelTo = 10;
+        // if(equelTo == 10){
+        //     console.log("match")
+        // }else{
+        //     console.log("not match")
+        // }
+
+
+
+        // key and value equel
+        // if(equelTo === 10){
+        //     console.log("match")
+        // }else{
+        //     console.log("not match")
+        // }
+
+        // 4.Question: How can you check if a value is null or undefined ? Answer :
+
+        let Nvalue = null;
+        let Uvalue = undefined;
+
+        if(Nvalue === null && Uvalue == undefined){
+            console.log(" the value is null and undifind")
+        };
+
+
+
+         // Intermediate Level
+        // 5.Question: How can you check if a number is even or odd using a conditional statement?Answer:
+
+        let even = 11;
+        if(even % 2 === 0){
+            console.log("even value")
+        }else{
+            console.log("odd value")
+        }
+
+
+        // one line code 
+        let av = even % 2 === 0 ? "even": "odd";
+        console.log(av)
+
+
+        // 7.Question: How do you use a switch statement to check the value of a variable ? Answer :
+
+
+        let Svalue = 5;
+
+        switch(Svalue){
+            case 1 :
+                console.log("value is 1")
+                break
+            case 2 :
+                console.log("value is 2")
+                break
+            default:
+                console.log("value is not found")
+        };
+
+
+        // 8. Question: How can you check if a number is within a certain range(e.g., 10 to 20) ? Answer :
+
+        let RNumner = 15;
+
+        if (RNumner >= 10 && RNumner <= 20){
+            console.log("then range of the 10 to 20")
+        }else{
+            console.log("not the range of 10 to 20 value ")
+        };
+
+
+
+        // 9.Question: How can you conditionally check if a string is non - empty ? Answer :
+
+        let Str = 'shubham';
+
+        if(Str === ''){
+            console.log("empty")
+        }else{
+            console.log("not empty")
+        }
+
+
+        let Str2 ='shubham'
+        if(Str2 && Str2.length > 0){
+            console.log("is not empty")
+        }else{
+            console.log("is empty")
+        }
+
+
+
+        
+
+    </script>
+</body>
+</html>

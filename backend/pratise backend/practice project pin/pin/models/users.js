@@ -13,6 +13,7 @@ const plm = require("passport-local-mongoose");
 mongoose.connect("mongodb://127.0.0.1:27017/awarderwebsite");
 
 
+
 // create userSchma for example in mysql table creation
 const userSchma = mongoose.Schema({
   // as i need dtype colume set up
@@ -28,12 +29,9 @@ const userSchma = mongoose.Schema({
   radio: String,
   username: String,
   password: String,
-  boards: {
-    type: Array,
-    default: []
-  },
+ 
   // create colume for connect post id
-  posts:[
+  eventPost:[
     {
     type: mongoose.Schema.Types.ObjectId,
     ref: "BespokeEvent"
@@ -53,17 +51,11 @@ const userSchma = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Cart"
   }],
-  // Afternoon:[
-  //   {
-  //     type: mongoose.Schema.Types.ObjectId,
-  //     ref: "Afternoon"
-  //   }
-  // ],
-  // Addtoproduct:[
-  //   {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: "product"
-  // }],
+
+   // boards: {
+  //   type: Array,
+  //   default: []
+  // },
 
 
 });

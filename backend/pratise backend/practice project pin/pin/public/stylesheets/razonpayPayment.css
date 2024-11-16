@@ -1,3 +1,8 @@
+
+body{
+    overflow-x: hidden;
+}
+
 #page1 {
     background-color: rgb(234, 230, 230);
     margin: 0px 15%;

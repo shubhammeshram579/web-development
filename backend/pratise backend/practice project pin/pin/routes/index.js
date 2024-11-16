@@ -32,12 +32,15 @@ passport.use(new localStrategy(userModel.authenticate()));
 
 
 
+
+
+
+
 // home pages routers part 1
 //*****************************************************************************************
 /* GET home page router */
 router.get('/', async function(req, res, next) {
   let productList = await Products.find({});
-  // console.log(productList)
   res.render('index',{productList});
 });
 
@@ -80,6 +83,8 @@ router.get('/donate2' ,isLoggedIn,  async function(req, res, next) {
   res.render('donate');
 });
 
+
+
 // donation amount sumbit post router
 router.post('/donate2', isLoggedIn, async function(req, res, next) {
   const user = await userModel.findOne({username:req.session.passport.user});
@@ -92,7 +97,6 @@ router.post('/donate2', isLoggedIn, async function(req, res, next) {
   await user.save();
   res.redirect("/donate");
 });
-
 
 
 
@@ -111,7 +115,6 @@ router.get('/shop', async function(req, res, next) {
 router.get('/product/:_id',async function(req, res, next) {
   let _id = req.params;
   let getProduct = await Products.findById(_id)
-  // console.log("getProduct id",getProduct._id)
   res.render('product',{getProduct});
 });
 
@@ -167,6 +170,8 @@ router.post('/add-to-cart/:productId', isLoggedIn, async (req, res) => {
   try {
     let cart = await Cart.findOne({ userId: user._id });
 
+ 
+
     // If the cart does not exist for the current user, create a new one
     if (!cart) {
       cart = new Cart({
@@ -188,6 +193,12 @@ router.post('/add-to-cart/:productId', isLoggedIn, async (req, res) => {
 
     // Save the cart
     await cart.save();
+
+    // Add the cart ID to the user's `addcard` field
+    user.addcard.push(cart._id);
+    await user.save();
+
+    // console.log("card" ,cart)
 
     // Redirect to the cart page
     res.redirect(`/add-to-cart`);
