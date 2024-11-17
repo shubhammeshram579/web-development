@@ -6,11 +6,17 @@
 const mongoose = require("mongoose");
 const passport = require("passport");
 
+require('dotenv').config(); // Load environment variables
 // import passport local mongoose
 const plm = require("passport-local-mongoose");
 
-// connect with mongodb server and create new databases like name is pin
-mongoose.connect("mongodb://127.0.0.1:27017/awarderwebsite");
+
+// mongodb local server
+mongoose.connect(process.env.MONGODB_LOCAL_SERVER);
+
+// mongodb cloud server
+// mongoose.connect(process.env.MONGODB_CLOUD_SERVER);
+
 
 
 

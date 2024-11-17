@@ -106,7 +106,7 @@ router.get("/Afternoon", async function(req, res) {
   router.get('/bespoke' ,isLoggedIn,  async function(req, res, next) {
     const user = await userModel
     .findOne({username:req.session.passport.user})
-    .populate("posts")
+    .populate("eventPost")
     res.render('catringPrduct/bespoke');
   });
   
@@ -130,7 +130,7 @@ router.get("/Afternoon", async function(req, res) {
       checkbox: req.body.checkbox,
     });
   
-    user.posts.push(post._id);
+    user.eventPost.push(post._id);
     await user.save();
     res.redirect("/catering")
   });
