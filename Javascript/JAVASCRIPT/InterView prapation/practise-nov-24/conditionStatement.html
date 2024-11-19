@@ -173,6 +173,16 @@
         let av = even % 2 === 0 ? "even": "odd";
         console.log(av)
 
+        // practice
+        let botel = 7;
+
+        if(botel % 2 == 0){
+            console.log("botel even")
+
+        }else{
+            console.log("botel odd")
+        }
+
 
         // 7.Question: How do you use a switch statement to check the value of a variable ? Answer :
 
@@ -191,6 +201,25 @@
         };
 
 
+        // practise
+
+        let fruit = "banana";
+
+        switch(fruit){
+            case "banana":
+            case "apple":
+                console.log("fruit")
+                break
+            case "lemen":
+            case "onien":
+                console.log("vegetable")
+                break
+            default:
+                console.log("other items")
+                break
+        }
+
+
         // 8. Question: How can you check if a number is within a certain range(e.g., 10 to 20) ? Answer :
 
         let RNumner = 15;
@@ -200,6 +229,32 @@
         }else{
             console.log("not the range of 10 to 20 value ")
         };
+
+        // practise
+
+        let Rnumber2 = 86;
+
+        if(Rnumber2 >= 60 && Rnumber2 <= 70){
+            console.log("range of number 60 to 70")
+        }else if(Rnumber2 >= 80 && Rnumber2 <= 90){
+            console.log("range of num 80 to 90")
+        }else{
+            console.log("other range of number")
+        }
+
+
+        // alrt message 
+
+        // let time = prompt("time of range: ");
+
+        // if(time > 5 && time < 12){
+        //     alert("good morning")
+        // }else if(time > 12 && time < 16){
+        //     alert("good afrernoon")
+        // }else{
+          
+        //     alert("good evening")
+        // }
 
 
 
@@ -219,7 +274,198 @@
             console.log("is not empty")
         }else{
             console.log("is empty")
+        };
+
+
+        // practise
+
+
+        // eaxmple 1
+
+        let isSTR = 'shubham';
+
+        if(isSTR.length == ''){
+            console.log("is empty")
+        }else{
+            console.log("not empty")
         }
+
+
+
+        // example 2
+
+        let isNum = "labham";
+
+        if(isNum && isNum.length > 0){
+            console.log("not empty")
+        }else{
+            console.log("is empty")
+        };
+
+
+        // 10. Question: How can you use a switch statement with a default case that handles multiple values ? Answer :
+
+
+
+        let veg = "potato";
+
+        switch(veg){
+            case "potato":
+            case "tomato":
+                console.log("vegetable")
+                break
+            case "banana":
+            case "orage":
+                console.log("fruit")
+                break
+            default:
+                console.log("other items")
+        };
+
+
+
+
+        // 11. Question: How can you use a conditional(ternary) operator to assign a default value if a variable is undefined ? Answer :
+
+        let Pname;
+
+        let res = Pname !== undefined ? Pname: "default value";
+
+        console.log(res);
+
+
+
+        let Pname2 = 23;
+
+        let res2 = Pname2 !== undefined ? Pname2: "default value";
+
+        console.log(res2);
+
+
+
+
+        // my own quetion problems: how to find undefind value in array and update undifind value 
+        let arrV = [23, 45,66, undefined, 44,77, undefined];
+
+
+        // find undefined values
+        // arrV.forEach(function(i){
+        //     // console.log(i)
+        //     if(i == undefined){
+        //         console.log(i)
+        //     }
+        // });
+
+        // find withoud undefined value
+
+        // arrV.forEach(function(i){
+        //     // console.log(i)
+        //     if(i !== undefined){
+        //         console.log(i)
+        //     }
+        // });
+
+
+        // also use filter function to find not undefined
+        // arrV.filter(function(i){
+        //     if(i === undefined){
+        //         console.log(i)
+        //     }
+        // });
+
+
+
+        // i try to updated undifned value using filter fuction but not working becouse filter fuction stucture is only find value not updated 
+        // let storN = arrV.filter(function(i){
+        //     if(i === undefined){
+        //         // console.log(i)
+        //         return 95;
+        //     }else{
+        //         return i
+        //     }
+        // });
+
+        // console.log(storN)
+
+
+
+        // updated undifind value using map function
+        let newV = arrV.map(function(i){
+            // console.log(i)
+            if(i === undefined){
+                return 90;
+            }else{
+                return i
+            }
+        })
+
+        // console.log(newV)
+
+
+        // 12.Question: How can you use && (logical AND) to conditionally execute code if two conditions are true ? Answer :
+
+
+        let cad = 0;
+        let cad2 = 0;
+
+        if(cad === 0 && cad2 === 0){
+            console.log("both are statment are match")
+        };
+
+
+        // 13.Question: How can you use || (logical OR) to assign a fallback value if a condition is false ? Answer :
+
+
+        let userName = "shubham";
+        let otherUser = userName || "other user"
+
+        console.log(otherUser);
+
+         // 14.Question: How can you use a nested if statement to check multiple conditions inside a loop ? Answer :
+
+
+        //  for(let i = 1; i <=20; i++){
+        //     // console.log(i)
+        //     if(i > 5 && i < 10){
+        //         console.log(`greter then 5 and less 10 ${i}`)
+        //     }else if(i > 11 && i < 15){
+        //         console.log(`greter then 11 and less 15 ${i}`)
+
+        //     }else{
+        //         console.log("other value")
+        //     }
+        //  };
+
+
+        //  for (let i = 0; i < 10; i++) {
+        //     if (i % 2 === 0) {
+        //         if (i > 5) {
+        //             console.log(`${i} is even and greater than 5`)
+        //         } else {
+        //             console.log(`${i} is even and less than or equal to 5`)
+        //         }
+        //     }
+        // };
+
+
+        for (let i = 1; i < 20; i++) {
+        if (i % 2 === 0) { // Check if 'i' is even
+        if (i > 10) { 
+            console.log(`${i} if it is greater than 10`); // Print 'i' if it is greater than 10
+        } else {
+            console.log(`${i} if it is less than or equal to 10`); // Print 'i' if it is less than or equal to 10
+        }
+        }
+        };
+
+
+
+         // 15.Question: How do you use a ternary operator to check if a value is null and assign a fallback value ? Answer :
+
+         let ageV;
+         let RNull = ageV === null ? ageV : "not value provide";
+
+         console.log(RNull)
 
 
 

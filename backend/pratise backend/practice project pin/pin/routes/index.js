@@ -1,6 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
+// import database
+const connectDB  = require("../db/connectDB.js");
+
+// Connect to MongoDB
+connectDB()
+
 // import models
 const userModel = require(".//../models/users");
 const donateModel = require(".//../models/donate");
@@ -27,7 +33,6 @@ const { cpSync, copyFileSync } = require('fs');
 
 require('dotenv').config(); // Load environment variables
 passport.use(new localStrategy(userModel.authenticate()));
-
 
 
 
@@ -592,6 +597,5 @@ function isLoggedIn(req, res, next){
   req.flash("error", "Please login first.");
   res.redirect("/login-user");
 }
-
 
 module.exports = router;
