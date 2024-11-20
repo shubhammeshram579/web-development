@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
         }
 
-        html,body{
+        html,
+        body {
             height: 100%;
             width: 100%;
         }
 
-        h1{
+        h1 {
             text-align: center;
             padding: 20px;
             background-color: yellow;
             font-size: 3vw;
             font-weight: 500;
-            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             text-transform: capitalize;
             text-shadow: 1px 1px red;
             word-spacing: 2px;
@@ -29,6 +31,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>condition statement in javascript</h1>
 
@@ -40,9 +43,9 @@
         // for example string text
         let color = "green"
 
-        if(color === "red"){
+        if (color === "red") {
             console.log("currect")
-        }else{
+        } else {
             console.log("incurrect")
         }
 
@@ -56,8 +59,8 @@
 
 
         // print less then 5 array values
-        let arr = [1,2,3,4,5,6,7,8,9,10];
-        
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
         // for(let i = 0 ; i < arr.length;i++){
         //     // console.log(arr[i])
         //     if(arr[i] <= 5){
@@ -105,11 +108,11 @@
 
         let ob = "red";
 
-        if(ob == "green"){
+        if (ob == "green") {
             console.log("match")
-        }else if(ob == "red"){
+        } else if (ob == "red") {
             console.log("not match")
-        }else{
+        } else {
             console.log("equel")
         }
 
@@ -117,12 +120,24 @@
 
         let amt2 = 7;
 
-        if(amt2 > 5){
+        if (amt2 > 5) {
             console.log("p")
-        }else if(amt2 < 5){
+        } else if (amt2 < 5) {
             console.log("n")
-        }else{
+        } else {
             console.log("e")
+        };
+
+
+        // practise
+        let qty = 0;
+
+        if (qty > 0) {
+            console.log("positive qty")
+        } else if (qty < 0) {
+            console.log("nagative qty")
+        } else {
+            console.log("zero qty")
         };
 
 
@@ -152,36 +167,60 @@
         let Nvalue = null;
         let Uvalue = undefined;
 
-        if(Nvalue === null && Uvalue == undefined){
+        if (Nvalue === null && Uvalue == undefined) {
             console.log(" the value is null and undifind")
         };
 
 
 
-         // Intermediate Level
+        // practise 
+
+        let nq = null;
+        let nq2 = undefined;
+
+        let findNU = () => {
+            if (nq === null && nq2 === undefined) {
+                return "both are trues"
+            }
+
+        }
+        console.log(findNU());
+
+
+
+        // Intermediate Level
         // 5.Question: How can you check if a number is even or odd using a conditional statement?Answer:
 
         let even = 11;
-        if(even % 2 === 0){
+        if (even % 2 === 0) {
             console.log("even value")
-        }else{
+        } else {
             console.log("odd value")
         }
 
 
         // one line code 
-        let av = even % 2 === 0 ? "even": "odd";
+        let av = even % 2 === 0 ? "even" : "odd";
         console.log(av)
 
         // practice
         let botel = 7;
 
-        if(botel % 2 == 0){
+        if (botel % 2 == 0) {
             console.log("botel even")
 
-        }else{
+        } else {
             console.log("botel odd")
         }
+
+
+
+        // practise 2
+        let valueF = 11;
+
+        let reSt = valueF % 2 === 0 ? "even" : "odd";
+        console.log(reSt)
+
 
 
         // 7.Question: How do you use a switch statement to check the value of a variable ? Answer :
@@ -189,11 +228,11 @@
 
         let Svalue = 5;
 
-        switch(Svalue){
-            case 1 :
+        switch (Svalue) {
+            case 1:
                 console.log("value is 1")
                 break
-            case 2 :
+            case 2:
                 console.log("value is 2")
                 break
             default:
@@ -205,7 +244,7 @@
 
         let fruit = "banana";
 
-        switch(fruit){
+        switch (fruit) {
             case "banana":
             case "apple":
                 console.log("fruit")
@@ -217,16 +256,38 @@
             default:
                 console.log("other items")
                 break
-        }
+        };
+
+
+        // practise 
+
+        let items = "joy";
+
+        switch (items) {
+            case "oil":
+            case "parasute oil":
+                console.log("this is oils")
+                break
+            case "joy":
+            case "vasling body lotion":
+                console.log("body lotion")
+                break
+            case "headphone":
+            case "hearphone":
+                console.log("electronic items")
+                break
+            default:
+                console.log("other items")
+        };
 
 
         // 8. Question: How can you check if a number is within a certain range(e.g., 10 to 20) ? Answer :
 
         let RNumner = 15;
 
-        if (RNumner >= 10 && RNumner <= 20){
+        if (RNumner >= 10 && RNumner <= 20) {
             console.log("then range of the 10 to 20")
-        }else{
+        } else {
             console.log("not the range of 10 to 20 value ")
         };
 
@@ -234,11 +295,11 @@
 
         let Rnumber2 = 86;
 
-        if(Rnumber2 >= 60 && Rnumber2 <= 70){
+        if (Rnumber2 >= 60 && Rnumber2 <= 70) {
             console.log("range of number 60 to 70")
-        }else if(Rnumber2 >= 80 && Rnumber2 <= 90){
+        } else if (Rnumber2 >= 80 && Rnumber2 <= 90) {
             console.log("range of num 80 to 90")
-        }else{
+        } else {
             console.log("other range of number")
         }
 
@@ -252,9 +313,20 @@
         // }else if(time > 12 && time < 16){
         //     alert("good afrernoon")
         // }else{
-          
+
         //     alert("good evening")
         // }
+
+        // practise 2
+
+        let joyQty = 15;
+
+        if (joyQty > 10 && joyQty < 20) {
+            console.log("the joy qty is 10 to 20")
+        } else {
+            console.log("out of the rarge qty")
+        };
+
 
 
 
@@ -262,17 +334,17 @@
 
         let Str = 'shubham';
 
-        if(Str === ''){
+        if (Str === '') {
             console.log("empty")
-        }else{
+        } else {
             console.log("not empty")
         }
 
 
-        let Str2 ='shubham'
-        if(Str2 && Str2.length > 0){
+        let Str2 = 'shubham'
+        if (Str2 && Str2.length > 0) {
             console.log("is not empty")
-        }else{
+        } else {
             console.log("is empty")
         };
 
@@ -284,11 +356,11 @@
 
         let isSTR = 'shubham';
 
-        if(isSTR.length == ''){
+        if (isSTR.length == '') {
             console.log("is empty")
-        }else{
+        } else {
             console.log("not empty")
-        }
+        };
 
 
 
@@ -296,11 +368,26 @@
 
         let isNum = "labham";
 
-        if(isNum && isNum.length > 0){
+        if (isNum && isNum.length > 0) {
             console.log("not empty")
-        }else{
+        } else {
             console.log("is empty")
         };
+
+        // practise2
+
+        let isEmpty = "qube";
+
+        // first way normal if conditinal statement
+        if (isEmpty.length > 0) {
+            console.log("qube is not empty");
+        } else {
+            console.log("qube is Empty")
+        };
+
+        // second way tennery statement
+        let cubeR = isEmpty.length > 0 ? "qube2 is not empty" : "qube2 is empty";
+        console.log(cubeR)
 
 
         // 10. Question: How can you use a switch statement with a default case that handles multiple values ? Answer :
@@ -309,7 +396,7 @@
 
         let veg = "potato";
 
-        switch(veg){
+        switch (veg) {
             case "potato":
             case "tomato":
                 console.log("vegetable")
@@ -329,7 +416,7 @@
 
         let Pname;
 
-        let res = Pname !== undefined ? Pname: "default value";
+        let res = Pname !== undefined ? Pname : "default value";
 
         console.log(res);
 
@@ -337,7 +424,7 @@
 
         let Pname2 = 23;
 
-        let res2 = Pname2 !== undefined ? Pname2: "default value";
+        let res2 = Pname2 !== undefined ? Pname2 : "default value";
 
         console.log(res2);
 
@@ -345,7 +432,7 @@
 
 
         // my own quetion problems: how to find undefind value in array and update undifind value 
-        let arrV = [23, 45,66, undefined, 44,77, undefined];
+        let arrV = [23, 45, 66, undefined, 44, 77, undefined];
 
 
         // find undefined values
@@ -390,11 +477,11 @@
 
 
         // updated undifind value using map function
-        let newV = arrV.map(function(i){
+        let newV = arrV.map(function (i) {
             // console.log(i)
-            if(i === undefined){
+            if (i === undefined) {
                 return 90;
-            }else{
+            } else {
                 return i
             }
         })
@@ -408,9 +495,34 @@
         let cad = 0;
         let cad2 = 0;
 
-        if(cad === 0 && cad2 === 0){
+        if (cad === 0 && cad2 === 0) {
             console.log("both are statment are match")
         };
+
+
+        // pratise 
+        let mouse = 10;
+        let keybord = 15;
+
+        if (mouse === 10 && keybord === 15) {
+            console.log("both qty is match")
+        };
+
+        // tenttery way
+        let electronc = mouse === 10 && keybord === 15 ? "match" : "not match";
+        console.log(electronc);
+
+
+        // return function used 
+        let BothM = () => {
+            if (mouse === 10 && keybord === 15) {
+                return "acurate match"
+            } else {
+                return "not match"
+            }
+        }
+
+        console.log(BothM());
 
 
         // 13.Question: How can you use || (logical OR) to assign a fallback value if a condition is false ? Answer :
@@ -421,7 +533,7 @@
 
         console.log(otherUser);
 
-         // 14.Question: How can you use a nested if statement to check multiple conditions inside a loop ? Answer :
+        // 14.Question: How can you use a nested if statement to check multiple conditions inside a loop ? Answer :
 
 
         //  for(let i = 1; i <=20; i++){
@@ -449,28 +561,126 @@
 
 
         for (let i = 1; i < 20; i++) {
-        if (i % 2 === 0) { // Check if 'i' is even
-        if (i > 10) { 
-            console.log(`${i} if it is greater than 10`); // Print 'i' if it is greater than 10
-        } else {
-            console.log(`${i} if it is less than or equal to 10`); // Print 'i' if it is less than or equal to 10
-        }
-        }
+            if (i % 2 === 0) { // Check if 'i' is even
+                if (i > 10) {
+                    console.log(`${i} if it is greater than 10`); // Print 'i' if it is greater than 10
+                } else {
+                    console.log(`${i} if it is less than or equal to 10`); // Print 'i' if it is less than or equal to 10
+                }
+            }
         };
 
 
 
-         // 15.Question: How do you use a ternary operator to check if a value is null and assign a fallback value ? Answer :
+        // 15.Question: How do you use a ternary operator to check if a value is null and assign a fallback value ? Answer :
 
-         let ageV;
-         let RNull = ageV === null ? ageV : "not value provide";
+        let ageV;
+        let RNull = ageV === null ? ageV : "not value provide";
 
-         console.log(RNull)
+        console.log(RNull);
+
+        //  practise
+
+        let joyB;
+
+        // let joyR = joyB == null ? joyB : "not value";
+
+        // console.log(joyR)
 
 
 
-        
+        // let joyB2;
+        // // let joyB3;
+        // if(joyB2 === null){
+        //     console.log("not value inisilation")
+        // }else if(joyB2 !== null){
+        //     console.log(joyB2)
+        // }else{
+        //     console.log("not defind")
+        // }
+
+
+
+        // 16.Question: How do you use conditional statements to determine the largest of three numbers ? Answer :
+
+        let num1 = 10; num2 = 15; num3 = 20;
+
+        // console.log(num1,num2,num3)
+
+        if (num1 > num2 && num1 > num3) {
+            console.log("num1 is largest")
+        } else if (num2 > num1 && num2 > num3) {
+            console.log("num2 largest")
+        } else {
+            console.log("num3 is the largest")
+        }
+
+
+        // 17.Question: How can you use an if-else chain to handle multiple conditions ? Answer :
+
+        let cont = false;
+        let cont2 = true;
+        if (cont) {
+            console.log("condition 1 is true")
+        } else if (cont2) {
+            console.log("condition 2 is true")
+        } else {
+            console.log("Neither condition is true")
+        }
+
+        // my own 
+        let mobile = 10;
+        let mobile2 = 20;
+
+        if (mobile === 10) {
+            console.log("it is true statement1")
+        } else if (mobile2 === 20) {
+            console.log("it is true statement2")
+        } else {
+            console.log("mostly true statement")
+        }
+
+
+        // 18.Question: How can you write an if statement that checks for both a truthy value and a specific condition ? Answer :
+
+        let user = true;
+        let user2 = false;
+
+        if(user2){
+            console.log("user is active")
+        }else{
+            console.log("user is not active")
+        }
+
+        // 19.Question: How can you use a switch statement to handle different operations based on an operator ? Answer :
+
+        let nV = 10;
+        let nv2 = 20;
+        let operator = "*";
+        let Sres = []
+
+        switch(operator){
+            case "+":
+                Sres = nV + nv2
+                break
+            case "-":
+                Sres = nV - nv2
+                break
+            case "*":
+                Sres = nV * nv2
+                break
+            default:
+                console.log("other values")
+        }
+
+        console.log(Sres);
+
+
+
+
+
 
     </script>
 </body>
+
 </html>
