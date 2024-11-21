@@ -49,7 +49,7 @@ body::-webkit-scrollbar-thumb{
 
 .page2 .card1{
     height: 350px;
-   width: 450px;
+    width: 450px;
     background-image: url(https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/5aec660f8f6c4177a532fe4a4cbe693d_540w.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -57,7 +57,7 @@ body::-webkit-scrollbar-thumb{
 }
 .page2 .card2{
     height: 350px;
-   width: 450px;
+    width: 450px;
     background-image: url(https://az727718.vo.msecnd.net/c34bf49efec4419a808454d753e542b5/images/9fbbbd3f736345a790d8d90185d7e4f7_540w.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -99,7 +99,6 @@ body::-webkit-scrollbar-thumb{
 
 
 .page2 .card{
-    
     margin: 20px;
 }
 
@@ -159,6 +158,24 @@ body::-webkit-scrollbar-thumb{
 
 
 
+/* altet massage donation succefully add*/
+.Alertmassage{
+    text-transform: capitalize;
+    font-size: 1.5vw;
+    color:#fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 999;
+    padding-bottom: 50px;
+     
+  }
+
+
+
+
 
 
 
@@ -178,6 +195,10 @@ body::-webkit-scrollbar-thumb{
         border-radius: 20px;
         
     }
+
+    .Alertmassage{
+        font-size: 4vw;
+      }
 
     
 }

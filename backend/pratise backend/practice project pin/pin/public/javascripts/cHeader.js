@@ -1,3 +1,13 @@
+
+// page load
+window.addEventListener('load', () => {
+  document.getElementById('preloader').style.opacity = '0';
+  setTimeout(() => document.getElementById('preloader').remove(), 500);
+  document.body.classList.add('loaded');
+});
+
+
+
 // querySelector for function butten
 let sebtn1 = document.querySelector(".navbar .part2 .fa-magnifying-glass");
 let sebtn2 = document.querySelector("#searbtn2");

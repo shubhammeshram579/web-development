@@ -92,15 +92,24 @@ router.get('/donate2' ,isLoggedIn,  async function(req, res, next) {
 
 // donation amount sumbit post router
 router.post('/donate2', isLoggedIn, async function(req, res, next) {
-  const user = await userModel.findOne({username:req.session.passport.user});
-  const donatem = await donateModel.create({
-    user: user._id,
-    donate: req.body.donate,
-  });
+  try {
+    const user = await userModel.findOne({username:req.session.passport.user});
+    const donatem = await donateModel.create({
+      user: user._id,
+      donate: req.body.donate,
+    });
+  
+    user.donate.push(donatem._id);
+    await user.save();
 
-  user.donate.push(donatem._id);
-  await user.save();
-  res.redirect("/donate");
+    req.flash('success', 'Donation successfully added!');
+    res.redirect("/donate");
+
+  } catch (error) {
+    req.flash('error', 'An error occurred while processing your donation.');
+    res.redirect('/donate');
+    
+  }
 });
 
 
@@ -564,7 +573,7 @@ router.post('/register', function(req, res, next) {
   userModel.register(userdata,req.body.password)
   .then(function(){
     passport.authenticate("local")(req, res,function(){
-      res.redirect("/catering")
+      res.redirect("/login-user")
     })
   });
 

@@ -236,11 +236,33 @@ body{
   border-radius: 30px;
 }
 
+
+
+/* altet massage donation succefully add*/
+.Alertmassage{
+  font-size: 1vw;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 999;
+  margin-top: 100px;
+   
+}
+
+
+
+
+
+
 @media (max-width:600px) {
 
   body{
     overflow: scroll;
   }
+
   .menu{
     min-height: 117vh;
     width: 100%;
@@ -311,6 +333,14 @@ body{
   }
   .menu .contenercardx li{
     font-size: 3vw;
+  }
+
+  #donate{
+    font-size: 5vw;
+  }
+
+  .Alertmassage{
+    font-size: 4vw;
   }
   
 }

@@ -8,6 +8,7 @@ var logger = require('morgan');
 // import expressSesion for save purpus this i don't no what is meaning but i will find out
 const expressSession =  require("express-session");
 const flash = require('express-flash');
+const compression = require('compression');
 
 var indexRouter = require('./routes/index');
 var cateringRouter = require('./routes/catering');
@@ -16,6 +17,7 @@ const passport = require('passport');
 
 var app = express();
 app.use(flash());
+app.use(compression());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,6 +29,14 @@ app.use(expressSession({
   saveUninitialized: true,
   secret: "hi helo hi"
 }));
+
+
+// Middleware to make flash messages available in templates
+app.use((req, res, next) => {
+  res.locals.successMessage = req.flash('success');
+  res.locals.errorMessage = req.flash('error');
+  next();
+});
 
 // used passport for set up password security purpurs
 app.use(passport.initialize());

@@ -87,6 +87,11 @@ body{
 
 }
 
+#paymentBtn:hover{
+    background-color: rgb(15, 141, 105);
+    color: #fff;
+}
+
 
 strong {
     text-transform: capitalize;

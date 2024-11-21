@@ -114,25 +114,33 @@ router.get("/Afternoon", async function(req, res) {
   
   // get create post router for posted file store in multer folder 
   router.post('/bespoke', isLoggedIn, async function(req, res, next) {
-    const user = await userModel.findOne({username:req.session.passport.user});
-    const post = await bespokeModel.create({
-      user: user._id,
-      firstname: req.body.firstname,
-      lastname: req.body.lastname,
-      email: req.body.email,
-      phonenumber: req.body.phonenumber,
-      date: req.body.date,
-      numberofgest:req.body.numberofgest,
-      address: req.body.address,
-      state: req.body.state,
-      pastcode: req.body.pastcode,
-      massage: req.body.massage,
-      checkbox: req.body.checkbox,
-    });
-  
-    user.eventPost.push(post._id);
-    await user.save();
-    res.redirect("/catering")
+    try {
+      const user = await userModel.findOne({username:req.session.passport.user});
+      const post = await bespokeModel.create({
+        user: user._id,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        phonenumber: req.body.phonenumber,
+        date: req.body.date,
+        numberofgest:req.body.numberofgest,
+        address: req.body.address,
+        state: req.body.state,
+        pastcode: req.body.pastcode,
+        massage: req.body.massage,
+        checkbox: req.body.checkbox,
+      });
+    
+      user.eventPost.push(post._id);
+      await user.save();
+
+      req.flash('success', 'successfully added!');
+      res.redirect("/bespoke")
+    } catch (error) {
+      req.flash('error', 'An error occurred while processing your event.');
+      res.redirect('/bespoke');
+      
+    }
   });
   
   
@@ -150,16 +158,24 @@ router.get("/Afternoon", async function(req, res) {
   
   // get create post router for posted file store in multer folder 
   router.post('/group-order', isLoggedIn, async function(req, res, next) {
-    const user = await userModel.findOne({username:req.session.passport.user});
-    const orderp = await groupOrderModel.create({
-      user: user._id,
-      groupOrder: req.body.groupOrder,
-      email: req.body.email,
-    });
-  
-    user.gOrder.push(orderp._id);
-    await user.save();
-    res.redirect("/catering")
+    try {
+      const user = await userModel.findOne({username:req.session.passport.user});
+      const orderp = await groupOrderModel.create({
+        user: user._id,
+        groupOrder: req.body.groupOrder,
+        email: req.body.email,
+      });
+    
+      user.gOrder.push(orderp._id);
+      await user.save();
+
+      req.flash('success', 'successfully added!');
+      res.redirect("/group-order")
+    } catch (error) {
+      req.flash('error', 'An error occurred while processing your groups.');
+      res.redirect('/group-order');
+      
+    }
   });
 
 

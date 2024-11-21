@@ -94,7 +94,8 @@ body{
 }
 
 #State {
-    width: 18%;
+    width: 30%;
+    
 }
 
 #countery {
@@ -250,6 +251,11 @@ h1 {
 
 #paymentbtn2{
     display: none;
+}
+
+#paymentbtnLink:hover{
+    background-color: rgb(15, 141, 105);
+    color: #fff;
 }
 
 .page2 .formContainer label{
