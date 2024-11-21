@@ -25,11 +25,16 @@
 
 }
 
+h5{
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 500;
+}
+
 
 .footer .card3{
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: center;
     /* background-color: red; */
 }
 

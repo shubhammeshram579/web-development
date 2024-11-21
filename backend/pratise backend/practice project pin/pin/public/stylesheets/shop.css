@@ -39,19 +39,21 @@ body{
 
 .page1 .card1{
     height: 50%;
-    width: 50%;
+    width: 70%;
+    font-family: 'Futura', sans-serif;
 
 }
 .page1 .card2{
     height: 50%;
     width: 50%;
+    font-family:'Helvetica', sans-serif;
 
 }
 
 .page1 .card1 h1{
     font-size: 9vw;
     letter-spacing: 2px;
-    line-height: 10vh;
+    line-height: 18vh;
     font-weight: 900;
 }
 
@@ -71,6 +73,7 @@ body{
     align-items: center;
     justify-content:space-around;
     opacity: 0;
+    font-family:'Helvetica', sans-serif;
     
 }
 
@@ -89,6 +92,7 @@ body{
     width: 100%;
 
 }
+
 
 
 
@@ -126,6 +130,20 @@ body{
     height: 500px;
     width: 100%;
 
+}
+
+/* product name */
+h5{
+  font-family: 'Helvetica', sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+/* product price */
+h6{
+  font-family: 'Helvetica', sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
 

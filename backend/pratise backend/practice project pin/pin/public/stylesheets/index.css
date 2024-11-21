@@ -6,6 +6,22 @@
 }
 
 
+@font-face {
+  font-family: futura;
+  src: url("/Futura-Bold.ttf") format('ttf');
+  font-weight:normal;
+  font-style: normal;
+  
+}
+
+@font-face {
+  font-family: Helvetica;
+  src: url("/HelveticaNowText-Regular.ttf") format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 
 /* select the text then color style */
 *::selection{
@@ -27,6 +43,8 @@ body{
   width: 100%;
   position: absolute;
   z-index: 99;
+  /* color: red; */
+
 }
 
 
@@ -45,6 +63,7 @@ body{
   z-index: 999;
   padding: 0px 10px;
   max-width: inherit;
+  font-family: 'Helvetica', sans-serif;
   
   
 }
@@ -82,8 +101,8 @@ body{
   margin: 1vw;
   text-decoration: none;
   color: #3d3a3a;
-  font-size: 17px;
-  font-weight: 100;
+  font-size: 15px;
+  font-weight: 500;
   text-transform: uppercase;
 
 }
@@ -121,15 +140,18 @@ body{
   position: relative;
   z-index: 99;
   padding: 0 2vw;
-  padding-top: 15vh;
+  padding-top: 30vh;
 
 }
 
 /* h1 text styling */
 .page1 h1{
-  font-size: 14vw;
+  font-size: 15vw;
   line-height: 13vw;
-  letter-spacing: -1vw;
+  letter-spacing: -0.5vw;
+  word-spacing: 1vw;
+  font-family: 'Futura', sans-serif;
+ 
 }
 
 
@@ -138,7 +160,6 @@ body{
   height: 100vh;
   width: 100%;
   padding-top: 1vw;
-  /* background-color: gray; */
 
 }
 
@@ -362,6 +383,8 @@ body{
 .product-details h1{
   width: 70%;
   font-size: 7vh;
+  /* color: red; */
+  font-family: 'Futura', sans-serif;
 }
 
 
@@ -369,10 +392,12 @@ body{
   width: 60%;
   margin-left: 9vw;
   padding: 0 100px;
+  /* color: red; */
+  font-family:'Helvetica', sans-serif;
 }
 
 .page3 .summary h3{
-  font-size: 3vh;
+  font-size: 2.5vh;
   margin-bottom: 80px;
   text-align: start;
   font-weight: 100;
@@ -444,6 +469,7 @@ body{
   text-transform: uppercase;
   font-size: 17px;
   font-weight: 100;
+  font-family: 'Helvetica', sans-serif;
 }
 
 .page3 .child2 h5,h6{
@@ -451,6 +477,7 @@ body{
   text-transform: uppercase;
   font-size: 17px;
   font-weight: 100;
+  font-family:  'Helvetica', sans-serif;
 }
 
 
@@ -473,6 +500,7 @@ body{
   padding: 0px 40px;
   margin-top: 10px;
   word-spacing: 0.5px;
+  font-family: 'Futura', sans-serif;
 } 
 
 .page4 h3{
@@ -481,12 +509,14 @@ body{
   font-size: 20px;
   padding: 30px 40px;
   text-align: justify;
+  font-family:'Helvetica', sans-serif;
 } 
 
 .page4 h4{
   font-weight: 100;
   padding: 0px 40px;
   text-decoration: underline;
+  font-family:'Helvetica', sans-serif;
 }
 
 
@@ -506,13 +536,15 @@ body{
 
 
 /* footer page5 and page6 */
-.page5.endpage h1{
+.page5 .endpage h1{
   font-size: 5vh;
+  font-family: 'Futura', sans-serif;
 }
 
 .page5 i{
   font-size: 4vh;
   font-weight: 100;
+  font-family: 'Futura', sans-serif;
 }
 
 
@@ -530,6 +562,7 @@ body{
   position: relative;
   z-index: 99;
   /* background-color: rebeccapurple; */
+  font-family:'Helvetica', sans-serif;
 }
 
 .page6 .card1 li{
@@ -567,6 +600,7 @@ body{
   height: 27vh;
   width: 100%;
   opacity: 0;
+  font-family: 'Futura', sans-serif;
 }
 
 .page6-part2{
@@ -577,11 +611,13 @@ body{
   justify-content: center;
   position: relative;
   z-index: 99;
+  font-family: 'Helvetica', sans-serif;
 }
 
 .page6-part2 h3{
   font-weight: 100;
   color: gray;
+  font-family: 'Helvetica', sans-serif;
 
 }
 
@@ -595,6 +631,7 @@ body{
 .page6-part2 .GRAYSCALE{ 
   color: #8d8888;
   font-size: 15px;
+  font-family:'Helvetica', sans-serif;
 }
 
 

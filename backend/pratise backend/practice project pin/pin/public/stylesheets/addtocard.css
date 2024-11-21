@@ -307,8 +307,9 @@ body::-webkit-scrollbar-thumb{
     margin-top: 200px; font-size: 3vw;width: 70%;padding-left:20px ; background-color: #111;
   }
 
+
   #buttemText{
-    font-family: 900; color: #f2eaea;
+    font-family: 'Futura', sans-serif;
 
   }
 
@@ -427,6 +428,7 @@ body::-webkit-scrollbar-thumb{
   padding: 4vw 20vw;
   margin-left: 10px;
   border-radius: 30px;
+  font-family:'Helvetica', sans-serif;
 }
 
 .card5{
@@ -472,6 +474,7 @@ body::-webkit-scrollbar-thumb{
     transition: all linear 0.5s;
     color:#cdc9c9;
     text-transform: uppercase;
+    font-family: 'Futura', sans-serif;
 
 }
 
