@@ -37,12 +37,14 @@ body::-webkit-scrollbar-thumb{
 
 .page1 .card{
     width: 50%;
+    font-family: 'Futura',sans-serif;
 }
 .page1 .card2{
     width: 25%;
 }
 .page1 .card2 .stories{
     font-size: 1.1vw; font-weight: 500; margin-top: 60px;
+    font-family:'Helvetica', sans-serif;
 }
 .page1 .card2 .showall{
     padding-top: 100px; font-size: 1vw; font-weight: 500;

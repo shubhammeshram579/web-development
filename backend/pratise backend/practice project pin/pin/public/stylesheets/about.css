@@ -3,6 +3,7 @@
     margin: 0;
 }
 
+
 html,body{
     height: 100%;
     width: 100%;
@@ -34,6 +35,7 @@ body::-webkit-scrollbar-thumb{
 .page1 h1{
     width: 90%;
     letter-spacing: 20px;
+    font-family: 'Futura',sans-serif;
 }
 
 
