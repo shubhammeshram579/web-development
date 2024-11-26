@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: yellow;
+            font-size: 3vw;
+            font-weight: 500;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-transform: capitalize;
+            text-shadow: 1px 1px red;
+            word-spacing: 2px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>loops in javascript</h1>
+
+
+    <script>
+        //1. what is loops?
+        // def: In JavaScript, loops are used to execute a block of code repeatedly until a certain condition is met.
+        //  They help you automate repetitive tasks and iterate over data structures like arrays or objects.
+
+        // my own def:
+        // print of reted value it call loops;
+
+        //2. how many type of loops?
+
+        // for loop- while loop - do while loops - for in loops - forEach loops - of loops;
+
+
+
+        // Basic Level:
+        // 1. Print numbers from 1 to 10 using a loop.
+
+        // for (let i = 1; i <=10; i++){
+        //     console.log(`print 1 to 10 range number ${i} `)
+        // };
+
+
+
+        // 2.Print even numbers between 1 and 20.
+
+        // example 1 using modules
+        // for (let i = 1; i <= 20; i++){
+        //     if(i % 2 === 0){
+        //         console.log(i)
+        //     }
+        // };
+
+
+        // example 2
+        //for (let i = 2; i <= 20; i+= 2){
+          // console.log(i)
+        //};
+
+
+
+        //3. Print the sum of numbers from 1 to 100.
+
+        let storeSum = 0;
+
+        for(let i = 1; i <= 100; i++){
+            // console.log(i)
+            storeSum += i
+        }
+
+        // console.log(storeSum);
+
+
+         //4. Reverse a string using a loop.
+
+         let str = "shubham";
+         let rstr = "";
+
+         for (let i = str.length -1; i >= 0; i--){
+            rstr += str[i]
+         };
+
+         console.log(rstr);
+
+        //  practise
+
+        let name2 = "labham meshram";
+        let storeName2 = ''
+
+        for(let i = name2.length -1; i >= 0; i--){
+            storeName2 += name2[i]
+        };
+
+        console.log("**********************",storeName2);
+
+
+        // 5.Print each character of a string.
+
+        let Str2 = "shubham meshram";
+
+        // for (let i = 0; i < Str2.length; i++){
+        //     console.log(Str2[i])
+        // };
+
+
+
+        // Intermediate Level:
+        // 6.Print the factorial of a number(e.g., 5!).
+
+        let num1 = 5;
+        let factorial = 1;
+
+        for (let i = num1; i >= 1; i--){
+            // console.log(i)
+
+            factorial *= i
+        }
+
+        console.log(factorial);
+
+
+        // practise
+
+        let num3 = 7;
+        let factorial2 = 1;
+
+        for(let i = num3; i >= 1; i--){
+            // console.log(i)
+            factorial2 *= i
+        };
+
+
+        console.log(factorial2);
+
+
+
+        // 7.Check if a number is prime.
+
+        let num2 = 11;
+        let isPrime = true;
+
+        for(let i = 2; i >= num2; i++){
+            //console.log(i)
+            if(num2 % i === 0){
+                isPrime = false
+                break
+            }
+        };
+
+        console.log(isPrime ? "prime" : "not prime");
+
+        // practise
+        
+        let numList = 11;
+        let isPrimeS = true;
+
+        for(let i = 2; i >= numList; i++){
+            if(numList % i === 0){
+                isPrimeS = false
+                break
+            }
+        }
+
+
+        console.log(isPrimeS ? "primeS" : "not prime");
+    
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

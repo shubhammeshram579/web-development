@@ -281,6 +281,27 @@
         };
 
 
+        // practise
+        let brand = "apple";
+
+        switch(brand){
+            case "dell":
+            case "lenovo":
+                console.log("midelclass brand")
+                break
+            case "apple":
+            case "apple pro":
+                console.log("rich brand")
+                break
+            case "hp":
+            case "acer":
+                console.log("chipes brand")
+                break
+            default:
+                console.log("other brand")
+        }
+
+
         // 8. Question: How can you check if a number is within a certain range(e.g., 10 to 20) ? Answer :
 
         let RNumner = 15;
@@ -389,6 +410,15 @@
         let cubeR = isEmpty.length > 0 ? "qube2 is not empty" : "qube2 is empty";
         console.log(cubeR)
 
+        // practise
+        let mobile3 = "";
+
+        if(mobile3.length > 0){
+            console.log("is not emplty******************")
+        }else{
+            console.log("is empty*****************")
+        };
+
 
         // 10. Question: How can you use a switch statement with a default case that handles multiple values ? Answer :
 
@@ -427,6 +457,13 @@
         let res2 = Pname2 !== undefined ? Pname2 : "default value";
 
         console.log(res2);
+
+
+        let Pname3 = "shubham";
+
+        let PRe = Pname3 !== undefined ? Pname3 : "it is not defind";
+
+        console.log("*****************",PRe);
 
 
 
@@ -533,6 +570,12 @@
 
         console.log(otherUser);
 
+
+        let userName2 = "labham";
+
+        let Ures = userName2 || "other user name";
+        console.log(`it is username: ${Ures}`);
+
         // 14.Question: How can you use a nested if statement to check multiple conditions inside a loop ? Answer :
 
 
@@ -566,6 +609,17 @@
                     console.log(`${i} if it is greater than 10`); // Print 'i' if it is greater than 10
                 } else {
                     console.log(`${i} if it is less than or equal to 10`); // Print 'i' if it is less than or equal to 10
+                }
+            }
+        };
+
+
+        for (let k = 1; k <= 22; k++){
+            if(k % 2 === 0){
+                if(k > 5){
+                    console.log(`it is modules check using nested if 1 ${k}`)
+                }else{
+                    console.log(`it is modules check using nested if 2 ${k}`)
                 }
             }
         };
