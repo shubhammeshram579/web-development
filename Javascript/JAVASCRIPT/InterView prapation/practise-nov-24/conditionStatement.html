@@ -284,7 +284,7 @@
         // practise
         let brand = "apple";
 
-        switch(brand){
+        switch (brand) {
             case "dell":
             case "lenovo":
                 console.log("midelclass brand")
@@ -347,6 +347,30 @@
         } else {
             console.log("out of the rarge qty")
         };
+
+
+        // for example
+
+        let result = 35;
+
+        for (let result = 1; result <= 100; result++) {
+            if (result >= 35 && result <= 50) {
+                console.log("pass with grace");
+            } else if (result >= 50 && result <= 65) {
+                console.log("3rd divesion pass")
+            } else if (result >= 65 && result <= 85) {
+                console.log("2nd division pass")
+            } else if (result >= 85 && result <= 100) {
+                console.log("first class pass")
+
+            } else {
+                console.log("fail")
+            }
+
+        };
+
+
+
 
 
 
@@ -413,9 +437,9 @@
         // practise
         let mobile3 = "";
 
-        if(mobile3.length > 0){
+        if (mobile3.length > 0) {
             console.log("is not emplty******************")
-        }else{
+        } else {
             console.log("is empty*****************")
         };
 
@@ -463,7 +487,14 @@
 
         let PRe = Pname3 !== undefined ? Pname3 : "it is not defind";
 
-        console.log("*****************",PRe);
+        console.log("*****************", PRe);
+
+
+        let Ptwo;
+
+        let Pr = Ptwo !== undefined ? Ptwo : "not defind";
+
+        console.log(Pr);
 
 
 
@@ -614,11 +645,11 @@
         };
 
 
-        for (let k = 1; k <= 22; k++){
-            if(k % 2 === 0){
-                if(k > 5){
+        for (let k = 1; k <= 22; k++) {
+            if (k % 2 === 0) {
+                if (k > 5) {
                     console.log(`it is modules check using nested if 1 ${k}`)
-                }else{
+                } else {
                     console.log(`it is modules check using nested if 2 ${k}`)
                 }
             }
@@ -700,9 +731,9 @@
         let user = true;
         let user2 = false;
 
-        if(user2){
+        if (user2) {
             console.log("user is active")
-        }else{
+        } else {
             console.log("user is not active")
         }
 
@@ -713,7 +744,7 @@
         let operator = "*";
         let Sres = []
 
-        switch(operator){
+        switch (operator) {
             case "+":
                 Sres = nV + nv2
                 break

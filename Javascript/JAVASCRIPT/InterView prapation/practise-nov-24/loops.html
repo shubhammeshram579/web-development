@@ -119,6 +119,10 @@
         //     console.log(Str2[i])
         // };
 
+        for (let i = 0; i < Str2.length; i++){
+            console.log(Str2[i])
+        };
+
 
 
         // Intermediate Level:
@@ -150,6 +154,14 @@
         console.log(factorial2);
 
 
+        let numR = 5;
+        let factorialR = 1;
+
+        for(let i = numR; i >= 1; i--){
+            factorialR += i
+        };
+
+        console.log(factorialR)
 
         // 7.Check if a number is prime.
 
@@ -176,10 +188,85 @@
                 isPrimeS = false
                 break
             }
-        }
+        };
 
 
         console.log(isPrimeS ? "primeS" : "not prime");
+
+
+         // 8.Print Fibonacci series up to 10 terms.
+
+         let Fcn1 = 0 , Fcn2 = 1, Fibonacci2;
+
+         for (let i = 1; i <= 10; i++){
+            console.log("Fcn1", Fcn1);
+            Fibonacci2 = Fcn1 + Fcn2;
+            // console.log(Fibonacci2)
+            Fcn1 = Fcn2;
+            // console.log("print",Fcn1)
+            Fcn2 = Fibonacci2
+         }
+
+         console.log(Fibonacci2);
+
+
+          // 9.Sum all the elements in an array.
+
+          let arra2 = [1,2,3,4,5,6,7];
+          let Asum = 0;
+
+        // normal loop
+        for(let i = 0; i < arra2.length; i++){
+            // console.log(arra2[i])
+            Asum += arra2[i]
+        };
+
+        // console.log(Asum);
+
+
+        // and forEach loops
+        let Asum2 = 0;
+        arra2.forEach((i) =>{
+            // console.log(i)
+            Asum2 += i
+        })
+
+        // console.log(Asum2);
+
+        // 10.Find the maximum number in an array.
+        let ar2 = [34,55,66,33,23,67,88];
+        let max = ar2[0];
+
+
+        // first way 
+        for(let i = 0; i < ar2.length; i++){
+            if(ar2[i] > max){
+                max = ar2[i]
+            };
+        };
+        console.log(max);
+
+        // second way to max value find 
+        // ar2.forEach((i) => {
+        //     if(i > max){
+        //         max = i
+        //     }
+        // });
+        // console.log(max);
+
+
+
+        // my own solution using collection fromwork
+        let max2 = ar2.sort((a , b) =>(a - b));
+        let maxValue = max2.slice(-1);
+        console.log(maxValue);
+
+
+
+
+
+
+          
     
 
         
