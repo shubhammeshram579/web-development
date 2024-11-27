@@ -7,9 +7,11 @@ function locoMotiveScrolling(){
     mobile: {
        smooth: true
    },
+   smoothMobile:true,
    tablet: {
        smooth: true
-   }
+   },
+   multiplier:0.7
  });
  locoScroll.on("scroll", ScrollTrigger.update);
  
@@ -90,10 +92,10 @@ function productPageAnimation(){
     scrollTrigger: {
       trigger: ".page2",
       scroller: ".main",
-      start: "top 20%",
+      start: "top 30%",
       end: "top 50%",
       scrub:1,
-    //   markers:true
+      // markers:true
     },
   });
 
@@ -103,10 +105,10 @@ function productPageAnimation(){
     scrollTrigger: {
       trigger: ".page3",
       scroller: ".main",
-      start: "top 20%",
+      start: "top 30%",
       end: "top 50%",
       scrub:1,
-    //   markers:true
+      // markers:true
     },
   });
 
@@ -116,10 +118,10 @@ function productPageAnimation(){
     scrollTrigger: {
       trigger: ".page4",
       scroller: ".main",
-      start: "top 20%",
-      end: "top 50%",
+      start: "top 50%",
+      end: "top 60%",
       scrub:1,
-    //   markers:true
+      // markers:true
     },
   });
 

@@ -61,6 +61,7 @@ body{
     text-align: start;
     font-size: 1vw;
     padding-left: 50%;
+    font-family:'Helvetica', sans-serif;
 }
 
 
@@ -182,8 +183,8 @@ h6{
 
 /* footer pages */
 
-.page5.endpage h1{
-    font-size: 5vh;
+.page5 .endpage h1{
+    font-size: 2vw;
   }
   
   .page5 i{
@@ -319,6 +320,7 @@ h6{
     text-align: start;
     font-size: 5vw;
     padding-left: 1%;
+    line-height: 3vh;
   }
 
 
@@ -330,7 +332,7 @@ h6{
       align-items: center;
       justify-content:space-around;
       flex-direction: row;
-      opacity: 1;
+      opacity: 0;
       /* background-color: red; */
       padding: 0px;
       
@@ -368,7 +370,7 @@ h6{
       align-items: center;
       justify-content:space-around;
       flex-direction: row;
-      opacity: 1;
+      opacity: 0;
       padding: 0px;
 
     
@@ -410,7 +412,7 @@ h6{
     align-items: center;
     justify-content:space-around;
     flex-direction: row;
-    opacity: 1;
+    opacity: 0;
     padding-bottom: 20px;
 
   
@@ -444,7 +446,7 @@ h6{
   text-transform: capitalize;
 }
 
-.page5 h1{
+.page5 .endpage h1{
   font-size: 3vw;
 }
 
@@ -469,12 +471,16 @@ h6{
     list-style-type: none;
     padding: 2px;
     font-size: 20px;
-    font-weight: 100;
+    font-weight: 300;
     margin-left: 0px;
   }
   
   .page6 .card1 li:hover{
     color: #6c6868;
+  }
+
+  .page6 .card2 li{
+    font-weight: 300;
   }
   
   .page6 h3{
@@ -484,12 +490,15 @@ h6{
   .page6 svg{
     height: 10vh;
     width: 100%;
-    opacity: 1;
+    opacity: 0;
   }
 
   
   .page6-part2 h4{
     font-size: 4vw;
+    padding: 40px 20px;
+    margin: 0px;
+    font-weight: 300;
   }
 
     

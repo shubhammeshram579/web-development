@@ -6,6 +6,7 @@ function locoMotiveScrolling(){
     mobile: {
        smooth: true
    },
+   smoothMobile:true,
    tablet: {
        smooth: true
    }

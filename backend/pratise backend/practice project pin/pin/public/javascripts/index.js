@@ -4,9 +4,10 @@ function locoMotiveScrolling(){
  const locoScroll = new LocomotiveScroll({
    el: document.querySelector(".main"),
    smooth: true,
-    mobile: {
-       smooth: true
+   mobile: {
+      smooth: true
    },
+   smoothMobile:true,
    tablet: {
        smooth: true
    }
@@ -27,13 +28,13 @@ function locoMotiveScrolling(){
  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
  
  ScrollTrigger.refresh();
+
+ console.log("locoScroll",locoScroll)
  
  };
  
  locoMotiveScrolling();
- 
- 
-  
+
  
  
 //  navbar scroll page then hide navbar items 
@@ -134,27 +135,27 @@ function locoMotiveScrolling(){
        scrollTrigger: {
          trigger: ".page3 .child",
          scroller: ".main",
-         start: "top 20%",
+         start: "top 30%",
          end: "top 50%",
          scrub:1,
          // markers:true
        },
      });
  
-    gsap.to(".page3 .child2", {
-       transition: "all ease-in 0.5s",
-       opacity: 1,
-       // duration:1,
-       // delay:1,
-       scrollTrigger: {
-         trigger: ".page3 .child2",
-         scroller: ".main",
-         start: "top 25%",
-         end: "top 50%",
-         scrub:1,
-       //   markers:true
-       },
-     });
+   //  gsap.to(".page3 .child2", {
+   //     transition: "all ease-in 0.5s",
+   //     opacity: 1,
+   //     // duration:1,
+   //     // delay:1,
+   //     scrollTrigger: {
+   //       trigger: ".page3 .child2",
+   //       scroller: ".main",
+   //       start: "top 25%",
+   //       end: "top 50%",
+   //       scrub:1,
+   //     //   markers:true
+   //     },
+   //   });
     
     
     
