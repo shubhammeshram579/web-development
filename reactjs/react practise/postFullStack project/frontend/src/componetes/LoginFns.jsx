@@ -28,7 +28,7 @@ function LoginFns() {
   const onSubmit = async (data) => {
     try {
       const session = await axios.post(
-        "http://localhost:8000/api/users/login",
+        "/api/users/login",
         data
       );
 

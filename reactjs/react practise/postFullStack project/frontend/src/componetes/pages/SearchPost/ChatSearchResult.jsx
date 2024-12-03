@@ -27,7 +27,7 @@ const SearchResults = () => {
   useEffect(() => {
     if (query) {
       axios
-        .get(`http://localhost:8000/api/posts/getAllpost/search`, {
+        .get(`/api/posts/getAllpost/search`, {
           params: { query },
           headers: {
             Authorization: `Bearer ${accessToken}`,

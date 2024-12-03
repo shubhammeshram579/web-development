@@ -10,14 +10,14 @@ const FollowButton = ({ userId, targetUserId }) => {
   const handleFollow = async () => {
     try {
       if (isFollowing) {
-        await axios.post('http://localhost:8000/api/users/unfollow', { userId, targetUserId },{
+        await axios.post('/api/users/unfollow', { userId, targetUserId },{
           headers:{
             Authorization: `Bearer ${accessToken}`
           }
         });
         setIsFollowing(false);
       } else {
-        await axios.post('http://localhost:8000/api/users/follow', { userId, targetUserId },{
+        await axios.post('/api/users/follow', { userId, targetUserId },{
           headers:{
             Authorization: `Bearer ${accessToken}`
           }

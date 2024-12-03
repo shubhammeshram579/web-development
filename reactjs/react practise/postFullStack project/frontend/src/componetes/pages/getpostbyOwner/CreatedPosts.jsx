@@ -23,7 +23,7 @@ const CreatedPosts = () => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/posts/getPost/${userId}`,
+          `/api/posts/getPost/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

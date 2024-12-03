@@ -36,7 +36,7 @@ const UpdateUser = () => {
   useEffect( () =>{
     const fetchPost = async () =>{
       try {
-        const respornse = await axios.get("http://localhost:8000/api/users/current-user",{
+        const respornse = await axios.get("/api/users/current-user",{
           headers:{
             "Authorization":`Bearer ${accessToken}`
           }
@@ -68,7 +68,7 @@ const UpdateUser = () => {
 
 
     try {
-      const res = await axios.patch("http://localhost:8000/api/users/updateuser",formData,{
+      const res = await axios.patch("/api/users/updateuser",formData,{
         headers:{
           "Authorization":`Bearer ${accessToken}`
         }

@@ -33,7 +33,7 @@ const GetPotsByUserProfile = () => {
     const fatchGetUser = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/users/getUsersById?_id=${userId}`,
+          `/api/users/getUsersById?_id=${userId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

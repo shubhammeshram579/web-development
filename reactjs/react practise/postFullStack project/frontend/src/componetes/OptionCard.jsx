@@ -15,7 +15,7 @@ const OptionsCard = ({ onDownload, onHide, visible, postId }) => {
     const fatchgetpost = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/posts/getPostByID/${postId}`,
+          `/api/posts/getPostByID/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

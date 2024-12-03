@@ -15,7 +15,7 @@ function Register() {
     const onSubmit = async (data) => {
       
         try {
-          const user = await axios.post('http://localhost:8000/api/users/register', data);
+          const user = await axios.post('/api/users/register', data);
           alert(user.data.message);
           console.log(user)        
 

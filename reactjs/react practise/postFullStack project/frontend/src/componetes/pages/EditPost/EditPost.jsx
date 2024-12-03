@@ -17,7 +17,7 @@ const EditPost = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/posts/getPostByID/${postId}`,{
+        const response = await axios.get(`/api/posts/getPostByID/${postId}`,{
           headers: {
             "Authorization": `Bearer ${accessToken}`
           }
@@ -50,7 +50,7 @@ const EditPost = () => {
     formData.append("status",data.status);
 
     try {
-      const res = await axios.patch(`http://localhost:8000/api/posts/EditPost/${postId}`, formData ,{
+      const res = await axios.patch(`/api/posts/EditPost/${postId}`, formData ,{
         headers:{
           "Authorization":`Bearer ${accessToken}`
         }

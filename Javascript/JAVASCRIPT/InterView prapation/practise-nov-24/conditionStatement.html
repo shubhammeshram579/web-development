@@ -187,6 +187,18 @@
         console.log(findNU());
 
 
+        let arrTest = [null,undefined,2,5,6,null];
+
+        arrTest.forEach((i) =>{
+            // console.log(i)
+            if(i == null && i == undefined){
+                console.log("null and undef")
+            }else{
+                console.log(i);
+            }
+        });
+
+
 
         // Intermediate Level
         // 5.Question: How can you check if a number is even or odd using a conditional statement?Answer:
@@ -299,7 +311,21 @@
                 break
             default:
                 console.log("other brand")
-        }
+        };
+
+
+        let ProductQty = 20;
+
+        switch(ProductQty){
+            case 20:
+                console.log("gter then 20 qty")
+                break
+            case 10:
+                console.log("less then 10 qty")
+                break
+            default:
+                console.log("out the range")
+        };
 
 
         // 8. Question: How can you check if a number is within a certain range(e.g., 10 to 20) ? Answer :
@@ -444,6 +470,16 @@
         };
 
 
+        // pracise 
+        let strP = "bottel";
+
+        if(strP.length > 0){
+            console.log("is not empty")
+        }else{
+            console.log("is empty")
+        };
+
+
         // 10. Question: How can you use a switch statement with a default case that handles multiple values ? Answer :
 
 
@@ -458,6 +494,23 @@
             case "banana":
             case "orage":
                 console.log("fruit")
+                break
+            default:
+                console.log("other items")
+        };
+
+
+        // practise
+        let electroncItem = "mobile";
+
+        switch(electroncItem){
+            case "mobile":
+            case "mouse":
+                console.log("it is electronic items")
+                break
+            case "banana":
+            case "apple":
+                console.log("it is fruits itmes")
                 break
             default:
                 console.log("other items")
@@ -495,6 +548,12 @@
         let Pr = Ptwo !== undefined ? Ptwo : "not defind";
 
         console.log(Pr);
+
+        let Mobile = "shubham";
+
+        let resMobile = Mobile !== undefined ? Mobile : "not defind";
+
+        console.log("result",resMobile);
 
 
 
@@ -656,6 +715,19 @@
         };
 
 
+        // practise
+        for(let g = 1; g <= 30; g++){
+            if(g % 2 === 0){
+                if(g > 10){
+                    console.log("greter then > 10 ",g)
+                }else{
+                    console.log("less then < 10 ",g)
+
+                }
+            };
+        };
+
+
 
         // 15.Question: How do you use a ternary operator to check if a value is null and assign a fallback value ? Answer :
 
@@ -685,6 +757,11 @@
         // }
 
 
+        let CheckNull = "shubham";
+
+        let ReNull = CheckNull !== null ? CheckNull : "null value";
+        console.log(ReNull);
+
 
         // 16.Question: How do you use conditional statements to determine the largest of three numbers ? Answer :
 
@@ -698,7 +775,18 @@
             console.log("num2 largest")
         } else {
             console.log("num3 is the largest")
-        }
+        };
+
+
+        let bottel1 = 10, bottel2 = 20, bottel3 = 5;
+
+        if(bottel1 > bottel2 && bottel1 > bottel3){
+            console.log("bottel range is large")
+        }else if(bottel2 > bottel1 && bottel2 > bottel3){
+            console.log("bottel 2 is large")
+        }else{
+            console.log("bottel3 is large")
+        };
 
 
         // 17.Question: How can you use an if-else chain to handle multiple conditions ? Answer :

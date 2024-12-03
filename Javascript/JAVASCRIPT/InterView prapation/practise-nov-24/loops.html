@@ -71,7 +71,7 @@
 
         // example 2
         //for (let i = 2; i <= 20; i+= 2){
-          // console.log(i)
+        // console.log(i)
         //};
 
 
@@ -80,7 +80,7 @@
 
         let storeSum = 0;
 
-        for(let i = 1; i <= 100; i++){
+        for (let i = 1; i <= 100; i++) {
             // console.log(i)
             storeSum += i
         }
@@ -88,27 +88,39 @@
         // console.log(storeSum);
 
 
-         //4. Reverse a string using a loop.
+        //4. Reverse a string using a loop.
 
-         let str = "shubham";
-         let rstr = "";
+        let str = "shubham";
+        let rstr = "";
 
-         for (let i = str.length -1; i >= 0; i--){
+        for (let i = str.length - 1; i >= 0; i--) {
             rstr += str[i]
-         };
+        };
 
-         console.log(rstr);
+        console.log(rstr);
 
         //  practise
 
         let name2 = "labham meshram";
         let storeName2 = ''
 
-        for(let i = name2.length -1; i >= 0; i--){
+        for (let i = name2.length - 1; i >= 0; i--) {
             storeName2 += name2[i]
         };
 
-        console.log("**********************",storeName2);
+        console.log("**********************", storeName2);
+
+
+
+        let ReverStr = "bottel is very costly";
+        let StroStr = '';
+
+        for (let i = ReverStr.length - 1; i > 0; i--) {
+            // console.log(ReverStr[i])
+            StroStr += ReverStr[i]
+        };
+
+        console.log("hello i am revers str:", StroStr);
 
 
         // 5.Print each character of a string.
@@ -119,7 +131,7 @@
         //     console.log(Str2[i])
         // };
 
-        for (let i = 0; i < Str2.length; i++){
+        for (let i = 0; i < Str2.length; i++) {
             console.log(Str2[i])
         };
 
@@ -131,7 +143,7 @@
         let num1 = 5;
         let factorial = 1;
 
-        for (let i = num1; i >= 1; i--){
+        for (let i = num1; i >= 1; i--) {
             // console.log(i)
 
             factorial *= i
@@ -145,7 +157,7 @@
         let num3 = 7;
         let factorial2 = 1;
 
-        for(let i = num3; i >= 1; i--){
+        for (let i = num3; i >= 1; i--) {
             // console.log(i)
             factorial2 *= i
         };
@@ -157,20 +169,53 @@
         let numR = 5;
         let factorialR = 1;
 
-        for(let i = numR; i >= 1; i--){
+        for (let i = numR; i >= 1; i--) {
             factorialR += i
         };
 
-        console.log(factorialR)
+        console.log(factorialR);
+
+
+        let numRange = 6;
+        let factrialCount = 1;
+
+        for (let i = numRange; i >= 1; i--) {
+            // console.log(i)
+            factrialCount *= i
+        };
+
+        console.log(`factrial sum: ${factrialCount}`);
+
+
+
+        // pracise
+        let factorial5 = 1;
+        for (let i = 10; i >= 1; i--) {
+            // console.log(i)
+            factorial5 += i
+        };
+
+        console.log(factorial5);
+
+
+        let ReveseNumSum = 1;
+
+        for(let i = 20; i > 1; i--){
+            ReveseNumSum += i
+        };
+
+        console.log("ReveseNumSum:" , ReveseNumSum);
+
+
 
         // 7.Check if a number is prime.
 
         let num2 = 11;
         let isPrime = true;
 
-        for(let i = 2; i >= num2; i++){
+        for (let i = 2; i < num2; i++) {
             //console.log(i)
-            if(num2 % i === 0){
+            if (num2 % i === 0) {
                 isPrime = false
                 break
             }
@@ -178,45 +223,130 @@
 
         console.log(isPrime ? "prime" : "not prime");
 
-        // practise
-        
-        let numList = 11;
+        // // practise
+
+        // let numList = 11;
+        // let isPrimeS = true;
+
+        // for (let i = 2; i >= numList; i++) {
+        //     if (numList % i === 0) {
+        //         isPrimeS = false
+        //         break
+        //     }
+        // };
+
+
+        // console.log(isPrimeS ? "primeS" : "not prime");
+
+
+
+
+
+        // function isPrimeR() {
+        //     let numofR = 11;
+        //     let isPrimeValue = true;
+
+        //     if (numofR > 11) {
+        //         return;
+        //     };
+
+
+        //     for (let i = 2; i >= numofR; i++) {
+        //         if(numofR % i === 0){
+        //             isPrimeValue = false;
+        //             break
+        //         }
+        //     };
+
+        //     console.log(isPrimeValue ? "primesValue": "not prime value")
+
+        // };
+
+        // isPrimeR();
+
+
+
+        // currect solution code
+        let numOrange = 6;
+        let isPrime2 = true;
+
+
+        if (numOrange <= 1) {
+            isPrime2 = false;
+        } else {
+            for (let i = 2; i <= Math.sqrt(numOrange); i++) {
+                if (numOrange % i === 0) {
+                    isPrime2 = false;
+                    break
+                }
+            };
+
+        };
+
+        console.log(isPrime2 ? "prime value currect" : "not prime value");
+
+        // pracise
+        let rangNum = 11;
         let isPrimeS = true;
 
-        for(let i = 2; i >= numList; i++){
-            if(numList % i === 0){
+        for (let i = 2; i < rangNum; i++) {
+            if (rangNum % i === 0) {
                 isPrimeS = false
                 break
             }
         };
 
+        console.log(isPrimeS ? "prime" : "not prime");
 
-        console.log(isPrimeS ? "primeS" : "not prime");
 
+        let CheckPnum = 10;
+        let CheckPrime = true;
 
-         // 8.Print Fibonacci series up to 10 terms.
+        for(let k = 2; k < CheckPnum; k++){
+            if( CheckPnum % k === 0){
+                CheckPrime = false
+                break
+            }
+        }
 
-         let Fcn1 = 0 , Fcn2 = 1, Fibonacci2;
+        console.log(CheckPrime ? "prime********" : "not prime******");
 
-         for (let i = 1; i <= 10; i++){
+        // 8.Print Fibonacci series up to 10 terms.
+
+        let Fcn1 = 0, Fcn2 = 1, Fibonacci2;
+
+        for (let i = 1; i <= 10; i++) {
             console.log("Fcn1", Fcn1);
             Fibonacci2 = Fcn1 + Fcn2;
             // console.log(Fibonacci2)
             Fcn1 = Fcn2;
             // console.log("print",Fcn1)
             Fcn2 = Fibonacci2
-         }
+        }
 
-         console.log(Fibonacci2);
+        console.log(Fibonacci2);
 
 
-          // 9.Sum all the elements in an array.
+        // practise
 
-          let arra2 = [1,2,3,4,5,6,7];
-          let Asum = 0;
+        let FnR = 0 , FnR2 = 1, fibonacci3;
+        
+        for(let i = 1; i <= 10; i++){
+            console.log("fnr",FnR )
+            fibonacci3 = FnR + FnR2
+            FnR = FnR2
+            FnR2 = fibonacci3;
+        };
+        console.log("range of Fibonacci range:",fibonacci3);
+
+
+        // 9.Sum all the elements in an array.
+
+        let arra2 = [1, 2, 3, 4, 5, 6, 7];
+        let Asum = 0;
 
         // normal loop
-        for(let i = 0; i < arra2.length; i++){
+        for (let i = 0; i < arra2.length; i++) {
             // console.log(arra2[i])
             Asum += arra2[i]
         };
@@ -226,7 +356,7 @@
 
         // and forEach loops
         let Asum2 = 0;
-        arra2.forEach((i) =>{
+        arra2.forEach((i) => {
             // console.log(i)
             Asum2 += i
         })
@@ -234,13 +364,13 @@
         // console.log(Asum2);
 
         // 10.Find the maximum number in an array.
-        let ar2 = [34,55,66,33,23,67,88];
+        let ar2 = [34, 55, 66, 33, 23, 67, 88];
         let max = ar2[0];
 
 
         // first way 
-        for(let i = 0; i < ar2.length; i++){
-            if(ar2[i] > max){
+        for (let i = 0; i < ar2.length; i++) {
+            if (ar2[i] > max) {
                 max = ar2[i]
             };
         };
@@ -257,19 +387,225 @@
 
 
         // my own solution using collection fromwork
-        let max2 = ar2.sort((a , b) =>(a - b));
+        let max2 = ar2.sort((a, b) => (a - b));
         let maxValue = max2.slice(-1);
         console.log(maxValue);
 
 
+        // practise
+        let newArray = [22, 44, 34, 55, 67, 23, 69];
+        let maxValueIndex = newArray[0];
+
+        newArray.forEach((i) => {
+            if (i > maxValueIndex) {
+                maxValueIndex = i
+            }
+
+        });
+
+        console.log(maxValueIndex);
+
+        // collection framworks
+        console.log(Math.max(...newArray));
+
+
+        // Advanced Level:
+        // 11.Print the elements of a 2D array.
+
+        let array2d = [[1, 2, 3, 4], [4, 5, 3, 6]];
+        // console.log(array2d)
+
+        for (let i = 0; i < array2d.length; i++) {
+            // console.log(array2d[i])
+            for (let j = 0; j < array2d[i].length; j++) {
+                console.log(array2d[i][j])
+            }
+        };
+
+
+        // 12.Flatten a nested array(without using built -in methods).
+
+        let nestedArray = [1, 2, 3, [6, 8], 9];
+        console.log(`nestedArray to convart flatten:`, nestedArray)
+
+        let storeFlaten = [];
+
+        function FlattenArr(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                // console.log(nestedArray[i]);
+                if (Array.isArray(arr[i])) {
+                    FlattenArr(arr[i]);
+                } else {
+                    storeFlaten.push(arr[i])
+                }
+            }
+        }
+
+        FlattenArr(nestedArray);
+
+        console.log(storeFlaten);
+
+        // practise
+
+        let nestedArray2 = [2,5,3,[55,77],9];
+        let StoreNestedArray = [];
+
+        function Nested(arr){
+            for(let i = 0; i < arr.length; i++){
+                if(Array.isArray(arr[i])){
+                    Nested(arr[i]);
+                }else{
+                    StoreNestedArray.push(arr[i])
+                }
+            }
+
+        };
+
+        Nested(nestedArray2)
+        console.log(StoreNestedArray)
+
+
+
+        // 13.Find the intersection of two arrays.
+
+        // intersection means find arr1 and arr same values 
+
+
+        let array1 = [1, 4, 5, 6, 3, 6, 55];
+        let array2 = [9, 86, 44, 22, 6, 5];
+        let intersection = [];
+
+        // advace way
+        array1.forEach((i) => {
+            // console.log(i)
+            if (array2.includes(i)) {
+                intersection.push(i)
+            };
+        });
+
+        console.log(intersection);
+
+
+
+        let findMatchValue = [];
+
+        // normal loops
+        for (let i = 0; i < array1.length; i++) {
+            if (array2.includes(array1[i])) {
+                findMatchValue.push(array1[i])
+            };
+        };
+        console.log(findMatchValue);
+
+
+        let interArray = [3,5,7,5,3,9,10];
+        let interArray2 = [3,4,7,55,33,94,10];
+        let intersection2 = [];
+
+        interArray.forEach((i)=>{
+            if(interArray2.includes(i)){
+                intersection2.push(i)
+            }
+        });
+
+        console.log("intersection2",intersection2);
+
+
+
+        // 14.Rotate an array by n positions.
+        let ArrayN = [2, 5, 6, 7, 4, 9];
+        let n10 = 2;
+        for (let i = 0; i < n10; i++) {
+            ArrayN.unshift(ArrayN.pop());
+        };
+
+        console.log(ArrayN);
+
+        // practise
+
+        let flatenArray = [3,5,2,5,7,8];
+        let IdexNum = 3;
+
+        for(let i = 0; i < IdexNum; i++){
+            flatenArray.unshift(flatenArray.pop())
+        };
+
+        console.log("flatenArray",flatenArray);
+
+
+        // 15.Check if a string is a palindrome.
+        let ParS = "madam";
+        let isPalindrome = true;
+
+        for(let i = 0; i < ParS.length /2; i++){
+            // console.log()
+            if(ParS[i] !== ParS[ParS.length -1 - i]){
+                isPalindrome = false
+                break
+            }
+        };
+
+        console.log(isPalindrome ? "Palindrom" : "not Palindrom");
+
+
+        // practise
+
+        let strName = "level";
+        let isPalindromeCheck = true;
+
+        for(let i= 0; i < strName.length / 3; i++){
+            if(strName[i] !== strName[strName.length - 1 - i]){
+                isPalindromeCheck = false
+                break
+            }
+        };
+
+        console.log(isPalindromeCheck ? "is Palidrome" : "is not palidrome");
+
+
+         // Advanced Challenges:
+        // 16.Implement bubble sort using a loop.
+        let bubleSortArray = [3,6,3,2,8,1];
+
+        for(let i = 0; i < bubleSortArray.length -1; i++){
+            for(let j = 0; j < bubleSortArray.length -1 - i; j++){
+                if(bubleSortArray[j] > bubleSortArray[j + 1]){
+                    [bubleSortArray[j], bubleSortArray[j + 1]] = [bubleSortArray[j + 1] , bubleSortArray[j]]
+                }
+            }
+        }
+
+        console.log(bubleSortArray);
+
+        // collection fromwork
+        let Arrva = [3,5,2,6,1,9];
+
+        let SorArray = Arrva.sort((a ,b) => (a - b));
+        console.log(SorArray);
+
+
+        // 17.Count the occurrence of each element in an array.
+
+        let CoutArray = [3,5,3,6,8,10,55];
+        let count = {};
+
+        for(let i = 0; i < CoutArray.length; i++){
+            count[CoutArray[i]] = (count[CoutArray[i]] || 0) + 1;
+        }
+        console.log(count);
 
 
 
 
-          
-    
 
-        
+
+
+
+
+
+
+
+
 
 
 

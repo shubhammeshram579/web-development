@@ -35,7 +35,7 @@ const OwnerPost = () => {
     const fetchCurrentUser = async () => {
       try {
         const userData = await axios.get(
-          "http://localhost:8000/api/users/current-user",
+          "/api/users/current-user",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

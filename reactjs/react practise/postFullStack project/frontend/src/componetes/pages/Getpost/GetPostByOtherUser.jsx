@@ -51,7 +51,7 @@ const GetpostByotherUser = () => {
     const fatchgetpost = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/posts/getPostByID/${postId}`,
+          `/api/posts/getPostByID/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -75,7 +75,7 @@ const GetpostByotherUser = () => {
     const fatchCurrentUser = async () => {
       try {
         const currentUser = await axios.get(
-          "http://localhost:8000/api/users/current-user",
+          "/api/users/current-user",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -100,7 +100,7 @@ const GetpostByotherUser = () => {
     const fatchgetComment = async () => {
       try {
         const resComment = await axios.get(
-          `http://localhost:8000/api/comments/getcomment/${postId}`,
+          `/api/comments/getcomment/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -125,7 +125,7 @@ const GetpostByotherUser = () => {
   const onSubmit = async (data) => {
     try {
       const addcomment = await axios.post(
-        `http://localhost:8000/api/comments/addcomment/${postId}`,
+        `/api/comments/addcomment/${postId}`,
         data,
         {
           headers: {
