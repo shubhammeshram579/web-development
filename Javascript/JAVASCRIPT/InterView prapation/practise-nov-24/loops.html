@@ -586,13 +586,127 @@
 
         // 17.Count the occurrence of each element in an array.
 
-        let CoutArray = [3,5,3,6,8,10,55];
-        let count = {};
+        // let CoutArray = [3,5,3,6,8,10,55];
+        // let count = {};
 
-        for(let i = 0; i < CoutArray.length; i++){
-            count[CoutArray[i]] = (count[CoutArray[i]] || 0) + 1;
+        // for(let i = 0; i < CoutArray.length; i++){
+        //     count[CoutArray[i]] = (count[CoutArray[i]] || 0) + 1;
+        // }
+        // console.log(count);
+
+
+        // 18.Generate a pyramid pattern.
+
+        let n = 5;
+
+        for (let i = 0; i <= n; i++){
+            console.log(' '.repeat(n - i ) + "*".repeat(i * 2))
+        };
+
+
+        // example 2
+
+        let n2 = 10;
+
+        for(let i = 0; i <= n2; i++){
+            // console.log(n2 - i)
+            let space = ' '.repeat(n2 - i)
+
+            let starts = "*".repeat(2 * n2 - 1)
+            console.log(space + starts)
+        };
+
+        // practise
+
+        let rangeOf = 10
+        for(let i = 0 ; i < rangeOf; i++){
+            console.log(" ".repeat(rangeOf - i) + "*".repeat(i * 2));
+        };
+
+
+        //19.Find the missing number in an array of consecutive numbers.
+
+        let listArray = [1,2,3,4,5,7,8,10];
+        let missing;
+
+
+        // single missing value find out
+        for(let i = 0; i <= listArray.length -1 ; i++){
+            // console.log(listArray[i + 1] - listArray[i] !== 1)
+            // console.log(listArray[i] + 1)
+            if(listArray[i + 1] - listArray[i] !== 1){
+                missing = listArray[i] + 1
+                break
+            }
         }
-        console.log(count);
+        console.log(missing);
+
+
+        // multiple missing value find out
+        let arr = [1,2,3,4,5,7,8,10,12,13]
+        let missing2 = [];
+
+        for(let i = 0; i <= arr.length -1; i++){
+            if(arr[i + 1] - arr[i] !== 1){
+                for(let j = arr[i] + 1; j < arr[i + 1]; j++){
+                    missing2.push(j)
+                }
+            }
+        };
+
+        console.log(missing2);
+
+
+        
+
+
+         // 20.Transpose a matrix.
+         let matrix2 = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+
+        // console.log(matrix)
+        let transposed = [];
+        for (let i = 0; i < matrix2.length; i++) {
+            transposed[i] = [];
+            for (let j = 0; j < matrix2[i].length; j++) {
+                transposed[i][j] = matrix2[j][i];
+            }
+        }
+        console.log(transposed);
+
+
+        // my own solution i face undeind value proble then solve the -1
+        let matrix = [
+            [1,2,3,4],
+            [5,6,7,8],
+            [9,10,11,12]
+        ];
+
+        let tranfrom = [];
+        // console.log(matrix);
+      
+
+        for(let i = 0; i < matrix.length; i++){
+            tranfrom[i] = [];
+            for(let k = 0; k < matrix[i].length -1; k++){
+                tranfrom[i][k] = matrix[k][i]
+            }
+        }
+
+        console.log(tranfrom);
+
+
+
+
+
+
+
+
+
+        
 
 
 

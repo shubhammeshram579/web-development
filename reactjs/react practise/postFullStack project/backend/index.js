@@ -188,6 +188,48 @@ connectDB()
 })
 
 
+// Socket.IO events
+io.on('connection', (socket) => {
+  console.log('A user connected:', socket.id);
+
+  // Register user
+  socket.on('register', async (username) => {
+      const user = await User.findOneAndUpdate(
+          { username },
+          { socketId: socket.id },
+          { upsert: true, new: true }
+      );
+      console.log(`User registered: ${username} (${socket.id})`);
+  });
+
+ // Call a user
+ socket.on('callUser', async ({ from, to, signal }) => {
+  const recipient = await User.findOne({ username: to });
+  if (recipient && recipient.socketId) {
+      io.to(recipient.socketId).emit('incomingCall', { from, signal });
+  } else {
+      socket.emit('userUnavailable', { message: "User not available or offline" });
+  }
+});
+
+  
+    // Answer a call
+    socket.on('answerCall', async ({ from, signal }) => {
+      const caller = await User.findOne({ username: from });
+      if (caller && caller.socketId) {
+          io.to(caller.socketId).emit('callAccepted', signal);
+      }
+  });
+
+  // Disconnect
+    socket.on('disconnect', async () => {
+        console.log('A user disconnected:', socket.id);
+        await User.deleteOne({ socketId: socket.id });
+    });
+});
+
+
+
 export default io
 
 

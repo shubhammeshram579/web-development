@@ -27,6 +27,9 @@ const userSchema = new mongoose.Schema(
             trim:true,
             index:true
         },
+        socketId:{
+            type:String
+        },
         email:{
             type:String,
             required: true,

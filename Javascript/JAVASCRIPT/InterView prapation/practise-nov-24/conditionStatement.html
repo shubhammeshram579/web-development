@@ -69,6 +69,59 @@
         // }
 
 
+        // single object
+        let obj = {
+            name: "shubham",
+            age: 27,
+            address: "gondia"
+        };
+
+        console.log(obj.age);
+
+
+        // multiple object list 
+        let ListObj = [
+            {
+                name: "shubham",
+                age: 27,
+                address: "gondia"
+            },
+            {
+                name: "labham",
+                age: 21,
+                address: "gondia mh"
+            },
+            {
+                name: "pallavi",
+                age: 22,
+                address: "pune"
+            },
+            {
+                name: "aachal",
+                age: 24,
+                address: "pune"
+            }
+        ];
+
+
+        console.log(ListObj);
+
+        // console.log(ListObj[obj1])
+
+        for(let i in ListObj){
+            // console.log(ListObj[i])
+            // console.log(ListObj[i].name)
+            // console.log(ListObj[i].age)
+            if(ListObj[i].age <= 22){
+                console.log("less then < 22")
+            }else if(ListObj[i].age === 24){
+                console.log("found age of 24")
+            }else{
+                console.log("greter then 22 & 24")
+            }
+        };
+
+
 
         // interview quetion start
 
@@ -187,13 +240,13 @@
         console.log(findNU());
 
 
-        let arrTest = [null,undefined,2,5,6,null];
+        let arrTest = [null, undefined, 2, 5, 6, null];
 
-        arrTest.forEach((i) =>{
+        arrTest.forEach((i) => {
             // console.log(i)
-            if(i == null && i == undefined){
+            if (i == null && i == undefined) {
                 console.log("null and undef")
-            }else{
+            } else {
                 console.log(i);
             }
         });
@@ -316,7 +369,7 @@
 
         let ProductQty = 20;
 
-        switch(ProductQty){
+        switch (ProductQty) {
             case 20:
                 console.log("gter then 20 qty")
                 break
@@ -473,9 +526,9 @@
         // pracise 
         let strP = "bottel";
 
-        if(strP.length > 0){
+        if (strP.length > 0) {
             console.log("is not empty")
-        }else{
+        } else {
             console.log("is empty")
         };
 
@@ -503,7 +556,7 @@
         // practise
         let electroncItem = "mobile";
 
-        switch(electroncItem){
+        switch (electroncItem) {
             case "mobile":
             case "mouse":
                 console.log("it is electronic items")
@@ -553,7 +606,7 @@
 
         let resMobile = Mobile !== undefined ? Mobile : "not defind";
 
-        console.log("result",resMobile);
+        console.log("result", resMobile);
 
 
 
@@ -716,12 +769,12 @@
 
 
         // practise
-        for(let g = 1; g <= 30; g++){
-            if(g % 2 === 0){
-                if(g > 10){
-                    console.log("greter then > 10 ",g)
-                }else{
-                    console.log("less then < 10 ",g)
+        for (let g = 1; g <= 30; g++) {
+            if (g % 2 === 0) {
+                if (g > 10) {
+                    console.log("greter then > 10 ", g)
+                } else {
+                    console.log("less then < 10 ", g)
 
                 }
             };
@@ -780,11 +833,11 @@
 
         let bottel1 = 10, bottel2 = 20, bottel3 = 5;
 
-        if(bottel1 > bottel2 && bottel1 > bottel3){
+        if (bottel1 > bottel2 && bottel1 > bottel3) {
             console.log("bottel range is large")
-        }else if(bottel2 > bottel1 && bottel2 > bottel3){
+        } else if (bottel2 > bottel1 && bottel2 > bottel3) {
             console.log("bottel 2 is large")
-        }else{
+        } else {
             console.log("bottel3 is large")
         };
 

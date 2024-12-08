@@ -9,4 +9,14 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  resolve: {
+    alias: {
+      stream: "stream-browserify",
+      buffer: "buffer",
+      process: "process/browser",
+    },
+  },
+  define: {
+    global: {}, // Add this to polyfill global
+  },
 })

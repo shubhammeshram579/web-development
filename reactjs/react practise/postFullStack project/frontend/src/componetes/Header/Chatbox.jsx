@@ -238,6 +238,18 @@ const Chatbox = () => {
     }, 0);
   };
 
+  const handelVideoCall = () => {
+    navigate(`/videoCall/${from}/${to}`)
+  }
+
+  // const startCall = () => {
+  //   if (currentUser._id) {
+  //     navigate(`/videoCall/${currentUser._id}`);
+  //   } else {
+  //     alert("Please enter a valid user ID to call!");
+  //   }
+  // };
+
 
 
 
@@ -341,7 +353,7 @@ const Chatbox = () => {
       </div>
 
       <footer id="chatFoter" className="footerbox flex items-center justify-evenly mt-10 w-[22vw] bg-gray-200 z-50">
-        <i className="fa-solid fa-circle-plus text-4xl"></i>
+        <i className="fa-solid fa-circle-plus text-4xl" onClick={handelVideoCall}></i>
         <form onSubmit={(e) => e.preventDefault()}>
           <input
             type="text"
