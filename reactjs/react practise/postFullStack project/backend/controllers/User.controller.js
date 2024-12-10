@@ -32,7 +32,7 @@ const regitsterUser = AsynceHendler( async (req, res) => {
     // databody
     const {fullname,username,  email, password} = req.body;
 
-    console.log(req.body)
+    // console.log(req.body)
 
     // error definde
     if(
@@ -67,6 +67,8 @@ const regitsterUser = AsynceHendler( async (req, res) => {
     if(!createUser){
         throw new ApiError(500, "sonting went wrong")
     }
+
+    console.log("createUser",createUser)
 
     return res
     .status(200)
@@ -244,13 +246,18 @@ const updateUser = AsynceHendler(async (req, res) => {
             throw new ApiError(404, "user not found")
         }
 
+         // Validate input
+         if (!username && !fullname && !email) {
+            throw new ApiError(400, "No fields to update provided");
+        }
+
         const updateUser = await User.findByIdAndUpdate(
             userId,
             {
                 $set:{
                     username:username,
                     fullname:fullname,
-                    email:email
+                    email:email,
                 }
             },
             {

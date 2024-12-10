@@ -12,6 +12,8 @@ const Notification = ({setShowNotifications,showNotifications})  => {
 
   const [visible , setVisible] = useState(false)
 
+  console.log("notifications",notifications)
+
 
   useEffect(() => {
     // Delay the visibility state change to trigger smooth transition

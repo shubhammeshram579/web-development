@@ -23,7 +23,7 @@ const Home = () => {
 
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
   const user = useSelector((state) => state.auth.user?.user);
-  console.log(user);
+  // console.log(user);
 
   useEffect(() => {
     const fetchPosts = async () => {

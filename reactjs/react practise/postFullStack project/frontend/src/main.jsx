@@ -6,13 +6,13 @@ import { Provider } from 'react-redux'
 import { RouterProvider ,createBrowserRouter } from 'react-router-dom'
 import {AuthLayout} from "./componetes/index.js"
 
-import { global } from "global";
-import { Buffer } from "buffer";
-import process from "process";
+// import { global } from "global";
+// import { Buffer } from "buffer";
+// import process from "process";
 
-window.global = global;
-window.Buffer = Buffer;
-window.process = process;
+// window.global = global;
+// window.Buffer = Buffer;
+// window.process = process;
 
 
 
@@ -36,7 +36,7 @@ import NewMessage from "./componetes/Header/NewMessage.jsx"
 import Massage from "./componetes/Header/Massage.jsx"
 import Chatbox from "./componetes/Header/Chatbox.jsx"
 import ShareProfile from "./componetes/Header/ShareProfile.jsx"
-import VideoCall from './componetes/Header/VideoCall.jsx'
+// import VideoCall from './componetes/Header/VideoCall.jsx'
 
 
 
@@ -191,15 +191,15 @@ const router = createBrowserRouter([
                 </AuthLayout>
             ),
         },
-        {
-            path: "/videoCall/:from/:to",
-            element: (
-                <AuthLayout authentication>
-                    <VideoCall />
-                    {/* <Home /> */}
-                </AuthLayout>
-            ),
-        },
+        // {
+        //     path: "/videoCall/:from/:to",
+        //     element: (
+        //         <AuthLayout authentication>
+        //             <VideoCall />
+        //             {/* <Home /> */}
+        //         </AuthLayout>
+        //     ),
+        // },
     ],
 
   }

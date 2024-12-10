@@ -15,7 +15,7 @@ const notification  = AsynceHendler(async (req, res) =>{
         const userId = req.user._id
 
         const notification = await Notification.find({recipient:userId}).populate("sender postId");
-        // console.log("notification",notification)
+        console.log("notification",notification)
 
         if(!notification){
             throw new ApiError(404, "notication not get")

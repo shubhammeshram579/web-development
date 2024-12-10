@@ -24,6 +24,7 @@ export const NotificationProvider = ({ children }) => {
             Authorization: `Bearer ${accessToken}`,
           },
         });
+        console.log("post notifaction",response.data.data.notification)
         setNotifications(response.data.data.notification);
         setNotificationCount(response.data.data.notification.length);
         setLoading(false);

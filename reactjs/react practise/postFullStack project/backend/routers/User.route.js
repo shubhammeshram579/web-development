@@ -11,6 +11,9 @@ import {regitsterUser,
     getusetbyId,
     Allusers
 } from "../controllers/User.controller.js"
+
+// import multer for upload feld set 
+import { upload } from "../middlewheres/Multer.js";
 // import cors from "cors"
 import {verifyJWT} from "../middlewheres/Auth.middlewere.js"
 
@@ -30,7 +33,7 @@ router.route("/users/logout").post(verifyJWT, logoutUser)
 router.route("/users/refresh-token").post(refreshAccessToken)
 router.route("/users/current-user").get(verifyJWT,getCurrentUser)
 router.route("/users/savePosts/:userId").get(verifyJWT,userSavePost)
-router.route("/users/updateuser").patch(verifyJWT,updateUser)
+router.route("/users/updateuser").patch(upload.single("fullname"),verifyJWT,updateUser)
 router.route("/users/follow").post(verifyJWT, follow)
 router.route("/users/unfollow").post(verifyJWT,unfollow)
 router.route("/users/getUsersById").get(verifyJWT,getusetbyId)
