@@ -43,6 +43,13 @@
             margin-top: 20px;
         }
 
+        .flexbox{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
         .card2 {
             height: 200px;
             width: 200px;
@@ -92,13 +99,14 @@
             inventore, amet aliquid accusamus incidunt? Consequatur et obcaecati magnam laborum exercitationem, quis
             totam
             consectetur dignissimos inventore.</p>
+        <div class="flexbox">
+            <div class="card2">
+                <h1 class="padding">padding</h1>
+            </div>
 
-        <div class="card2">
-            <h1 class="padding">padding</h1>
-        </div>
-
-        <div class="card3">
-            <h2 class="margin">margen</h2>
+            <div class="card3">
+                <h2 class="margin">margen</h2>
+            </div>
         </div>
 
     </div>
@@ -106,6 +114,41 @@
 
 
     <script>
+
+        // doument dom
+        let pad = document.querySelector(".padding");
+        let mar = document.querySelector(".margin");
+
+        let a = 0;
+        pad.addEventListener("click", function () {
+            if (a === 0) {
+                pad.style.backgroundColor = "green"
+                pad.style.marginLeft = "50px"
+                a = 1;
+
+            } else {
+                pad.style.backgroundColor = "red"
+                pad.style.padding = "50px"
+                a = 0;
+            }
+        });
+
+
+        mar.addEventListener("mouseenter", () => {
+            mar.style.backgroundColor = "red"
+            mar.style.opacity = "0.5"
+        })
+
+        mar.addEventListener("mouseleave", () => {
+            mar.style.backgroundColor = "green"
+            mar.style.opacity = "1"
+        });
+
+
+
+
+
+
         // function sentax 
         function abc() {
             console.log("hello padding")
@@ -126,10 +169,166 @@
             return function (b) {
                 return a + b;
             }
+        };
+
+        // curring function
+        let res = hughOrderFun(10)(29);
+        console.log(res);
+
+
+        // clouser function
+        function outerFuntion(){
+            let count = 0;
+            return function inner(){
+                count++
+                console.log(count)
+            }
+        };
+
+        let res2 = outerFuntion()
+        res2();
+        res2();
+        res2();
+
+
+
+        function outer(a){
+            return function inner(b){
+                return function innerchid(d){
+                    return a + b + d
+                }
+            }
+        };
+
+        let rest =  outer(10)(10)(19); ///curring function
+        console.log(rest);
+
+
+        // A constructor function is used to create and initialize new objects with shared properties and methods.
+        // Use the new keyword to call it.
+        function contuction(){
+            this.name = "shhubham",
+            this.age = 27,
+            this.add = "india"
         }
 
-       let res = hughOrderFun(10)(29);
-       console.log(res);
+        let obj1 = new contuction();
+        let obj2 = new contuction();
+        console.log(obj1);
+        console.log(obj2);
+
+
+         // vi. Immediately Invoked Function Expression (IIFE)
+
+         (
+            function(){
+                console.log("hello iife")
+            }
+         )();
+
+
+        //  array function
+
+        let arrawfunction = () => {
+            console.log("hello array functions")
+        };
+
+        arrawfunction();
+
+
+        // Basic Level:
+        // 1.What is a function in JavaScript?
+
+        // 1.A function is a block of code designed to perform a particular task. It is executed when invoked (called).
+        // Example:
+
+        function abcd(){
+            console.log("hello function basic sentax")
+        }
+
+        abcd();
+
+        // 2.Write a function to add two numbers.
+
+        function addTwo(){
+            // varible wise
+            let num1 = 1;
+            let num2 = 2;
+            console.log(num1 + num2)
+        }
+
+        addTwo();
+
+        // with paramter
+        function addNum(a,b){
+            return a + b
+        }
+
+        let numres = addNum(100,50);
+        console.log(numres);
+
+        // 3.Write a function to find the factorial of a number.
+        function factorial(n){
+            // base case
+            if(n === 0){
+                return 1
+            };
+
+            return n * factorial(n - 1);
+        }
+
+        let getFR = factorial(5);
+        console.log(getFR);
+
+
+        // 4.What is a function expression?
+        // Def: A function expression is a function defined within an expression and can be anonymous.
+
+        let funExpre = function(a,b){
+            return a * b
+        };
+
+        let annomuseFun = funExpre(10,50);
+        console.log(annomuseFun);
+
+
+        // 5.Write a function to check if a number is even or odd.
+
+        let numR = 11;
+
+        function isEven(n){
+            if(n % 2 === 0){
+                console.log("even")
+            }else{
+                console.log("odd")
+            }
+
+        };
+
+        isEven(numR);
+
+        // tennery contion
+
+        function  isEven2(n) {
+            return n % 2 === 0 ? "even" : "odd"
+            
+        }
+
+        console.log(isEven2(10));
+        console.log(isEven2(11));
+
+
+
+
+        
+
+
+
+        
+
+
+
+
     </script>
 
 
