@@ -117,7 +117,7 @@ const Home = () => {
                 {/* Save button with conditional opacity */}
                 <h1
                 id="SavebtnId"
-                  className={`SaveBtn absolute ml-[150px] mt-[-450px] mb-[500px] py-1 px-4 bg-red-500 rounded-3xl transition-opacity duration-300 text-white ${
+                  className={`SaveBtn absolute ml-[7vw] mt-[-22vw] mb-[5vw] py-1 px-2 bg-red-500 rounded-3xl transition-opacity duration-300 text-white ${
                     hoveredIndex === index ? "opacity-100" : "opacity-0"
                   }`}
                 >
@@ -126,23 +126,23 @@ const Home = () => {
 
                 {/* Icons with conditional opacity */}
                 <div
-                  className={`selectbtn flex items-center justify-between absolute mt-[-80px] pl-4 mb-14 transition-opacity duration-300 ${
+                  className={`selectbtn flex items-center justify-between absolute mt-[-5vw] pl-4 mb-14 transition-opacity duration-300 ${
                     hoveredIndex === index ? "opacity-100" : "opacity-0"
                     // index % 2 !== 0 ? 'mt-[-70px]' : ''
                   }`}
                   id="btnsitems"
                 >
-                  <i id="webLink" class="ri-arrow-right-up-line bg-white flex items-center justify-center px-6 py-[8px] rounded-3xl gap-2 text-lg">
+                  <i id="webLink" class="ri-arrow-right-up-line bg-white flex items-center justify-center px-3 py-[0.5vw] rounded-3xl gap-2 text-[1vw]">
                     {" "}
                     behance
                   </i>
-                  <div className="flex items-center justify-center gap-4 ml-[20px]">
-                    <div className="bg-white rounded-full mt-1">
+                  <div id="shrePost" className="flex items-center justify-center gap-2 ml-[1vw]">
+                    <div className="bg-white rounded-full mt-1]">
                       <SharePost postUrl={`${postUrl}getPostByID2/${post._id}`} postTitle={post.title} />
                     </div>
 
-                    <i
-                      className="fa-solid fa-ellipsis cursor-pointer mr-5 text-2xl bg-white px-2 py-[3px] mt-[5px] rounded-full"
+                    <i id="treedot"
+                      className="fa-solid fa-ellipsis cursor-pointer mr-7 text-[1.2vw] bg-white px-[0.6vw] py-[0.5vw] mt-[0.1vw] rounded-full"
                       onClick={() => setVisible(!visible)}
                     ></i>
                     <OptionsCard

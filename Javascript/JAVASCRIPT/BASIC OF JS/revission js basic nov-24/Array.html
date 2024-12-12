@@ -43,6 +43,391 @@
 <body>
     <h3 class="bjs">array in javascript</h3>
 
+
+    <script>
+        // basic of array 
+        let array = [];
+
+        for (let i = 1; i <= 30; i++) {
+            array.push(i)
+        };
+        console.log(array);
+
+        // select index first value 
+        console.log(array[0]);
+        console.log(array.slice(-1));
+        console.log(array.slice(4, 8));
+        console.log(array.length);
+
+
+        // same to used shift opration find 0 index value
+        console.log(array.shift())
+
+        // select last index value
+        console.log(array.unshift())
+
+        // splice is delete to selected value like 1 index to 6 index value delete
+        console.log(array.splice(1, 6));
+        console.log(array);
+
+
+
+        // delete last index value used pop opration
+        console.log(array.pop())
+        console.log(array)
+
+
+        // update
+        // fill opration for midel of arrray update
+        console.log(array.fill(5, 8, 10));
+        console.log(array)
+
+        // normal index wise update
+        array[2] = 225;
+
+        // multiple aray value update
+        console.log(array.splice(3, 5, 500, 600))
+
+
+
+        // add new array values
+        let a = [1, 2, 3, 4]
+        a.push(10, 20)
+        console.log(a)
+
+        // marge array
+        let b = [5, 6, 7, 8]
+        let margeArray = a.concat(b);
+        console.log(margeArray);
+
+
+
+        // nested array 
+        let nestedArr = [3, 5, 6, 7, [4, 6, 77, 44], 44, [65, 76], 9];
+
+        console.log("find value index", nestedArr.indexOf(7));
+        console.log("select nested array", nestedArr[4]);
+
+        // nested array convert in flat aray
+        let flatA = [1, 2, 3, [4, 6, 7], 8, 9];
+        console.log(flatA)
+        console.log(flatA.flat());
+
+
+        // then i need recustion funtion method
+        function fl(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                if (Array.isArray(arr[i])) {
+                    fl(arr[i])
+                } else {
+                    console.log(arr[i])
+                }
+            }
+        };
+
+        fl(flatA);
+
+
+        // 2d array
+
+        let twodArray = [[3, 5, 6, 7], [44, 77, 33, 7]];
+        let treeDArray = [[44, 43, 65], [77, 63, 44], [42, 53, 67]];
+
+        // console.log(`${twodArray} and ${treeDArray}`)
+        console.log(twodArray);
+        console.log(treeDArray);
+        console.log(twodArray[1][2])
+
+
+
+        // function Expression like loop, foreach , map, sort , find , filter, reduce
+
+        let arrL = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+        // print array value using loop
+
+        for (let i = 0; i < arrL.length; i++) {
+            // console.log(i) // index value
+            // console.log(i, arrL[i]) // index and key value
+            // console.log(arrL[i]) // only value
+
+            // asign valu
+            console.log(arrL[i] * 3) // asign + - * / ** % // ++ --
+        };
+
+
+        // total sum array value
+        console.log("total of array value")
+        let sum = 0;
+        for (let i = 0; i < arrL.length; i++) {
+            sum += arrL[i]
+        };
+
+        console.log(sum);
+
+
+        // store new array value used push opration
+        let store = [];
+        for (let i = 0; i < arrL.length; i++) {
+            store.push(arrL[i] * 3)
+        };
+
+        console.log(store);
+
+
+        // same loop using Foreach loop
+        let sum2 = 0;
+        let store2 = [];
+        arrL.forEach(function (i) {
+            console.log(i * 2);
+            sum2 += i * 2;
+            store2.push(i * 3);
+        })
+
+        console.log("total of sum2", sum2);
+        console.log("store2", store2);
+
+
+        // one line of code using array function
+        arrL.forEach((i) => (console.log(i * 5)));
+
+        // reduce opration to sum
+        let sum3 = arrL.reduce((a, total) => (a + total))
+        console.log(sum3)
+
+
+        // reverce array value
+
+        console.log(arrL);
+
+        for (let i = arrL.length; i > 0; i--) {
+            console.log(i)
+        };
+
+        let sort = arrL.sort((a, b) => (b - a));
+        console.log(sort)
+
+        // collection fremwork reverce
+        let reveArray = ["s", "h", "u"]
+        let numRe = [1, 2, 3, 4];
+        console.log(reveArray.reverse());
+        console.log(numRe.reverse());
+
+
+        // find and filter opration 
+        let findArray = [];
+        for (let i = 1; i <= 20; i++) {
+            findArray.push(i)
+        }
+
+        console.log(findArray);
+
+        // one number find then using find opration other wie used filter
+        let res = findArray.find((i) => {
+            return i === 6;
+        })
+        console.log(res)
+
+        let res2 = findArray.filter((i) => {
+            return i >= 5
+        });
+
+        console.log(res2);
+
+        // Boolean result true and false
+        findArray.filter((i) => (console.log("filter", i > 5)));
+
+
+
+
+        // filtering using foreach loop and condition statement
+        findArray.forEach((i) => {
+            if (i >= 5) {
+                console.log(i)
+            };
+        });
+
+        // multiple condition
+        findArray.forEach((i) => {
+            if (i >= 1 && i <= 10) {
+                console.log("0", i)
+            } else if (i >= 11 && i <= 20) {
+                console.log("1", i)
+            } else {
+                console.log("equel")
+            }
+        });
+
+        // nested condtion  using even and odd statment 
+        findArray.forEach((i) => {
+            if (i % 2 === 0) {
+                if (i > 5) {
+                    console.log("greter then 5", i)
+                } else {
+                    console.log("less then 5", i)
+                }
+            }
+        });
+
+
+        // map opration
+
+
+        // let g = [1,3,4,6];
+
+        // let y = [...g]
+        // console.log(y)
+
+        console.log("add new array using spret method and cocate opration and convert to neted array to flatten array");
+
+        console.log(findArray);
+
+        // copy to findArray value using sprete method it call refrence 
+        let mapArray = [...findArray];
+        console.log(mapArray)
+
+
+        // add new array in maparray 
+        let add = [34, 55, 66, 33];
+
+        let mer = [...mapArray, add];
+        console.log(mer);
+
+        // convert to nested array to flatten array
+        let newmapArray = mer.flat();
+        console.log(newmapArray)
+
+        // add one more methode add array using concat 
+        let newadd = [3, 5, 233, 66];
+        let finaMap = newmapArray.concat(newadd);
+        console.log(finaMap);
+
+
+
+        // normal setatax
+        let mapre = finaMap.map((i) => {
+            return i * 5
+        });
+
+        console.log(mapre);
+
+
+        // update > 5 and < 10 update value 450
+        // example 1
+        let update1 = mapre.map((i) => {
+            if (i >= 5 && i <= 25) {
+                return 450;
+            } else {
+                return i
+            }
+        });
+
+        console.log(update1)
+
+
+        // example 2
+        let update2 = mapre.map((i) => {
+            if (i >= 25 && i <= 30) {
+                return 1000;
+            } else if (i >= 50 && i <= 60) {
+                return 2000;
+            } else {
+                return i;
+            }
+        });
+
+        console.log(update2.sort((i, k) => (i - k)));
+
+        // basic of update value in array using map opration
+        let newarray = array.map((i) => {
+            // console.log(i)
+            if (i === 225) {
+                return 500;
+            } else {
+                return i;
+            }
+        })
+
+        // console.log(newarray);
+
+        let arr = [1, 2, 3, 4, 5]
+        let array3 = array.map((i) => {
+            if (i > 4 && i < 20) {
+                return 66
+            } else {
+                return i;
+            }
+        });
+
+        // console.log(array3);
+
+
+        let newarr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        let resNewarr = newarr.map((i) => {
+            if (i >= 1 && i <= 5) {
+                return 0;
+            } else if (i >= 5 && i < 10) {
+                return 1;
+            } else {
+                return i
+            }
+        });
+
+        // console.log(resNewarr);
+
+
+
+        // Original array of numbers
+        let arrL2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        // Create a shallow copy of the array using the spread operator
+        let array111 = [...arrL2];
+        console.log("Copied array:", array111);
+
+        // Update array values using a normal for loop
+        let resStore = [];
+        for (let i = 0; i < array111.length; i++) {
+            if (array111[i] > 7) {
+                // Update values greater than 7 to 1000
+                array111[i] = 1000;
+            }
+            // Store the updated values in a new array
+            resStore.push(array111[i]);
+        }
+        console.log("Updated array using for loop:", resStore);
+
+        // Update array values using the forEach loop
+        let store4 = [];
+        array111.forEach((i) => {
+            if (i > 7) {
+                // Update values greater than 7 to 5000
+                i = 5000;
+            }
+            // Store the updated values in a new array
+            store4.push(i);
+        });
+        console.log("Updated array using forEach:", store4);
+
+        // Update array values using the map function
+        let resMap = array111.map((i) => {
+            // Update values greater than 5 to 6000
+            if (i > 5) {
+                return 6000;
+            } else {
+                return i;
+            }
+        });
+        console.log("Updated array using map:", resMap);
+
+
+
+
+
+
+    </script>
+
 </body>
 
 </html>

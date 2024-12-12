@@ -109,8 +109,6 @@
 
 
     /* homepost style */
-
-
     #HomePostCard{
       min-height: 80vh;
 
@@ -148,9 +146,11 @@
 
     #SavebtnId{
         background-color: transparent;
-        padding-top: 15vw;
+        /* background-color: green; */
+        padding-top: 1vw;
         /* padding-left: 4vw; */
         margin-left: 22vw;
+        margin-top: -60vw;
 
     }
 
@@ -160,11 +160,22 @@
       /* margin-left: -0.5vw; */
       padding: 0px 1vw;
       font-size: 1px;
+      margin-top: -11vw;
     }
 
     #btnsitems #webLink{
       font-size: 3vw;
       padding: 1vw 2vw;
+    }
+
+
+    #shrePost{
+      margin-left: 4vw;
+    }
+
+    #treedot{
+      font-size: 5vw;
+      padding: 1.4vw;
     }
 
 

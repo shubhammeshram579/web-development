@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #111;
+        }
+
+        h1 {
+            text-align: center;
+            color: yellow;
+            text-decoration: underline;
+            text-transform: capitalize;
+            font-size: 3vw;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 400;
+            font-style: italic;
+            word-spacing: 2px;
+            padding: 10px;
+
+
+        }
+
+        p {
+            color: blueviolet;
+            text-align: justify;
+            letter-spacing: 1px;
+            word-spacing: -1px;
+            line-height: 1.3;
+            padding: 2px 20px;
+            margin-top: 20px;
+        }
+
+        .card2 {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+        }
+
+
+        .padding {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            padding: 40px;
+        }
+
+        .card3 {
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            padding: 10px;
+
+        }
+
+        .margin {
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+            margin-left: 100px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>function in js</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil enim a maiores esse suscipit minus quidem
+            repudiandae quam tempore, vel deserunt in cumque numquam aliquam sunt ipsa reiciendis reprehenderit
+            laudantium
+            provident incidunt! Beatae quisquam officiis enim porro doloremque, exercitationem ullam veniam rem, illum
+            sunt
+            quidem. Dignissimos eos mollitia blanditiis cumque? Repudiandae consequuntur est minima vitae, ullam iste
+            quisquam similique soluta dolorum rerum repellendus nihil assumenda cupiditate unde, temporibus distinctio
+            nulla
+            placeat dolore eius laboriosam molestiae maxime dolores. Qui a provident impedit quaerat consequatur
+            praesentium
+            inventore, amet aliquid accusamus incidunt? Consequatur et obcaecati magnam laborum exercitationem, quis
+            totam
+            consectetur dignissimos inventore.</p>
+
+        <div class="card2">
+            <h1 class="padding">padding</h1>
+        </div>
+
+        <div class="card3">
+            <h2 class="margin">margen</h2>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        // function sentax 
+        function abc() {
+            console.log("hello padding")
+        }
+
+        abc();
+
+
+        // annnomise function
+        let anFn = function () {
+            console.log("i am a annomuse function")
+        }
+
+        anFn();
+
+        // highorer function sentax
+        let hughOrderFun = function (a) {
+            return function (b) {
+                return a + b;
+            }
+        }
+
+       let res = hughOrderFun(10)(29);
+       console.log(res);
+    </script>
+
+
+
+</body>
+
+</html>
