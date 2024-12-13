@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .carousel-cell {
+            width: 100%;
+            height: 80vh;
+            margin-right: 10px;
+            border-radius: 5px;
+            counter-increment: gallery-cell;
+        }
+
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Flickity - autoPlay</h1>
+
+    <!-- Flickity HTML init -->
+    <div class="carousel" data-flickity='{ "autoPlay": true }'>
+        <div class="carousel-cell"><img src="https://images.pexels.com/photos/6343453/pexels-photo-6343453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="1"></div>
+        <div class="carousel-cell"><img src="https://images.pexels.com/photos/13380531/pexels-photo-13380531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></div>
+        <div class="carousel-cell"><img src="https://images.pexels.com/photos/14962480/pexels-photo-14962480/free-photo-of-drone-shot-of-mount-fuji.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></div>
+        <div class="carousel-cell"><img src="https://images.pexels.com/photos/16325033/pexels-photo-16325033/free-photo-of-snow-on-mountain-peak-near-water-at-night.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></div>
+        <div class="carousel-cell"><img src="https://images.pexels.com/photos/28822464/pexels-photo-28822464/free-photo-of-mount-fuji-and-kawaguchi-lake-scenic-view.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></div>
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</body>
+
+</html>

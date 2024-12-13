@@ -77,6 +77,9 @@ const FlickityCarousel = () => {
       transition: "linear 0.5s",
     });
   });
+
+
+
   useEffect(() => {
     setTimeout(() => {
       const tl = gsap.timeline({ repeat: -1, yoyo: true });
@@ -89,6 +92,9 @@ const FlickityCarousel = () => {
       });
     }, 3000);
   });
+
+
+  
   useEffect(() => {
     const tl = gsap.timeline({ repeat: -1, yoyo: true });
     tl.to(header3.current, {

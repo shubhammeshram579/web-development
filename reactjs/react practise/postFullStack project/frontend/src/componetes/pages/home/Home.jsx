@@ -23,13 +23,14 @@ const Home = () => {
 
   const accessToken = useSelector((state) => state.auth.user?.accessToken);
   const user = useSelector((state) => state.auth.user?.user);
+  const authStatus = useSelector((state) => state.auth.isLoggedIn);
   // console.log(user);
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/posts/getAllpost",
+          "/api/posts/getAllpost",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -67,7 +68,7 @@ const Home = () => {
   }
   // if (error) return <div className='font-bold text-5xl py-[27vh] text-green-900'>Login to read posts</div>;
 
-  if (posts.length === 0) {
+  if (!authStatus) {
     return (
       <Contenier>
         <div className="text-center">

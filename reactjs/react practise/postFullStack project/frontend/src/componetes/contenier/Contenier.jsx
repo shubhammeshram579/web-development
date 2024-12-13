@@ -33,7 +33,8 @@ function Contenier({ children }) {
       getDirection: true, // Track scroll direction (useful for triggering effects)
       getSpeed: true, // Track scroll speed
       reloadOnContextChange: true, // Reload on content changes
-      multiplier: 1
+      multiplier: 1,
+      touchMultiplier:2,
     });
 
     // Clean up on component unmount

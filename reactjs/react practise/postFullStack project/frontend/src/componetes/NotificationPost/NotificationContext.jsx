@@ -11,6 +11,7 @@ export const NotificationProvider = ({ children }) => {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
   const [notificationCount, setNotificationCount] = useState(0);
+ 
 
   const accessToken = useSelector((state) => state.auth.user?.accessToken)
 
@@ -24,7 +25,7 @@ export const NotificationProvider = ({ children }) => {
             Authorization: `Bearer ${accessToken}`,
           },
         });
-        console.log("post notifaction",response.data.data.notification)
+        // console.log("post notifaction",response.data.data.notification)
         setNotifications(response.data.data.notification);
         setNotificationCount(response.data.data.notification.length);
         setLoading(false);

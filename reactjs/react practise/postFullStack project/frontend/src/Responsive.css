@@ -340,10 +340,9 @@
 
     /* notificarion page */
     #Notification{
-        /* background-color: red; */
-        left: 45%;
-        width: 52vw;
-        height: 70vh;
+        left: 37%;
+        width: 60vw;
+        height: 73vh;
 
     }
 
@@ -351,10 +350,20 @@
         margin-top: 20px;
     }
 
+    #notificationCard2{
+      height:50vh;
+      /* background-color: green; */
+    }
+
+    #notificationCard3{
+      height: 23vw;
+    }
+
+
     #masseagebox{
         /* background-color: red; */
         width: 62vw;
-        height: 76vh;
+        height: 75vh;
         margin-right: 40vw;
     }
 
@@ -362,6 +371,7 @@
         /* background-color: green; */
         width: 56vw;
         height: 68vh;
+        border-radius:10px;
         
     }
 

@@ -1,6 +1,7 @@
 import React, {useState ,useEffect, createContext,useContext} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { NotificationContext } from './NotificationContext.jsx';
+import { useSelector } from 'react-redux';
 import "..//../Responsive.css"
 
 
@@ -11,8 +12,9 @@ const Notification = ({setShowNotifications,showNotifications})  => {
   const navigate = useNavigate()
 
   const [visible , setVisible] = useState(false)
+  const authStatus = useSelector((state) => state.auth.isLoggedIn);
 
-  console.log("notifications",notifications)
+  // console.log("notifications",notifications)
 
 
   useEffect(() => {
@@ -32,6 +34,8 @@ const Notification = ({setShowNotifications,showNotifications})  => {
   
 
   return (
+    <>
+    {authStatus ? (
     <div id='Notification' className={`Notification w-[22vw] h-[80vh] rounded-xl bg-gray-200 fixed z-50 px-5 ${visible ? "visible" : ""}`}>
     <div id='Noticationcard' className='flex items-start justify-center  flex-col gap-2' >
       <h1 className='px-2 py-2 font-semibold text-xl'>notification: {notifications.length} </h1>
@@ -39,9 +43,9 @@ const Notification = ({setShowNotifications,showNotifications})  => {
       {notifications.length === 0 ? (
         <p className='px-2'>No notifications</p> 
       ):(
-        <ul className='flex items-center justify-between flex-col gap-2 overflow-y-auto overflow-hidden h-[calc(70vh-100px)]'>
+        <ul id='notificationCard2' className='flex items-center justify-between flex-col gap-2 overflow-y-auto overflow-hidden h-[calc(70vh-100px)]'>
       {notifications.map((n)=> (
-        <div className='h-full w-full bg-gray-300 rounded-lg pb-2 mr-1' onClick={() => {handleNotificationClick(n._id, n.postId._id ,navigate); noficationpagehid();}}>
+        <div id='notificationCard3' className='h-full w-full bg-gray-300 rounded-lg pb-2 mr-1' onClick={() => {handleNotificationClick(n._id, n.postId._id ,navigate); noficationpagehid();}}>
          <h1 className='font-bold ml-2'>New</h1>
         <div className='flex items-center justify-evenly mb-2 gap-4'>
             <img src={n.postId.postImg} alt={n.postId.title} className='h-20 w-28 rounded-lg ml-2'/>
@@ -56,6 +60,8 @@ const Notification = ({setShowNotifications,showNotifications})  => {
     </div>
     </div>
     
+  ) : (null)}
+  </>
   )
 }
 

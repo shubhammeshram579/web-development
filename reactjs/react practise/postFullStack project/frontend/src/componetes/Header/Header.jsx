@@ -38,7 +38,7 @@ function Header({
     const fatchCurrentUser = async () => {
       try {
         const userData = await axios.get(
-          "http://localhost:8000/api/users/current-user",
+          "/api/users/current-user",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -59,7 +59,7 @@ function Header({
     fatchCurrentUser();
   }, []);
 
- 
+
 
   // notication buttnet hendeler
   const handleNotificationsClick = () => {
@@ -67,7 +67,7 @@ function Header({
     // showMessages(null); // Hide messages when showing notifications
   };
 
- 
+
 
   // massage butten hendaler
   const handleMessagesClick2 = () => {
@@ -99,9 +99,8 @@ function Header({
   };
 
   if (loading) return <div className="py-[90vh]">Loading...</div>;
-  // if (!currentUser.fullname) {
-  //   return <div>Loading...</div>;
-  // }
+
+
 
   const navItems = [
     // {
@@ -121,7 +120,10 @@ function Header({
     },
     {
       name: authStatus ? (
-        <h1 id="navuser" className="font-semibold uppercase bg-gray-300 px-4 py-2 rounded-full hover:bg-slate-300">
+        <h1
+          id="navuser"
+          className="font-semibold uppercase bg-gray-300 px-4 py-2 rounded-full hover:bg-slate-300"
+        >
           {user.fullname[0]}
         </h1>
       ) : (
@@ -143,10 +145,14 @@ function Header({
         {/* <Contenier> */}
         <nav className={"flex items-center justify-between"}>
           <div className="flex items-center justify-around gap-20">
-            {!authStatus ? (<Link to="/" id="Logop" className="bnavitem">
-              <Logo />
-            </Link>) :(
-               <Link to="/"><Logo /></Link>
+            {!authStatus ? (
+              <Link to="/" id="Logop" className="bnavitem">
+                <Logo />
+              </Link>
+            ) : (
+              <Link to="/">
+                <Logo />
+              </Link>
             )}
 
             <div>
@@ -161,7 +167,7 @@ function Header({
             </div>
           </div>
 
-          {authStatus && (
+          {authStatus ? (
             <div>
               <Link
                 to="/addpost"
@@ -172,15 +178,15 @@ function Header({
                 Create
               </Link>
             </div>
-          )}
+          ) : null}
 
-          {authStatus && (
+          {authStatus ? (
             <div id="topnavitem" className="sarchbar">
               <ChatSearchBar />
             </div>
-          )}
+          ) : null}
 
-          {authStatus && (
+          {authStatus ? (
             <button onClick={handleNotificationsClick} id="topnavitem">
               <div className="flex items-center">
                 <i class="fa-solid fa-bell text-xl inline-block px-2 py-2 duration-200 hover:bg-blue-100 rounded-full"></i>
@@ -192,7 +198,7 @@ function Header({
                 {/* )} */}
               </div>
             </button>
-          )}
+          ) : null}
 
           {authStatus && (
             <button onClick={handleMessagesClick2} id="topnavitem">
@@ -200,7 +206,7 @@ function Header({
             </button>
           )}
 
-          
+
 
           <ul
             className={" flex items-center justify-between gap-5"}
@@ -235,167 +241,51 @@ function Header({
 
 
       {/* nav2 */}
-      {authStatus ? (<header id="navbar2" className="fixed bottom-0 z-50 bg-slate-100 h-24 w-full flex items-center">
-        <nav className="flex items-center justify-evenly gap-20 w-full">
-          {authStatus && (<Link to="/" id="navitem" className="bnavitem">
-            <Logo />
-          </Link>)}
-
-          {authStatus && (
-            <div>
-              <Link
-                to="/addpost"
-                active={authStatus}
-                className="bnavitem inline-block px-2 py-3 duration-200"
-                id="navitem"
-              >
-                <i class="fa-solid fa-plus text-2xl text-black bg-gray-300 px-2 py-1 rounded-full"></i>
+      {authStatus ? (
+        <header
+          id="navbar2"
+          className="fixed bottom-0 z-50 bg-slate-100 h-24 w-full flex items-center"
+        >
+          <nav className="flex items-center justify-evenly gap-20 w-full">
+            {authStatus && (
+              <Link to="/" id="navitem" className="bnavitem">
+                <Logo />
               </Link>
-            </div>
-          )}
+            )}
 
-          {authStatus && (
-            <button onClick={handleUserClick2} className="bnavitem">
-              <div className="flex items-center">
-                <h1 className="font-semibold uppercase bg-gray-300 px-4 py-2 rounded-full text-xl">
-                  {user.fullname[0]}
-                </h1>
+            {authStatus && (
+              <div>
+                <Link
+                  to="/addpost"
+                  active={authStatus}
+                  className="bnavitem inline-block px-2 py-3 duration-200"
+                  id="navitem"
+                >
+                  <i class="fa-solid fa-plus text-2xl text-black bg-gray-300 px-2 py-1 rounded-full"></i>
+                </Link>
               </div>
-            </button>
-          )}
+            )}
 
-          {authStatus && (
-            <button className="text-xl text-black bg-gray-300 rounded-full">
-              <LogoutBtn />
+            {authStatus && (
+              <button onClick={handleUserClick2} className="bnavitem">
+                <div className="flex items-center">
+                  <h1 className="font-semibold uppercase bg-gray-300 px-4 py-2 rounded-full text-xl">
+                    {user.fullname[0]}
+                  </h1>
+                </div>
               </button>
-          )}
-        </nav>
-      </header>) :(
-        null
-      )}
+            )}
+
+            {authStatus && (
+              <button className="text-xl text-black bg-gray-300 rounded-full">
+                <LogoutBtn />
+              </button>
+            )}
+          </nav>
+        </header>
+      ) : null}
     </>
   );
 }
 
 export default Header;
-
-// const [currentUser, setCurrentUser] = useState([]);
- // const [notification, setNotification] = useState([]);
-  // const accessToken = useSelector((state) => state.auth.user?.accessToken);
-  // const [loading, setLoading] = useState(true);
-
-
-  {/* {authStatus && (
-            <button onClick={handleUserClick2}>
-              {showMassage ? (
-                "Hide Massage"
-              ) : (
-                <i class="fa-solid fa-comment-dots text-xl inline-block px-2 py-2 duration-200 hover:bg-blue-100 rounded-full"></i>
-              )}
-            </button>
-          )} */}
-
-
-   // const handleMessagesClick2 = () => {
-  //   setShowMassage((prevState) => !prevState);
-  //   setShowNotifications(false); // Hide messages when showing notifications
-  // };
-
-// useEffect(() => {
-//   const fatchcurrentUser = async () => {
-//     try {
-//       const getcurrentUser = await axios.get(
-//         `http://localhost:8000/api/users/current-user`,
-//         {
-//           headers: {
-//             Authorization: `Bearer ${accessToken}`,
-//           },
-//         }
-//       );
-
-//       console.log(
-//         "getcurrentUser.data.data.curentUser massage page",
-//         getcurrentUser.data.data.curentUser
-//       );
-//       setCurrentUser(getcurrentUser.data.data.curentUser);
-//     } catch (error) {
-//       console.error("Error fetching search results", error);
-//     }
-//   };
-//   fatchcurrentUser();
-// }, [accessToken]);
-
-// useEffect(() => {
-//   const fatchnotification = async () => {
-//     try {
-//       setLoading(true);
-//       const response = await axios.get(
-//         `http://localhost:8000/api/Notification`,
-//         {
-//           headers: {
-//             Authorization: `Bearer ${accessToken}`,
-//           },
-//         }
-//       );
-//       console.log("notit ", response.data.data.notification);
-//       setNotification(response.data.data.notification);
-
-//       setLoading(false);
-//     } catch (error) {
-//       console.log("notification not fatch", error);
-//       setLoading(false);
-//     }
-//   };
-//   fatchnotification();
-
-//   // / Listen for real-time updates from the server
-//   socket.on("notificationDeleted", (deletedNotificationId) => {
-//     setNotification((prevNotifications) =>
-//       prevNotifications.filter((n) => n._id !== deletedNotificationId)
-//     );
-//   });
-
-//   // Clean up the socket connection on component unmount
-//   return () => {
-//     socket.disconnect();
-//   };
-// }, [accessToken]);
-
-// if (loading) {
-//   return <div>Loading notifications...</div>;
-// }
-
-// const navigate = useNavigate();
-
-{
-  /* <div className="notification-icon" onClick={handleNotificationClick}>
-        <span className="icon">🔔</span>
-        {notificationCount > 0 && (
-          <span className="notification-count">{notificationCount}</span>
-        )}
-      </div> */
-}
-
-{
-  /* {
-                        navItems.map((item)=>
-                            item.active ? (
-                                <li key={item.name}>
-                                    <button onClick={() => navigate(item.slug)}
-                                        className={'inline-block px-2 duration-200 hover:bg-blue-100 rounded-full'}> {item.name}
-                                    </button>
-                                </li>
-                            ) : null )
-                    } */
-}
-
-// {
-//   name: "AddPost",
-//   slug: "/addpost",
-//   active: authStatus,
-// },
-// {
-//     name: "Search post",
-//     slug: "/posts/getAllpost/search",
-//     active: authStatus,
-// },
