@@ -43,7 +43,7 @@
             margin-top: 20px;
         }
 
-        .flexbox{
+        .flexbox {
             display: flex;
             align-items: center;
             justify-content: space-around;
@@ -79,6 +79,46 @@
             margin-left: 100px;
             margin-top: 50px;
         }
+
+        .page2 {
+            min-height: 50vh;
+            width: 100%;
+            background-color: gray; 
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            grid-gap: 100px;
+           
+        }
+
+        .cards1{
+            background-color: red;
+            border-radius: 100%;
+        }
+        .cards2{
+            background-color:burlywood;
+        }
+        .cards3{
+            background-color: yellow;
+           
+        }
+        .cards4{
+            background-color: orange;
+        }
+        .cards5{
+            background-color: rebeccapurple;
+        }
+        .cards6{
+            background-color: blue;
+            border-radius: 10%;
+        }
+
+        .box{
+            height: 200px;
+            width: 90%;
+            margin: 20px 20px;
+        }
+
+
     </style>
 </head>
 
@@ -108,6 +148,31 @@
                 <h2 class="margin">margen</h2>
             </div>
         </div>
+
+    </div>
+
+    <!-- page 2 -->
+
+    <div class="page2">
+     
+            <div class="cards1 box">
+                <h5>1</h5>
+            </div>
+            <div class="cards2 box">
+                <h5>2</h5>
+            </div>
+            <div class="cards3 box">
+                <h5>3</h5>
+            </div>
+            <div class="cards4 box">
+                <h5>4</h5>
+            </div>
+            <div class="cards5 box">
+                <h5>5</h5>
+            </div>
+            <div class="cards6 box">
+                <h5>6</h5>
+            </div>
 
     </div>
 
@@ -177,9 +242,9 @@
 
 
         // clouser function
-        function outerFuntion(){
+        function outerFuntion() {
             let count = 0;
-            return function inner(){
+            return function inner() {
                 count++
                 console.log(count)
             }
@@ -192,24 +257,24 @@
 
 
 
-        function outer(a){
-            return function inner(b){
-                return function innerchid(d){
+        function outer(a) {
+            return function inner(b) {
+                return function innerchid(d) {
                     return a + b + d
                 }
             }
         };
 
-        let rest =  outer(10)(10)(19); ///curring function
+        let rest = outer(10)(10)(19); ///curring function
         console.log(rest);
 
 
         // A constructor function is used to create and initialize new objects with shared properties and methods.
         // Use the new keyword to call it.
-        function contuction(){
+        function contuction() {
             this.name = "shhubham",
-            this.age = 27,
-            this.add = "india"
+                this.age = 27,
+                this.add = "india"
         }
 
         let obj1 = new contuction();
@@ -218,13 +283,13 @@
         console.log(obj2);
 
 
-         // vi. Immediately Invoked Function Expression (IIFE)
+        // vi. Immediately Invoked Function Expression (IIFE)
 
-         (
-            function(){
+        (
+            function () {
                 console.log("hello iife")
             }
-         )();
+        )();
 
 
         //  array function
@@ -242,7 +307,7 @@
         // 1.A function is a block of code designed to perform a particular task. It is executed when invoked (called).
         // Example:
 
-        function abcd(){
+        function abcd() {
             console.log("hello function basic sentax")
         }
 
@@ -250,7 +315,7 @@
 
         // 2.Write a function to add two numbers.
 
-        function addTwo(){
+        function addTwo() {
             // varible wise
             let num1 = 1;
             let num2 = 2;
@@ -260,17 +325,17 @@
         addTwo();
 
         // with paramter
-        function addNum(a,b){
+        function addNum(a, b) {
             return a + b
         }
 
-        let numres = addNum(100,50);
+        let numres = addNum(100, 50);
         console.log(numres);
 
         // 3.Write a function to find the factorial of a number.
-        function factorial(n){
+        function factorial(n) {
             // base case
-            if(n === 0){
+            if (n === 0) {
                 return 1
             };
 
@@ -284,11 +349,11 @@
         // 4.What is a function expression?
         // Def: A function expression is a function defined within an expression and can be anonymous.
 
-        let funExpre = function(a,b){
+        let funExpre = function (a, b) {
             return a * b
         };
 
-        let annomuseFun = funExpre(10,50);
+        let annomuseFun = funExpre(10, 50);
         console.log(annomuseFun);
 
 
@@ -296,10 +361,10 @@
 
         let numR = 11;
 
-        function isEven(n){
-            if(n % 2 === 0){
+        function isEven(n) {
+            if (n % 2 === 0) {
                 console.log("even")
-            }else{
+            } else {
                 console.log("odd")
             }
 
@@ -309,9 +374,9 @@
 
         // tennery contion
 
-        function  isEven2(n) {
+        function isEven2(n) {
             return n % 2 === 0 ? "even" : "odd"
-            
+
         }
 
         console.log(isEven2(10));
@@ -320,11 +385,12 @@
 
 
 
-        
 
 
 
-        
+
+
+
 
 
 

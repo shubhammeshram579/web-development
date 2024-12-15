@@ -200,11 +200,11 @@
 
         let ReveseNumSum = 1;
 
-        for(let i = 20; i > 1; i--){
+        for (let i = 20; i > 1; i--) {
             ReveseNumSum += i
         };
 
-        console.log("ReveseNumSum:" , ReveseNumSum);
+        console.log("ReveseNumSum:", ReveseNumSum);
 
 
 
@@ -302,8 +302,8 @@
         let CheckPnum = 10;
         let CheckPrime = true;
 
-        for(let k = 2; k < CheckPnum; k++){
-            if( CheckPnum % k === 0){
+        for (let k = 2; k < CheckPnum; k++) {
+            if (CheckPnum % k === 0) {
                 CheckPrime = false
                 break
             }
@@ -329,15 +329,15 @@
 
         // practise
 
-        let FnR = 0 , FnR2 = 1, fibonacci3;
-        
-        for(let i = 1; i <= 10; i++){
-            console.log("fnr",FnR )
+        let FnR = 0, FnR2 = 1, fibonacci3;
+
+        for (let i = 1; i <= 10; i++) {
+            console.log("fnr", FnR)
             fibonacci3 = FnR + FnR2
             FnR = FnR2
             FnR2 = fibonacci3;
         };
-        console.log("range of Fibonacci range:",fibonacci3);
+        console.log("range of Fibonacci range:", fibonacci3);
 
 
         // 9.Sum all the elements in an array.
@@ -447,14 +447,14 @@
 
         // practise
 
-        let nestedArray2 = [2,5,3,[55,77],9];
+        let nestedArray2 = [2, 5, 3, [55, 77], 9];
         let StoreNestedArray = [];
 
-        function Nested(arr){
-            for(let i = 0; i < arr.length; i++){
-                if(Array.isArray(arr[i])){
+        function Nested(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                if (Array.isArray(arr[i])) {
                     Nested(arr[i]);
-                }else{
+                } else {
                     StoreNestedArray.push(arr[i])
                 }
             }
@@ -498,17 +498,17 @@
         console.log(findMatchValue);
 
 
-        let interArray = [3,5,7,5,3,9,10];
-        let interArray2 = [3,4,7,55,33,94,10];
+        let interArray = [3, 5, 7, 5, 3, 9, 10];
+        let interArray2 = [3, 4, 7, 55, 33, 94, 10];
         let intersection2 = [];
 
-        interArray.forEach((i)=>{
-            if(interArray2.includes(i)){
+        interArray.forEach((i) => {
+            if (interArray2.includes(i)) {
                 intersection2.push(i)
             }
         });
 
-        console.log("intersection2",intersection2);
+        console.log("intersection2", intersection2);
 
 
 
@@ -523,23 +523,23 @@
 
         // practise
 
-        let flatenArray = [3,5,2,5,7,8];
+        let flatenArray = [3, 5, 2, 5, 7, 8];
         let IdexNum = 3;
 
-        for(let i = 0; i < IdexNum; i++){
+        for (let i = 0; i < IdexNum; i++) {
             flatenArray.unshift(flatenArray.pop())
         };
 
-        console.log("flatenArray",flatenArray);
+        console.log("flatenArray", flatenArray);
 
 
         // 15.Check if a string is a palindrome.
         let ParS = "madam";
         let isPalindrome = true;
 
-        for(let i = 0; i < ParS.length /2; i++){
+        for (let i = 0; i < ParS.length / 2; i++) {
             // console.log()
-            if(ParS[i] !== ParS[ParS.length -1 - i]){
+            if (ParS[i] !== ParS[ParS.length - 1 - i]) {
                 isPalindrome = false
                 break
             }
@@ -553,8 +553,8 @@
         let strName = "level";
         let isPalindromeCheck = true;
 
-        for(let i= 0; i < strName.length / 3; i++){
-            if(strName[i] !== strName[strName.length - 1 - i]){
+        for (let i = 0; i < strName.length / 3; i++) {
+            if (strName[i] !== strName[strName.length - 1 - i]) {
                 isPalindromeCheck = false
                 break
             }
@@ -563,14 +563,14 @@
         console.log(isPalindromeCheck ? "is Palidrome" : "is not palidrome");
 
 
-         // Advanced Challenges:
+        // Advanced Challenges:
         // 16.Implement bubble sort using a loop.
-        let bubleSortArray = [3,6,3,2,8,1];
+        let bubleSortArray = [3, 6, 3, 2, 8, 1];
 
-        for(let i = 0; i < bubleSortArray.length -1; i++){
-            for(let j = 0; j < bubleSortArray.length -1 - i; j++){
-                if(bubleSortArray[j] > bubleSortArray[j + 1]){
-                    [bubleSortArray[j], bubleSortArray[j + 1]] = [bubleSortArray[j + 1] , bubleSortArray[j]]
+        for (let i = 0; i < bubleSortArray.length - 1; i++) {
+            for (let j = 0; j < bubleSortArray.length - 1 - i; j++) {
+                if (bubleSortArray[j] > bubleSortArray[j + 1]) {
+                    [bubleSortArray[j], bubleSortArray[j + 1]] = [bubleSortArray[j + 1], bubleSortArray[j]]
                 }
             }
         }
@@ -578,9 +578,9 @@
         console.log(bubleSortArray);
 
         // collection fromwork
-        let Arrva = [3,5,2,6,1,9];
+        let Arrva = [3, 5, 2, 6, 1, 9];
 
-        let SorArray = Arrva.sort((a ,b) => (a - b));
+        let SorArray = Arrva.sort((a, b) => (a - b));
         console.log(SorArray);
 
 
@@ -599,8 +599,8 @@
 
         let n = 5;
 
-        for (let i = 0; i <= n; i++){
-            console.log(' '.repeat(n - i ) + "*".repeat(i * 2))
+        for (let i = 0; i <= n; i++) {
+            console.log(' '.repeat(n - i) + "*".repeat(i * 2))
         };
 
 
@@ -608,7 +608,7 @@
 
         let n2 = 10;
 
-        for(let i = 0; i <= n2; i++){
+        for (let i = 0; i <= n2; i++) {
             // console.log(n2 - i)
             let space = ' '.repeat(n2 - i)
 
@@ -619,22 +619,22 @@
         // practise
 
         let rangeOf = 10
-        for(let i = 0 ; i < rangeOf; i++){
+        for (let i = 0; i < rangeOf; i++) {
             console.log(" ".repeat(rangeOf - i) + "*".repeat(i * 2));
         };
 
 
         //19.Find the missing number in an array of consecutive numbers.
 
-        let listArray = [1,2,3,4,5,7,8,10];
+        let listArray = [1, 2, 3, 4, 5, 7, 8, 10];
         let missing;
 
 
         // single missing value find out
-        for(let i = 0; i <= listArray.length -1 ; i++){
+        for (let i = 0; i <= listArray.length - 1; i++) {
             // console.log(listArray[i + 1] - listArray[i] !== 1)
             // console.log(listArray[i] + 1)
-            if(listArray[i + 1] - listArray[i] !== 1){
+            if (listArray[i + 1] - listArray[i] !== 1) {
                 missing = listArray[i] + 1
                 break
             }
@@ -643,12 +643,12 @@
 
 
         // multiple missing value find out
-        let arr = [1,2,3,4,5,7,8,10,12,13]
+        let arr = [1, 2, 3, 4, 5, 7, 8, 10, 12, 13]
         let missing2 = [];
 
-        for(let i = 0; i <= arr.length -1; i++){
-            if(arr[i + 1] - arr[i] !== 1){
-                for(let j = arr[i] + 1; j < arr[i + 1]; j++){
+        for (let i = 0; i <= arr.length - 1; i++) {
+            if (arr[i + 1] - arr[i] !== 1) {
+                for (let j = arr[i] + 1; j < arr[i + 1]; j++) {
                     missing2.push(j)
                 }
             }
@@ -657,46 +657,52 @@
         console.log(missing2);
 
 
+
+
+
+        // 20.Transpose a matrix.
+        let martix = [[12, 34, 6], [34, 66, 22]];
+
+        let tranform1 = [];
+
+
+        if(martix.length > 0 && Array.isArray(martix[0])){
+            for (let i = 0; i < martix[0].length; i++) {
+            tranform1[i] = [];
+            for (let k = 0; k < martix.length; k++) {
+                tranform1[i][k] = martix[k][i]
+
+            }
+            
+        }
+        console.log(tranform1)
+
+        }else{
+            console.log("error")
+        };
         
 
-
-         // 20.Transpose a matrix.
-         let matrix2 = [
+        // final currect 
+        let matrix2s = [
             [1, 2, 3],
             [4, 5, 6],
             [7, 8, 9]
         ];
 
-        // console.log(matrix)
-        let transposed = [];
-        for (let i = 0; i < matrix2.length; i++) {
-            transposed[i] = [];
-            for (let j = 0; j < matrix2[i].length; j++) {
-                transposed[i][j] = matrix2[j][i];
+        let transposed2 = [];
+
+        if (matrix2s.length > 0 && Array.isArray(matrix2s[0])) { // Check for valid matrix
+            for (let i = 0; i < matrix2s[0].length; i++) { // Outer loop for columns
+                transposed2[i] = []; // Initialize a new row in the transposed matrix
+                for (let j = 0; j < matrix2s.length; j++) { // Inner loop for rows
+                    transposed2[i][j] = matrix2s[j][i];
+                }
             }
-        }
-        console.log(transposed);
-
-
-        // my own solution i face undeind value proble then solve the -1
-        let matrix = [
-            [1,2,3,4],
-            [5,6,7,8],
-            [9,10,11,12]
-        ];
-
-        let tranfrom = [];
-        // console.log(matrix);
-      
-
-        for(let i = 0; i < matrix.length; i++){
-            tranfrom[i] = [];
-            for(let k = 0; k < matrix[i].length -1; k++){
-                tranfrom[i][k] = matrix[k][i]
-            }
+            console.log(transposed2);
+        } else {
+            console.error("Invalid matrix structure or empty matrix");
         }
 
-        console.log(tranfrom);
 
 
 
@@ -706,7 +712,7 @@
 
 
 
-        
+
 
 
 
