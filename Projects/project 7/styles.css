@@ -1,0 +1,373 @@
+/* Style the body */
+*{
+    padding: 0px;
+    margin: 0px;
+    color: antiquewhite;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2b2929;
+    overflow: hidden;
+  }
+
+/* navbar style */
+  .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position:fixed;
+    z-index: 9999;
+  }
+
+  .logo{
+    padding: 10px 20px;
+    font-size: 1vw;
+  }
+
+  .logo img{
+    height: 5vw;
+  }
+
+  .navitems{
+    padding: 50px 100px;
+    font-size: 2vw;
+  }
+
+
+  /* part 2 navbar */
+  .navItmes2{
+    background-color:#2b2929;
+    /* background-color: red; */
+    min-height: 15vh;
+    width: 100%;
+    position:fixed;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    gap: 10px;
+    opacity: 0;
+    transition: all linear 1s;
+  }
+
+  .navItmes2 img{
+    height: 5vw;
+    padding-left: 20px;
+  }
+
+  .fa-xmark{
+    opacity: 0;
+  }
+  .navItmes2 h1{
+    color: #fff;
+    padding-bottom: 100px;
+    padding-right: 20px;
+    padding-top: 20px;
+  }
+
+  .navItmes2 a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1vw;
+    padding-right: 40px;
+
+  }
+  .navItmes2 a:hover{
+    color: greenyellow;
+  }
+
+  .navItmes2 .home{
+    color: greenyellow;
+
+  }
+  
+
+  /* insight nav */
+  .navcard2{
+    min-height: 40vh;
+    width: 15%;
+    background-color: aliceblue;
+    margin-top: 122px;
+    margin-right: 100px;
+    position: fixed;
+    left: 85%;
+    z-index: 70;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 20px;
+    border-radius: 0px 10px 10px 20px;
+    opacity: 0;
+  }
+
+  .navcard2 a{
+    color: #111;
+    text-decoration: none;
+    font-size: 0.9vw;
+    font-weight:500;
+
+  }
+
+
+
+  /* Slideshow container */
+  .slideshow-container {
+    position: absolute;
+    width: 100%;
+    max-width:100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Slides */
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    object-position: center;
+  }
+  
+  /* Active slide */
+  .slide.active {
+    opacity: 1;
+  }
+  
+  /* Fade animation */
+  .fade {
+    animation: fade 1.5s ease-in-out;
+  }
+
+
+  /* home lanling page1 */
+  .page1{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #00000071;
+    display: flex;
+    align-items: start;
+    justify-content:end;
+    flex-direction: column;
+    position: relative;
+    z-index: 50;
+  }
+  
+  .head1{
+    font-size: 11vw;
+    font-weight: 500;
+    padding-left: 20px;
+    color: rgb(148, 214, 47);
+  }
+
+  .head1 span{
+    font-size: 2vw;
+    font-weight: 400;
+    color: indianred;
+    margin-left: -20px;
+  }
+
+  .head2{
+    font-size: 7vw;
+    float: right;
+    font-weight: 400;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+
+
+  /* video page2*/
+  .page2{
+    background-color: #dfd4d4;
+    min-height: 110vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+    opacity: 0;
+    
+  }
+
+  .page2 .video{
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+    /* opacity: 0; */
+    
+  }
+
+
+
+/* page 3 story style */
+  .page3{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-color: #dfd4d4;
+    padding-top: 150px;
+  }
+
+  .container1{
+    height: 80vh;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 0px 100px;
+    opacity: 0;
+  }
+  .container1 p{
+    font-size: 2vw;
+    text-align: justify;
+    font-weight: 300;
+    
+  }
+
+  .container2{
+    background-color:rgb(38, 147, 147);
+    height: 59vh;
+    width: 25%;
+    padding: 20px 10px;
+    margin-right: 100px;
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px 0px 10px 3px;
+    opacity: 0;
+  }
+
+  .container2::-webkit-scrollbar{
+    display: block;
+    width: 4px;
+  }
+
+  .container2::-webkit-scrollbar-thumb{
+    background-color:#fff;
+    border-radius: 50px;
+
+}
+
+
+  .container2 p{
+    font-size: 1vw;
+    color: #000;
+   
+  }
+
+  /* page5 service  */
+  .page5{
+    background-color: #2b2929;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+   
+  }
+
+  .headingServive{
+    font-size: 3vw;
+  }
+
+  .cars{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 100px;
+
+  }
+
+  .serviceCard1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 300px;
+    /* opacity: 0; */
+  }
+
+  .serviceCard2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 300px;
+  }
+
+  .box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+  }
+
+  /* page 6 stye */
+  .page6{
+    background-color: #2b2929;
+    min-height: 83vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .otherhead{
+    font-size: 3vw;
+  }
+
+  .ocard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 100px;
+  }
+
+
+  .ocard h1{
+    background-color: aquamarine;
+    padding: 10px;
+    color: #000;
+
+  }
+
+  .ocard2{
+    text-align: center;
+    
+  }
+
+  .ocard2 h1{
+    font-family: 1vw;
+
+  }
+
+  footer{
+    text-align: center;
+  }
+
+  footer h1{
+    font-size: 1vw;
+    font-weight: 300;
+    
+  }
+

@@ -1,0 +1,211 @@
+
+@media (max-width:600px) {
+
+    html,body{
+        overflow-x: hidden;
+    }
+
+    /* navbar style */
+    .fa-bars{
+        font-size: 6vw;
+    }
+  
+    .logo img{
+      height: 13vw;
+    }
+
+
+    .navitems{
+      padding: 50px 80px;
+    }
+  
+  
+    .navItmes2{
+      background-color:#2b2929;
+      min-height: 100vh;
+      width: 100%;
+      position:absolute;
+      z-index: -999;
+      display: flex;
+      align-items: start;
+      justify-content:start;
+      flex-direction: column;
+      gap: 100px;
+      opacity: 0;
+      transition: linear 1s;
+    }
+
+    .responsiveNav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48vw;
+      padding: 29px 0px;
+    }
+
+    .fa-xmark{
+      font-size: 7vw;
+      opacity: 1;
+    }
+  
+    .navItmes2 img{
+      height: 13vw;
+    }
+
+    .navcard1{
+      display: flex;
+      align-items: end;
+      justify-content: end;
+      flex-direction: column;
+      gap: 25px;
+      margin-left: 200px;
+    }
+
+    .navItmes2 .navcard1 a{
+      font-size: 6vw;
+    }
+    
+    .navcard2{
+      min-height: 50vh;
+      width: 100%;
+      background-color: aliceblue;
+      margin-top: 122px;
+      margin-right: 100px;
+      position: fixed;
+      left: 0%;
+      z-index: -99;
+      display: flex;
+      align-items: start;
+      justify-content: start;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px 20px;
+      border-radius: 0px 10px 10px 20px;
+      opacity: 0;
+    }
+  
+    .navcard2 a{
+      color: #111;
+      text-decoration: none;
+      font-size: 5vw;
+      font-weight:500;
+  
+    }
+
+
+    /* page2 home leanding  */
+    .head1{
+        font-size: 20vw;
+    }
+
+    .head1 span{
+        font-size: 5vw;
+    }
+    
+    .page2{
+        min-height: 50vh;
+    }
+
+
+    /* page3 indian story updated  */
+    .page3{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container1{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        gap: 20px;
+    }
+
+    .container1 p{
+        font-size: 4vw;
+        text-align: center;
+    }
+
+    .container2{
+        width: 80%;
+        height: 50vh;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .container2 p{
+        font-size: 4vw;
+
+    }
+
+
+    /* page5 service provide */
+    .page5{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-bottom: 50px;
+
+    }
+
+    .headingServive{
+        font-size: 5vw;
+        padding: 100px 0px;
+      }
+
+    .serviceCard1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 100px;
+    }
+
+      .serviceCard2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 100px;
+      }
+
+      .cars{
+        display: grid;
+        grid-template-columns:repeat(2,1fr);
+        gap: 140px;
+      }
+
+      .box img{
+        height: 100px;
+      }
+
+      .box h1{
+        font-weight: 300;
+        font-size: 3vw;
+      }
+
+
+      /* page6 otherSection */
+      .page6 .otherhead{
+        font-size: 5vw;
+      }
+
+      .ocard{
+        display: grid;
+        grid-template-columns:repeat(2,1fr);
+        gap: 50px;
+      }
+
+      .ocard2 h1{
+        font-size: 3vw;
+      }
+
+      footer h1{
+        font-size: 2vw;
+      }
+    
+}
