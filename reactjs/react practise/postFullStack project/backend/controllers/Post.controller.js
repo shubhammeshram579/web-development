@@ -47,9 +47,6 @@ const publishPost = AsynceHendler(async (req, res) =>{
             throw new ApiError(500, "somthing went wrong")
         }
 
-        // console.log("PostPublish",PostPublish.owner)
-        // console.log("PostPublish username",PostPublish)
-
 
         // posts creation notification page feature
         const followers = await User.find({following: PostPublish.owner});
@@ -371,58 +368,3 @@ export {
 
 }
 
-
-
-
-
-// const notification  = AsynceHendler(async (req, res) =>{
-//     try {
-
-//         const {userId} = req.params._id;
-
-//         const notification = await Notification.find({recipient:userId}).populate("sender postId");
-//         console.log("notification",notification)
-
-//         if(!notification){
-//             throw new ApiError(404, "notication not get")
-//         }
-
-//         return res
-//         .status(200)
-//         .json(
-//             new ApiResponse(200, {notification}, "success")
-//         )
-        
-//     } catch (error) {
-//         throw new ApiError(500, error.message)
-        
-//     }
-
-// });
-
-// const getPostUser = AsynceHendler( async (req, res) =>{
-//     try {
-//         const {userId} = req.params;
-
-//         if(!userId){
-//             throw new ApiError(404, "owner id not found")
-//         }
-
-//         const postUserPost = await Post.find({owner: userId})
-
-//         if(!postUserPost){
-//             throw new ApiError(404 , "post not found")
-//         }
-
-//         return res
-//         .status(200)
-//         .json(
-//             new ApiResponse(200 , {postUserPost} , "success")
-//         )
-
-//     } catch (error) {
-//         throw new ApiError(404, error.message , "post not found")
-        
-//     }
-
-// })

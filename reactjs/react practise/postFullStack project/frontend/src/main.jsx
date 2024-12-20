@@ -6,15 +6,6 @@ import { Provider } from 'react-redux'
 import { RouterProvider ,createBrowserRouter } from 'react-router-dom'
 import {AuthLayout} from "./componetes/index.js"
 
-// import { global } from "global";
-// import { Buffer } from "buffer";
-// import process from "process";
-
-// window.global = global;
-// window.Buffer = Buffer;
-// window.process = process;
-
-
 
 
 
@@ -191,15 +182,6 @@ const router = createBrowserRouter([
                 </AuthLayout>
             ),
         },
-        // {
-        //     path: "/videoCall/:from/:to",
-        //     element: (
-        //         <AuthLayout authentication>
-        //             <VideoCall />
-        //             {/* <Home /> */}
-        //         </AuthLayout>
-        //     ),
-        // },
     ],
 
   }

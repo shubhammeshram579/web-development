@@ -134,7 +134,7 @@ const getCurrentUser = AsynceHendler(async (req, res) =>{
     const userId = req.user._id;
 
     const curentUser = await User.findById(userId).select("-password -refreshToken");
-    console.log(curentUser)
+    // console.log(curentUser)
 
 
     if(!curentUser){
@@ -288,7 +288,7 @@ const userSavePost = AsynceHendler( async (req,res) =>{
         const {userId} = req.params;
 
         const user = await User.findById(userId).populate("savePosts");
-        console.log("data",user)
+        // console.log("data",user)
 
         if(!user){
             throw new ApiError(404, "user not found")
@@ -314,7 +314,7 @@ const getusetbyId = AsynceHendler( async (req, res) => {
 
         // const postUser = await User.find({_id:userId});
         const postUser = await User.findById(userId);
-        console.log("postUser",postUser)
+        // console.log("postUser",postUser)
 
         if(!postUser){
             throw new ApiError(404, "postUser not found")
@@ -453,32 +453,3 @@ export {
 
 }
 
-
-
-
-
-// const statusFollow = AsynceHendler(async (req, res) => {
-//     try {
-//         const {userId} = req.params;
-//         const followerId = req.user._id;
-
-//         const currentUser = await User.findById(followerId);
-
-//         if(!currentUser){
-//             throw new ApiError(404 , "user not found")
-//         };
-
-//         const isFollowing = currentUser.following.includes(userId)
-
-//         return res
-//         .status(200)
-//         .json(
-//             new ApiResponse(200, {isFollowing})
-//         )
-        
-//     } catch (error) {
-//         throw new ApiError(500, error.message)
-        
-//     }
-
-// });

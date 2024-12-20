@@ -138,31 +138,3 @@ export default SearchResults;
 
 
 
-
-
-
-
-
-
-
-
-// <div className='pt-20 overflow-hidden'>
-
-    // <div className={` flex items-center justify-center gap-20 p-20 flex-wrap`}>
-    //   {posts.length > 0 ? (
-    //     posts.map((post) => (
-    //       <div key={post._id} className={`SearchPost ${visible ? "visible" : ""}`}>
-    //         <Link to={`/getPostByID2/${post._id}`}><img src={post.postImg} alt={post.title} className='w-[300px] h-[500px] object-cover rounded-3xl' />
-
-    //         <h2 className='font-bold text-center mt-5'>{post.title}</h2>
-    //         <p className='text-center'>{post.description}</p></Link>
-    //       </div>
-    //     ))
-    //   ) : (
-    //     <p>No results found</p>
-    //   )}
-
-    // </div>
-
-    // </div>
-    // <Contenier>

@@ -1,5 +1,5 @@
 import React from "react";
-import { img, video } from "..//../index.js";
+import { img, video ,Product} from "..//../index.js";
 
 function HomePage() {
   return (
@@ -83,6 +83,7 @@ function HomePage() {
           pariatur aperiam.
         </p>
       </div>
+      <Product />
     </>
   );
 }

@@ -211,25 +211,3 @@ function Homepage() {
 
 export default Homepage;
 
-
-
-
-//  const scrollRef = useRef(null);
-
-  // useEffect(() => {
-  //   // Initialize Locomotive Scroll
-  //   const scroll = new LocomotiveScroll({
-  //     el: scrollRef.current,
-  //     smooth: true,
-  //     smoothMobile: true, // Enable smooth scrolling on mobile
-  //     inertia: 0.8, // Inertia-based smooth scrolling
-  //     getDirection: true, // Track scroll direction (useful for triggering effects)
-  //     getSpeed: true, // Track scroll speed
-  //     reloadOnContextChange: true, // Reload on content changes
-  //   });
-
-  //   // Clean up on component unmount
-  //   return () => {
-  //     scroll.destroy();
-  //   };
-  // }, []);

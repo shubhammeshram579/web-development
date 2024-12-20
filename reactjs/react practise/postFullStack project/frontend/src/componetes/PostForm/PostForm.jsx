@@ -122,12 +122,3 @@ try {
 }
 
 export default PostForm;
-
-
-// if(loading) return <div>uploding img</div>
-
-
-
-// const emitNotification = () => {
-//   socket.emit('sendNotification', { id: new Date().getTime(), message: "New notification from client!" });
-// };

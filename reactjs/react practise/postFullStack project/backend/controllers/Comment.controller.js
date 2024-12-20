@@ -80,7 +80,7 @@ try {
         // const postId = req.params;
     
         const comments = await Comment.find({post:req.params.postId}).populate("owner","email fullname").sort({createdAt:-1})
-        console.log(comments)
+        // console.log(comments)
     
         if(!getComment.length){
             throw new ApiError(404, "post comment not found")

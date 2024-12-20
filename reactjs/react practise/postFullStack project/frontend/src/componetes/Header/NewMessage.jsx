@@ -176,7 +176,7 @@ const NewMessage = () => {
 
         {/* sendMessage */}
         {selectedUser && (
-        <div id="sendmessageCard" className="flex items-center justify-center gap-5 mt-[-50px]">
+        <div id="sendmessageCard" className="flex items-center justify-center gap-2 mt-[-50px]">
           <i class="ri-tools-fill text-2xl"></i>
           <form onSubmit={(e) => e.preventDefault()}>
             <input
@@ -202,63 +202,3 @@ export default NewMessage;
 
 
 
-
-
-// const useQuery = () => {
-//   return new URLSearchParams(useLocation().search);
-// };
-
-
-
-
-// const newMessage = response.data.data;
-        // setMessage(prevMessages => [...prevMessages, newMessage].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)));
-
-
-
- // console.log("selectedUser",selectedUser)
-
-  // getAlluser Router
-
-  // useEffect(()=>{
-  //   const fatchUsers = async () => {
-  //     if(query){
-  //     try {
-  //       const getUsers = await axios.get(`http://localhost:8000/api/users/getAllUsers/search`,{
-  //         params: { query },
-  //         headers:{
-  //           "Authorization": `Bearer ${accessToken}`
-  //         }
-  //       })
-  //       console.log("getAllUser",getUsers.data)
-  //       setGetAllUsers(getUsers.data)
-
-  //     } catch (error) {
-  //       console.log(error.message)
-
-  //     }
-  //   }
-
-  //   };
-  //   fatchUsers()
-
-  // },[query])
-
-  // useEffect(() => {
-  //   if (query) {
-  //     axios
-  //       .get(`http://localhost:8000/api/users/getAllUsers/search`, {
-  //         params: { query },
-  //         headers:{
-  //           "Authorization":`Bearer ${accessToken}`
-  //         }
-  //       })
-  //       .then((response) => {
-  //         console.log(response.data.data.getUsers)
-  //         setGetAllUsers(response.data.data.getUsers);
-  //       })
-  //       .catch((error) => {
-  //         console.log('Error fetching search results:', error);
-  //       });
-  //   }
-  // }, [query]);

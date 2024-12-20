@@ -1,3 +1,20 @@
 #root {
   max-width: 100%;
 }
+
+/* 
+.carousel-cell {
+  width: 30%;
+  height: 80vh;
+  margin-right: 10px;
+  border-radius: 5px;
+  counter-increment: gallery-cell;
+} */
+
+/* img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+} */
+

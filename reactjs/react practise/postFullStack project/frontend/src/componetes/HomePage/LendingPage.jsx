@@ -161,7 +161,6 @@ const FlickityCarousel = () => {
                 />
               </div>
               <div id="hp1img2" ref={(el) => (circleRefs.current[1] = el)} className="card1">
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
 
                   className="h-[400px] w-[250px] rounded-3xl"
@@ -175,10 +174,8 @@ const FlickityCarousel = () => {
                   src="https://images.pexels.com/photos/1718199/pexels-photo-1718199.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
               </div>
               <div ref={(el) => (circleRefs.current[3] = el)} className="card1">
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
                 id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
@@ -190,7 +187,7 @@ const FlickityCarousel = () => {
                 ref={(el) => (circleRefs.current[4] = el)}
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
+
                 <img
                 id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
@@ -208,7 +205,7 @@ const FlickityCarousel = () => {
                   src="https://images.pexels.com/photos/17729730/pexels-photo-17729730/free-photo-of-a-bicycle-parked-outside-a-shop-with-a-sign-that-says-ou-ne-manu.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
-                {/* <img className='h-[200px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
+
               </div>
               <div
                 ref={(el) => (circleRefs.current[6] = el)}
@@ -263,7 +260,6 @@ const FlickityCarousel = () => {
                 ref={(el) => (newCircleRefs.current[1] = el)}
                 className="card1"
               >
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/20278829/pexels-photo-20278829/free-photo-of-mixed-flower-bouquet-on-a-table.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -279,13 +275,11 @@ const FlickityCarousel = () => {
                   src="https://images.pexels.com/photos/4450377/pexels-photo-4450377.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
               </div>
               <div
                 ref={(el) => (newCircleRefs.current[3] = el)}
                 className="card1"
               >
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
                  id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
@@ -297,7 +291,6 @@ const FlickityCarousel = () => {
                 ref={(el) => (newCircleRefs.current[4] = el)}
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
                   id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
@@ -315,7 +308,6 @@ const FlickityCarousel = () => {
                   src="https://images.pexels.com/photos/5642108/pexels-photo-5642108.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
-                {/* <img className='h-[200px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
               </div>
               <div
                 ref={(el) => (newCircleRefs.current[6] = el)}
@@ -370,7 +362,6 @@ const FlickityCarousel = () => {
                 ref={(el) => (new3CircleRefs.current[1] = el)}
                 className="card1"
               >
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/1431465/pexels-photo-1431465.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -387,13 +378,12 @@ const FlickityCarousel = () => {
                   src="https://images.pexels.com/photos/162203/panthera-tigris-altaica-tiger-siberian-amurtiger-162203.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
+
               </div>
               <div
                 ref={(el) => (new3CircleRefs.current[3] = el)}
                 className="card1"
               >
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
                 id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
@@ -405,7 +395,6 @@ const FlickityCarousel = () => {
                 ref={(el) => (new3CircleRefs.current[4] = el)}
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
                 id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
@@ -423,7 +412,6 @@ const FlickityCarousel = () => {
                   src="https://images.pexels.com/photos/1661179/pexels-photo-1661179.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
-                {/* <img className='h-[200px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
               </div>
               <div
                 ref={(el) => (new3CircleRefs.current[6] = el)}
@@ -478,7 +466,6 @@ const FlickityCarousel = () => {
                 ref={(el) => (new4CircleRefs.current[1] = el)}
                 className="card1"
               >
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
                   className="h-[400px] w-[250px] rounded-3xl"
                   src="https://images.pexels.com/photos/6768421/pexels-photo-6768421.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -495,13 +482,11 @@ const FlickityCarousel = () => {
                   src="https://images.pexels.com/photos/4491858/pexels-photo-4491858.jpeg?auto=compress&cs=tinysrgb&w=600https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
                 />
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
               </div>
               <div
                 ref={(el) => (new4CircleRefs.current[3] = el)}
                 className="card1"
               >
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
                 <img
                 id="p1imgs1"
                   className="h-[400px] w-[250px] rounded-3xl"
@@ -513,7 +498,7 @@ const FlickityCarousel = () => {
                 ref={(el) => (new4CircleRefs.current[4] = el)}
                 className="card1 flex items-center justify-between gap-3 flex-col"
               >
-                {/* <img className='h-[400px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
+
                 <img
                 id="p1imgs2"
                   className="h-[200px] w-[250px] rounded-3xl"
@@ -531,7 +516,7 @@ const FlickityCarousel = () => {
                   src="https://images.pexels.com/photos/7641238/pexels-photo-7641238.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt=""
                 />
-                {/* <img className='h-[200px] w-[250px] rounded-3xl' src="https://images.unsplash.com/photo-1458682625221-3a45f8a844c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
+    
               </div>
               <div
                 ref={(el) => (new4CircleRefs.current[6] = el)}
@@ -559,105 +544,3 @@ const FlickityCarousel = () => {
 };
 
 export default FlickityCarousel;
-
-// console.log("circleRefs",circleRefs.current[0])
-// const boxRef = useRef(null);
-// const circleRef1 = useRef(null);
-// const circleRef2 = useRef(null);
-// const circleRef3 = useRef(null);
-// const circleRef4 = useRef(null);
-// const circleRef5 = useRef(null);
-// const circleRef6 = useRef(null);
-// const circleRef7 = useRef(null);
-
-// const newcircleRef1 = useRef(null);
-// const newcircleRef2 = useRef(null);
-// const newcircleRef3 = useRef(null);
-// const newcircleRef4 = useRef(null);
-// const newcircleRef5 = useRef(null);
-// const newcircleRef6 = useRef(null);
-// const newcircleRef7 = useRef(null);
-
-// const new3circleRef1 = useRef(null);
-// const new3circleRef2 = useRef(null);
-// const new3circleRef3 = useRef(null);
-// const new3circleRef4 = useRef(null);
-// const new3circleRef5 = useRef(null);
-// const new3circleRef6 = useRef(null);
-// const new3circleRef7 = useRef(null);
-
-// const new4circleRef1 = useRef(null);
-// const new4circleRef2 = useRef(null);
-// const new4circleRef3 = useRef(null);
-// const new4circleRef4 = useRef(null);
-// const new4circleRef5 = useRef(null);
-// const new4circleRef6 = useRef(null);
-// const new4circleRef7 = useRef(null);
-
-// useEffect(()=>{
-//  setTimeout(()=>{
-//   const tl = gsap.timeline({ repeat: -1 ,yoyo: true} );
-//   // tl.to(boxRef.current, { x: 100, duration: 1, ease: 'power1.inOut' })
-//   tl.to(circleRef1.current, { y: 200, duration: 1,ease: 'power1.inOut',stagger:0.3,opacity:0 },"-=0.5");
-//   tl.to(circleRef2.current, { y: 200, duration: 1, ease: 'power1.inOut',stagger:0.3 ,opacity:0}, "-=0.5");
-//   tl.to(circleRef3.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(circleRef4.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(circleRef5.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(circleRef6.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(circleRef7.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.1,opacity:0}, "-=0.5");
-// },0)
-// })
-
-// useEffect(()=>{
-//   setTimeout(()=>{
-//   const tl = gsap.timeline({ repeat: -1, yoyo: true});
-//   tl.from(newcircleRef1.current, { y: 200, duration: 1, ease: 'power1.inOut',stagger:0.3,opacity:0},"-=0.5");
-//   tl.to(newcircleRef2.current, { y: 200, duration: 1, ease: 'power1.inOut',stagger:0.3 ,opacity:0}, "-=0.5");
-//   tl.to(newcircleRef3.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(newcircleRef4.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(newcircleRef5.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(newcircleRef6.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(newcircleRef7.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-// },4000)
-// })
-
-// useEffect(()=>{
-//   setTimeout(()=>{
-//   const tl = gsap.timeline({ repeat: -1, yoyo: true});
-//   tl.from(new3circleRef1.current, { y: 200, duration: 1, ease: 'power1.inOut',stagger:0.3,opacity:0},"-=0.5");
-//   tl.to(new3circleRef2.current, { y: 200, duration: 1, ease: 'power1.inOut',stagger:0.3 ,opacity:0}, "-=0.5");
-//   tl.to(new3circleRef3.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(new3circleRef4.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(new3circleRef5.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(new3circleRef6.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(new3circleRef7.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-// },8000)
-// })
-
-// useEffect(()=>{
-//   setTimeout(()=>{
-//   const tl = gsap.timeline({ repeat: -1, yoyo: true});
-//   tl.from(new4circleRef1.current, { y: 200, duration: 1, ease: 'power1.inOut',stagger:0.3,opacity:0},"-=0.5");
-//   tl.to(new4circleRef2.current, { y: 200, duration: 1, ease: 'power1.inOut',stagger:0.3 ,opacity:0}, "-=0.5");
-//   tl.to(new4circleRef3.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(new4circleRef4.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(new4circleRef5.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(new4circleRef6.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-//   tl.to(new4circleRef7.current, { y: 200, duration: 1, ease: 'power1.inOut' ,stagger:0.3,opacity:0}, "-=0.5");
-// },12000)
-// })
-
-// .flickity-page-dots .dot {
-//   width: 12px;
-//   height: 12px;
-//   margin: 0 5px;
-//   background: #888;
-//   border-radius: 50%;
-//   opacity: 0.5;
-//   transition: opacity 0.3s ease;
-// }
-
-// .flickity-page-dots .dot.is-selected {
-//   background: #ff5733;
-//   opacity: 1;
-// }

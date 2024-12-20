@@ -19,13 +19,6 @@ import {verifyJWT} from "../middlewheres/Auth.middlewere.js"
 
 const router = Router()
 
-// router.use(cors({
-//     origin : "http://localhost:5173"
-
-// }  
-// ));
-// router.use(express.json());
-
 // regirter router
 router.route("/users/register").post(regitsterUser)
 router.route("/users/login").post(loginUser)

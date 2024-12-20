@@ -19,11 +19,6 @@ const authSlice = createSlice({
         state.user = null;
 
     },
-  //   posts: (state,action) => {
-  //     state.isLoggedIn = true;
-  //     state.posts = action.payload.posts;
-
-  // }
   },
 });
 

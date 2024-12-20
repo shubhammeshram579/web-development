@@ -34,8 +34,6 @@ const GetpostByotherUser = () => {
   const [visible, setVisible] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
 
-  // console.log("posts",post)
-
 
 
    // Annimation effect

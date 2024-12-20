@@ -144,25 +144,3 @@ export default GetPotsByUserProfile;
 
 
 
-  // useEffect(() => {
-  //   const fatchPostUser = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `http://localhost:8000/api/posts/getPostUser/${userId}`,
-  //         {
-  //           headers: {
-  //             Authorization: `Bearer ${accessToken}`,
-  //           },
-  //         }
-  //       );
-  //       // console.log(response.data.data.postUserPost);
-  //       setGetPost(response.data.data.postUserPost);
-
-  //       setLoading(false);
-  //     } catch (error) {
-  //       setError(error.message);
-  //       setLoading(false);
-  //     }
-  //   };
-  //   fatchPostUser();
-  // }, []);

@@ -32,8 +32,6 @@ function LoginFns() {
         data
       );
 
-      // console.log(session.data.data.accessToken)
-
       // localStorage token set
       localStorage.setItem("token", session.data.data.accessToken);
 
@@ -46,8 +44,6 @@ function LoginFns() {
       // navigate page
       navigate("/");
     } catch (error) {
-      // console.log("error");
-      // error hendeling
       if(error && error.message){
         setError("password is incorrect")
       }else{

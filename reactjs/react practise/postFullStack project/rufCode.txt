@@ -1,0 +1,1235 @@
+
+chatbox message page
+// const sendMessage = () => {
+  //   const newMessage = { from, message: message.trim(), createdAt: new Date(), isRead: false };
+  //   socket.emit('sendMessage', newMessage);
+  //   setChats((prevChats) => [...prevChats, newMessage]);
+  //   setMessage("");
+  //   scrollToLatestMessage();
+  // };
+
+
+// useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     fatchChats(); // Function to fetch latest messages from the server
+  //   }, 5000); // Poll every 2 seconds
+
+  //   return () => clearInterval(interval);
+  // }, []);
+
+
+{/* {formatDistanceToNow(new Date(chat.createdAt), {
+                      addSuffix: true,
+                    })}
+                     {format(new Date(chat.createdAt), 'hh:mm a')} */}
+
+
+
+
+
+// useEffect(() => {
+//   const fatchChat = async () => {
+//     try {
+//       const response = await axios.get(
+//         `http://localhost:8000/api/chatMessage/fromUserChat/${userId}`,{
+//           headers: {
+//             "Authorization": `Bearer ${accessToken}`,
+//           },
+//         }
+//       );
+
+//       console.log("response.data.data",response.data.data)
+//       const { fromuserChat, toUserChat } = response.data.data;
+//       // Merge and sort messages by createdAt
+//       const allMessages = [...fromuserChat, ...toUserChat].sort(
+//         (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+//       );
+
+//       console.log("allMessages", allMessages);
+//       setChats(allMessages);
+
+//       setLoading(false);
+//     } catch (error) {
+//       setError(error.message);
+//       console.log(error.message);
+//       setLoading(false);
+//     }
+//   };
+//   fatchChat();
+// }, [accessToken]);
+
+// useEffect(()=>{
+//   const fatchredchat = async () =>{
+//     try {
+
+//       const response = await axios.put(`http://localhost:8000/api/chatMessage/readchat/${from}/${to}`,{},{
+//         headers: {
+//           Authorization: `Bearer ${accessToken}`,
+//         },
+
+//       });
+
+//     } catch (error) {
+//       console,log(error.message)
+
+//     }
+//   }
+//   fatchredchat()
+
+// },[from, to])
+
+// <div className="flex items-end justify-end flex-col">
+//                 <h2>Sent Messages</h2>
+//                 {Fromchat.map(chat => (
+//                     <div key={chat._id} className="bg-gray-400 py-4 px-5 mt-5">{chat.message}</div>
+//                 ))}
+//             </div>
+//             <div className="flex items-start justify-start flex-col">
+//                 <h2>Received Messages</h2>
+//                 {touserchat.map(chat => (
+//                     <div key={chat._id} className="bg-gray-400 py-4 px-5 mt-5 ml-5">{chat.message}</div>
+//                 ))}
+//             </div>
+
+{
+  /* getchat current user */
+}
+
+{
+  /* <div>
+        {getFromchat.map((user) => (
+          <div className="flex items-center justify-end">
+            <div className="flex flex-col items-end gap-2 pr-5">
+              <h1 className="bg-gray-400 py-3 px-5 rounded-full text-end mb-5">
+                {user.message}{" "}
+              </h1>
+              <h1>{user._id}</h1>
+            </div>
+          </div>
+        ))}
+        </div>
+        <div className="flex items-start justify-start flex-col">
+        {touserchat.map((user) => (
+          <div className="flex items-center justify-end">
+            <div className="flex flex-col items-end gap-2 pr-5">
+              <h1 className="bg-gray-400 py-3 px-5 rounded-full text-end mb-5">
+                {user.message}{" "}
+              </h1>
+              <h1>{user._id}</h1>
+            </div>
+          </div>
+        ))}
+
+        </div> */
+}
+
+{
+  /* <div className="flex items-start flex-col pl-5">
+          {getTochat.map((t) => (
+            <div className="flex items-center justify-start gap-5 mt-5">
+            
+                <h1 className="py-3 px-4 bg-green-400 rounded-full">S</h1>
+                <div className="flex items-center justify-start flex-col">
+                  <h1>Shubham Meshram</h1>
+                  <h1 className="py-4 px-5 bg-gray-400 rounded-full">
+                    {t.message}
+                  </h1>
+                  <h1>{t.to}</h1>
+                </div>
+           
+            </div>
+          ))}
+        </div> */
+}
+
+// gett alla chatts
+// useEffect(() =>{
+//   const fatchChats = async () =>{
+//     try {
+//       const response = await axios.get(`http://localhost:8000/api/chatMessage/getchats`,{
+//         headers:{
+//           "Authorization":`Bearer ${accessToken}`
+//         }
+//       });
+//       console.log(response.data.data.getchats)
+//       setGetchats(response.data.data.getchats)
+
+//     } catch (error) {
+//       console.log(error.message)
+
+//     }
+
+//   };
+//   fatchChats()
+
+// },[accessToken]);
+
+// current user chat
+
+// to user chat
+// useEffect(() => {
+//   const fatchChat = async () => {
+//     try {
+//       const response = await axios.get(
+//         `http://localhost:8000/api/chatMessage/toUserChat/${userId}`,
+//         {
+//           headers: {
+//             Authorization: `Bearer ${accessToken}`,
+//           },
+//         }
+//       );
+
+//       const newMessage = response.data.data;
+//       setGetTochat((prevMessages) =>
+//         [...prevMessages, newMessage].sort(
+//           (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+//         )
+//       );
+
+//       setLoading(false);
+//     } catch (error) {
+//       setError(error.message);
+//       console.log(error.message);
+//       setLoading(false);
+//     }
+//   };
+//   fatchChat();
+// }, [accessToken]);
+
+
+
+
+
+// const readchats = async () =>{
+//   try {
+//    await axios.put(`http://localhost:8000/api/chatMessage/readchat/${from}/${to}`,{
+//    },{
+//      headers:{
+//        "Authorization":`Bearer ${accessToken}`
+//      }
+//    });
+
+//    setChats((prevChats) =>
+//           prevChats.map(chat =>
+//             chat.from === currentUser._id && chat.from === to ? { ...chat, isRead: true } : chat
+//           )
+//         );
+
+//    console.log("read succefully")
+//  } catch (error) {
+//    console.error('Failed to mark as read:', error);
+//  }
+
+// };
+
+
+// chat read marks 
+  // const markAsRead = async () => {
+  //   try {
+  //     await axios.put(`http://localhost:8000/api/chatMessage/readchat/${from}/${to}`,{
+  //     },{
+  //       headers:{
+  //         "Authorization":`Bearer ${accessToken}`
+  //       }
+  //     });
+  //     // Update local state to mark messages as read
+  //     setChats((prevChats) =>
+  //       prevChats.map(chat =>
+  //         chat.from !== currentUser._id && chat.to === to ? { ...chat, isRead: true } : chat
+  //       )
+  //     );
+  //   } catch (error) {
+  //     console.error('Failed to mark messages as read:', error);
+  //   }
+  // };
+
+
+chatnotification
+
+// useEffect(()=>{
+//   const fatchcurrentUser = async () => {
+//     try {
+
+//       const getcurrentUser = await axios.get(`http://localhost:8000/api/users/current-user`,{
+//         headers:{
+//           "Authorization":`Bearer ${accessToken}`,
+//         }
+//       })
+
+//       // console.log("getcurrentUser.data.data.curentUser",getcurrentUser.data.data.curentUser)
+//       setCurrentUser(getcurrentUser.data.data.curentUser)
+//     } catch (error) {
+//       console.error("Error fetching search results", error);
+
+//     }
+
+//   }
+//   fatchcurrentUser();
+// },[accessToken]);
+
+// useEffect(()=>{
+//   const fatchredchat = async () =>{
+//     try {
+
+//       const response = await axios.put(`http://localhost:8000/api/chatMessage/readchat/${notifications.from._id}/${}`,{},{
+//         headers: {
+//           Authorization: `Bearer ${accessToken}`,
+//         },
+
+//       });
+
+//     } catch (error) {
+//       console,log(error.message)
+
+//     }
+//   }
+//   fatchredchat()
+
+// },[from, to])
+
+// Save user details in localStorage
+//  const saveUser = (userId) => {
+//   const savedUsers = JSON.parse(localStorage.getItem('savedUsers')) || [];
+//   if (!savedUsers.includes(userId)) {
+//     savedUsers.push(userId);
+//     localStorage.setItem('savedUsers', JSON.stringify(savedUsers));
+//   }
+// };
+
+// const saveUser = (user) => {
+//   const savedUsers = JSON.parse(localStorage.getItem('savedUsers')) || [];
+
+//   // Check if the user is already saved
+//   const existingUserIndex = savedUsers.findIndex(savedUser => savedUser._id === user._id);
+
+//   if (existingUserIndex > -1) {
+//     // Update the existing user with the latest message
+//     savedUsers[existingUserIndex].latestMessage = user.latestMessage;
+//   } else {
+//     // Save the new user
+//     savedUsers.push(user);
+//   }
+
+//   localStorage.setItem('savedUsers', JSON.stringify(savedUsers));
+// };
+
+
+
+ // const saveUserOnSumbimt = () =>{
+  //   try {
+  //     axios.post(`http://localhost:8000/api/Saveuser`,{
+  //       owner: notifications.from._id,
+  //       userIdToSave: notifications.to,
+  //     },{
+  //       headers:{
+  //         "Authorization":`Bearer ${accessToken}`
+  //       }
+  //     })
+
+  //   } catch (error) {
+  //     console.log(error.message)
+
+  //   }
+  // };
+
+
+massage pending save user
+
+{/* pending saveuser createion */}
+        {/* <div>
+          <SavedUsers />
+        </div> */}
+        {/* <div className="flex items-start flex-col gap-7 ml-8">
+        <Notification setSelectedUser={setSelectedUser} />
+        <SavedUsers savedUsers={selectedUser ? [selectedUser] : []} setSelectedUser={setSelectedUser} />
+      </div> */}
+
+
+
+
+// const toggleShareProfile = () =>{
+  //   setShereProfile(!shereProfile)
+
+  // }
+
+  // const chatboxfun = () =>{
+  //   setChatboxpage(!chatboxpage)
+  // }
+
+  
+
+
+   {/* <Link to="/otherUser/:from/:to"> */}
+          {/* {chatboxpage ? (""):( */}
+        {/* <div className="flex items-center justify-start gap-5 hover:bg-green-300 py-5 px-2 rounded w-[20vw]">
+          <h1 className="bg-blue-600 py-2 px-5 rounded-full">s</h1>
+          <div className="flex items-start flex-col">
+            <h1 className="font-semibold text-xl">shubham</h1>
+            <div className="flex items-start gap-20">
+              <h1>i am fine bro .....</h1>
+              <h1>26m</h1>
+              <i class="fa-solid fa-xmark opacity-0 hover:opacity-100"></i>
+            </div>
+          </div>
+        </div> */}
+        {/* )} */}
+        {/* </Link> */}
+
+
+NEW USER
+
+// const useQuery = () => {
+//   return new URLSearchParams(useLocation().search);
+// };
+
+
+
+
+// const newMessage = response.data.data;
+        // setMessage(prevMessages => [...prevMessages, newMessage].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)));
+
+
+
+ // console.log("selectedUser",selectedUser)
+
+  // getAlluser Router
+
+  // useEffect(()=>{
+  //   const fatchUsers = async () => {
+  //     if(query){
+  //     try {
+  //       const getUsers = await axios.get(`http://localhost:8000/api/users/getAllUsers/search`,{
+  //         params: { query },
+  //         headers:{
+  //           "Authorization": `Bearer ${accessToken}`
+  //         }
+  //       })
+  //       console.log("getAllUser",getUsers.data)
+  //       setGetAllUsers(getUsers.data)
+
+  //     } catch (error) {
+  //       console.log(error.message)
+
+  //     }
+  //   }
+
+  //   };
+  //   fatchUsers()
+
+  // },[query])
+
+  // useEffect(() => {
+  //   if (query) {
+  //     axios
+  //       .get(`http://localhost:8000/api/users/getAllUsers/search`, {
+  //         params: { query },
+  //         headers:{
+  //           "Authorization":`Bearer ${accessToken}`
+  //         }
+  //       })
+  //       .then((response) => {
+  //         console.log(response.data.data.getUsers)
+  //         setGetAllUsers(response.data.data.getUsers);
+  //       })
+  //       .catch((error) => {
+  //         console.log('Error fetching search results:', error);
+  //       });
+  //   }
+  // }, [query]);
+
+PAGE NOTIFATION 
+
+
+  // console.log(user)
+
+
+  // useEffect(() => {
+
+  //   const socket = io("http://localhost:8000");
+
+  //   const fatchnotification =  async () => {
+  //     try {
+  //       const response = await axios.get(`http://localhost:8000/api/Notification`,{
+  //         headers:{
+  //           "Authorization":`Bearer ${accessToken}`,
+  //         }
+  //       });
+  //       console.log(response.data.data.notification)
+  //       setNotification(response.data.data.notification)
+
+  //       setLoading(false)
+        
+  //     } catch (error) {
+  //       console.log("notification not fatch",error)
+  //       setLoading(false)
+        
+  //     }
+  //   }
+  //   fatchnotification();
+
+
+  //   // Listen for real-time updates from the server
+  //   socket.on('notificationDeleted', (deletedNotificationId) => {
+  //     setNotification((prevNotifications) =>
+  //       prevNotifications.filter((n) => n._id !== deletedNotificationId)
+  //     );
+  //   });
+
+  //   // Clean up the socket connection on component unmount
+  //   return () => {
+  //     socket.disconnect();
+  //   };
+
+  // },[accessToken]);
+
+
+
+  // const handleNotificationClick2 = async (notificationId, postId) => {
+  //   // Remove notification from UI
+  //   // setNotification(notification.filter(n => n._id !== notificationId));
+
+  //   setNotification((prevNotifications) =>
+  //     prevNotifications.filter((n) => n._id !== notificationId)
+  //   );
+
+
+  //   try {
+  //     await axios.delete(`http://localhost:8000/api/Notification/${notificationId}`,{
+  //       headers:{
+  //         "Authorization":`Bearer ${accessToken}`,
+  //       }
+  //     });
+
+  //     setLoading(false)
+      
+  //   } catch (error) {
+  //     console.log("notification not fatch",error)
+  //     setLoading(false)
+      
+  //   }
+
+  //   const socket = io('http://localhost:8000');
+  //   socket.emit('deleteNotification', notificationId);
+
+  //   // Navigate to the post page
+  //   navigate(`/getPostByID2/${postId}`);
+  // }
+  // console.log(user)
+
+
+  // useEffect(() => {
+
+  //   const socket = io("http://localhost:8000");
+
+  //   const fatchnotification =  async () => {
+  //     try {
+  //       const response = await axios.get(`http://localhost:8000/api/Notification`,{
+  //         headers:{
+  //           "Authorization":`Bearer ${accessToken}`,
+  //         }
+  //       });
+  //       console.log(response.data.data.notification)
+  //       setNotification(response.data.data.notification)
+
+  //       setLoading(false)
+        
+  //     } catch (error) {
+  //       console.log("notification not fatch",error)
+  //       setLoading(false)
+        
+  //     }
+  //   }
+  //   fatchnotification();
+
+
+  //   // Listen for real-time updates from the server
+  //   socket.on('notificationDeleted', (deletedNotificationId) => {
+  //     setNotification((prevNotifications) =>
+  //       prevNotifications.filter((n) => n._id !== deletedNotificationId)
+  //     );
+  //   });
+
+  //   // Clean up the socket connection on component unmount
+  //   return () => {
+  //     socket.disconnect();
+  //   };
+
+  // },[accessToken]);
+
+
+
+  // const handleNotificationClick2 = async (notificationId, postId) => {
+  //   // Remove notification from UI
+  //   // setNotification(notification.filter(n => n._id !== notificationId));
+
+  //   setNotification((prevNotifications) =>
+  //     prevNotifications.filter((n) => n._id !== notificationId)
+  //   );
+
+
+  //   try {
+  //     await axios.delete(`http://localhost:8000/api/Notification/${notificationId}`,{
+  //       headers:{
+  //         "Authorization":`Bearer ${accessToken}`,
+  //       }
+  //     });
+
+  //     setLoading(false)
+      
+  //   } catch (error) {
+  //     console.log("notification not fatch",error)
+  //     setLoading(false)
+      
+  //   }
+
+  //   const socket = io('http://localhost:8000');
+  //   socket.emit('deleteNotification', notificationId);
+
+  //   // Navigate to the post page
+  //   navigate(`/getPostByID2/${postId}`);
+  // }
+
+
+APP JS 
+
+BUTTEN CREATE 
+
+// const [showMassage, setShowMassage] = useState(false);
+// const [shereProfile, setShereProfile] = useState(false);
+// const [chatboxpage, setChatboxpage] = useState(false);
+// const [newMessage, setNewMessage] = useState(false);
+
+// const toggleShareProfile = () =>{
+//   setShereProfile(!shereProfile)
+
+// }
+
+// css style
+// const bacgroundC = {
+//   backgroundColor: "red",
+// color: "green",
+// fontSize: "100px"
+
+// }
+
+// useEffect(() => {
+//   // Initialize Locomotive Scroll
+//   const scroll = new LocomotiveScroll({
+//     el: scrollRef.current,
+//     smooth: true,
+//     smoothMobile: true, // Enable smooth scrolling on mobile
+//     inertia: 1, // Inertia-based smooth scrolling
+//     getDirection: true, // Track scroll direction (useful for triggering effects)
+//     getSpeed: true, // Track scroll speed
+//     reloadOnContextChange: true, // Reload on content changes
+//   });
+
+//   // Clean up on component unmount
+//   return () => {
+//     scroll.destroy();
+//   };
+// }, []);
+
+{
+  /* <div className="absolute z-50 left-[76vw] mt-28 bg-red-600">
+          {showMassage && (<Massage newMessage={newMessage}  setNewMessage={setNewMessage}/>
+          )}
+        </div>
+
+        <div className="absolute z-50 left-[76vw] mt-28 bg-red-600">
+          {newMessage && (<NewMessage   setShowMassage={setShowMassage} />)}
+
+        </div> */
+}
+
+{
+  /* <div className="absolute z-[50] left-[76vw] mt-28">
+          {shereProfile && <ShareProfile />}
+        </div> */
+}
+{
+  /* <div className="absolute z-[50] left-[76vw] mt-28">
+          {chatboxpage && (
+            <Chatbox
+              showMassage={showMassage}
+              setShowMassage={setShowMassage}
+              setChatboxpage={setChatboxpage}
+            />
+          )}
+        </div> */
+}
+
+{
+  /* {showMassage && <Massage />} */
+}
+{
+  /* {showMassage && (
+            <Massage
+              setShereProfile={setShereProfile}
+              shereProfile={shereProfile}
+              chatboxpage={chatboxpage}
+              setChatboxpage={setChatboxpage}
+              sendmessage={sendmessage}
+              setSendMessage={setSendMessage}
+            />
+          )} */
+}
+
+
+
+
+  // const [loading, setLoading] = useState(true);
+
+  // fatch current user api
+  // useEffect(() => {
+  //   const user = JSON.parse(localStorage.getItem("user"));
+  //   if (user && user.accessToken) {
+  //     axios
+  //       .get("http://localhost:8000/api/users/current-user", {
+  //         headers: { "x-auth-token": user.accessToken },
+  //         withCredentials: true,
+  //       })
+  //       .then((response) => {
+  //         if (response.data) {
+  //           dispatch(authLogin(response.data));
+  //         } else {
+  //           dispatch(authLogin());
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.log("Error fetching user:", error);
+  //         dispatch(authLogout());
+  //       })
+  //       .finally(() => setLoading(false));
+  //   } else {
+  //     setLoading(false);
+  //   }
+  // }, [dispatch]);
+
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
+
+
+GET POST BY ID
+
+import React ,{useState, useEffect} from 'react'
+import axios from 'axios'
+import { Link ,useNavigate} from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+import {Contenier} from "..//../index.js"
+
+const GetPostbyId = () => {
+  const {postId} = useParams()
+  const [post, setPost] = useState([])
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate()
+
+
+
+  const accessToken = useSelector((state)=>state.auth.user?.accessToken)
+  const user = useSelector((state)=>state.auth.user?.user)
+
+  useEffect(() => {
+    const fatchgetpost = async () =>{
+      try {
+        const response = await axios.get(`http://localhost:8000/api/posts/getPostByID/${postId}`,{
+          headers: {
+            "Authorization": `Bearer ${accessToken}`
+          }
+        });
+       
+        setPost(response.data.data.getPostbyId)
+        console.log(response.data.data.getPostbyId)
+        setLoading(false)
+        
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
+        
+      }
+
+    };
+    fatchgetpost();
+  },[postId])
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!post) return <div>No post found</div>;
+
+
+  // delete post 
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`http://localhost:8000/api/posts/deletePost/${postId}`,{
+        headers:{
+          "Authorization":`Bearer ${accessToken}`
+        }
+      });
+      navigate("/getPost"); // Redirect to the posts list page after successful deletion
+    } catch (error) {
+      console.error('Error deleting post:', error);
+    }
+  };
+
+  
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
+  return (
+    <div className='py-5'>
+      <Contenier>
+      {post.postImg && <img className='h-[400px] w-[400px] rounded-xl object-cover' src={post.postImg} alt={post.title} />}
+      <h1 className='text-center font-bold'>{post.title}</h1>
+      <p className='text-center'>{post.description}</p>
+      {/* <p>Owner ID: {post.owner}</p> */}
+      <div className='flex items-center justify-around'>
+      {post.isSaved ? null : (
+            <Link to={`/EditPost/${post._id}`}><button className='py-3 px-10 bg-green-500 rounded-lg mt-5'>Edit</button></Link>
+      )}
+     
+      <button onClick={handleDelete} className='py-3 px-10 bg-red-500 rounded-lg mt-5'>Delete</button>
+  
+      </div>
+      
+
+      </Contenier>
+      
+    </div>
+  );
+}
+
+export default GetPostbyId
+
+
+
+GIT POST BY USERiD
+
+
+  // useEffect(() => {
+  //   const fatchPostUser = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `http://localhost:8000/api/posts/getPostUser/${userId}`,
+  //         {
+  //           headers: {
+  //             Authorization: `Bearer ${accessToken}`,
+  //           },
+  //         }
+  //       );
+  //       // console.log(response.data.data.postUserPost);
+  //       setGetPost(response.data.data.postUserPost);
+
+  //       setLoading(false);
+  //     } catch (error) {
+  //       setError(error.message);
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fatchPostUser();
+  // }, []);
+
+
+
+home page post 
+
+// postUrl copy
+// const postUrl = window.location.href;
+
+//post image hide
+// const handleHide = () => {
+//   setIsHidden(!isHidden);
+// };
+
+// console.log(posts);
+
+// donload butten and hide butten
+// const [visible, setVisible] = useState(false);
+// const [isHidden, setIsHidden] = useState(false);
+
+{
+  /* <div className="hoverEffect flex items-end justify-between flex-col text-white">
+                <div>
+                  <h1 className="SaveBtn mr-5 mt-5 bg-green-500 py-2 px-5 rounded-lg">
+                    <SavePostButton userId={user._id} postId={post._id} />
+                  </h1>
+                </div>
+                <div className="flex items-center justify-between gap-4">
+                  <i className="ri-share-2-line cursor-pointer text-[30px] mr-2"></i>
+                  <i className="fa-solid fa-ellipsis cursor-pointer mr-5 text-2xl "></i>
+                </div>
+              </div> */
+}
+
+// useEffect(() => {
+//   // Adding an event listener directly to the button element
+//   const buttonElement = buttonRef.current;
+//   console.log("buttonElement",buttonElement.childNodes[0].childNodes[2])
+
+//   const buttonElement2 = buttonElement.childNodes[0];
+//   console.log("buttonElement2",buttonElement2.childNodes[3])
+
+//   const handleClick = () => {
+//     alert("Button clicked!");
+//     buttonElement2.childNodes[3].style.color = "red";
+//   };
+
+//   if (buttonElement2.childNodes[3]) {
+//     buttonElement2.childNodes[3].addEventListener("click", handleClick);
+//   }
+
+//   // Cleanup function to remove the event listener when the component unmounts
+//   return () => {
+//     if (buttonElement2.childNodes[3]) {
+//       buttonElement2.childNodes[3].removeEventListener("click", handleClick);
+//     }
+//   };
+// }, []); // Empty dependency array ensures this effect runs only once after the initial render
+
+{
+  /* <ul className="flex flex-row items-center justify-around flex-wrap">
+          {posts.map((post) => (
+            <li key={post._id} className="card py-10 px-2 rounded-lg">
+              
+                <Link to={`/getPostByID2/${post._id}`}>
+                  {" "}
+                  <img className="cardImg" src={post.postImg} alt="image" />
+                </Link>
+                
+                <h1 className="SaveBtn ml-[160px] mt-[-530px] mb-[500px] py-2 px-5 rounded-lg">
+                  <SavePostButton userId={user._id} postId={post._id} />
+                </h1>
+                <div className="selectbtn flex items-center gap-4 mt-[-100px] ml-[180px] mb-14">
+                  <i className="ri-share-2-line cursor-pointer text-[30px] mr-2 text-white"></i>
+                  <i className="fa-solid fa-ellipsis cursor-pointer mr-5 text-2xl text-white "></i>
+                </div>
+
+                <h2 className="text-center mt-5 font-bold">{post.title}</h2>
+                <p className="text-center">{post.description}</p>
+            </li>
+          ))}
+        </ul> */
+}
+
+
+get post sigle page
+
+// useEffect(() => {
+//   const fetchPostUser = async () => {
+//     try {
+//       const postUser = await axios.get(
+//         `http://localhost:8000/api/users/getUsersById?_id=${post.owner}`,
+//         {
+//           headers: {
+//             Authorization: `Bearer ${accessToken}`,
+//           },
+//         }
+//       );
+
+//       console.log("postuserdata", postUser.data.data.postUser);
+//       setPostUser(postUser.data.data.postUser);
+//       setLoading(false);
+//     } catch (error) {
+//       setError(error.message);
+//       setLoading(false);
+//     }
+//   };
+
+//   fetchPostUser();
+// }, [post.owner, accessToken]);
+
+// useEffect(() => {
+//   if (post.owner) {
+//     const fetchPostUser = async () => {
+//       try {
+//         const postUser = await axios.get(`http://localhost:8000/api/users/getUsersById`, {
+//           params: { _id: post.owner },
+//           headers: {
+//             "Authorization": `Bearer ${accessToken}`
+//           }
+//         });
+
+//         console.log("postuserdata", postUser.data);
+//         setPostUser(postUser.data.data.postUser);
+//         setLoading(false);
+//       } catch (error) {
+//         setError(error.message);
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchPostUser();
+//   } else {
+//     console.error("post.owner is undefined");
+//   }
+// }, [post.owner, accessToken]);
+
+// useEffect(()=>{
+//   // Join the Socket.IO room for this post
+//   socket.emit("joinPost", postId);
+
+//   // Listen for new comments
+//   socket.on("newComment", (comment) => {
+//     setComment((prevComments) => [...prevComments,comment ]);
+//   });
+
+//   return () => {
+//     socket.off("newComment");
+// };
+
+// })
+
+// get comment
+// useEffect(() => {
+//   const fatchgetComment = async () => {
+//     try {
+//       const resComment = await axios.get(
+//         `http://localhost:8000/api/comments/getcomment/${postId}`,
+//         {
+//           headers: {
+//             Authorization: `Bearer ${accessToken}`,
+//           },
+//         }
+//       );
+//       console.log("comment", resComment.data.data.comments);
+//       setComment(resComment.data.data.comments);
+//       setLoading(false);
+//     } catch (error) {
+//       setError(error.message);
+//       setLoading(false);
+//     }
+//   };
+//   fatchgetComment();
+
+// }, [postId, accessToken]);
+
+// const handleCommentSubmit = async (e) => {
+//   e.preventDefault();
+
+//   if (!newComment.trim()) return;
+
+//   try {
+//     await axios.post(
+//       `http://localhost:8000/api/comments/${postId}`,
+//       {
+//         content: newComment,
+//         owner: "Anonymous", // Change owner logic as needed
+//       },
+//       {
+//         headers: {
+//           Authorization: `Bearer ${accessToken}`,
+//         },
+//       }
+//     );
+//     setNewComment("");
+//   } catch (error) {
+//     setError("Failed to post comment");
+//   }
+// };
+
+
+
+backend code api
+
+
+// const notification  = AsynceHendler(async (req, res) =>{
+//     try {
+
+//         const {userId} = req.params._id;
+
+//         const notification = await Notification.find({recipient:userId}).populate("sender postId");
+//         console.log("notification",notification)
+
+//         if(!notification){
+//             throw new ApiError(404, "notication not get")
+//         }
+
+//         return res
+//         .status(200)
+//         .json(
+//             new ApiResponse(200, {notification}, "success")
+//         )
+        
+//     } catch (error) {
+//         throw new ApiError(500, error.message)
+        
+//     }
+
+// });
+
+// const getPostUser = AsynceHendler( async (req, res) =>{
+//     try {
+//         const {userId} = req.params;
+
+//         if(!userId){
+//             throw new ApiError(404, "owner id not found")
+//         }
+
+//         const postUserPost = await Post.find({owner: userId})
+
+//         if(!postUserPost){
+//             throw new ApiError(404 , "post not found")
+//         }
+
+//         return res
+//         .status(200)
+//         .json(
+//             new ApiResponse(200 , {postUserPost} , "success")
+//         )
+
+//     } catch (error) {
+//         throw new ApiError(404, error.message , "post not found")
+        
+//     }
+
+// })
+
+
+
+chat message handaling api
+
+
+// const messagesend = AsynceHendler( async (req,res) => {
+//     try {
+//         const { from, to, message } = req.body;
+
+//         if (!from || !to || !message) {
+//             throw new ApiError(400, 'All fields are required');
+//         }
+
+//         const newChatMessage = new ChatMessage({ from, to, message });
+//         await newChatMessage.save();
+
+//         return res.status(201).json(
+//             new ApiResponse(201, newChatMessage, 'Message sent successfully')
+//         );
+//     } catch (error) {
+//         throw new ApiError(500, error.message);
+//     }
+
+// })
+
+
+
+
+
+// const toUserChatMessage = AsynceHendler( async (req, res) =>{
+//     try {
+//         // const userId = req.user._id;
+//         // const {to} = req.query;
+//         const {userId} = req.params;
+
+//         if(!userId){
+//             throw new ApiError(404, "user id not found")
+//         }
+
+//         const touserChat = await ChatMessage.find({from: userId});
+
+//         if(!touserChat){
+//             throw new ApiError(404, "chat not found");
+//         }
+        
+//         return res
+//         .status(200)
+//         .json(
+//             new ApiResponse(200 ,{touserChat} ,"success")
+//         )
+//     } catch (error) {
+//         throw new ApiError(500, error.message)
+        
+//     }
+
+// })
+
+
+// const getChatMessagesToUser = AsynceHendler(async (req, res) => {
+//     try {
+//         const { to } = req.body;
+
+//         const receiver = await User.findById(to);
+
+//         if (!receiver) {
+//             throw new ApiError(404, "Receiver not found");
+//         }
+
+//         const messagesToUser = await ChatMessage.find({ to });
+
+//         return res
+//             .status(200)
+//             .json(new ApiResponse(200, { messages: messagesToUser }, "Messages retrieved successfully"));
+//     } catch (error) {
+//         throw new ApiError(500, error.message);
+//     }
+// });
+
+
+
+
+
+// const fromChatMessage = AsynceHendler( async (req, res) =>{
+//     try {
+//         const from = req.user._id;
+//         const {to} = req.params;
+
+//         if(!from || !to){
+//             throw new ApiError(404, "user id not found")
+//         }
+
+//         const fromuserChat = await ChatMessage.find({from: from});
+//         console.log("fromuserChat",fromuserChat)
+
+//         const toUserChat = await ChatMessage.find({ to: to });
+//         console.log("toUserChat",toUserChat)
+
+//         if(!fromuserChat.length && !toUserChat.length){
+//             throw new ApiError(404, "chat not found");
+//         }
+        
+//         return res
+//         .status(200)
+//         .json(
+//             new ApiResponse(200 ,{fromuserChat,toUserChat} ,"success")
+//         )
+//     } catch (error) {
+//         throw new ApiError(500, error.message)
+        
+//     }
+
+// })
+
+
+socatio
+
+
+// // Mock data to simulate connected users
+// let users = [];
+
+// // Handle client connections
+// io.on('connection', (socket) => {
+//     console.log('User connected:', socket.id);
+
+//     // User joins with their user ID
+//     socket.on('join', (userId) => {
+//         users.push({ userId, socketId: socket.id });
+//         console.log('Connected users:', users);
+//     });
+
+//     // Listen for new post creation
+//     socket.on('newPost', (data) => {
+//         // Notify all users except the one who created the post
+//         socket.broadcast.emit('receiveNotification', {
+//             senderId: data.senderId,
+//             postId: data.postId,
+//             createdAt: new Date()
+//         });
+//     });
+
+//     // Handle user disconnect
+//     socket.on('disconnect', () => {
+//         users = users.filter(user => user.socketId !== socket.id);
+//         console.log('User disconnected:', socket.id);
+//     });
+// });

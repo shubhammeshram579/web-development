@@ -108,15 +108,15 @@
 
         // console.log(ListObj[obj1])
 
-        for(let i in ListObj){
+        for (let i in ListObj) {
             // console.log(ListObj[i])
             // console.log(ListObj[i].name)
             // console.log(ListObj[i].age)
-            if(ListObj[i].age <= 22){
+            if (ListObj[i].age <= 22) {
                 console.log("less then < 22")
-            }else if(ListObj[i].age === 24){
+            } else if (ListObj[i].age === 24) {
                 console.log("found age of 24")
-            }else{
+            } else {
                 console.log("greter then 22 & 24")
             }
         };
@@ -192,6 +192,21 @@
         } else {
             console.log("zero qty")
         };
+
+
+        let numLegth = -10;
+
+        function zero(n) {
+            if (n > 0) {
+                return "greter then zero";
+            } else if (n < 0) {
+                return "less zero"
+            } else {
+                return "equel"
+            }
+        };
+
+        console.log("zero ",zero(numLegth));
 
 
 
@@ -288,8 +303,22 @@
 
 
 
-        // 7.Question: How do you use a switch statement to check the value of a variable ? Answer :
+        let checkValueIsEven = 14;
 
+        function checkEven(n){
+            let i = 2;
+            if(n % i === 0){
+                return "even";
+            }else{
+                return "odd";
+            };
+        }
+
+        console.log("check is value or odd:",checkEven(checkValueIsEven));
+
+
+
+        // 7.Question: How do you use a switch statement to check the value of a variable ? Answer :
 
         let Svalue = 5;
 
@@ -448,6 +477,20 @@
 
         };
 
+        // let build function for set time range
+
+        function timeS(t){
+            if(t > 5 && t < 12){
+                return "good morning"
+            }else if(t > 12 && t < 16){
+                return "good afternoon"
+            }else{
+                return "good evening"
+            }
+            
+        };
+        console.log(timeS(14));
+
 
 
 
@@ -533,6 +576,15 @@
         };
 
 
+        let mobiles = "";
+
+        if(mobiles.length > 0){
+            console.log("mobile str is not empty")
+        }else{
+            console.log("mobile str is empty")
+        };
+
+
         // 10. Question: How can you use a switch statement with a default case that handles multiple values ? Answer :
 
 
@@ -570,9 +622,9 @@
         };
 
 
-        let bags  = "americaltruris";
+        let bags = "americaltruris";
 
-        switch(bags){
+        switch (bags) {
             case "americaltruris":
             case "americanTrueris2":
                 console.log("westside brands")
@@ -584,6 +636,26 @@
             default:
                 console.log("other brands")
         };
+
+
+
+        function electronicItems(items){
+            switch(items){
+                case "mobile":
+                case "laptop":
+                    return items;
+                    break
+                case "mouse":
+                case "keybord":
+                    return items;
+                    break
+                default:
+                    return `other ${items}`;
+            };
+
+        }
+
+        console.log(electronicItems("mongo"));
 
 
 
@@ -630,8 +702,14 @@
 
         let storeRe = shubham != undefined ? shubham : "not found";
 
-        console.log("%%%%%%%%%%%%%%%%%",storeRe);
+        console.log("%%%%%%%%%%%%%%%%%", storeRe);
 
+
+        let textNew;
+
+        let outtextNew = textNew !== undefined ? textNew : "not defind";
+
+        console.log(outtextNew);
 
 
 
@@ -805,15 +883,39 @@
         };
 
 
-        for(let i = 2; i <= 20; i++){
-            if(i % 2 === 0){
-                if(i > 14){
+        for (let i = 2; i <= 20; i++) {
+            if (i % 2 === 0) {
+                if (i > 14) {
                     console.log("greter then 14 and even value", i)
-                }else{
+                } else {
                     console.log("less then 14 values", i)
                 }
             }
         };
+
+
+       
+
+        function dayAndTime(day,time){
+            let days = ["s","m","t","w","ts","f","set"];
+            let times = [5,12,16,22];
+
+            for(i = 0; i < days.length; i++){
+                for(let k = 0; k <= times.length; k++){
+                    if(days[i] === day && times[k] === parseInt(time)){
+                        return `day is ${days[i]} and time is ${times[i]}`
+                    }
+                }
+            }
+            return "other days"
+
+        };
+
+        console.log(dayAndTime("f","12"));
+        console.log(dayAndTime("s","12"));
+        console.log(dayAndTime("set","12"));
+
+
 
 
 

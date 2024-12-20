@@ -332,14 +332,7 @@ const HomePagePost2 = () => {
           </div>
         </div>
       </div>
-      {/* {!post.isSaved ? null : (
-        <div>
-          <h1 className="text-center mt-20 font-medium text-3xl">
-            More to explore
-          </h1>
-          <Home />
-        </div>
-      )} */}
+      
     </div>
     // </Contenier>
   );

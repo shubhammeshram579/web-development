@@ -99,11 +99,6 @@ const EditPost = () => {
           {...register('postImg', { required: "post image required"})}
         />
         {errors.postImg && <p>{errors.postImg.message}</p>}
-        {/* {post && (
-          <div>
-            <img src={response.data.PostPublish.postImg} alt="title" />
-          </div>
-        )} */}
 
         <Select
           label="Status: "

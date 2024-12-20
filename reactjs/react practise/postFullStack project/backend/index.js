@@ -196,32 +196,3 @@ export default io
 
 
 
-// // Mock data to simulate connected users
-// let users = [];
-
-// // Handle client connections
-// io.on('connection', (socket) => {
-//     console.log('User connected:', socket.id);
-
-//     // User joins with their user ID
-//     socket.on('join', (userId) => {
-//         users.push({ userId, socketId: socket.id });
-//         console.log('Connected users:', users);
-//     });
-
-//     // Listen for new post creation
-//     socket.on('newPost', (data) => {
-//         // Notify all users except the one who created the post
-//         socket.broadcast.emit('receiveNotification', {
-//             senderId: data.senderId,
-//             postId: data.postId,
-//             createdAt: new Date()
-//         });
-//     });
-
-//     // Handle user disconnect
-//     socket.on('disconnect', () => {
-//         users = users.filter(user => user.socketId !== socket.id);
-//         console.log('User disconnected:', socket.id);
-//     });
-// });

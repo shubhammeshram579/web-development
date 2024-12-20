@@ -51,7 +51,6 @@ const OptionsCard = ({ onDownload, onHide, visible, postId }) => {
         >
           Download post Image
         </a>
-        {/* <button onClick={onDownload} className="block w-full text-left text-[15px] px-4 py-2 text-gray-700 hover:bg-gray-200">Download Post Image</button> */}
         <button
           onClick={onHide}
           className="py-2 px-5 rounded-3xl text-left text-[15px] text-gray-700 hover:bg-gray-200"
