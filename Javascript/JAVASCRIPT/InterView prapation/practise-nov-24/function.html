@@ -346,6 +346,23 @@
         console.log(getFR);
 
 
+        // practise
+        let FacSum = 10;
+
+        function factrial2(n){
+            if(n === 0){
+                return 1;
+            };
+
+
+            return n * factrial2(n - 1)
+        };
+
+        let FacSumRes = factrial2(FacSum);
+        console.log(FacSumRes);
+
+
+
         // 4.What is a function expression?
         // Def: A function expression is a function defined within an expression and can be anonymous.
 
@@ -371,6 +388,19 @@
         };
 
         isEven(numR);
+
+        // practise
+
+        function isEven3(n) {
+            if(n % 2 ===0){
+                console.log("it is even")
+            }else{
+                console.log("it is odd")
+            }
+
+        }
+
+        isEven3(54);
 
         // tennery contion
 
@@ -417,6 +447,18 @@
     }
 
     abd("labham");
+
+    // practise
+
+    function reveStr(n){
+        let revers = '';
+        for(let i = n.length -1; i >= 0; i--){
+            revers += n[i]; 
+        }
+        console.log(revers)
+    }
+
+    reveStr("shubham meshram");
 
 
     // 7.What is a higher - order function in JavaScript ?
@@ -506,6 +548,245 @@
      }
 
      console.log(greterThen(5,2));
+
+     // Advanced Level:
+    // 11.What is a pure function?
+    // 11.A pure function is a function that, given the same inputs, will always return the same output without causing any side effects.
+
+    function isPure(a,b){
+        return a / b
+    };
+
+    console.log(isPure(123,10));
+
+
+    // inpure fuction 
+    function notPure(a, b){
+        return a / Math.random(b);
+    }
+
+    console.log(notPure(100,10));
+    console.log(notPure(100,10));
+
+
+
+    // 12.Write a function that returns a function (closure).
+
+    function outer(a){
+        return  function inner(b){
+            return function innerChild(c){
+                return a + b + c
+            }
+        }
+
+    };
+
+
+    let ReO = outer(100);
+    let innR = ReO(20);
+    let Ichind = innR(50);
+
+    console.log(Ichind);
+
+
+    // curring function
+    let finalResult = outer(10)(20)(50);
+    console.log(finalResult); 
+
+
+    // 13.What is the difference between function declaration and function expression?
+    // A function declaration defines a function with a specified name, whereas a function expression creates a function inside an expression.
+    // Function Declaration
+
+
+    // function declaration
+    function isFunctionDecleration(){
+        console.log("i am function expretion function")
+    };
+
+    isFunctionDecleration();
+
+
+    // function expression
+    let isfunctionExpression = function(){
+        console.log("i am function expration it also call annnomies function")
+    };
+
+    isfunctionExpression();
+
+
+
+    // 14.Write a function that counts the number of vowels in a string.
+
+     function VowelsCout(str){
+        let count = 0;
+        let vowels = "aeiouAEIOU"
+
+        for(let i of str){
+            if(vowels.includes(i)){
+                count++
+            };
+        };
+        return count
+     };
+
+     console.log(VowelsCout("shubham meshram"));
+
+
+     // 15.What are arrow functions, and how are they different from regular functions ?
+    // 15. Arrow functions are a shorthand way to write functions, and they do not have their own this or arguments binding.
+
+    let arrawFun = () => {
+        console.log("i am arrow function")
+    }
+
+    arrawFun();
+
+    // calculate a and b
+
+    let sum = (a,b) => {
+        return a + b
+    }
+
+    console.log(sum(20,50));
+
+
+    // one line of code
+    let sum2 = (a,b) => (a + b);
+
+    console.log(sum2(50,55));
+
+
+
+    // 16.Write a function that returns the nth Fibonacci number.
+    function Fibonacci(n){
+        // base case
+        if(n <= 1){
+            return n;
+        }
+
+        return Fibonacci(n - 1) + Fibonacci(n - 2)
+    }
+
+    console.log(Fibonacci(6));
+
+    // practise
+
+    let Fibonacci2 = (n) => {
+        if(n <= 1){
+            return n
+
+        };
+
+        return Fibonacci2(n - 1) + Fibonacci2(n - 2);
+
+    }
+
+    console.log(Fibonacci2(10));
+
+
+    // 17.Explain function currying and provide an example.
+    // 17.Currying is the process of breaking a function with multiple arguments into a series of functions that each take one argument.
+
+    // example
+
+    function checkCurring(a){
+        return function inner(b){
+            return a + " " +b
+
+        }
+
+    };
+
+    let CurrentingResult = checkCurring("shubham")("meshram");
+    console.log(CurrentingResult);
+
+
+    // 18.Write a function to flatten an array.
+    let FArray = [1,3,4,5,6,[7,8,9],10,11];
+    let StoreFatten = [];
+
+    function FlatterArray(arr){
+
+        for(let i = 0; i < arr.length; i++){
+            if(Array.isArray(arr[i])){
+                FlatterArray(arr[i]);
+            }else{
+                StoreFatten.push(arr[i])
+            }
+        }
+
+    };
+
+    FlatterArray(FArray);
+    console.log(StoreFatten);
+
+
+    // 19.What is the call, apply, and bind method in JavaScript ?
+    // call : Invokes a function with a given this value and arguments passed one by one.
+    // apply: Invokes a function with a given this value and arguments as an array.
+    // bind: Returns a new function, with a given this value, but does not execute it immediately.
+
+    // contruction function
+    function obj(){
+        this.name = "shubham";
+        this.age = 27;
+        this.address = "gondia";
+    }
+
+    let Re = new obj();
+    console.log(Re);
+
+
+    // call , apply bind
+    function abc(a,b,c){
+        console.log(this.name,a,b,c)
+    }
+
+    let objCall = {
+        name: "shubham"
+    }
+
+
+    abc.call(objCall,"labham","pallavi","aachal");
+    abc.apply(objCall,["s","h","u"]);
+    let restBind = abc.bind(objCall,1,2,3);
+    restBind();
+
+    // another example 
+    let person = {
+        name: "shubham",
+        age:27,
+        address: function(det){
+            console.log(det +" "+ this.name)
+        }
+    }
+
+    let newAdd = {
+        name: "gondia"
+    };
+
+
+    person.address.call(newAdd,"hello");
+    person.address.apply(newAdd,["hello"]);
+    let stor = person.address.bind(newAdd,"hi");
+    stor();
+
+
+    // 20.Write a recursive function to calculate the power of a number(e.g., power(2, 3) should return 8).
+
+    function power(base,exponent){
+        if(exponent === 0){
+            return 1
+        };
+        return base * power(base, exponent -1)
+    }
+
+    console.log(power(2,3));
+
+
+
+
 
 
 
