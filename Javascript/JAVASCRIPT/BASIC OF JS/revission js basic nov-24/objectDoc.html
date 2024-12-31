@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 1. What is an object?
+        // Definition: In JavaScript, an object is like a container that holds different pieces of information together. 
+        // Think of it as a backpack that can hold various items.
+
+        let person = {
+            name: "John",         // String property
+            age: 30,              // Number property
+            greet: function () {  // Method (function inside an object)
+                console.log("Hello, my name is " + this.name);
+            }
+        };
+
+        // Logging the whole object
+        console.log(person);  
+
+
+
+        // Access object properties
+        console.log(person.name);  // Accessing 'name' property
+        console.log(person.age);   // Accessing 'age' property
+        console.log(person["name"]);  // Accessing 'name' using bracket notation
+        person.greet();  // Calling the greet method
+
+
+
+
+        // 2. Define an object with basic syntax
+        let obj = {
+            name: "Shubham",       // String property
+            age: 27,               // Number property
+            address: "Gondia",     // String property
+            profile: "Software Developer"  // String property
+        };
+
+        console.log(obj);         // Logging the whole object
+        console.log(obj.profile); // Accessing 'profile' property
+
+
+
+
+        // 3. Update object properties
+        obj.name = "Labham";     // Changing the 'name' property
+        console.log(obj);         // Logging the updated object
+
+        // Object.freeze makes the object immutable (can't be updated)
+        Object.freeze(obj);
+
+        // Trying to update the frozen object (won't work)
+        obj.age = 21;        // This won't work
+        obj.name = "Sujita"; // This won't work
+        console.log(obj);    // Logging the frozen object
+
+
+
+
+
+        //4.  Second way to create an object
+        let obj2 = {};
+
+        obj2.name = "Dell";         // Adding properties
+        obj2.processor = "i5";      // Adding properties
+        obj2.ram = "24GB";          // Adding properties
+
+        console.log(obj2);          // Logging the new object
+
+
+
+
+        //5.  Nested object (Object inside another object)
+        let nestedObj = {
+            name: "Book1",          // String property
+            price: 50,              // Number property
+            details: {              // Nested object
+                totalPages: 250,    // Number property inside nested object
+                type: "Rough"       // String property inside nested object
+            },
+            moreInfo: {             // Another nested object
+                page: {             // Further nesting
+                    color: "White",  // String property inside nested nested object
+                    front: "Blue",   // String property inside nested nested object
+                    back: "Green"    // String property inside nested nested object
+                }
+            }
+        };
+
+        console.log(nestedObj);  // Logging the nested object
+
+        // Access properties in a nested object
+        console.log(nestedObj.name);                // Accessing 'name' property
+        console.log(nestedObj.details.totalPages);  // Accessing nested 'totalPages' property
+        console.log(nestedObj.moreInfo.page.color); // Accessing nested nested 'color' property
+        console.log(nestedObj["moreInfo"]["page"]["back"]);  // Another way of accessing nested properties
+
+
+
+
+
+        //6.  Merge objects using Object.assign()
+        let object1 = {
+            name: "Pallavi",   // String property
+            age: 22            // Number property
+        };
+
+        let object2 = {
+            address: "Gondia"  // String property
+        };
+
+        let mergedObj = Object.assign({}, object1, object2);  // Merging object1 and object2
+        console.log(mergedObj);  // Logging the merged object
+
+        // Merge objects using the spread operator
+        let spreadOperatorMergedObj = { ...object1, ...object2 };  // Merging using spread operator
+        console.log(spreadOperatorMergedObj);  // Logging the merged object
+
+
+
+
+
+        //7.  How to check keys and values in an object
+        console.log(Object.keys(mergedObj));     // Getting all keys of the merged object
+        console.log(Object.values(mergedObj));   // Getting all values of the merged object
+        console.log(Object.entries(mergedObj));  // Getting key-value pairs of the merged object
+
+
+
+
+        //8. Array of objects
+        let objectList = [
+            {
+                name: "Shubham",
+                age: 26,
+                address: "Gondia"
+            },
+            {
+                name: "Labham",
+                age: 21,
+                address: "UAS"
+            },
+            {
+                name: "Akash",
+                age: 28,
+                address: "UK"
+            },
+            {
+                name: "Shivam",
+                age: 26,
+                address: "Germany"
+            }
+        ];
+
+        console.log(objectList);  // Logging the array of objects
+
+        //I. Loop through the array of objects and print name and age
+        for (let i in objectList) {
+            console.log(objectList[i].name);  // Printing 'name' of each object
+            console.log(objectList[i].age);   // Printing 'age' of each object
+        }
+
+        console.log("********************************");
+
+        //II. Select "Shubham" by name and print the corresponding object
+        for (let i in objectList) {
+            if (objectList[i].name === "Shubham") {
+                console.log(objectList[i]);  // Logging the object of Shubham
+                console.log(objectList[i].name);  // Logging the name of Shubham
+            }
+        }
+
+        //III. Update the object where name is "Shubham"
+        for (let i in objectList) {
+            if (objectList[i].name === "Shubham") {
+                objectList[i].name = "Dell";  // Changing the name property
+            }
+            console.log(objectList[i]);  // Logging the updated object
+        }
+
+        //i. Second way to update objects and store in a new array
+        let storeObject = [];
+
+        for (let i in objectList) {
+            if (objectList[i].name === "Labham") {
+                objectList[i].name = "HP";  // Changing the name property
+            }
+            storeObject.push(objectList[i]);  // Adding the updated object to storeObject array
+        }
+
+        console.log("Stored Objects:", storeObject);  // Logging the new array
+
+        console.log("Map Function");
+
+
+
+        //ii .Third way to update object value using map function
+        storeObject.map((i) => {
+            if (i.age === 26) {
+                return i.age = 15;  // Updating age if it's 26
+            } else {
+                return i;  // Returning the object unchanged if condition is not met
+            }
+        });
+
+        console.log(storeObject);  // Logging the updated array
+
+    </script>
+</body>
+
+</html>

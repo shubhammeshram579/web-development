@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        background-color: #111;
+    }
+
+    .objContainer {
+        background-color: rgb(197, 197, 16);
+        height: 100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .objItem {
+        text-transform: capitalize;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 40px;
+        color: #111;
+        text-shadow: 1px 1px red;
+        font-weight: 500;
+        word-spacing: 10px;
+    }
+
+    #objSpam {
+        text-shadow: 2px 2px #111;
+        color: orangered;
+    }
+</style>
+
+<body>
+    <div class="objContainer">
+        <h1 class="objItem">object in <span id="objSpam">javascript</span></h1>
+    </div>
+
+
+    <script>
+        // what is object ?
+        // dif: In JavaScript, an object is like a container that holds different pieces of information together. 
+        // Think of it as a backpack that can hold various items.
+
+        // example 
+        let person = {
+            name: "John",
+            age: 30,
+            greet: function () {
+                console.log("Hello, my name is " + this.name);
+            }
+        };
+
+        console.log(person);
+
+        // select object
+        console.log(person.name);
+        console.log(person.age);
+        console.log(person["name"]);
+        person.greet();
+
+
+        // defind object basic sentax 
+        let obj = {
+            name: "shubham",
+            age: 27,
+            adderess: "gondia",
+            profile: "softwere developer"
+        }
+
+        console.log(obj);
+        console.log(obj.profile);
+
+        // update object 
+        obj.name = "labham";
+
+        console.log(obj);
+
+        // object freeze do not update 
+        Object.freeze(obj)
+
+        // again updated 
+        obj.age = 21;
+        obj.name = "sujita";
+
+        console.log(obj);
+
+
+        // second way to create obj
+
+        let obj2 = {};
+
+        obj2.name = "dell";
+        obj2.proceser = "i5";
+        obj2.ram = "24";
+
+        console.log(obj2);
+
+        // nested object 
+
+        let nestedObJ = {
+            name: "book1",
+            price: 50,
+            details: {
+                totalPage: 250,
+                type: "ruf"
+            },
+            moreinfo:{
+                page:{
+                    color: "white",
+                    front: "blue",
+                    back: "green",
+                }
+
+            }
+        };
+
+        console.log(nestedObJ);
+
+        // select nested object
+        console.log(nestedObJ.name);
+        console.log(nestedObJ.details.totalPage);
+        console.log(nestedObJ.moreinfo.page.color);
+        console.log(nestedObJ["moreinfo"]["page"]["back"]);
+
+
+        // marge object
+
+        let object1 = {
+            name: "pallavi",
+            age: 22
+        }
+
+        let object2 = {
+            address: "gondia",
+        }
+
+        let mergeObj = Object.assign({},object1,object2);
+        console.log(mergeObj);
+
+        // merge object using spred oprater
+        let spredOpraterMergeObj = {...object1,...object2};
+
+        console.log(spredOpraterMergeObj);
+
+
+        // how to check key and value
+        console.log(Object.keys(mergeObj));
+        console.log(Object.values(mergeObj));
+        console.log(Object.entries(mergeObj));
+
+        // array ofject
+
+        let objecList = [
+            {
+                name: "shubham",
+                age:26,
+                address: "gondia"
+            },{
+                name: "labham",
+                age:21,
+                address: "UAS"
+            },
+            {
+                name: "akash",
+                age:28,
+                address: "UK"
+            },
+            {
+                name: "shivam",
+                age:26,
+                address: "germany"
+            }
+        ]
+
+        console.log(objecList);
+        
+        // array object select using for loops print name or age
+        for(let i in objecList){
+            console.log(objecList[i].name)
+            console.log(objecList[i].age)
+        }
+
+        console.log("********************************")
+
+
+        // select shubham name person object
+        for(let i in objecList){
+            if(objecList[i].name === "shubham"){
+                // get object 
+                console.log(objecList[i])
+                // get name object
+                console.log(objecList[i].name)
+            } 
+        };
+
+
+        // update object
+
+        // fist way to object update for same objectList 
+        for(let i in objecList){
+            if(objecList[i].name === "shubham"){
+                objecList[i].name = "dell"
+            }
+            console.log(objecList[i])
+        };
+
+
+
+        // second way to updated object newstoreArray
+        let storeObjec = []
+
+        for(let i in objecList){
+            if(objecList[i].name === "labham"){
+                objecList[i].name = "hp"
+            }
+            storeObjec.push(objecList[i]);
+        };
+        console.log("st",storeObjec);
+
+
+
+
+
+
+        console.log("map function")
+        // 3rd way to pdated object value using map funtion
+        storeObjec.map((i) => {
+            if(i.age === 26){
+                return i.age = 15;
+            }else{
+                return i
+            }
+            
+        })
+        console.log(storeObjec)
+
+
+
+
+
+        
+
+        
+
+
+
+
+    </script>
+</body>
+
+</html>
