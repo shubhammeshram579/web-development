@@ -131,6 +131,11 @@
         //     console.log("hello world")
         // };
 
+        // practise
+        // if(true){
+        //     console.log("hello shuham");
+        // };
+
         // 2.Question: How do you write an if-else statement in JavaScript ? Answer :
 
 
@@ -141,6 +146,15 @@
         // }else{
         //     console.log(false)
         // }
+
+
+        // if(false){ // true
+        //     console.log("true")
+        // }else{
+        //     console.log("false")
+        // }
+
+        // out: false
 
 
         // 3. Question: How can you check if a number is positive, negative, or zero ? Answer :
@@ -206,7 +220,24 @@
             }
         };
 
-        console.log("zero ",zero(numLegth));
+        console.log("zero ", zero(numLegth));
+
+        // practise
+        let checkNum = (n) => {
+            if (n > 0) {
+                console.log("gtreter then 0")
+            } else if (n < 0) {
+                console.log("less then 0")
+            } else {
+                console.log("equel")
+            }
+        }
+
+        checkNum(0);
+
+
+
+
 
 
 
@@ -267,6 +298,18 @@
         });
 
 
+        // practise
+        let bottel = 10;//null
+        let bottelcap = 20; // undefined
+
+        if(bottel === null && bottelcap === undefined){
+            console.log(`bottel is ${bottel} and bottel cap is ${bottelcap}`)
+        }else{
+            console.log(`bottel is ${bottel} and bottel cap is ${bottelcap}`)
+
+        }
+
+
 
         // Intermediate Level
         // 5.Question: How can you check if a number is even or odd using a conditional statement?Answer:
@@ -305,16 +348,39 @@
 
         let checkValueIsEven = 14;
 
-        function checkEven(n){
+        function checkEven(n) {
             let i = 2;
-            if(n % i === 0){
+            if (n % i === 0) {
                 return "even";
-            }else{
+            } else {
                 return "odd";
             };
         }
 
-        console.log("check is value or odd:",checkEven(checkValueIsEven));
+        console.log("check is value or odd:", checkEven(checkValueIsEven));
+
+
+        // practise
+        let pen = 20;
+        if(pen % 2 === 0){
+            console.log("even")
+
+        }else{
+            console.log("odd")
+        };
+
+        // tenntry used
+        let isOdd = pen % 2 === 0 ? "even" : "odd";
+        console.log(isOdd)
+
+
+        // build function
+        let isOE = (n) => {
+            return n % 2 === 0 ? "is even" : "is odd"
+
+        }
+
+        console.log(isOE(51));
 
 
 
@@ -410,6 +476,28 @@
         };
 
 
+        // let buid fuction for switch stament 
+
+        let checkitme = (i) => {
+            switch(i){
+                case "botel":
+                case "pen":
+                    console.log("plactic item")
+                    break
+                case "remote":
+                case "mouse":
+                    console.log("electric items");
+                    break
+                default:
+                    console.log("it's other items")
+            }
+
+        }
+
+        checkitme("botel");
+        checkitme("mouse");
+
+
         // 8. Question: How can you check if a number is within a certain range(e.g., 10 to 20) ? Answer :
 
         let RNumner = 15;
@@ -479,17 +567,50 @@
 
         // let build function for set time range
 
-        function timeS(t){
-            if(t > 5 && t < 12){
+        function timeS(t) {
+            if (t > 5 && t < 12) {
                 return "good morning"
-            }else if(t > 12 && t < 16){
+            } else if (t > 12 && t < 16) {
                 return "good afternoon"
-            }else{
+            } else {
                 return "good evening"
             }
-            
+
         };
         console.log(timeS(14));
+
+
+        // practise
+        let rangeOf = [];
+        let rangeOf2 = [];
+        for(let i = 1; i <= 20; i++){
+            // array format store value
+            rangeOf.push(i);
+            // string format store value
+            rangeOf2 += i
+        }
+
+        console.log(rangeOf)
+        console.log(rangeOf2)
+
+        // object of array
+        console.log(typeof rangeOf)
+        // string 
+        console.log(typeof rangeOf2)
+
+
+        rangeOf.forEach((i) => {
+            // console.log(i)
+            if(i >= 10 && i <= 15){
+                console.log(`the range of 10 to 15 value ${i}`)
+            }else if(i >= 16 && i <= 20){
+                console.log(`the range of 16 to 20 value ${i}`)
+            }else{
+                console.log(`less then 10 range of vlaue are ${i}`)
+            }
+        });
+
+
 
 
 
@@ -578,12 +699,19 @@
 
         let mobiles = "";
 
-        if(mobiles.length > 0){
+        if (mobiles.length > 0) {
             console.log("mobile str is not empty")
-        }else{
+        } else {
             console.log("mobile str is empty")
         };
 
+
+        // buid fuction 
+        let isStrEmpty = (str) => {
+            return str.length > 0 ? `string is ${str}` : "string is empty"
+        }
+
+        console.log(isStrEmpty(""));
 
         // 10. Question: How can you use a switch statement with a default case that handles multiple values ? Answer :
 
@@ -639,8 +767,8 @@
 
 
 
-        function electronicItems(items){
-            switch(items){
+        function electronicItems(items) {
+            switch (items) {
                 case "mobile":
                 case "laptop":
                     return items;
@@ -894,15 +1022,15 @@
         };
 
 
-       
 
-        function dayAndTime(day,time){
-            let days = ["s","m","t","w","ts","f","set"];
-            let times = [5,12,16,22];
 
-            for(i = 0; i < days.length; i++){
-                for(let k = 0; k <= times.length; k++){
-                    if(days[i] === day && times[k] === parseInt(time)){
+        function dayAndTime(day, time) {
+            let days = ["s", "m", "t", "w", "ts", "f", "set"];
+            let times = [5, 12, 16, 22];
+
+            for (i = 0; i < days.length; i++) {
+                for (let k = 0; k <= times.length; k++) {
+                    if (days[i] === day && times[k] === parseInt(time)) {
                         return `day is ${days[i]} and time is ${times[i]}`
                     }
                 }
@@ -911,9 +1039,9 @@
 
         };
 
-        console.log(dayAndTime("f","12"));
-        console.log(dayAndTime("s","12"));
-        console.log(dayAndTime("set","12"));
+        console.log(dayAndTime("f", "12"));
+        console.log(dayAndTime("s", "12"));
+        console.log(dayAndTime("set", "12"));
 
 
 
