@@ -74,6 +74,12 @@
         // console.log(i)
         //};
 
+        // for(let i = 1; i <= 40; i++){
+        //     if(i % 4 ===0){
+        //         console.log(i)
+        //     }
+        // };
+
 
 
         //3. Print the sum of numbers from 1 to 100.
@@ -86,6 +92,13 @@
         }
 
         // console.log(storeSum);
+
+        let TotalSum = 0;
+        for(let i = 1; i <= 50; i++){
+            // console.log(i)
+            TotalSum += i
+        };
+        // console.log("totalsum",TotalSum);
 
 
         //4. Reverse a string using a loop.
@@ -134,6 +147,12 @@
         for (let i = 0; i < Str2.length; i++) {
             console.log(Str2[i])
         };
+
+        // let strLabham = "labham meshram";
+
+        // for(let i = strLabham.length -1; i >= 0; i--){
+        //     console.log(strLabham[i]);
+        // }
 
 
 
@@ -205,6 +224,16 @@
         };
 
         console.log("ReveseNumSum:", ReveseNumSum);
+
+        // practise
+        let rangeOfN = 5;
+        let factorialSum = 0;
+
+        for(let i = rangeOfN; i >= 1; i--){
+            factorialSum += i
+        }
+
+        console.log("factial sum",factorialSum);
 
 
 
@@ -338,6 +367,30 @@
             FnR2 = fibonacci3;
         };
         console.log("range of Fibonacci range:", fibonacci3);
+
+
+        let Fr = 0 , FR2 = 1 , fibonacciTest;
+
+        for(let i = 1; i <= 10; i++){
+            console.log(Fr);
+            fibonacciTest = Fr + FR2
+            Fr = FR2
+            FR2 = fibonacciTest
+        }
+
+        console.log("fibonacciTest",fibonacciTest)
+
+
+        // practise fanction
+        function fabonacciDD(n){
+            if(n <= 1){
+                return n;
+            }
+            return fabonacciDD(n - 1) + fabonacciDD(n - 2)
+
+        };
+
+        console.log("fabonacci",fabonacciDD(10));
 
 
         // 9.Sum all the elements in an array.
@@ -561,6 +614,19 @@
         };
 
         console.log(isPalindromeCheck ? "is Palidrome" : "is not palidrome");
+
+
+        let palindrom = "madam";
+        let isPalindrome2 = true;
+
+        for(let i = 0; i < palindrom.length / 2; i++){
+            if(palindrom[i] !== palindrom[palindrom.length - 1 - i]){
+                isPalindrome2 = false
+                break
+            }
+        }
+
+        console.log(isPalindrome2 ? "is palidrom" : "not palidrome");
 
 
         // Advanced Challenges:

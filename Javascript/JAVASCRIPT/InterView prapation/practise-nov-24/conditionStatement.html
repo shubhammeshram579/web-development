@@ -839,6 +839,22 @@
 
         console.log(outtextNew);
 
+        // [ractise]
+
+        let gpayUser;
+
+        if(gpayUser !== undefined){
+            console.log(`gypay user is: ${gpayUser}`)
+        }else{
+            console.log(`gpay user is ${gpayUser}`)
+        };
+
+
+        // tennary oprater
+        let TenneryOp = gpayUser !== undefined ? `gypay user is: ${gpayUser}`: `gpay user is ${gpayUser}`;
+
+        console.log(TenneryOp);
+
 
 
         // my own quetion problems: how to find undefind value in array and update undifind value 
@@ -1056,11 +1072,11 @@
 
         //  practise
 
-        let joyB;
+        let joyB ="shubham";
 
-        // let joyR = joyB == null ? joyB : "not value";
+        let joyR = joyB === null ? joyB : "not value";
 
-        // console.log(joyR)
+        console.log(joyR);
 
 
 
