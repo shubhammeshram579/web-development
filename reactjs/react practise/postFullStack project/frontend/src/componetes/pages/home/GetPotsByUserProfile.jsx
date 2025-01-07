@@ -8,6 +8,7 @@ import FollowButton from "..//../FollowBtn.jsx";
 import CreatedPosts from "..//getpostbyOwner/CreatedPosts.jsx";
 import SavePosts from "..//getpostbyOwner/SavePosts.jsx";
 import "..//..//../App.css"
+import "..//..//../Responsive.css"
 
 const GetPotsByUserProfile = () => {
   const { userId } = useParams();
@@ -33,7 +34,7 @@ const GetPotsByUserProfile = () => {
     const fatchGetUser = async () => {
       try {
         const response = await axios.get(
-          `/api/users/getUsersById?_id=${userId}`,
+          `http://localhost:8000/api/users/getUsersById?_id=${userId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -68,7 +69,7 @@ const GetPotsByUserProfile = () => {
  
    
        
-    <div className="pt-40 bg-slate-100 w-full h-full ">
+    <div  className="pt-40 bg-slate-100 w-full h-full ">
       {/* <div>GetPotsByUserProfile: {getUser.fullname}</div> */}
         <div className={`Ownerpage flex items-center justify-center flex-col ${visible ? "visible" : ""}`}>
           <h1 className="w-10 h-10 p-16 rounded-full bg-gray-400 flex items-center justify-center font-bold text-xl mb-5">

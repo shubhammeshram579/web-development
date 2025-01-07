@@ -4,11 +4,12 @@
     display: none;
 }
 
-/* 
-#CommentCard{
+
+/* #CommentCard{
+  height:(calc(50vh-100px));
+  width: 100%;
     background-color: green;
 } */
-
 
 
 #CommentCard::-webkit-scrollbar {
@@ -62,6 +63,7 @@
         align-items: center;
         justify-content:center;
         /* padding-left: 100px; */
+        z-index: 9999;
 
     }
 
@@ -170,7 +172,7 @@
 
 
     #shrePost{
-      margin-left: 4vw;
+      margin-left: 3vw;
     }
 
     #treedot{
@@ -181,7 +183,35 @@
 
     #PostbyId{
         /* background-color: red; */
-        min-height: 90vh;
+        min-height: 150vh;
+        padding-top: 100px;
+    }
+
+    #PostbyId2{
+      min-height: 150vh;
+      padding-top: 0px;
+
+    }
+
+    #SinglePostCard{
+      min-height: 150vh;
+      width: 85vw;
+      /* background-color: green; */
+      
+    }
+
+    #SinglePost{
+      min-height: 140vh;
+      width: 100%;
+      /* background-color: red; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #PostImage{
+      width: 80vw;
     }
 
     #ArrowBtn{
@@ -234,15 +264,15 @@
 
     #PostCard img{
         height: 60vh;
-        width: 43vw;
+        width: 80vw;
 
         /* margin-top: 37px; */
     }
 
     #postItems{
-        width: 50vw;
-        height: 60vh;
-        /* background-color: yellow; */
+        width: 82vw;
+        height: 70vh;
+        padding: 10px;
     }
 
     /* #postItems #shareItem{
@@ -261,6 +291,15 @@
         text-transform: capitalize;
         margin-top: -0px;
         padding-top: 25px;
+    }
+
+
+    #CommentCard{
+      min-height: 15vh;
+      overflow-y: scroll;
+      /* overflow-x: scroll; */
+      /* background-color: green; */
+
     }
 
 
@@ -751,6 +790,7 @@
       #SignInpagetext{
         width: 80vw;
         padding: 5vw 5vw;
+        /* background-color: red; */
       }
 
 
@@ -780,6 +820,50 @@
         padding-bottom: 40px;
         
 
+      } 
+
+      #LogPage{
+        padding-top: 65px;
+        padding-bottom: 100px;
       }
+      #LoginPage{
+        /* background-color: rebeccapurple; */
+        padding: 5vw;
+      }
+      #HideFooter{
+        display: none;
+      }
+
+      #NewStyleFooter{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        /* background-color: red; */
+      }
+
+      #OptionCard{
+        margin-top: 35px;
+        margin-left: -240px;
+        
+      }
+
+      #DownloadImg{
+        font-size: 2.5vw;
+      }
+
+      #SharePostCard{
+        height: 120px;
+        margin-top: 30px;
+        margin-left: -130px;
+        padding: 5px 5px;
+        font-size: 1px;
+      }
+
+      #CopyLink{
+        font-size: 2.5vw;
+      }
+
+
 }
 

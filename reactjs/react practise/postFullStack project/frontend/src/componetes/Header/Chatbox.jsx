@@ -53,7 +53,7 @@ const Chatbox = () => {
     const fatchcurrentUser = async () => {
       try {
         const getcurrentUser = await axios.get(
-          `/api/users/current-user`,
+          `http://localhost:8000/api/users/current-user`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -82,7 +82,7 @@ const Chatbox = () => {
     const fatchChats = async () => {
       try {
         const response = await axios.get(
-          `/api/chatMessage/${from}/${to}`,
+          `http://localhost:8000/api/chatMessage/${from}/${to}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

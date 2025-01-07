@@ -55,7 +55,7 @@ const HomePagePost2 = () => {
     const fatchgetpost = async () => {
       try {
         const response = await axios.get(
-          `/api/posts/getPostByID/${postId}`,
+          `http://localhost:8000/api/posts/getPostByID/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -79,7 +79,7 @@ const HomePagePost2 = () => {
     const fatchCurrentUser = async () => {
       try {
         const currentUser = await axios.get(
-          "/api/users/current-user",
+          "http://localhost:8000/api/users/current-user",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -104,7 +104,7 @@ const HomePagePost2 = () => {
     const fatchgetComment = async () => {
       try {
         const resComment = await axios.get(
-          `/api/comments/getcomment/${postId}`,
+          `http://localhost:8000/api/comments/getcomment/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -129,7 +129,7 @@ const HomePagePost2 = () => {
   const onSubmit = async (data) => {
     try {
       const addcomment = await axios.post(
-        `/api/comments/addcomment/${postId}`,
+        `http://localhost:8000/api/comments/addcomment/${postId}`,
         data,
         {
           headers: {
@@ -185,7 +185,7 @@ const HomePagePost2 = () => {
 
   return (
     // <Contenier>
-    <div id="PostbyId" className={` w-full h-full min-h-[100vh] pb-10 `}>
+    <div id="PostbyId2" className={` w-full h-full min-h-[100vh] pb-10 `}>
       <div className={`CreatePost mt-28 px-20 flex items-center justify-evenly flex-col pt-5 ${visible1 ? "visible1" : ""} `}>
         <div id="topArrowBtnAndEditBtn" className="flex items-center justify-between w-full">
           <div className="font-bold text-[25px]">
@@ -212,15 +212,15 @@ const HomePagePost2 = () => {
           </div>
         </div>
 
-        <div id="PostCard" className="bg-slate-200 w-[39vw] flex items-center rounded-3xl">
-          <div className="py-5 flex items-start justify-start">
+        <div id="SinglePostCard" className="bg-slate-200 w-[39vw] flex items-center rounded-3xl">
+          <div id="SinglePost" className="py-5 flex items-start justify-start">
             <div
               className={`transition-colors duration-500 rounded-lg ${
                 isHidden ? "bg-gray-200" : ""
               }`}
             >
               {post.postImg && (
-                <img
+                <img id="PostImage"
                   className={`h-[72vh] w-[18vw] rounded-xl object-cover ml-2 ${
                     isHidden ? "opacity-0" : "opacity-100"
                   }`}

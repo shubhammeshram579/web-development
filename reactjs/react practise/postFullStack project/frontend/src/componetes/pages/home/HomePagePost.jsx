@@ -57,7 +57,7 @@ const HomePagePost = () => {
     const fatchgetpost = async () => {
       try {
         const response = await axios.get(
-          `/api/posts/getPostByID/${postId}`,
+          `http://localhost:8000/api/posts/getPostByID/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -81,7 +81,7 @@ const HomePagePost = () => {
     const fatchCurrentUser = async () => {
       try {
         const currentUser = await axios.get(
-          "/api/users/current-user",
+          "http://localhost:8000/api/users/current-user",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -106,7 +106,7 @@ const HomePagePost = () => {
     const fetchComments = async () => {
       try {
         const resComment = await axios.get(
-          `/api/comments/getcomment/${postId}`,
+          `http://localhost:8000/api/comments/getcomment/${postId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -145,7 +145,7 @@ const HomePagePost = () => {
       // setComment((prevComment) => [...prevComment, data]);
 
       const addcomment = await axios.post(
-        `/api/comments/addcomment/${postId}`,
+        `http://localhost:8000/api/comments/addcomment/${postId}`,
         newComment,
         {
           headers: {
@@ -191,15 +191,15 @@ const HomePagePost = () => {
           </div>
 
           
-          <div id="PostCard" className={`HomePost bg-slate-200 w-[38vw] flex items-center rounded-xl ${visible1 ? 'visible1' : ''}`}>
-            <div className="py-5 flex items-start justify-start">
+          <div id="SinglePostCard" className={`SinglePost bg-slate-200 w-[38vw] flex items-center rounded-xl ${visible1 ? 'visible1' : ''}`}>
+            <div id="SinglePost" className="py-5 flex items-start justify-start">
               <div
                 className={`transition-colors duration-500 rounded-lg ${
                   isHidden ? "bg-gray-200" : ""
                 }`}
               >
                 {post.postImg && (
-                  <img
+                  <img id="PostImage"
                     className={`h-[72vh] w-[17vw] rounded-xl object-cover ml-2 ${
                       isHidden ? "opacity-0" : "opacity-100"
                     }`}

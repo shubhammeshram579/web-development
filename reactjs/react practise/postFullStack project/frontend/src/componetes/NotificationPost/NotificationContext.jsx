@@ -20,7 +20,7 @@ export const NotificationProvider = ({ children }) => {
 
     const fetchNotifications = async () => {
       try {
-        const response = await axios.get('/api/Notification', {
+        const response = await axios.get('http://localhost:8000/api/Notification', {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
@@ -57,7 +57,7 @@ export const NotificationProvider = ({ children }) => {
     setNotificationCount((prevCount) => prevCount - 1);
 
     try {
-      await axios.delete(`/api/Notification/${notificationId}`, {
+      await axios.delete(`http://localhost:8000/api/Notification/${notificationId}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },

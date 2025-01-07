@@ -30,7 +30,7 @@ const Home = () => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          "/api/posts/getAllpost",
+          "http://localhost:8000/api/posts/getAllpost",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

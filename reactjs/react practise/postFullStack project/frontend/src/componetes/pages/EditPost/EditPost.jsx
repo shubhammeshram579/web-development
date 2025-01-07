@@ -17,7 +17,7 @@ const EditPost = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`/api/posts/getPostByID/${postId}`,{
+        const response = await axios.get(`http://localhost:8000/api/posts/getPostByID/${postId}`,{
           headers: {
             "Authorization": `Bearer ${accessToken}`
           }

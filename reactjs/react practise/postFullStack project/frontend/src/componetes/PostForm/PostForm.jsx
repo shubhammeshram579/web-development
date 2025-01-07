@@ -41,7 +41,7 @@ const  PostForm = ({post}) => {
 
     // fatch addpost api
 try {
-      const response = await axios.post("/api/posts/addpost",formData,{
+      const response = await axios.post("http://localhost:8000/api/posts/addpost",formData,{
         headers:{"Authorization":`Bearer ${token}`}
       })
       console.log(response.data)

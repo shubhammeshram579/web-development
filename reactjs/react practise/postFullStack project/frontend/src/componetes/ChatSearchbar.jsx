@@ -12,7 +12,7 @@ const navigate = useNavigate()
   const onSubmit = (data) => {
     const query = data.query.trim();
     if (query) {
-        navigate(`/posts/getAllpost/search?query=${query}`);
+        navigate(`http://localhost:8000/posts/getAllpost/search?query=${query}`);
     }
   };
 

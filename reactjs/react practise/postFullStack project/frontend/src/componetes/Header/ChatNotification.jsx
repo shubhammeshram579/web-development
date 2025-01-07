@@ -22,7 +22,7 @@ const ChatNotification = () => {
   const fetchNotifications = async () => {
     try {
       const response = await axios.get(
-        "/api/chatMessage/chatnotifications",
+        "http://localhost:8000/api/chatMessage/chatnotifications",
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -81,7 +81,7 @@ const ChatNotification = () => {
     // Mark the message as read
     try {
       await axios.put(
-        `/api/chatMessage/readchat/${notification.from._id}/${notification.to}`,
+        `http://localhost:8000/api/chatMessage/readchat/${notification.from._id}/${notification.to}`,
         {},
         {
           headers: {

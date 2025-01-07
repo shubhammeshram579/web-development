@@ -38,7 +38,7 @@ function Header({
     const fatchCurrentUser = async () => {
       try {
         const userData = await axios.get(
-          "/api/users/current-user",
+          "http://localhost:8000/api/users/current-user",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

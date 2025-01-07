@@ -14,7 +14,7 @@ const SavePostButton = ({ userId, postId }) => {
 
   const handleSavePost = async () => {
     try {
-      const response = await axios.post("/api/posts/savePost",{userId, postId},{
+      const response = await axios.post("http://localhost:8000/api/posts/savePost",{userId, postId},{
         headers:{
             "Authorization":`Bearer ${accessToken}`
         }

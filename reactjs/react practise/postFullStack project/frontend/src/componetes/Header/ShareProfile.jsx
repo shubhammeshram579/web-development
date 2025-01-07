@@ -10,6 +10,7 @@ import {
 } from "react-share";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import "..//../Responsive.css"
 
 const ShareProfile = ({ postTitle }) => {
   const user = useSelector((state) => state.auth.user);
@@ -83,7 +84,7 @@ const ShareProfile = ({ postTitle }) => {
             </TwitterShareButton>
             <h1>X</h1>
           </div>
-          <div className="flex items-center justify-center flex-col gap-1">
+          <div id="TextEmail" className="flex items-center justify-center flex-col gap-1">
             <a
               href={`mailto:?subject=${encodeURIComponent(
                 emailSubject
@@ -98,7 +99,7 @@ const ShareProfile = ({ postTitle }) => {
           <button onClick={copyToClipboard} className="text-xl">
           <i class="fa-solid fa-copy text-2xl  bg-gray-300 py-3 px-4 rounded-full"></i>
           </button>
-          <h1 className="flex flex-row">Copy Link</h1>
+          <h1 id="CopyUrl" className="flex flex-row">Copy Link</h1>
           </div>
         </div>
       </div>

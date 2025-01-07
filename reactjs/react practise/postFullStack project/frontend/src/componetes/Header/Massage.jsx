@@ -42,7 +42,7 @@ const Massage = ({shereProfile,setNewMessage,newMessage}) => {
     const fatchcurrentUser = async () => {
       try {
         
-        const getcurrentUser = await axios.get(`/api/users/current-user`,{
+        const getcurrentUser = await axios.get(`http://localhost:8000/api/users/current-user`,{
           headers:{
             "Authorization":`Bearer ${accessToken}`,
           }

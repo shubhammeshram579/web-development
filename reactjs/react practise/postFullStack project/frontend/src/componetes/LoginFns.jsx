@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { login as authLogin } from "../../store/AuthSlice.js";
+import "../Responsive.css"
 
 function LoginFns() {
   // const [email , setEmail] = useState("")
@@ -28,7 +29,7 @@ function LoginFns() {
   const onSubmit = async (data) => {
     try {
       const session = await axios.post(
-        "/api/users/login",
+        "http://localhost:8000/api/users/login",
         data
       );
 
@@ -54,8 +55,8 @@ function LoginFns() {
   };
 
   return (
-    <div className="py-[4vh]">
-      <div className="bg-slate-200 py-10 px-20 rounded-3xl">
+    <div id="LogPage" className="py-[4vh]">
+      <div id="LoginPage" className="bg-slate-200 py-10 px-20 rounded-3xl">
         <div className="flex items-center justify-center py-5">
           <Logo />
         </div>
