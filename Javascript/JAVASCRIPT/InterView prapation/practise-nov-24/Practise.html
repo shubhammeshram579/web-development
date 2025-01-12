@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #2b2a2a;
+            color: #b6b0b0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Practise</h1>
+    
+    <script>
+        // conditional statemet
+        // 5.Question: How can you check if a number is even or odd using a conditional statement?Answer:
+
+        let num = 10;
+        if(num % 2 ===0){
+            console.log("is even")
+        }else{
+            console.log("is odd")
+        }
+
+        // 10. Question: How can you use a switch statement with a default case that handles multiple values ? Answer :
+
+        let items = "banana";
+
+        switch(items){
+            case "apple":
+            case "banana":
+                console.log("fruits items");
+                break
+            case "mouse":
+            case "keybord":
+                console.log("laptop items");
+                break
+            default:
+                console.log("default items")
+        };
+
+        // 15.Question: How do you use a ternary operator to check if a value is null and assign a fallback value ? Answer :
+
+        let user = "shubham";
+        
+        let res = user !== undefined ? user : "user is not defind";
+        // console.log(res)
+
+
+        // loops 
+        // 4. Reverse a string using a loop.
+        let str = "shubham";
+        let reversStr = ""
+        for(let i = str.length -1; i >= 0; i--){
+            // console.log(str[i])
+            reversStr += str[i]
+        }
+
+        console.log(reversStr);
+
+        // 6.Print the factorial of a number(e.g., 5!).
+        let storeFactrial = 0;
+        for(let i = 10; i >= 1 ; i--){
+            // console.log(i)
+            storeFactrial += i
+        }
+
+        console.log(storeFactrial);
+
+        // 7.Check if a number is prime.
+        // defination prime means value divideble  2/2 isPrime but 2/5 notPrime 
+        let numR = 4;
+        let isPrime = true;
+
+        if (numR <= 1) {
+            isPrime = false;
+        } else {
+            for (let i = 2; i <= Math.sqrt(numR); i++) {
+                if (numR % i === 0) {
+                    isPrime = false;
+                    break
+                }
+            };
+
+        };
+
+        console.log(isPrime ? "is not prime" : "is prime");
+
+
+
+        // 8.Print Fibonacci series up to 10 terms.
+
+        let Fn = 0, fi = 1 , Fibonacci;
+
+        for(let i = 1; i <= 10; i++ ){
+            console.log(Fn);
+            Fibonacci = Fn + fi
+            Fn = fi
+            fi = Fibonacci
+        }
+
+        console.log(Fibonacci);
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condident Profile</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+        html,body{
+            height: 100%;
+            width: 100%;
+            background-color: #333131;
+        }
+
+        .container{
+            height: 100%;
+            width: 50%;
+            background-color: beige;
+            padding: 10px 50px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        #FormInfo{
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            flex-direction: column;
+            gap: 20px;
+
+        }
+
+        #ForomInfomation{
+            margin: 10px;
+            /* background-color: red; */
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            gap: 20px;
+            flex-direction: row;
+
+        }
+
+        #FormInfo input{
+            /* background-color: green; */
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        #FormInfo p{
+            margin-top: 5px;
+
+        }
+
+        #FormInfo textarea{
+            /* background-color: green; */
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        #FormInfo .gender fieldset{
+            /* background-color: rebeccapurple; */
+            height: 70px;
+            background-color: #fff;
+            width: 42vw;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 100px;
+        }
+
+        #FormInfo .gender fieldset p{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 2px;
+
+        }
+
+        #JobDeatial{
+            text-align: center;
+        }
+
+        .buttons{
+            /* background-color: rebeccapurple; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .buttons input{
+            /* background-color: red; */
+            width: 100vw;
+        }
+
+        .btn1{
+            padding: 5px 50px;
+            
+
+        }
+
+        .btn2{
+            padding: 5px 50px;
+            
+        }
+
+        .btn1:hover{
+            background-color:green;
+        }
+        .btn2:hover{
+            background-color: red;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- section 1 -->
+        <h1>Condident Details</h1>
+        <form action="" id="FormInfo">
+            <div class="condidentInfo" id="ForomInfomation">
+                <p>First-Name <span>*</span><input type="text" name="firstName" id="firstName" placeholder="labham" required></p>
+                <p>Last-Name <span>*</span><input type="text" name="lastName" id="lastname" placeholder="lastName" required></p>
+            </div>
+            <div class="gender">
+                <fieldset>
+                    <legend>Gender</legend>
+                    <p>Male: <input type="radio" name="gender" id="male"></p>
+                    <p>Female: <input type="radio" name="gender" id="female"></p>
+                </fieldset>
+            </div>
+            <div class="contactInfo" id="ForomInfomation">
+                <p>Contract no: <input type="number" name="contact" id="contact" placeholder="7038956822"></p>
+                <p>Email: <input type="email" name="email" id="email" placeholder="shubhcode97@gmail.com"></p>
+                
+            </div>
+            <div class="address">
+                <p>Address: <textarea name="address" id="address" cols="100" rows="5"></textarea></p>
+            </div>
+            <div class="selectCity">
+                <p>City: <select name="City" id="City">
+                    <option value="#">--SelcetCity--</option>
+                    <option value="Gondia">Gondia</option>
+                    <option value="Nagpur">Nagpur</option>
+                    <option value="Germany">Germany</option>
+                </select></p>
+            </div>
+
+            <!-- section 2 -->
+             <div class="jobDetails" >
+                <h1 id="JobDeatial">Job Details</h1>
+                <div class="jobDescription" id="ForomInfomation">
+                    <p>Job Role: <input type="text" name="jobRole" id="jobRole"></p>
+                    <p>Exprience: <input type="text" name="Exprience" id="Exprience"></p>
+                </div>
+                <div class="skills">
+                    <p>Skills: <textarea name="Skills" id="Skills" cols="100" rows="5"></textarea></p>
+                </div>
+                <div class="file" id="ForomInfomation">
+                    <p>CV: <input type="file" name="CV" id="CV"></p>
+                    <p>Id Proof: <input type="file" name="idProop" id="IdProop"></p>
+                </div>
+             </div>
+             <div class="buttons">
+                <input class="btn1" type="submit" value="Submit">
+                <input class="btn2" type="reset" value="Delete">
+             </div>
+
+        </form>
+    </div>
+    
+</body>
+</html>
