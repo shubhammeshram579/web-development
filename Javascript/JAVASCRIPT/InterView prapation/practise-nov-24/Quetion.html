@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Value Function</title>
+</head>
+<body>
+    <h1>Number Value Function</h1>
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" placeholder="Enter a positive number">
+    <button onclick="processInput()">Submit</button>
+    <p id="result"></p>
+
+    <script>
+        function numValue(n) {
+            if (n < 0) {
+                return "Enter a positive value";
+            } else if (n % 2 === 0) {
+                let n1 = n + 2;
+                let n2 = n1 + 2;
+                return `Even number: ${n}, ${n1}, ${n2}`;
+            } else {
+                let n1 = n + 2;
+                let n2 = n1 + 2;
+                return `Odd number: ${n}, ${n1}, ${n2}`;
+            }
+        }
+
+        function processInput() {
+            const input = document.getElementById("numberInput").value;
+            const number = parseInt(input, 10);
+
+            if (!isNaN(number)) {
+                const result = numValue(number);
+                document.getElementById("result").innerText = result;
+            } else {
+                document.getElementById("result").innerText = "Please enter a valid number.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,55 +1,30 @@
 import express from "express"
-import {StudentInfo } from "./Models/StudentInfo.js";
+import cors from "cors"
 import connectDB from "./DB/ConnectDb.js"
 
 const app = express()
 
-
 connectDB();
 
-
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
-
-
-app.post("/studentinfos/std",(async (req,res) => {
-  try {
-    const {StudentName,Age,gender,city,StdId} = req.body;
-    console.log(req.body)
-
-    if(!StudentName){
-      console.log("student name is not found")
-    }
-
-
-    const StudentInfoData = await StudentInfo.create({
-      StudentName:StudentName,
-      Age:Age,
-      gender:gender,
-      city:city,
-      StdId:StdId
-    })
-
-    if(!StudentInfoData){
-      throw new ApiError(500, "something went wrong");
-  };
-
-    console.log(StudentInfoData)
-
-
-    return res.status(201).json({ 
-      status: 201, 
-      message: "Post created successfully.", 
-      data: StudentInfoData 
-  });
-    
-  } catch (error) {
-    console.log(error.message || "somting error")
-    
-  }
+// cousrs
+app.use(cors({
+  origin:process.env.CORS_ORIGIN,
+  credentials:true
 }))
 
 
-// PORT = 3000 || 5000
-app.listen(3000);
+// configration 
+app.use(express.json({limit: "16kb"}))
+app.use(express.urlencoded({extended:true,limit:"16kb"}))
+app.use(express.static("public"))
+app.use(cookieParser())
+
+
+// router import 
+import userrouter from "./Router/userRound.js"
+
+
+// route declaration
+app.use("/api/v1/users" , userrouter)
+
+export {app}

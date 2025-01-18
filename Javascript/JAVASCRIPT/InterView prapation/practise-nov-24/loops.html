@@ -416,6 +416,26 @@
 
         // console.log(Asum2);
 
+        // practise
+        let PnA = [];
+        for(let i = 1; i<=20; i++){
+            PnA.push(i)
+        };
+
+        let sumPnA = 0;
+        PnA.forEach((i) => {
+            sumPnA += i
+        });
+        console.log(sumPnA);
+
+
+        let sumPnA2 = PnA.reduce((a,b) => (a+ b));
+        console.log(sumPnA2);
+
+
+
+
+
         // 10.Find the maximum number in an array.
         let ar2 = [34, 55, 66, 33, 23, 67, 88];
         let max = ar2[0];
@@ -461,6 +481,22 @@
         // collection framworks
         console.log(Math.max(...newArray));
 
+        // practise
+        let maArrayValue = [33,5,2,6,355,37,35];
+        let maxN = maArrayValue[0];
+
+        maArrayValue.forEach((i) => {
+            if(i > maxN){
+                maxN = i
+            }
+        })
+
+        console.log("maxxxxxxx",maxN)
+
+
+        // colletion fromwork function
+        console.log(Math.max(...maArrayValue));
+
 
         // Advanced Level:
         // 11.Print the elements of a 2D array.
@@ -474,6 +510,16 @@
                 console.log(array2d[i][j])
             }
         };
+
+        // practise
+        let twoDArray = [[12,44,55,22],[3,5,2,6]];
+
+        twoDArray.forEach((i) => {
+            i.forEach((j)=>{
+                console.log(j)
+            })
+        });
+
 
 
         // 12.Flatten a nested array(without using built -in methods).
@@ -515,7 +561,12 @@
         };
 
         Nested(nestedArray2)
-        console.log(StoreNestedArray)
+        console.log(StoreNestedArray);
+
+        // pr
+        let museArray = [33,5,2,[4,66,3],6];
+        let fleatArrea = museArray.flat()
+        console.log("flatten",fleatArrea )
 
 
 
