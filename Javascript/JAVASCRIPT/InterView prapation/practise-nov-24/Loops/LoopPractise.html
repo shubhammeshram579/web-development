@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Loops practise again jan-25</h1>
+
+    <script>
+        // basic of loops
+        // what is loops
+        // loops is print of repeped value it call loops
+
+
+        //1 print 1 to 10 range of number
+        let array = [];
+        for (let i = 1; i <= 10; i++) {
+            array.push(i)
+        };
+
+        console.log(array);
+
+
+        // 2 print reverse number of loop 10 to 1
+        // for(let i = 10; i >= 1; i--){
+        //     console.log(i)
+        // };
+
+        // 3 print module Number like 2 to 20 alfabet number
+        // you can also used i += 2 but some time loop created issue then used %
+        // for(let i = 2;  i <= 20; i++){
+        //     if(i % 2 ===0){
+        //         console.log(i)
+        //     }
+        // };
+
+        // 4. print sum of total array value
+        // let totalArray = 0;
+        // array.forEach((i) => {
+        //     totalArray += i
+        // });
+
+        // console.log(totalArray);
+
+        // 5 print factial number * number of array
+
+        // basic number of range
+        // let rangeN = 5;
+        // let FactrialSum = 1;
+        // for(let i = rangeN; i >= 1; i--){
+        //     FactrialSum *= i
+        // }
+        // console.log(FactrialSum)
+
+
+        //6. factrial multipicaltion array value
+        // let FactrialArrayValue = 1;
+        // for(let i = array.length -1; i >= 1; i--){
+        //     FactrialArrayValue *= i
+        // }
+
+        // console.log(FactrialArrayValue);
+
+        //7. print Fibonacci series range of 10;
+        // let fN = 0, fI = 1, fibonacciNum;
+
+        // for(let i = 1; i <= 10; i++){
+        //     console.log(fN)
+        //     fibonacciNum = fN + fI
+        //     // console.log(fibonacciNum)
+        //     fI = fN
+        //     // console.log(fI)
+        //     fN = fibonacciNum
+        // };
+
+
+        //8. print prime value and not prime value
+        // let nump = 11;
+        // let isPrime = true;
+
+        // if (nump <= 1) {
+        //     isPrime = false
+        // } else {
+
+        //     for (let i = 2; i <= Math.sqrt(nump); i++) {
+        //         // console.log(i)
+        //         if (nump % i === 0) {
+        //             isPrime = false
+        //             break
+        //         }
+        //     }
+        // }
+        // console.log(isPrime ? "prime" : "notPrime");
+
+
+        // basic of odd and even 
+        // let OE = 11;
+        
+        // if(OE % 2 === 0){
+        //     console.log("even")
+        // }else{
+        //     console.log("odd")
+        // }
+
+
+        // 9.Find the maximum number in an array.
+
+        // for used like collection fuction
+        // console.log(Math.max(...array))
+
+        // copy of array sprete oprater
+        // let array2 = [...array];
+        // let max = array2[0];
+
+        // array2.forEach((i) =>{
+        //     if(i > max){
+        //         max = i
+        //     }
+        // })
+
+        // console.log(max);
+
+    </script>
+</body>
+
+</html>
