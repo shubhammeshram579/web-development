@@ -24,7 +24,7 @@
 
     <script>
         // basic of loops
-        // what is loops
+        // what is loops?
         // loops is print of repeped value it call loops
 
 
@@ -69,6 +69,17 @@
         // console.log(FactrialSum)
 
 
+        // pratise
+        /*
+        let numOFrage = 6;
+        let facrialTatal = 1;
+        for(let i = numOFrage; i> 1; i--){
+            facrialTatal *= i
+        }
+
+        console.log(facrialTatal);
+        */
+
         //6. factrial multipicaltion array value
         // let FactrialArrayValue = 1;
         // for(let i = array.length -1; i >= 1; i--){
@@ -89,6 +100,36 @@
         //     fN = fibonacciNum
         // };
 
+        // practise
+        /*
+        let f1 = 0, fi = 1, FibonacciS;
+
+        for(let i = 1; i<= 10;i++){
+            console.log(f1)
+            FibonacciS = fi + f1
+            f1 = fi
+            fi = FibonacciS
+        }
+
+        console.log(FibonacciS);
+        */
+
+
+        let mouse = 0, mouse2 = 1, bottelFacc;
+
+        for(let i = 1; i <= 10; i++ ){
+            console.log("ddd",mouse);
+            bottelFacc = mouse2 + mouse
+            mouse = mouse2
+            mouse2 = bottelFacc
+            
+
+        }
+
+        console.log("bottelFacc",bottelFacc);
+
+
+
 
         //8. print prime value and not prime value
         // let nump = 11;
@@ -107,6 +148,44 @@
         //     }
         // }
         // console.log(isPrime ? "prime" : "notPrime");
+
+
+        // practise
+        /*
+        let numR = 10;
+        let isPrime = true;
+
+        if(numR <= 1){
+            isPrime = false
+        }else{
+            for(let i = 2; i <= Math.random(numR); i++){
+                if(numR % i === 0){
+                    isPrime = false
+                    break
+                }
+            }
+        }
+
+        console.log(isPrime ? "prime": "not prime");
+        */
+
+
+        let numRange = 11;
+        let isPrime = true;
+
+        if(numRange <= 1){
+            isPrime = false
+            
+        }else{
+            for(let i = 2; i <= Math.sqrt(numRange); i++){
+                if(numRange % i === 0){
+                    isPrime = false
+                    break
+                }
+            }
+        }
+
+        console.log(isPrime ? "prime value":"not prime value")
 
 
         // basic of odd and even 
@@ -135,6 +214,152 @@
         // })
 
         // console.log(max);
+
+
+        // practise colection fromwork
+        let array2 = [3,5,2,6,73,78,33];
+        let max = array2[0]
+        array2.forEach((i) => {
+            if(i > max){
+                max = i
+            }
+        });
+
+        console.log(max)
+        console.log(Math.max(...array2));
+
+
+        // 9.Sum all the elements in an array.
+        let TotalSumOfArray = 0;
+        array2.forEach((i) => {
+            TotalSumOfArray += i
+        })
+        console.log(TotalSumOfArray);
+
+        // for reduce fuction
+        let totalArrSum = array2.reduce((i,t) => (i + t));
+        console.log(totalArrSum);
+
+
+         // Advanced Level:
+        // 11.Print the elements of a 2D array.
+        let Two2Array = [[...array],[...array2,123,55,22]]
+        console.log(Two2Array);
+
+        // Two2Array.forEach((i) => {
+        //     i.forEach((j) => {
+        //         console.log(Two2Array[i][j])
+        //     })
+        // })
+
+        // for(let i = 0; i < Two2Array.length; i++){
+        //     for(let j = 0; j < Two2Array[i].length; j++){
+        //         console.log(Two2Array[i][j])
+        //     }
+        // }
+
+        Two2Array.forEach((i) => {
+            i.forEach((j) => {
+                console.log(j)
+            })
+        });
+
+        // 12.Flatten a nested array(without using built -in methods).
+        let FlattenNested = [34,55,2,[53,66],75];
+
+        // console.log(FlattenNested.flat())
+
+        /*
+        let FlateNed = [];
+
+        function FlattenAr(arr){
+            for(let i = 0; i < arr.length; i++ ){
+                if(Array.isArray(arr[i])){
+                    FlattenAr(arr[i]);
+                }else{
+                    FlateNed.push(arr[i])
+                }
+            }
+        };
+
+        FlattenAr(FlattenNested);
+        console.log(FlateNed);
+        */
+
+
+        // build fuction for flatten array
+
+       /*  let flateResult = []
+
+        function flattenArr(arr) {
+            arr.forEach((i) => {
+                if(Array.isArray(i)){
+                    flattenArr(i)
+                }else{
+                    flateResult.push(i)
+
+                }
+            })
+
+        }
+
+        flattenArr(FlattenNested);
+        console.log(flateResult.sort((a,b)=> (b - a))); */
+
+
+
+        // / 13.Find the intersection of two arrays.
+
+        // // intersection means find arr1 and arr same values
+        /*
+        let lapyArray = [2,55,6,7,3]
+        let lapyArray2 = [2,55,68,73,3]
+        let intragation = [];
+
+        lapyArray.forEach((i) =>{
+            if(lapyArray2.includes(i)){
+                intragation.push(i)
+            }
+        });
+
+        console.log(intragation) 
+        */
+
+        // 14.Rotate an array by n positions.
+        let arrayN = [1,2,4,5,6,7];
+        let ind = 2;
+
+        for(let i = 0; i < ind; i++){
+            arrayN.unshift(arrayN.pop())
+        };
+
+        console.log(arrayN);
+
+
+
+        // 15.Check if a string is a palindrome.
+        let ParS = "madam";
+        let isPalindrome = true;
+
+        for(let i = 0; i < ParS.length / 2; i++){
+            // console.log(ParS[ParS.length - 1 - i]);
+            if(ParS[i] !== ParS[ParS.length - 1 - i]){
+                isPalindrome = false
+                break
+            }
+        };
+
+
+        console.log(isPalindrome ? "palidrome": "not palidrome")
+
+
+
+
+
+
+
+
+        
 
     </script>
 </body>
