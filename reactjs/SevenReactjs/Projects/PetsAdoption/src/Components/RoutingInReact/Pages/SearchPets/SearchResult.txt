@@ -1,0 +1,56 @@
+import React ,{useContext,useEffect,useState} from 'react'
+import {useLocation} from "react-router-dom"
+import UserContext from "..//../ContexApi/UsedContexApi.js"
+
+const useQuery = () => {
+    return new URLSearchParams(useLocation().search);
+  };
+
+
+const SearchResult = () => {
+    const {products2} = useContext(UserContext)
+    const query = useQuery().get("inputvalue");
+    const [products,setProducts] = useState([])
+
+    // console.log(query)
+
+
+    
+        useEffect(() => {
+            const fatchProduct = async () => {
+                try {
+                    // await setProducts(SmallDogs)
+                    const regex = new RegExp(query , "i");
+    
+                    const response = await products2.filter((p) => {
+                        return regex.test(p.name) || regex.test(p.type) || regex.test(p.adoptionRate) || regex.test(p.price)
+                    })
+                    setProducts(response)
+    
+                    
+                } catch (error) {
+                    console.log(error.message)
+                    
+                }
+    
+            }
+            fatchProduct()
+    
+          },[products2])
+
+          console.log(products)
+
+    
+  return (
+    <div style={{padding:"100px 0px"}}>
+      {products.map((product,index) => (
+        <div key={product.id}>
+            <img height={300} src={product.image} alt={product.name} />
+            <p>{product.name}</p>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export default SearchResult
