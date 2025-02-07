@@ -1,89 +1,144 @@
-import React, { useState,useContext } from 'react'
-import Motorola from "./Products/Motorola.jsx"
-import Apple from "./Products/Apple.jsx"
-import Sumsung from "./Products/Sumsung.jsx"
-import Oppo from "./Products/Oppo.jsx"
-import Vivo from "./Products/Vivo.jsx"
-import SliderPage from "./HomePage/SliderPage.jsx"
-import ProductList from "./ProductList/ProductList.jsx"
+import React, { useState, useContext} from "react";
+import SliderPage from "./HomePage/SliderPage.jsx";
+import ProductList from "./ProductList/ProductList.jsx";
 
-import UserContext from "../ContexApi/UsedContexApi.js"
+import UserContext from "../ContexApi/UsedContexApi.js";
+
+// import SearchInput from "./SearchPets/SearchInput.jsx"
+import "..//..//../App.css"
+
 
 const Product = () => {
+  const { products2 } = useContext(UserContext);
+  const [products, setProducts] = useState([]);
 
-  const {products2} = useContext(UserContext)
-  const [products ,setProducts] = useState([])
-
-  const [selectedAnimal, setSelectedAnimal] = useState('');
+  const [selectedPets, setSelectedPets] = useState("");
 
   const handelChange = (e) => {
-    setSelectedAnimal(e.target.value)
-  }
-
-  // console.log(selectedAnimal)
-
-
-
+    setSelectedPets(e.target.value);
+  };
 
 
   const LargrBtn = async () => {
-    const response = await products2.filter((p) => (p.size === "Large" && p.type === selectedAnimal))
-    setProducts(response)
-  }
+    const response = await products2.filter(
+      (p) => p.size === "Large" && p.type === selectedPets
+    );
+    setProducts(response);
+  };
+
 
   const SmallBtn = async () => {
-    const response = await products2.filter((p) => (p.size === "Small" && p.type === selectedAnimal))
-    setProducts(response)
-  }
+    const response = await products2.filter(
+      (p) => p.size === "Small" && p.type === selectedPets
+    );
+    setProducts(response);
+  };
+
+
   const MediumBtn = async () => {
-    const response = await products2.filter((p) => (p.size === "Medium" && p.type === "Cat"  && p.type === selectedAnimal))
-    setProducts(response)
-  }
+    const response = await products2.filter(
+      (p) => p.size === "Medium" && p.type === "Cat" && p.type === selectedPets
+    );
+    setProducts(response);
+  };
+
+
+  const AdultBtn = async () => {
+    const response = await products2.filter(
+      (p) => p.age === "Adult" && p.type === selectedPets
+    );
+    setProducts(response);
+  };
+
+
+  const PuppyBtn = async () => {
+    const response = await products2.filter(
+      (p) => p.age === "Puppy" && p.type === selectedPets
+    );
+    setProducts(response);
+  };
+
+
+  const PriceLowBtn = async () => {
+    const response = await products2.filter(
+      (p) => p.price <= 2500 && p.type === selectedPets
+    );
+    setProducts(response);
+  };
 
   
+  const PriceHighBtn = async () => {
+    const response = await products2.filter(
+      (p) => p.price >=  2500 && p.type === selectedPets
+    );
+    setProducts(response);
+  };
+
+  const handelClearFilter = () => {
+    setSelectedPets("")
+    setProducts([])
+  }
+
   return (
     <div>
       <SliderPage />
-      <div style={{display:"flex" ,alignItems:"start" ,justifyContent:"space-between"}}>
-      <div className="card1" style={{width:"20%" ,height:"100vh" ,position:"sticky" ,top:"0", zIndex:"99"  ,padding:"50px",color:"#fff"}}>
-        <h3> <i class="fa-solid fa-arrow-down-wide-short" style={{fontSize:"1vw"}}></i> Filters</h3>
-        <h5>PICK A CATEGORY</h5>
-
-        <label htmlFor="pets">Select Pets</label>
-        <select 
-        id="pets"
-        value={selectedAnimal}
-        onChange={handelChange}
-
+      {/* <SearchInput /> */}
+      <div
+        style={{
+          display: "flex",alignItems: "start",justifyContent: "space-between",
+        }}
+      >
+        <div
+          className="card1" style={{ width: "20%", height: "100vh", position: "sticky", top: "0", zIndex: "99", padding: "110px 50px", color: "#fff",
+          }}
         >
-          <option value="">Select type</option>
-        <option value="Cat">Cat</option>
-        <option value="Dog">Dog</option>
-        </select>
+          <h1>
+            Filters
+            <span style={{marginLeft:"100px" ,fontSize:"1.3vw"}}><button onClick={handelClearFilter} style={{backgroundColor:"transparent" ,border:"none"}}><i id="FilterClear" className="fa-solid fa-filter-circle-xmark"></i></button></span>
+          </h1>
+          
+          {/* <p>Select Type</p> */}
 
+          <label htmlFor="pets" className="text-info font-weight-bold">Pet Category</label>
+          <br />
+          <select style={{width:"50%",borderRadius:"5px"}} id="pets" value={selectedPets} onChange={handelChange}>
+            <option value="">Select pets</option>
+            <option value="Cat">Cat</option>
+            <option value="Dog">Dog</option>
+          </select>
 
-        <ul>
-          <li><button onClick={LargrBtn}>Large</button></li>
-          <li><button onClick={SmallBtn}>Small</button></li>
-          <li><button onClick={MediumBtn}>Medium</button></li>
-        </ul>
+          <ul style={{listStyleType:"none" ,paddingTop:"40px"}}>
+            <p className="text-info font-weight-bold">Select Size</p>
+            <li>
+              <button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}} onClick={LargrBtn}>Large</button>
+            </li>
+            <li>
+              <button style={{borderRadius:"5px",marginBottom:"5px",border:"none"}}  onClick={SmallBtn}>Small</button>
+            </li>
+            <li>
+              <button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}}  onClick={MediumBtn}>Medium</button>
+            </li>
+          </ul>
 
-        {/* <label style={{paddingTop:"20px"}} htmlFor="#"> price: 
-        <input type="range" />
-        </label> */}
-      </div>
-      <div className="card2" style={{width:"80%"}}>
-      
-      {/* <Motorola />
-      <Apple />
-      <Sumsung />
-      <Oppo />
-      <Vivo /> */}
-      <ProductList productList={products}  data={products2}/>
-      </div>
+        <ul style={{listStyleType:"none",paddingTop:"50px"}}>
+            <p className="text-info font-weight-bold">Select Age</p>
+            <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}} onClick={AdultBtn}>Adult</button></li>
+            <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}} onClick={PuppyBtn}>Puppy</button></li>
+          </ul>
+        <ul style={{listStyleType:"none",paddingTop:"50px"}}>
+            <p className="text-info font-weight-bold">Select Price</p>
+            <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}} onClick={PriceLowBtn}>price low to high</button></li>
+            <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}} onClick={PriceHighBtn}>price high to low</button></li>
+          </ul>
+        
+        </div>
+       
+        <div className="card2" style={{ width: "80%" }}>
+          <ProductList productList={products} data={products2} />
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;

@@ -1,13 +1,13 @@
-import React, { useState, useEffect ,useContext} from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { useParams ,Link} from "react-router-dom";
 
-import UserContext from "..//../ContexApi/UsedContexApi.js"
+import UserContext from "..//../ContexApi/UsedContexApi.js";
 
 const ProductById = () => {
   const { postId } = useParams();
   const [singleProduct, setSingleProduct] = useState([]);
 
-  const {products2} = useContext(UserContext)
+  const { products2 } = useContext(UserContext);
 
   /* const PetLists = [
     { 
@@ -324,9 +324,9 @@ const ProductById = () => {
   ]; */
 
   useEffect(() => {
-    const SingleProductFatch = () => {
+    const SingleProductFatch = async () => {
       try {
-        const product = products2.find((p) => p.id === parseInt(postId));
+        const product = await products2.find((p) => p.id === parseInt(postId));
         setSingleProduct(product);
       } catch (error) {
         console.log(error.message || "fatching data error");
@@ -344,7 +344,7 @@ const ProductById = () => {
           alignItems: "center",
           justifyContent: "center",
           flexDirection: "column",
-          height:"100vh"
+          height: "100vh",
         }}
       >
         {singleProduct ? (
@@ -353,19 +353,34 @@ const ProductById = () => {
             style={{
               display: "flex",
               alignItems: "center",
-              justifyContent: "center",
+              justifyContent: "space-between",
+              // backgroundColor:"blue",
+              gap: "100px",
             }}
           >
-            <div style={{ width:"50%" , display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center", flexDirection:"column",gap:"20px"}}>
-              <div style={{borderRadius:"10px" ,height:"67vh", width:"29vw",overflow:"hidden"}}>
-              <img
-                src={singleProduct.image}
-                alt={singleProduct.name}
-                style={{ width: "29vw", height: "70vh" ,objectFit:"cover"}}
-                
-              />
+            <div
+              style={{
+                width: "50%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+                gap: "20px",
+              }}
+            >
+              <div
+                style={{
+                  borderRadius: "10px",
+                  height: "67vh",
+                  width: "29vw",
+                  overflow: "hidden",
+                }}
+              >
+                <img
+                  src={singleProduct.image}
+                  alt={singleProduct.name}
+                  style={{ width: "29vw", height: "70vh", objectFit: "cover" }}
+                />
               </div>
               <div
                 style={{
@@ -375,8 +390,9 @@ const ProductById = () => {
                   gap: "20px",
                 }}
               >
-                <h5>AddCard</h5>
-                <h5>BuyNow</h5>
+                <Link style={{textDecoration:"none", color:"#1ab3ca"}} to={`/Addcard/${singleProduct.id}`}><button className="bg-info rounded-pill px-4 border-0 py-2">AddCard</button></Link>
+                {/* <button onClick={handelBtnAddcard}>AddCard</button> */}
+                <button className="bg-warning px-4 rounded-pill border-0 py-2">AdoptNow</button>
               </div>
             </div>
             <div
@@ -386,20 +402,36 @@ const ProductById = () => {
                 justifyContent: "center",
                 flexDirection: "column",
                 // backgroundColor:"blue",
-                width:"50%"
+                width: "50%",
               }}
             >
               <p style={{ fontSize: "3vw" }}>{singleProduct.name}</p>
-              <div style={{display:"flex", gap:"19px"}}>
-              <p>{singleProduct.name}</p>
-              <p>{singleProduct.price}</p>
-              <p>{singleProduct.adoptionRate}</p>
+              <div style={{ display: "flex", flexDirection:"column", gap: "1px" }}>
+                {/* <p>Name: {singleProduct.name}</p> */}
+                <p><b>Age:</b> {singleProduct.age}</p>
+                <p><b>Size:</b> {singleProduct.size}</p>
+                <p><b>Price:</b> {singleProduct.price}</p>
+                <p><b>adoptionRate:</b> {singleProduct.adoptionRate}</p>
+                <p><b>Rating:</b> {singleProduct.rank}⭐</p>
               </div>
-            <p style={{width:"80%"}}>
-              {singleProduct.description}
-            </p>
+              <p style={{ width: "80%" }}>{singleProduct.description}</p>
+              <p style={{width:"80%"}}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
+                totam aspernatur. Enim labore laboriosam, ullam vitae eius id
+                beatae eum ad ipsa aliquid? Delectus voluptate eius doloremque
+                recusandae officia reprehenderit veritatis iste tempora tenetur
+                dolores ipsa vel quo ab ad molestias, animi eaque debitis illum!
+                Deleniti fugiat perferendis quam dicta doloribus. Provident
+                facilis aut vel, accusamus temporibus rerum explicabo aliquam
+                nobis eligendi aperiam perspiciatis inventore tenetur. Earum a
+                cupiditate aspernatur repudiandae excepturi quasi reiciendis
+                officiis laudantium laborum quia optio qui tempore eum beatae
+                saepe fugiat, culpa minus voluptas iste inventore itaque
+                perspiciatis in! Beatae asperiores repellendus quis possimus
+                ullam iusto!
+              </p>
             </div>
-            
+
           </div>
         ) : (
           <p>Product not found</p>

@@ -167,7 +167,7 @@ const ReviewAdop = () => {
   }, []);
 
   return (
-    <div style={{minHeight:"60vh", padding:"100px 10px"}}>
+    <div style={{minHeight:"60vh", padding:"100px 100px"}}>
       <h1 style={{textAlign:"center" ,padding:"20px"}}>Reviews from Our Happy Pet Parents</h1>
       <div id="ReviewCard" style={{display:"flex" , flexWrap:"nowrap" ,alignItems:"center" ,justifyContent:"space-evenly" , flexDirection:"row",overflow:"scroll" ,gap:"40px"}}>
         {review.map((p, index) => (

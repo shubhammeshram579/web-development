@@ -1,6 +1,6 @@
 import React, { useState,useEffect ,useContext} from 'react'
 import { Link } from 'react-router-dom';
-
+import "..//..//..//../App.css"
 import UserContext from "..//../ContexApi/UsedContexApi.js"
 
 const TopProject = () => {
@@ -122,7 +122,7 @@ const TopProject = () => {
         const fatchProduct = async () => {
             try {
                 // await setProducts(mostAdoptedPets)
-                const response = await products2.filter((p) => p.rank >= 3 && p.rank <= 8)
+                const response = await products2.filter((p) => p.rank >= 9 && p.rank <= 10)
                 
                 setProducts(response)
                 
@@ -140,14 +140,15 @@ const TopProject = () => {
 
       // console.log("top 10 cotex prp",products2.filter)
 
+      // #323030
 
   return (
     <div style={{padding:"100px 0px"}}>
-      <h5 className='text-light pl-3'>Most populer pets adopted</h5>
+      <h5 className='text-light pl-3 text-center' style={{fontSize:"2vw" ,paddingBottom:"100px"}}>Most Adopted Pets</h5>
       <div style={{display:"flex" ,alignItems:"center" ,justifyContent:"space-evenly",flexWrap:"wrap"}}>
         {products.map((product,index) => (
              <Link  style={{textDecoration:"none"}} to={`/Product/${product.id}`}><div key={index} style={{backgroundColor:"#323030",width:"500px" ,height:"550px" ,margin:"10px" ,borderRadius:"10px" ,paddingTop:"10px"}}>
-                <img height={450} width={450} style={{borderRadius:"10px 10px 0px 0px", objectFit:"cover",marginLeft:"20px"}} src={product.image} alt="" />
+                <img id='homeImage' height={450} width={450} src={product.image} alt="" />
                 <p style={{color:"#fff" ,fontSize:"1vw" , fontWeight:"500" ,textAlign:"center"}}>{product.name}</p>
             </div></Link>
            

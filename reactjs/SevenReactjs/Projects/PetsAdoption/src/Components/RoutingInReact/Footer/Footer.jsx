@@ -1,5 +1,6 @@
 import React from 'react'
 import "../Footer/Footer.css"
+import Logo from '../Logo/Logo.jsx'
 
 const Footer = () => {
   return (
@@ -42,7 +43,7 @@ const Footer = () => {
                     <div className="col-xl-4 col-lg-4 mb-50">
                         <div className="footer-widget">
                             <div className="footer-logo">
-                                <a style={{color:"#1ab3ca" ,fontSize:"25px" ,fontWeight:"700"}} href="index.html">Adopt.me</a>
+                                <a style={{color:"#1ab3ca" ,fontSize:"25px" ,fontWeight:"700",textDecoration:"none"}} href="index.html"><Logo /></a>
                             </div>
                             <div className="footer-text">
                                 <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing

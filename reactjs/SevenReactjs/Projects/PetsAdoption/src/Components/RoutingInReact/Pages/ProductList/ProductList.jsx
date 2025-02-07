@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 import UserContext from "..//../ContexApi/UsedContexApi.js";
 
-const ProductList = ({productList,data}) => {
+const ProductList = ({productList}) => {
   // console.log(props)
 
-  // const { products2 } = useContext(UserContext);
+  const { products2 } = useContext(UserContext);
 
   /*
     const [products,setProducts] = useState([])
@@ -348,35 +348,35 @@ const ProductList = ({productList,data}) => {
 
     */
 
-    // console.log("data" ,data)
-    // console.log(props)
+
+
   return (
     <div style={{ backgroundColor: "#191919" }}>
-      {/* <h5 style={{color:"#F7F7F7" ,paddingTop:"10px" ,paddingLeft:"20px"}}>Small Dogs</h5> */}
-      <div
-        style={{
+      <div  style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "space-around",
-          flexWrap: "wrap",
-        }}
-      >
-        { data.length > 0 ? ( 
-        data.map((product,index) => (
-            <Link style={{textDecoration:"none"}} to={`/Product/${product.id}`}><div key={index} style={{backgroundColor:"#323030" ,width:"340px" ,height:"400px" ,margin:"10px" ,borderRadius:"10px" ,paddingTop:"10px"}}>
-                <img  height={320} width={300} style={{borderRadius:"10px", objectFit:"cover",marginLeft:"20px"}} src={product.image} alt="" />
-         
-                <p style={{color:"#fff" ,fontSize:"1vw" , fontWeight:"500" ,textAlign:"center"}}>{product.name}</p>
-            </div></Link>
-        ))) : ( 
-          props.productList.map((product,index) => (
-              <Link style={{textDecoration:"none"}} to={`/Product/${product.id}`}><div key={index} style={{backgroundColor:"#323030" ,width:"340px" ,height:"400px" ,margin:"10px" ,borderRadius:"10px" ,paddingTop:"10px"}}>
+          flexWrap: "wrap"}}>
+        {productList.length > 0 ? (productList.map((product,index) => (
+              <Link style={{textDecoration:"none"}} to={`/Product/${product.id}`}><div key={product.id} style={{backgroundColor:"#323030" ,width:"340px" ,height:"400px" ,margin:"10px" ,borderRadius:"10px" ,paddingTop:"10px"}}>
                   <img  height={320} width={300} style={{borderRadius:"10px", objectFit:"cover",marginLeft:"20px"}} src={product.image} alt="" />
            
                   <p style={{color:"#fff" ,fontSize:"1vw" , fontWeight:"500" ,textAlign:"center"}}>{product.name}</p>
+                  <div>
+                  <p style={{color:"#fff", textAlign:"center"}}>Size: {product.size}, Price: ₹{product.price}</p>
+                  </div>
+              </div></Link>
+          ))) : (
+            products2.map((product,index) => (
+              <Link style={{textDecoration:"none"}} to={`/Product/${product.id}`}><div key={product.id} style={{backgroundColor:"#323030" ,width:"340px" ,height:"400px" ,margin:"10px" ,borderRadius:"10px" ,paddingTop:"10px"}}>
+                  <img  height={320} width={300} style={{borderRadius:"10px", objectFit:"cover",marginLeft:"20px"}} src={product.image} alt="" />
+           
+                  <p style={{color:"#fff" ,fontSize:"1vw" , fontWeight:"500" ,textAlign:"center"}}>{product.name}</p>
+                  <p style={{color:"#fff", textAlign:"center"}}>Size: {product.size}, Price: ₹{product.price}</p>
               </div></Link>
           ))
-        )}
+          )
+        }
       </div>
     </div>
   );

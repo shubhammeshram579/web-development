@@ -49,6 +49,18 @@
             console.log("incurrect")
         }
 
+        // practise
+        let color2 = "red"
+        if(color2 === "red"){
+            console.log("color is red")
+        }else if(color2 === "green"){
+            console.log("color is green")
+        }else{
+            console.log("other colors")
+        };
+
+
+
         // print greter then 10 number of range value? 
         // for(let i = 1; i <= 20; i++){
         //     // console.log(i)
@@ -56,6 +68,12 @@
         //         console.log(i)
         //     }
         // }
+
+        for(let i = 1; i <= 20; i++){
+            if(i >= 10){
+                console.log(i)
+            }
+        };
 
 
         // print less then 5 array values
@@ -67,6 +85,12 @@
         //         console.log(arr[i])
         //     }
         // }
+
+        arr.forEach((i) => {
+            if(i <= 5){
+                console.log(i)
+            }
+        });
 
 
         // single object
@@ -135,6 +159,15 @@
         // if(true){
         //     console.log("hello shuham");
         // };
+
+        if(true){
+            console.log("true statment")
+        }else{
+            console.log("false statement")
+        };
+
+
+
 
         // 2.Question: How do you write an if-else statement in JavaScript ? Answer :
 
@@ -236,6 +269,17 @@
         checkNum(0);
 
 
+        let n = 0;
+
+        if(n > 0){
+            console.log("greter then zero");
+        }else if(n < 0){
+            console.log("less then zero")
+        }else{
+            console.log("equel")
+        };
+
+
 
 
 
@@ -284,6 +328,12 @@
 
         }
         console.log(findNU());
+
+        let val1 = null;
+        let val2 = undefined;
+        if(val1 === null && val2 === undefined){
+            console.log("both are true")
+        };
 
 
         let arrTest = [null, undefined, 2, 5, 6, null];
@@ -381,6 +431,18 @@
         }
 
         console.log(isOE(51));
+
+
+        let evennumbers = 11;
+        if(evennumbers % 2 === 0){
+            console.log("even")
+        }else{
+            console.log("odd")
+        };
+
+
+        // tennetry oprater
+        console.log(evennumbers % 2 === 0 ? "even": "odd");
 
 
 
@@ -497,6 +559,19 @@
         checkitme("botel");
         checkitme("mouse");
 
+        let latopsitem = "apple";
+
+        switch(latopsitem){
+            case "apple":
+                console.log("this is apple laptop");
+                break
+            case "dell":
+                console.log("this is dell laptop");
+                break
+            default:
+                console.log("other laptop");
+        };
+
 
         // 8. Question: How can you check if a number is within a certain range(e.g., 10 to 20) ? Answer :
 
@@ -611,6 +686,17 @@
         });
 
 
+        let taskTime = 12;
+
+        if(taskTime >= 5 && taskTime <= 12){
+            console.log("5 to 12 task compled")
+        }else if(taskTime >= 12 && taskTime <= 16){
+            console.log("13 to 16 task not commpled")
+        }else{
+            console.log("work is progress")
+        };
+
+
 
 
 
@@ -712,6 +798,16 @@
         }
 
         console.log(isStrEmpty(""));
+
+
+
+        let mouseStr = "dell";
+
+        if(mouseStr.length > 0){
+            console.log("not empty")
+        }else{
+            console.log("is empty")
+        };
 
         // 10. Question: How can you use a switch statement with a default case that handles multiple values ? Answer :
 

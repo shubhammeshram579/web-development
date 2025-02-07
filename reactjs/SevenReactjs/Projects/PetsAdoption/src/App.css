@@ -14,6 +14,7 @@
     opacity: 0;
     transition: all 0.5s ease-in-out;
     /* background-color:rgb(222, 215, 215); */
+    color: #021a1e25;
   }
   
   .slide2.active2 {
@@ -45,3 +46,27 @@
     display: none;
   }
   
+
+  #homeImage{
+    border-radius:20px;
+    object-fit:cover;
+    margin-left:20px;
+  }
+
+  #homeImage:hover{
+    border-radius: 100px 10px 100px 10px;
+    transition: linear 0.5s;
+    transform: scale(0.5s);
+  }
+
+
+  /* filter clear product list */
+
+  #FilterClear{
+    color: #1ab3ca;
+  }
+
+  #FilterClear:hover{
+    color: red;
+
+  }

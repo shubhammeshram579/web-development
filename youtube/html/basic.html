@@ -1,9 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table, tr,th,td{
+            /* background-color: red; */
+            border:1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        } 
+
+
+        table tr th{
+            background-color: yellow;
+            font-size: 2vw;
+        }
+        table tr td{
+            background-color: green;
+        }
+
+
+        ul{
+            /* background-color: green; */
+            list-style-type:circle;
+            width: 100px;
+            border: 1px solid rebeccapurple;
+        }
+
+
+        ol{
+            border: 2px solid red;
+            list-style-type:lower-alpha;
+            width: 100px;
+        }
+
+        .py1{
+            color:green;
+        }
+
+
+        #s1{
+            background-color: yellow;
+            font-size: 1vw;
+        }
+
+
+    </style>
 </head>
 <body>
     <h1>heading1</h1>
@@ -13,11 +58,68 @@
     <div>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, quam?</p>
     </div>
-    <!-- <a href="https://www.google.com/search?q=home&oq=home&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgYIAhBFGEHSAQc5ODBqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8">this is google page</a> -->
+    <a
+        href="https://www.google.com/search?q=home&oq=home&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgYIAhBFGEHSAQc5ODBqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8">this
+        is google page</a>
+
+    <img src="" alt="">
+    <video src=""></video>
+    <iframe src="" frameborder="0"></iframe>
+    <section>
+        <div>page1</div>
+    </section>
+    <form action="">
+        <input type="text">
+        <input type="number">
+        <input type="range">
+        <input type="checkbox">
+        <input type="submit">
+        <select name="" id="">
+            <option value="">selec</option>
+            <option value="india">india</option>
+            <option value="us">us</option>
+        </select>
+        <textarea name="address" id="address" cols="100" rows="10"></textarea>
+        <button type="reset">click me</button>
+    </form>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+        </tr>
+        <body>
+            <tr>
+            <td>shubham</td>
+            <td>27</td>
+        </tr>
+            <tr>
+            <td>labham</td>
+            <td>22</td>
+        </tr>
+            <tr>
+            <td>good</td>
+            <td>44</td>
+        </tr>
+        </body>
+        <tfoot>
+            <th colspan="2">totol list:</th>
+        </tfoot>
+    </table>
 
 
+    <ul>
+        <li>name</li>
+        <li>shubham</li>
+        <li>ndsfkj</li>
+    </ul>
 
 
-    
+    <ol type="i">
+        <li id="s1">shubha</li>
+        <li class="py1">python</li>
+        <li id="s1">an</li>
+    </ol>
+
 </body>
+
 </html>

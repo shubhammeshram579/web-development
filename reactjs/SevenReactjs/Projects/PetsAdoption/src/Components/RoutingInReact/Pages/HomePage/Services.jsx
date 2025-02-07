@@ -1,10 +1,11 @@
 import React from "react";
-
+import Logo from "..//../Logo/Logo.jsx"
 const Services = () => {
   return (
     
   <div style={{minHeight:"100vh" ,display:"flex", alignItems:"center",justifyContent:"space-evenly", flexDirection:"column"}}>
-<h1>Book Pet Care Service With Adopt.me</h1>
+    <h1 style={{display:"flex", alignItems:"center" ,justifyContent:"center"}}>Book Pet Care Service With <span><Logo /></span> </h1>
+
 <div className="card-deck d-flex align-items-center justify-content-center" style={{minHeight:"70vh"}}>
 
   <div className="d-flex">

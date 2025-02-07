@@ -1,18 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "..//..//../App.css";
+import Logo from "../Logo/Logo.jsx"
+
 
 const Header = () => {
   return (
-    <div style={{position:"fixed", top:"0" ,zIndex:"99999" ,padding:"10px 40px" ,width:"100%" ,backgroundColor:"#191919"}}>
+    <div
+      style={{
+        position: "fixed",
+        top: "0",
+        zIndex: "99999",
+        padding: "0px 70px",
+        width: "100%",
+        backgroundColor: "#191919",
+      }}
+    >
       <nav className="navbar navbar-expand-lg navbar-light">
-        <Link
-          className="navbar-brand text-info"
-          style={{ fontSize: "25px", fontWeight: "600" }}
-          to="/"
-        >
-          Adopt.me
-        </Link>
+        <Logo />
         <button
           className="navbar-toggler bg-info"
           type="button"
@@ -26,12 +31,12 @@ const Header = () => {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
+          <ul className="navbar-nav ml-auto pr-5">
             <li className="nav-item active">
               <Link
-              id="navItemss"
+                id="navItemss"
                 className="nav-link "
-                style={{ fontSize: "20px"}}
+                style={{ fontSize: "20px" }}
                 to="/"
               >
                 Home <span className="sr-only">(current)</span>
@@ -57,17 +62,41 @@ const Header = () => {
                 Shop
               </Link>
             </li>
-            <li className="nav-item dropdown">
+          </ul>
+          {/* <form className="form-inline my-2 my-lg-0">
+            <input
+              className="form-control mr-sm-2"
+              type="search"
+              placeholder="Search product"
+              aria-label="Search"
+            />
+            <button
+              className="btn btn-outline-info my-2 my-sm-0"
+              type="submit"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form> */}
+          <div className=" d-flex rounded">
+            <Link
+              className="nav-link text-white"
+              style={{ fontSize: "20px" }}
+              to="/Addcard/:postId"
+            >
+              <i id="navItemss" className="fa-solid fa-cart-plus text-info"></i>
+            </Link>
+
+            <div className="nav-item dropdown">
               <a
-              id="navItemss"
-              style={{fontSize:"20px"}}
+                id="navItemss"
+                style={{ fontSize: "20px" }}
                 className="nav-link dropdown-toggle"
                 href="#"
                 role="button"
                 data-toggle="dropdown"
                 aria-expanded="false"
               >
-              Menu
+                <i className="ri-menu-3-line text-info"></i>
               </a>
               <div className="dropdown-menu bg-dark">
                 <Link
@@ -86,41 +115,21 @@ const Header = () => {
                 >
                   Contract
                 </Link>
+                <Link
+                 id="navItemss"
+                  className="nav-link"
+                  style={{ fontSize: "20px" }}
+                  to="/Login"
+                >
+                  Login <i id="navItemss" className="fa-solid fa-user"></i>
+                </Link>
                 <div className="dropdown-divider"></div>
                 <a className="dropdown-item text-white" href="#">
                   Something else here
                 </a>
               </div>
-            </li>
-          </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <input
-              className="form-control mr-sm-2"
-              type="search"
-              placeholder="Search product"
-              aria-label="Search"
-            />
-            <button
-              className="btn btn-outline-info my-2 my-sm-0"
-              type="submit"
-            >
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form>
-          <Link
-            className="nav-link text-white"
-            style={{ fontSize: "20px" }}
-            to="/Addcard"
-          >
-            <i id="navItemss" className="fa-solid fa-cart-plus"></i>
-          </Link>
-          <Link
-            className="nav-link text-white"
-            style={{ fontSize: "20px" }}
-            to="/Login"
-          >
-            <i id="navItemss" class="fa-solid fa-user"></i>
-          </Link>
+            </div>
+          </div>
         </div>
       </nav>
     </div>

@@ -6,6 +6,7 @@ import Header from "./RoutingInReact/Header/Header.jsx"
 import Footer from "./RoutingInReact/Footer/Footer.jsx"
 import Home from "./RoutingInReact/Pages/Home.jsx"
 import About from "./RoutingInReact/Pages/About/AboutPage.jsx"
+// import Contract from "./RoutingInReact/Pages/Contract/ContractPage.jsx"
 import Contract from "./RoutingInReact/Pages/Contract/ContractPage.jsx"
 import Product from "./RoutingInReact/Pages/Product.jsx"
 import Addcard from "./RoutingInReact/Pages/Addcard/Addcard.jsx"
@@ -29,7 +30,7 @@ const PetsApp = () => {
         <Route path='/about' element={<About />} />
         <Route path='/Contract' element={<Contract />} />
         <Route path='/Product' element={<Product />} />
-        <Route path='/Addcard' element={<Addcard />} />
+        <Route path='/Addcard/:postId' element={<Addcard />} />
         <Route path='/Product/:postId' element={<ProductById />} />
         <Route path='/Product/searchinput' element={<SearchInput />} />
         <Route path='/Shelters' element={<SheltersPage />} />
