@@ -99,7 +99,7 @@ const Product = () => {
           
           {/* <p>Select Type</p> */}
 
-          <label htmlFor="pets" className="text-info font-weight-bold">Pet Category</label>
+          <label htmlFor="pets" className="text-info font-weight-normal">Pet Category</label>
           <br />
           <select style={{width:"50%",borderRadius:"5px"}} id="pets" value={selectedPets} onChange={handelChange}>
             <option value="">Select pets</option>
@@ -108,7 +108,7 @@ const Product = () => {
           </select>
 
           <ul style={{listStyleType:"none" ,paddingTop:"40px"}}>
-            <p className="text-info font-weight-bold">Select Size</p>
+            <p className="text-info font-weight-normal">Select Size</p>
             <li>
               <button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}} onClick={LargrBtn}>Large</button>
             </li>
@@ -121,12 +121,12 @@ const Product = () => {
           </ul>
 
         <ul style={{listStyleType:"none",paddingTop:"50px"}}>
-            <p className="text-info font-weight-bold">Select Age</p>
+            <p className="text-info font-weight-normal">Select Age</p>
             <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}} onClick={AdultBtn}>Adult</button></li>
             <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}} onClick={PuppyBtn}>Puppy</button></li>
           </ul>
         <ul style={{listStyleType:"none",paddingTop:"50px"}}>
-            <p className="text-info font-weight-bold">Select Price</p>
+            <p className="text-info font-weight-normal">Select Price</p>
             <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}} onClick={PriceLowBtn}>price low to high</button></li>
             <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}} onClick={PriceHighBtn}>price high to low</button></li>
           </ul>

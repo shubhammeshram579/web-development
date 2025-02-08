@@ -17,17 +17,21 @@ const UserRegister = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post("http://localhost:8000/api/v1/users/register", formData);
-      alert(response.data.message);
-      navigate("/Login")
-    } catch (error) {
-      console.error(error);
-      alert("Registration failed. Please try again.");
-    }
-  };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await axios.post("http://localhost:8000/api/v1/users/register", formData);
+  //     alert(response.data.message);
+  //     navigate("/Login")
+  //   } catch (error) {
+  //     console.error(error);
+  //     alert("Registration failed. Please try again.");
+  //   }
+  // };
+  const handleSubmit = () => {
+    alert("user Registration successfully")
+    navigate("/Login")
+  }
 
   return (
     <div style={{minHeight:"100vh", paddingTop:"200px"}} className="container mt-5">

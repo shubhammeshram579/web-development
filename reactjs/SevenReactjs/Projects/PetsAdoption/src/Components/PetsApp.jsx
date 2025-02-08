@@ -11,6 +11,7 @@ import Contract from "./RoutingInReact/Pages/Contract/ContractPage.jsx"
 import Product from "./RoutingInReact/Pages/Product.jsx"
 import Addcard from "./RoutingInReact/Pages/Addcard/Addcard.jsx"
 import ProductById from "./RoutingInReact/Pages/ProductByID/ProductById.jsx"
+import AdoptionPayment from "./RoutingInReact/Pages/Payment/AdoptionPayment.jsx"
 import UserRegister from "./RoutingInReact/User/UserRegister.jsx"
 import UserLogin from "./RoutingInReact/User/UserLogin.jsx"
 // import SearchResult from "./RoutingInReact/Pages/SearchPets/SearchResult.jsx"
@@ -32,6 +33,7 @@ const PetsApp = () => {
         <Route path='/Product' element={<Product />} />
         <Route path='/Addcard/:postId' element={<Addcard />} />
         <Route path='/Product/:postId' element={<ProductById />} />
+        <Route path='/AdoptionPayment/:postId' element={<AdoptionPayment />} />
         <Route path='/Product/searchinput' element={<SearchInput />} />
         <Route path='/Shelters' element={<SheltersPage />} />
         <Route path='/Register' element={<UserRegister />} />

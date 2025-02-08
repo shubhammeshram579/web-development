@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import UserContext from "./UsedContexApi.js";
 
 
 const UserContextProvider = ({children}) => {
     const [products2, setProducts2] = React.useState([]);
+    const [user, setUser] = useState(null);
 
 
     // const PetLists = [
@@ -857,7 +858,7 @@ const UserContextProvider = ({children}) => {
 
 
     return(
-        <UserContext.Provider value={{products2}}>
+        <UserContext.Provider value={{products2,user,setUser}}>
         {children}
         </UserContext.Provider>
     )

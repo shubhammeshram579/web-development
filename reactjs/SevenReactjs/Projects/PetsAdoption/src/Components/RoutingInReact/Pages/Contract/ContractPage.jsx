@@ -4,7 +4,7 @@ const ContactPage = () => {
 
   
   return (
-    <div  style={{marginTop:"100px" ,minHeight:"100vh"}} className="contact-page py-5 bg-dark">
+    <div  style={{paddingTop:"200px" ,minHeight:"100vh"}} className="contact-page bg-dark">
       <div className="container">
         <h1 className="text-center mb-4">Contact Us</h1>
         <p className="text-center mb-5">

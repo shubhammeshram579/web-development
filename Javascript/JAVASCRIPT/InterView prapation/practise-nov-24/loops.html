@@ -15,12 +15,14 @@
         body {
             height: 100%;
             width: 100%;
+            background-color: #292727;
+            color: #c0b9b9;
         }
 
         h1 {
             text-align: center;
             padding: 20px;
-            background-color: yellow;
+            background-color:cadetblue;
             font-size: 3vw;
             font-weight: 500;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -136,6 +138,16 @@
         console.log("hello i am revers str:", StroStr);
 
 
+        // practise 
+
+        let mystr = "pramanand";
+        let mystrRevers = ''
+        for(let i = mystr.length -1 ; i > 0; i--){
+            mystrRevers += mystr[i];
+        };
+
+        // console.log(mystrRevers);
+
         // 5.Print each character of a string.
 
         let Str2 = "shubham meshram";
@@ -144,9 +156,9 @@
         //     console.log(Str2[i])
         // };
 
-        for (let i = 0; i < Str2.length; i++) {
-            console.log(Str2[i])
-        };
+        // for (let i = 0; i < Str2.length; i++) {
+        //     console.log(Str2[i])
+        // };
 
         // let strLabham = "labham meshram";
 
@@ -166,7 +178,7 @@
             // console.log(i)
 
             factorial *= i
-        }
+        };
 
         console.log(factorial);
 
@@ -234,6 +246,14 @@
         }
 
         console.log("factial sum",factorialSum);
+
+
+        let factialRang = 5;
+        let factrialSum = 0;
+
+        // for(let i = factialRang; i > 1; i--){
+        //     console.log(i)
+        // };
 
 
 

@@ -392,7 +392,7 @@ const ProductById = () => {
               >
                 <Link style={{textDecoration:"none", color:"#1ab3ca"}} to={`/Addcard/${singleProduct.id}`}><button className="bg-info rounded-pill px-4 border-0 py-2">AddCard</button></Link>
                 {/* <button onClick={handelBtnAddcard}>AddCard</button> */}
-                <button className="bg-warning px-4 rounded-pill border-0 py-2">AdoptNow</button>
+                <Link to={`/AdoptionPayment/${singleProduct.id}`}><button className="bg-warning px-4 rounded-pill border-0 py-2">AdoptNow</button></Link>
               </div>
             </div>
             <div
@@ -410,7 +410,7 @@ const ProductById = () => {
                 {/* <p>Name: {singleProduct.name}</p> */}
                 <p><b>Age:</b> {singleProduct.age}</p>
                 <p><b>Size:</b> {singleProduct.size}</p>
-                <p><b>Price:</b> {singleProduct.price}</p>
+                <p><b>Price: ₹</b> {singleProduct.price}</p>
                 <p><b>adoptionRate:</b> {singleProduct.adoptionRate}</p>
                 <p><b>Rating:</b> {singleProduct.rank}⭐</p>
               </div>
