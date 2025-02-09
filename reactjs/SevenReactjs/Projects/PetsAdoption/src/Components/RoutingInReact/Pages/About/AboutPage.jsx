@@ -4,11 +4,11 @@ import LocationWork from "./LocationWork.jsx";
 const AboutPage = () => {
   return (
     <div
-      style={{ marginTop: "100px", minHeight: "100vh" }}
-      className="about-page py-5 bg-dark"
+      style={{ paddingTop: "100px", minHeight: "100vh" }}
+      className="about-page bg-dark"
     >
       <div className="container">
-        <h1 className="text-center mb-4">About Us</h1>
+        <h1 className="text-center mb-4 pt-5">About Us</h1>
         <p className="lead text-center mb-4">
           We are a passionate group of animal lovers dedicated to giving pets a
           second chance. Our mission is to connect loving homes with pets in

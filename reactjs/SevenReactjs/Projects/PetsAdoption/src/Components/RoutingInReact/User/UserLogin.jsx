@@ -3,8 +3,13 @@ import axios from "axios";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import { Link ,useNavigate} from "react-router-dom";
 import UserLogut from "./UserLogut.jsx"
+import {useDispatch} from "react-redux"
+import { login as authLogin } from "../../../ReduxStrore/AuthSlic.js";
+
 
 const UserLogin = () => {
+
+  const dispatch = useDispatch();
 
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
@@ -40,6 +45,7 @@ const UserLogin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setUser({email,password})
+    dispatch(authLogin({email,password}))
     alert(`user login successfully`)
     navigate("/")
   }

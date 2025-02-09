@@ -2,12 +2,16 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams ,Link} from "react-router-dom";
 
 import UserContext from "..//../ContexApi/UsedContexApi.js";
+import {useDispatch} from "react-redux"
+import {addCard} from ".//..//..//..//..//../src/ReduxStrore/AuthSlic.js"
 
 const ProductById = () => {
   const { postId } = useParams();
   const [singleProduct, setSingleProduct] = useState([]);
 
   const { products2 } = useContext(UserContext);
+
+  const dispatch  = useDispatch();
 
   /* const PetLists = [
     { 
@@ -335,6 +339,10 @@ const ProductById = () => {
     SingleProductFatch();
   }, [postId]);
 
+  const handelDeispach = () => {
+    dispatch(addCard(singleProduct))
+  }
+
   return (
     <>
       <div
@@ -390,7 +398,7 @@ const ProductById = () => {
                   gap: "20px",
                 }}
               >
-                <Link style={{textDecoration:"none", color:"#1ab3ca"}} to={`/Addcard/${singleProduct.id}`}><button className="bg-info rounded-pill px-4 border-0 py-2">AddCard</button></Link>
+                <Link style={{textDecoration:"none", color:"#1ab3ca"}} to={`/Addcard/${singleProduct.id}`}><button onClick={handelDeispach} className="bg-info rounded-pill px-4 border-0 py-2">AddCard</button></Link>
                 {/* <button onClick={handelBtnAddcard}>AddCard</button> */}
                 <Link to={`/AdoptionPayment/${singleProduct.id}`}><button className="bg-warning px-4 rounded-pill border-0 py-2">AdoptNow</button></Link>
               </div>

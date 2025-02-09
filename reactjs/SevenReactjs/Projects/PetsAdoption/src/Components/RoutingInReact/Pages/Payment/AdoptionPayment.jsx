@@ -1,6 +1,7 @@
 import React ,{useState,useEffect,useContext} from 'react'
 import { useParams } from 'react-router-dom'
 import UserContext from "..//../ContexApi/UsedContexApi.js"
+import {useSelector} from "react-redux"
 
 
 const AdoptionPayment = () => {
@@ -9,6 +10,7 @@ const AdoptionPayment = () => {
     const [product ,setProduct] = useState([])
     const [gstamt ,setGstAmt] = useState(0);
     const [totalamt,setTotalamt] = useState(0)
+    const currentuser = useSelector((state) => state.auth.user)
 
     useEffect(() => {
         const fatchData = async () => {
@@ -31,7 +33,8 @@ const AdoptionPayment = () => {
     })
    },[product])
 
-   console.log(gstamt)
+   console.log(currentuser)
+
     
   return (
     <div style={{minHeight:"100vh" ,paddingTop:"200px"}} className='bg-dark'>
@@ -39,7 +42,7 @@ const AdoptionPayment = () => {
       <div className="page1 p-5"  style={{width:"50%"}}>
         <div>
             <h1>Customers</h1>
-            <p>shubham123@gmail.com</p>
+            <p>{currentuser.email}</p>
         </div>
         <div >
             <h1 style={{padding:"10px 0px"}}>Shipping Address</h1>
