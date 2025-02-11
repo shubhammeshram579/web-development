@@ -1,5 +1,5 @@
 import React ,{useState,useEffect,useContext} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams,Link } from 'react-router-dom'
 import UserContext from "..//../ContexApi/UsedContexApi.js"
 import {useSelector} from "react-redux"
 
@@ -33,7 +33,13 @@ const AdoptionPayment = () => {
     })
    },[product])
 
-   console.log(currentuser)
+//    console.log(currentuser)
+
+if(!currentuser){
+    return (
+        <div style={{padding:"200px" ,textAlign:"center",fontSize:"2vw"}}>user <Link className="text-info" to="/Login">Login</Link> first  </div>
+    )
+}
 
     
   return (
@@ -42,7 +48,7 @@ const AdoptionPayment = () => {
       <div className="page1 p-5"  style={{width:"50%"}}>
         <div>
             <h1>Customers</h1>
-            <p>{currentuser.email}</p>
+            <p>{currentuser ? (currentuser.email) : ("login first")}</p>
         </div>
         <div >
             <h1 style={{padding:"10px 0px"}}>Shipping Address</h1>

@@ -8,6 +8,7 @@ import FunctionCom from "./Components/Componet1/FunctionCom.jsx"
 
 // what is props in react?
 import AllProps from "./Components/PropsCom2/AllProps.jsx"
+import EventHandling from "./Components/EventHandling/EventHandling.jsx"
 
 
 function App() {
@@ -16,8 +17,8 @@ function App() {
     <>
    <ClassCom />
    <FunctionCom />
-
    <AllProps />
+   <EventHandling />
     </>
   )
 }

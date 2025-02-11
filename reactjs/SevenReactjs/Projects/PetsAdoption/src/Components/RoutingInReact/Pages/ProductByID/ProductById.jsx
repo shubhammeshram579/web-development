@@ -339,6 +339,8 @@ const ProductById = () => {
     SingleProductFatch();
   }, [postId]);
 
+
+  // handel addcard butten
   const handelDeispach = () => {
     dispatch(addCard(singleProduct))
   }
@@ -399,7 +401,6 @@ const ProductById = () => {
                 }}
               >
                 <Link style={{textDecoration:"none", color:"#1ab3ca"}} to={`/Addcard/${singleProduct.id}`}><button onClick={handelDeispach} className="bg-info rounded-pill px-4 border-0 py-2">AddCard</button></Link>
-                {/* <button onClick={handelBtnAddcard}>AddCard</button> */}
                 <Link to={`/AdoptionPayment/${singleProduct.id}`}><button className="bg-warning px-4 rounded-pill border-0 py-2">AdoptNow</button></Link>
               </div>
             </div>

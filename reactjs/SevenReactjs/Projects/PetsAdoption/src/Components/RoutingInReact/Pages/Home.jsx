@@ -24,7 +24,7 @@ const Home = () => {
         <TopProject />
         <AdoptPetPage />
         {/* <Motorola /> */}
-        <MotoSlider />
+        {/* <MotoSlider /> */}
         {/* <SumsungSlider /> */}
         {/* <Sumsung /> */}
         <Services />

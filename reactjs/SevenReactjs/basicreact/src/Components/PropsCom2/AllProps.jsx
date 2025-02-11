@@ -42,7 +42,8 @@ const AllProps = () => {
     let keabord = "dell";
 
   return (
-    <div>
+    <div style={{backgroundColor:"rebeccapurple"}}>
+        <h1>Props in react</h1>
       <PropsFirst name="shubham" age={27}/>
 
       <PropsSecond user={obj} />
