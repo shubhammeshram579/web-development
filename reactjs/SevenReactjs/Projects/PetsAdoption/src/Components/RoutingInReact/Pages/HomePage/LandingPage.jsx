@@ -62,7 +62,9 @@ const LandingPage = () => {
         <i style={{backgroundColor:"gray" ,padding:"10px" ,borderRadius:"0px 10px 10px 0px",color:"#fff"}} className="fa-solid fa-magnifying-glass"></i>
         </div></Link>
         {/* <SearchInput /> */}
+        
       </h1>
+      
       <div style={{ height: "90vh", width: "100%" }} className="slideshow2">
         {slides.map((slide, index) => (
           <div
@@ -175,7 +177,3 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
-
-{
-  
-}

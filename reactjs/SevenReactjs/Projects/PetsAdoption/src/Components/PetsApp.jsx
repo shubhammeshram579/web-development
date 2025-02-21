@@ -14,12 +14,17 @@ import ProductById from "./RoutingInReact/Pages/ProductByID/ProductById.jsx"
 import AdoptionPayment from "./RoutingInReact/Pages/Payment/AdoptionPayment.jsx"
 import UserRegister from "./RoutingInReact/User/UserRegister.jsx"
 import UserLogin from "./RoutingInReact/User/UserLogin.jsx"
+import AdminLogin from "./RoutingInReact/Admin/AdminLogin.jsx"
+import AdminHomepage from "./RoutingInReact/Admin/AdminHomepage.jsx"
 // import SearchResult from "./RoutingInReact/Pages/SearchPets/SearchResult.jsx"
 import SearchInput from "./RoutingInReact/Pages/SearchPets/SearchInput.jsx"
 
 import SheltersPage from "./RoutingInReact/Pages/Shelters/SheltersPage.jsx"
+import { useSelector } from "react-redux";
 
 const PetsApp = () => {
+    const authStatus = useSelector((state) => state.auth.isLoggedIn);
+    const authStatusAdmin = useSelector((state) => state.auth.isAdminLoggedIn);
   return (
    
     <UserContextProvider>
@@ -28,16 +33,18 @@ const PetsApp = () => {
 
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/Contract' element={<Contract />} />
-        <Route path='/Product' element={<Product />} />
-        <Route path='/Addcard/:postId' element={<Addcard />} />
-        <Route path='/Product/:postId' element={<ProductById />} />
-        <Route path='/AdoptionPayment/:postId' element={<AdoptionPayment />} />
-        <Route path='/Product/searchinput' element={<SearchInput />} />
-        <Route path='/Shelters' element={<SheltersPage />} />
+        <Route path='/about' element={authStatus ? (<About />) : (<UserLogin />)} />
+        <Route path='/Contract' element={authStatus ? (<Contract />) : (<UserLogin />)} />
+        <Route path='/Product' element={authStatus ? (<Product />) : (<UserLogin />)} />
+        <Route path='/Addcard/:postId' element={authStatus ? (<Addcard />) : (<UserLogin />)} />
+        <Route path='/Product/:postId' element={authStatus ? (<ProductById />) : (<UserLogin />)} />
+        <Route path='/AdoptionPayment/:postId' element={authStatus ? (<AdoptionPayment />) : (<UserLogin />)} />
+        <Route path='/Product/searchinput' element={authStatus ? (<SearchInput />) : (<UserLogin />)} />
+        <Route path='/Shelters' element={authStatus ? (<SheltersPage />) : (<UserLogin />)} />
         <Route path='/Register' element={<UserRegister />} />
-        <Route path='/Login' element={<UserLogin />} />
+        <Route path='/Login' element={!authStatusAdmin ? (<UserLogin />) : (<AdminLogin />)} />
+        <Route path='/AdminLogin' element={<AdminLogin />} />
+        <Route path='/AdminPage' element={<AdminHomepage />} />
       </Routes>
       <Footer />
       </BrowserRouter>

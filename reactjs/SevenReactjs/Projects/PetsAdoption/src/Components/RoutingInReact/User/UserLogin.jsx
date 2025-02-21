@@ -53,9 +53,10 @@ const UserLogin = () => {
   // console.log(user)
 
   return (
-    <div style={{paddingTop:"200px" ,minHeight:"100vh"}} className="container">
+    <div style={{paddingTop:"200px" ,minHeight:"70vh" ,paddingBottom:"100px"}} className="container">
+      {/* <div className="bg-dark w-50 rounded"> */}
       <h1 className="text-center mb-4">Login <span><UserLogut/></span></h1>
-      <form onSubmit={handleSubmit}  className="mx-auto" style={{ maxWidth: "400px" }}>
+      <form onSubmit={handleSubmit}  className="mx-auto" style={{ maxWidth: "400px" ,padding:"30px"}}>
         <div className="mb-3">
           <label className="form-label">Email</label>
           <input
@@ -83,9 +84,11 @@ const UserLogin = () => {
         <button type="submit" className="btn btn-info w-100">
           Login
         </button>
-        <h5 className="pt-5 text-center">if user is not exit <span><Link className="text-danger" to="/Register">Register</Link> first</span></h5>
+        <h5 className="pt-5 text-center"> <span><Link className="pt-5 text-center text-info" to="/AdminLogin">Admin Login</Link></span></h5>
+        <h5 className="pt-2 text-center">if user is not exit <span><Link className="text-danger" to="/Register">Register</Link> first</span></h5>
+        
       </form>
-      
+      {/* </div> */}
     </div>
   );
 };

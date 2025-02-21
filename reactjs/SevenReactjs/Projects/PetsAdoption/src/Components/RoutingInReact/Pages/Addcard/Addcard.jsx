@@ -19,7 +19,7 @@ const AddCard = () => {
    <>
    <div style={{ display:"flex",alignItems:"center", justifyContent:"space-evenly", flexDirection:"column" ,padding:"200px"}}>
     {addcardsItems.map((p) => (
-      <div className="bg-dark rounded" key={p.id} style={{display:"flex",alignItems:"center", justifyContent:"space-evenly",width:"80%",padding:"20px",margin:"10px"}}>
+      <div  className="bg-dark rounded" key={p.id} style={{display:"flex",alignItems:"center", justifyContent:"space-evenly",width:"80%",padding:"20px",margin:"10px"}}>
         <img className="rounded" height={200} width={200} src={p.image} alt={p.name} />
         <p>{p.name}</p>
         <p>{p.size}</p>

@@ -10,6 +10,9 @@ import FunctionCom from "./Components/Componet1/FunctionCom.jsx"
 import AllProps from "./Components/PropsCom2/AllProps.jsx"
 import EventHandling from "./Components/EventHandling/EventHandling.jsx"
 
+// conditional wise page rendring
+import ConditionRCom from "./Components/ConditionalRendringCom/ConditionRCom.jsx"
+
 
 function App() {
 
@@ -19,6 +22,7 @@ function App() {
    <FunctionCom />
    <AllProps />
    <EventHandling />
+   <ConditionRCom />
     </>
   )
 }

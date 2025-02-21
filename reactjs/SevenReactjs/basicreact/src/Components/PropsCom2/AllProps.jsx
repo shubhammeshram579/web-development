@@ -15,6 +15,7 @@ const AllProps = () => {
     }
 
 
+    // fourth way props
     let array = [
         {
             name:"shubham",
