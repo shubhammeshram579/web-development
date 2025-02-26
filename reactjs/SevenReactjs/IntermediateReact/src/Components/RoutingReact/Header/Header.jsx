@@ -10,6 +10,7 @@ const Header = () => {
         </div>
         <div className="navitems flex items-center justify-between gap-[20px]">
             <Link className='text-xl hover:text-green-600 hover:underline' to="/">home</Link>
+            <Link className='text-xl hover:text-green-600 hover:underline' to="/ProductList">Product</Link>
             <Link className='text-xl hover:text-green-600' to="/profile">profile</Link>
             <Link className='text-xl hover:text-green-600' to="/about">about</Link>
             <Link className='text-xl hover:text-green-600' to="/contract">contract</Link>

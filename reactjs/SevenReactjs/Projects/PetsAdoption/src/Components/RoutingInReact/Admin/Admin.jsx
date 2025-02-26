@@ -17,10 +17,27 @@ import BubblePlots from "./Pages/PlotlyJs/BubblePlots.jsx"
 import MultiChart from "./Pages/PlotlyJs/MultiChart.jsx"
 
 import PetsSize from "./Pages/PlotlyJs/PetsSize.jsx"
+import TopPets from "./Pages/PlotlyJs/TopPets.jsx"
 
 const Admin = () => {
   return (
-    <div style={{paddingTop:"100px",minHeight:"100vh" ,display:"flex" ,alignItems:"center",justifyContent:"space-evenly" ,flexWrap:"wrap"}}>
+    
+    <div style={{minHeight:"100vh",width:"80%" ,marginLeft:"15%", paddingTop:"150px"}}>
+      <div style={{display:"flex", alignItems:"center" ,justifyContent:"end" ,gap:"100px",paddingRight:"100px"}}>
+        <div style={{backgroundColor:"#dddd",color:"#111",padding:"2px 60px" ,borderRadius:"10px"}}>
+        <h3 >Pets</h3>
+        <p style={{textAlign:"center", fontSize:"1vw"}}>250</p>
+        </div>
+        <div style={{backgroundColor:"#dddd",color:"#111",padding:"2px 50px",borderRadius:"10px"}}>
+        <h3 >Selter Pets</h3>
+        <p style={{textAlign:"center",fontSize:"1vw"}}>40</p>
+        </div>
+        <div style={{backgroundColor:"#dddd",color:"#111",padding:"2px 50px",borderRadius:"10px"}}>
+        <h3 >Availble Pets</h3>
+        <p style={{textAlign:"center",fontSize:"1vw"}}>210</p>
+        </div>
+      </div>
+    <div className="card2" style={{paddingTop:"50px",display:"grid",gridTemplateColumns:"repeat(3,1fr)",gridGap: "10px",paddingLeft:"100px",paddingBottom:"100px"}}>
       {/* <LineChart />
       <BarChart />
       <PieChart />
@@ -31,19 +48,24 @@ const Admin = () => {
 
       {/* plottyjs */}
      
-      <PiePlot />
+     
+      <HorizontalBarCharts />
       <PetsSize />
-      <DonutCharts />
+      <PiePlot />
+      
+      {/* <DonutCharts /> */}
       <LineGraphs />
+      <TopPets />
       <PlotChart />
       
       {/* <BubblePlots /> */}
-      {/* <HorizontalBarCharts /> */}
+     
       
       
-      <MultiChart />
+      {/* <MultiChart /> */}
       
      
+    </div>
     </div>
   )
 }

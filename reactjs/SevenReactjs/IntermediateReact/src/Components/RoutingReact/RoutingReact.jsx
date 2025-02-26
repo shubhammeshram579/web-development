@@ -8,6 +8,7 @@ import Home from "./Pages/Home.jsx"
 import Profile from "./Pages/Profile.jsx"
 import Contract from "./Pages/Contract.jsx"
 import About from "./Pages/About.jsx"
+import ProductList from "./Pages/ProductList.jsx"
 
 
 
@@ -18,6 +19,7 @@ const RoutingReact = () => {
         <Header />
         <Routes>
             <Route path='/' element={<Home />}/>
+            <Route path='/ProductList' element={<ProductList />}/>
             <Route path='/profile' element={<Profile />}/>
             <Route path='/about' element={<About />}/>
             <Route path='/contract' element={<Contract />}/>

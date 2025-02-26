@@ -2,21 +2,23 @@ import React from 'react'
 import Plot from 'react-plotly.js'
 
 const PlotChart = () => {
-    const xArray = ["Italy","France","Spain","USA","Argentina"];
-    const yArray = [55, 49, 44, 24, 15];
+    const xArray = ["Maharashtra","Karnataka","Delhi","AP","HP","MP"];
+    const yArray = [55, 49, 44, 24, 15 ,29];
+
+    
 
 
   return (
-    <div style={{marginTop:"10px" ,borderRadius:"10px", backgroundColor:"green", width:"500px" ,height:"400px", overflow:"hidden"}}>
+    <div style={{marginTop:"10px" ,borderRadius:"10px", backgroundColor:"green", width:"400px" ,height:"340px", overflow:"hidden"}}>
        <Plot
         data = {[{
-            x: xArray,
-            y: yArray,
+            x: yArray,
+            y: xArray,
             type: "bar",
-            orientation:"v",
-            marker: {color:"rgba(0,0,255)"}
+            orientation:"h",
+            marker: {color:"rebeccapurple"}
           }]}
-          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#ddd", font: { color: "#111" },width: 500, height: 440, title: { text: "Country Data", font: { color: "#111" } }} }
+          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#ddd", font: { color: "#111" },width: 400, height: 340, title: { text: "State wise", font: { color: "#111" } }} }
       />
     </div>
   )

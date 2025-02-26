@@ -22,6 +22,12 @@ import SearchInput from "./RoutingInReact/Pages/SearchPets/SearchInput.jsx"
 import SheltersPage from "./RoutingInReact/Pages/Shelters/SheltersPage.jsx"
 import { useSelector } from "react-redux";
 
+
+// admin page
+import Admin from "./RoutingInReact/Admin/Admin.jsx"
+import CreatePets from "./RoutingInReact/Admin/Pages/CreatePets/CreatePets.jsx"
+import PetsAdoption from "./RoutingInReact/Admin/Pages/PetsAdoption/PetsAdoption.jsx"
+
 const PetsApp = () => {
     const authStatus = useSelector((state) => state.auth.isLoggedIn);
     const authStatusAdmin = useSelector((state) => state.auth.isAdminLoggedIn);
@@ -30,6 +36,7 @@ const PetsApp = () => {
     <UserContextProvider>
    <BrowserRouter>
       <Header />
+      {authStatusAdmin ? (<AdminHomepage />) :(null)}
 
       <Routes>
         <Route path='/' element={<Home />} />
@@ -43,8 +50,13 @@ const PetsApp = () => {
         <Route path='/Shelters' element={authStatus ? (<SheltersPage />) : (<UserLogin />)} />
         <Route path='/Register' element={<UserRegister />} />
         <Route path='/Login' element={!authStatusAdmin ? (<UserLogin />) : (<AdminLogin />)} />
+
+
         <Route path='/AdminLogin' element={<AdminLogin />} />
         <Route path='/AdminPage' element={<AdminHomepage />} />
+        <Route path='/AdminChart' element={<Admin />} />
+        <Route path='/PetsAdoption' element={<PetsAdoption />} />
+        <Route path='/CreatePets' element={<CreatePets />} />
       </Routes>
       <Footer />
       </BrowserRouter>

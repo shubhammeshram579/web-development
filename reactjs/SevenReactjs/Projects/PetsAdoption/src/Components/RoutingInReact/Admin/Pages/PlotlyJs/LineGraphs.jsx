@@ -7,14 +7,15 @@ const LineGraphs = () => {
 
     
   return (
-    <div style={{marginTop:"10px" ,borderRadius:"10px", backgroundColor:"green", width:"1000px" ,height:"400px", overflow:"hidden"}}>
+    <div style={{marginTop:"10px" ,borderRadius:"10px", backgroundColor:"green", width:"500px" ,height:"340px", overflow:"hidden"}}>
        <Plot
         
         data = {[{
             x: xArray,
             y: yArray,
             mode: "lines+markers",
-            type: "scatter"
+            type: "scatter",
+            marker: {color:"rebeccapurple"}
           }]}
 
         //   layout = {{
@@ -22,7 +23,7 @@ const LineGraphs = () => {
         //     yaxis: {range: [5, 16], title: "Price in Millions"},
         //     title: "House Prices vs Size"
         //   }}
-          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#ddd", font: { color: "#111" },width: 1000, height: 440, title: { text: "Pets AgeMonths", font: { color: "#111" } }} }
+          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#ddd", font: { color: "#111" },width: 500, height: 340, title: { text: "Pets AgeMonths", font: { color: "#111" } }} }
       />
     </div>
   )

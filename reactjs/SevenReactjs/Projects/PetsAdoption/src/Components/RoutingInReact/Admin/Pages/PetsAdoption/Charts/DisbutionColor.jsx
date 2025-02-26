@@ -1,9 +1,9 @@
 import React from 'react'
 import Plot from 'react-plotly.js'
 
-const PetsSize = () => {
-    const xArray = ["Small","Medium","Large"];
-    const yArray = [329,363,335];
+const DisbutionColor = () => {
+    const xArray = ["Orange","White","Gray","Brown","Black"];
+    const yArray = [234,363,135,44,53,33];
 
     
   return (
@@ -13,16 +13,16 @@ const PetsSize = () => {
         data = {[{
             labels: xArray,
             values: yArray,
-            hole: .4,
+            hole: .2,
             type: "pie",
             marker: {
               colors: ['#1f77b4', 'rebeccapurple', '#2ca02c']
             }
           }]}
-          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#222", font: { color: "#111" },width: 430, height: 340, title: { text: "Pets Size", font: { color: "#111" } }} }
+          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#222", font: { color: "#111" },width: 430, height: 340, title: { text: "Pets Color", font: { color: "#111" } }} }
       />
     </div>
   )
 }
 
-export default PetsSize
+export default DisbutionColor

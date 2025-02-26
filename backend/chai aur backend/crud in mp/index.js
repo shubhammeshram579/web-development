@@ -8,7 +8,7 @@ app.use(express.json())
 
 
 // app.get("/",  (req, res) =>{
-//     res.send("hello shubham")
+//     res.status(200).send("hello shubham")
 // })
 
 

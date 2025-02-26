@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* basic css styling a tag table, and order list and unorder list */
+        .IsAtaga{
+            color:green;
+            text-decoration:none;
+            text-transform: capitalize;
+        }
+
+
+        /* unOrderList */
+        .unOrderList{
+            width: 20%;
+            border: 2px solid green;
+            background-color: yellow;
+            list-style-type:lower-alpha;
+        }
+
+        /* select single tage like pandas */
+        .itmemPandas{
+            color: red;
+        }
+
+        /* select mutiple items */
+        .items{
+            color: green;
+        }
+
+
+        /* OrderList */
+        #OrderList{
+            width: 20%;
+            border: 2px solid green;
+            background-color: yellow;
+            list-style-type:lower-alpha;
+
+        }
+
+        #HtmL{
+            background-color: aqua;
+        }
+
+
+        /* select table and styling basic css poperties */
+        table ,tr,th,td{
+            background-color: yellowgreen;
+            border: 2px solid #111;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: center;
+        }
+
+        table tr th{
+            background-color:yellow;
+        }
+
+        table tr td{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>A tage , orderList , unOrder list and table</h3>
+    </div>
+    <a class="IsAtaga" target="_blank" href="https://plus.unsplash.com/premium_photo-1677329952685-aecee218884a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">Image</a>
+
+
+    <h3>Unorder list</h3>
+    <ul class="unOrderList">
+        <li class="items">python</li>
+        <li class="items">powerbi</li>
+        <li class="itmemPandas">pandas</li>
+        <li class="items">numpy</li>
+        <li>excel</li>
+    </ul>
+
+
+    <h3>Order list</h3>
+    <ol id="OrderList" type="i">
+        <li>javacript</li>
+        <li id="HtmL">html</li>
+        <li>css</li>
+        <li>react.js</li>
+        <li>node.js</li>
+    </ol>
+
+
+
+    <h3>table</h3>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>course</th>
+            <th>marks</th>
+        </tr>
+        <body>
+            <tr>
+            <td>shubham</td>
+            <td>softwere Development</td>
+            <td>73</td>
+        </tr>
+            <tr>
+            <td>labham</td>
+            <td>video creater</td>
+            <td>65</td>
+        </tr>
+            <tr>
+            <td>rohan</td>
+            <td>softwere Development</td>
+            <td>89</td>
+        </tr>
+        </body>
+        <tfoot>
+            <th colspan="3">total of list: 3</th>
+        </tfoot>
+    </table>
+
+</body>
+</html>
