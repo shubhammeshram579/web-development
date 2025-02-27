@@ -1,0 +1,50 @@
+
+
+h1{
+    text-align: center;
+}
+form{
+    width: 40%;
+    background-color: cadetblue;
+    margin: auto;
+    /* text-align: center; */
+    padding: 20px;
+}
+
+
+p{
+    color: yellow;
+}
+
+input{
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+}
+
+select{
+    width: 50%;
+    height:30px ;
+    border: none;
+    border-radius: 10px;
+}
+
+textarea{
+    height: 50px;
+    width: 100%;
+}
+
+
+#btn{
+    background-color: green;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+
+.restebtn{
+    background-color: orange;
+    color: #fff;
+    padding: 10px 20px;
+
+}

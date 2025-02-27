@@ -14,6 +14,7 @@ const AdminHomepage = () => {
           <h3>AdminPage</h3>
           <div style={{display:"flex",alignItems:"start",gap:"20px",flexDirection:"column",paddingTop:"50px"}}>
           <Link to="/AdminChart"><button style={{width:"150px", border:"none", borderRadius:"10px", padding:"10px 0px"}} className='bg-info text-light' >DashBoard</button></Link>
+          <Link to="/Users"><button style={{width:"150px", border:"none", borderRadius:"10px", padding:"10px 0px"}} className='bg-info text-light' >Users</button></Link>
           <Link to="/CreatePets"><button style={{width:"150px", border:"none", borderRadius:"10px", padding:"10px 0px"}} className='bg-info text-light' >All Pets</button></Link>
           <Link to="/PetsAdoption"><button style={{width:"150px" ,border:"none", borderRadius:"10px", padding:"10px 0px"}} className='bg-info text-light'  >Adoption</button></Link>
           <button style={{width:"150px",border:"none", borderRadius:"10px", padding:"10px 0px"}} className='bg-info text-light' >Report</button>

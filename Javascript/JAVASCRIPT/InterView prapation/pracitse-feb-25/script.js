@@ -514,6 +514,21 @@ for(let i = 0; i < array.length - 1; i++){
 console.log(array);
  */
 
+// practise
+
+/* 
+let array = [3,55,2,6,4,7,45,67];
+
+for(let i = 0; i < array.length -1 ; i++){
+    for(let j = 0; j < array.length - 1 - i; j++){
+        if(array[j] > array[j + 1]){
+            [array[j] , array[j + 1]] = [array[j + 1] , array[j]]
+        }
+    }
+}
+
+console.log(array);
+ */
 
 // 17.Count the occurrence of each element in an array.
 /* let array = [2,4,2,2,77,3];
@@ -526,9 +541,80 @@ for(let i = 0; i < array.length; i++){
 console.log(count)
  */
 
+// practise 
+
+/* let array  = [3,5,2,6,3,6,54,2];
+let count = {};
+
+array.forEach((i) => {
+    count[i] = (count[i] || 0) + 1
+})
+
+console.log(count);
+ */
+
+
+
 // 18.Generate a pyramid pattern.
 /* 
 let pyramidNum = 10;
 for(let i = 0; i < pyramidNum; i++){
     console.log(" ".repeat(pyramidNum - 1) + "*".repeat(i * 2))
 } */
+
+// practise 
+/* let num = 10;
+for(let i = 0; i < num; i++){
+    console.log(" ".repeat(num - 1) + "*".repeat(i * 2));
+};
+ */
+
+
+
+//19.Find the missing number in an array of consecutive numbers.
+
+// let arrayList = [1,2,3,5,6,7,10];
+// let massing;
+
+// it is find single messing value only
+/* for(let i = 0; i < arrayList.length - 1; i++){
+    if(arrayList[i + 1] - arrayList[i] !== 1){
+        massing = arrayList[i] + 1;
+        break
+    }
+}
+
+console.log(massing);
+ */
+
+// multiple messing values
+/* let messing2 = []
+for(let i = 0; i < arrayList.length - 1; i++){
+    if(arrayList[i + 1] - arrayList[i] !== 1){
+        for(let j = arrayList[i] + 1; j < arrayList[i + 1]; j++){
+            messing2.push(j)
+        }
+    }
+}
+
+console.log(messing2);
+ */
+
+// 20.Transpose a matrix.
+
+/* let matrixarry = [[1,2,3],[4,5,6],[7,8,9]];
+
+let tranformMatrix = [];
+
+if(matrixarry.length > 0 && Array.isArray(matrixarry[0])){
+    for(let i = 0; i < matrixarry[0].length; i++){
+        tranformMatrix[i] = [];
+        for(let j = 0; j < matrixarry.length; j++){
+            tranformMatrix[i][j] = matrixarry[j][i]
+        }
+    }
+console.log(tranformMatrix);
+}else{
+    console.log("error")
+}
+ */

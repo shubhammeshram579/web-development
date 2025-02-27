@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dsa Recursion part 1</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        html,body{
+            height: 100%;
+            width: 100%;
+            background-color: #2a2828;
+            color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Recursion part 1</h1>
+
+
+    <script>
+        // basic of recusrtion in javascript
+        //1. Recursive Function to Print Numbers from 5 to 1;
+
+        // normal loops
+        /* 
+        for(let i = 5; i >= 1; i--){
+            console.log(i)
+        } */
+
+
+        function ReveseNum(n) {
+            // base case
+            if(n === 0){
+                return;
+            }
+
+            // print num
+            console.log("recustion function 5 to 1",n)
+
+            // it self return recursion function
+            ReveseNum(n - 1)
+        }
+
+        // ReveseNum(5);
+
+
+        // 2. Recursive Function to Print Numbers from 1 to 5;
+
+        /*
+        for(let i = 1; i <= 5; i++){
+            console.log(i)
+        };
+        */
+
+        function SerialNum(n) {
+            // base case
+            if(n > 5){
+                return;
+            };
+
+            // print number
+            console.log("recustion function 1 to 5", n);
+
+            // it self return recursion function
+            SerialNum(n + 1)
+        };
+
+        // SerialNum(1);
+
+
+
+        //3. Recursive Function to Calculate the Sum of First n Natural Numbers;
+
+        /* 
+        let array = [1,2,3,4,5];
+        let sumArray = 0;
+
+        array.forEach((i) => {
+            sumArray += i
+        })
+        console.log(sumArray); */
+
+
+        function RecursionSum(n) {
+            // base case
+            if(n === 0){
+                return 0;
+            };
+
+            return n + RecursionSum(n - 1)
+        }
+
+        let res = RecursionSum(5)
+        // console.log(res);
+
+
+        // 4.Recursive Function to Calculate Factorial of n
+
+        /* let rangeNum = 5;
+        let FactrialSum = 1;
+
+        for(let i = rangeNum; i > 1; i--){
+            FactrialSum *= i
+        }
+        console.log(FactrialSum);
+         */
+
+         function FactorialSum(n) {
+            // base case 
+            if(n === 1 || n === 0){
+                return 1;
+            }
+
+            return n * FactorialSum(n - 1)
+         };
+
+        //  console.log(FactorialSum(5));
+
+
+
+        // 5.Recursive Function to Calculate Fibonacci Sequence
+        
+        /* 
+        let f1 = 0, f2 = 1, Fibonacci;
+
+        for(let i= 1; i <= 10; i++){
+            console.log(f1)
+            Fibonacci = f1 + f2;
+            f1 = f2;
+            f2 = Fibonacci
+        }; */
+
+
+        // function 1
+        function Fibonacci(n) {
+            // base case 1
+            if(n === 0){
+                return 0
+            }
+
+            // base case 2
+            if(n === 1){
+                return 1;
+            }
+
+            // number 1 add number 2
+            return Fibonacci(n - 1) + Fibonacci(n - 2);
+        };
+
+        // function 2
+        function printFibonacciSequence(n) {
+            for(let i = 0; i < n ; i++){
+                console.log(Fibonacci(i))
+            }
+        };
+        
+        // printFibonacciSequence(10);
+
+
+
+
+
+    </script>
+</body>
+</html>

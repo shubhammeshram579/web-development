@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="formStyle.css">
+</head>
+
+<body>
+    <h1 id="heading">form styling</h1>
+
+
+    <form id="formbody" action="">
+        <div>
+            <p> FirstName: <input type="text" name="firstName" placeholder="ender firstname" required></p>
+            <p>LastName: <input type="text" name="LasttName" placeholder="ender lastname" required></p>
+        </div>
+        <div>
+            <p>Contract: <input type="number" name="contract" placeholder="ender number" required></p>
+            <p>Email: <input type="email" name="email" placeholder="ender name" required></p>
+        </div>
+        <div>
+            <p>City: <select name="city" id="city">
+                <option value="">select city</option>
+                <option value="pune">pune</option>
+                <option value="nagpur">nagpur</option>
+            </select></p>
+        </div>
+        <p>Address: <textarea name="address" id="address"></textarea></p>
+        <div>
+            <input id="btn" type="submit">
+            <input class="restebtn" type="reset">
+        </div>
+    </form>
+</body>
+
+</html>

@@ -25,6 +25,7 @@ import { useSelector } from "react-redux";
 
 // admin page
 import Admin from "./RoutingInReact/Admin/Admin.jsx"
+import Users from "./RoutingInReact/Admin/Pages/Users/Users.jsx"
 import CreatePets from "./RoutingInReact/Admin/Pages/CreatePets/CreatePets.jsx"
 import PetsAdoption from "./RoutingInReact/Admin/Pages/PetsAdoption/PetsAdoption.jsx"
 
@@ -54,6 +55,7 @@ const PetsApp = () => {
 
         <Route path='/AdminLogin' element={<AdminLogin />} />
         <Route path='/AdminPage' element={<AdminHomepage />} />
+        <Route path='/Users' element={<Users />} />
         <Route path='/AdminChart' element={<Admin />} />
         <Route path='/PetsAdoption' element={<PetsAdoption />} />
         <Route path='/CreatePets' element={<CreatePets />} />
@@ -67,3 +69,6 @@ const PetsApp = () => {
 }
 
 export default PetsApp
+
+
+// https://chatgpt.com/share/67bf7fae-2154-800c-9976-c1c7934b9b5e
