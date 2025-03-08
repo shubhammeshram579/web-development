@@ -62,6 +62,16 @@ const Header = () => {
                 id="navItemss"
                 className="nav-link"
                 style={{ fontSize: "20px" }}
+                to="/PetsAdoptionApprowR"
+              >
+                Pets Adoption Requiest
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                id="navItemss"
+                className="nav-link"
+                style={{ fontSize: "20px" }}
                 to="/Product"
               >
                 Shop

@@ -1,15 +1,24 @@
 import React ,{useState,useEffect,useContext} from 'react'
-import { useParams,Link } from 'react-router-dom'
+import { useParams,Link ,useNavigate} from 'react-router-dom'
 import UserContext from "..//../ContexApi/UsedContexApi.js"
-import {useSelector} from "react-redux"
+import {useSelector,useDispatch} from "react-redux"
+import {adoptionReq} from "..//..//..//../ReduxStrore/AuthSlic.js"
 
 
 const AdoptionPayment = () => {
     const {postId} = useParams()
     const {products2} = useContext(UserContext);
     const [product ,setProduct] = useState([])
+    const [petName, setPetName] = useState("")
     const [gstamt ,setGstAmt] = useState(0);
     const [totalamt,setTotalamt] = useState(0)
+
+    const [formInpute ,setFormInpute] = useState({})
+    const [formData ,setFormData] = useState([]);
+
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
     const currentuser = useSelector((state) => state.auth.user)
 
     useEffect(() => {
@@ -29,11 +38,35 @@ const AdoptionPayment = () => {
         // console.log(gstCal);
         setGstAmt(gstCal)
         setTotalamt(i.price + gstCal);
+        setPetName(i.name)
 
     })
    },[product])
 
-//    console.log(currentuser)
+//    console.log(product)
+
+// form hendaling
+
+const HandelChange = (e) => {
+    const {name,value} = e.target;
+    setFormInpute((values) => ({...values, [name]:value}))
+}
+
+const handelSumbit = (e) => {
+    e.preventDefault();
+    const adoptionReqdata = {formInpute:formInpute,product:product,currentuser:currentuser, status:false}
+    setFormData(adoptionReqdata);
+    dispatch(adoptionReq(adoptionReqdata));
+    alert("adoption request send succefully you get notifiction soon")
+    setFormInpute({address:"",city:"",state:"",pincode:"",message:""})
+    navigate("/PetsAdoptionApprowR")
+    
+    
+}
+
+// console.log(formData)
+
+
 
 if(!currentuser){
     return (
@@ -43,29 +76,37 @@ if(!currentuser){
 
     
   return (
-    <div style={{minHeight:"100vh" ,paddingTop:"200px"}} className='bg-dark'>
+    <div style={{minHeight:"100vh" ,paddingTop:"120px"}} className='bg-dark'>
     <div style={{display:"flex" ,alignItems:"start",justifyContent:"space-between",padding:"5px 100px"}}>
       <div className="page1 p-5"  style={{width:"50%"}}>
         <div>
-            <h1>Customers</h1>
-            <p>{currentuser ? (currentuser.email) : ("login first")}</p>
+            <h1>SHELTER PARENT</h1>
+            <p>Email: {currentuser ? (currentuser.email) : ("login first")}</p>
+            <p>Phone: 18797197471</p>
         </div>
         <div >
-            <h1 style={{padding:"10px 0px"}}>Shipping Address</h1>
-            <form style={{display:"flex" ,alignItems:"center",justifyContent:"space-between", width:"80%", flexWrap:"wrap" ,gap:"29px" ,paddingTop:"20px"}} action="">
+            <h1 style={{padding:"10px 0px"}}>SHELTER ADDRESS</h1>
+            <form onSubmit={handelSumbit} style={{display:"flex" ,alignItems:"center",justifyContent:"space-between", width:"80%", flexWrap:"wrap" ,gap:"29px" ,paddingTop:"20px"}} action="">
                 <label htmlFor="#">
-                    Address <input type="text" name='address' value={"wakad"} placeholder='enter address'/>
+                    Address <input type="text" name='address' value={formInpute.address}  onChange={HandelChange} placeholder='enter address'/>
                 </label>
                 <label htmlFor="#">
-                    city <input type="text" name='city' value={"pune"} placeholder='enter city' />
+                    city <input type="text" name='city' value={formInpute.city} onChange={HandelChange} placeholder='enter city' />
                 </label>
                 <label htmlFor="#">
-                    state  <input type="text" name='state' value={"Maharashtra"} placeholder='Maharashtra' />
+                    state  <input type="text" name='state' value={formInpute.state} onChange={HandelChange} placeholder='Maharashtra' />
                 </label>
                 <label htmlFor="#">
-                    Pincode <input type="number" name='pincode' value={"441511"} placeholder='441601' />
+                    Pincode <input type="number" name='pincode' value={formInpute.pincode} onChange={HandelChange} placeholder='441601' />
                 </label>
-                <button style={{padding:"10px 30px" ,borderRadius:"20px" ,marginTop:"20px", backgroundColor:"green",border:"none" }} type='sumbit'>update address</button>
+                <button style={{padding:"10px 20px" ,borderRadius:"20px" ,marginTop:"20px", backgroundColor:"green",border:"none" }} type='sumbit'>update address</button>
+
+                <label htmlFor="message">
+                Why do you want to adopt {petName}
+                <textarea style={{marginTop:"10px"}} name="message" id="message" cols={80} rows={4} value={formInpute.message} onChange={HandelChange}  placeholder='write message' required></textarea>
+                </label>
+
+                <button style={{padding:"10px 50px" ,borderRadius:"20px",backgroundColor:"orange",border:"none"}} type='sumbit'>Adoption Request</button>
             </form>
         </div>
 
@@ -73,7 +114,7 @@ if(!currentuser){
       {product.map((product) => (
       <div key={product.id} className="page2 bg-dark" style={{width:"50%" ,padding:"48px 100px"}}>
         <div style={{display:"flex", alignItems:"center",justifyContent:"space-between", borderBottom:"1px solid #fff"}}>
-            <h1>ORDER SUMMARY </h1>
+            <h1>PETS </h1>
             <h5>edit card</h5>
         </div>
         
@@ -98,7 +139,6 @@ if(!currentuser){
        ))}
       
     </div>
-    <button style={{padding:"10px 50px" ,borderRadius:"20px",marginLeft:"140px",backgroundColor:"orange",border:"none"}} type='sumbit'>Continue payment</button>
     </div>
   )
 }

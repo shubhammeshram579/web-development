@@ -163,6 +163,52 @@
         // printFibonacciSequence(10);
 
 
+        // 6. Recursive Function to Calculate x^n (Stack Height = n)
+         // Explanation:
+        // The function power(x, n) calculates x^n recursively.
+        // The base case is when n = 0, where any number raised to the power of 0 is 1.
+        // The recursive step reduces the power n by 1 on each call, and multiplies x with the result of power(x, n - 1) until n becomes 0.
+        // This approach ensures a stack height of n, meaning the recursion will go n levels deep.
+        // For example, calling power(2, 5) will calculate 2^5 as 2 * 2 * 2 * 2 * 2 = 32.
+
+        function power(x,n){
+            // base case
+            if(n === 0){
+                return 1;
+            }
+            if(x === 0){
+                return 0;
+            }
+
+            return x * power(x, n - 1);
+        };
+
+        // console.log(power(2,5));
+
+
+        // 7.Recursive Function to Calculate 𝑥𝑛 x n (Stack Height = log𝑛 logn)
+
+        function cpower(x,n) {
+            // base case
+            if(n === 0){
+                return 1;
+            }
+            if(x === 0){
+                return 0;
+            }
+
+            if(n % 2 === 0){
+                let hafCpower = cpower(x, n / 2);
+                return hafCpower * hafCpower;
+            }else{
+                return x * cpower(x , n - 1);
+            }
+
+        };
+
+        // console.log(cpower(2,10));
+
+
 
 
 

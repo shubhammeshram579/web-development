@@ -47,7 +47,7 @@ const AdminLogin = () => {
     setUser({email,password})
     dispatch(authAdminlogin({email,password}))
     alert(`Admin login successfully`)
-    navigate("/AdminPage")
+    navigate("/HomeDashboard")
   }
 
   // console.log(user)

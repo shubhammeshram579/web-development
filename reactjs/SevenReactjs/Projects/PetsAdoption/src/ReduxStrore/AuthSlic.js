@@ -7,6 +7,7 @@ const initialState ={
     admin:null,
     user: null,
     cards: [],
+    adoptionRequest: [],
 }
 
 
@@ -33,9 +34,12 @@ const authSlice = createSlice({
         },
         removeCard: (state, action) => {
             state.cards = state.cards.filter((card) => card.id !== action.payload);
-        }
+        },
+        adoptionReq: (state, action) => {
+            state.adoptionRequest.push(action.payload);
+        },
     }
 })
 
-export const {Adminlogin,login,logout,addCard, removeCard} = authSlice.actions;
+export const {Adminlogin,login,logout,addCard, removeCard,adoptionReq} = authSlice.actions;
 export default authSlice.reducer;
