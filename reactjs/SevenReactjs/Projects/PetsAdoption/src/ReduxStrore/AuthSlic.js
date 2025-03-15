@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit"
 
 
-const initialState ={
+const initialState = {
     isLoggedIn :false,
     isAdminLoggedIn :false,
     admin:null,
@@ -38,8 +38,17 @@ const authSlice = createSlice({
         adoptionReq: (state, action) => {
             state.adoptionRequest.push(action.payload);
         },
+        removeadoptionReq: (state, action) => {
+            state.adoptionRequest = state.adoptionRequest.filter((request) => request.id !== action.payload);
+        },
+        adoptionReqAceept: (state, action) => {
+            state.adoptionRequest.map((item) => {
+                if(item.status === false){
+                    return item.status = action.payload
+                }
+        })},
     }
 })
 
-export const {Adminlogin,login,logout,addCard, removeCard,adoptionReq} = authSlice.actions;
+export const {Adminlogin,login,logout,addCard, removeCard,adoptionReq,removeadoptionReq,adoptionReqAceept} = authSlice.actions;
 export default authSlice.reducer;

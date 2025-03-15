@@ -1,16 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "..//..//../App.css";
-import Logo from "../Logo/Logo.jsx"
+import Logo from "../Logo/Logo.jsx";
 import { useSelector } from "react-redux";
-import UserLogut from "..//User/UserLogut.jsx"
-
+import UserLogut from "..//User/UserLogut.jsx";
 
 const Header = () => {
   const authStatus = useSelector((state) => state.auth.isLoggedIn);
   const authStatusAdmin = useSelector((state) => state.auth.isAdminLoggedIn);
   return (
-    <divx
+    <div
       style={{
         position: "fixed",
         top: "0",
@@ -20,8 +19,8 @@ const Header = () => {
         backgroundColor: "#191919",
       }}
     >
-      
-      <nav className="navbar navbar-expand-lg navbar-light">
+      {!authStatusAdmin ? (
+      <nav className="navbar navbar-expand-lg navbar-light" >
         <Logo />
         <button
           className="navbar-toggler bg-info"
@@ -36,9 +35,9 @@ const Header = () => {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ml-auto pr-5">
+         <ul className="navbar-nav ml-auto pr-5">
             <li className="nav-item active">
-             <Link
+              <Link
                 id="navItemss"
                 className="nav-link "
                 style={{ fontSize: "20px" }}
@@ -57,16 +56,7 @@ const Header = () => {
                 Shelters
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                id="navItemss"
-                className="nav-link"
-                style={{ fontSize: "20px" }}
-                to="/PetsAdoptionApprowR"
-              >
-                Pets Adoption Requiest
-              </Link>
-            </li>
+            
             <li className="nav-item">
               <Link
                 id="navItemss"
@@ -78,20 +68,6 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-          {/* <form className="form-inline my-2 my-lg-0">
-            <input
-              className="form-control mr-sm-2"
-              type="search"
-              placeholder="Search product"
-              aria-label="Search"
-            />
-            <button
-              className="btn btn-outline-info my-2 my-sm-0"
-              type="submit"
-            >
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form> */}
           <div className=" d-flex rounded">
             <Link
               className="nav-link text-white"
@@ -111,10 +87,18 @@ const Header = () => {
                 data-toggle="dropdown"
                 aria-expanded="false"
               >
-                <i className="ri-menu-3-line text-info"></i>
+                <i className="ri-menu-3-line text-info" ></i>
               </a>
               <div className="dropdown-menu bg-dark">
                 <Link
+                  id="navItemss"
+                  className="nav-link"
+                  style={{ fontSize: "20px" }}
+                  to="/PetsAdoptionApprowR"
+                >
+                  ARequiest
+                </Link>
+             <Link
                   id="navItemss"
                   className="nav-link"
                   style={{ fontSize: "20px" }}
@@ -130,14 +114,21 @@ const Header = () => {
                 >
                   Contract
                 </Link>
-                {!authStatus == !authStatusAdmin ? (<Link
-                 id="navItemss"
-                  className="nav-link"
-                  style={{ fontSize: "20px" }}
-                  to="/Login"
-                >
-                 Login <i id="navItemss" className="fa-solid fa-user"></i>
-                </Link>) :(<div className="d-flex align-content-center pl-2"><UserLogut /> <i id="navItemss" className="fa-solid fa-user pt-2"></i></div>)}
+                {!authStatus == !authStatusAdmin ? (
+                  <Link
+                    id="navItemss"
+                    className="nav-link"
+                    style={{ fontSize: "20px" }}
+                    to="/Login"
+                  >
+                    Login <i id="navItemss" className="fa-solid fa-user"></i>
+                  </Link>
+                ) : (
+                  <div className="d-flex align-content-center pl-2">
+                    <UserLogut />{" "}
+                    <i id="navItemss" className="fa-solid fa-user pt-2"></i>
+                  </div>
+                )}
                 <div className="dropdown-divider"></div>
                 <a className="dropdown-item text-white" href="#">
                   Something else here
@@ -147,8 +138,79 @@ const Header = () => {
           </div>
         </div>
       </nav>
-    </divx>
+      ) : (
+
+      <nav style={{display:"flex",alignItems:"center",justifyContent:"space-between" ,height:"90px"}}>
+        <div>
+          <Logo />
+        </div>
+
+        <div className="nav-item dropdown">
+              <a
+                id="navItemss"
+                style={{ fontSize: "20px" }}
+                className="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i className="ri-menu-3-line text-info" ></i>
+              </a>
+              <div className="dropdown-menu bg-dark">
+                {!authStatus == !authStatusAdmin ? (
+                  <Link
+                    id="navItemss"
+                    className="nav-link"
+                    style={{ fontSize: "20px" }}
+                    to="/Login"
+                  >
+                    Login <i id="navItemss" className="fa-solid fa-user"></i>
+                  </Link>
+                ) : (
+                  <div className="d-flex align-content-center pl-2">
+                    <UserLogut />{" "}
+                    <i id="navItemss" className="fa-solid fa-user pt-2"></i>
+                  </div>
+                )}
+                <div className="dropdown-divider"></div>
+                <a className="dropdown-item text-white" href="#">
+                  Something else here
+                </a>
+              </div>
+            </div>
+      </nav>)}
+    </div>
   );
 };
 
 export default Header;
+
+
+
+
+    {/* <form className="form-inline my-2 my-lg-0">
+            <input
+              className="form-control mr-sm-2"
+              type="search"
+              placeholder="Search product"
+              aria-label="Search"
+            />
+            <button
+              className="btn btn-outline-info my-2 my-sm-0"
+              type="submit"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form> */}
+
+          {/* <li className="nav-item">
+              <Link
+                id="navItemss"
+                className="nav-link"
+                style={{ fontSize: "20px" }}
+                to="/PetsAdoptionApprowR"
+              >
+                Pets Adoption Requiest
+              </Link>
+            </li> */}

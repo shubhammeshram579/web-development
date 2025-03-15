@@ -18,8 +18,8 @@ const AdminHomepage = () => {
           <Link to="/Users"><button style={{width:"150px", border:"none", borderRadius:"10px", padding:"10px 0px"}} className='bg-info text-light' >Users</button></Link>
           <Link to="/CreatePets"><button style={{width:"150px", border:"none", borderRadius:"10px", padding:"10px 0px"}} className='bg-info text-light' >All Pets</button></Link>
           <Link to="/AdoptionReq"><button style={{width:"150px" ,border:"none", borderRadius:"10px", padding:"10px 0px"}} className='bg-info text-light'  >Adoption Request</button></Link>
-          <Link to="/PetsAdoption"><button style={{width:"150px" ,border:"none", borderRadius:"10px", padding:"10px 0px"}} className='bg-info text-light'  >Adoption</button></Link>
-          <Link to="/AdminChart"><button style={{width:"150px", border:"none", borderRadius:"10px", padding:"10px 0px"}} className='bg-info text-light' >Report</button></Link>
+          <Link to="/AdminChart"><button style={{width:"150px", border:"none", borderRadius:"10px", padding:"10px 0px"}} className='bg-info text-light' >Pets Avl Report</button></Link>
+          <Link to="/PetsAdoption"><button style={{width:"150px" ,border:"none", borderRadius:"10px", padding:"10px 0px"}} className='bg-info text-light'  >Adoption Report</button></Link>
           <button style={{width:"150px",border:"none", borderRadius:"10px", padding:"10px 0px"}}className='bg-info text-light'  >Settings</button>
           </div>
 

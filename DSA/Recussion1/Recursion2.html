@@ -126,6 +126,28 @@
         // console.log(isSorded([10,30,40,50,60]));
 
 
+        // 5. move all "x" to the end of the string
+        function moveXToEnd(str,index= 0, result= "" , count = 0) {
+            // base case
+            if(index === str.length){
+                return result + "x".repeat(count); // Append all "x" at the end
+            }
+
+            if(str[index] === "x"){
+                count++; // Count the number of "x"
+            }else{
+                result += str[index]; // keep non- "x" characters
+            }
+
+            return moveXToEnd(str, index + 1, result, count);
+        }
+
+        console.log(moveXToEnd("axbcxd")); // "abcdxx"
+        console.log(moveXToEnd("xxxxabc")); // "abcxxxx"
+        console.log(moveXToEnd("abc")); // "abc" (no change)
+        console.log(moveXToEnd("xaxbx")); // "abxxx"
+
+
        
 
 

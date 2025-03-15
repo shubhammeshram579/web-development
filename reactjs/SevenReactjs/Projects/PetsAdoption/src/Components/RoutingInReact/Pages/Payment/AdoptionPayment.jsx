@@ -15,17 +15,36 @@ const AdoptionPayment = () => {
 
     const [formInpute ,setFormInpute] = useState({})
     const [formData ,setFormData] = useState([]);
+    // pets request acecept status
+    const [petReqS,setPetReqS] = useState({})
+    // updated form data fatch from redux toolkit
+    const [AprowForm,setAprowForm] = useState({})
 
+    // console.log(message)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const currentuser = useSelector((state) => state.auth.user)
+    const adoptionRequestdata = useSelector((state) => state.auth.adoptionRequest)
+
+
+    useEffect(() => {
+        const fatchData = async () => {
+        const response = await adoptionRequestdata.filter((i) => (i.product[0].id === parseInt(postId)));
+        console.log("ssss",response[0].formInpute.message)
+        setPetReqS(response[0].status)
+        setAprowForm(response[0].formInpute)
+    }
+
+    fatchData()
+    },[postId])
+    
+  
 
     useEffect(() => {
         const fatchData = async () => {
             const response = await products2.filter((p) => (p.id === parseInt(postId)))
             setProduct(response)
-
         }
 
         fatchData()
@@ -43,9 +62,7 @@ const AdoptionPayment = () => {
     })
    },[product])
 
-//    console.log(product)
 
-// form hendaling
 
 const HandelChange = (e) => {
     const {name,value} = e.target;
@@ -54,13 +71,12 @@ const HandelChange = (e) => {
 
 const handelSumbit = (e) => {
     e.preventDefault();
-    const adoptionReqdata = {formInpute:formInpute,product:product,currentuser:currentuser, status:false}
+    const adoptionReqdata = {id: Math.random() ,formInpute:formInpute,product:product,currentuser:currentuser, status:false}
     setFormData(adoptionReqdata);
     dispatch(adoptionReq(adoptionReqdata));
     alert("adoption request send succefully you get notifiction soon")
     setFormInpute({address:"",city:"",state:"",pincode:"",message:""})
     navigate("/PetsAdoptionApprowR")
-    
     
 }
 
@@ -88,25 +104,25 @@ if(!currentuser){
             <h1 style={{padding:"10px 0px"}}>SHELTER ADDRESS</h1>
             <form onSubmit={handelSumbit} style={{display:"flex" ,alignItems:"center",justifyContent:"space-between", width:"80%", flexWrap:"wrap" ,gap:"29px" ,paddingTop:"20px"}} action="">
                 <label htmlFor="#">
-                    Address <input type="text" name='address' value={formInpute.address}  onChange={HandelChange} placeholder='enter address'/>
+                    Address <input type="text" name='address' value={petReqS === true ? (AprowForm.address) : (formInpute.address)}  onChange={HandelChange} placeholder='enter address'/>
                 </label>
                 <label htmlFor="#">
-                    city <input type="text" name='city' value={formInpute.city} onChange={HandelChange} placeholder='enter city' />
+                    city <input type="text" name='city' value={petReqS === true ? (AprowForm.city) : (formInpute.city)} onChange={HandelChange} placeholder='enter city' />
                 </label>
                 <label htmlFor="#">
-                    state  <input type="text" name='state' value={formInpute.state} onChange={HandelChange} placeholder='Maharashtra' />
+                    state  <input type="text" name='state' value={petReqS === true ? (AprowForm.state) : (formInpute.state)} onChange={HandelChange} placeholder='Maharashtra' />
                 </label>
                 <label htmlFor="#">
-                    Pincode <input type="number" name='pincode' value={formInpute.pincode} onChange={HandelChange} placeholder='441601' />
+                    Pincode <input type="number" name='pincode' value={petReqS === true ? (AprowForm.pincode) : (formInpute.pincode)} onChange={HandelChange} placeholder='441601' />
                 </label>
                 <button style={{padding:"10px 20px" ,borderRadius:"20px" ,marginTop:"20px", backgroundColor:"green",border:"none" }} type='sumbit'>update address</button>
 
                 <label htmlFor="message">
                 Why do you want to adopt {petName}
-                <textarea style={{marginTop:"10px"}} name="message" id="message" cols={80} rows={4} value={formInpute.message} onChange={HandelChange}  placeholder='write message' required></textarea>
+                <textarea style={{marginTop:"10px"}} name="message" id="message" cols={80} rows={4} value={petReqS === true ? (AprowForm.message) : (formInpute.message)} onChange={HandelChange}  placeholder='write message' required></textarea>
                 </label>
 
-                <button style={{padding:"10px 50px" ,borderRadius:"20px",backgroundColor:"orange",border:"none"}} type='sumbit'>Adoption Request</button>
+                {petReqS === true ? (<button style={{padding:"10px 50px" ,borderRadius:"20px",backgroundColor:"orange",border:"none"}} type='sumbit'>Payment continue</button>) : (<button style={{padding:"10px 50px" ,borderRadius:"20px",backgroundColor:"orange",border:"none"}} type='sumbit'>Adoption Request</button>)}
             </form>
         </div>
 
