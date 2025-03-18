@@ -142,13 +142,29 @@
             return moveXToEnd(str, index + 1, result, count);
         }
 
-        console.log(moveXToEnd("axbcxd")); // "abcdxx"
-        console.log(moveXToEnd("xxxxabc")); // "abcxxxx"
-        console.log(moveXToEnd("abc")); // "abc" (no change)
-        console.log(moveXToEnd("xaxbx")); // "abxxx"
+        // console.log(moveXToEnd("axbcxd")); // "abcdxx"
+        // console.log(moveXToEnd("xxxxabc")); // "abcxxxx"
+        // console.log(moveXToEnd("abc")); // "abc" (no change)
+        // console.log(moveXToEnd("xaxbx")); // "abxxx"
+
+       // 6. remove duplicate characters from a string using recursion in JavaScript.
+
+       function removeDuplicate(str, index=0,seen= new Set(), result=""){
+        if(index === str.length) return result;
+
+        if(!seen.has(str[index])){
+            seen.add(str[index]);
+            result += str[index];
+        }
+
+        return removeDuplicate(str , index + 1, seen,result);
+       }
 
 
-       
+        console.log(removeDuplicate("aabbcc")); // "abc"
+        console.log(removeDuplicate("abcabc")); // "abc"
+        console.log(removeDuplicate("hello")); // "helo"
+        console.log(removeDuplicate("mississippi")); // "misp"
 
 
 

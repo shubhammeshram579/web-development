@@ -509,7 +509,7 @@ const UserContextProvider = ({children}) => {
             location: "Madhya Pradesh", 
             name: "Siamese",
             adoptionRate: "High",
-            price: 1500,
+            price: 1500.00,
             description: "Vocal and affectionate with striking blue eyes.",
             image: "https://www.petsmont.com/cdn/shop/articles/pexels-photo-357141_1200x1200.jpeg?v=1586934293"
         },

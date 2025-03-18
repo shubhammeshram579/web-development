@@ -2,7 +2,7 @@ import React ,{useState,useEffect,useContext} from 'react'
 import { useParams,Link ,useNavigate} from 'react-router-dom'
 import UserContext from "..//../ContexApi/UsedContexApi.js"
 import {useSelector,useDispatch} from "react-redux"
-import {adoptionReq} from "..//..//..//../ReduxStrore/AuthSlic.js"
+import {adoptionReq,setPaymentStatus} from "..//..//..//../ReduxStrore/AuthSlic.js"
 
 
 const AdoptionPayment = () => {
@@ -26,6 +26,8 @@ const AdoptionPayment = () => {
 
     const currentuser = useSelector((state) => state.auth.user)
     const adoptionRequestdata = useSelector((state) => state.auth.adoptionRequest)
+
+    const razorpayKey = import.meta.env.VITE_RAZORPAY_KEY;
 
 
     useEffect(() => {
@@ -82,6 +84,51 @@ const handelSumbit = (e) => {
 
 // console.log(formData)
 
+// payment razorpay
+const loadRazorpayScript = () => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = "https://checkout.razorpay.com/v1/checkout.js";
+      script.onload = () => resolve(true);
+      script.onerror = () => resolve(false);
+      document.body.appendChild(script);
+    });
+  };
+
+  const handlePayment = async () => {
+    const res = await loadRazorpayScript();
+
+    if (!res) {
+      alert("Razorpay SDK failed to load. Are you online?");
+      return;
+    }
+
+    const options = {
+      key: razorpayKey, // Replace with your Razorpay Key ID
+      amount: totalamt * 100, // Amount in paise (e.g., ₹500)
+      currency: "INR",
+      name: "Pets Adopt",
+      description: "Test Transaction",
+    //   image: "https://your-logo-url.com", // Optional
+      handler: (response) => {
+        console.log("Payment Successful:", response);
+        dispatch(setPaymentStatus("success"));
+        alert("Payment Successful!");
+      },
+      prefill: {
+        name: "Shubham Meshram",
+        email: currentuser.email,
+        contact: "999999999",
+      },
+      theme: {
+        color: "#F37254",
+      },
+    };
+
+    const razorpay = new window.Razorpay(options);
+    razorpay.open();
+  };
+
 
 
 if(!currentuser){
@@ -122,8 +169,9 @@ if(!currentuser){
                 <textarea style={{marginTop:"10px"}} name="message" id="message" cols={80} rows={4} value={petReqS === true ? (AprowForm.message) : (formInpute.message)} onChange={HandelChange}  placeholder='write message' required></textarea>
                 </label>
 
-                {petReqS === true ? (<button style={{padding:"10px 50px" ,borderRadius:"20px",backgroundColor:"orange",border:"none"}} type='sumbit'>Payment continue</button>) : (<button style={{padding:"10px 50px" ,borderRadius:"20px",backgroundColor:"orange",border:"none"}} type='sumbit'>Adoption Request</button>)}
+                {petReqS === true ? (null) : (<button style={{padding:"10px 50px" ,borderRadius:"20px",backgroundColor:"orange",border:"none"}} type='sumbit'>Adoption Request</button>)}
             </form>
+            {petReqS === true ? (<button onClick={handlePayment} style={{padding:"10px 50px" ,borderRadius:"20px",backgroundColor:"orange",border:"none", marginTop:"20px"}} >Payment continue</button>) :(null)}
         </div>
 
       </div>

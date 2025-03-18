@@ -32,6 +32,11 @@ import CreatePets from "./RoutingInReact/Admin/Pages/CreatePets/CreatePets.jsx"
 import PetsAdoption from "./RoutingInReact/Admin/Pages/PetsAdoption/PetsAdoption.jsx"
 import AdoptionReq from "./RoutingInReact/Admin/Pages/AdoptionRequest/AdoptionReq.jsx"
 
+
+// payment 
+import PaymentStatus from "./RoutingInReact/RazanPayment/PaymentStatus.jsx"
+
+
 const PetsApp = () => {
     const authStatus = useSelector((state) => state.auth.isLoggedIn);
     const authStatusAdmin = useSelector((state) => state.auth.isAdminLoggedIn);
@@ -65,6 +70,13 @@ const PetsApp = () => {
         <Route path='/PetsAdoption' element={<PetsAdoption />} />
         <Route path='/AdoptionReq' element={<AdoptionReq />} />
         <Route path='/CreatePets' element={<CreatePets />} />
+
+
+        {/* payment  */}
+        <Route path='/PaymentStatus' element={<PaymentStatus />} />
+
+
+
       </Routes>
       <Footer />
       </BrowserRouter>
