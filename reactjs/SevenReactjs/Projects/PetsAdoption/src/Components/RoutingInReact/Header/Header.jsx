@@ -46,6 +46,17 @@ const Header = () => {
                 Home <span className="sr-only">(current)</span>
               </Link>
             </li>
+
+            <li className="nav-item">
+              <Link
+                id="navItemss"
+                className="nav-link"
+                style={{ fontSize: "20px" }}
+                to="/Product"
+              >
+                FindPets
+              </Link>
+            </li>
             <li className="nav-item">
               <Link
                 id="navItemss"
@@ -54,17 +65,6 @@ const Header = () => {
                 to="/Shelters"
               >
                 Shelters
-              </Link>
-            </li>
-            
-            <li className="nav-item">
-              <Link
-                id="navItemss"
-                className="nav-link"
-                style={{ fontSize: "20px" }}
-                to="/Product"
-              >
-                Shop
               </Link>
             </li>
           </ul>
@@ -90,14 +90,14 @@ const Header = () => {
                 <i className="ri-menu-3-line text-info" ></i>
               </a>
               <div className="dropdown-menu bg-dark">
-                <Link
+                {/* <Link
                   id="navItemss"
                   className="nav-link"
                   style={{ fontSize: "20px" }}
                   to="/PetsAdoptionApprowR"
                 >
                   ARequiest
-                </Link>
+                </Link> */}
              <Link
                   id="navItemss"
                   className="nav-link"

@@ -50,25 +50,25 @@
 
         console.log(strRevece) */
 
-      /*   function reveceStr(str){
-            let strRe = ''
-            for(let i = str.length -1; i >= 0; i--){
-                strRe += str[i]
-            }
-            console.log(strRe)
-
-        }
-
-        reveceStr("shubham") */
+        /*   function reveceStr(str){
+              let strRe = ''
+              for(let i = str.length -1; i >= 0; i--){
+                  strRe += str[i]
+              }
+              console.log(strRe)
+  
+          }
+  
+          reveceStr("shubham") */
 
 
         function reverseString(str) {
             // Base case: empty string
             if (str === "") {
                 return "";
-            } 
+            }
             // Recursive call
-            return reverseString(str.slice(1)) + str[0]; 
+            return reverseString(str.slice(1)) + str[0];
         }
 
         // Example usage:
@@ -77,26 +77,26 @@
 
         // 3. find the first and last occurrence of an element (character) in a string.
 
-        function findFistAndLast(str,target,index = 0,first = -1,last = -1) {
+        function findFistAndLast(str, target, index = 0, first = -1, last = -1) {
             // base case
-            if(index === str.length){
-                return {first,last};
+            if (index === str.length) {
+                return { first, last };
             };
 
             // base case
-            if(str[index] === target){
-                if(first === -1) first = index;
+            if (str[index] === target) {
+                if (first === -1) first = index;
                 last = index;
             };
 
 
-            return findFistAndLast(str, target,index + 1,first,last);
+            return findFistAndLast(str, target, index + 1, first, last);
         }
 
 
         let str = "abcaabc";
         let target = "c";
-        let result = findFistAndLast(str,target);
+        let result = findFistAndLast(str, target);
         // console.log(`First occurrence: ${result.first}, Last occurrence: ${result.last}`);
 
 
@@ -106,18 +106,18 @@
 
         // console.log(arr.sort((a,b) => (a - b)))
 
-        function isSorded(arr,index = 0){
+        function isSorded(arr, index = 0) {
             // base case
-            if(index === arr.length -1){
+            if (index === arr.length - 1) {
                 return true;
             };
 
             // base case
-            if(arr[index] >= arr[index + 1]){
+            if (arr[index] >= arr[index + 1]) {
                 return false;
             };
 
-            return isSorded(arr , index + 1);
+            return isSorded(arr, index + 1);
         };
 
         // console.log(isSorded([1,3,4,5,6]));
@@ -127,15 +127,15 @@
 
 
         // 5. move all "x" to the end of the string
-        function moveXToEnd(str,index= 0, result= "" , count = 0) {
+        function moveXToEnd(str, index = 0, result = "", count = 0) {
             // base case
-            if(index === str.length){
+            if (index === str.length) {
                 return result + "x".repeat(count); // Append all "x" at the end
             }
 
-            if(str[index] === "x"){
+            if (str[index] === "x") {
                 count++; // Count the number of "x"
-            }else{
+            } else {
                 result += str[index]; // keep non- "x" characters
             }
 
@@ -147,24 +147,113 @@
         // console.log(moveXToEnd("abc")); // "abc" (no change)
         // console.log(moveXToEnd("xaxbx")); // "abxxx"
 
-       // 6. remove duplicate characters from a string using recursion in JavaScript.
+        // 6. remove duplicate characters from a string using recursion in JavaScript.
 
-       function removeDuplicate(str, index=0,seen= new Set(), result=""){
-        if(index === str.length) return result;
+        function removeDuplicate(str, index = 0, seen = new Set(), result = "") {
+            if (index === str.length) return result;
 
-        if(!seen.has(str[index])){
-            seen.add(str[index]);
-            result += str[index];
+            if (!seen.has(str[index])) {
+                seen.add(str[index]);
+                result += str[index];
+            }
+
+            return removeDuplicate(str, index + 1, seen, result);
         }
 
-        return removeDuplicate(str , index + 1, seen,result);
-       }
+
+        // console.log(removeDuplicate("aabbcc")); // "abc"
+        // console.log(removeDuplicate("abcabc")); // "abc"
+        // console.log(removeDuplicate("hello")); // "helo"
+        // console.log(removeDuplicate("mississippi")); // "misp"
 
 
-        console.log(removeDuplicate("aabbcc")); // "abc"
-        console.log(removeDuplicate("abcabc")); // "abc"
-        console.log(removeDuplicate("hello")); // "helo"
-        console.log(removeDuplicate("mississippi")); // "misp"
+
+        // 7. print all subsequences of a string using recursion in JavaScript.
+
+        function printSubSequences(str, index = 0, string = "") {
+            // base cash
+            if (index === str.length) {
+                console.log(string)
+                return;
+            };
+
+            // Include the current character
+            printSubSequences(str, index + 1, string + str[index]);
+
+            printSubSequences(str, index + 1, string)
+
+
+        };
+
+        // printSubSequences("abc");
+
+        // 8.  print all unique subsequences of a string using recursion in JavaScript.
+
+        function uniqueSubsecquences(str, index = 0, string = "", subseqSet = new Set()) {
+
+            // base case 
+            if(index === str.length){
+                if(subseqSet.has(string)){
+                    return
+                }else{
+                    console.log(string)
+                    subseqSet.add(string)
+                    return;
+                }
+            }
+
+            // Include the current character
+            uniqueSubsecquences(str, index + 1, string + str[index], subseqSet);
+
+
+            uniqueSubsecquences(str, index + 1, string, subseqSet);
+
+        };
+
+        // Example usage:
+        // uniqueSubsecquences("aab");
+
+
+        //9. Printing Keypad Combinations Using Recursion in JavaScript
+        const keypadMap = {
+        "2": "abc",
+        "3": "def",
+        "4": "ghi",
+        "5": "jkl",
+        "6": "mno",
+        "7": "pqrs",
+        "8": "tuv",
+        "9": "wxyz"
+    };
+
+
+
+    function printKeypadCombinations(digits, index = 0, current = "") {
+        if (index === digits.length) {
+            console.log(current); // Print the formed combination
+            return;
+        }
+
+        let letters = keypadMap[digits[index]]; // Get corresponding letters for the digit
+        
+
+        if (!letters) {
+            printKeypadCombinations(digits, index + 1, current); // Skip if digit is not in the map
+            return;
+        }
+
+        for (let char of letters) {
+            printKeypadCombinations(digits, index + 1, current + char); // Recursive call with new character
+        }
+    }
+
+    // Example usage:
+    printKeypadCombinations("23");
+
+
+
+
+
 
 
 

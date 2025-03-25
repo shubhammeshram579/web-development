@@ -12,7 +12,7 @@ import Product from "./RoutingInReact/Pages/Product.jsx"
 import Addcard from "./RoutingInReact/Pages/Addcard/Addcard.jsx"
 import ProductById from "./RoutingInReact/Pages/ProductByID/ProductById.jsx"
 import AdoptionPayment from "./RoutingInReact/Pages/Payment/AdoptionPayment.jsx"
-import PetsAdoptionApprowR from "./RoutingInReact/Pages/AdoptionRequist/PetsAdoptionApprowR.jsx"
+// import PetsAdoptionApprowR from "./RoutingInReact/Pages/AdoptionRequist/PetsAdoptionApprowR.jsx"
 import UserRegister from "./RoutingInReact/User/UserRegister.jsx"
 import UserLogin from "./RoutingInReact/User/UserLogin.jsx"
 import AdminLogin from "./RoutingInReact/Admin/AdminLogin.jsx"
@@ -33,8 +33,8 @@ import PetsAdoption from "./RoutingInReact/Admin/Pages/PetsAdoption/PetsAdoption
 import AdoptionReq from "./RoutingInReact/Admin/Pages/AdoptionRequest/AdoptionReq.jsx"
 
 
-// payment 
-import PaymentStatus from "./RoutingInReact/RazanPayment/PaymentStatus.jsx"
+
+
 
 
 const PetsApp = () => {
@@ -55,7 +55,7 @@ const PetsApp = () => {
         <Route path='/Addcard/:postId' element={authStatus ? (<Addcard />) : (<UserLogin />)} />
         <Route path='/Product/:postId' element={authStatus ? (<ProductById />) : (<UserLogin />)} />
         <Route path='/AdoptionPayment/:postId' element={authStatus ? (<AdoptionPayment />) : (<UserLogin />)} />
-        <Route path='/PetsAdoptionApprowR' element={authStatus ? (<PetsAdoptionApprowR />) : (<UserLogin />)} />
+        {/* <Route path='/PetsAdoptionApprowR' element={authStatus ? (<PetsAdoptionApprowR />) : (<UserLogin />)} /> */}
         <Route path='/Product/searchinput' element={authStatus ? (<SearchInput />) : (<UserLogin />)} />
         <Route path='/Shelters' element={authStatus ? (<SheltersPage />) : (<UserLogin />)} />
         <Route path='/Register' element={<UserRegister />} />
@@ -72,8 +72,7 @@ const PetsApp = () => {
         <Route path='/CreatePets' element={<CreatePets />} />
 
 
-        {/* payment  */}
-        <Route path='/PaymentStatus' element={<PaymentStatus />} />
+       
 
 
 

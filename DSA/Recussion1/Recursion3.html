@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ;
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            background-color: #201f1f;
+            color: yellowgreen;
+            padding: 10px;
+        }
+
+        .hading {
+            text-align: center;
+            font-weight: 500;
+            text-shadow: 1px 1px red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 class="hading">Recursion_3</h1>
+    </div>
+
+
+
+    <script>
+        //1.  Print All Permutations of a String Using Recursion in JavaScript.
+
+        function printPermutations(str, current = "") {
+
+            // base case
+            if (str.length === 0) {
+                console.log(current)
+                return;
+            }
+            for (let i = 0; i < str.length; i++) {
+                let remaining = str.slice(0, i) + str.slice(i + 1);
+                printPermutations(remaining, current + str[i])
+            }
+        }
+
+        // printPermutations("abc");
+
+
+        //2. Count Total Paths in a Maze from (0,0) to (n,m) using Recursion in JavaScript
+
+        function countPaths(n, m) {
+            // Base case: If we reach the bottom-right cell, count as one path
+            if (n === 0 && m === 0) {
+                return 1;
+            }
+
+            // If we move out of bounds, return 0
+            if (n < 0 || m < 0) {
+                return 0;
+            }
+
+            // Move either down (n-1, m) or right (n, m-1)
+            return countPaths(n - 1, m) + countPaths(n, m - 1);
+        }
+
+        // Example usage:
+        console.log(countPaths(2, 2)); // Output: 6
+
+
+    </script>
+</body>
+
+</html>

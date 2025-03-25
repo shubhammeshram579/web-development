@@ -9,6 +9,8 @@ const initialState = {
     user: null,
     cards: [],
     adoptionRequest: [],
+    petShelter: [],
+
 }
 
 
@@ -47,12 +49,16 @@ const authSlice = createSlice({
         },
         adoptionReqAceept: (state, action) => {
             state.adoptionRequest.map((item) => {
-                if(item.status === false){
-                    return item.status = action.payload
+                if(item.id === action.payload){
+                    return item.status = true;
                 }
         })},
+        petShelterAdd: (state, action) => {
+            state.petShelter.push(action.payload);
+        },
+
     }
 })
 
-export const {Adminlogin,login,logout,addCard, removeCard,adoptionReq,removeadoptionReq,adoptionReqAceept,setPaymentStatus} = authSlice.actions;
+export const {Adminlogin,login,logout,addCard, removeCard,adoptionReq,removeadoptionReq,adoptionReqAceept,setPaymentStatus,petShelterAdd} = authSlice.actions;
 export default authSlice.reducer;

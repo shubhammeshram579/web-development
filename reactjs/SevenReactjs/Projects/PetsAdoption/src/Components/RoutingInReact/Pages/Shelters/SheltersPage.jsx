@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
 
 const SheltersPage = () => {
     const [shelters ,setShelters] = useState([])
+
+    const newSelete = useSelector((state) => state.auth.petShelter);
+    console.log("newSelete",newSelete)
 
     const ShelterList = [
         {
@@ -146,9 +150,21 @@ const SheltersPage = () => {
           <h1 style={{textAlign:"center" ,backgroundColor:"#fff" ,width:"80vw" ,marginLeft:"189px" ,color:"rebeccapurple"}}>Partner Shelters</h1>
     
     <div style={{ padding:"30px 0px",display:"flex", alignItems:"center", justifyContent:"space-evenly" ,flexWrap:"wrap"}}>
-      
+    {newSelete.map((shel) => (
+        <div key={shel.id} className='d-flex align-items-start bg-dark justify-content-between' style={{height:"270px",width:"500px" ,padding:"20px" ,margin:"10px" ,gap:"20px" ,borderRadius:"10px"}}>
+            <div>
+                <img height={150} width={150} style={{borderRadius:"100%",objectFit:"cover"}} src={shel.product[0].image} alt={shel.product[0].name} />
+            </div>
+            <div>
+            <h3>{shel.product[0].name}</h3>
+            <p>{shel.formInpute.address}</p>
+            <p>999999999</p>
+            <p>{shel.product[0].description}</p>
+            </div>
+        </div>
+      ))}
       {shelters.map((shel) => (
-        <div key={shel.id} className='bg-dark d-flex align-items-start justify-content-between' style={{height:"270px",width:"500px" ,padding:"20px" ,margin:"10px" ,gap:"20px" ,borderRadius:"10px"}}>
+        <div key={shel.id} className='d-flex align-items-start bg-dark justify-content-between' style={{height:"270px",width:"500px" ,padding:"20px" ,margin:"10px" ,gap:"20px" ,borderRadius:"10px"}}>
             <div>
                 <img height={150} width={150} style={{borderRadius:"100%",objectFit:"cover"}} src={shel.image} alt={shel.name} />
             </div>

@@ -2,7 +2,7 @@ import React ,{useState,useEffect,useContext} from 'react'
 import { useParams,Link ,useNavigate} from 'react-router-dom'
 import UserContext from "..//../ContexApi/UsedContexApi.js"
 import {useSelector,useDispatch} from "react-redux"
-import {adoptionReq,setPaymentStatus} from "..//..//..//../ReduxStrore/AuthSlic.js"
+import {adoptionReq,setPaymentStatus,petShelterAdd} from "..//..//..//../ReduxStrore/AuthSlic.js"
 
 
 const AdoptionPayment = () => {
@@ -19,8 +19,8 @@ const AdoptionPayment = () => {
     const [petReqS,setPetReqS] = useState({})
     // updated form data fatch from redux toolkit
     const [AprowForm,setAprowForm] = useState({})
+    const [ReqApprow,setReqApprow] = useState({})
 
-    // console.log(message)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -29,20 +29,25 @@ const AdoptionPayment = () => {
 
     const razorpayKey = import.meta.env.VITE_RAZORPAY_KEY;
 
+    
 
+
+    // fatch adoption request appeover data from redux
     useEffect(() => {
         const fatchData = async () => {
         const response = await adoptionRequestdata.filter((i) => (i.product[0].id === parseInt(postId)));
-        console.log("ssss",response[0].formInpute.message)
+        console.log("ssss",response)
         setPetReqS(response[0].status)
         setAprowForm(response[0].formInpute)
+        setReqApprow(response[0])
     }
 
     fatchData()
     },[postId])
     
-  
+  // console.log("ReqApprow",ReqApprow)
 
+    // fatch cantexAp data
     useEffect(() => {
         const fatchData = async () => {
             const response = await products2.filter((p) => (p.id === parseInt(postId)))
@@ -53,6 +58,8 @@ const AdoptionPayment = () => {
 
     },[postId])
 
+
+    // gst and pet shelter price calculation
    useEffect(() => {
     product.filter((i) => {
         let gstCal = i.price * 18 / 100;
@@ -65,12 +72,13 @@ const AdoptionPayment = () => {
    },[product])
 
 
-
+// handel inpute form
 const HandelChange = (e) => {
     const {name,value} = e.target;
     setFormInpute((values) => ({...values, [name]:value}))
 }
 
+// handel btn for request send pet adopetion
 const handelSumbit = (e) => {
     e.preventDefault();
     const adoptionReqdata = {id: Math.random() ,formInpute:formInpute,product:product,currentuser:currentuser, status:false}
@@ -78,11 +86,10 @@ const handelSumbit = (e) => {
     dispatch(adoptionReq(adoptionReqdata));
     alert("adoption request send succefully you get notifiction soon")
     setFormInpute({address:"",city:"",state:"",pincode:"",message:""})
-    navigate("/PetsAdoptionApprowR")
+    navigate("/Addcard/:postId")
     
 }
 
-// console.log(formData)
 
 // payment razorpay
 const loadRazorpayScript = () => {
@@ -95,6 +102,7 @@ const loadRazorpayScript = () => {
     });
   };
 
+  
   const handlePayment = async () => {
     const res = await loadRazorpayScript();
 
@@ -113,17 +121,21 @@ const loadRazorpayScript = () => {
       handler: (response) => {
         console.log("Payment Successful:", response);
         dispatch(setPaymentStatus("success"));
+        dispatch(petShelterAdd(ReqApprow));
         alert("Payment Successful!");
+        navigate("/Shelters")
       },
       prefill: {
         name: "Shubham Meshram",
         email: currentuser.email,
-        contact: "999999999",
+        contact: "7038956822",
       },
       theme: {
         color: "#F37254",
       },
     };
+
+   
 
     const razorpay = new window.Razorpay(options);
     razorpay.open();
@@ -141,7 +153,7 @@ if(!currentuser){
   return (
     <div style={{minHeight:"100vh" ,paddingTop:"120px"}} className='bg-dark'>
     <div style={{display:"flex" ,alignItems:"start",justifyContent:"space-between",padding:"5px 100px"}}>
-      <div className="page1 p-5"  style={{width:"50%"}}>
+      <div className="p-5 page1"  style={{width:"50%"}}>
         <div>
             <h1>SHELTER PARENT</h1>
             <p>Email: {currentuser ? (currentuser.email) : ("login first")}</p>
@@ -176,7 +188,7 @@ if(!currentuser){
 
       </div>
       {product.map((product) => (
-      <div key={product.id} className="page2 bg-dark" style={{width:"50%" ,padding:"48px 100px"}}>
+      <div key={product.id} className="bg-dark page2" style={{width:"50%" ,padding:"48px 100px"}}>
         <div style={{display:"flex", alignItems:"center",justifyContent:"space-between", borderBottom:"1px solid #fff"}}>
             <h1>PETS </h1>
             <h5>edit card</h5>
