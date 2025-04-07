@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>interview preparation</h1>
+
+    <script>
+        // 1. what is javascript ?
+        // 2. what is varible?
+
+        // example
+
+        var a = 10; // str , num, bigit , symple, null , undifind , boolean
+
+        // 3. what is types of varible in js?
+        var str = "it is function scoped and it is old version es5 and it updated varible";
+        let str2 = "it is block scoped and it is new version es6 and it not updated varible";
+        const str3 = "it is block scoped and it is new vesion es6 and it is not updatedble it fixed varible";
+
+        // example block scoped vs function scooed
+
+       function varE() {
+        for(var i = 0; i < 10; i++){
+            console.log(i)
+        }
+        console.log(i)
+       }
+
+        // varE();
+
+       function LetE() {
+        for(let i = 0; i < 10; i++){
+            console.log(i)
+        }
+        console.log(i)
+       }
+
+        //  LetE();
+
+        // 4. what is datatypes?
+        // two type of datatypes like primetive and non-primetive 
+
+        // i. primitive : Number , Boolean ,string , null , undefined , Symbol , BigInt
+        // ii. non-primitive : (), {}, [],
+
+
+        // 5. what is opraters? 
+        //armitic oprater is like + - / * // ** %
+        //asingh oprater is like += -= 
+        // compration oprater >= <= > < == === 
+        // logical oprater && || != 
+
+        // eaxmple
+
+        let a1 = 10;
+        let b1 = 20;
+        let add = a1 * b1; //+ - / * // ** %
+        // console.log(add)
+
+
+
+        // 6. waht is huisting?
+        // housting meas before varible decleation used on top like like print or return 
+
+        // exple
+
+        console.log(user);
+        var user;
+        user = "shubham";
+        console.log(user);
+
+
+        // 7. what is condition statment? 
+
+        // condition state is giving the outoute as boolean like true and false
+
+        // example 
+        let color = "green"
+        if(color === "red"){
+            console.log("color is red")
+        }else{
+            console.log("color is not red")
+        };
+
+        // how many tyoe of candition statement
+        // if else , if else if else , tenetiry oprater ,  logical oprater and switch oprater
+
+
+        // if else if else
+        let time = 5;
+        if(time === 12){
+            console.log("time is 12 pm")
+        }else if(time === 5){
+            console.log("time is  5 am")
+        }else{
+            console.log("other time zone")
+        };
+
+
+        // tenetiry oprater
+        let user2 = "shubham";
+        console.log(user2 === undefined ? "user name is empty": "username is not empty");
+
+        
+        // logical oprater
+        let shubham = null;
+        let labham = undefined;
+        console.log(shubham === null || labham === undefined ? "both are null and undinf": "not null end empty" );
+
+
+        // switch oprater
+        let itmes = "banana";
+
+        switch(itmes){
+            case "banana":
+                console.log("it is fruits")
+                break
+            case "mouse":
+                console.log("it is machine");
+                break
+            default:
+                console.log("other items")
+        };
+
+        // what is loops? 
+        // loops is print of reperd value or element
+
+        // how many type of loops. for loop , while loops,do while loop, forEach loop , for in loops , of loops
+
+        // for loops
+        // for(let i = 0; i< 10; i++){
+        //     console.log(i)
+        // };
+
+        // for(let i = 10; i> 0; i--){
+        //     console.log(i)
+        // }
+
+        let sum = 0
+        for(let i = 0; i< 10; i++){
+            sum += i
+        };
+
+        // console.log(sum)
+
+        let storeArray = []
+        for(let i = 0; i< 10; i++){
+            storeArray.push(i)
+        };
+
+        // console.log(storeArray)
+
+
+        let storeStr = ''
+        for(let i = 0; i< 10; i++){
+            storeStr += i
+        };
+
+        // console.log(storeStr);
+
+
+        // print factial sum
+
+        let faciralSum = 1;
+        for(let i = 1; i < 5; i++){
+            faciralSum *= i
+        };
+
+        // console.log(faciralSum)
+
+
+        // print faboncci series
+
+        let f1 = 0, f2 = 1, fabboncci;
+        for(let i = 0; i < 10; i++){
+            console.log(f1)
+            fabboncci = f1 + f2
+            f1 = f2
+            f2 = fabboncci
+        };
+
+        // polidrome 
+
+        let ProdromStr = "madam"
+        let isPram = true
+
+        for(let i = 0; i< ProdromStr.length / 2;i++){
+            if(ProdromStr[i] !== ProdromStr[ProdromStr.length - 1 - i]){
+                isPram = false
+            }
+        };
+
+        // console.log(isPram ? "true": "false");
+
+
+        // while loops
+
+        let whTest = 0;
+
+        // while(whTest <= 10){
+        //     console.log("shubham")
+        //     whTest += 1
+        // };
+
+
+        let array = [1,2,3,554,5,6,7];
+
+
+        let arraySum = 0;
+        array.forEach((i) => {
+            arraySum += i
+        })
+
+        console.log("arraySum",arraySum);
+
+        // console.log(Math.max(...array));
+
+        let max = array[0];
+
+        array.forEach((i) => {
+            if(i > max){
+                max = i
+            }
+        })
+
+        console.log(max);
+
+        console.log(array.sort((a, b)=> (b - a)))
+        console.log(array.filter((i) => (i > 5)))
+
+
+        let sumTotal = array.reduce((a,total) => (a + total))
+
+        console.log(sumTotal)
+
+        let newArray = array.map((i) => {
+            if(i === 554){
+                return 10;
+            }
+            return i
+        });
+
+        console.log(newArray)
+
+
+
+        // for(let i of array){
+        //     console.log(i)
+        // }
+
+        // for(let i in array){
+        //     console.log(array[i])
+        // };
+        
+
+        // what is function?
+
+        // add a + b 
+
+        function ab(a, b){
+            return a + b
+        };
+
+        console.log(ab(10,20));
+
+
+        let ab2 = function(a){
+            return function(b){
+                return a + b;
+            }
+        }
+
+        let res = ab2(100)(200);
+        console.log(res);
+
+
+        // function consterction(){
+        //     this.name = "shubham",
+        //     this.age = 27;
+        // }
+
+        // let obj = new consterction();
+        // let obj2 = new consterction();
+        // console.log(obj.age);
+        // console.log(obj2.name);
+
+
+        function demo(){
+            console.log(this.name)
+        }
+
+
+        let obkec = {
+            name: "labham"
+        }
+
+        // demo.call(obkec,123,44)
+        // demo.apply(obkec,[20,2])
+        let stor = demo.bind(obkec)
+        stor();
+
+
+
+        // iffe
+        (
+            function(){
+                console.log("hello shubham")
+            }
+        )();
+
+
+        // array function 
+
+        let arraiF1 = (a,b) => {
+            console.log(`hello i am array function ${a + b}`)
+            
+        }
+
+        arraiF1(10,20);
+
+
+        // closer fun
+
+        function outerF(a){
+            return function inner(b){
+                return a + b
+            }
+
+        };
+
+        let resw = outerF(10)(200)
+        console.log(resw);
+
+
+        function outerFF(){
+            let name = "slshlfhl"
+            return function inner(){
+                console.log(name)
+            }
+            return inner
+        }
+
+        let sss = outerFF();
+        sss();
+
+
+
+        // promise 
+
+        let data = "this is mouse";
+
+        let resPs = new Promise((res,rej) => {
+            setTimeout(() => {
+                res(data)
+            },3000)
+        })
+
+        resPs.then(() => {
+            console.log(data)
+        }).catch(() => {
+            console.log("sothing error")
+        })
+
+
+
+        let asWa = async () => {
+            let response = await data;
+            console.log(response)
+        };
+
+        asWa();
+
+
+
+        let array6 = [12,44,6];
+        let array7 = [13,3,6];
+
+        // sprete oprater
+        let marge = [...array6,...array7];
+        console.log(marge);
+
+        // rest oprater
+        let sprete = (a,b,...c) => {
+            console.log(`this a: ${a} and b: ${b} an dthis c:${c}`)
+        }
+
+        sprete(10,30,2344,444);
+
+
+
+        let pakarray = [2,44,66,22,553];
+
+        let [ar,bg,...dff] = pakarray;
+
+        console.log(ar)
+        console.log(bg)
+        console.log(dff)
+
+
+        
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

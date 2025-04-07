@@ -203,6 +203,48 @@ let res2 = user !== undefined ? users2 : "user is not defind";
 console.log(res2);
 
 
+// 12.Question: How can you use && (logical AND) to conditionally execute code if two conditions are true ? Answer :
+
+// example1 if else way
+let colors  = "red";
+let colors2 = "green";
+
+if(colors === "red" && colors2 === "green"){
+    console.log(`both are colors match`)
+}else{
+    console.log("color is not match")
+}
+
+
+// example2 ternary way
+console.log(colors === "red" && colors2 === "green" ? "both is match" : "color is not match");
+
+
+// 13.Question: How can you use || (logical OR) to assign a fallback value if a condition is false ? Answer :
+
+let employee = "shubham";
+let currentEmp = employee || "other employee"
+console.log(currentEmp)
+
+
+// 14.Question: How can you use a nested if statement to check multiple conditions inside a loop ? Answer :
+
+for(let i = 1; i <= 20; i++){
+    if(i % 2 === 0){ // first condition check odd end even value
+        if(i > 12){ // second condition check greter the number values
+            console.log(i)
+        }
+    }
+};
+
+
+// 15.Question: How do you use a ternary operator to check if a value is null and assign a fallback value ? Answer :
+
+let mouse;
+console.log(mouse !== undefined ? mouse : "value is not assign" )
+
+
+
 
 
 
