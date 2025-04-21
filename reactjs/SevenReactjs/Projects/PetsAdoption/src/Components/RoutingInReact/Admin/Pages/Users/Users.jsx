@@ -1,8 +1,11 @@
 import { color } from 'chart.js/helpers';
 import React, { useEffect, useState } from 'react'
+import { Button } from 'react-bootstrap';
 
 const Users = () => {
     const [usersData ,setUserData] = useState([])
+    const [search,setSearch] = useState("")
+    const [isShow ,setIsShow] = useState(false)
 
     let userslist = [
         {
@@ -107,6 +110,8 @@ const Users = () => {
         },
     ];
 
+    
+
 
     useEffect(() => {
         const fatchData = async () => {
@@ -122,7 +127,28 @@ const Users = () => {
         fatchData();
     } ,[])
 
-    console.log(usersData)
+
+
+
+
+    // search users
+    const HanselSerch = () => {
+            const regex = new RegExp(search , "i");
+            const response = usersData.filter((item) => {
+                const matchQuery = regex.test(item.name)
+                return matchQuery 
+            })
+            setUserData(response)
+            setIsShow(true)
+    }
+
+    // clear filter
+    const HandeleClearF = () => {
+        setSearch("")
+        setIsShow(false)
+        setUserData(userslist)
+    }
+
   return (
     <div style={{paddingTop:"100px",minHeight:"100vh" ,width:"85%", marginLeft:"15%"}}>
       <div style={{display:"flex" ,alignItems:"center",justifyContent:"space-between",paddingRight:"40px", paddingLeft:"20px"}}>
@@ -130,13 +156,14 @@ const Users = () => {
             <h2>Users</h2>
         </div>
         <div>
-            <h5>Total Users : 444</h5>
-            <h5>Current Users : 234</h5>
+            <h5>Total Users : 120</h5>
+            <h5>Current Users : 50</h5>
         </div>
       </div>
       <div style={{display:"flex" ,alignItems:"center",justifyContent:"center",paddingRight:"40px",paddingTop:"50px"}}>
-        <input style={{width:"50%",height:"50px",border:"none" ,borderRadius:"10px 0px 0px 10px"}} type="text" placeholder='search users' />
-        <button style={{padding:"13px 30px",border:"none",borderRadius:"0px 10px 10px 0px"}} className='bg-info'>filter</button>
+        <input style={{width:"50%",height:"50px",border:"none" ,borderRadius:"10px 0px 0px 10px"}} type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder='search users' />
+        {isShow ? (<button onClick={HandeleClearF} style={{padding:"13px 30px",border:"none",borderRadius:"0px 10px 10px 0px"}} className='bg-info'>Clear Filter</button> ) :
+        (<button onClick={HanselSerch} style={{padding:"13px 30px",border:"none",borderRadius:"0px 10px 10px 0px"}} className='bg-info'>Search</button>)}
       </div>
 
       <div style={{marginTop:"50px"}}>

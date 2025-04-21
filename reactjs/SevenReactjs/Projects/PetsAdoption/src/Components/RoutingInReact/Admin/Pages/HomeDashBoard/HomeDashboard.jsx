@@ -1,9 +1,53 @@
-import React from 'react'
+import React ,{useContext, useEffect, useState} from 'react'
 import ShalterFess from "./ShalterFess.jsx"
 import Performace from "./Performace.jsx"
 import { Link } from 'react-router-dom'
+import UserContext from "..//..//../ContexApi/UsedContexApi.js"
 
 const HomeDashboard = () => {
+    const {products2,ShelterList} = useContext(UserContext)
+    // console.log(ShelterList)
+
+    const [totalPet ,setTotalPet] = useState({})
+    const [totalpetstype ,setTotalpetstype] = useState({})
+    const [sheleterMode ,setSheleterMode] = useState({})
+
+    
+
+
+    useEffect(() => {
+        const fatcData = () => {
+            let avabPet = products2.length - ShelterList.length;
+
+            let totalFess = 0
+            ShelterList.forEach((item) => {
+                totalFess += item.price
+            })
+
+            let CatData = products2.filter((item) => (item.type === "Cat"))
+            let DogData = products2.filter((item) => (item.type === "Dog"))
+
+            let offline = ShelterList.filter((item) => (item.sheltermode === "offline"))
+            let online = ShelterList.filter((item) => (item.sheltermode === "online"))
+
+            setSheleterMode({offlineMode:offline.length,onlineMode:online.length})
+            setTotalpetstype({cats:CatData.length, dogs:DogData.length})
+
+            setTotalPet({totalPets:products2.length , totalShelter:ShelterList.length,avabPet:avabPet,totalFess:totalFess})
+
+        }
+
+        fatcData()
+
+    },[])
+
+
+
+
+
+
+
+
   return (
     <div style={{width:"80%", minHeight:"100vh",marginLeft:"15%", paddingTop:"100px" ,padding:"100px 50px" ,backgroundColor:"#ddd"}}>
       <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
@@ -22,35 +66,35 @@ const HomeDashboard = () => {
             <p style={{textAlign:"center",fontSize:"25px"}}>Total pets</p>
             <div style={{display:"flex",alignItems:"center",justifyContent:"start" ,gap:"10px"}}>
                 <img height={50} width={50} style={{borderRadius:"100px"}} src="https://t3.ftcdn.net/jpg/05/52/19/26/360_F_552192613_1gcoRi4z2sfyheakGj6S67wAgJ19zo6g.jpg" alt="" />
-                <h3 style={{paddingLeft:"10px"}}>230</h3>
+                <h3 style={{paddingLeft:"10px"}}>{totalPet.totalPets}</h3>
             </div>
         </div>
         <div style={{backgroundColor:"#fff" ,width:"190px",color:"#111",borderRadius:"10px"}}>
             <p style={{textAlign:"center",fontSize:"25px"}}>Shelter Pets</p>
             <div style={{display:"flex",alignItems:"center",justifyContent:"start" ,gap:"10px"}}>
                 <img height={50} width={50} style={{borderRadius:"100px"}} src="https://t3.ftcdn.net/jpg/05/52/19/26/360_F_552192613_1gcoRi4z2sfyheakGj6S67wAgJ19zo6g.jpg" alt="" />
-                <h3 style={{paddingLeft:"10px"}}>140</h3>
+                <h3 style={{paddingLeft:"10px"}}>{totalPet.totalShelter}</h3>
             </div>
         </div>
         <div style={{backgroundColor:"#fff" ,width:"190px",color:"#111",borderRadius:"10px"}}>
             <p style={{textAlign:"center",fontSize:"25px"}}>availble pets</p>
             <div style={{display:"flex",alignItems:"center",justifyContent:"start" ,gap:"10px"}}>
                 <img height={50} width={50} style={{borderRadius:"100px"}} src="https://t3.ftcdn.net/jpg/05/52/19/26/360_F_552192613_1gcoRi4z2sfyheakGj6S67wAgJ19zo6g.jpg" alt="" />
-                <h3 style={{paddingLeft:"10px"}}>90</h3>
+                <h3 style={{paddingLeft:"10px"}}>{totalPet.avabPet}</h3>
             </div>
         </div>
         <div style={{backgroundColor:"#fff" ,width:"190px",color:"#111",borderRadius:"10px"}}>
             <p style={{textAlign:"center",fontSize:"25px"}}>pets shelter fee</p>
             <div style={{display:"flex",alignItems:"center",justifyContent:"start" ,gap:"10px"}}>
                 <img height={50} width={50} style={{borderRadius:"100px"}} src="https://t3.ftcdn.net/jpg/05/52/19/26/360_F_552192613_1gcoRi4z2sfyheakGj6S67wAgJ19zo6g.jpg" alt="" />
-                <h3 style={{paddingLeft:"10px"}}>35000.00</h3>
+                <h3 style={{paddingLeft:"10px"}}>{totalPet.totalFess}</h3>
             </div>
         </div>
         <div style={{backgroundColor:"#fff" ,width:"190px",color:"#111",borderRadius:"10px"}}>
             <p style={{textAlign:"center",fontSize:"25px"}}>Total users</p>
             <div style={{display:"flex",alignItems:"center",justifyContent:"start" ,gap:"10px"}}>
                 <img height={50} width={50} style={{borderRadius:"100px"}} src="https://t3.ftcdn.net/jpg/05/52/19/26/360_F_552192613_1gcoRi4z2sfyheakGj6S67wAgJ19zo6g.jpg" alt="" />
-                <h3 style={{paddingLeft:"10px"}}>539</h3>
+                <h3 style={{paddingLeft:"10px"}}>120</h3>
             </div>
         </div>
       </div>
@@ -58,7 +102,7 @@ const HomeDashboard = () => {
 
       <div>
         <div style={{paddingTop:"50px" ,display:"flex", alignItems:"start", justifyContent:"space-between"}}>
-            <ShalterFess />
+            <ShalterFess ShelterList={ShelterList} />
             <Performace />
 
             <div style={{backgroundColor:"#fff" ,height:"300px",width:"340px" ,borderRadius:"10px",color:"#111"}}>
@@ -95,11 +139,11 @@ const HomeDashboard = () => {
                 <h4 style={{paddingLeft:"10px"}}>Total Pets</h4>
                 <div style={{display:"flex" ,alignItems:"center" ,justifyContent:"space-evenly"}}>
                     <div>
-                        <h1>453</h1>
+                        <h1>{totalpetstype.cats}</h1>
                         <p>Cats</p>
                     </div>
                     <div>
-                        <h1>434</h1>
+                        <h1>{totalpetstype.dogs}</h1>
                         <p>Dog</p>
                     </div>
                     
@@ -110,11 +154,11 @@ const HomeDashboard = () => {
                 <h4 style={{paddingLeft:"10px"}}>Total Shelter</h4>
                 <div style={{display:"flex" ,alignItems:"center" ,justifyContent:"space-evenly"}}>
                     <div>
-                        <h1>345</h1>
+                        <h1>{sheleterMode.onlineMode}</h1>
                         <p>Online</p>
                     </div>
                     <div>
-                        <h1>44</h1>
+                        <h1>{sheleterMode.offlineMode}</h1>
                         <p>Offline</p>
                     </div>
                     

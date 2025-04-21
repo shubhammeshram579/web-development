@@ -1,7 +1,87 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Plot from "react-plotly.js";
 
-const ShalterFess = () => {
+const ShalterFess = ({ShelterList}) => {
+  // const [catsList, setCatsList] = useState([])
+  // const [dogList, setDogList] = useState([])
+  // const [TotalFees ,setTotalFees] = useState([])
+
+  // useEffect(() => {
+
+  //   const FatchData = () => {
+  //     let months = []
+  //     let cats = []
+  //     let dogs = []
+  //     ShelterList.filter((item) => {
+  //       months.push(item.month)
+  //       if(item.type === "Cat"){
+  //         cats.push(item.month)
+  //       }else{
+  //         dogs.push(item.month)
+  //       }
+
+  //     })
+  //     let month = [...new Set(months)];
+
+  //     // const catMonth = []
+  //     let count = {}
+  //     cats.forEach((i) => {
+  //       count[i] = (count[i] || 0) + 1;
+  //     })
+
+  //     let count2 = {}
+  //     dogs.forEach((i) => {
+  //       count2[i] = (count2[i] || 0) + 1;
+  //     })
+
+
+  //     setCatsList(Object.values(count2))
+  //     setDogList(Object.values(count))
+
+
+  //     const totalFees = []
+  //     ShelterList.filter((item) => {
+  //       let d = `${item.month}:${item.price}`
+  //       totalFees.push(d)
+       
+  //     })
+
+      
+
+  //     const result = totalFees.reduce((acc, item) => {
+  //       const [month, priceStr] = item.split(':');
+  //       const price = parseInt(priceStr, 10);
+      
+  //       acc[month] = (acc[month] || 0) + price;
+      
+  //       return acc;
+  //     }, {});
+
+  //     setTotalFees(Object.values(result))
+
+
+  //   }
+
+  //   FatchData()
+
+  // },[])
+
+
+
+  // month find 
+  let monthList = []
+  ShelterList.filter((item) => {
+    monthList.push(item.month)
+    console.log(item)
+  })
+
+  let xmonths = [...new Set(monthList)]
+
+  
+
+
+ 
+
   // X-axis labels (categories)
   const xArray = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
 

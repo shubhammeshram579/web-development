@@ -1,16 +1,22 @@
 import React from 'react'
+
+import Counter from "./Couter/Counter.jsx"
 import CountDown from "./CountDownTimer/CountDown.jsx"
 import FAQuetion from "./FAQuetions/FAQuetion.jsx"
 import EmiCalalator from "./EMICalculator/EmiCalalator.jsx"
 import CustomModalOverlay from "./CustomModal/CustomModalOverlay.jsx"
+import UndoableCounter from "./UndoableCounter/UndoableCounter.jsx"
+
 
 const AllComp = () => {
   return (
     <div>
-      <CountDown />
+      <Counter />
+      {/* <CountDown />
       <FAQuetion />
       <EmiCalalator />
-      <CustomModalOverlay /> 
+      <CustomModalOverlay />  */}
+      {/* <UndoableCounter /> */}
     </div>
   )
 }
