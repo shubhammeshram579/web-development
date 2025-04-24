@@ -245,6 +245,18 @@ console.log(mouse !== undefined ? mouse : "value is not assign" )
 
 
 
+// 16.Question: How do you use conditional statements to determine the largest of three numbers ? Answer :
+
+let first = 10 , second = 20, third = 30;
+
+if(first > second && first > third){
+    console.log("first > second and third")
+}else if(second > first && second > third){
+    console.log("second > first and third")
+}else{
+    console.log("third > first and second")
+}
+
 
 
 

@@ -7,7 +7,7 @@ const HorizontalBarCharts = () => {
 
     
   return (
-    <div style={{marginTop:"10px" ,borderRadius:"10px", backgroundColor:"green", width:"460px" ,height:"340px", overflow:"hidden"}}>
+    <div style={{marginTop:"10px" ,borderRadius:"10px", backgroundColor:"green", width:"400px" ,height:"300px", overflow:"hidden"}}>
        <Plot
         
         data = {[{
@@ -17,7 +17,7 @@ const HorizontalBarCharts = () => {
             orientation: "h",
             marker: {color:"rebeccapurple"}
           }]}
-          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#ddd", font: { color: "#111" },width: 460, height: 340, title: { text: "Category Type", font: { color: "#111" } }} }
+          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#ddd", font: { color: "#111" },width: 400, height: 300, title: { text: "Category Type", font: { color: "#111" } }} }
       />
     </div>
   )

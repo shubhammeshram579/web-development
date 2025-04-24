@@ -7,7 +7,7 @@ const PiePlot = () => {
 
     
   return (
-    <div style={{marginTop:"10px" ,borderRadius:"10px", backgroundColor:"green", width:"400px" ,height:"340px", overflow:"hidden"}}>
+    <div style={{marginTop:"10px" ,borderRadius:"10px", backgroundColor:"green", width:"350px" ,height:"300px", overflow:"hidden"}}>
        <Plot
         
         data = {[{
@@ -19,7 +19,7 @@ const PiePlot = () => {
               colors: ['#1f77b4', 'rebeccapurple', '#2ca02c']
             }
           }]}
-          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#222", font: { color: "#111" },width: 400, height: 340, title: { text: "Pet Age", font: { color: "#111" } }} }
+          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#222", font: { color: "#111" },width: 350, height: 340, title: { text: "Pet Age", font: { color: "#111" } }} }
       />
     </div>
   )

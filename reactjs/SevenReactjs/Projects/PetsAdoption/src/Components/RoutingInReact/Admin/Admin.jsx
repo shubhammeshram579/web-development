@@ -19,11 +19,13 @@ import MultiChart from "./Pages/PlotlyJs/MultiChart.jsx"
 import PetsSize from "./Pages/PlotlyJs/PetsSize.jsx"
 import TopPets from "./Pages/PlotlyJs/TopPets.jsx"
 
+import MyCalendar from "./Pages/Calender/MyCalendar.jsx"
+
 const Admin = () => {
   return (
     
-    <div style={{minHeight:"100vh",width:"80%" ,marginLeft:"15%", paddingTop:"150px"}}>
-      <div style={{display:"flex", alignItems:"center" ,justifyContent:"end" ,gap:"100px",paddingRight:"100px"}}>
+    <div style={{minHeight:"100vh",width:"87%" ,marginLeft:"13%", paddingTop:"150px" ,backgroundColor:"#dddd"}}>
+      <div style={{display:"flex", alignItems:"center" ,justifyContent:"center" ,gap:"100px",paddingRight:"100px"}}>
         <div style={{backgroundColor:"#dddd",color:"#111",padding:"2px 60px" ,borderRadius:"10px"}}>
         <h3 >Pets</h3>
         <p style={{textAlign:"center", fontSize:"1vw"}}>250</p>
@@ -37,6 +39,10 @@ const Admin = () => {
         <p style={{textAlign:"center",fontSize:"1vw"}}>210</p>
         </div>
       </div>
+
+
+      <div style={{display:"flex" ,alignItems:"start" ,justifyContent:"center", gap:"20px"}}>
+      
     <div className="card2" style={{paddingTop:"50px",display:"grid",gridTemplateColumns:"repeat(3,1fr)",gridGap: "10px",paddingLeft:"100px",paddingBottom:"100px"}}>
       {/* <LineChart />
       <BarChart />
@@ -63,8 +69,11 @@ const Admin = () => {
       
       
       {/* <MultiChart /> */}
+    
       
      
+    </div>
+    <MyCalendar />
     </div>
     </div>
   )

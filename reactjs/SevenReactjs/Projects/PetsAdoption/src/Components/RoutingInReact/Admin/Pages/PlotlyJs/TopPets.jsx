@@ -9,7 +9,7 @@ const TopPets = () => {
 
 
   return (
-    <div style={{marginTop:"10px" ,borderRadius:"10px", backgroundColor:"green", width:"430px" ,height:"340px", overflow:"hidden"}}>
+    <div style={{marginTop:"10px" ,borderRadius:"10px", backgroundColor:"green", width:"350px" ,height:"300px", overflow:"hidden"}}>
        <Plot
         data = {[{
             x: xArray,
@@ -18,7 +18,7 @@ const TopPets = () => {
             orientation:"v",
             marker: {color:"rebeccapurple"}
           }]}
-          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#ddd", font: { color: "#111" },width: 430, height: 340, title: { text: "Top Breeds", font: { color: "#111" } }} }
+          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#ddd", font: { color: "#111" },width: 350, height: 300, title: { text: "Top Breeds", font: { color: "#111" } }} }
       />
     </div>
   )

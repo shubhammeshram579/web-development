@@ -49,6 +49,8 @@ const HomeDashboard = () => {
 
 
   return (
+    <>
+    <div style={{backgroundColor:"#ddd"}}>
     <div style={{width:"80%", minHeight:"100vh",marginLeft:"15%", paddingTop:"100px" ,padding:"100px 50px" ,backgroundColor:"#ddd"}}>
       <div style={{display:"flex",alignItems:"center",justifyContent:"space-between"}}>
         <div>
@@ -194,6 +196,8 @@ const HomeDashboard = () => {
         </div>
       </div>
     </div>
+    </div>
+    </>
   )
 }
 
