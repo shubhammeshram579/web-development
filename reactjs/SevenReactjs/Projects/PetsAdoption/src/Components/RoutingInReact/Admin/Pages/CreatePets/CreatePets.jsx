@@ -8,6 +8,7 @@ const CreatePets = () => {
   const { products2 } = useContext(UserContext);
     const [formData ,setFormData] = useState({})
     const [data ,setData] = useState([]);
+    const [isShow,setIsShow] = useState(false)
 
     const HandelChange = (e) => {
         const {name,value} = e.target;
@@ -23,13 +24,28 @@ const CreatePets = () => {
 
     // console.log(data)
 
+    const HandelShow = () => {
+      setIsShow((isShow) => !isShow)
+
+    }
+
   return (
-
-    <div style={{display:"flex", alignItems:"center",justifyContent:"center" ,flexDirection:"column",marginLeft:"15%", width:"80%",paddingTop:"150px"}}>
-        <h1 style={{padding:"50px"}}>Create Pets</h1>
-      <form onSubmit={HandelSumbit} style={{display:"flex", alignItems:"center",justifyContent:"center",gap:"5px", flexWrap:"wrap", width:"70%"}}>
-
-
+    <>
+    <div style={{display:"flex", alignItems:"start",justifyContent:"center" ,flexDirection:"column",marginLeft:"15%", width:"87%",paddingTop:"100px"}}>
+        <h1 style={{padding:"50px"}}>Pets Management</h1>
+        <div style={{width:"86%",display:"flex" ,alignItems:"center" ,justifyContent:"space-between",  gap:"100px",paddingBottom:"50px"}}>
+          <div style={{display:"flex" ,alignItems:"center" ,justifyContent:"space-between",  gap:"10px",marginLeft:"60px"}}>
+          <input type="text" placeholder='Search Pets' style={{width:"20vw"}} />
+          <select name="" id="" style={{padding:"2px 20px"}}>
+            <option value="">All</option>
+            <option value="Cat">cat</option>
+            <option value="Cat">dog</option>
+            </select>
+            </div>
+            <button className='bg-info' style={{border:"none" ,borderRadius:"10px",padding:"5px"}}  onClick={HandelShow}>Create Pets</button>
+        </div>
+      {isShow && (<form onSubmit={HandelSumbit} style={{display:"flex", alignItems:"center",justifyContent:"center",gap:"5px",flexDirection:"column",marginLeft:"200px",paddingBottom:"20px"}}>
+        <div  style={{display:"flex", alignItems:"center",justifyContent:"center",gap:"20px"}}>
         <div style={{display:"flex", alignItems:"start",justifyContent:"center", flexDirection:"column"}}>
         <label htmlFor="name">PetName</label>
         <input type="text" name="name" id='name' value={formData.name} onChange={HandelChange} />
@@ -60,17 +76,18 @@ const CreatePets = () => {
 
         <div style={{display:"flex", alignItems:"start",justifyContent:"center", flexDirection:"column"}}>
         <label htmlFor="description">Description</label>
-        <textarea name="description" id="description" cols={75} rows={3}></textarea>
+        <textarea name="description" id="description" cols={60} rows={4}></textarea>
         <div style={{display:"flex", alignItems:"start",justifyContent:"center" ,gap:"10px"}}> 
         <button style={{marginTop:"20px",padding:"5px 40px" ,border:"none"}} className='bg-info text-light rounded' type='sumbit'>sumbit</button>
         <button style={{marginTop:"20px",padding:"5px 40px" ,border:"none"}} className='bg-info text-light rounded' type='reset'>reset</button>
         </div>
         </div>
-      </form>
+        </div>
+      </form>) }
      
 
 
-     <div style={{width:"100%" ,display:"flex", alignItems:"center",justifyContent:"s" ,flexWrap:"wrap",paddingTop:"100px",paddingLeft:"50px"}}>
+     <div style={{width:"100%" ,display:"flex", alignItems:"center",justifyContent:"s" ,flexWrap:"wrap",paddingTop:"10px",paddingLeft:"50px"}}>
 
      {
           data.map((product,index) => (
@@ -94,6 +111,7 @@ const CreatePets = () => {
       }
      </div>
     </div>
+    </>
   )
 }
 

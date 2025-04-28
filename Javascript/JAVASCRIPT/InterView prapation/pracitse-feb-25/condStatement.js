@@ -1,7 +1,5 @@
 console.log("conditional statement");
 
-
-
 // basic constional statement
 
 if(true){
@@ -257,7 +255,76 @@ if(first > second && first > third){
     console.log("third > first and second")
 }
 
+// 17.Question: How can you use an if-else chain to handle multiple conditions ? Answer :
 
+// example1
+let cond1 = true;
+let cond2 = false;
+
+
+if(cond1 === null){
+    console.log("value is null")
+}else if(cond2 === undefined){
+    console.log("cond2 is not defind")
+}else{
+    console.log("other condition")
+}
+
+// example 2
+
+let isStatus1 = true;
+let isStatus2 = false;
+
+if(isStatus1 === true){
+    console.log("first status is true")
+}else if(isStatus2 === false){
+    console.log("second status is false")
+}else{
+    console.log("other status is Neither")
+}
+
+// examlple3
+
+if(isStatus1 === true && isStatus2 === false){
+    console.log("both condition is true")
+}
+
+// 18.Question: How can you write an if statement that checks for both a truthy value and a specific condition ? Answer :
+
+let username = true;
+let username2 = false;
+
+if(username){
+    console.log("user is avtive")
+}else{
+    console.log("user not active")
+}
+
+
+
+
+// 19.Question: How can you use a switch statement to handle different operations based on an operator ? Answer :
+
+let nV = 10;
+let nv2 = 20;
+let operator = "*";
+let Sres = []
+
+switch (operator) {
+    case "+":
+        Sres = nV + nv2
+        break
+    case "-":
+        Sres = nV - nv2
+        break
+    case "*":
+        Sres = nV * nv2
+        break
+    default:
+        console.log("other values")
+}
+
+console.log(Sres);
 
 
 

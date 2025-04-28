@@ -72,10 +72,6 @@ const PetsApp = () => {
         <Route path='/CreatePets' element={<CreatePets />} />
 
 
-       
-
-
-
       </Routes>
       <Footer />
       </BrowserRouter>

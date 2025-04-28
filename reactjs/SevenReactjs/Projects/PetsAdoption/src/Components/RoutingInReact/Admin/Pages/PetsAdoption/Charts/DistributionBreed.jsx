@@ -8,7 +8,7 @@ const DistributionBreed = () => {
 
     
   return (
-    <div style={{marginTop:"10px" ,borderRadius:"10px", backgroundColor:"green", width:"460px" ,height:"340px", overflow:"hidden"}}>
+    <div style={{marginTop:"10px" ,borderRadius:"10px", backgroundColor:"green", width:"400px" ,height:"300px", overflow:"hidden"}}>
        <Plot
         
         data = {[{
@@ -29,7 +29,7 @@ const DistributionBreed = () => {
             marker: {color:"#1f77b4"}
           }
         ]}
-          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#ddd", font: { color: "#111" },width: 460, height: 340, title: { text: "Top Breed", font: { color: "#111" } }} }
+          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#ddd", font: { color: "#111" },width: 410, height: 300, title: { text: "Top Breed", font: { color: "#111" } }} }
       />
     </div>
   )
