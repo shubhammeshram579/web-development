@@ -3,6 +3,7 @@ import BgColor from "./EventHandel/BgColor.jsx"
 import Counter from "./EventHandel/Counter.jsx"
 import ControllComoSTD from "./EventHandel/ControllComoSTD.jsx"
 import UseForm from "./EventHandel/UseForm.jsx"
+import UseRefForm from "./EventHandel/UseRefForm.jsx"
 
 const AllEvent = () => {
     return (
@@ -12,6 +13,7 @@ const AllEvent = () => {
             <Counter />
             <ControllComoSTD />
             <UseForm />
+            <UseRefForm />
         </div>
         </>
 

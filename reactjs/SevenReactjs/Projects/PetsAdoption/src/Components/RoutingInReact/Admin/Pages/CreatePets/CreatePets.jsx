@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react'
+import React, { useState,useContext, useEffect } from 'react'
 
 
 import {Link } from "react-router-dom"
@@ -8,7 +8,37 @@ const CreatePets = () => {
   const { products2 } = useContext(UserContext);
     const [formData ,setFormData] = useState({})
     const [data ,setData] = useState([]);
+    const [pest ,setPets] = useState([]);
+    const [search ,setSearch] = useState("")
+    const [selectItem,setSelectItem] = useState("")
     const [isShow,setIsShow] = useState(false)
+    
+    
+
+
+    useEffect(() => {
+      const fatchdata = async () => {
+        try {
+
+          if(selectItem === "All"){
+            setPets(products2)
+          }else{
+              const response = await products2.filter((item) => (item.name === search && item.type === selectItem ))
+            console.log(response)
+            setPets(response)
+          }
+
+          
+          
+          
+        } catch (error) {
+          console.log(error || "something fatch data arror")
+        }
+      }
+      fatchdata()
+    },[products2,selectItem])
+
+
 
     const HandelChange = (e) => {
         const {name,value} = e.target;
@@ -22,12 +52,22 @@ const CreatePets = () => {
         setFormData({name:"",breed:"",type:"",size:"",age:"",adoptionRate:"",location:"",price:"",image:"",description:""})
     }
 
-    // console.log(data)
+
+    const Handelseach = (e) => {
+      e.preventDefault()
+
+
+     
+    }
+
+
 
     const HandelShow = () => {
       setIsShow((isShow) => !isShow)
 
     }
+
+    console.log(pest)
 
   return (
     <>
@@ -35,12 +75,13 @@ const CreatePets = () => {
         <h1 style={{padding:"50px"}}>Pets Management</h1>
         <div style={{width:"86%",display:"flex" ,alignItems:"center" ,justifyContent:"space-between",  gap:"100px",paddingBottom:"50px"}}>
           <div style={{display:"flex" ,alignItems:"center" ,justifyContent:"space-between",  gap:"10px",marginLeft:"60px"}}>
-          <input type="text" placeholder='Search Pets' style={{width:"20vw"}} />
-          <select name="" id="" style={{padding:"2px 20px"}}>
-            <option value="">All</option>
-            <option value="Cat">cat</option>
-            <option value="Cat">dog</option>
+          <input type="text" placeholder='Search Pets' style={{width:"20vw"}} value={search} onChange={(e) => setSearch(e.target.value)} />
+          <select name="" id="" style={{padding:"2px 20px"}} value={selectItem} onChange={(e) => setSelectItem(e.target.value)}>
+            <option value="All">All</option>
+            <option value="Cat">Cat</option>
+            <option value="Dog">Dog</option>
             </select>
+            
             </div>
             <button className='bg-info' style={{border:"none" ,borderRadius:"10px",padding:"5px"}}  onClick={HandelShow}>Create Pets</button>
         </div>
@@ -89,7 +130,7 @@ const CreatePets = () => {
 
      <div style={{width:"100%" ,display:"flex", alignItems:"center",justifyContent:"s" ,flexWrap:"wrap",paddingTop:"10px",paddingLeft:"50px"}}>
 
-     {
+     { 
           data.map((product,index) => (
             <Link style={{textDecoration:"none"}} to={`/Product/${product.id}`}><div key={product.id} style={{backgroundColor:"#323030" ,width:"340px" ,height:"400px" ,margin:"10px" ,borderRadius:"10px" ,paddingTop:"10px"}}>
                 <img  height={320} width={300} style={{borderRadius:"10px", objectFit:"cover",marginLeft:"20px"}} src={product.image} alt="" />
@@ -99,7 +140,17 @@ const CreatePets = () => {
             </div></Link>
         ))
       }
-      {
+
+      { products2.length >= 0 ? (
+          pest.map((product,index) => (
+            <Link style={{textDecoration:"none"}} to={`/Product/${product.id}`}><div key={product.id} style={{backgroundColor:"#323030" ,width:"340px" ,height:"400px" ,margin:"10px" ,borderRadius:"10px" ,paddingTop:"10px"}}>
+                <img  height={320} width={300} style={{borderRadius:"10px", objectFit:"cover",marginLeft:"20px"}} src={product.image} alt="" />
+         
+                <p style={{color:"#fff" ,fontSize:"1vw" , fontWeight:"500" ,textAlign:"center"}}>{product.name}</p>
+                <p style={{color:"#fff", textAlign:"center"}}>Size: {product.size}, Price: ₹{product.price}</p>
+            </div></Link>
+        ))) : (
+
           products2.map((product,index) => (
             <Link style={{textDecoration:"none"}} to={`/Product/${product.id}`}><div key={product.id} style={{backgroundColor:"#323030" ,width:"340px" ,height:"400px" ,margin:"10px" ,borderRadius:"10px" ,paddingTop:"10px"}}>
                 <img  height={320} width={300} style={{borderRadius:"10px", objectFit:"cover",marginLeft:"20px"}} src={product.image} alt="" />
@@ -108,6 +159,8 @@ const CreatePets = () => {
                 <p style={{color:"#fff", textAlign:"center"}}>Size: {product.size}, Price: ₹{product.price}</p>
             </div></Link>
         ))
+
+        )
       }
      </div>
     </div>
