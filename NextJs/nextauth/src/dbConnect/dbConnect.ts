@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 
-
+// database connection
 export async function connectDb() {
     try {
 

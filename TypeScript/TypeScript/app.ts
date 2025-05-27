@@ -532,6 +532,105 @@ class newBagMaker extends AirBagMaker{
 
 const NB1 = new newBagMaker("AirBag")
 
+// v.  readonly  properties
+
+// readonly  it help to do not updated to permisstion to updated new value
+
+
+class ReadOnlyUser {
+    constructor(public readonly username:string){
+        console.log(`username is: ${username}`)
+    }
+
+    getChangeUser() {
+        // this.username = "pallavi" //Cannot assign to 'username' because it is a read-only property.
+    }
+}
+
+const AuthAuser = new ReadOnlyUser("aachal")
+AuthAuser.getChangeUser()
+
+
+// vi getter and setter
+
+// example1
+class GSUser {
+    constructor(public name:string ,public age: number) {
+        console.log(`username: ${name} and age ${age}`)
+    }
+
+    getter() {
+        return this.name
+    }
+
+    setter(value: string) {
+        this.name = value
+    }
+}
+
+
+let GS1 = new GSUser("shubham",27)
+
+GS1.getter()
+GS1.setter("labham")
+// out: GSUser {name: 'labham', age: 27}
+
+
+
+// example2
+
+class GSUser2 {
+    constructor(public _name:string ,public age: number) {
+        console.log(`username: ${name} and age ${age}`)
+    }
+
+    get getter() {
+        return this._name
+    }
+
+    set setter(value: string) {
+        this._name = value
+    }
+}
+
+
+let GS12 = new GSUser("aachal",23)
+
+GS12.getter()
+// out: GSUser {name: 'aachal', age: 23}
+
+GS12.setter("pallavi")
+// out GSUser {name: 'pallavi', age: 23}
+
+
+
+// vii. static members
+
+// stitic is given the fucntionlity to withoud defind
+// varible of class used and run as per the your class contruction function.
+
+// example1 for class used create varible then access value 
+class StackText {
+    version = "2.00"
+}
+
+const St1 = new StackText()
+
+St1.version
+
+
+// whithoud defins varible used 
+
+class books {
+    static version = "3.00"
+
+    static  getRandomNumber() {
+        return Math.random()
+    }
+}
+
+books.version
+books.getRandomNumber()
 
 
 
