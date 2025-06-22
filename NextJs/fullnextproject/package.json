@@ -1,5 +1,5 @@
 {
-  "name": "chaiaurnextjs",
+  "name": "fullnextproject",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,15 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tabler/icons-react": "^3.31.0",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.513.0",
-    "motion": "^12.11.0",
-    "next": "15.3.2",
+    "@react-email/components": "^0.1.0",
+    "bcryptjs": "^3.0.2",
+    "mongoose": "^8.15.2",
+    "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "simplex-noise": "^4.0.3",
-    "tailwind-merge": "^3.3.0"
+    "resend": "^4.6.0",
+    "zod": "^3.25.65"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -25,11 +24,9 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "autoprefixer": "^10.4.21",
     "eslint": "^9",
-    "eslint-config-next": "15.3.2",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^3.4.17",
+    "eslint-config-next": "15.3.3",
+    "tailwindcss": "^4",
     "typescript": "^5"
   }
 }

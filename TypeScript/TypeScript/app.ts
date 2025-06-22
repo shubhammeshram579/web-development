@@ -630,7 +630,193 @@ class books {
 }
 
 books.version
-books.getRandomNumber()
+books.getRandomNumber();
+
+
+// part 4
+
+// functions
+    // function types
+    // optional and defualt parameters
+    // rest parameters
+    // overload
+
+
+// basic function declatation js
+
+function basicF() {
+    console.log("my name is basic fucntion")
+}
+basicF();
+
+
+const basicF2 = () => {
+    console.log("my name is arrow function")
+}
+
+basicF2();
+
+
+// function type in typescript
+
+function basicFT(name:string, age:number) {
+
+    console.log(`name is ${name} and age ${age}`)
+}
+
+basicFT("shubham",26);
+
+
+function basicFT2(v:any):void {
+    return v
+}
+
+console.log(basicFT2("shubham"))
+
+function basicFT3(v:string):string {
+    return v
+}
+
+console.log(basicFT3("labham"))
+
+
+function basicFT4(name:string, age:number,mouse:(any:string) => void) {
+    console.log("gondia")
+}
+
+basicFT4("labham",27,(org:string) => {
+    console.log(org)
+})
+
+// parameters
+
+function paramaters(a:string,b:string,c:number){
+    console.log(`${a} ${b} ${c}`)
+}
+
+paramaters("shubham","meshram",27);
+
+
+//rest parameter also saud argment
+function restP(a:string,b:string,...c:number[]){
+    console.log(`${a} ${b} ${c}`)
+}
+
+restP("shubham","meshram",12,444,55);
+
+
+// spreat oprater
+
+let SpTest = [12,33,55,77];
+
+const newSpreat = [...SpTest]
+
+console.log(newSpreat);
+
+
+// overLoading function
+
+// function O1T(a:string):void{
+    
+// }
+// function O2T(a:string, b:number):number;
+
+
+function overloading(a:any,b:any) {
+
+    if(typeof a === "string" && typeof b === undefined){
+        console.log("shubham")
+    }
+
+     if(typeof a === "string" && typeof b === "number"){
+        return 1234
+    }else{
+       throw new Error("error");
+       
+    }
+}
+
+// overloading("shubham",undefined)
+// overloading("shubham",1234)
+
+
+// part 5
+// Generics 
+    // generics function
+    // generics iterface
+    // genrac classes
+
+// example1
+function GericF<T>(a:T) {
+    console.log(a)
+}
+
+GericF<String>("shubham")
+GericF<number>(12)
+
+// example2
+function GericF2<H> (a:H,b:string,c:number) {
+    console.log(`${a} and ${b} and ${c}`)
+
+}
+
+
+GericF2<string>("shubham","meshram",27);
+
+
+// genric interface
+
+interface GenricInterface<H> {
+    firstName:string,
+    lastName:string,
+    age:H
+}
+
+function geric3(obj:GenricInterface<number>) {
+    console.log(`${obj.firstName} ${obj.lastName} ${obj.age} `)
+
+}
+
+geric3({firstName:"shubham",lastName:"meshram",age:27})
+
+
+
+// gernric classes
+
+class mouseMeker<T> {
+    constructor(public name:T){
+        console.log(name)
+
+    }
+}
+
+let M1 = new mouseMeker<string>("dell");
+let M2 = new mouseMeker<number>(20);
+
+
+
+// advance level genric
+
+function GenricA<T>(a:T,b:T):T {
+    return <T> "Shubham"
+
+}
+
+console.log(GenricA<string>("shubham","meshram"))
+
+
+// function GenricA2<T>(a:T,b:T):T {
+//     if(typeof a === "string"){
+//         return <T> "h"
+//     }
+
+// }
+
+// GenricA2<string>("shubham","meshram")
+
+
+
+
 
 
 

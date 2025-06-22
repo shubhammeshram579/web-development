@@ -41,17 +41,17 @@ export const sendEmail = async ({email,emailType,userId}:any) => {
                 port: 2525,
                 auth: {
                     user: "51b33767429378",
-                    pass: "****ca1a"
+                    pass: "7b3a94be24ca1a"
                 }
                 });
 
         const emailOption = {
-                from: 'shubham3211@gmail.com',
+                from: 'shubhammeshram579@gmail.com',
                 to: email,
                 subject: emailType === "VERIFY" ? "VERIFY YOUR EMAILS": "RESET YOUR PASSWORD",
-                html: `<p>Click <a href="${process.env.DOMAIN}/verifyEmail?=token${hashToken}">here</a> to ${emailType === "VERIFY" ? "verify your email": "reset your password"} 
+                html: `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashToken}">here</a> to ${emailType === "VERIFY" ? "verify your email": "reset your password"} 
                 or copy and passt brlow
-                 <br> ${process.env.DOMAIN}/verifyEmail?=token${hashToken}
+                 <br> ${process.env.DOMAIN}/verifyemail?token=${hashToken}
                 </p>`
             };
 

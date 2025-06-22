@@ -9,7 +9,7 @@
     "price": 99.99,
     "instructor": "John Doe",
     "isFeatured": true,
-    "image": "/courses/guitar.jpg"
+    "image": "https://images.pexels.com/photos/11311708/pexels-photo-11311708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "price": 89.99,
     "instructor": "Jane Smith",
     "isFeatured": false,
-    "image": "/courses/piano.jpg"
+    "image": "https://images.pexels.com/photos/8702369/pexels-photo-8702369.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     "id": 3,
@@ -29,7 +29,7 @@
     "price": 129.99,
     "instructor": "Mike Johnson",
     "isFeatured": true,
-    "image": "/courses/advanced-guitar.jpg"
+    "image": "https://images.pexels.com/photos/12741974/pexels-photo-12741974.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     "id": 4,
@@ -39,7 +39,7 @@
     "price": 79.99,
     "instructor": "Emily Davis",
     "isFeatured": false,
-    "image": "/courses/drums.jpg"
+    "image": "https://images.pexels.com/photos/13217162/pexels-photo-13217162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     "id": 5,
@@ -49,7 +49,7 @@
     "price": 59.99,
     "instructor": "Robert Lee",
     "isFeatured": true,
-    "image": "/courses/music-theory.jpg"
+    "image": "https://images.pexels.com/photos/9279441/pexels-photo-9279441.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     "id": 6,
@@ -59,7 +59,7 @@
     "price": 69.99,
     "instructor": "Anna Green",
     "isFeatured": false,
-    "image": "/courses/singing.jpg"
+    "image": "https://images.pexels.com/photos/19870456/pexels-photo-19870456/free-photo-of-trawler-on-blue-sea.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     "id": 7,

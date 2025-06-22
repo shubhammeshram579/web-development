@@ -5,6 +5,7 @@ import StickyScrolPage from "@/component/StickyScrolPage"
 import InfiniteScrolPage from "@/component/InfiniteScrolPage"
 import CardHoverEfficet from "@/component/CardHoverEfficet"
 import WavyBackgroundDemo from "@/component/WavyBackgroundDemo"
+import TreeDCard from "@/component/TreeDCard"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
      <InfiniteScrolPage />
      <CardHoverEfficet />
      <WavyBackgroundDemo />
+     {/* <TreeDCard /> */}
     </div>
     </>
   );
