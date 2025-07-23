@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 // import SearchInput from "../SearchPets/SearchInput.jsx"
 import img from "./petsDon.png"
 import Logo from "..//../Logo/Logo.jsx"
+import PetsSecond from "../HomePage/PetsSecond.jsx"
+
 
 const LandingPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,10 +22,12 @@ const LandingPage = () => {
     // "https://img.freepik.com/free-photo/sideways-cute-dog-standing_23-2148423723.jpg?t=st=1738612664~exp=1738616264~hmac=f28f06d26520f9810fd9879683d84205bc810e376687c61d31f366d1b53b451d&w=826",
     // "https://img.freepik.com/free-photo/3d-illustration-pet-with-their-owner_23-2151933571.jpg?t=st=1738612335~exp=1738615935~hmac=e71c4e3c31fbfcf2ec48a36fbfe5df8fbf372b72bfed1a4f2e21876f0c29b7bf&w=826",
     // "https://img.freepik.com/free-photo/3d-illustration-pet-with-their-owner_23-2151933565.jpg?t=st=1738148991~exp=1738152591~hmac=a034204127f842e1b202c351d8c71d69816ce3cb90d5d1e13be380fe33a0d95a&w=826",
-    "https://img.freepik.com/free-photo/adorable-looking-kitten-with-dog_23-2150886504.jpg?t=st=1738612782~exp=1738616382~hmac=3002b5530beda3e66d5d323676b1b38293492135a83ecde8ca7601e6101a6cbb&w=996",
-    "https://img.freepik.com/free-photo/view-cats-dogs-showing-friendship_23-2151806303.jpg?t=st=1738612873~exp=1738616473~hmac=35214cf7a655a0cd7dd57222cac978e25ed8ccc754ed1db173d050f3676bb9bd&w=1060",
-    "https://img.freepik.com/free-photo/3d-portrait-happy-friends_23-2150793807.jpg?t=st=1738140546~exp=1738144146~hmac=90e8e05f401b2c108e64a92da98bb2f04f575337614a08aca7cd354c4869148d&w=1060",
-    "https://img.freepik.com/free-photo/full-shot-girl-with-dog-outdoors_23-2151061850.jpg?t=st=1738140575~exp=1738144175~hmac=abc442247dfd5738e6d8204056b176f8f454a673edb82f479219804a487a2971&w=996"
+    "https://res.cloudinary.com/dsfepcba9/image/upload/v1751316601/5527355_e6otxl.jpg",
+    "https://res.cloudinary.com/dsfepcba9/image/upload/v1751318173/image2_up8qdv.jpg",
+    // "https://img.freepik.com/free-photo/adorable-looking-kitten-with-dog_23-2150886504.jpg?t=st=1738612782~exp=1738616382~hmac=3002b5530beda3e66d5d323676b1b38293492135a83ecde8ca7601e6101a6cbb&w=996",
+    // "https://img.freepik.com/free-photo/view-cats-dogs-showing-friendship_23-2151806303.jpg?t=st=1738612873~exp=1738616473~hmac=35214cf7a655a0cd7dd57222cac978e25ed8ccc754ed1db173d050f3676bb9bd&w=1060",
+    // "https://img.freepik.com/free-photo/3d-portrait-happy-friends_23-2150793807.jpg?t=st=1738140546~exp=1738144146~hmac=90e8e05f401b2c108e64a92da98bb2f04f575337614a08aca7cd354c4869148d&w=1060",
+    // "https://img.freepik.com/free-photo/full-shot-girl-with-dog-outdoors_23-2151061850.jpg?t=st=1738140575~exp=1738144175~hmac=abc442247dfd5738e6d8204056b176f8f454a673edb82f479219804a487a2971&w=996"
   
   ];
 
@@ -63,6 +67,7 @@ const LandingPage = () => {
         </div></Link>
         {/* <SearchInput /> */}
         
+        
       </h1>
       
       <div style={{ height: "90vh", width: "100%" }} className="slideshow2">
@@ -74,7 +79,7 @@ const LandingPage = () => {
             {/* {slide} Replace this with actual content or images */}
             <img
               style={{
-                height: "100vh",
+                height: "110vh",
                 width: "100%",
                 objectFit: "cover",
                 // objectPosition: "center",
@@ -86,14 +91,15 @@ const LandingPage = () => {
         ))}
       </div>
       
+      
 
 {/* addtinal  */}
       <div>
-        <div className="page1" style={{minHeight:"100vh" ,backgroundColor:"#ffffffb9"}}>
+        <div className="page1" style={{minHeight:"100vh"}}>
           <h1 style={{paddingTop:"100px" ,color:"#111", display:"flex", alignItems:"center" ,justifyContent:"center" ,marginLeft:"400px"}}>Your Pet Adoption Journey With <span><Logo /></span> </h1>
           <div className="d-flex align-items-start justify-content-around pt-5">
           <div className="card1">
-            <img height={700} src={img} alt="" />
+            <img style={{marginTop:"-100px"}} height={700} src={"https://res.cloudinary.com/dsfepcba9/image/upload/v1751318941/06_jaoqwr.jpg"} alt="" />
           </div>
           <div className="card2" style={{width:"50%"}}>
             <div>
@@ -116,12 +122,12 @@ const LandingPage = () => {
           </div>
         </div>
 
-
-        <div style={{width:"100%" ,height:"110vh" , display:"flex" ,alignItems:"center" ,justifyContent:"center"}}>
-      {/* <video style={{height:"100vh" , width:"95%", objectFit:"cover"}} autoPlay muted loop src={video}></video> */}
+<PetsSecond /> 
+        {/* <div style={{width:"100%" ,height:"110vh" , display:"flex" ,alignItems:"center" ,justifyContent:"center", backgroundColor:"#F0F1EC"}}>
+      <video style={{height:"100vh" , width:"95%", objectFit:"cover"}} autoPlay muted loop src={video}></video>
       <div style={{display:"flex" ,alignItems:"center" ,flexDirection:"column" ,justifyContent:"space-evenly"}}>
-        <h1 style={{textTransform:"capitalize" ,textAlign:"center" ,fontSize:"3vw",paddingBottom:"20px"}}>the organization goals </h1>
-        <p style={{textAlign:"center" ,fontSize:"1.2vw",width:"70%"}}> We are a passionate group of animal lovers dedicated to giving pets a
+        <h1 style={{textTransform:"capitalize" ,textAlign:"center" ,fontSize:"3vw",paddingBottom:"20px", color:"#3B2321"}}>the organization goals </h1>
+        <p style={{textAlign:"center" ,fontSize:"1.2vw",width:"70%",color:"#111" }}> We are a passionate group of animal lovers dedicated to giving pets a
           second chance. Our mission is to connect loving homes with pets in
           need of adoption. With years of experience in animal rescue, we ensure
           that each pet receives the best care, love, and attention during their
@@ -130,26 +136,26 @@ const LandingPage = () => {
       <iframe style={{padding:"50px",borderRadius:"100px"}} width="120%" height="70%" src="https://www.youtube.com/embed/Qpn1TE1AUAM?si=-pDpY-3keafbx7dU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
 
-        <div className="page2" style={{minHeight:"50vh" ,paddingTop:"100px" }}>
-          <h1 className="text-center pb-5" >How it works?</h1>
+        <div className="page2" style={{minHeight:"50vh" ,paddingTop:"100px",backgroundColor:"#F0F1EC" }}>
+          <h1 className="text-center pb-5" style={{color:"#3B2321"}} >How it works?</h1>
           <div className="card3 d-flex align-items-center justify-content-center" style={{gap:"20px"}}>
             <div className="d-flex align-items-center flex-column">
-            <i class="fa-solid fa-magnifying-glass" style={{fontSize:"50px",color:"orange"}}></i>
-            <h1>Search</h1>
-            <p>Simply enter your city start your search</p>
+            <i class="fa-solid fa-magnifying-glass" style={{fontSize:"50px",color:"#CC7229"}}></i>
+            <h1 style={{color:"#3B2321"}}>Search</h1>
+            <p style={{color:"#CC7229"}}>Simply enter your city start your search</p>
             </div>
             <div className="d-flex align-items-center flex-column">
-            <i className="fa-solid fa-handshake" style={{fontSize:"50px" ,color:"orange"}}></i>
-            <h1>Meet</h1>
-            <p>Schedule your appointment to meet the pet you love</p>
+            <i className="fa-solid fa-handshake" style={{fontSize:"50px" ,color:"#CC7229"}}></i>
+            <h1 style={{color:"#3B2321"}}>Meet</h1>
+            <p style={{color:"#CC7229"}}>Schedule your appointment to meet the pet you love</p>
             </div>
             <div className="d-flex align-items-center flex-column">
-              <img height={40} style={{borderRadius:"100px"}} src="https://img.freepik.com/free-vector/adopt-pet-illustration-theme_23-2148539293.jpg" alt="" />
-            <h1>Adopt</h1>
-            <p>Finnaly adopt the dog or cat you love</p>
+              <img height={60} style={{borderRadius:"100px", marginTop:"-10px"}} src="https://res.cloudinary.com/dsfepcba9/image/upload/v1751318941/06_jaoqwr.jpg" alt="" />
+            <h1 style={{color:"#3B2321"}}>Adopt</h1>
+            <p style={{color:"#CC7229"}}>Finnaly adopt the dog or cat you love</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* <div className="page3 text-center">
           <div>

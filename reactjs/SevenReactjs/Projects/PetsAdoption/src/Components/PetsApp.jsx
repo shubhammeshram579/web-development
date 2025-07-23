@@ -32,6 +32,8 @@ import CreatePets from "./RoutingInReact/Admin/Pages/CreatePets/CreatePets.jsx"
 import PetsAdoption from "./RoutingInReact/Admin/Pages/PetsAdoption/PetsAdoption.jsx"
 import AdoptionReq from "./RoutingInReact/Admin/Pages/AdoptionRequest/AdoptionReq.jsx"
 
+import ServicesPage from "./RoutingInReact/Pages/Servicespage/ServicesPage.jsx"
+
 
 
 
@@ -60,6 +62,7 @@ const PetsApp = () => {
         <Route path='/Shelters' element={authStatus ? (<SheltersPage />) : (<UserLogin />)} />
         <Route path='/Register' element={<UserRegister />} />
         <Route path='/Login' element={!authStatusAdmin ? (<UserLogin />) : (<AdminLogin />)} />
+        <Route path='/ServicesPage' element={!authStatusAdmin ? (<ServicesPage />) : (<AdminLogin />)} />
 
 
         <Route path='/AdminLogin' element={<AdminLogin />} />

@@ -70,3 +70,12 @@
     color: red;
 
   }
+
+
+
+  /* top product card */
+  #topproduct:hover{
+    /* background-color: rebeccapurple; */
+    transition: all 0.8s;
+    scale: 1.1;
+  }

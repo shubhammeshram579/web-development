@@ -29,7 +29,7 @@ const SheltersPage = () => {
           name: "The Bombay Society for the Prevention of Cruelty to Animals (BSPCA)",
           location: "Mumbai, Maharashtra",
           contact: "+91-22-98765432",
-          description: "Providing medical aid and shelter to stray animals.",
+          description: "Providing medical aid and shelter.",
           image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStD2jdWmBmQiU7Lz4DY_lQ1hhNyVJp50P7vA&s"
         },
         {
@@ -151,7 +151,7 @@ const SheltersPage = () => {
     
     <div style={{ padding:"30px 0px",display:"flex", alignItems:"center", justifyContent:"space-evenly" ,flexWrap:"wrap"}}>
     {newSelete.map((shel) => (
-        <div key={shel.id} className='d-flex align-items-start bg-dark justify-content-between' style={{height:"270px",width:"500px" ,padding:"20px" ,margin:"10px" ,gap:"20px" ,borderRadius:"10px"}}>
+        <div key={shel.id} className='d-flex align-items-start justify-content-between' style={{height:"270px",width:"500px" ,padding:"20px" ,margin:"10px" ,gap:"20px" ,borderRadius:"10px", backgroundColor:"#fff"}}>
             <div>
                 <img height={150} width={150} style={{borderRadius:"100%",objectFit:"cover"}} src={shel.product[0].image} alt={shel.product[0].name} />
             </div>
@@ -164,7 +164,7 @@ const SheltersPage = () => {
         </div>
       ))}
       {shelters.map((shel) => (
-        <div key={shel.id} className='d-flex align-items-start bg-dark justify-content-between' style={{height:"270px",width:"500px" ,padding:"20px" ,margin:"10px" ,gap:"20px" ,borderRadius:"10px"}}>
+        <div key={shel.id} className='d-flex align-items-start justify-content-between' style={{height:"280px",width:"500px" ,padding:"20px" ,margin:"10px" ,gap:"20px" ,backgroundColor:"#fff",border:"3px solid #1d899ab1" ,borderRadius:"15px"}}>
             <div>
                 <img height={150} width={150} style={{borderRadius:"100%",objectFit:"cover"}} src={shel.image} alt={shel.name} />
             </div>

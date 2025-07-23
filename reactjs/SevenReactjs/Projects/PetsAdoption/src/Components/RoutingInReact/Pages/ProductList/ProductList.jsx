@@ -348,18 +348,17 @@ const ProductList = ({productList}) => {
 
     */
 
-
+console.log("products2",products2)
 
   return (
-    <div style={{ backgroundColor: "#191919" }}>
+    <div  style={{padding:"20px 50px"}}>
       <div  style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-around",
-          flexWrap: "wrap"}}>
+          display: "grid",
+          gridTemplateColumns:"repeat(4,1fr)"
+          }}>
         {productList.length > 0 ? (productList.map((product,index) => (
-              <Link style={{textDecoration:"none"}} to={`/Product/${product.id}`}><div key={product.id} style={{backgroundColor:"#323030" ,width:"340px" ,height:"400px" ,margin:"10px" ,borderRadius:"10px" ,paddingTop:"10px"}}>
-                  <img  height={320} width={300} style={{borderRadius:"10px", objectFit:"cover",marginLeft:"20px"}} src={product.image} alt="" />
+              <Link style={{textDecoration:"none"}} to={`/Product/${product.id}`}><div key={product.id} style={{backgroundColor:"#fff" ,width:"400px" ,height:"400px" ,margin:"10px" ,border:"5px solid #1d899ab1" ,borderRadius:"20px"}}>
+                  <img  height={250} width={391} style={{borderRadius:"13px", objectFit:"cover"}} src={product.image} alt="" />
            
                   <p style={{color:"#fff" ,fontSize:"1vw" , fontWeight:"500" ,textAlign:"center"}}>{product.name}</p>
                   <div>
@@ -368,12 +367,28 @@ const ProductList = ({productList}) => {
               </div></Link>
           ))) : (
             products2.map((product,index) => (
-              <Link style={{textDecoration:"none"}} to={`/Product/${product.id}`}><div key={product.id} style={{backgroundColor:"#323030" ,width:"340px" ,height:"400px" ,margin:"10px" ,borderRadius:"10px" ,paddingTop:"10px"}}>
-                  <img  height={320} width={300} style={{borderRadius:"10px", objectFit:"cover",marginLeft:"20px"}} src={product.image} alt="" />
+          <div key={product.id} style={{backgroundColor:"#fff" ,width:"400px" ,height:"430px" ,margin:"10px" ,border:"5px solid #1d899ab1" ,borderRadius:"20px"}}>
+                  <img  height={250} width={392} style={{borderRadius:"13px", objectFit:"cover"}} src={product.image} alt="" />
            
-                  <p style={{color:"#fff" ,fontSize:"1vw" , fontWeight:"500" ,textAlign:"center"}}>{product.name}</p>
-                  <p style={{color:"#fff", textAlign:"center"}}>Size: {product.size}, Price: ₹{product.price}</p>
-              </div></Link>
+        
+                  <p style={{color:"#CC7229" ,fontSize:"1vw" , fontWeight:"500", padding:"0px 20px"}}>{product.name}</p>
+                  <div style={{display:"flex",alignItems:"start",flexDirection:"column" ,padding:"0px 20px"}}>
+                  <div style={{display:"flex",alignItems:"start" ,gap:"15px"}}>
+                  <p style={{color:"#111", }}> Age: {product.age}</p>
+                  <p style={{color:"#111",}}>Size: {product.size}</p>
+                  <p style={{color:"#111"}}>Rating: {product.rank}</p>
+                    </div>
+                    <div style={{display:"flex",alignItems:"start", gap:"15px"}}>
+                  {/* <p style={{color:"#111"}}>Rating:{product.rank}</p> */}
+                  <p style={{color:"#111"}}>location: {product.location}</p>
+                  </div>
+                  <div style={{display:"flex",alignItems:"center",gap:"140px"}}>
+                  <p style={{color:"#CC7229" ,fontWeight:"500"}}>Price: ₹{product.price}</p>
+                  <Link style={{textDecoration:"none"}} to={`/Product/${product.id}`}><button style={{backgroundColor:"#CC7229",padding:"5px 10px" ,border:"none",fontWeight:"600",color:"#fff", borderRadius:"10px"}}>Pet Available</button></Link>
+                  </div>
+                  
+                </div>
+              </div>
           ))
           )
         }

@@ -13,6 +13,7 @@ const Product = () => {
   const [products, setProducts] = useState([]);
 
   const [selectedPets, setSelectedPets] = useState("");
+  const [sidShow,setSidShow] = useState(false)
 
   const handelChange = (e) => {
     setSelectedPets(e.target.value);
@@ -79,27 +80,32 @@ const Product = () => {
     setProducts([])
   }
 
+  const handelsidebar = () =>{
+    setSidShow((prev) => !prev)
+  }
+
   return (
     <div>
       <SliderPage />
       {/* <SearchInput /> */}
-      <div
+      
+       <div
         style={{
           display: "flex",alignItems: "start",justifyContent: "space-between",
         }}
       >
-        <div
-          className="card1" style={{ width: "20%", height: "100vh", position: "sticky", top: "0", zIndex: "99", padding: "110px 50px", color: "#fff",
+        {sidShow &&<div
+          className="card1" style={{backgroundColor:"#dddd", width: "25%", height: "100vh", position: "sticky", top: "0", zIndex: "99", padding: "20px 20px", color: "#fff",
           }}
         >
-          <h1>
+          <h1 style={{color:"#111" ,display:"flex",alignItems:"center", paddingBottom:"50px"}}>
             Filters
             <span style={{marginLeft:"100px" ,fontSize:"1.3vw"}}><button onClick={handelClearFilter} style={{backgroundColor:"transparent" ,border:"none"}}><i id="FilterClear" className="fa-solid fa-filter-circle-xmark"></i></button></span>
           </h1>
           
           {/* <p>Select Type</p> */}
 
-          <label htmlFor="pets" className="text-info font-weight-normal">Pet Category</label>
+          <label htmlFor="pets" style={{color:"#CC7229",fontWeight:"500"}} >Pet Category</label>
           <br />
           <select style={{width:"50%",borderRadius:"5px"}} id="pets" value={selectedPets} onChange={handelChange}>
             <option value="">Select pets</option>
@@ -108,32 +114,33 @@ const Product = () => {
           </select>
 
           <ul style={{listStyleType:"none" ,paddingTop:"40px"}}>
-            <p className="text-info font-weight-normal">Select Size</p>
+            <p style={{color:"#CC7229",fontWeight:"500"}}>Select Size</p>
             <li>
-              <button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}} onClick={LargrBtn}>Large</button>
+              <button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none",backgroundColor:"#fff"}} onClick={LargrBtn}>Large</button>
             </li>
             <li>
-              <button style={{borderRadius:"5px",marginBottom:"5px",border:"none"}}  onClick={SmallBtn}>Small</button>
+              <button style={{borderRadius:"5px",marginBottom:"5px",border:"none",backgroundColor:"#fff"}}  onClick={SmallBtn}>Small</button>
             </li>
             <li>
-              <button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}}  onClick={MediumBtn}>Medium</button>
+              <button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none",backgroundColor:"#fff"}}  onClick={MediumBtn}>Medium</button>
             </li>
           </ul>
 
         <ul style={{listStyleType:"none",paddingTop:"50px"}}>
-            <p className="text-info font-weight-normal">Select Age</p>
-            <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}} onClick={AdultBtn}>Adult</button></li>
-            <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}} onClick={PuppyBtn}>Puppy</button></li>
+            <p  style={{color:"#CC7229",fontWeight:"500"}}>Select Age</p>
+            <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none",backgroundColor:"#fff"}} onClick={AdultBtn}>Adult</button></li>
+            <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none",backgroundColor:"#fff"}} onClick={PuppyBtn}>Puppy</button></li>
           </ul>
         <ul style={{listStyleType:"none",paddingTop:"50px"}}>
-            <p className="text-info font-weight-normal">Select Price</p>
-            <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}} onClick={PriceLowBtn}>price low to high</button></li>
-            <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none"}} onClick={PriceHighBtn}>price high to low</button></li>
+            <p style={{color:"#CC7229",fontWeight:"500"}}>Select Price</p>
+            <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none",backgroundColor:"#fff"}} onClick={PriceLowBtn}>price low to high</button></li>
+            <li><button style={{borderRadius:"5px",marginBottom:"5px" ,border:"none",backgroundColor:"#fff"}} onClick={PriceHighBtn}>price high to low</button></li>
           </ul>
         
-        </div>
+        </div>}
        
-        <div className="card2" style={{ width: "80%" }}>
+        <div className="card2" style={{ width: "100%",padding:"20px" }}>
+          <button onClick={handelsidebar} style={{borderRadius:"10px",border:"3px solid #1d899ab1"}}>Filter<i class="fa-solid fa-filter"></i></button>
           <ProductList productList={products} data={products2} />
         </div>
       </div>

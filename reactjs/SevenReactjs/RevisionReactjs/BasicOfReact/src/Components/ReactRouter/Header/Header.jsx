@@ -14,6 +14,8 @@ const Header = () => {
             <Link to="/allEventHan">AllEvent</Link>
             <Link to="/conditionalR">ConditionalPage</Link>
             <Link to="/ContextData">ContexApi</Link>
+            <Link to="/addCard">Redux Addcoard</Link>
+            <Link to="/todaApp">Todo List</Link>
         </div>
       </nav>
     </div>

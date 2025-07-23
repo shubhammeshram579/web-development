@@ -10,11 +10,13 @@ const connection : ConnectionObject = {}
 
 
 async function dbConnect(): Promise<void> {
+    // first check if databasses allready connected
     if(connection.isConnected){
         console.log("allreafy connection to database")
         return
     }
 
+    // connect with databses like mongodb
     try {
         const db = await mongoose.connect(process.env.MONGODB_URI || "", {})
 

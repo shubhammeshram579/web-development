@@ -4,15 +4,15 @@ const ContactPage = () => {
 
   
   return (
-    <div  style={{paddingTop:"200px" ,minHeight:"100vh"}} className="contact-page bg-dark">
+    <div  style={{paddingTop:"200px" ,minHeight:"100vh"}} className="contact-page">
       <div className="container">
         <h1 className="text-center mb-4">Contact Us</h1>
         <p className="text-center mb-5">
           Have a question or need assistance? We'd love to hear from you! Please fill out the form below or reach out to us using the contact details provided.
         </p>
-        <div className="row">
-          <div className="col-md-6">
-            <form>
+        <div className="row" style={{backgroundColor:"#FFDAB8",padding:"50px 20px",borderRadius:"10px"}}>
+          <div className="col-md-6" >
+            <form >
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">
                   Name
@@ -54,7 +54,7 @@ const ContactPage = () => {
               </button>
             </form>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6" >
             <div className="contact-details mt-4 mt-md-0">
               <h2>Our Contact Details</h2>
               <p>

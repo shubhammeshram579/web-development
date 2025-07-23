@@ -5,7 +5,7 @@ const AboutPage = () => {
   return (
     <div
       style={{ paddingTop: "100px", minHeight: "100vh" }}
-      className="about-page bg-dark"
+      className="about-page"
     >
       <div className="container">
         <h1 className="text-center mb-4 pt-5">About Us</h1>
@@ -17,19 +17,19 @@ const AboutPage = () => {
           time with us.
         </p>
         <h2 className="mb-3">Our Mission</h2>
-        <ul className="list-group mb-4">
-          <li className="list-group-item bg-info">
+        <ul className="list-group mb-4" >
+          <li className="list-group-item" style={{backgroundColor:"#FFDAB8"}}>
             To reduce the number of homeless pets by promoting adoption.
           </li>
-          <li className="list-group-item bg-dark">
+          <li className="list-group-item ">
             To educate communities on the importance of responsible pet
             ownership.
           </li>
-          <li className="list-group-item bg-info">
+          <li className="list-group-item " style={{backgroundColor:"#FFDAB8"}}>
             To provide a safe and loving environment for pets waiting for their
             forever home.
           </li>
-          <li className="list-group-item bg-dark">
+          <li className="list-group-item">
             Fast delivery and responsive customer support.
           </li>
         </ul>
@@ -38,7 +38,8 @@ const AboutPage = () => {
           style={{
             display: "grid",
             gridTemplateColumns:`repeat(3,1fr)`,
-            padding:"50px 0px"
+            padding:"50px 0px",
+           
           }}
         >
           <div>

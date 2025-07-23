@@ -12,6 +12,7 @@ import Blog from "./Blog/Blog.jsx"
 import AdoptPetPage from "./HomePage/AdopPets.jsx"
 import Services from "./HomePage/Services.jsx"
 import ReviewAdop from "./HomePage/ReviewAdop.jsx"
+import PetsSecond from "./HomePage/PetsSecond.jsx"
 
 
 
@@ -20,16 +21,17 @@ const Home = () => {
     <div>
         {/* <UserContextProvider> */}
         <LandingPage />
+        {/* <PetsSecond /> */}
         {/* <SliderPage /> */}
-        <TopProject />
-        <AdoptPetPage />
+        {/* <TopProject /> */}
+        {/* <AdoptPetPage /> */}
         {/* <Motorola /> */}
         {/* <MotoSlider /> */}
         {/* <SumsungSlider /> */}
         {/* <Sumsung /> */}
-        <Services />
-        <ReviewAdop />
-        <Blog />
+        {/* <Services /> */}
+        {/* <ReviewAdop /> */}
+        {/* <Blog /> */}
         {/* </UserContextProvider> */}
     </div>
   )

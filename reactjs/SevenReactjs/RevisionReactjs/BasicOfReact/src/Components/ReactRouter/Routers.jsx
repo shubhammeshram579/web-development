@@ -9,8 +9,15 @@ import AllEvent from "../EventHandeling/AllEvent.jsx"
 import ConditionalPage from "../ConditionalWisePage/ConditionalPage.jsx"
 import Header from "./Header/Header.jsx"
 import ContextData from "../ContexApi/ContextData.jsx"
+import AddCard from "..//..//../src/Components/ReduxAddCard/AddCard.jsx"
 
 import CreateContexDataProvider from "../ContexApi/Context/CreateContexData.jsx"
+
+
+
+import TodaApp from "../TodoList/TodaApp.jsx"
+
+
 
 
 const Routers = () => {
@@ -27,6 +34,9 @@ const Routers = () => {
             <Route path='/allEventHan' element={<AllEvent />} />
             <Route path='/conditionalR' element={<ConditionalPage  isLogin={true}/>} />
             <Route path='/ContextData' element={<ContextData />} />
+            <Route path='/addCard' element={<AddCard />} />
+            <Route path='/todaApp' element={<TodaApp />} />
+
         </Routes>
         </BrowserRouter>
         </CreateContexDataProvider>

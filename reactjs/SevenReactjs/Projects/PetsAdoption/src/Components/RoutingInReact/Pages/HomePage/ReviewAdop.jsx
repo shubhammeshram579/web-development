@@ -172,13 +172,13 @@ const ReviewAdop = () => {
       <div id="ReviewCard" style={{display:"flex" , flexWrap:"nowrap" ,alignItems:"center" ,justifyContent:"space-evenly" , flexDirection:"row",overflow:"scroll" ,gap:"40px"}}>
         {review.map((p, index) => (
           <div>
-            <div key={p.id} style={{display:"flex" , flexWrap:"nowrap" ,alignItems:"start" ,gap:"20px",width:"40vw" ,justifyContent:"space-evenly" ,backgroundColor:"#323030"}}>
+            <div key={p.id} style={{display:"flex" , flexWrap:"nowrap" ,alignItems:"start" ,gap:"20px",width:"40vw" ,justifyContent:"space-evenly" ,backgroundColor:"#fff" ,border:"3px solid #1d899ab1" ,borderRadius:"20px"}}>
               <div>
-                <img height={300} width={200} src={p.image} alt="..." />
+                <img height={300} width={200} src={p.image} alt="..." style={{borderRadius:"16px"}} />
               </div>
              
-                <div >
-                  <h5 >{p.name}</h5>
+                <div style={{paddingTop:"20px"}}>
+                  <h5 style={{color:"#CC7229"}}>{p.name}</h5>
                   <p>{p.date}</p>
                   <p >Rating: {p.rating}</p>
                   <p style={{ fontSize: "1vw", color: "orange" }}>{p.stars}</p>

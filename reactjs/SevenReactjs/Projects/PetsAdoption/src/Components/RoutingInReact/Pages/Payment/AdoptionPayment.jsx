@@ -151,7 +151,7 @@ if(!currentuser){
 
     
   return (
-    <div style={{minHeight:"100vh" ,paddingTop:"120px"}} className='bg-dark'>
+    <div style={{minHeight:"100vh" ,paddingTop:"120px"}}>
     <div style={{display:"flex" ,alignItems:"start",justifyContent:"space-between",padding:"5px 100px"}}>
       <div className="p-5 page1"  style={{width:"50%"}}>
         <div>
@@ -174,21 +174,21 @@ if(!currentuser){
                 <label htmlFor="#">
                     Pincode <input type="number" name='pincode' value={petReqS === true ? (AprowForm.pincode) : (formInpute.pincode)} onChange={HandelChange} placeholder='441601' />
                 </label>
-                <button style={{padding:"10px 20px" ,borderRadius:"20px" ,marginTop:"20px", backgroundColor:"green",border:"none" }} type='sumbit'>update address</button>
+                <button style={{padding:"10px 20px" ,borderRadius:"20px" ,marginTop:"20px", backgroundColor:"green",border:"none", color:"#fff" }} type='sumbit'>update address</button>
 
                 <label htmlFor="message">
                 Why do you want to adopt {petName}
                 <textarea style={{marginTop:"10px"}} name="message" id="message" cols={80} rows={4} value={petReqS === true ? (AprowForm.message) : (formInpute.message)} onChange={HandelChange}  placeholder='write message' required></textarea>
                 </label>
 
-                {petReqS === true ? (null) : (<button style={{padding:"10px 50px" ,borderRadius:"20px",backgroundColor:"orange",border:"none"}} type='sumbit'>Adoption Request</button>)}
+                {petReqS === true ? (null) : (<button style={{padding:"10px 50px" ,borderRadius:"20px",backgroundColor:"#CC7229",border:"none", color:"#fff"}} type='sumbit'>Adoption Request</button>)}
             </form>
-            {petReqS === true ? (<button onClick={handlePayment} style={{padding:"10px 50px" ,borderRadius:"20px",backgroundColor:"orange",border:"none", marginTop:"20px"}} >Payment continue</button>) :(null)}
+            {petReqS === true ? (<button onClick={handlePayment} style={{padding:"10px 50px" ,borderRadius:"20px",backgroundColor:"#CC7229",border:"none", marginTop:"20px",color:"#fff"}} >Payment continue</button>) :(null)}
         </div>
 
       </div>
       {product.map((product) => (
-      <div key={product.id} className="bg-dark page2" style={{width:"50%" ,padding:"48px 100px"}}>
+      <div key={product.id} className="page2" style={{width:"50%" ,padding:"48px 100px"}}>
         <div style={{display:"flex", alignItems:"center",justifyContent:"space-between", borderBottom:"1px solid #fff"}}>
             <h1>PETS </h1>
             <h5>edit card</h5>

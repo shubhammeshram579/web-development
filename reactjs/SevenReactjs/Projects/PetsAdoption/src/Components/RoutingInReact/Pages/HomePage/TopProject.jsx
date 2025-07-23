@@ -144,15 +144,13 @@ const TopProject = () => {
 
   return (
     <div style={{padding:"100px 0px"}}>
-      <h5 className='text-light pl-3 text-center' style={{fontSize:"2vw" ,paddingBottom:"100px"}}>Most Adopted Pets</h5>
+      <h5 className='text-dark pl-3 text-center' style={{fontSize:"2vw" ,paddingBottom:"100px"}}>Most Adopted Pets</h5>
       <div style={{display:"flex" ,alignItems:"center" ,justifyContent:"space-evenly",flexWrap:"wrap"}}>
         {products.map((product,index) => (
-             <Link  style={{textDecoration:"none"}} to={`/Product/${product.id}`}><div key={index} style={{backgroundColor:"#323030",width:"500px" ,height:"550px" ,margin:"10px" ,borderRadius:"10px" ,paddingTop:"10px"}}>
+             <Link  style={{textDecoration:"none"}} to={`/Product/${product.id}`}><div id='topproduct' key={index} style={{width:"500px" ,height:"550px" ,margin:"10px" ,borderRadius:"10px" ,paddingTop:"10px"}}>
                 <img id='homeImage' height={450} width={450} src={product.image} alt="" />
-                <p style={{color:"#fff" ,fontSize:"1vw" , fontWeight:"500" ,textAlign:"center"}}>{product.name}</p>
+                <p style={{color:"#111" ,fontSize:"1vw" , fontWeight:"500" ,textAlign:"center"}}>{product.name}</p>
             </div></Link>
-           
-         
         ))}
       </div>
     </div>

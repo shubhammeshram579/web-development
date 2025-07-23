@@ -741,10 +741,10 @@ function overloading(a:any,b:any) {
 
 
 // part 5
-// Generics 
-    // generics function
-    // generics iterface
-    // genrac classes
+// generic  
+    // generic  function
+    // generic  iterface
+    // generic  classes
 
 // example1
 function GericF<T>(a:T) {
@@ -781,7 +781,7 @@ geric3({firstName:"shubham",lastName:"meshram",age:27})
 
 
 
-// gernric classes
+// generic  classes
 
 class mouseMeker<T> {
     constructor(public name:T){
@@ -795,7 +795,7 @@ let M2 = new mouseMeker<number>(20);
 
 
 
-// advance level genric
+// advance level generic 
 
 function GenricA<T>(a:T,b:T):T {
     return <T> "Shubham"
