@@ -556,13 +556,99 @@ let obje2 = {
 let ddd = controcuter2.call(obje2)
 
 
+// what is promises function 
+
+// promise function is ascrse function it is used for fatch 
+
+const data = [2,4,56]
+// const resp = new Promise((res,rej) => {
+
+//     setTimeout(()=> {
+//         res(data)
+//     },3000)
+
+// }).then((data) => {
+//     console.log("success",data)
+
+// }).catch((error)=> {
+//     console.log("sonthing wrong",error)
+// })
+
+
+// resp()
+
+
+// asycnc and await
+
+
+// const advanceAS = async () => {
+
+
+//     fetch(data).then((data) => {
+//         console.log("data",data)
+//     }).catch((error) => {
+//         console.log(error, "somthing went wrong")
+//     })
+
+// }
+
+// advanceAS()
+
+
+// const fatchdata = async () => {
+//     const strore = await data
+//     console.log(strore)
+// }
+
+// fatchdata()
+
+
+// destucturing 
+
+let deArray  = [1,2,4,"shubham",33]
+
+let [da,db] = deArray
+
+console.log(da)
+console.log(db)
+
+
+let [dd,dd2,...d4] = deArray
+
+console.log(dd)
+console.log(dd2)
+console.log(d4)
+
+
+let obd = {
+    first:"shubham",
+    last:"meshram",
+    arr:[1,4,5,6],
+    address:"gondia"
+}
+
+
+let {first,last,...oterintem} = obd
+
+
+console.log(first)
+console.log(last)
+console.log(oterintem)
 
 
 
+// defult paramater 
+
+const Argiment = (a=10,b=50) => {
+    console.log(a + b)
+
+}
+
+Argiment(50,20);
 
 
 
-
+// this call bind apply
 
 
 

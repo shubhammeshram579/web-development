@@ -17,7 +17,7 @@ const HorizontalBarCharts = () => {
             orientation: "h",
             marker: {color:"rebeccapurple"}
           }]}
-          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#ddd", font: { color: "#111" },width: 400, height: 300, title: { text: "Category Type", font: { color: "#111" } }} }
+          layout={ { paper_bgcolor: "#fff", plot_bgcolor: "#ddd", font: { color: "#111" },width: 400, height: 300, title: { text: "Category Type", font: { color: "#111" } }} }
       />
     </div>
   )

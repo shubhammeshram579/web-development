@@ -19,7 +19,7 @@ const AdoptionLikelihood = () => {
               colors: ['#1f77b4', 'rebeccapurple', '#2ca02c']
             }
           }]}
-          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#222", font: { color: "#111" },width: 350, height: 340, title: { text: "AdoptionLikelihood", font: { color: "#111" } }} }
+          layout={ { paper_bgcolor: "#fff", plot_bgcolor: "#222", font: { color: "#111" },width: 350, height: 340, title: { text: "AdoptionLikelihood", font: { color: "#111" } }} }
       />
     </div>
   )

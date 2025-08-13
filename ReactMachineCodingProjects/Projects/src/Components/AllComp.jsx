@@ -7,6 +7,11 @@ import EmiCalalator from "./EMICalculator/EmiCalalator.jsx"
 import CustomModalOverlay from "./CustomModal/CustomModalOverlay.jsx"
 import UndoableCounter from "./UndoableCounter/UndoableCounter.jsx"
 import SearchItem from "./SearchSeggetion/SearchItem.jsx"
+import MuiltStapeFrom from './MultiStapForm/MuiltStapeFrom.jsx'
+import ImageChange from './ImageCrusel/ImageChange.jsx'
+import OtpInput from './OtpInput/OtpInput.jsx'
+import Calculeter from './Calculeter/Calculeter.jsx'
+
 
 
 const AllComp = () => {
@@ -18,7 +23,11 @@ const AllComp = () => {
       <EmiCalalator />
       <CustomModalOverlay />
       <UndoableCounter /> */}
-      <SearchItem />
+      {/* <SearchItem /> */}
+      {/* <MuiltStapeFrom /> */}
+      {/* <ImageChange /> */}
+      {/* <OtpInput /> */}
+      <Calculeter />
     </div>
   )
 }

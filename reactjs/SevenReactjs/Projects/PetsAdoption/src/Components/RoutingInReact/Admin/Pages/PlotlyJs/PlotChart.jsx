@@ -18,7 +18,7 @@ const PlotChart = () => {
             orientation:"h",
             marker: {color:"rebeccapurple"}
           }]}
-          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#ddd", font: { color: "#111" },width: 350, height: 340, title: { text: "State wise", font: { color: "#111" } }} }
+          layout={ { paper_bgcolor: "#fff", plot_bgcolor: "#fff", font: { color: "#111" },width: 350, height: 340, title: { text: "State wise", font: { color: "#111" } }} }
       />
     </div>
   )

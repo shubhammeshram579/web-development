@@ -6,19 +6,22 @@ import Services from '../HomePage/Services'
 
 const ServicesPage = () => {
   return (
-    <div style={{padding:"10px 10px"}}>
+    <div style={{padding:"10px 0px"}}>
       <div>
-        <div style={{width:"100%" ,height:"110vh" , display:"flex" ,alignItems:"center" ,justifyContent:"center"}}>
+        <div style={{position:"absolute",zIndex:"99", width:"100%"}}>
+          <video height={500} style={{objectFit:"cover",marginTop:"75px",minHeight:"93vh" ,width:"100%"}} autoPlay muted loop src="https://videos.pexels.com/video-files/3191251/3191251-uhd_2732_1440_25fps.mp4"></video>
+        </div>
+        <div style={{width:"100%" ,height:"100vh" , display:"flex" ,alignItems:"center" ,justifyContent:"start",position:"relative" ,zIndex:"999"}}>
               {/* <video style={{height:"100vh" , width:"95%", objectFit:"cover"}} autoPlay muted loop src={video}></video> */}
-              <div style={{display:"flex" ,alignItems:"center" ,flexDirection:"column" ,justifyContent:"space-evenly"}}>
-                <h1 style={{textTransform:"capitalize" ,textAlign:"center" ,fontSize:"3vw",paddingBottom:"20px", color:"#3B2321"}}>the organization goals </h1>
-                <p style={{textAlign:"center" ,fontSize:"1.2vw",width:"70%",color:"#111" }}> We are a passionate group of animal lovers dedicated to giving pets a
+              <div style={{display:"flex" ,alignItems:"start" ,flexDirection:"column" ,justifyContent:"start", padding:"10px 20px" ,marginTop:"500px"}}>
+                <h1 style={{textTransform:"capitalize" ,textAlign:"center" ,fontSize:"3vw",paddingBottom:"20px", color:"#fff"}}>the organization goals </h1>
+                <p style={{textAlign:"start" ,fontSize:"1.2vw",width:"50%",color:"#fff" }}> We are a passionate group of animal lovers dedicated to giving pets a
                   second chance. Our mission is to connect loving homes with pets in
                   need of adoption. With years of experience in animal rescue, we ensure
                   that each pet receives the best care, love, and attention during their
                   time with us.</p>
               </div>
-              <iframe style={{padding:"50px",borderRadius:"100px"}} width="120%" height="70%" src="https://www.youtube.com/embed/Qpn1TE1AUAM?si=-pDpY-3keafbx7dU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              {/* <iframe style={{padding:"50px",borderRadius:"100px"}} width="120%" height="70%" src="https://www.youtube.com/embed/Qpn1TE1AUAM?si=-pDpY-3keafbx7dU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */}
               </div>
         
                 {/* <div className="page2" style={{minHeight:"50vh" ,paddingTop:"100px",backgroundColor:"#F0F1EC" }}>

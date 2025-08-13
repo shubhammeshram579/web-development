@@ -26,15 +26,15 @@ const Admin = () => {
     
     <div style={{minHeight:"100vh",width:"87%" ,marginLeft:"13%", paddingTop:"150px" ,backgroundColor:"#dddd"}}>
       <div style={{display:"flex", alignItems:"center" ,justifyContent:"center" ,gap:"100px",paddingRight:"100px"}}>
-        <div style={{backgroundColor:"#dddd",color:"#111",padding:"2px 60px" ,borderRadius:"10px"}}>
+        <div style={{backgroundColor:"#fff",color:"#111",padding:"2px 60px" ,borderRadius:"10px"}}>
         <h3 >Pets</h3>
         <p style={{textAlign:"center", fontSize:"1vw"}}>250</p>
         </div>
-        <div style={{backgroundColor:"#dddd",color:"#111",padding:"2px 50px",borderRadius:"10px"}}>
+        <div style={{backgroundColor:"#fff",color:"#111",padding:"2px 50px",borderRadius:"10px"}}>
         <h3 >Selter Pets</h3>
         <p style={{textAlign:"center",fontSize:"1vw"}}>40</p>
         </div>
-        <div style={{backgroundColor:"#dddd",color:"#111",padding:"2px 50px",borderRadius:"10px"}}>
+        <div style={{backgroundColor:"#fff",color:"#111",padding:"2px 50px",borderRadius:"10px"}}>
         <h3 >Availble Pets</h3>
         <p style={{textAlign:"center",fontSize:"1vw"}}>210</p>
         </div>

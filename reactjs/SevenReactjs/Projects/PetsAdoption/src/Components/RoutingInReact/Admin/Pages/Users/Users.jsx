@@ -161,7 +161,7 @@ const Users = () => {
         </div>
       </div>
       <div style={{display:"flex" ,alignItems:"center",justifyContent:"center",paddingRight:"40px",paddingTop:"50px"}}>
-        <input style={{width:"50%",height:"50px",border:"none" ,borderRadius:"10px 0px 0px 10px"}} type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder='search users' />
+        <input style={{width:"50%",height:"50px",border:"1px solid gray" ,borderRadius:"10px 0px 0px 10px"}} type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder='search users' />
         {isShow ? (<button onClick={HandeleClearF} style={{padding:"13px 30px",border:"none",borderRadius:"0px 10px 10px 0px"}} className='bg-info'>Clear Filter</button> ) :
         (<button onClick={HanselSerch} style={{padding:"13px 30px",border:"none",borderRadius:"0px 10px 10px 0px"}} className='bg-info'>Search</button>)}
       </div>

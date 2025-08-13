@@ -171,8 +171,8 @@ const ReviewAdop = () => {
       <h1 style={{textAlign:"center" ,padding:"20px"}}>Reviews from Our Happy Pet Parents</h1>
       <div id="ReviewCard" style={{display:"flex" , flexWrap:"nowrap" ,alignItems:"center" ,justifyContent:"space-evenly" , flexDirection:"row",overflow:"scroll" ,gap:"40px"}}>
         {review.map((p, index) => (
-          <div>
-            <div key={p.id} style={{display:"flex" , flexWrap:"nowrap" ,alignItems:"start" ,gap:"20px",width:"40vw" ,justifyContent:"space-evenly" ,backgroundColor:"#fff" ,border:"3px solid #1d899ab1" ,borderRadius:"20px"}}>
+          <div className="review" style={{minHeight:"40vh" ,padding:"50px 0px"}}>
+            <div  key={p.id} style={{display:"flex" , flexWrap:"nowrap" ,alignItems:"start" ,gap:"20px",width:"40vw" ,justifyContent:"space-evenly" ,backgroundColor:"#fff" ,border:"3px solid #1d899ab1" ,borderRadius:"20px"}}>
               <div>
                 <img height={300} width={200} src={p.image} alt="..." style={{borderRadius:"16px"}} />
               </div>

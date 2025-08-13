@@ -18,7 +18,7 @@ const TopPets = () => {
             orientation:"v",
             marker: {color:"rebeccapurple"}
           }]}
-          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#ddd", font: { color: "#111" },width: 350, height: 300, title: { text: "Top Breeds", font: { color: "#111" } }} }
+          layout={ { paper_bgcolor: "#fff", plot_bgcolor: "#fff", font: { color: "#111" },width: 350, height: 300, title: { text: "Top Breeds", font: { color: "#111" } }} }
       />
     </div>
   )

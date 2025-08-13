@@ -17,22 +17,22 @@ import MyCalendar from "../Calender/MyCalendar.jsx"
 const PetsAdoption = () => {
   return (
     <>
-    <div style={{backgroundColor:"#dddd",paddingBottom:"20px"}}>
+    <div style={{backgroundColor:"#ddd",paddingBottom:"20px"}}>
      
       <div style={{paddingTop:"150px",paddingBottom:"50px",display:"flex", alignItems:"center" ,justifyContent:"center" ,gap:"100px",paddingRight:"100px"}}>
-        <div style={{backgroundColor:"#ddd",color:"#111",padding:"2px 60px" ,borderRadius:"10px"}}>
+        <div style={{backgroundColor:"#fff",color:"#111",padding:"2px 60px" ,borderRadius:"10px"}}>
         <h3 >Selter Pets</h3>
         <p style={{textAlign:"center", fontSize:"1vw"}}>250</p>
         </div>
-        <div style={{backgroundColor:"#ddd",color:"#111",padding:"2px 50px",borderRadius:"10px"}}>
+        <div style={{backgroundColor:"#fff",color:"#111",padding:"2px 50px",borderRadius:"10px"}}>
         <h3 >Cats</h3>
         <p style={{textAlign:"center",fontSize:"1vw"}}>100</p>
         </div>
-        <div style={{backgroundColor:"#ddd",color:"#111",padding:"2px 50px",borderRadius:"10px"}}>
+        <div style={{backgroundColor:"#fff",color:"#111",padding:"2px 50px",borderRadius:"10px"}}>
         <h3 >Dogs</h3>
         <p style={{textAlign:"center",fontSize:"1vw"}}>150</p>
         </div>
-        <div style={{backgroundColor:"#ddd",color:"#111",padding:"2px 50px",borderRadius:"10px"}}>
+        <div style={{backgroundColor:"#fff",color:"#111",padding:"2px 50px",borderRadius:"10px"}}>
         <h3 >Vacanation</h3>
         <p style={{textAlign:"center",fontSize:"1vw"}}>200</p>
         </div>

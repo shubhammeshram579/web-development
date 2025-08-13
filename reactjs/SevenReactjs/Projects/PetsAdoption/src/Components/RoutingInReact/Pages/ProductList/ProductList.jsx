@@ -357,7 +357,7 @@ console.log("products2",products2)
           gridTemplateColumns:"repeat(4,1fr)"
           }}>
         {productList.length > 0 ? (productList.map((product,index) => (
-              <Link style={{textDecoration:"none"}} to={`/Product/${product.id}`}><div key={product.id} style={{backgroundColor:"#fff" ,width:"400px" ,height:"400px" ,margin:"10px" ,border:"5px solid #1d899ab1" ,borderRadius:"20px"}}>
+              <Link style={{textDecoration:"none"}} to={`/Product/${product.id}`}><div className="card" key={product.id} style={{backgroundColor:"#fff" ,width:"400px" ,height:"400px" ,margin:"10px" ,border:"5px solid #1d899ab1" ,borderRadius:"20px"}}>
                   <img  height={250} width={391} style={{borderRadius:"13px", objectFit:"cover"}} src={product.image} alt="" />
            
                   <p style={{color:"#fff" ,fontSize:"1vw" , fontWeight:"500" ,textAlign:"center"}}>{product.name}</p>
@@ -367,7 +367,7 @@ console.log("products2",products2)
               </div></Link>
           ))) : (
             products2.map((product,index) => (
-          <div key={product.id} style={{backgroundColor:"#fff" ,width:"400px" ,height:"430px" ,margin:"10px" ,border:"5px solid #1d899ab1" ,borderRadius:"20px"}}>
+          <div className="card" key={product.id} style={{backgroundColor:"#fff" ,width:"400px" ,height:"430px" ,margin:"10px" ,border:"5px solid #1d899ab1" ,borderRadius:"20px"}}>
                   <img  height={250} width={392} style={{borderRadius:"13px", objectFit:"cover"}} src={product.image} alt="" />
            
         

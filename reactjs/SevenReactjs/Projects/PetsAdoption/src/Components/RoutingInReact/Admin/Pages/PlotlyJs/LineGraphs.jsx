@@ -23,7 +23,7 @@ const LineGraphs = () => {
         //     yaxis: {range: [5, 16], title: "Price in Millions"},
         //     title: "House Prices vs Size"
         //   }}
-          layout={ { paper_bgcolor: "#ddd", plot_bgcolor: "#ddd", font: { color: "#111" },width: 400, height: 340, title: { text: "Pets AgeMonths", font: { color: "#111" } }} }
+          layout={ { paper_bgcolor: "#fff", plot_bgcolor: "#fff", font: { color: "#111" },width: 400, height: 340, title: { text: "Pets AgeMonths", font: { color: "#111" } }} }
       />
     </div>
   )

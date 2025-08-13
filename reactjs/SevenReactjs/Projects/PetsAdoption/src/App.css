@@ -79,3 +79,11 @@
     transition: all 0.8s;
     scale: 1.1;
   }
+  .review:hover{
+    /* background-color: rebeccapurple; */
+    transition: all 0.5s;
+    scale: 1.04;
+  }
+
+
+

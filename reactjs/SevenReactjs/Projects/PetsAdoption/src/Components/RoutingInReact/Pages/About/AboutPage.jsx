@@ -18,14 +18,14 @@ const AboutPage = () => {
         </p>
         <h2 className="mb-3">Our Mission</h2>
         <ul className="list-group mb-4" >
-          <li className="list-group-item" style={{backgroundColor:"#FFDAB8"}}>
+          <li className="list-group-item" style={{backgroundColor:"#1d899ab1" ,color:"#fff"}}>
             To reduce the number of homeless pets by promoting adoption.
           </li>
           <li className="list-group-item ">
             To educate communities on the importance of responsible pet
             ownership.
           </li>
-          <li className="list-group-item " style={{backgroundColor:"#FFDAB8"}}>
+          <li className="list-group-item " style={{backgroundColor:"#1d899ab1",color:"#fff"}}>
             To provide a safe and loving environment for pets waiting for their
             forever home.
           </li>

@@ -13,7 +13,7 @@ const TimeInShelterDays = () => {
   const revenueData = [50,60,70,80,90,100,110,120,130,140,150];
 
   return (
-    <div style={{ backgroundColor: "#ddd", padding: "20px",margin:"10px", width:"400px", height:"300px", overflow:"hidden" ,borderRadius:"10px"}}>
+    <div style={{ backgroundColor: "#fff",margin:"10px",marginTop:"20px", width:"350px", height:"300px" ,overflow:"hidden" ,borderRadius:"10px"}}>
       <Plot
         data={[
           {
@@ -34,8 +34,8 @@ const TimeInShelterDays = () => {
         layout={{
           title: { text: "Pets Adoption by Time Shelter Days", font: { color: "#111" } },
           barmode: "group", // Stacks the bars side by side
-          paper_bgcolor: "#ddd", // Background color
-          plot_bgcolor: "#ddd",
+          paper_bgcolor: "#fff", // Background color
+          plot_bgcolor: "#fff",
           font: { color: "#111" }, // Text color
           xaxis: { title: "Months" },
           yaxis: { title: "Amount ($)" },

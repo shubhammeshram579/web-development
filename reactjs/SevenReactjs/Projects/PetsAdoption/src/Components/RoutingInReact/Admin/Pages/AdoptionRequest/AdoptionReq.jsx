@@ -24,10 +24,10 @@ const AdoptionReq = () => {
 
 
   return (
-   <div style={{minHeight:"100vh" ,width:"100%"}}>
-    <div style={{paddingTop:"100px",width:"80%",marginLeft:"17%", paddingBottom:"100px" ,display:"flex", flexWrap:"wrap", gap:"20px"}}>
+   <div style={{minHeight:"100vh" ,width:"100%", backgroundColor:"#ddd"}}>
+    <div style={{paddingTop:"100px",width:"80%",marginLeft:"17%", paddingBottom:"100px" ,display:"flex", flexWrap:"wrap", gap:"20px" }}>
         {shelterData.map((items, index) => (
-      <div key={items.id} className="card1" style={{backgroundColor:"#dddd" ,width:"20%" ,color:"#111" ,padding:"10px" ,borderRadius:"10px"}}>
+      <div key={items.id} className="card1" style={{backgroundColor:"#fff",border:"3px solid #117A8B" ,width:"20%" ,color:"#111" ,padding:"10px" ,borderRadius:"10px"}}>
         <div style={{display:"flex", alignItems:"center" ,justifyContent:"space-around"}}>
             <img height={100} width={100} style={{objectFit:"cover" ,borderRadius:"100px"}} src={items.product[0].image} alt="" />
             <h5>{items.product[0].name}</h5>

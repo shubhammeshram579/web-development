@@ -15,7 +15,7 @@ const PetsSecond = () => {
             values that set us apart.
           </p>
         </div>
-        <div className="card2" style={{margin:"50px",marginTop:"200px", padding:"20px",backgroundColor:"#FFDAB8",borderRadius:"10px"}}>
+        <div className="card" style={{margin:"50px",marginTop:"200px", padding:"20px",backgroundColor:"#FFDAB8",borderRadius:"10px"}}>
           <div className="subcard" style={{padding:"20px",display:"flex",alignItems:"end",justifyContent:"space-between" ,backgroundColor:"#FFDAB8"}}>
             <h1 style={{color:"#3B2321"}}>Safety</h1>
             <img src="https://kindredpetcare.com/img/adva1.svg" alt="" style={{height:"20vw"}}/>
@@ -28,7 +28,7 @@ const PetsSecond = () => {
         </div>
       </div>
       <div className="page2" style={{minHeight:"50vh" ,display:"flex",alignItems:"start",justifyContent:"space-between",padding:"100px",}} >
-        <div className="card2" style={{minHeight:"50vh",marginTop:"-300px", width:"45%" ,display:"flex",alignItems:"start",justifyContent:"center",flexDirection:"column",borderRadius:"10px",backgroundColor:"#FFDAB8"}}>
+        <div className="card" style={{minHeight:"50vh",marginTop:"-300px", width:"45%" ,display:"flex",alignItems:"start",justifyContent:"center",flexDirection:"column",borderRadius:"10px",backgroundColor:"#FFDAB8"}}>
           <div className="subcard" style={{padding:"20px",display:"flex",alignItems:"end",justifyContent:"space-between" ,}}>
             <h1 style={{color:"#3B2321"}}>Affordability</h1>
             <img src="https://kindredpetcare.com/img/adva2.svg" alt=""  style={{height:"20vw"}}/>
@@ -41,12 +41,12 @@ const PetsSecond = () => {
             positively impacting their lives.
           </p>
         </div>
-        <div className="card2">
+        <div className="card">
           <img height={700}  src="https://images.unsplash.com/photo-1535930749574-1399327ce78f?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" style={{borderRadius:"20px"}} />
         </div>
       </div>
       <div className="page3" style={{padding:"100px", display:"flex", alignItems:"center",justifyContent:"start", marginLeft:"100px"}}>
-        <div className="card2" style={{minHeight:"50vh",marginTop:"-300px", width:"50%" ,display:"flex",alignItems:"start",justifyContent:"center",flexDirection:"column",borderRadius:"10px",backgroundColor:"#FFDAB8"}} >
+        <div className="card" style={{minHeight:"50vh",marginTop:"-300px", width:"50%" ,display:"flex",alignItems:"start",justifyContent:"center",flexDirection:"column",borderRadius:"10px",backgroundColor:"#FFDAB8"}} >
           <div  style={{padding:"20px",display:"flex",alignItems:"end",justifyContent:"space-between" ,}}>
             <h1  style={{color:"#3B2321"}}>Compassion</h1>
             <img src="https://kindredpetcare.com/img/adva3.svg" alt="" style={{height:"20vw"}} />

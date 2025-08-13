@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ItemList from "./ItemList";
 
 const array = [
   {
@@ -23,51 +24,53 @@ const array = [
 ];
 const SearchItem = () => {
   const [search, setSerach] = useState("");
-  const [filterData, setFilterData] = useState([]);
+  // const [filterData, setFilterData] = useState([]);
 
-  const [todo ,setTodo] = useState([])
-  const [color ,setColor] = useState("")
+  const [todo, setTodo] = useState([]);
 
-  const [isshow ,setIsshow] = useState(false)
+  // const [isshow ,setIsshow] = useState(false)
 
   useEffect(() => {
     const fatchData = async () => {
-      const response = await array.filter((items) => {
-        let matchid = items.items === search;
-        return matchid;
-      });
-      setFilterData(response);
+      // const response = await array.filter((items) => {
+      //   let matchid = items.items === search;
+      //   return matchid;
+      // });
+      // if(search.length >= 2){
+      //   setIsshow(true)
+      // }
+      // setFilterData(response);
     };
 
     fatchData();
   }, [search]);
 
+
+  
   const handelAdd = (item) => {
-    const itemslist = {id:Math.random(), list:item}
-    setTodo((values) => [...values,itemslist])
-    // setIsshow(true)
+    const itemslist = { id: Math.random(), list: item, isItem: false };
+    setTodo((values) => [...values, itemslist]);
+    setSerach("");
+  };
 
-  }
-
-  console.log(search);
-  console.log(filterData);
-  console.log("todo",todo);
-
+  // delete list
   const deleteList = (id) => {
-    setTodo((values) => values.filter((item) => (item.id !== id)))
-  }
+    setTodo((values) => values.filter((item) => item.id !== id));
+  };
 
+  // color change
   const chacngeColor = (id) => {
+    const todoCopy = [...todo];
 
-    const respinse = todo.find((item) => (item.id === id))
+    const fileterData = todoCopy.map((item) => {
+      if (item.id === id) {
+        item.isItem = !item.isItem;
+      }
+      return item;
+    });
 
-    if(respinse){
-        setColor("line-through")
-    }
-    console.log("respinse",respinse)
-    
-  }
-
+    setTodo(fileterData);
+  };
 
   return (
     <div>
@@ -81,7 +84,7 @@ const SearchItem = () => {
           onChange={(e) => setSerach(e.target.value)}
         />
 
-        {!isshow && <div className="bg-gray-500">
+        {/* {isshow && <div className="bg-gray-500">
           {filterData.length > 0
             ? array.map((item) => (
                 <div key={item.id} className="bg-gray-600 w-44">
@@ -93,16 +96,27 @@ const SearchItem = () => {
                   <button onClick={() => handelAdd(item.items)}>{item.items}</button>
                 </div>
               ))}
-        </div>}
+        </div>} */}
+
+        {search.length >= 2
+          ? array.map((item) => (
+              <div key={item.id} className="bg-gray-600 w-44">
+                <button onClick={() => handelAdd(item.items)}>
+                  {item.items}
+                </button>
+              </div>
+            ))
+          : null}
 
         <div className={`w-44 mt-5 bg-gray-600 `}>
-            {todo.map((itam) => (
-                <div key={itam.id} className="flex items-center justify-between px-2">
-                    <button onClick={() => chacngeColor(itam.id)}>C</button>
-                    <p style={{textDecoration:color}}>{itam.list}</p>
-                    <button onClick={() => deleteList(itam.id)}>X</button>
-                </div>
-            ))}
+          {todo.map((itam) => (
+            <ItemList
+              key={itam.id}
+              listI={itam}
+              deleteList={deleteList}
+              chacngeColor={chacngeColor}
+            />
+          ))}
         </div>
       </div>
     </div>
@@ -110,3 +124,15 @@ const SearchItem = () => {
 };
 
 export default SearchItem;
+
+{
+  /* <div className={`w-44 mt-5 bg-gray-600 `}>
+            {todo.map((itam) => (
+                <div key={itam.id} className="flex items-center justify-between px-2">
+                    <button onClick={() => chacngeColor(itam.id)}>C</button>
+                    <p style={{textDecoration:color}}>{itam.list}</p>
+                    <button onClick={() => deleteList(itam.id)}>X</button>
+                </div>
+            ))}
+        </div> */
+}
