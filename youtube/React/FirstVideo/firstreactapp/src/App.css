@@ -40,31 +40,3 @@
 .read-the-docs {
   color: #888;
 }
-
-
-
-.Start{
-  color: green;
-}
-
-
-.on{
-  color: yellow;
-}
-
-.off{
-  color: grey;
-}
-
-
-.show{
-  font-size: 20px;
-}
-
-.hide{
-  font-size: 0;
-}
-
-.remove{
-  visibility: hidden;
-}

@@ -11,6 +11,9 @@ import MuiltStapeFrom from './MultiStapForm/MuiltStapeFrom.jsx'
 import ImageChange from './ImageCrusel/ImageChange.jsx'
 import OtpInput from './OtpInput/OtpInput.jsx'
 import Calculeter from './Calculeter/Calculeter.jsx'
+import RatingSelect from './Rating/RatingSelect.jsx'
+import GameBox from './GameBox/GameBox.jsx'
+import BarChart from './Barcart/BarChart.jsx'
 
 
 
@@ -27,7 +30,10 @@ const AllComp = () => {
       {/* <MuiltStapeFrom /> */}
       {/* <ImageChange /> */}
       {/* <OtpInput /> */}
-      <Calculeter />
+      {/* <Calculeter /> */}
+      {/* <RatingSelect /> */}
+      {/* <GameBox /> */}
+      <BarChart />
     </div>
   )
 }

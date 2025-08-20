@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            height: 0;
+            margin: 0;
+        }
+
+
+        body,html{
+            background-color: rgb(34, 32, 32);
+            color: #dddd;
+        }
+
+        body{
+            padding: 10px 20px;
+        }
+
+        .maildive{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #heading{
+            font-size: 20px;
+            font-weight: 200;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+            /* text-decoration: underline; */
+            text-transform: capitalize;
+            position: absolute;
+            z-index: 9999;
+            top: 10;
+
+        }
+
+        #heading:hover{
+            transition: all 1s;
+            color: aquamarine;
+            scale:calc(1.5);
+        }
+
+        .loop{
+            transition: all 1s;
+            opacity: 0;
+        }
+
+        .loop:hover{
+            transition: all 1s;
+            opacity: 1;
+        }
+
+        #bg{
+            min-height: 100vh;
+            background-color: green;
+            position: relative;
+            z-index: 99;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="maildive">
+        <h1 id="heading">I am not <span class="loop">loop</span></h1>
+   
+  
+    </div>
+      <div id="bg">
+        <h1>zed</h1>
+     </div>
+    <script src="script.js"></script>
+</body>
+</html>
