@@ -14,6 +14,8 @@ import Calculeter from './Calculeter/Calculeter.jsx'
 import RatingSelect from './Rating/RatingSelect.jsx'
 import GameBox from './GameBox/GameBox.jsx'
 import BarChart from './Barcart/BarChart.jsx'
+import FormValidation from './FormValidation/FormValidation.jsx'
+import TransferList from './TransferList/TransferList.jsx'
 
 
 
@@ -33,7 +35,11 @@ const AllComp = () => {
       {/* <Calculeter /> */}
       {/* <RatingSelect /> */}
       {/* <GameBox /> */}
-      <BarChart />
+      {/* <BarChart /> */}
+
+      {/* form valitdation */}
+      {/* <FormValidation /> */}
+      <TransferList />
     </div>
   )
 }
