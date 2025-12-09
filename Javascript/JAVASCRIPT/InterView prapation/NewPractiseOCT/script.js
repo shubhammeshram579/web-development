@@ -153,6 +153,14 @@ console.log(maping)
 
 
 
+let str3  = "shubham";
+
+for(let i = 0; i < str3.length -1; i++){
+    console.log(str3[i])
+}
+
+
+
 
 
 

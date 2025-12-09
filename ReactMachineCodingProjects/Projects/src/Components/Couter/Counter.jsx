@@ -47,7 +47,7 @@ const Counter = () => {
        if(Inte === true){
         let iD = setInterval(() => {
             // setCount(count + 1)
-            setData((prev) => prev.forEach((ite) => ite.count += 1))
+            setData((prev) => prev?.forEach((ite) => ite.count += 1))
             // data.forEach((item) => {
             //     item.count += 1
             // })
@@ -61,7 +61,7 @@ const Counter = () => {
             //     return 0
             // }
             // setCount(count - 1)
-            data.forEach((item) => {
+            data?.forEach((item) => {
                 item.count -= 1
             })
 
@@ -93,7 +93,7 @@ const Counter = () => {
         <div>
             <button onClick={addbtn}>AddCard</button>
         </div>
-        {data.map((item,index) => (
+        {data?.map((item,index) => (
             <div key={item.id} className="bg-gray-700">
             <p className="pt-5 pb-6">Count: {item.count}</p>
             <div className="flex items-center justify-center gap-4 pb-5">

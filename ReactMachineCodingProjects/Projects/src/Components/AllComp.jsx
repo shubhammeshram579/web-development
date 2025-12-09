@@ -23,8 +23,8 @@ const AllComp = () => {
   return (
     <div>
       {/* <Counter /> */}
-      {/* <CountDown />
-      <FAQuetion />
+      {/* <CountDown /> */}
+      {/* <FAQuetion />
       <EmiCalalator />
       <CustomModalOverlay />
       <UndoableCounter /> */}
@@ -39,7 +39,7 @@ const AllComp = () => {
 
       {/* form valitdation */}
       {/* <FormValidation /> */}
-      <TransferList />
+      {/* <TransferList /> */}
     </div>
   )
 }
