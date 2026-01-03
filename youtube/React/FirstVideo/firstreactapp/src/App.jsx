@@ -68,24 +68,23 @@ import Home from "./Components2/Pages/Home"
 import Profile from './Components2/Pages/Profile'
 import About from './Components2/Pages/About'
 import Projects from './Components2/Pages/Projects'
+import UsedContexProvider from "./Components2/ContexApi/usedContexProvider"
 
 
 function App() {
 
 const currentuser = "fff";
 
-const statudes = [
-  {
-    id:1,
-    name:"shubham"
-  }
-
-]
+const statudes = {
+  name: "shubham",
+  age:23
+}
 
 
   return (
     <>
     <div>
+      <UsedContexProvider>
       <BrowserRouter>
       <Header />
       <Routes>
@@ -95,6 +94,7 @@ const statudes = [
         <Route path='/Profile' element={<Profile user={statudes} />} />
       </Routes>
       </BrowserRouter>
+      </UsedContexProvider>
     </div>
     </>
   )
