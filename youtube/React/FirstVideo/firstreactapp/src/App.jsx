@@ -69,6 +69,7 @@ import Profile from './Components2/Pages/Profile'
 import About from './Components2/Pages/About'
 import Projects from './Components2/Pages/Projects'
 import UsedContexProvider from "./Components2/ContexApi/usedContexProvider"
+import Addcard from "./Components2/Pages/Addcard"
 
 
 function App() {
@@ -92,6 +93,7 @@ const statudes = {
         <Route path='/Projects' element={<Projects />} />
         <Route path='/About' element={<About />} />
         <Route path='/Profile' element={<Profile user={statudes} />} />
+        <Route path='/Addcard' element={<Addcard  />} />
       </Routes>
       </BrowserRouter>
       </UsedContexProvider>

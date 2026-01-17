@@ -1,7 +1,12 @@
 import React, {useEffect,useState} from "react";
 import axios from "axios";
+import {useDispatch} from "react-redux"
+import { useNavigate } from "react-router-dom";
+import {addcard} from "..//../ReduxToolkit/Authslice.js"
 
 const Projects = () => {
+  const navagate = useNavigate()
+  const dispatch = useDispatch()
   const [product,setProduct] = useState([])
 
   useEffect(() => {
@@ -22,7 +27,10 @@ const Projects = () => {
   fatchData()
   },[])
 
-
+  const handelAddcard = (p) => {
+    dispatch(addcard(p))
+    navagate(`/Addcard`)
+  }
 
 
 
@@ -38,6 +46,7 @@ const Projects = () => {
           <img src={p.image} alt="" className="h-32 w-42" />
           <p>name: {p.category}</p>
           <p>price: {p.price}</p>
+          <button onClick={() => handelAddcard(p)} className="bg-yellow-300 py-2 px-4 rounded-lg mt-2">addcard</button>
         </div>
 
       ))

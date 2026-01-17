@@ -10,7 +10,8 @@ const Header = () => {
         </div>
         <div className='flex items-center justify-center gap-5'>
             <Link className='text-white' to="/">Home</Link>
-            <Link className='text-white' to="/Projects">project</Link>
+            <Link className='text-white' to="/Projects">product</Link>
+            <Link className='text-white' to="/Addcard">Addcard</Link>
             <Link className='text-white' to="/About">about</Link>
             <Link className='text-white' to="/Profile">profile</Link>
         </div>
