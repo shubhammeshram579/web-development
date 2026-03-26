@@ -13,7 +13,7 @@ const UsedContexProvider = ({children}) => {
       
       const res = await axios.get(`https://fakestoreapi.com/products`)
 
-      console.log("data",res.data)
+      // console.log("data",res.data)
       setProduct(res.data)
     } catch (error) {
       console.log("api error",error)

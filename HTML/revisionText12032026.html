@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+
+        body{
+            background-color: #201e1e;
+            color: #dddd;
+            padding: 10px 20px;
+        }
+
+        .headtext{
+            font-size: 5vw;
+            font-weight: 700;
+            text-align: center;
+            color: yellow;
+            text-shadow: 1px 1px red;
+            padding: 10px 0px;
+        }
+
+        #page1{
+            height: 39vh;
+            width: 50vw;
+            overflow: auto;
+            background-color: blanchedalmond;
+            color: #201e1e;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: justify;
+            text-transform:lowercase;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+
+
+        }
+
+        #page1:hover{
+            transform: scale(1);
+            transition:all linear 1s;
+            height: 45vh;
+            width: 55vw;
+            background-color: gold;
+
+        }
+
+        #page1::-webkit-scrollbar{
+            display: block;
+        }
+
+
+        .card{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 10px;
+        }
+
+
+        .card2{
+            height: 300px;
+            width: 300px;
+            overflow: scroll;
+            margin-top: 10px;
+
+        }
+
+        img{
+            height: 300px;
+            width: 300px;
+            object-fit: cover;
+            position: absolute;
+            z-index: 100px;
+            
+
+        }
+
+        p{
+            height: 300px;
+            width: 300px;
+            position: relative;
+            z-index: 80px;
+            /* overflow: scroll; */
+            color: rebeccapurple;
+            padding: 10px;
+            opacity: 0;
+
+        }
+
+         .card2::-webkit-scrollbar{
+            display: block;
+        }
+         p::-webkit-scrollbar{
+            display: block;
+        }
+
+        p:hover{
+            transition: all linear 1s;
+            opacity: 1;
+        }
+
+        
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <header class="headtext">Revision text styling with</header>
+        <div class="card">
+            <div id="page1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dolorum commodi officia ipsam quia,
+            repellendus, dolor obcaecati sunt fugiat quisquam, autem natus hic perspiciatis. Provident dolores delectus
+            impedit, voluptatibus adipisci deleniti corporis amet eius maiores sunt doloribus fugiat, neque quas? Totam
+            doloremque, ullam, animi odit voluptatem maxime vero laborum aperiam sint cum delectus commodi pariatur
+            facilis nesciunt ex inventore tenetur molestiae iste placeat nam sapiente cumque reprehenderit? Voluptas
+            officia quae non distinctio ratione libero, accusamus adipisci quisquam optio cum quis corporis dolores
+            perspiciatis maiores tenetur provident rem quam? Maxime nam sit laudantium atque aliquam debitis dignissimos
+            nobis repellat aut fuga.
+        </div>
+
+         <div id="page1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dolorum commodi officia ipsam quia,
+            repellendus, dolor obcaecati sunt fugiat quisquam, autem natus hic perspiciatis. Provident dolores delectus
+            impedit, voluptatibus adipisci deleniti corporis amet eius maiores sunt doloribus fugiat, neque quas? Totam
+            doloremque, ullam, animi odit voluptatem maxime vero laborum aperiam sint cum delectus commodi pariatur
+            facilis nesciunt ex inventore tenetur molestiae iste placeat nam sapiente cumque reprehenderit? Voluptas
+            officia quae non distinctio ratione libero, accusamus adipisci quisquam optio cum quis corporis dolores
+            perspiciatis maiores tenetur provident rem quam? Maxime nam sit laudantium atque aliquam debitis dignissimos
+            nobis repellat aut fuga.
+        </div>
+        </div>
+
+        <div class="card2">
+            <img src="https://images.unsplash.com/photo-1773176647951-d8f618dee942?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+
+             <p >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dolorum commodi officia ipsam quia,
+            repellendus, dolor obcaecati sunt fugiat quisquam, autem natus hic perspiciatis. Provident dolores delectus
+            impedit, voluptatibus adipisci deleniti corporis amet eius maiores sunt doloribus fugiat, neque quas? Totam
+            doloremque, ullam, animi odit voluptatem maxime vero laborum aperiam sint cum delectus commodi pariatur
+            facilis nesciunt ex inventore tenetur molestiae iste placeat nam sapiente cumque reprehenderit? Voluptas
+            officia quae non distinctio ratione libero, accusamus adipisci quisquam optio cum quis corporis dolores
+            perspiciatis maiores tenetur provident rem quam? Maxime nam sit laudantium atque aliquam debitis dignissimos
+            nobis repellat aut fuga.
+        </p>
+        </div>
+       
+    </div>
+</body>
+
+</html>

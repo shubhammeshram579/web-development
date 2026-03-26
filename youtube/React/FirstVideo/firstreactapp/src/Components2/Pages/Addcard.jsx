@@ -10,7 +10,6 @@ const Addcard = () => {
 
   const handeldelete = (id) => {
     dispatch(deletecard(id))
-
   }
   return (
     <div className="flex items-center justify-center flex-col mt-5">

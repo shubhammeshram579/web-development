@@ -14,6 +14,9 @@ const Header = () => {
             <Link className='text-white' to="/Addcard">Addcard</Link>
             <Link className='text-white' to="/About">about</Link>
             <Link className='text-white' to="/Profile">profile</Link>
+            <Link className='text-white' to="/AdditionalTopic">AdditionalTopic</Link>
+            <Link className='text-white' to="/AllErrorHendling">AllErrorHendling</Link>
+            <Link className='text-white' to="/FormValidation">FormValidation</Link>
         </div>
       </nav>
     </div>

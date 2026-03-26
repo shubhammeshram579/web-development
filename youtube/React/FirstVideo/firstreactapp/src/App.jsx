@@ -59,7 +59,7 @@ function App() {
 }
 */
 
-import { useState } from 'react'
+import React,{ useState ,Suspense} from 'react'
 import './App.css'
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 
@@ -70,6 +70,12 @@ import About from './Components2/Pages/About'
 import Projects from './Components2/Pages/Projects'
 import UsedContexProvider from "./Components2/ContexApi/usedContexProvider"
 import Addcard from "./Components2/Pages/Addcard"
+import AdditionalTopic from "./Components3/AdditionalTopic"
+import AllErrorHendling from './Components4/AllErrorHendling'
+import ErrorBoundary from './Components4/ErrorBoundary'
+import FormValidation from './Components5/FormValidation'
+
+// const AllErrorHendling = React.lazy(() => import('./Components4/AllErrorHendling'));
 
 
 function App() {
@@ -81,10 +87,14 @@ const statudes = {
   age:23
 }
 
+const statudes2 = true
+
 
   return (
     <>
     <div>
+      <ErrorBoundary>
+      {/* <Suspense fallback={<div>Loading page...</div>}> */}
       <UsedContexProvider>
       <BrowserRouter>
       <Header />
@@ -92,11 +102,16 @@ const statudes = {
         <Route path='/' element={<Home  />} />
         <Route path='/Projects' element={<Projects />} />
         <Route path='/About' element={<About />} />
-        <Route path='/Profile' element={<Profile user={statudes} />} />
+        <Route path='/Profile' element={<Profile user={statudes2} />} />
         <Route path='/Addcard' element={<Addcard  />} />
+        <Route path='/AdditionalTopic' element={<AdditionalTopic  />} />
+        <Route path='/AllErrorHendling' element={<AllErrorHendling  />} />
+        <Route path='/FormValidation' element={<FormValidation  />} />
       </Routes>
       </BrowserRouter>
       </UsedContexProvider>
+      {/* </Suspense> */}
+      </ErrorBoundary>
     </div>
     </>
   )

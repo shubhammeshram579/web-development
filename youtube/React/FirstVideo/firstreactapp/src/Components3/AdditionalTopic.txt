@@ -1,0 +1,26 @@
+* hooks in react
+    1. useState
+    2. useEffect
+
+   performance optimize
+    3. memo 
+    4. useCallback
+    5. useMemo
+    6. useRef
+
+
+    6. custom hooks
+
+
+* error heandling
+    1. try catch
+    2. ? optinal
+    3. if else
+    4. error boundery
+    5. code spliting
+    6. lasy loading
+
+
+* form validation
+    1. form 
+    2. useform
