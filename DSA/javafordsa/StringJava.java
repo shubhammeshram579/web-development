@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class StringJava {
 
     public static void main(String[] args){
@@ -58,7 +60,7 @@ public class StringJava {
             revStr += Str.charAt(i);
         }
 
-        // System.out.print(revStr);
+        System.out.print(revStr);
 
 
 
@@ -117,6 +119,105 @@ public class StringJava {
 
 
         // LEVEL 4 — Intermediate String Problems
+        // 10. Remove Spaces from String
+
+        String removeSpaces = "shubham pramanand meshram";
+
+        removeSpaces = removeSpaces.replace(" ", "");
+
+        System.out.println(removeSpaces);
+
+
+        // 11. Count Frequency of Characters
+        // Input: apple
+        // Output:
+        // a = 1
+        // p = 2
+        // l = 1
+        // e = 1
+
+        String frequencyStr = "apple";
+
+        for(int i = 0; i < frequencyStr.length(); i++){
+
+            int count = 0;
+
+            for(int j = 0; j < frequencyStr.length(); j++){
+                if(frequencyStr.charAt(i) == frequencyStr.charAt(j)){
+                    count++;
+                }
+
+            }
+
+            
+
+            System.out.println(frequencyStr.charAt(i) + " = " + count);
+        }
+
+
+        // 12. Find Duplicate Characters
+
+
+        // LEVEL 5 — StringBuilder (Very Important)
+
+        // 13. Reverse String Using StringBuilder
+
+        String Sstr = "hello";
+
+        StringBuilder sb = new StringBuilder(Sstr);
+
+        System.out.println(sb.reverse());
+
+
+        // 14. Append in StringBuilder
+
+         StringBuilder sb2 = new StringBuilder();
+
+        sb2.append("Java ");
+        sb2.append("DSA");
+
+        System.out.println(sb2);
+
+        // LEVEL 6 — Important DSA String Problems
+
+
+        String s1 = "listen";
+        String s2 = "silent";
+
+        char[] arr1 = s1.toCharArray();
+        char[] arr2 = s2.toCharArray();
+
+
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        if (Arrays.equals(arr1, arr2)) {
+            System.out.println("Anagram");
+        } else {
+            System.out.println("Not Anagram");
+        }
+
+
+
+        // 17. Longest Word in Sentence
+
+        String logwest = "I love Java programming";
+        String[] words = logwest.split(" ");
+
+        String logeword = "";
+
+
+        for(String word : words){
+            if(word.length() > logeword.length()){
+                logeword = word;
+            }
+        }
+
+        System.out.println("logest word " + " " + logeword);
+
+
+
+
 
 
 

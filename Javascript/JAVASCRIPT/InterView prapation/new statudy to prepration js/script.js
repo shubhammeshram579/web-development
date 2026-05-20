@@ -415,6 +415,13 @@ let newsort = arrfilter.sort((a,b) => (a - b))
 
 
 
+let suplicate = "aabbcc";
+
+let removeDuplicate = [...new Set(suplicate)].join("")
+
+console.log("duplicate",removeDuplicate)
+
+
 
 
 
