@@ -146,5 +146,13 @@ public class DSAPractice {
 
 
 
+        // cleate object in java
+        Person myObj = new Person("John Doe", 25); 
+
+        // Accessing details
+        myObj.display(); 
+
+
+
     }
 }

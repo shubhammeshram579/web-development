@@ -16,6 +16,14 @@ public class ArraysJava {
         //     System.out.println(arr[i]);
         // }
 
+        // practise 
+
+        int[] arr = {1,2,3,4,5};
+
+        for(int i = 0 ; i < arr.length; i++){
+            System.out.println(arr[i]);
+        }
+
 
         //2. inpute value used in java
         // Scanner sc = new Scanner(System.in);
@@ -34,6 +42,7 @@ public class ArraysJava {
         // }
 
 
+
         // 3. Find Sum of Array
 
         // int[] arr = {1,2,3,5,6};
@@ -45,6 +54,19 @@ public class ArraysJava {
         // }
 
         // System.out.println(sum);
+
+        // practise
+
+        int[] arr2 = {3,5,6};
+
+        int sum = 0;
+
+        for(int i = 0 ; i < arr2.length; i++){
+            sum += arr2[i];
+
+        }
+
+        System.out.println(sum);
 
 
         // create new array add the value  not inseting 
@@ -82,6 +104,36 @@ public class ArraysJava {
         // System.out.println(max);
 
 
+        // practise 
+
+        // int[] arr3 = {2,5,60,3,20};
+        // int max = arr3[0];
+
+        // for(int i = 0; i < arr3.length; i++ ){
+
+        //     if(arr3[i] > max){
+        //         max = arr3[i];
+        //     }
+
+        // }
+
+        // System.out.println(max);
+
+        // practise 
+
+        int[] arrm = {3,6,44,8,22,5};
+
+        int max = arrm[0];
+
+        for(int i = 0; i < arrm.length; i++){
+            if(arrm[i] > max){
+                max = arrm[i];
+            }
+        }
+
+        System.out.println("arraynew findmax value" + " " + max);
+
+
         // 5. Find Smallest Element
 
         // int[] arr = {2,3,9,6,8};
@@ -95,6 +147,20 @@ public class ArraysJava {
         // }
 
         // System.out.println(min);
+
+
+        // practise
+
+        // int min = arr3[0];
+
+        // for(int i = 0; i < arr3.length; i++){
+        //     if(arr3[i] < min){
+        //         min = arr3[i];
+        //     }
+        // }
+
+        // System.out.println(min);
+
 
 
         // 6. Count Even and Odd Numbers
@@ -117,6 +183,28 @@ public class ArraysJava {
         // System.out.println("odd count" + " " + odd);
 
 
+        // pratise 
+
+        // int[] arr4 = {2,3,4,5,6,7,8};
+
+        // int event = 0;
+        // int odd = 0;
+
+        // for(int i = 0; i < arr4.length; i++){
+        //     if(arr4[i] % 2 == 0){
+        //         event++;
+        //     }else{
+        //         odd++;
+        //     }
+        // }
+
+        // System.out.println("even count:" + " " + event);
+        // System.out.println("odd count:" + " " + odd);
+
+
+
+
+
         // LEVEL 3 — Array Manipulation
 
         // 7. reverse aaray
@@ -126,7 +214,7 @@ public class ArraysJava {
         // int[] arr = {1,2,3,4,5};
 
         // for(int i = arr.length -1; i >= 0; i--){
-        //     System.out.println(arr[i]);
+        //     System.out.print(arr[i] + " ");
         // }
 
 
@@ -147,6 +235,29 @@ public class ArraysJava {
 
         // for(int num: arr){
         //     System.out.print(num + " ");
+        // }
+
+
+        // pratise reverse array number using while loop
+        
+        // int[] arr5 = {1,2,3,4,5};
+
+        // int start = 0;
+        // int end = arr5.length -1;
+
+        // while (start < end) {
+        //     int temp = arr5[start];
+        //     arr5[start] = arr5[end];
+        //     arr5[end] = temp;
+
+        //     start++;
+        //     end--;
+            
+        // }
+
+        // for(int num : arr5){
+        //     System.out.print(num + " ");
+
         // }
 
 
@@ -196,6 +307,32 @@ public class ArraysJava {
         // }
 
 
+        // practise 
+
+        int[] learearArr = {20,50,30,70};
+
+        int findValue = 70;
+        boolean ismatch = false;
+
+
+
+        for(int i = 0; i < learearArr.length; i++){
+
+            // System.out.println(learearArr[i]);
+            if(learearArr[i] == findValue){
+                ismatch = true;
+                break;
+            }else {
+                System.out.println("not found");
+            
+            }
+
+
+        }
+
+        System.out.println("leanear search value 30 " + " " + ismatch);
+
+
         // LEVEL 5 — Sorting Basics
 
         // 10. Bubble Sort
@@ -217,6 +354,27 @@ public class ArraysJava {
         // for(int num : arr){
         //     System.out.println(num + " ");
         // }
+
+
+        // practise bubule short
+
+        int[] bArr = {5,2,6,7,1,3};
+
+        for(int i = 0; i < bArr.length -1 ; i++){
+            for(int j = 0; j < bArr.length -1 - i; j++){
+                if(bArr[j] > bArr[j + 1]){
+                    int temp = bArr[j];
+                    bArr[j] = bArr[j + 1];
+                    bArr[j + 1] = temp;
+                }
+
+            }
+
+        }
+
+        for(int num: bArr){
+            System.out.println(num + " ");
+        }
 
         // LEVEL 6 — Intermediate Problems
 

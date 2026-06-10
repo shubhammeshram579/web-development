@@ -143,6 +143,58 @@ public class Recursion {
     }
 
 
+    // 8. Power of Number
+
+    // base 5 
+    // maltple 3
+    // The expression means 5 * 5 * 5 = 125. Therefore, the power (the final result) is 125.
+
+    static int powerNumber(int base, int m ){
+        if(m == 0){
+            return 1;
+        }
+
+        return base * powerNumber(base, m - 1);
+    }
+
+
+
+    // LEVEL 5 — Advanced Recursion Concepts
+
+    // 9. Binary Search Using Recursion
+
+    static int binarySearch(int[] arr, int low , int high, int target){
+
+        if(low > high){
+            return -1;
+        }
+
+        int mid = (low + high) / 2;
+
+        if (arr[mid] == target) {
+            return mid;
+        }
+
+        else if (arr[mid] > target) {
+            return binarySearch(arr, low, mid - 1, target);
+        }
+
+        else {
+            return binarySearch(arr, mid + 1, high, target);
+        }
+    }
+
+
+
+    // LEVEL 6 — Backtracking (Advanced)
+    // Maze problems
+    // N-Queens
+    // Sudoku Solver
+
+    
+
+
+
 
     public static void main(String[] args){
 
@@ -156,14 +208,32 @@ public class Recursion {
 
         // reverseStr(str, str.length() - 1);
 
-        String str = "madam";
+        // String str = "madam";
 
-        System.out.println(
-            isPalindrom(str, 0, str.length() - 1)
+        // System.out.println(
+        //     isPalindrom(str, 0, str.length() - 1)
+        // );
+
+        // System.out.println(powerNumber(5,3));
+
+
+         int[] arr = {1,2,3,4,5,6,7};
+
+         System.out.println(
+            binarySearch(arr, 0, arr.length - 1, 5)
         );
-
     }
 
 
     
 }
+
+
+
+// 🔥 Recursion Golden Rule
+
+// Every recursion problem should answer:
+
+// What is base case?
+// What smaller problem am I solving?
+// What is recursive relation?
