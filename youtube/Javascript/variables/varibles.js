@@ -13,9 +13,9 @@
 // what is variable in js?
 // In JavaScript, a variable is a named container used to store and manage data values.
 
-var a = 10; // es5 it updatble and it is function scop
-let b = 10; // es6 , it is updable , it is block scope
-const c = 10; // es6 , it is not updateble it contract , it is block scope
+// var a = 10; // es5 it updatble and it is function scop
+// let b = 10; // es6 , it is updable , it is block scope
+// const c = 10; // es6 , it is not updateble it contract , it is block scope
 
 // console.log(a,b,c)
 
@@ -206,118 +206,99 @@ function ab(a,b){
 
 
 
-
-//Operators (Arithmetic, Comparison, Logical, Assignment Operators)
+//************************************************************ */
+//Operators
+//operator is a special symbol or keyword used to perform operations on values and variables
+// (Arithmetic, Comparison,Assignment Operators, Logical)
 
 
 // Arithmetic (- + * / % ** ++ --)
+let a = 10;
+let b = 20;
 
-let g = 10;
-let w = 20;
+let total = b * a;
 
-let sum = w + g;
+console.log(total)
 
-console.log(sum)
+let isoddoreven = 10;
 
-
-
-let isnum  = 10;
-
-if(isnum % 2 === 0){
+if(isoddoreven % 2 === 0){
     console.log("even")
-
 }else{
     console.log("odd")
 }
 
-let count = 2;
 
+let count = 1;   // 1 + 1
+
+// count++;
 count--;
 
 console.log(count)
 
 
 
-// Comparison (== , ===, != , < > >= <=)
 
 
-let q = 10; 
-let s = 20;
+// Comparison (< > >= <= ,== , ===, != , )
 
-if(q > s){
-    console.log("s is greater q")
+let g = 10;
+let h = 10;
+
+// 20 21 23
+if(g >= h){
+    console.log(" g less then h")
 }else{
-    console.log("q is less s ")
+    console.log("h greter then g")
 }
 
-
-if(q == s){
+if(g != h){
     console.log("match")
 }else{
     console.log("not match")
 }
 
 
+// Assignment Operators (= , +=, -=, *= /= %= **=)
+let isnumber = 0;
 
-let j = "10";
-let k = 10;
-
-
-if(j === k){
-    console.log("match with value")
-}else{
-    console.log("not match with key value")
+for(let i = 1; i <= 5; i++){
+    // console.log(i)
+    isnumber -= i
 }
 
 
-
-// !=
-
-
-let o = 10;
-let f = 20;
-
-if(o != f){
-    console.log("not match")
-}else{
-    console.log("match")
-}
-
+console.log(isnumber);
 
 
 
 
 // Logical and , or , not (&&, || , !)
 
+let t = 10;
+let y = 20;
 
-let user2 = "shubha"
-
-let user3 = "labham"
-
-
-if(user2 == "shubham" || user3 == "labham"){
-    console.log("both user is match")
+if(t == 10 && y == 2){
+    console.log("both values are match")
 }else{
-    console.log("both not match")
+    console.log("both value are not match")
+}
+
+
+if(t == 10 || y == 2){
+    console.log("both values are match")
+}else{
+    console.log("both value are not match")
 }
 
 
 
-
-// Assignment Operators (= , +=, -=, *= /= %= **=)
-
-
-let r = 10;
-
-
-let total = 0;
-
-
-for(let i = 1; i <= 5; i++){
-    total += i
+if(y != 10 && y == 20){
+    console.log("match")
+}else{
+    console.log("not match")
 }
 
-console.log(total)
 
 
 

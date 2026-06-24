@@ -668,23 +668,23 @@
         // 18.Generate a pyramid pattern.
         let n = 5;
 
-        for (let i = 0; i < n; i++) {
-            console.log(' '.repeat(n - i) + "*".repeat(i * 2 - 1))
-        }
+        // for (let i = 0; i < n; i++) {
+        //     console.log(' '.repeat(n - i) + "*".repeat(i * 2 - 1))
+        // }
 
 
         let nP = 10; // Number of rows
 
-        for (let i = 1; i <= nP; i++) {
-            // Print spaces
-            let spaces = ' '.repeat(nP - i);
+        // for (let i = 1; i <= nP; i++) {
+        //     // Print spaces
+        //     let spaces = ' '.repeat(nP - i);
 
-            // Print stars
-            let stars = '*'.repeat(2 * i - 1);
+        //     // Print stars
+        //     let stars = '*'.repeat(2 * i - 1);
 
-            // Print one row of the pyramid
-            console.log(spaces + stars);
-        }
+        //     // Print one row of the pyramid
+        //     console.log(spaces + stars);
+        // }
 
 
 
@@ -702,7 +702,7 @@
 
         }
 
-        console.log(mising)
+        // console.log(mising)
 
 
 
@@ -720,7 +720,7 @@
             }
         }
 
-        console.log(missingNumbers);
+        // console.log(missingNumbers);
 
 
 
@@ -739,7 +739,27 @@
                 transposed[i][j] = matrix[j][i];
             }
         }
-        console.log(transposed);
+        // console.log(transposed);
+
+
+
+        let arrExp = [10,10,20,50,60]
+
+        console.log(arrExp)
+
+        for(let i = 0 ; i < arrExp.length; i++){
+            let count = 0;
+
+            for(let j = 0 ; j < arrExp.length; j++) {
+                if(arrExp[i] == arrExp[j]){
+                    count++;
+                    
+                }
+            }
+
+            console.log(`${arrExp[i]}: ${count}`)
+
+        }
 
 
 
