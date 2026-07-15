@@ -7,7 +7,6 @@ public class ArraysJava {
     public static void main(String[] args){
 
         // 1. array decraltion java
-
         // int[] arr = {1,2,4,5,6,7};
 
         // System.out.println(arr);
@@ -57,16 +56,28 @@ public class ArraysJava {
 
         // practise
 
-        int[] arr2 = {3,5,6};
+        // int[] arr2 = {3,5,6};
+
+        // int sum = 0;
+
+        // for(int i = 0 ; i < arr2.length; i++){
+        //     sum += arr2[i];
+
+        // }
+
+        // System.out.println(sum);
+
+        // practise 07072026
+
+        int[] arr2 = {2,5,6,7,8};
 
         int sum = 0;
+        for(int i = 0; i < arr2.length ; i++){
 
-        for(int i = 0 ; i < arr2.length; i++){
             sum += arr2[i];
 
         }
-
-        System.out.println(sum);
+        // System.out.println(sum);
 
 
         // create new array add the value  not inseting 
@@ -121,7 +132,21 @@ public class ArraysJava {
 
         // practise 
 
-        int[] arrm = {3,6,44,8,22,5};
+        // int[] arrm = {3,6,44,8,22,5};
+
+        // int max = arrm[0];
+
+        // for(int i = 0; i < arrm.length; i++){
+        //     if(arrm[i] > max){
+        //         max = arrm[i];
+        //     }
+        // }
+
+        // System.out.println("arraynew findmax value" + " " + max);
+
+        // prnctise 07072026
+
+        int[] arrm = {20,39,59,2,4,3};
 
         int max = arrm[0];
 
@@ -131,7 +156,7 @@ public class ArraysJava {
             }
         }
 
-        System.out.println("arraynew findmax value" + " " + max);
+        // System.out.println(max);
 
 
         // 5. Find Smallest Element
@@ -200,6 +225,23 @@ public class ArraysJava {
 
         // System.out.println("even count:" + " " + event);
         // System.out.println("odd count:" + " " + odd);
+
+        // practise 07072026
+
+        int[] arrNum = {1,2,3,4,5,6,7,8,9};
+
+        int eventcount = 0;
+        int oddcount = 0;
+        for(int i = 0; i < arrNum.length; i++){
+            if(arrNum[i] % 2 == 0){
+                eventcount++;
+            }else{
+                oddcount++;
+            }
+        }
+
+        // System.out.println("eventcount" + " " + eventcount);
+        // System.out.println("oddcount" + " " + oddcount);
 
 
 
@@ -309,28 +351,43 @@ public class ArraysJava {
 
         // practise 
 
-        int[] learearArr = {20,50,30,70};
+        // int[] learearArr = {20,50,30,70};
 
-        int findValue = 70;
-        boolean ismatch = false;
+        // int findValue = 70;
+        // boolean ismatch = false;
 
 
 
-        for(int i = 0; i < learearArr.length; i++){
+        // for(int i = 0; i < learearArr.length; i++){
 
-            // System.out.println(learearArr[i]);
-            if(learearArr[i] == findValue){
-                ismatch = true;
-                break;
-            }else {
-                System.out.println("not found");
+        //     // System.out.println(learearArr[i]);
+        //     if(learearArr[i] == findValue){
+        //         ismatch = true;
+        //         break;
+        //     }else {
+        //         System.out.println("not found");
             
+        //     }
+
+
+        // }
+
+        // System.out.println("leanear search value 30 " + " " + ismatch);
+
+        // practise 080702026
+        int[] findArrayValueLearnearSearch = {30,60,40,50,70};
+
+        int findValue  = 20;
+        boolean result = false; 
+
+        for(int i = 0; i < findArrayValueLearnearSearch.length; i++){
+            if(findArrayValueLearnearSearch[i] == findValue){
+                result = true;
+                break;
             }
-
-
         }
 
-        System.out.println("leanear search value 30 " + " " + ismatch);
+        // System.out.println("Result" + " " + result);
 
 
         // LEVEL 5 — Sorting Basics
@@ -358,22 +415,40 @@ public class ArraysJava {
 
         // practise bubule short
 
-        int[] bArr = {5,2,6,7,1,3};
+        // int[] bArr = {5,2,6,7,1,3};
 
-        for(int i = 0; i < bArr.length -1 ; i++){
-            for(int j = 0; j < bArr.length -1 - i; j++){
-                if(bArr[j] > bArr[j + 1]){
-                    int temp = bArr[j];
-                    bArr[j] = bArr[j + 1];
-                    bArr[j + 1] = temp;
+        // for(int i = 0; i < bArr.length -1 ; i++){
+        //     for(int j = 0; j < bArr.length -1 - i; j++){
+        //         if(bArr[j] > bArr[j + 1]){
+        //             int temp = bArr[j];
+        //             bArr[j] = bArr[j + 1];
+        //             bArr[j + 1] = temp;
+        //         }
+
+        //     }
+
+        // }
+
+        // for(int num: bArr){
+        //     System.out.println(num + " ");
+        // }
+
+        // practise 08072026
+        int[] bubulsortArr = {2,50,4,6,3,60};
+
+        for(int i = 0; i < bubulsortArr.length - 1; i++){
+            for(int j = 0 ; j < bubulsortArr.length - 1 - i; j++){
+                // System.out.print(j);
+                if(bubulsortArr[j] > bubulsortArr[j + 1]){
+                    int temp = bubulsortArr[j];
+                    bubulsortArr[j] = bubulsortArr[j + 1];
+                    bubulsortArr[j  + 1] = temp;
                 }
-
             }
-
         }
 
-        for(int num: bArr){
-            System.out.println(num + " ");
+        for(int num : bubulsortArr){
+            System.out.print(num + " ");
         }
 
         // LEVEL 6 — Intermediate Problems

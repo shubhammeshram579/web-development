@@ -49,18 +49,31 @@ public class StringJava {
 
         // 7. Reverse a String
 
-        String Str = "Shubham";
-        String revStr = "";
+        // String Str = "Shubham";
+        // String revStr = "";
 
         // for(int i = revStr.length() -1 ; i >= 0; i--){
         //     System.out.print(revStr.charAt(i));
         // }
 
-        for(int i = Str.length() -1 ; i >= 0; i--){
-            revStr += Str.charAt(i);
+        // for(int i = Str.length() -1 ; i >= 0; i--){
+        //     revStr += Str.charAt(i);
+        // }
+
+        // System.out.print(revStr);
+
+        // practise 07072026
+
+        String userName = "shubhammeshram";
+        String reverseUser = "";
+
+        for(int i = userName.length() -1 ; i > 0; i--){
+
+            reverseUser += userName.charAt(i);
+
         }
 
-        System.out.print(revStr);
+        System.out.println(reverseUser);
 
 
 
@@ -91,29 +104,57 @@ public class StringJava {
 
         // 9. Count Vowels and Consonants
 
-        String strVcheck = "shubham";
+        // String strVcheck = "shubham";
 
-        int vowels = 0;
+        // int vowels = 0;
+        // int consonants = 0;
+
+        // strVcheck = strVcheck.toLowerCase();
+
+        // for (int i = 0; i < strVcheck.length(); i++) {
+
+        //     char ch = strVcheck.charAt(i);
+
+        //     if (ch == 'a' || ch == 'e' || ch == 'i' ||
+        //         ch == 'o' || ch == 'u') {
+
+        //         vowels++;
+        //     } else {
+        //         consonants++;
+        //     }
+        // }
+
+
+        // System.out.println("Vowels: " + vowels);
+        // System.out.println("Consonants: " + consonants);
+
+
+        
+        // practise 07072026
+
+        String strV = "shubham";
+
+        int vowelsCount = 0;
         int consonants = 0;
 
-        strVcheck = strVcheck.toLowerCase();
+        for(int i = 0; i < strV.length(); i++){
+            // System.out.println(strV.charAt(i));
 
-        for (int i = 0; i < strVcheck.length(); i++) {
+            char ch = strV.charAt(i);
 
-            char ch = strVcheck.charAt(i);
+            if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
+                vowelsCount++;
 
-            if (ch == 'a' || ch == 'e' || ch == 'i' ||
-                ch == 'o' || ch == 'u') {
-
-                vowels++;
-            } else {
+            }else{
                 consonants++;
+
             }
+
         }
 
+        System.out.println("vowelsCount" + " " + vowelsCount);
+        System.out.println("consonants" + " " + consonants);
 
-        System.out.println("Vowels: " + vowels);
-        System.out.println("Consonants: " + consonants);
 
 
 
@@ -136,22 +177,38 @@ public class StringJava {
         // l = 1
         // e = 1
 
-        String frequencyStr = "apple";
+        // String frequencyStr = "apple";
 
-        for(int i = 0; i < frequencyStr.length(); i++){
+        // for(int i = 0; i < frequencyStr.length(); i++){
 
-            int count = 0;
+        //     int count = 0;
 
-            for(int j = 0; j < frequencyStr.length(); j++){
-                if(frequencyStr.charAt(i) == frequencyStr.charAt(j)){
-                    count++;
-                }
+        //     for(int j = 0; j < frequencyStr.length(); j++){
+        //         if(frequencyStr.charAt(i) == frequencyStr.charAt(j)){
+        //             count++;
+        //         }
 
-            }
+        //     }
 
             
 
-            System.out.println(frequencyStr.charAt(i) + " = " + count);
+        //     System.out.println(frequencyStr.charAt(i) + " = " + count);
+        // }
+
+        // practise 08072026
+
+        String FrequencyCount = "shubham";
+
+        for(int i = 0; i < FrequencyCount.length(); i++){
+            int count = 0;
+
+            for(int j = 0 ; j < FrequencyCount.length(); j++){
+                if(FrequencyCount.charAt(i) == FrequencyCount.charAt(j)){
+                    count++;
+                }
+            }
+
+            System.out.println("frequency:" + " " + count);
         }
 
 

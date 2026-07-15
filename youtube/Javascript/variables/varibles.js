@@ -213,28 +213,28 @@ function ab(a,b){
 
 
 // Arithmetic (- + * / % ** ++ --)
-let a = 10;
-let b = 20;
+// let a = 10;
+// let b = 20;
 
-let total = b * a;
+// let total = b * a;
 
-console.log(total)
+// console.log(total)
 
-let isoddoreven = 10;
+// let isoddoreven = 10;
 
-if(isoddoreven % 2 === 0){
-    console.log("even")
-}else{
-    console.log("odd")
-}
+// if(isoddoreven % 2 === 0){
+//     console.log("even")
+// }else{
+//     console.log("odd")
+// }
 
 
-let count = 1;   // 1 + 1
+// let count = 1;   // 1 + 1
 
 // count++;
-count--;
+// count--;
 
-console.log(count)
+// console.log(count)
 
 
 
@@ -242,62 +242,99 @@ console.log(count)
 
 // Comparison (< > >= <= ,== , ===, != , )
 
-let g = 10;
-let h = 10;
+// let g = 10;
+// let h = 10;
 
-// 20 21 23
-if(g >= h){
-    console.log(" g less then h")
-}else{
-    console.log("h greter then g")
-}
+// // 20 21 23
+// if(g >= h){
+//     console.log(" g less then h")
+// }else{
+//     console.log("h greter then g")
+// }
 
-if(g != h){
-    console.log("match")
-}else{
-    console.log("not match")
-}
-
-
-// Assignment Operators (= , +=, -=, *= /= %= **=)
-let isnumber = 0;
-
-for(let i = 1; i <= 5; i++){
-    // console.log(i)
-    isnumber -= i
-}
+// if(g != h){
+//     console.log("match")
+// }else{
+//     console.log("not match")
+// }
 
 
-console.log(isnumber);
+// // Assignment Operators (= , +=, -=, *= /= %= **=)
+// let isnumber = 0;
+
+// for(let i = 1; i <= 5; i++){
+//     // console.log(i)
+//     isnumber -= i
+// }
+
+
+// console.log(isnumber);
 
 
 
 
 // Logical and , or , not (&&, || , !)
 
-let t = 10;
-let y = 20;
+// let t = 10;
+// let y = 20;
 
-if(t == 10 && y == 2){
-    console.log("both values are match")
-}else{
-    console.log("both value are not match")
+// if(t == 10 && y == 2){
+//     console.log("both values are match")
+// }else{
+//     console.log("both value are not match")
+// }
+
+
+// if(t == 10 || y == 2){
+//     console.log("both values are match")
+// }else{
+//     console.log("both value are not match")
+// }
+
+
+
+// if(y != 10 && y == 20){
+//     console.log("match")
+// }else{
+//     console.log("not match")
+// }
+
+
+
+
+// what is Hoisting in javascript
+
+console.log(laptopname)
+
+var laptopname;
+
+laptopname = "dell"
+
+console.log(laptopname)
+
+
+abc()
+
+function abc() {
+    console.log("hello")
 }
 
-
-if(t == 10 || y == 2){
-    console.log("both values are match")
-}else{
-    console.log("both value are not match")
-}
+abc()
 
 
+// console.log(brandnam)
 
-if(y != 10 && y == 20){
-    console.log("match")
-}else{
-    console.log("not match")
-}
+// let brandnam = "hp";
+
+
+
+
+
+
+
+
+
+
 
 
 
