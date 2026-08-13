@@ -277,7 +277,149 @@ public class LinkedList {
             return s.data;
         }
 
+
+        // Q. 13 remove duplocate in a sorted linkedlist
+
+        void removeDuplicates() {
+
+            InnerLinkedList res = new InnerLinkedList();
+
+            while (this.size > 0) {
+
+                int val = this.getFirst();
+                this.removeFirst();
+
+                if (res.size == 0 || res.tail.data != val) {
+                    res.addLast(val);
+                }
+            }
+
+            this.head = res.head;
+            this.tail = res.tail;
+            this.size = res.size;
+        }
+
+
+
+        // Q. 14 odd even linkedlist
+        void oddEven(){
+            InnerLinkedList odd = new InnerLinkedList();
+            InnerLinkedList even = new InnerLinkedList();
+
+            while (this.size > 0) {
+                int val = this.getFirst();
+                this.removeFirst();
+
+                if(val % 2 == 0){
+                    even.addLast(val);
+                }else{
+                    odd.addLast(val);
+                }
+                
+            }
+
+            if(odd.size > 0 && even.size > 0){
+                odd.tail.next = even.head;
+                this.head = odd.head;
+                this.tail = even.tail;
+                this.size = odd.size + even.size;
+            }else if(odd.size > 0){
+                this.head = odd.head;
+                this.tail = odd.tail;
+                this.size = odd.size;
+
+            }else if(even.size > 0){
+                this.head = even.head;
+                this.tail = even.tail;
+                this.size = even.size;
+            }else {
+                this.head = null;
+                this.tail = null;
+                this.size = 0;
+            }
+
+        }
+
+        // Q. 15 k reverse in linked list
+        void kReverse(int k) {
+            InnerLinkedList prev = null;
+
+            while (this.size > 0) {
+                InnerLinkedList cur = new InnerLinkedList();
+
+                if (this.size >= k) {
+                    for (int i = 0; i < k; i++) {
+                        int val = this.getFirst();
+                        this.removeFirst();
+                        cur.addFirst(val);
+                    }
+                } else {
+                    int os = this.size;
+                    for (int i = 0; i < os; i++) {
+                        int val = this.getFirst();
+                        this.removeFirst();
+                        cur.addLast(val);
+                    }
+                }
+
+                if (prev == null) {
+                    prev = cur;
+                } else {
+                    prev.tail.next = cur.head;
+                    prev.tail = cur.tail;
+                    prev.size += cur.size;
+                }
+            }
+
+            this.head = prev.head;
+            this.tail = prev.tail;
+            this.size = prev.size;
+        }
+
+
+        // Q. 16 display reverse linked list
+        void displayReverseHelper(Node node) {
+            if (node == null) {
+                return;
+            }
+
+            displayReverseHelper(node.next);
+            System.out.print(node.data + " ");
+        }
+
+        void displayReverse() {
+            displayReverseHelper(this.head);
+            System.out.println();
+        }
+
+
+        // Q . 17 reverse linked list using pointer 
+
+        void reverseRRHelper(Node node){
+            if(node == null){
+                return;
+            }
+
+            reverseRRHelper(node.next);
+
+            if(node != tail){
+                node.next.next = node;
+            }
+        }
+
+        void reversePr(){
+            reverseRRHelper(head);
+            head.next = null;
+            Node temp = head;
+            head = tail;
+            tail = temp;
+        }
+
     }
+
+     
+
+
 
 
     // Q. 11 merge two sorded linked list 
@@ -354,11 +496,15 @@ public class LinkedList {
 
         InnerLinkedList list = new InnerLinkedList();
 
-        list.addLast(20);
-        list.addLast(30);
-        list.addLast(40);
-        list.addLast(50);
-        list.addLast(60);
+        list.addLast(2);
+        list.addLast(3);
+        list.addLast(4);
+        list.addLast(5);
+        list.addLast(6);
+        list.addLast(7);
+        list.addLast(8);
+        list.addLast(9);
+        list.addLast(10);
 
 
         // list.addLast(50);
@@ -428,9 +574,38 @@ public class LinkedList {
 
         // Q12 asnwes 
 
-        InnerLinkedList ans = mergeSort(list.head, list.tail);
+        // InnerLinkedList ans = mergeSort(list.head, list.tail);
 
-        ans.display();;
+        // ans.display();;
+
+
+        // test removeduplicat
+        // list.display();
+
+        // list.removeDuplicates();
+
+
+        // odd even 
+        // list.display();
+
+        // list.oddEven();
+
+        // list.display();
+
+        list.display();
+        // list.kReverse(3);
+        // list.display();
+        // list.displayReverse();
+
+        
+        list.reversePr();
+        list.display();
+
+
+
+
+
+
 
        
 

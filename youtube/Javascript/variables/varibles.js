@@ -319,12 +319,135 @@ function abc() {
     console.log("hello")
 }
 
-abc()
+// abc()
 
 
 // console.log(brandnam)
 
 // let brandnam = "hp";
+
+
+
+
+
+
+
+
+
+
+
+
+
+// what is conditional statement in JavaScript
+
+let laptop2 = "dell"
+
+if(laptop2 == "dell"){
+    console.log("this is dell laptop")
+}else{
+    console.log("this is not dell laptop")
+}
+
+
+let gender  = "female"
+
+if(gender == "male"){
+    console.log("true")
+}else{
+    console.log("false")
+}
+
+
+if(gender == "male"){
+    console.log("this is male")
+}else if(gender == "female"){
+    console.log("this is female")
+}else{
+    console.log("other")
+}
+
+
+
+if(gender == "female"){
+    if(laptop2 == "dell"){
+        console.log("this is femal and she own dell laptop")
+    }else{
+        console.log("not match")
+    }
+}
+
+
+
+
+if(gender == "female" || gender == "male" ){
+    console.log("found")
+}else{
+    console.log("not found")
+}
+
+
+
+if(gender == "female" && laptop2 == "dell" ){
+    console.log("found")
+}else{
+    console.log("not found")
+}
+
+
+
+
+let item = "laptop"
+
+
+let ans = item == "mouse" ? "item is found" : "item is not found"
+
+console.log(ans)
+
+
+
+let asnumA = 10;
+let asnumB = 20;
+
+if(asnumB > asnumA){
+    console.log("20 greater then 10")
+
+}else{
+    console.log("20 not greter then 10")
+}
+
+
+for(let i = 1; i <= 20; i++){
+    // console.log(i)
+
+    if(i > 10){
+        console.log(i)
+    }
+}
+
+
+let list = ""
+
+switch(list){
+    case "apply":
+        console.log("this is fruits")
+        break;
+    case "banana":
+        console.log("this is fruits")
+        break;
+    case "mouse":
+        console.log("electronic items")
+        break;
+    default:
+        console.log("other items")
+}
+
+
+
+
+
+
+
+
 
 
 

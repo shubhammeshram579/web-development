@@ -270,7 +270,12 @@ public class StringJava {
             }
         }
 
-        System.out.println("logest word " + " " + logeword);
+        // System.out.println("logest word " + " " + logeword);
+
+
+
+
+
 
 
 

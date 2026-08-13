@@ -31,21 +31,38 @@ public class Recursion {
     // LEVEL 1 — Basic Recursion
     // 1. Print Numbers from 1 to N
 
-    static void printNumber(int n){
+    // static void printNumber(int n){
 
 
-        // base case 
-        if(n  == 0){
+    //     // base case 
+    //     if(n  == 0){
+    //         return;
+    //     }
+
+    //     // function calls itself
+    //     printNumber(n - 1);
+
+
+    //     // print n 
+    //     System.out.println(n);
+    // }
+
+
+
+    // pratise 16072026
+    public static void printNumberRange(int n){
+
+        if(n == 0){
             return;
         }
+        
+        printNumberRange(n - 1);
 
-        // function calls itself
-        printNumber(n - 1);
-
-
-        // print n 
         System.out.println(n);
+
     }
+
+    
 
 
     // 2. Print N to 1
@@ -66,28 +83,55 @@ public class Recursion {
     // LEVEL 2 — Basic Recursive Problems
 
     // 3. Factorial Using Recursion
-    static int factorialnum(int n){
+    // static int factorialnum(int n){
 
+    //     if(n == 0 || n == 1){
+    //         return 1;
+    //     }
+
+    //     return n * factorialnum(n - 1);
+    // }
+
+
+    // pratise 16072026
+
+    public static int factialSum(int n){
+        // int facsum = 1;
+
+        // for(int i = 1; i <= n; i++){
+
+        //     facsum *= i;
+        // }
+
+        // return facsum;
 
         if(n == 0 || n == 1){
             return 1;
         }
 
 
-        return n * factorialnum(n - 1);
-
+        return n * factialSum(n - 1);
     }
 
 
     // 4. Sum of First N Numbers
     
-    static int sum(int n){
+    // static int sum(int n){
+
+    //     if(n == 0){
+    //         return 0;
+    //     }
+
+    //     return n + sum(n - 1);
+    // }
+
+
+    public static int sumoftotal(int n){
 
         if(n == 0){
             return 0;
         }
-
-        return n + sum(n - 1);
+        return n + sumoftotal(n - 1);
     }
 
 
@@ -96,14 +140,25 @@ public class Recursion {
     // 5. Fibonacci Series
 
 
-    static int Fibonacci(int n){
+    // static int Fibonacci(int n){
+
+    //     if(n == 0 || n == 1){
+    //         return n ;
+    //     }
+
+    //     return  Fibonacci(n - 1) +  Fibonacci(n - 2);
+
+    // }
+
+    // pratise 17-07-2026
+
+    public int Fabonacci(int n){
 
         if(n == 0 || n == 1){
-            return n ;
+            return n;
         }
 
-        return  Fibonacci(n - 1) +  Fibonacci(n - 2);
-
+        return Fabonacci(n - 1) + Fabonacci(n - 2);
     }
 
 
@@ -191,10 +246,6 @@ public class Recursion {
     // N-Queens
     // Sudoku Solver
 
-    
-
-
-
 
     public static void main(String[] args){
 
@@ -217,11 +268,23 @@ public class Recursion {
         // System.out.println(powerNumber(5,3));
 
 
-         int[] arr = {1,2,3,4,5,6,7};
+        //  int[] arr = {1,2,3,4,5,6,7};
 
-         System.out.println(
-            binarySearch(arr, 0, arr.length - 1, 5)
-        );
+        //  System.out.println(
+        //     binarySearch(arr, 0, arr.length - 1, 5)
+        // );
+
+
+        // pratise 16-07-2026
+        // printNumberRange(5);
+
+        // int sum = factialSum(5);
+
+        // System.out.println(sum);
+
+        int sum = sumoftotal(5);
+
+        System.out.println(sum);
     }
 
 
